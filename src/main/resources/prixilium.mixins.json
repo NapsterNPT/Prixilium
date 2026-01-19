@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "net.napsternpt.prexilium.mixin",
+	"package": "net.napsternpt.prixilium.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin"

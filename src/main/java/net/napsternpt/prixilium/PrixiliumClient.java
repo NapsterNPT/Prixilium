@@ -1,8 +1,8 @@
-package net.napsternpt.prexilium;
+package net.napsternpt.prixilium;
 
 import net.fabricmc.api.ClientModInitializer;
 
-public class PrexiliumClient implements ClientModInitializer {
+public class PrixiliumClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 
