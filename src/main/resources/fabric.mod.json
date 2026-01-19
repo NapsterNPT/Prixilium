@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "prexilium",
+	"version": "${version}",
+	"name": "Prexilium",
+	"description": "Prexilium, a mod that adds a whole new biome, blocks, and items.",
+	"authors": [
+		"NapsterNPT"
+	],
+	"contact": {
+		"homepage": "https://napsternpt.github.io/",
+		"sources": "https://github.com/NapsterNPT/Prexilium",
+		"issues": "https://github.com/NapsterNPT/Prexilium/issues"
+	},
+	"license": "LGPL-3.0",
+	"icon": "assets/prexilium/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.napsternpt.prexilium.Prexilium"
+		],
+		"fabric-datagen": [
+			"net.napsternpt.prexilium.PrexiliumDataGenerator"
+		],
+		"client": [
+			"net.napsternpt.prexilium.PrexiliumClient"
+		]
+	},
+	"mixins": [
+		"prexilium.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
