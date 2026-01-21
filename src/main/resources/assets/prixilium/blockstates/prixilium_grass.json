@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "prixilium:block/prixilium_grass"
-    }
+    "": [
+      {"model": "prixilium:block/prixilium_grass_1"},
+      {"model": "prixilium:block/prixilium_grass_2"},
+      {"model": "prixilium:block/prixilium_grass_3"},
+      {"model": "prixilium:block/prixilium_grass_4"}
+    ]
   }
 }
