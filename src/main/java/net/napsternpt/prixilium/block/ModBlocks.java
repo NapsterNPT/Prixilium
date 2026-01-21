@@ -18,6 +18,14 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(0.6f)
                     .sounds(BlockSoundGroup.GRASS)));
 
+    public static final Block PRIXILIUM_LOG = registerBlock("prixilium_log",
+            new Block(AbstractBlock.Settings.create().strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)));
+
+    public static final Block PRIXILIUM_PLANKS = registerBlock("prixilium_planks",
+            new Block(AbstractBlock.Settings.create().strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Prixilium.MOD_ID, name), block);
@@ -33,6 +41,10 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(ModBlocks.PRIXILIUM_GRASS);
+        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+            entries.add(ModBlocks.PRIXILIUM_LOG);
+            entries.add(ModBlocks.PRIXILIUM_PLANKS);
         });
     }
 }
