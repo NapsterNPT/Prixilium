@@ -2,5 +2,7 @@
   "item.prixilium.prixilium_ingot": "Prixilium Ingot",
   "item.prixilium.raw_prixilium_ingot": "Raw Prixilium Ingot",
 
-  "block.prixilium.prixilium_grass": "Prixilium Grass"
+  "block.prixilium.prixilium_grass": "Prixilium Grass",
+  "block.prixilium.prixilium_log": "Prixilium Log",
+  "block.prixilium.prixilium_planks": "Prixilium Planks"
 }
