@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "prixilium:block/prixilium_log_top",
-    "side": "prixilium:block/prixilium_log"
+    "side": "prixilium:block/prixilium_log",
+    "end": "prixilium:block/prixilium_log_top"
   }
 }

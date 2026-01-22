@@ -3,6 +3,8 @@ package net.napsternpt.prixilium.block;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -15,16 +17,25 @@ import net.napsternpt.prixilium.Prixilium;
 public class ModBlocks {
 
     public static final Block PRIXILIUM_GRASS = registerBlock("prixilium_grass",
-            new Block(AbstractBlock.Settings.create().strength(0.6f)
-                    .sounds(BlockSoundGroup.GRASS)));
+            new Block(AbstractBlock.Settings.create()
+                    .strength(0.6f)
+                    .sounds(BlockSoundGroup.GRASS)
+                    .mapColor(MapColor.DARK_AQUA)
+            ));
 
     public static final Block PRIXILIUM_LOG = registerBlock("prixilium_log",
-            new Block(AbstractBlock.Settings.create().strength(2.0F)
-                    .sounds(BlockSoundGroup.WOOD)));
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.TEAL)
+            ));
 
     public static final Block PRIXILIUM_PLANKS = registerBlock("prixilium_planks",
-            new Block(AbstractBlock.Settings.create().strength(2.0F)
-                    .sounds(BlockSoundGroup.WOOD)));
+            new Block(AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.CYAN)
+            ));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
