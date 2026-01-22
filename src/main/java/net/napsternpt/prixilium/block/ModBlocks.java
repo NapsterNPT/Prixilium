@@ -1,10 +1,7 @@
 package net.napsternpt.prixilium.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.MapColor;
-import net.minecraft.block.PillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -30,6 +27,15 @@ public class ModBlocks {
                     .mapColor(MapColor.TEAL)
             ));
 
+    public static final Block PRIXILIUM_LEAVES = registerBlock("prixilium_leaves",
+            new LeavesBlock(AbstractBlock.Settings.create()
+                    .strength(0.2F)
+                    .sounds(BlockSoundGroup.GRASS)
+                    .mapColor(MapColor.GOLD)
+                    .ticksRandomly()
+                    .nonOpaque()
+            ));
+
     public static final Block PRIXILIUM_PLANKS = registerBlock("prixilium_planks",
             new Block(AbstractBlock.Settings.create()
                     .strength(2.0F)
@@ -52,6 +58,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(ModBlocks.PRIXILIUM_GRASS);
+            entries.add(ModBlocks.PRIXILIUM_LEAVES);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(ModBlocks.PRIXILIUM_LOG);
