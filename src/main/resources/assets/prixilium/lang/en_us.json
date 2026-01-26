@@ -1,6 +1,12 @@
 {
+  "itemgroup.prixilium.prixilium_items": "Prixilium Items",
+  "itemgroup.prixilium.prixilium_combat": "Prixilium Combat",
+  "itemgroup.prixilium.prixilium_tools": "Prixilium Tools & Utilities",
+  "itemgroup.prixilium.prixilium_blocks": "Prixilium Blocks",
+
   "item.prixilium.prixilium": "Prixilium",
   "item.prixilium.packed_prixilium": "Packed Prixilium",
+  "item.prixilium.prixilium_upgrade_smithing_template": "Packed prixilium_upgrade_smithing_template",
 
   "item.prixilium.prixiled_wooden_sword": "Prixiled Wooden Sword",
   "item.prixilium.prixiled_wooden_pickaxe": "Prixiled Wooden Pickaxe",
