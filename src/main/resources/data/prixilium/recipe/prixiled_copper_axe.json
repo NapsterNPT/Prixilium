@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "prixilium:prixilium"
+  },
+  "base": {
+    "item": "minecraft:copper_axe"
+  },
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixiled_copper_axe"
+  },
+  "template": {
+    "item": "prixilium:prixilium_upgrade_smithing_template"
+  }
+}

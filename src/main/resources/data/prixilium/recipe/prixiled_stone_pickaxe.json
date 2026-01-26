@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "prixilium:prixilium"
+  },
+  "base": {
+    "item": "minecraft:stone_pickaxe"
+  },
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixiled_stone_pickaxe"
+  },
+  "template": {
+    "item": "prixilium:prixilium_upgrade_smithing_template"
+  }
+}

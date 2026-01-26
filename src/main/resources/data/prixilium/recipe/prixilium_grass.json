@@ -3,10 +3,10 @@
   "category": "building",
   "ingredients" : [
     {
-      "item": [
-        "minecraft:grass_block",
-        "prixilium:prixilium"
-      ]
+      "item": "minecraft:grass_block"
+    },
+    {
+      "item": "prixilium:prixilium"
     }
   ],
   "result": {

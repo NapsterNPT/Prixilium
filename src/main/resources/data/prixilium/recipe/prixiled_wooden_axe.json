@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "prixilium:prixilium"
+  },
+  "base": {
+    "item": "minecraft:wooden_axe"
+  },
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixiled_wooden_axe"
+  },
+  "template": {
+    "item": "prixilium:prixilium_upgrade_smithing_template"
+  }
+}
