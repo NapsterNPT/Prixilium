@@ -21,15 +21,21 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.WOOD, 3, -2.4F))
     ));
-    public static final Item PRIXILED_WOODEN_PICKAXE = registerItem("prixiled_wooden_pickaxe", new Item(new Item.Settings()
+    public static final Item PRIXILED_WOODEN_PICKAXE = registerItem("prixiled_wooden_pickaxe", new PickaxeItem(ToolMaterials.WOOD, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(PickaxeItem.createAttributeModifiers(ToolMaterials.WOOD, 1, -2.8F))
     ));
     public static final Item PRIXILED_WOODEN_AXE = registerItem("prixiled_wooden_axe", new AxeItem(ToolMaterials.WOOD, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.WOOD, 6, -3.2F))
     ));
-    public static final Item PRIXILED_WOODEN_SHOVEL = registerItem("prixiled_wooden_shovel", new Item(new Item.Settings()
+    public static final Item PRIXILED_WOODEN_SHOVEL = registerItem("prixiled_wooden_shovel", new ShovelItem(ToolMaterials.WOOD, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(ShovelItem.createAttributeModifiers(ToolMaterials.WOOD, 1.5F, -3))
     ));
-    public static final Item PRIXILED_WOODEN_HOE = registerItem("prixiled_wooden_hoe", new Item(new Item.Settings()
+    public static final Item PRIXILED_WOODEN_HOE = registerItem("prixiled_wooden_hoe", new HoeItem(ToolMaterials.WOOD, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.WOOD, 0, -3))
     ));
     //endregion
 
@@ -38,15 +44,21 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.STONE, 3, -2.4F))
     ));
-    public static final Item PRIXILED_STONE_PICKAXE = registerItem("prixiled_stone_pickaxe", new Item(new Item.Settings()
+    public static final Item PRIXILED_STONE_PICKAXE = registerItem("prixiled_stone_pickaxe", new PickaxeItem(ToolMaterials.STONE, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(PickaxeItem.createAttributeModifiers(ToolMaterials.STONE, 1, -2.8F))
     ));
     public static final Item PRIXILED_STONE_AXE = registerItem("prixiled_stone_axe", new AxeItem(ToolMaterials.STONE, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.STONE, 7, -3.2F))
     ));
-    public static final Item PRIXILED_STONE_SHOVEL = registerItem("prixiled_stone_shovel", new Item(new Item.Settings()
+    public static final Item PRIXILED_STONE_SHOVEL = registerItem("prixiled_stone_shovel", new ShovelItem(ToolMaterials.STONE, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(ShovelItem.createAttributeModifiers(ToolMaterials.STONE, 1.5F, -3))
     ));
-    public static final Item PRIXILED_STONE_HOE = registerItem("prixiled_stone_hoe", new Item(new Item.Settings()
+    public static final Item PRIXILED_STONE_HOE = registerItem("prixiled_stone_hoe", new HoeItem(ToolMaterials.STONE, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.STONE, -1, -2))
     ));
     //endregion
 
@@ -54,17 +66,23 @@ public class ModItems {
     /* 1.21.9+
     public static final Item PRIXILED_COPPER_SWORD = registerItem("prixiled_copper_sword", new SwordItem(ToolMaterials.COPPER, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.COPPER, idk, idkF))
+            .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.COPPER, idk, idk))
     ));
-    public static final Item PRIXILED_COPPER_PICKAXE = registerItem("prixiled_copper_pickaxe", new Item(new Item.Settings()
+    public static final Item PRIXILED_COPPER_PICKAXE = registerItem("prixiled_copper_pickaxe", new PickaxeItem(ToolMaterials.COPPER, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(PickaxeItem.createAttributeModifiers(ToolMaterials.COPPER, idk, idk))
     ));
     public static final Item PRIXILED_COPPER_AXE = registerItem("prixiled_copper_axe", new AxeItem(ToolMaterials.COPPER, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.COPPER, idk, idkF))
+            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.COPPER, idk, idk))
     ));
-    public static final Item PRIXILED_COPPER_SHOVEL = registerItem("prixiled_copper_shovel", new Item(new Item.Settings()
+    public static final Item PRIXILED_COPPER_SHOVEL = registerItem("prixiled_copper_shovel", new ShovelItem(ToolMaterials.COPPER, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(ShovelItem.createAttributeModifiers(ToolMaterials.COPPER, idk, idk))
     ));
-    public static final Item PRIXILED_COPPER_HOE = registerItem("prixiled_copper_hoe", new Item(new Item.Settings()
+    public static final Item PRIXILED_COPPER_HOE = registerItem("prixiled_copper_hoe", new HoeItem(ToolMaterials.COPPER, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.COPPER, idk, idk))
     ));
      */
     //endregion
@@ -74,15 +92,21 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.IRON, 3, -2.4F))
     ));
-    public static final Item PRIXILED_IRON_PICKAXE = registerItem("prixiled_iron_pickaxe", new Item(new Item.Settings()
+    public static final Item PRIXILED_IRON_PICKAXE = registerItem("prixiled_iron_pickaxe", new PickaxeItem(ToolMaterials.IRON, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(PickaxeItem.createAttributeModifiers(ToolMaterials.IRON, 1, -2.8F))
     ));
     public static final Item PRIXILED_IRON_AXE = registerItem("prixiled_iron_axe", new AxeItem(ToolMaterials.IRON, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.IRON, 6, -3.1F))
     ));
-    public static final Item PRIXILED_IRON_SHOVEL = registerItem("prixiled_iron_shovel", new Item(new Item.Settings()
+    public static final Item PRIXILED_IRON_SHOVEL = registerItem("prixiled_iron_shovel", new ShovelItem(ToolMaterials.IRON, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(ShovelItem.createAttributeModifiers(ToolMaterials.IRON, 1.5F, -3))
     ));
-    public static final Item PRIXILED_IRON_HOE = registerItem("prixiled_iron_hoe", new Item(new Item.Settings()
+    public static final Item PRIXILED_IRON_HOE = registerItem("prixiled_iron_hoe", new HoeItem(ToolMaterials.IRON, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.IRON,-2, -1))
     ));
     //endregion
 
@@ -91,15 +115,21 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.GOLD, 3, -2.4F))
     ));
-    public static final Item PRIXILED_GOLDEN_PICKAXE = registerItem("prixiled_golden_pickaxe", new Item(new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_PICKAXE = registerItem("prixiled_golden_pickaxe", new PickaxeItem(ToolMaterials.GOLD, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(PickaxeItem.createAttributeModifiers(ToolMaterials.GOLD, 1, -2.8F))
     ));
     public static final Item PRIXILED_GOLDEN_AXE = registerItem("prixiled_golden_axe", new AxeItem(ToolMaterials.GOLD, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.GOLD, 6, -3.0F))
+            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.GOLD, 6, -3))
     ));
-    public static final Item PRIXILED_GOLDEN_SHOVEL = registerItem("prixiled_golden_shovel", new Item(new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_SHOVEL = registerItem("prixiled_golden_shovel", new ShovelItem(ToolMaterials.GOLD, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(ShovelItem.createAttributeModifiers(ToolMaterials.GOLD, 1.5F, -3))
     ));
-    public static final Item PRIXILED_GOLDEN_HOE = registerItem("prixiled_golden_hoe", new Item(new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_HOE = registerItem("prixiled_golden_hoe", new HoeItem(ToolMaterials.GOLD, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.GOLD,0, -3))
     ));
     //endregion
 
@@ -108,15 +138,21 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.DIAMOND, 3, -2.4F))
     ));
-    public static final Item PRIXILED_DIAMOND_PICKAXE = registerItem("prixiled_diamond_pickaxe", new Item(new Item.Settings()
+    public static final Item PRIXILED_DIAMOND_PICKAXE = registerItem("prixiled_diamond_pickaxe", new PickaxeItem(ToolMaterials.DIAMOND, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(PickaxeItem.createAttributeModifiers(ToolMaterials.DIAMOND, 1, -2.8F))
     ));
     public static final Item PRIXILED_DIAMOND_AXE = registerItem("prixiled_diamond_axe", new AxeItem(ToolMaterials.DIAMOND, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.DIAMOND, 5, -3.0F))
+            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.DIAMOND, 5, -3))
     ));
-    public static final Item PRIXILED_DIAMOND_SHOVEL = registerItem("prixiled_diamond_shovel", new Item(new Item.Settings()
+    public static final Item PRIXILED_DIAMOND_SHOVEL = registerItem("prixiled_diamond_shovel", new ShovelItem(ToolMaterials.DIAMOND, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(ShovelItem.createAttributeModifiers(ToolMaterials.DIAMOND, 1.5F, -3))
     ));
-    public static final Item PRIXILED_DIAMOND_HOE = registerItem("prixiled_diamond_hoe", new Item(new Item.Settings()
+    public static final Item PRIXILED_DIAMOND_HOE = registerItem("prixiled_diamond_hoe", new HoeItem(ToolMaterials.DIAMOND, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.DIAMOND,-3, 0))
     ));
     //endregion
 
@@ -126,18 +162,24 @@ public class ModItems {
             .attributeModifiers(SwordItem.createAttributeModifiers(ToolMaterials.NETHERITE, 3, -2.4F))
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_PICKAXE = registerItem("prixiled_netherite_pickaxe", new Item(new Item.Settings()
+    public static final Item PRIXILED_NETHERITE_PICKAXE = registerItem("prixiled_netherite_pickaxe", new PickaxeItem(ToolMaterials.NETHERITE, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(PickaxeItem.createAttributeModifiers(ToolMaterials.NETHERITE, 1, -2.8F))
             .fireproof()
     ));
     public static final Item PRIXILED_NETHERITE_AXE = registerItem("prixiled_netherite_axe", new AxeItem(ToolMaterials.NETHERITE, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.NETHERITE, 5, -3.0F))
+            .attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.NETHERITE, 5, -3))
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_SHOVEL = registerItem("prixiled_netherite_shovel", new Item(new Item.Settings()
+    public static final Item PRIXILED_NETHERITE_SHOVEL = registerItem("prixiled_netherite_shovel", new ShovelItem(ToolMaterials.NETHERITE, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(ShovelItem.createAttributeModifiers(ToolMaterials.NETHERITE, 1.5F, -3))
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_HOE = registerItem("prixiled_netherite_hoe", new Item(new Item.Settings()
+    public static final Item PRIXILED_NETHERITE_HOE = registerItem("prixiled_netherite_hoe", new HoeItem(ToolMaterials.NETHERITE, new Item.Settings()
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .attributeModifiers(HoeItem.createAttributeModifiers(ToolMaterials.NETHERITE,-4, 0))
             .fireproof()
     ));
     //endregion
@@ -177,18 +219,21 @@ public class ModItems {
 
 
             //region [Tools]
+
             //region [wood]
             entries.add(PRIXILED_WOODEN_PICKAXE);
             entries.add(PRIXILED_WOODEN_AXE);
             entries.add(PRIXILED_WOODEN_SHOVEL);
             entries.add(PRIXILED_WOODEN_HOE);
             //endregion
+
             //region [stone]
             entries.add(PRIXILED_STONE_PICKAXE);
             entries.add(PRIXILED_STONE_AXE);
             entries.add(PRIXILED_STONE_SHOVEL);
             entries.add(PRIXILED_STONE_HOE);
             //endregion
+
             //region [copper]
             /* 1.21.9+
             entries.add(PRIXILED_COPPER_PICKAXE);
@@ -197,30 +242,35 @@ public class ModItems {
             entries.add(PRIXILED_COPPER_HOE);
              */
             //endregion
+
             //region [iron]
             entries.add(PRIXILED_IRON_PICKAXE);
             entries.add(PRIXILED_IRON_AXE);
             entries.add(PRIXILED_IRON_SHOVEL);
             entries.add(PRIXILED_IRON_HOE);
             //endregion
+
             //region [gold]
             entries.add(PRIXILED_GOLDEN_PICKAXE);
             entries.add(PRIXILED_GOLDEN_AXE);
             entries.add(PRIXILED_GOLDEN_SHOVEL);
             entries.add(PRIXILED_GOLDEN_HOE);
             //endregion
+
             //region [diamond]
             entries.add(PRIXILED_DIAMOND_PICKAXE);
             entries.add(PRIXILED_DIAMOND_AXE);
             entries.add(PRIXILED_DIAMOND_SHOVEL);
             entries.add(PRIXILED_DIAMOND_HOE);
             //endregion
+
             //region [netherite]
             entries.add(PRIXILED_NETHERITE_PICKAXE);
             entries.add(PRIXILED_NETHERITE_AXE);
             entries.add(PRIXILED_NETHERITE_SHOVEL);
             entries.add(PRIXILED_NETHERITE_HOE);
             //endregion
+
             //endregion
         });
     }
