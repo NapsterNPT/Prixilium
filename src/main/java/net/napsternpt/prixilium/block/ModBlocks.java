@@ -20,7 +20,7 @@ public class ModBlocks {
                     .mapColor(MapColor.DARK_AQUA)
             ));
 
-    public static final Block PRIXILIUM_LOG = registerBlock("prixilium_log",
+    public static final Block PRIXILIUM_LOGS = registerBlock("prixilium_logs",
             new PillarBlock(AbstractBlock.Settings.create()
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
@@ -43,6 +43,13 @@ public class ModBlocks {
                     .mapColor(MapColor.CYAN)
             ));
 
+    public static final Block PRIXILIUM_BRICKS = registerBlock("prixilium_bricks",
+            new Block(AbstractBlock.Settings.create()
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Prixilium.MOD_ID, name), block);
@@ -61,8 +68,9 @@ public class ModBlocks {
             entries.add(ModBlocks.PRIXILIUM_LEAVES);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(ModBlocks.PRIXILIUM_LOG);
+            entries.add(ModBlocks.PRIXILIUM_LOGS);
             entries.add(ModBlocks.PRIXILIUM_PLANKS);
+            entries.add(ModBlocks.PRIXILIUM_BRICKS);
         });
     }
 }

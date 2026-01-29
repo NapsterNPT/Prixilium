@@ -18,7 +18,6 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.prixilium.prixilium_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.PRIXILIUM);
-                        entries.add(ModItems.PACKED_PRIXILIUM);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                     }).build());
 
@@ -103,9 +102,10 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.prixilium.prixilium_blocks"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.PRIXILIUM_GRASS);
-                        entries.add(ModBlocks.PRIXILIUM_LOG);
-                        entries.add(ModBlocks.PRIXILIUM_PLANKS);
+                        entries.add(ModBlocks.PRIXILIUM_LOGS);
                         entries.add(ModBlocks.PRIXILIUM_LEAVES);
+                        entries.add(ModBlocks.PRIXILIUM_PLANKS);
+                        entries.add(ModBlocks.PRIXILIUM_BRICKS);
                     }).build());
 
     public static void registerItemGroups() {

@@ -1,18 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "#": {
       "item": "prixilium:prixilium"
     }
   },
   "pattern": [
-    "###",
-    "###",
-    "###"
+    "##",
+    "##"
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:packed_prixilium"
+    "id": "prixilium:prixilium_bricks"
   }
 }

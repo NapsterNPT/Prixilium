@@ -11,7 +11,6 @@ import net.napsternpt.prixilium.Prixilium;
 
 public class ModItems {
     public static final Item PRIXILIUM = registerItem("prixilium", new Item(new Item.Settings()));
-    public static final Item PACKED_PRIXILIUM = registerItem("packed_prixilium", new Item(new Item.Settings()));
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()));
 
     //region [Tools]
@@ -195,7 +194,6 @@ public class ModItems {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(PRIXILIUM);
-            entries.add(PACKED_PRIXILIUM);
             entries.add(PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
         });
 
