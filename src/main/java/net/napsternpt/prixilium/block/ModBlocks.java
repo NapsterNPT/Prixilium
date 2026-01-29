@@ -2,6 +2,7 @@ package net.napsternpt.prixilium.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -18,6 +19,18 @@ public class ModBlocks {
                     .strength(0.6f)
                     .sounds(BlockSoundGroup.GRASS)
                     .mapColor(MapColor.DARK_AQUA)
+            ));
+
+    public static final Block PRIXILIUM = registerBlock("prixilium",
+            new ShortPlantBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.GOLD)
+                    .replaceable()
+                    .noCollision()
+                    .breakInstantly()
+                    .sounds(BlockSoundGroup.GRASS)
+                    .offset(AbstractBlock.OffsetType.XYZ)
+                    .pistonBehavior(PistonBehavior.DESTROY)
+                    .nonOpaque()
             ));
 
     public static final Block PRIXILIUM_LOGS = registerBlock("prixilium_logs",
@@ -65,6 +78,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(ModBlocks.PRIXILIUM_GRASS);
+            entries.add(ModBlocks.PRIXILIUM);
             entries.add(ModBlocks.PRIXILIUM_LEAVES);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {

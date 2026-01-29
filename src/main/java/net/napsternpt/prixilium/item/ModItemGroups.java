@@ -14,10 +14,9 @@ public class ModItemGroups {
 
     public static final ItemGroup PRIXILIUM_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Prixilium.MOD_ID, "prixilium_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PRIXILIUM))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE))
                     .displayName(Text.translatable("itemgroup.prixilium.prixilium_items"))
                     .entries((displayContext, entries) -> {
-                        entries.add(ModItems.PRIXILIUM);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                     }).build());
 
@@ -102,6 +101,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.prixilium.prixilium_blocks"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.PRIXILIUM_GRASS);
+                        entries.add(ModBlocks.PRIXILIUM);
                         entries.add(ModBlocks.PRIXILIUM_LOGS);
                         entries.add(ModBlocks.PRIXILIUM_LEAVES);
                         entries.add(ModBlocks.PRIXILIUM_PLANKS);

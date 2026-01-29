@@ -4,8 +4,6 @@
   "itemgroup.prixilium.prixilium_tools": "Prixilium Tools & Utilities",
   "itemgroup.prixilium.prixilium_blocks": "Prixilium Blocks",
 
-  "item.prixilium.prixilium": "Prixilium",
-  "item.prixilium.packed_prixilium": "Packed Prixilium",
   "item.prixilium.prixilium_upgrade_smithing_template": "Prixilium Smithing Template",
 
   "item.prixilium.prixiled_wooden_sword": "Prixiled Wooden Sword",
@@ -45,6 +43,7 @@
   "item.prixilium.prixiled_netherite_hoe": "Prixiled Netherite Hoe",
 
   "block.prixilium.prixilium_grass": "Prixilium Grass",
+  "block.prixilium.prixilium": "Prixilium",
   "block.prixilium.prixilium_logs": "Prixilium Logs",
   "block.prixilium.prixilium_leaves": "Prixilium Leaves",
   "block.prixilium.prixilium_planks": "Prixilium Planks",
