@@ -8,9 +8,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.block.custom.PrixiliumHookItem;
 
 public class ModItems {
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()));
+    public static final Item PRIXILIUM_HOOK = registerItem("prixilium_hook", new PrixiliumHookItem(new Item.Settings()
+            .maxDamage(32)
+    ));
 
     //region [Tools]
 
@@ -212,7 +216,7 @@ public class ModItems {
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
-
+            entries.add(PRIXILIUM_HOOK);
 
             //region [Tools]
 

@@ -30,7 +30,6 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.GRASS)
                     .offset(AbstractBlock.OffsetType.XYZ)
                     .pistonBehavior(PistonBehavior.DESTROY)
-                    .nonOpaque()
             ));
 
     public static final Block PRIXILIUM_LOGS = registerBlock("prixilium_logs",

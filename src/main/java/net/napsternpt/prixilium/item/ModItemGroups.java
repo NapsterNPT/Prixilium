@@ -45,7 +45,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PRIXILED_DIAMOND_PICKAXE))
                     .displayName(Text.translatable("itemgroup.prixilium.prixilium_tools"))
                     .entries((displayContext, entries) -> {
-
+                        entries.add(ModItems.PRIXILIUM_HOOK);
 
                         //region [Tools]
                         //region [wood]
