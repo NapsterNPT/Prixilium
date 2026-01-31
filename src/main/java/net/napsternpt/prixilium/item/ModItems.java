@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.block.custom.PrixiliumHookItem;
+import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
 
 public class ModItems {
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()));
