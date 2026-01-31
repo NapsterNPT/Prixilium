@@ -8,6 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
 public class PrixiliumLeavesBlock extends LeavesBlock {
+
     public PrixiliumLeavesBlock(Settings settings) {
         super(settings);
     }
@@ -18,18 +19,17 @@ public class PrixiliumLeavesBlock extends LeavesBlock {
     }
 
     @Override
-    protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        super.randomTick(state, world, pos, random);
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+    }
 
-        if (!state.get(PERSISTENT) && state.get(DISTANCE) >= 7) {
-            return;
-        }
+    @Override
+    protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
 
         for (int i = 0; i < 64; ++i) {
             BlockPos targetPos = pos.add(
-                    random.nextInt(3) - 1,
-                    random.nextInt(5) - 3,
-                    random.nextInt(3) - 1
+                    random.nextBetween(-2, 2),
+                    random.nextBetween(-2, 2),
+                    random.nextBetween(-2, 2)
             );
 
             BlockState targetState = world.getBlockState(targetPos);

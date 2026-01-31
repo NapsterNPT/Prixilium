@@ -71,21 +71,27 @@ public class PrixiliumGrassBlock extends Block {
             return;
         }
 
-        for (int i = 0; i < 64; ++i) {
+        for (int i = 0; i < 128; ++i) {
             BlockPos targetPos = pos.add(
-                    random.nextInt(3) - 1,
-                    random.nextInt(5) - 3,
-                    random.nextInt(3) - 1
+                    random.nextInt(5) - 2,
+                    random.nextInt(5) - 2,
+                    random.nextInt(5) - 2
             );
 
             BlockState targetState = world.getBlockState(targetPos);
 
+            if (isUnderwater(world, targetPos)) {
+                continue;
+            }
+
             if (canSpreadTo(targetState) && canSurvive(state, world, targetPos)) {
                 world.setBlockState(targetPos, this.getDefaultState());
+                continue;
             }
 
             if (canSpreadToBecomePrixilium(targetState)) {
                 world.setBlockState(targetPos, ModBlocks.PRIXILIUM.getDefaultState());
+                continue;
             }
 
             if (canSpreadToBecomePrixiliumLog(targetState)) {
@@ -111,7 +117,6 @@ public class PrixiliumGrassBlock extends Block {
         return state.isOf(Blocks.SHORT_GRASS) ||
                 state.isOf(Blocks.FERN) ||
                 state.isOf(Blocks.DEAD_BUSH) ||
-                state.isOf(Blocks.TALL_SEAGRASS) ||
                 state.isOf(Blocks.DANDELION) ||
                 state.isOf(Blocks.TORCHFLOWER) ||
                 state.isOf(Blocks.POPPY) ||
@@ -123,7 +128,15 @@ public class PrixiliumGrassBlock extends Block {
                 state.isOf(Blocks.PINK_TULIP) ||
                 state.isOf(Blocks.OXEYE_DAISY) ||
                 state.isOf(Blocks.CORNFLOWER) ||
-                state.isOf(Blocks.LILY_OF_THE_VALLEY);
+                state.isOf(Blocks.AZURE_BLUET) ||
+                state.isOf(Blocks.LILY_OF_THE_VALLEY) ||
+                state.isOf(Blocks.SUNFLOWER) ||
+                state.isOf(Blocks.LILAC) ||
+                state.isOf(Blocks.ROSE_BUSH) ||
+                state.isOf(Blocks.PEONY) ||
+                state.isOf(Blocks.TALL_GRASS) ||
+                state.isOf(Blocks.LARGE_FERN) ||
+                state.isOf(Blocks.PITCHER_PLANT);
     }
 
     private boolean canSpreadToBecomePrixiliumLog(BlockState state) {
@@ -135,23 +148,19 @@ public class PrixiliumGrassBlock extends Block {
                 state.isOf(Blocks.DARK_OAK_LOG) ||
                 state.isOf(Blocks.MANGROVE_LOG) ||
                 state.isOf(Blocks.CHERRY_LOG) ||
-                state.isOf(Blocks.CRIMSON_STEM) ||
-                state.isOf(Blocks.WARPED_STEM) ||
-                state.isOf(Blocks.STRIPPED_OAK_LOG) ||
-                state.isOf(Blocks.STRIPPED_SPRUCE_LOG) ||
-                state.isOf(Blocks.STRIPPED_BIRCH_LOG) ||
-                state.isOf(Blocks.STRIPPED_JUNGLE_LOG) ||
-                state.isOf(Blocks.STRIPPED_ACACIA_LOG) ||
-                state.isOf(Blocks.STRIPPED_DARK_OAK_LOG) ||
-                state.isOf(Blocks.STRIPPED_MANGROVE_LOG) ||
-                state.isOf(Blocks.STRIPPED_CHERRY_LOG) ||
-                state.isOf(Blocks.STRIPPED_CRIMSON_STEM) ||
-                state.isOf(Blocks.STRIPPED_WARPED_STEM);
+                state.isOf(Blocks.CRIMSON_STEM);
     }
 
     private boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
         BlockPos abovePos = pos.up();
         BlockState aboveState = world.getBlockState(abovePos);
         return !aboveState.isOpaqueFullCube(world, abovePos);
+    }
+
+    private boolean isUnderwater(ServerWorld world, BlockPos pos) {
+        BlockState aboveState = world.getBlockState(pos.up());
+        return aboveState.isOf(Blocks.WATER) ||
+                aboveState.isOf(Blocks.BUBBLE_COLUMN) ||
+                aboveState.getFluidState().isOf(net.minecraft.fluid.Fluids.WATER);
     }
 }

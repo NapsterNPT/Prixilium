@@ -21,11 +21,11 @@ public class PrixiliumLogsBlock extends PillarBlock {
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
 
-        for (int i = 0; i < 64; ++i) {
+        for (int i = 0; i < 128; ++i) {
             BlockPos targetPos = pos.add(
-                    random.nextInt(3) - 1,
-                    random.nextInt(5) - 3,
-                    random.nextInt(3) - 1
+                    random.nextInt(5) - 2,
+                    random.nextInt(5) - 2,
+                    random.nextInt(5) - 2
             );
 
             BlockState targetState = world.getBlockState(targetPos);
@@ -36,6 +36,7 @@ public class PrixiliumLogsBlock extends PillarBlock {
                     newState = newState.with(AXIS, targetState.get(AXIS));
                 }
                 world.setBlockState(targetPos, newState);
+                continue;
             }
 
             if (canSpreadToBecomeLeaves(targetState)) {
@@ -54,7 +55,17 @@ public class PrixiliumLogsBlock extends PillarBlock {
                 state.isOf(Blocks.MANGROVE_LOG) ||
                 state.isOf(Blocks.CHERRY_LOG) ||
                 state.isOf(Blocks.CRIMSON_STEM) ||
-                state.isOf(Blocks.WARPED_STEM);
+                state.isOf(Blocks.WARPED_STEM) ||
+                state.isOf(Blocks.STRIPPED_OAK_LOG) ||
+                state.isOf(Blocks.STRIPPED_SPRUCE_LOG) ||
+                state.isOf(Blocks.STRIPPED_BIRCH_LOG) ||
+                state.isOf(Blocks.STRIPPED_JUNGLE_LOG) ||
+                state.isOf(Blocks.STRIPPED_ACACIA_LOG) ||
+                state.isOf(Blocks.STRIPPED_DARK_OAK_LOG) ||
+                state.isOf(Blocks.STRIPPED_MANGROVE_LOG) ||
+                state.isOf(Blocks.STRIPPED_CHERRY_LOG) ||
+                state.isOf(Blocks.STRIPPED_CRIMSON_STEM) ||
+                state.isOf(Blocks.STRIPPED_WARPED_STEM);
     }
 
     private boolean canSpreadToBecomeLeaves(BlockState state) {
