@@ -11,11 +11,12 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.block.custom.*;
 
 public class ModBlocks {
 
     public static final Block PRIXILIUM_GRASS = registerBlock("prixilium_grass",
-            new Block(AbstractBlock.Settings.create()
+            new PrixiliumGrassBlock(AbstractBlock.Settings.create()
                     .strength(0.6f)
                     .sounds(BlockSoundGroup.GRASS)
                     .mapColor(MapColor.DARK_AQUA)
@@ -33,14 +34,14 @@ public class ModBlocks {
             ));
 
     public static final Block PRIXILIUM_LOGS = registerBlock("prixilium_logs",
-            new PillarBlock(AbstractBlock.Settings.create()
+            new PrixiliumLogsBlock(AbstractBlock.Settings.create()
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.TEAL)
             ));
 
     public static final Block PRIXILIUM_LEAVES = registerBlock("prixilium_leaves",
-            new LeavesBlock(AbstractBlock.Settings.create()
+            new PrixiliumLeavesBlock(AbstractBlock.Settings.create()
                     .strength(0.2F)
                     .sounds(BlockSoundGroup.GRASS)
                     .mapColor(MapColor.GOLD)
