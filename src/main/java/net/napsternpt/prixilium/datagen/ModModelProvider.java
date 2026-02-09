@@ -1,4 +1,123 @@
 package net.napsternpt.prixilium.datagen;
 
-public class ModModelProvider {
+
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.data.client.*;
+import net.minecraft.util.Identifier;
+import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.item.ModItems;
+
+public class ModModelProvider extends FabricModelProvider {
+    public ModModelProvider(FabricDataOutput output) {
+        super(output);
+    }
+
+    @Override
+    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        TextureMap prixiliumGrassBaseModel = new TextureMap()
+                .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_side"))
+                .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_bottom"));
+
+        Identifier prixiliumGrassModel1 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXILIUM_GRASS, "_1",
+                prixiliumGrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_top_1")),
+                blockStateModelGenerator.modelCollector);
+
+        Identifier prixiliumGrassModel2 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXILIUM_GRASS, "_2",
+                prixiliumGrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_top_2")),
+                blockStateModelGenerator.modelCollector);
+
+        Identifier prixiliumGrassModel3 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXILIUM_GRASS, "_3",
+                prixiliumGrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_top_3")),
+                blockStateModelGenerator.modelCollector);
+
+        Identifier prixiliumGrassModel4 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXILIUM_GRASS, "_4",
+                prixiliumGrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_top_4")),
+                blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.PRIXILIUM_GRASS,
+                        BlockStateVariant.create().put(VariantSettings.MODEL, prixiliumGrassModel1),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, prixiliumGrassModel2),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, prixiliumGrassModel3),
+                        BlockStateVariant.create().put(VariantSettings.MODEL, prixiliumGrassModel4)
+                )
+        );
+
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.PRIXILIUM_GRASS, prixiliumGrassModel1);
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.PRIXILIUM, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerLog(ModBlocks.PRIXILIUM_LOG).log(ModBlocks.PRIXILIUM_LOG).wood(ModBlocks.PRIXILIUM_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_LEAVES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_PLANKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_BRICKS);
+    }
+
+    @Override
+    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_HOOK, Models.GENERATED);
+
+        //region [Tools]
+
+        //region [wood]
+        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_HOE, Models.GENERATED);
+        //endregion
+
+        //region [stone]
+        itemModelGenerator.register(ModItems.PRIXILED_STONE_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_STONE_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_STONE_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_STONE_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_STONE_HOE, Models.GENERATED);
+        //endregion
+
+        //region [copper]
+        /* 1.21.9+
+        itemModelGenerator.register(ModItems.PRIXILED_COPPER_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COPPER_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COPPER_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COPPER_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COPPER_HOE, Models.GENERATED);
+        */
+        //endregion
+
+        //region [iron]
+        itemModelGenerator.register(ModItems.PRIXILED_IRON_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_IRON_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_IRON_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_IRON_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_IRON_HOE, Models.GENERATED);
+        //endregion
+
+        //region [gold]
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_HOE, Models.GENERATED);
+        //endregion
+
+        //region [diamond]
+        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_HOE, Models.GENERATED);
+        //endregion
+
+        //region [netherite]
+        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_AXE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HOE, Models.GENERATED);
+        //endregion
+
+        //endregion
+    }
 }

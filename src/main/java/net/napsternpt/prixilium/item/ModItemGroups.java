@@ -102,7 +102,8 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.PRIXILIUM_GRASS);
                         entries.add(ModBlocks.PRIXILIUM);
-                        entries.add(ModBlocks.PRIXILIUM_LOGS);
+                        entries.add(ModBlocks.PRIXILIUM_LOG);
+                        entries.add(ModBlocks.PRIXILIUM_WOOD);
                         entries.add(ModBlocks.PRIXILIUM_LEAVES);
                         entries.add(ModBlocks.PRIXILIUM_PLANKS);
                         entries.add(ModBlocks.PRIXILIUM_BRICKS);

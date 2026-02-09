@@ -16,7 +16,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks.PRIXILIUM_LOGS)
+                .add(ModBlocks.PRIXILIUM_LOG)
+                .add(ModBlocks.PRIXILIUM_WOOD)
                 .add(ModBlocks.PRIXILIUM_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
@@ -35,12 +36,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_LEAVES);
 
         getOrCreateTagBuilder(BlockTags.LOGS)
-                .add(ModBlocks.PRIXILIUM_LOGS);
+                .add(ModBlocks.PRIXILIUM_LOG);
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.PRIXILIUM_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.SNAPS_GOAT_HORN)
-                .add(ModBlocks.PRIXILIUM_LOGS);
+                .add(ModBlocks.PRIXILIUM_LOG);
     }
 }

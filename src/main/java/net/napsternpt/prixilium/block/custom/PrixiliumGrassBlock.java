@@ -95,12 +95,17 @@ public class PrixiliumGrassBlock extends Block {
             }
 
             if (canSpreadToBecomePrixiliumLog(targetState)) {
-                BlockState newState = ModBlocks.PRIXILIUM_LOGS.getDefaultState();
+                BlockState newState = ModBlocks.PRIXILIUM_LOG.getDefaultState();
                 if (targetState.contains(net.minecraft.block.PillarBlock.AXIS)) {
                     newState = newState.with(net.minecraft.block.PillarBlock.AXIS,
                             targetState.get(net.minecraft.block.PillarBlock.AXIS));
                 }
                 world.setBlockState(targetPos, newState);
+                continue;
+            }
+
+            if (canSpreadToBecomePrixiliumWood(targetState)) {
+                world.setBlockState(targetPos, ModBlocks.PRIXILIUM_WOOD.getDefaultState());
             }
         }
     }
@@ -148,6 +153,18 @@ public class PrixiliumGrassBlock extends Block {
                 state.isOf(Blocks.DARK_OAK_LOG) ||
                 state.isOf(Blocks.MANGROVE_LOG) ||
                 state.isOf(Blocks.CHERRY_LOG) ||
+                state.isOf(Blocks.CRIMSON_STEM);
+    }
+
+    private boolean canSpreadToBecomePrixiliumWood(BlockState state) {
+        return state.isOf(Blocks.OAK_WOOD) ||
+                state.isOf(Blocks.SPRUCE_WOOD) ||
+                state.isOf(Blocks.BIRCH_WOOD) ||
+                state.isOf(Blocks.JUNGLE_WOOD) ||
+                state.isOf(Blocks.ACACIA_WOOD) ||
+                state.isOf(Blocks.DARK_OAK_WOOD) ||
+                state.isOf(Blocks.MANGROVE_WOOD) ||
+                state.isOf(Blocks.CHERRY_WOOD) ||
                 state.isOf(Blocks.CRIMSON_STEM);
     }
 

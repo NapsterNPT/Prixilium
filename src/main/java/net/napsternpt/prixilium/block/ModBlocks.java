@@ -33,7 +33,14 @@ public class ModBlocks {
                     .pistonBehavior(PistonBehavior.DESTROY)
             ));
 
-    public static final Block PRIXILIUM_LOGS = registerBlock("prixilium_logs",
+    public static final Block PRIXILIUM_LOG = registerBlock("prixilium_log",
+            new PrixiliumLogsBlock(AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.TEAL)
+            ));
+
+    public static final Block PRIXILIUM_WOOD = registerBlock("prixilium_wood",
             new PrixiliumLogsBlock(AbstractBlock.Settings.create()
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
@@ -82,7 +89,8 @@ public class ModBlocks {
             entries.add(ModBlocks.PRIXILIUM_LEAVES);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(ModBlocks.PRIXILIUM_LOGS);
+            entries.add(ModBlocks.PRIXILIUM_LOG);
+            entries.add(ModBlocks.PRIXILIUM_WOOD);
             entries.add(ModBlocks.PRIXILIUM_PLANKS);
             entries.add(ModBlocks.PRIXILIUM_BRICKS);
         });

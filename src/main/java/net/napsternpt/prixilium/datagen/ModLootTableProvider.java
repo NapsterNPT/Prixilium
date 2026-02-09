@@ -15,7 +15,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.PRIXILIUM_LOGS);
+        addDrop(ModBlocks.PRIXILIUM_LOG);
         addDrop(ModBlocks.PRIXILIUM_PLANKS);
         addDrop(ModBlocks.PRIXILIUM_BRICKS);
 

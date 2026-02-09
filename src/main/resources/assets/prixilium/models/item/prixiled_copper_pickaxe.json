@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "prixilium:item/prixiled_copper_pickaxe"
-  }
-}
