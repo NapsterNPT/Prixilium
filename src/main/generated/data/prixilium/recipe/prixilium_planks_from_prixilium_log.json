@@ -1,7 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "building",
-  "ingredients" : [
+  "category": "misc",
+  "group": "prixilium",
+  "ingredients": [
     {
       "item": "prixilium:prixilium_log"
     }
