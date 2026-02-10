@@ -3,6 +3,8 @@ package net.napsternpt.prixilium.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
+import net.napsternpt.prixilium.item.ModItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -13,5 +15,49 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                //1.12.9+ .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD);
+
+        getOrCreateTagBuilder(ItemTags.PICKAXES)
+                .add(ModItems.PRIXILED_WOODEN_PICKAXE)
+                .add(ModItems.PRIXILED_STONE_PICKAXE)
+                //1.12.9+ .add(ModItems.PRIXILED_COPPER_PICKAXE)
+                .add(ModItems.PRIXILED_IRON_PICKAXE)
+                .add(ModItems.PRIXILED_GOLDEN_PICKAXE)
+                .add(ModItems.PRIXILED_DIAMOND_PICKAXE)
+                .add(ModItems.PRIXILED_NETHERITE_PICKAXE);
+
+        getOrCreateTagBuilder(ItemTags.AXES)
+                .add(ModItems.PRIXILED_WOODEN_AXE)
+                .add(ModItems.PRIXILED_STONE_AXE)
+                //1.12.9+ .add(ModItems.PRIXILED_COPPER_AXE)
+                .add(ModItems.PRIXILED_IRON_AXE)
+                .add(ModItems.PRIXILED_GOLDEN_AXE)
+                .add(ModItems.PRIXILED_DIAMOND_AXE)
+                .add(ModItems.PRIXILED_NETHERITE_AXE);
+
+        getOrCreateTagBuilder(ItemTags.SHOVELS)
+                .add(ModItems.PRIXILED_WOODEN_SHOVEL)
+                .add(ModItems.PRIXILED_STONE_SHOVEL)
+                //1.12.9+ .add(ModItems.PRIXILED_COPPER_SHOVEL)
+                .add(ModItems.PRIXILED_IRON_SHOVEL)
+                .add(ModItems.PRIXILED_GOLDEN_SHOVEL)
+                .add(ModItems.PRIXILED_DIAMOND_SHOVEL)
+                .add(ModItems.PRIXILED_NETHERITE_SHOVEL);
+
+        getOrCreateTagBuilder(ItemTags.HOES)
+                .add(ModItems.PRIXILED_WOODEN_HOE)
+                .add(ModItems.PRIXILED_STONE_HOE)
+                //1.12.9+ .add(ModItems.PRIXILED_COPPER_HOE)
+                .add(ModItems.PRIXILED_IRON_HOE)
+                .add(ModItems.PRIXILED_GOLDEN_HOE)
+                .add(ModItems.PRIXILED_DIAMOND_HOE)
+                .add(ModItems.PRIXILED_NETHERITE_HOE);
     }
 }
