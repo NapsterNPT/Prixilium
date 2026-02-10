@@ -39,9 +39,8 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.TEAL)
             ));
-
     public static final Block PRIXILIUM_WOOD = registerBlock("prixilium_wood",
-            new PrixiliumLogsBlock(AbstractBlock.Settings.create()
+            new PrixiliumWoodBlock(AbstractBlock.Settings.create()
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.TEAL)
@@ -62,6 +61,44 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.CYAN)
             ));
+    public static final Block PRIXILIUM_STAIRS = registerBlock("prixilium_stairs",
+            new StairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.CYAN)
+            ));
+    public static final Block PRIXILIUM_SLAB = registerBlock("prixilium_slab",
+            new SlabBlock(AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.CYAN)
+            ));
+    public static final Block PRIXILIUM_FENCE = registerBlock("prixilium_fence",
+            new FenceBlock(AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.CYAN)
+            ));
+    public static final Block PRIXILIUM_FENCE_GATE = registerBlock("prixilium_fence_gate",
+            new FenceGateBlock(WoodType.SPRUCE, AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.CYAN)
+            ));
+    public static final Block PRIXILIUM_DOOR = registerBlock("prixilium_door",
+            new DoorBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.CYAN)
+                    .nonOpaque()
+            ));
+    public static final Block PRIXILIUM_TRAPDOOR = registerBlock("prixilium_trapdoor",
+            new TrapdoorBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create()
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.CYAN)
+                    .nonOpaque()
+            ));
 
     public static final Block PRIXILIUM_BRICKS = registerBlock("prixilium_bricks",
             new Block(AbstractBlock.Settings.create()
@@ -69,6 +106,13 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+    public static final Block PRIXILIUM_BRICKS_WALL = registerBlock("prixilium_bricks_wall",
+            new WallBlock(AbstractBlock.Settings.create()
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -84,15 +128,22 @@ public class ModBlocks {
         Prixilium.LOGGER.info("Registering Prixilium Blocks");
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
-            entries.add(ModBlocks.PRIXILIUM_GRASS);
             entries.add(ModBlocks.PRIXILIUM);
+            entries.add(ModBlocks.PRIXILIUM_GRASS);
             entries.add(ModBlocks.PRIXILIUM_LEAVES);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(ModBlocks.PRIXILIUM_LOG);
             entries.add(ModBlocks.PRIXILIUM_WOOD);
             entries.add(ModBlocks.PRIXILIUM_PLANKS);
+            entries.add(ModBlocks.PRIXILIUM_STAIRS);
+            entries.add(ModBlocks.PRIXILIUM_SLAB);
+            entries.add(ModBlocks.PRIXILIUM_FENCE);
+            entries.add(ModBlocks.PRIXILIUM_FENCE_GATE);
+            entries.add(ModBlocks.PRIXILIUM_DOOR);
+            entries.add(ModBlocks.PRIXILIUM_TRAPDOOR);
             entries.add(ModBlocks.PRIXILIUM_BRICKS);
+            entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
         });
     }
 }

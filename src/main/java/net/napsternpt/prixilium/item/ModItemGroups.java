@@ -100,13 +100,20 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.PRIXILIUM_GRASS))
                     .displayName(Text.translatable("itemgroup.prixilium.prixilium_blocks"))
                     .entries((displayContext, entries) -> {
-                        entries.add(ModBlocks.PRIXILIUM_GRASS);
                         entries.add(ModBlocks.PRIXILIUM);
+                        entries.add(ModBlocks.PRIXILIUM_GRASS);
+                        entries.add(ModBlocks.PRIXILIUM_LEAVES);
                         entries.add(ModBlocks.PRIXILIUM_LOG);
                         entries.add(ModBlocks.PRIXILIUM_WOOD);
-                        entries.add(ModBlocks.PRIXILIUM_LEAVES);
                         entries.add(ModBlocks.PRIXILIUM_PLANKS);
+                        entries.add(ModBlocks.PRIXILIUM_STAIRS);
+                        entries.add(ModBlocks.PRIXILIUM_SLAB);
+                        entries.add(ModBlocks.PRIXILIUM_FENCE);
+                        entries.add(ModBlocks.PRIXILIUM_FENCE_GATE);
+                        entries.add(ModBlocks.PRIXILIUM_DOOR);
+                        entries.add(ModBlocks.PRIXILIUM_TRAPDOOR);
                         entries.add(ModBlocks.PRIXILIUM_BRICKS);
+                        entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
                     }).build());
 
     public static void registerItemGroups() {

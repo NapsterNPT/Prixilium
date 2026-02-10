@@ -8,9 +8,8 @@ import net.napsternpt.prixilium.block.ModBlocks;
 public class PrixiliumClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		BlockRenderLayerMap.INSTANCE.putBlock(
-				ModBlocks.PRIXILIUM,
-				RenderLayer.getCutout()
-		);
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PRIXILIUM, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PRIXILIUM_DOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PRIXILIUM_TRAPDOOR, RenderLayer.getCutout());
     }
 }

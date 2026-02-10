@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "prixilium:block/prixilium_planks",
+    "side": "prixilium:block/prixilium_planks",
+    "top": "prixilium:block/prixilium_planks"
+  }
+}

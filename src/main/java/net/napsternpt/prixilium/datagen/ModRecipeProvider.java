@@ -96,6 +96,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.GRASS_BLOCK), conditionsFromItem(Items.GRASS_BLOCK))
                 .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                 .offerTo(exporter);
+
         offerShapelessRecipe(exporter, ModBlocks.PRIXILIUM_PLANKS, ModBlocks.PRIXILIUM_LOG, "prixilium", 4);
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_WOOD, 3)
                 .input('#', ModBlocks.PRIXILIUM_LOG)
@@ -103,7 +104,39 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("##")
                 .criterion(hasItem(ModBlocks.PRIXILIUM_LOG), conditionsFromItem(ModBlocks.PRIXILIUM_LOG))
                 .offerTo(exporter);
+        createStairsRecipe(ModBlocks.PRIXILIUM_STAIRS, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
+                .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                .offerTo(exporter);
+        createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_SLAB, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
+                .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                .offerTo(exporter);
+        createDoorRecipe(ModBlocks.PRIXILIUM_DOOR, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
+                .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                .offerTo(exporter);
+        createTrapdoorRecipe(ModBlocks.PRIXILIUM_TRAPDOOR, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
+                .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                .offerTo(exporter);
+        createFenceRecipe(ModBlocks.PRIXILIUM_FENCE, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
+                .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                .offerTo(exporter);
+        createFenceGateRecipe(ModBlocks.PRIXILIUM_FENCE_GATE, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
+                .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                .offerTo(exporter);
+
         offer2x2CompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS, ModBlocks.PRIXILIUM);
+        ShapedRecipeJsonBuilder.create(
+                        RecipeCategory.BUILDING_BLOCKS,
+                        ModBlocks.PRIXILIUM_BRICKS_WALL,
+                        6
+                )
+                .pattern("###")
+                .pattern("###")
+                .input('#', ModBlocks.PRIXILIUM_PLANKS)
+                .criterion(
+                        hasItem(ModBlocks.PRIXILIUM_PLANKS),
+                        conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS)
+                )
+                .offerTo(exporter);
     }
 
     private void offerPrixiliumUpgrade(RecipeExporter exporter, Item input, RecipeCategory category) {

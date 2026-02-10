@@ -8,8 +8,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.napsternpt.prixilium.block.ModBlocks;
 
-public class PrixiliumLogsBlock extends PillarBlock {
-    public PrixiliumLogsBlock(Settings settings) {
+public class PrixiliumWoodBlock extends PillarBlock {
+    public PrixiliumWoodBlock(Settings settings) {
         super(settings);
     }
 
@@ -46,14 +46,14 @@ public class PrixiliumLogsBlock extends PillarBlock {
     }
 
     private boolean canSpreadTo(BlockState state) {
-        return state.isOf(Blocks.OAK_LOG) ||
-                state.isOf(Blocks.SPRUCE_LOG) ||
-                state.isOf(Blocks.BIRCH_LOG) ||
-                state.isOf(Blocks.JUNGLE_LOG) ||
-                state.isOf(Blocks.ACACIA_LOG) ||
-                state.isOf(Blocks.DARK_OAK_LOG) ||
-                state.isOf(Blocks.MANGROVE_LOG) ||
-                state.isOf(Blocks.CHERRY_LOG);
+        return state.isOf(Blocks.OAK_WOOD) ||
+                state.isOf(Blocks.SPRUCE_WOOD) ||
+                state.isOf(Blocks.BIRCH_WOOD) ||
+                state.isOf(Blocks.JUNGLE_WOOD) ||
+                state.isOf(Blocks.ACACIA_WOOD) ||
+                state.isOf(Blocks.DARK_OAK_WOOD) ||
+                state.isOf(Blocks.MANGROVE_WOOD) ||
+                state.isOf(Blocks.CHERRY_WOOD);
     }
 
     private boolean canSpreadToBecomeLeaves(BlockState state) {

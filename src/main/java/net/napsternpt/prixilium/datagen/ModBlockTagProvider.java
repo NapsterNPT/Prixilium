@@ -43,5 +43,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.SNAPS_GOAT_HORN)
                 .add(ModBlocks.PRIXILIUM_LOG);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.PRIXILIUM_FENCE);
+
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+                .add(ModBlocks.PRIXILIUM_FENCE_GATE);
+
+        getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(ModBlocks.PRIXILIUM_BRICKS_WALL);
     }
 }

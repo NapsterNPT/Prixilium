@@ -3,6 +3,7 @@ package net.napsternpt.prixilium.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.BlockState;
 import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.block.ModBlocks;
@@ -15,6 +16,8 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerTintableCross(ModBlocks.PRIXILIUM, BlockStateModelGenerator.TintType.NOT_TINTED);
+
         TextureMap prixiliumGrassBaseModel = new TextureMap()
                 .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_side"))
                 .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_bottom"));
@@ -45,12 +48,19 @@ public class ModModelProvider extends FabricModelProvider {
         );
 
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.PRIXILIUM_GRASS, prixiliumGrassModel1);
-
-        blockStateModelGenerator.registerTintableCross(ModBlocks.PRIXILIUM, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerLog(ModBlocks.PRIXILIUM_LOG).log(ModBlocks.PRIXILIUM_LOG).wood(ModBlocks.PRIXILIUM_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_LEAVES);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_PLANKS);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_BRICKS);
+
+        blockStateModelGenerator.registerLog(ModBlocks.PRIXILIUM_LOG).log(ModBlocks.PRIXILIUM_LOG).wood(ModBlocks.PRIXILIUM_WOOD);
+        BlockStateModelGenerator.BlockTexturePool prixiliumPlanksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_PLANKS);
+        prixiliumPlanksPool.stairs(ModBlocks.PRIXILIUM_STAIRS);
+        prixiliumPlanksPool.slab(ModBlocks.PRIXILIUM_SLAB);
+        prixiliumPlanksPool.fence(ModBlocks.PRIXILIUM_FENCE);
+        prixiliumPlanksPool.fenceGate(ModBlocks.PRIXILIUM_FENCE_GATE);
+        blockStateModelGenerator.registerDoor(ModBlocks.PRIXILIUM_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.PRIXILIUM_TRAPDOOR);
+
+        BlockStateModelGenerator.BlockTexturePool prixiliumBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_BRICKS);
+        prixiliumBricksPool.wall(ModBlocks.PRIXILIUM_BRICKS_WALL);
     }
 
     @Override
