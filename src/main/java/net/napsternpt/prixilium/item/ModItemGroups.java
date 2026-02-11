@@ -14,7 +14,7 @@ public class ModItemGroups {
 
     public static final ItemGroup PRIXILIUM_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Prixilium.MOD_ID, "prixilium"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.PRIXILIUM))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE))
                     .displayName(Text.translatable("itemgroup.prixilium.prixilium"))
                     .entries((displayContext, entries) -> {
 
