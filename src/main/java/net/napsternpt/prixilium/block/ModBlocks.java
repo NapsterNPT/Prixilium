@@ -126,24 +126,5 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         Prixilium.LOGGER.info("Registering Prixilium Blocks");
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
-            entries.add(ModBlocks.PRIXILIUM);
-            entries.add(ModBlocks.PRIXILIUM_GRASS);
-            entries.add(ModBlocks.PRIXILIUM_LEAVES);
-        });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(ModBlocks.PRIXILIUM_LOG);
-            entries.add(ModBlocks.PRIXILIUM_WOOD);
-            entries.add(ModBlocks.PRIXILIUM_PLANKS);
-            entries.add(ModBlocks.PRIXILIUM_STAIRS);
-            entries.add(ModBlocks.PRIXILIUM_SLAB);
-            entries.add(ModBlocks.PRIXILIUM_FENCE);
-            entries.add(ModBlocks.PRIXILIUM_FENCE_GATE);
-            entries.add(ModBlocks.PRIXILIUM_DOOR);
-            entries.add(ModBlocks.PRIXILIUM_TRAPDOOR);
-            entries.add(ModBlocks.PRIXILIUM_BRICKS);
-            entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
-        });
     }
 }
