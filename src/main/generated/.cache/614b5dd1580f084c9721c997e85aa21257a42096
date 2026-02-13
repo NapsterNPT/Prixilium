@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-10T18:37:46.669097	Prixilium/Model Definitions
+// 1.21.1	2026-02-13T11:02:07.0710207	Prixilium/Model Definitions
 ad438deb92b7e175e83ba7b4dc4b5019f0998746 assets\prixilium\models\block\prixilium_stairs.json
 5b37c787257348d67f77f9a2d8b0162bcb952dcb assets\prixilium\models\block\prixilium_trapdoor_open.json
 2ef9506baa5c106899f362a9eec2465596bc90a0 assets\prixilium\models\item\prixiled_golden_pickaxe.json
@@ -40,8 +40,8 @@ ad364888f1dfaff492442cbbdf01ac20451c7aee assets\prixilium\models\item\prixiled_d
 515d9542a519d1b3a8b0860e5913b5baa0ef0cc3 assets\prixilium\blockstates\prixilium_wood.json
 7024339397c742fc2f7b390a452d600afd7498c1 assets\prixilium\models\block\prixilium_log.json
 06cb18a5b8c8b8bd4cd28fe4bd9fade1a7a6c7b0 assets\prixilium\blockstates\prixilium_stairs.json
-a51c5f7cc3c2e2965b56d8701c8a3e71427fa32b assets\prixilium\blockstates\prixilium.json
 33dc39d3fc54e8ee5bbf75fcf1f17733f388d494 assets\prixilium\blockstates\prixilium_slab.json
+a51c5f7cc3c2e2965b56d8701c8a3e71427fa32b assets\prixilium\blockstates\prixilium.json
 a2ea9f9541166de9237bd3f552b886a1e4d132da assets\prixilium\models\block\prixilium_planks.json
 0d416a3ce53222d836099019a8b8d89262a528b2 assets\prixilium\blockstates\prixilium_trapdoor.json
 da89685386e0e765f494f093f71307fefc070b95 assets\prixilium\models\item\prixilium_stairs.json

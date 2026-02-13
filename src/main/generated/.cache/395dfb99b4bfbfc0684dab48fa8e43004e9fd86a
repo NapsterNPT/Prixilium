@@ -1,9 +1,9 @@
-// 1.21.1	2026-02-10T18:37:46.6670906	Prixilium/Tags for minecraft:block
+// 1.21.1	2026-02-13T11:02:07.0690227	Prixilium/Tags for minecraft:block
 f5a912cf1d8fefdc416541c77b01570aa54ff394 data\minecraft\tags\block\snaps_goat_horn.json
 cce923f156a6c480db9826bae734577f584a759d data\minecraft\tags\block\dirt.json
 7739c434158e2408664571cf64315575544f79c8 data\minecraft\tags\block\leaves.json
-62ef9dfec8bb83063009d9b461d77c97f667eda2 data\minecraft\tags\block\fence_gates.json
 cce923f156a6c480db9826bae734577f584a759d data\minecraft\tags\block\mineable\shovel.json
+62ef9dfec8bb83063009d9b461d77c97f667eda2 data\minecraft\tags\block\fence_gates.json
 fff6df5ecd64cb5b7b1d30882939bac3305b51e7 data\minecraft\tags\block\mineable\pickaxe.json
 56a091bc1aeab592b7a06108fd3a67d12fa850db data\minecraft\tags\block\mineable\axe.json
 7739c434158e2408664571cf64315575544f79c8 data\minecraft\tags\block\mineable\hoe.json

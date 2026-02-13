@@ -131,11 +131,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 )
                 .pattern("###")
                 .pattern("###")
-                .input('#', ModBlocks.PRIXILIUM_PLANKS)
-                .criterion(
-                        hasItem(ModBlocks.PRIXILIUM_PLANKS),
-                        conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS)
-                )
+                .input('#', ModBlocks.PRIXILIUM_BRICKS)
+                .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
                 .offerTo(exporter);
     }
 
