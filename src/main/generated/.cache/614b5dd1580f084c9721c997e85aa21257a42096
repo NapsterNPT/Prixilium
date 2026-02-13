@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-13T11:02:07.0710207	Prixilium/Model Definitions
+// 1.21.1	2026-02-13T11:27:42.4423751	Prixilium/Model Definitions
 ad438deb92b7e175e83ba7b4dc4b5019f0998746 assets\prixilium\models\block\prixilium_stairs.json
 5b37c787257348d67f77f9a2d8b0162bcb952dcb assets\prixilium\models\block\prixilium_trapdoor_open.json
 2ef9506baa5c106899f362a9eec2465596bc90a0 assets\prixilium\models\item\prixiled_golden_pickaxe.json
@@ -73,7 +73,7 @@ ddabf168abc588144d97c6fc2390477d451db3a4 assets\prixilium\models\item\prixiled_s
 a370bcc3399270a61c9fd4d6d206c514a0046bc7 assets\prixilium\models\block\prixilium_slab_top.json
 a9aa5f89709e109b6757a17dc6cd7871da456461 assets\prixilium\models\block\prixilium_stairs_inner.json
 412767f31f355b23c4e0f2d5fe0842501702847d assets\prixilium\models\item\prixiled_golden_sword.json
-3740a6700c9a57f4538fec5edef5d2628f3c1143 assets\prixilium\models\item\prixilium_hook.json
+e3d0583bed5023031e5d130997a9fc0d1764098d assets\prixilium\models\item\prixilium_hook.json
 dd487629a9c06336a1d7bf880b65eec181d7a881 assets\prixilium\models\item\prixilium_door.json
 663233efa8b7d9a2e4c01dbae2a78ae711a5167e assets\prixilium\models\item\prixiled_wooden_sword.json
 014f84fee461157ddd446da8e36862686dc42330 assets\prixilium\models\item\prixiled_netherite_shovel.json
@@ -97,3 +97,4 @@ eb74f4b0a0c5082c556193ed07d8dddee5fa5fdd assets\prixilium\models\item\prixiled_n
 5493299e0480a961db9f6e6740480c0305ef3bab assets\prixilium\models\item\prixiled_diamond_shovel.json
 e24c7ab00665a5ddb9cf04e68f36aaa649538b73 assets\prixilium\models\item\prixilium_bricks.json
 f31faa3ed52ae04d0329930eef9a83fbe4dcc7b0 assets\prixilium\models\block\prixilium_grass_3.json
+b8a9f56f39491f5ca766aae2b3af319c36d81eba assets\prixilium\models\item\prixilium_virus.json

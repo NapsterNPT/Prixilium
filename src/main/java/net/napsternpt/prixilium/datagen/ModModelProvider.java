@@ -63,8 +63,9 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.PRIXILIUM_VIRUS, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PRIXILIUM_HOOK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_HOOK, Models.HANDHELD);
 
         //region [Tools]
 

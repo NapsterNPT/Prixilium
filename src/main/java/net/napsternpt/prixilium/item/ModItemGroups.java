@@ -14,12 +14,13 @@ public class ModItemGroups {
 
     public static final ItemGroup PRIXILIUM_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Prixilium.MOD_ID, "prixilium"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.PRIXILIUM))
                     .displayName(Text.translatable("itemgroup.prixilium.prixilium"))
                     .entries((displayContext, entries) -> {
 
                         //region [Items]
 
+                        entries.add(ModItems.PRIXILIUM_VIRUS);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_HOOK);
 

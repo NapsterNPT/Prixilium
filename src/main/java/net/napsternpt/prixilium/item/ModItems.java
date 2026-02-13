@@ -10,6 +10,7 @@ import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
 
 public class ModItems {
+    public static final Item PRIXILIUM_VIRUS = registerItem("prixilium_virus", new Item(new Item.Settings()));
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()));
     public static final Item PRIXILIUM_HOOK = registerItem("prixilium_hook", new PrixiliumHookItem(new Item.Settings()
             .maxDamage(32)
