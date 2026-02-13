@@ -24,6 +24,8 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_HOOK);
 
+                        //region [Tools]
+
                         //region [wood]
                         entries.add(ModItems.PRIXILED_WOODEN_SWORD);
                         entries.add(ModItems.PRIXILED_WOODEN_PICKAXE);
@@ -80,6 +82,67 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILED_NETHERITE_AXE);
                         entries.add(ModItems.PRIXILED_NETHERITE_SHOVEL);
                         entries.add(ModItems.PRIXILED_NETHERITE_HOE);
+                        //endregion
+
+                        //endregion
+
+                        //region [Armors]
+
+                        //region [leather]
+                        entries.add(ModItems.PRIXILED_LEATHER_HELMET);
+                        entries.add(ModItems.PRIXILED_LEATHER_CHESTPLATE);
+                        entries.add(ModItems.PRIXILED_LEATHER_LEGGINGS);
+                        entries.add(ModItems.PRIXILED_LEATHER_BOOTS);
+                        //endregion
+
+                        //region [chainmail]
+                        entries.add(ModItems.PRIXILED_CHAINMAIL_HELMET);
+                        entries.add(ModItems.PRIXILED_CHAINMAIL_CHESTPLATE);
+                        entries.add(ModItems.PRIXILED_CHAINMAIL_LEGGINGS);
+                        entries.add(ModItems.PRIXILED_CHAINMAIL_BOOTS);
+                        //endregion
+
+                        //region [copper]
+                        /* 1.21.9+
+                        entries.add(ModItems.PRIXILED_COPPER_HELMET);
+                        entries.add(ModItems.PRIXILED_COPPER_CHESTPLATE);
+                        entries.add(ModItems.PRIXILED_COPPER_LEGGINGS);
+                        entries.add(ModItems.PRIXILED_COPPER_BOOTS);
+                         */
+                        //endregion
+
+                        //region [iron]
+                        entries.add(ModItems.PRIXILED_IRON_HELMET);
+                        entries.add(ModItems.PRIXILED_IRON_CHESTPLATE);
+                        entries.add(ModItems.PRIXILED_IRON_LEGGINGS);
+                        entries.add(ModItems.PRIXILED_IRON_BOOTS);
+                        //endregion
+
+                        //region [golden]
+                        entries.add(ModItems.PRIXILED_GOLDEN_HELMET);
+                        entries.add(ModItems.PRIXILED_GOLDEN_CHESTPLATE);
+                        entries.add(ModItems.PRIXILED_GOLDEN_LEGGINGS);
+                        entries.add(ModItems.PRIXILED_GOLDEN_BOOTS);
+                        //endregion
+
+                        //region [diamond]
+                        entries.add(ModItems.PRIXILED_DIAMOND_HELMET);
+                        entries.add(ModItems.PRIXILED_DIAMOND_CHESTPLATE);
+                        entries.add(ModItems.PRIXILED_DIAMOND_LEGGINGS);
+                        entries.add(ModItems.PRIXILED_DIAMOND_BOOTS);
+                        //endregion
+
+                        //region [netherite]
+                        entries.add(ModItems.PRIXILED_NETHERITE_HELMET);
+                        entries.add(ModItems.PRIXILED_NETHERITE_CHESTPLATE);
+                        entries.add(ModItems.PRIXILED_NETHERITE_LEGGINGS);
+                        entries.add(ModItems.PRIXILED_NETHERITE_BOOTS);
+                        //endregion
+
+                        //region [turtle]
+                        entries.add(ModItems.PRIXILED_TURTLE_HELMET);
+                        //endregion
+
                         //endregion
 
                         //endregion

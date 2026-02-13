@@ -59,5 +59,38 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_GOLDEN_HOE)
                 .add(ModItems.PRIXILED_DIAMOND_HOE)
                 .add(ModItems.PRIXILED_NETHERITE_HOE);
+
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.PRIXILED_LEATHER_HELMET)
+                .add(ModItems.PRIXILED_LEATHER_CHESTPLATE)
+                .add(ModItems.PRIXILED_LEATHER_LEGGINGS)
+                .add(ModItems.PRIXILED_LEATHER_BOOTS)
+                .add(ModItems.PRIXILED_CHAINMAIL_HELMET)
+                .add(ModItems.PRIXILED_CHAINMAIL_CHESTPLATE)
+                .add(ModItems.PRIXILED_CHAINMAIL_LEGGINGS)
+                .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
+                .add(ModItems.PRIXILED_IRON_HELMET)
+                .add(ModItems.PRIXILED_IRON_CHESTPLATE)
+                .add(ModItems.PRIXILED_IRON_LEGGINGS)
+                .add(ModItems.PRIXILED_IRON_BOOTS)
+                /* 1.21.9+
+                .add(ModItems.PRIXILED_COPPER_HELMET)
+                .add(ModItems.PRIXILED_COPPER_CHESTPLATE)
+                .add(ModItems.PRIXILED_COPPER_LEGGINGS)
+                .add(ModItems.PRIXILED_COPPER_BOOTS)
+                 */
+                .add(ModItems.PRIXILED_GOLDEN_HELMET)
+                .add(ModItems.PRIXILED_GOLDEN_CHESTPLATE)
+                .add(ModItems.PRIXILED_GOLDEN_LEGGINGS)
+                .add(ModItems.PRIXILED_GOLDEN_BOOTS)
+                .add(ModItems.PRIXILED_DIAMOND_HELMET)
+                .add(ModItems.PRIXILED_DIAMOND_CHESTPLATE)
+                .add(ModItems.PRIXILED_DIAMOND_LEGGINGS)
+                .add(ModItems.PRIXILED_DIAMOND_BOOTS)
+                .add(ModItems.PRIXILED_NETHERITE_HELMET)
+                .add(ModItems.PRIXILED_NETHERITE_CHESTPLATE)
+                .add(ModItems.PRIXILED_NETHERITE_LEGGINGS)
+                .add(ModItems.PRIXILED_NETHERITE_BOOTS)
+                .add(ModItems.PRIXILED_TURTLE_HELMET);
     }
 }

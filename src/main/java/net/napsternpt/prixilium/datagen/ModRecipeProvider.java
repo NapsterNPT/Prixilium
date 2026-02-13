@@ -89,6 +89,65 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //endregion
 
+        //region [Armors]
+
+        //region [leather]
+        offerPrixiliumUpgrade(exporter, Items.LEATHER_HELMET, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.LEATHER_CHESTPLATE, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.LEATHER_LEGGINGS, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.LEATHER_BOOTS, RecipeCategory.COMBAT);
+        //endregion
+
+        //region [chainmail]
+        offerPrixiliumUpgrade(exporter, Items.CHAINMAIL_HELMET, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.CHAINMAIL_CHESTPLATE, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.CHAINMAIL_LEGGINGS, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.CHAINMAIL_BOOTS, RecipeCategory.COMBAT);
+        //endregion
+
+        //region [copper armor]
+        /* 1.21.9+
+        offerPrixiliumUpgrade(exporter, ModItems.COPPER_HELMET, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, ModItems.COPPER_CHESTPLATE, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, ModItems.COPPER_LEGGINGS, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, ModItems.COPPER_BOOTS, RecipeCategory.COMBAT);
+         */
+        //endregion
+
+        //region [iron]
+        offerPrixiliumUpgrade(exporter, Items.IRON_HELMET, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.IRON_CHESTPLATE, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.IRON_LEGGINGS, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.IRON_BOOTS, RecipeCategory.COMBAT);
+        //endregion
+
+        //region [golden]
+        offerPrixiliumUpgrade(exporter, Items.GOLDEN_HELMET, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.GOLDEN_CHESTPLATE, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.GOLDEN_LEGGINGS, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.GOLDEN_BOOTS, RecipeCategory.COMBAT);
+        //endregion
+
+        //region [diamond]
+        offerPrixiliumUpgrade(exporter, Items.DIAMOND_HELMET, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.DIAMOND_CHESTPLATE, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.DIAMOND_LEGGINGS, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.DIAMOND_BOOTS, RecipeCategory.COMBAT);
+        //endregion
+
+        //region [netherite]
+        offerPrixiliumUpgrade(exporter, Items.NETHERITE_HELMET, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT);
+        //endregion
+
+        //region [turtle]
+        offerPrixiliumUpgrade(exporter, Items.TURTLE_HELMET, RecipeCategory.COMBAT);
+        //endregion
+
+        //endregion
+
         // Blocks
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_GRASS)
                 .input(Items.GRASS_BLOCK)

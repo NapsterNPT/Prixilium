@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "prixilium:prixilium"
+  },
+  "base": {
+    "item": "minecraft:chainmail_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixiled_chainmail_boots"
+  },
+  "template": {
+    "item": "prixilium:prixilium_upgrade_smithing_template"
+  }
+}

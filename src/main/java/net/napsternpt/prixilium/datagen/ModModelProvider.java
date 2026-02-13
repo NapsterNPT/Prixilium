@@ -3,6 +3,7 @@ package net.napsternpt.prixilium.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.item.ModItems;
@@ -125,6 +126,65 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HOE, Models.HANDHELD);
+        //endregion
+
+        //endregion
+
+        //region [Armors]
+
+        //region [leather]
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_LEATHER_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_LEATHER_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_LEATHER_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_LEATHER_BOOTS));
+        //endregion
+
+        //region [chainmail]
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_CHAINMAIL_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_CHAINMAIL_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_CHAINMAIL_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_CHAINMAIL_BOOTS));
+        //endregion
+
+        //region [copper]
+        /* 1.21.9+
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_COPPER_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_COPPER_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_COPPER_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_COPPER_BOOTS));
+         */
+        //endregion
+
+        //region [iron]
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_IRON_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_IRON_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_IRON_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_IRON_BOOTS));
+        //endregion
+
+        //region [golden]
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_GOLDEN_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_GOLDEN_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_GOLDEN_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_GOLDEN_BOOTS));
+        //endregion
+
+        //region [diamond]
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_DIAMOND_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_DIAMOND_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_DIAMOND_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_DIAMOND_BOOTS));
+        //endregion
+
+        //region [netherite]
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_NETHERITE_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_NETHERITE_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_NETHERITE_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_NETHERITE_BOOTS));
+        //endregion
+
+        //region [turtle]
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_TURTLE_HELMET));
         //endregion
 
         //endregion

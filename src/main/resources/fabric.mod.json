@@ -3,7 +3,7 @@
 	"id": "prixilium",
 	"version": "${version}",
 	"name": "Prixilium",
-	"description": "Prixilium, a mod that adds a whole new biome, blocks, and items.",
+	"description": "Prixilium, a mod that adds new blocks and items, all starting from a virus.",
 	"authors": [
 		"NapsterNPT"
 	],
