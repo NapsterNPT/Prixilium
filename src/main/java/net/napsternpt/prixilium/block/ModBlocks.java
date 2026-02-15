@@ -18,6 +18,7 @@ public class ModBlocks {
                     .strength(0.6f)
                     .sounds(BlockSoundGroup.GRASS)
                     .mapColor(MapColor.DARK_AQUA)
+                    .allowsSpawning((state, world, pos, type) -> false)
             ));
 
     public static final Block PRIXILIUM = registerBlock("prixilium",
@@ -29,6 +30,7 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.GRASS)
                     .offset(AbstractBlock.OffsetType.XYZ)
                     .pistonBehavior(PistonBehavior.DESTROY)
+                    .luminance(state -> 7)
             ));
 
     public static final Block PRIXILIUM_LOG = registerBlock("prixilium_log",
@@ -51,6 +53,7 @@ public class ModBlocks {
                     .mapColor(MapColor.GOLD)
                     .ticksRandomly()
                     .nonOpaque()
+                    .luminance(state -> 7)
             ));
 
     public static final Block PRIXILIUM_PLANKS = registerBlock("prixilium_planks",

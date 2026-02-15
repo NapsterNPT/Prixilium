@@ -195,22 +195,22 @@ public class ModItems {
     //region [leather]
     public static final Item PRIXILED_LEATHER_HELMET = registerItem("prixiled_leather_helmet", new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.HELMET, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0x955639, false))
+            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
     ));
 
     public static final Item PRIXILED_LEATHER_CHESTPLATE = registerItem("prixiled_leather_chestplate", new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0x955639, false))
+            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
     ));
 
     public static final Item PRIXILED_LEATHER_LEGGINGS = registerItem("prixiled_leather_leggings", new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.LEGGINGS, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0x955639, false))
+            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
     ));
 
     public static final Item PRIXILED_LEATHER_BOOTS = registerItem("prixiled_leather_boots", new ArmorItem(ArmorMaterials.LEATHER, ArmorItem.Type.BOOTS, new Item.Settings()
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
-            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0x955639, false))
+            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
     ));
     //endregion
 
