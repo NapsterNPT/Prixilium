@@ -63,7 +63,6 @@
     }
   ],
   "textures": {
-    "layer0": "prixilium:item/prixiled_leather_helmet",
-    "layer1": "prixilium:item/prixiled_leather_helmet_overlay"
+    "layer0": "prixilium:item/prixiled_leather_helmet"
   }
 }

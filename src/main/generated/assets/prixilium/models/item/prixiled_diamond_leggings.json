@@ -44,7 +44,7 @@
       }
     },
     {
-      "model": "prixilium:item/prixiled_diamond_leggings_diamond_darker_trim",
+      "model": "prixilium:item/prixiled_diamond_leggings_diamond_trim",
       "predicate": {
         "trim_type": 0.8
       }

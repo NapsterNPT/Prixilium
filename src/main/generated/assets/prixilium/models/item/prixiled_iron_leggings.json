@@ -8,7 +8,7 @@
       }
     },
     {
-      "model": "prixilium:item/prixiled_iron_leggings_iron_darker_trim",
+      "model": "prixilium:item/prixiled_iron_leggings_iron_trim",
       "predicate": {
         "trim_type": 0.2
       }

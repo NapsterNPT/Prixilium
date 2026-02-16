@@ -14,7 +14,7 @@
       }
     },
     {
-      "model": "prixilium:item/prixiled_netherite_leggings_netherite_darker_trim",
+      "model": "prixilium:item/prixiled_netherite_leggings_netherite_trim",
       "predicate": {
         "trim_type": 0.3
       }

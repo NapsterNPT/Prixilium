@@ -32,7 +32,7 @@
       }
     },
     {
-      "model": "prixilium:item/prixiled_golden_helmet_gold_darker_trim",
+      "model": "prixilium:item/prixiled_golden_helmet_gold_trim",
       "predicate": {
         "trim_type": 0.6
       }
