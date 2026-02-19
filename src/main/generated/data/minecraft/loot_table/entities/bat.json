@@ -19,7 +19,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "prixilium:prixilium_virus"
+          "name": "prixilium:prixilium_virus_alive"
         }
       ],
       "rolls": 1.0

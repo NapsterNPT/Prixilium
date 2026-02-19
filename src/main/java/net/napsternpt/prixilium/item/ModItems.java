@@ -8,10 +8,15 @@ import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
+import net.napsternpt.prixilium.item.custom.*;
 
 public class ModItems {
-    public static final Item PRIXILIUM_VIRUS = registerItem("prixilium_virus", new Item(new Item.Settings()));
+    public static final Item PRIXILIUM_VIRUS_ALIVE = registerItem("prixilium_virus_alive", new PrixiliumVirusAliveItem(new Item.Settings()
+            .maxCount(1)
+            .maxDamage(100)
+    ));
+    public static final Item PRIXILIUM_VIRUS_DEAD = registerItem("prixilium_virus_dead", new Item(new Item.Settings()));
+
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()));
     public static final Item PRIXILIUM_HOOK = registerItem("prixilium_hook", new PrixiliumHookItem(new Item.Settings()
             .maxDamage(32)
@@ -194,21 +199,25 @@ public class ModItems {
 
     //region [leather]
     public static final Item PRIXILED_LEATHER_HELMET = registerItem("prixiled_leather_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_LEATHER, ArmorItem.Type.HELMET, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
     ));
 
     public static final Item PRIXILED_LEATHER_CHESTPLATE = registerItem("prixiled_leather_chestplate", new ArmorItem(ModArmorMaterials.PRIXILIUM_LEATHER, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
     ));
 
     public static final Item PRIXILED_LEATHER_LEGGINGS = registerItem("prixiled_leather_leggings", new ArmorItem(ModArmorMaterials.PRIXILIUM_LEATHER, ArmorItem.Type.LEGGINGS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
     ));
 
     public static final Item PRIXILED_LEATHER_BOOTS = registerItem("prixiled_leather_boots", new ArmorItem(ModArmorMaterials.PRIXILIUM_LEATHER, ArmorItem.Type.BOOTS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
     ));
@@ -216,18 +225,22 @@ public class ModItems {
 
     //region [chainmail]
     public static final Item PRIXILED_CHAINMAIL_HELMET = registerItem("prixiled_chainmail_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_CHAIN, ArmorItem.Type.HELMET, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
 
     public static final Item PRIXILED_CHAINMAIL_CHESTPLATE = registerItem("prixiled_chainmail_chestplate", new ArmorItem(ModArmorMaterials.PRIXILIUM_CHAIN, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
 
     public static final Item PRIXILED_CHAINMAIL_LEGGINGS = registerItem("prixiled_chainmail_leggings", new ArmorItem(ModArmorMaterials.PRIXILIUM_CHAIN, ArmorItem.Type.LEGGINGS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
 
     public static final Item PRIXILED_CHAINMAIL_BOOTS = registerItem("prixiled_chainmail_boots", new ArmorItem(ModArmorMaterials.PRIXILIUM_CHAIN, ArmorItem.Type.BOOTS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
     //endregion
@@ -235,18 +248,22 @@ public class ModItems {
     //region [copper]
     /* 1.21.9+
     public static final Item PRIXILED_COPPER_HELMET = registerItem("prixiled_copper_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_COPPER, ArmorItem.Type.HELMET, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
 
     public static final Item PRIXILED_COPPER_CHESTPLATE = registerItem("prixiled_copper_chestplate", new ArmorItem(ModArmorMaterials.PRIXILIUM_COPPER, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
 
     public static final Item PRIXILED_COPPER_LEGGINGS = registerItem("prixiled_copper_leggings", new ArmorItem(ModArmorMaterials.PRIXILIUM_COPPER, ArmorItem.Type.LEGGINGS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
 
     public static final Item PRIXILED_COPPER_BOOTS = registerItem("prixiled_copper_boots", new ArmorItem(ModArmorMaterials.PRIXILIUM_COPPER, ArmorItem.Type.BOOTS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
      */
@@ -254,63 +271,79 @@ public class ModItems {
 
     //region [iron]
     public static final Item PRIXILED_IRON_HELMET = registerItem("prixiled_iron_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_IRON, ArmorItem.Type.HELMET, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_IRON_CHESTPLATE = registerItem("prixiled_iron_chestplate", new ArmorItem(ModArmorMaterials.PRIXILIUM_IRON, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_IRON_LEGGINGS = registerItem("prixiled_iron_leggings", new ArmorItem(ModArmorMaterials.PRIXILIUM_IRON, ArmorItem.Type.LEGGINGS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_IRON_BOOTS = registerItem("prixiled_iron_boots", new ArmorItem(ModArmorMaterials.PRIXILIUM_IRON, ArmorItem.Type.BOOTS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
     //endregion
 
     //region [gold]
     public static final Item PRIXILED_GOLDEN_HELMET = registerItem("prixiled_golden_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_GOLD, ArmorItem.Type.HELMET, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_GOLDEN_CHESTPLATE = registerItem("prixiled_golden_chestplate", new ArmorItem(ModArmorMaterials.PRIXILIUM_GOLD, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_GOLDEN_LEGGINGS = registerItem("prixiled_golden_leggings", new ArmorItem(ModArmorMaterials.PRIXILIUM_GOLD, ArmorItem.Type.LEGGINGS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_GOLDEN_BOOTS = registerItem("prixiled_golden_boots", new ArmorItem(ModArmorMaterials.PRIXILIUM_GOLD, ArmorItem.Type.BOOTS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
     //endregion
 
     //region [diamond]
     public static final Item PRIXILED_DIAMOND_HELMET = registerItem("prixiled_diamond_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_DIAMOND, ArmorItem.Type.HELMET, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_DIAMOND_CHESTPLATE = registerItem("prixiled_diamond_chestplate", new ArmorItem(ModArmorMaterials.PRIXILIUM_DIAMOND, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_DIAMOND_LEGGINGS = registerItem("prixiled_diamond_leggings", new ArmorItem(ModArmorMaterials.PRIXILIUM_DIAMOND, ArmorItem.Type.LEGGINGS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
 
     public static final Item PRIXILED_DIAMOND_BOOTS = registerItem("prixiled_diamond_boots", new ArmorItem(ModArmorMaterials.PRIXILIUM_DIAMOND, ArmorItem.Type.BOOTS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
     //endregion
 
     //region [netherite]
     public static final Item PRIXILED_NETHERITE_HELMET = registerItem("prixiled_netherite_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_NETHERITE, ArmorItem.Type.HELMET, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .fireproof()
     ));
 
     public static final Item PRIXILED_NETHERITE_CHESTPLATE = registerItem("prixiled_netherite_chestplate", new ArmorItem(ModArmorMaterials.PRIXILIUM_NETHERITE, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .fireproof()
     ));
 
     public static final Item PRIXILED_NETHERITE_LEGGINGS = registerItem("prixiled_netherite_leggings", new ArmorItem(ModArmorMaterials.PRIXILIUM_NETHERITE, ArmorItem.Type.LEGGINGS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .fireproof()
     ));
 
     public static final Item PRIXILED_NETHERITE_BOOTS = registerItem("prixiled_netherite_boots", new ArmorItem(ModArmorMaterials.PRIXILIUM_NETHERITE, ArmorItem.Type.BOOTS, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
             .fireproof()
     ));
@@ -318,6 +351,7 @@ public class ModItems {
 
     //region [turtle]
     public static final Item PRIXILED_TURTLE_HELMET = registerItem("prixiled_turtle_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_TURTLE, ArmorItem.Type.HELMET, new Item.Settings()
+            .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
     //endregion
 

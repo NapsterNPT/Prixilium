@@ -2,7 +2,8 @@
   "itemgroup.prixilium.prixilium": "Prixilium",
 
 
-  "item.prixilium.prixilium_virus": "Prixilium Virus",
+  "item.prixilium.prixilium_virus_alive": "Prixilium Virus (Alive)",
+  "item.prixilium.prixilium_virus_dead": "Prixilium Virus (Dead)",
   "item.prixilium.prixilium_upgrade_smithing_template": "Prixilium Smithing Template",
   "item.prixilium.prixilium_hook": "Prixilium Hook",
 

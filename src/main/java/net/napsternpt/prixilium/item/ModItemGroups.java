@@ -20,7 +20,8 @@ public class ModItemGroups {
 
                         //region [Items]
 
-                        entries.add(ModItems.PRIXILIUM_VIRUS);
+                        entries.add(ModItems.PRIXILIUM_VIRUS_ALIVE);
+                        entries.add(ModItems.PRIXILIUM_VIRUS_DEAD);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_HOOK);
 
