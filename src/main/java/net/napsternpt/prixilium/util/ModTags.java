@@ -9,12 +9,14 @@ import net.napsternpt.prixilium.Prixilium;
 
 public class ModTags {
     public static class Blocks {
+
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name));
         }
     }
 
     public static class Items {
+        public static final TagKey<Item> PREVENT_PRIXILIUM_SLOWNESS = createTag("prevent_prixilium_slowness");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name));

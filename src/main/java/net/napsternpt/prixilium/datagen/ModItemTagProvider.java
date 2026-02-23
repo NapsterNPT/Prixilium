@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -69,16 +70,16 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_CHAINMAIL_CHESTPLATE)
                 .add(ModItems.PRIXILED_CHAINMAIL_LEGGINGS)
                 .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
-                .add(ModItems.PRIXILED_IRON_HELMET)
-                .add(ModItems.PRIXILED_IRON_CHESTPLATE)
-                .add(ModItems.PRIXILED_IRON_LEGGINGS)
-                .add(ModItems.PRIXILED_IRON_BOOTS)
                 /* 1.21.9+
                 .add(ModItems.PRIXILED_COPPER_HELMET)
                 .add(ModItems.PRIXILED_COPPER_CHESTPLATE)
                 .add(ModItems.PRIXILED_COPPER_LEGGINGS)
                 .add(ModItems.PRIXILED_COPPER_BOOTS)
                  */
+                .add(ModItems.PRIXILED_IRON_HELMET)
+                .add(ModItems.PRIXILED_IRON_CHESTPLATE)
+                .add(ModItems.PRIXILED_IRON_LEGGINGS)
+                .add(ModItems.PRIXILED_IRON_BOOTS)
                 .add(ModItems.PRIXILED_GOLDEN_HELMET)
                 .add(ModItems.PRIXILED_GOLDEN_CHESTPLATE)
                 .add(ModItems.PRIXILED_GOLDEN_LEGGINGS)
@@ -92,5 +93,15 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_NETHERITE_LEGGINGS)
                 .add(ModItems.PRIXILED_NETHERITE_BOOTS)
                 .add(ModItems.PRIXILED_TURTLE_HELMET);
+
+                // Mod Tags
+        getOrCreateTagBuilder(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)
+                .add(ModItems.PRIXILED_LEATHER_BOOTS)
+                .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
+                //1.21.9+ .add(ModItems.PRIXILED_COPPER_BOOTS)
+                .add(ModItems.PRIXILED_IRON_BOOTS)
+                .add(ModItems.PRIXILED_GOLDEN_BOOTS)
+                .add(ModItems.PRIXILED_DIAMOND_BOOTS)
+                .add(ModItems.PRIXILED_NETHERITE_BOOTS);
     }
 }

@@ -1,7 +1,8 @@
-// 1.21.1	2026-02-19T18:50:19.4390191	Prixilium/Tags for minecraft:item
+// 1.21.1	2026-02-23T20:27:24.3275546	Prixilium/Tags for minecraft:item
 7512ba20000d013e85b8885a21f381b8e3eb2544 data\minecraft\tags\item\trimmable_armor.json
 ef2f33c4e7abf37ec6c32e5402a88ffe52b85e9b data\minecraft\tags\item\axes.json
 3a88ebd0f7741d262bd3859eb328d885b27eb082 data\minecraft\tags\item\shovels.json
 0cb5ed74c08a9100abee25fc10566bc9fbd74601 data\minecraft\tags\item\pickaxes.json
 394c767fa96223bc93f44a0e2c441ee9fe516c09 data\minecraft\tags\item\hoes.json
+fd9608255448618e4773c501caeb8c3ca6977b33 data\prixilium\tags\item\prevent_prixilium_slowness.json
 5ca6a5a667c63e4f48873ba0b6f954907327df49 data\minecraft\tags\item\swords.json
