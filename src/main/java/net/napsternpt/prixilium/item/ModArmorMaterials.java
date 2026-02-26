@@ -26,7 +26,8 @@ public class ModArmorMaterials {
                 map.put(ArmorItem.Type.HELMET, 1);
                 map.put(ArmorItem.Type.BODY, 3);
             }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, () -> Ingredient.ofItems(ModBlocks.PRIXILIUM),
-                    List.of(new ArmorMaterial.Layer(Identifier.of(Prixilium.MOD_ID, "prixiled_leather"))), 0, 0));
+                    List.of(new ArmorMaterial.Layer(Identifier.of(Prixilium.MOD_ID, "prixiled_leather"), "", true),
+                            new ArmorMaterial.Layer(Identifier.of(Prixilium.MOD_ID, "prixiled_leather"), "_overlay", false)), 0, 0));
 
     public static final RegistryEntry<ArmorMaterial> PRIXILIUM_CHAIN = registerArmorMaterial("prixiled_chainmail",
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
