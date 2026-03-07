@@ -144,6 +144,13 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILED_TURTLE_HELMET);
                         //endregion
 
+                        //region [horse]
+                        entries.add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
+                        // 1.21.9+ entries.add(ModItems.PRIXILED_COPPER_HORSE_ARMOR);
+                        entries.add(ModItems.PRIXILED_IRON_HORSE_ARMOR);
+                        entries.add(ModItems.PRIXILED_GOLDEN_HORSE_ARMOR);
+                        entries.add(ModItems.PRIXILED_DIAMOND_HORSE_ARMOR);
+                        // 1.21.11+ entries.add(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR);
                         //endregion
 
                         //endregion

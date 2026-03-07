@@ -12,6 +12,7 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.item.ModItems;
 
@@ -144,6 +145,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         //region [turtle]
         offerPrixiliumUpgrade(exporter, Items.TURTLE_HELMET, RecipeCategory.COMBAT);
+        //endregion
+
+        //region [horse]
+        offerPrixiliumUpgrade(exporter, Items.LEATHER_HORSE_ARMOR, RecipeCategory.COMBAT);
+        // 1.21.9+ offerPrixiliumUpgrade(exporter, Items.COPPER_LEATHER_ARMOR, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.IRON_HORSE_ARMOR, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.GOLDEN_HORSE_ARMOR, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.DIAMOND_HORSE_ARMOR, RecipeCategory.COMBAT);
+        // 1.21.11+ offerPrixiliumUpgrade(exporter, Items.NETHERITE_LEATHER_ARMOR, RecipeCategory.COMBAT);
         //endregion
 
         //endregion

@@ -352,8 +352,41 @@ public class ModItems {
     //region [turtle]
     public static final Item PRIXILED_TURTLE_HELMET = registerItem("prixiled_turtle_helmet", new ArmorItem(ModArmorMaterials.PRIXILIUM_TURTLE, ArmorItem.Type.HELMET, new Item.Settings()
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+    ));
     //endregion
+
+    //region [horse]
+    public static final Item PRIXILED_LEATHER_HORSE_ARMOR = registerItem("prixiled_leather_horse_armor", new AnimalArmorItem(ModArmorMaterials.PRIXILIUM_LEATHER, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings()
+            .maxCount(1)
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540, false))
+    ));
+    /* 1.21.9+
+    public static final Item PRIXILED_COPPER_HORSE_ARMOR = registerItem("prixiled_copper_horse_armor", new AnimalArmorItem(ModArmorMaterials.PRIXILIUM_COPPER, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings()
+            .maxCount(1)
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+            ));
+    */
+    public static final Item PRIXILED_IRON_HORSE_ARMOR = registerItem("prixiled_iron_horse_armor", new AnimalArmorItem(ModArmorMaterials.PRIXILIUM_IRON, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings()
+            .maxCount(1)
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+    ));
+    public static final Item PRIXILED_GOLDEN_HORSE_ARMOR = registerItem("prixiled_golden_horse_armor", new AnimalArmorItem(ModArmorMaterials.PRIXILIUM_GOLD, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings()
+            .maxCount(1)
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+    ));
+    public static final Item PRIXILED_DIAMOND_HORSE_ARMOR = registerItem("prixiled_diamond_horse_armor", new AnimalArmorItem(ModArmorMaterials.PRIXILIUM_DIAMOND, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings()
+            .maxCount(1)
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+    ));
+    /* 1.21.11+
+    public static final Item PRIXILED_NETHERITE_HORSE_ARMOR = registerItem("prixiled_netherite_horse_armor", new AnimalArmorItem(ModArmorMaterials.PRIXILIUM_NETHERITE, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings()
+            .maxCount(1)
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))));
+    */
+    //endregion
+
 
     //endregion
 

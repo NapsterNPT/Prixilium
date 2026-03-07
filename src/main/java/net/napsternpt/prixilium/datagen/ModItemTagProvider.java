@@ -98,9 +98,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_LEATHER_HELMET)
                 .add(ModItems.PRIXILED_LEATHER_CHESTPLATE)
                 .add(ModItems.PRIXILED_LEATHER_LEGGINGS)
-                .add(ModItems.PRIXILED_LEATHER_BOOTS);
+                .add(ModItems.PRIXILED_LEATHER_BOOTS)
+                .add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
 
-                // Mod Tags
+        // Mod Tags
         getOrCreateTagBuilder(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)
                 .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
