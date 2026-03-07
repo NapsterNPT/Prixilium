@@ -132,6 +132,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HOE, Models.HANDHELD);
         //endregion
 
+        itemModelGenerator.register(ModItems.PRIXILED_MACE, Models.HANDHELD);
+
         //endregion
 
         //region [Armors]

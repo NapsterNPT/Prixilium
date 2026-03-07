@@ -101,6 +101,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)
                 .add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
 
+        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItems.PRIXILED_BOW);
+
+        getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE)
+                .add(ModItems.PRIXILED_MACE);
+
         // Mod Tags
         getOrCreateTagBuilder(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)

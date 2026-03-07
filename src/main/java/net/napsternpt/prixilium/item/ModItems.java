@@ -7,6 +7,7 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
+import net.minecraft.util.Rarity;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.item.custom.*;
 
@@ -191,6 +192,19 @@ public class ModItems {
             .fireproof()
     ));
     //endregion
+
+    public static final Item PRIXILED_BOW = registerItem("prixiled_bow", new BowItem(new Item.Settings()
+            .maxCount(1)
+            .maxDamage(384)
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+    ));
+
+    public static final Item PRIXILED_MACE = registerItem("prixiled_mace", new MaceItem(new Item.Settings()
+            .maxCount(1)
+            .rarity(Rarity.EPIC)
+            .attributeModifiers(MaceItem.createAttributeModifiers())
+            .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
+    ));
 
     //endregion
 

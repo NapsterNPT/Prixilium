@@ -85,6 +85,9 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILED_NETHERITE_HOE);
                         //endregion
 
+                        entries.add(ModItems.PRIXILED_BOW);
+                        entries.add(ModItems.PRIXILED_MACE);
+
                         //endregion
 
                         //region [Armors]

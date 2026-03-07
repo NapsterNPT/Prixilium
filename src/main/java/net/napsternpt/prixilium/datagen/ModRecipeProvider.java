@@ -88,6 +88,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerPrixiliumUpgrade(exporter, Items.NETHERITE_HOE, RecipeCategory.TOOLS);
         //endregion
 
+        offerPrixiliumUpgrade(exporter, Items.BOW, RecipeCategory.COMBAT);
+        offerPrixiliumUpgrade(exporter, Items.MACE, RecipeCategory.COMBAT);
+
         //endregion
 
         //region [Armors]

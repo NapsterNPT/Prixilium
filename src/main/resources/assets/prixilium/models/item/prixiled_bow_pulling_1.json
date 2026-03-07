@@ -1,0 +1,6 @@
+{
+  "parent": "prixilium:item/prixiled_bow",
+  "textures": {
+    "layer0": "prixilium:item/prixiled_bow_pulling_1"
+  }
+}
