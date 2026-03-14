@@ -114,6 +114,13 @@ public class ModBlocks {
                     .mapColor(MapColor.CYAN)
             ));
 
+    public static final Block PRIXILIUM_LAMP = registerBlock("prixilium_lamp",
+            new PrixiliumLampBlock(AbstractBlock.Settings.create()
+                    .strength(0.5F)
+                    .sounds(BlockSoundGroup.GLASS)
+                    .mapColor(MapColor.LIGHT_GRAY)
+                    .luminance(state -> state.get(PrixiliumLampBlock.LIGHT))
+            ));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

@@ -7,6 +7,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.block.custom.PrixiliumLampBlock;
 import net.napsternpt.prixilium.item.ModItems;
 
 import java.util.Optional;
@@ -63,6 +64,44 @@ public class ModModelProvider extends FabricModelProvider {
 
         BlockStateModelGenerator.BlockTexturePool prixiliumBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_BRICKS);
         prixiliumBricksPool.wall(ModBlocks.PRIXILIUM_BRICKS_WALL);
+
+        Identifier lamp0Identifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector);
+        Identifier lamp1Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_1", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp2Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_2", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp3Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_3", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp4Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_4", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp5Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_5", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp6Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_6", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp7Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_7", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp8Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_8", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp9Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_9", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp10Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_10", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp11Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_11", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp12Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_12", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp13Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_13", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp14Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_14", Models.CUBE_ALL, TextureMap::all);
+        Identifier lamp15Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_15", Models.CUBE_ALL, TextureMap::all);
+
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.PRIXILIUM_LAMP)
+                .coordinate(BlockStateVariantMap.create(PrixiliumLampBlock.LIGHT)
+                        .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, lamp0Identifier))
+                        .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, lamp1Identifier))
+                        .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, lamp2Identifier))
+                        .register(3, BlockStateVariant.create().put(VariantSettings.MODEL, lamp3Identifier))
+                        .register(4, BlockStateVariant.create().put(VariantSettings.MODEL, lamp4Identifier))
+                        .register(5, BlockStateVariant.create().put(VariantSettings.MODEL, lamp5Identifier))
+                        .register(6, BlockStateVariant.create().put(VariantSettings.MODEL, lamp6Identifier))
+                        .register(7, BlockStateVariant.create().put(VariantSettings.MODEL, lamp7Identifier))
+                        .register(8, BlockStateVariant.create().put(VariantSettings.MODEL, lamp8Identifier))
+                        .register(9, BlockStateVariant.create().put(VariantSettings.MODEL, lamp9Identifier))
+                        .register(10, BlockStateVariant.create().put(VariantSettings.MODEL, lamp10Identifier))
+                        .register(11, BlockStateVariant.create().put(VariantSettings.MODEL, lamp11Identifier))
+                        .register(12, BlockStateVariant.create().put(VariantSettings.MODEL, lamp12Identifier))
+                        .register(13, BlockStateVariant.create().put(VariantSettings.MODEL, lamp13Identifier))
+                        .register(14, BlockStateVariant.create().put(VariantSettings.MODEL, lamp14Identifier))
+                        .register(15, BlockStateVariant.create().put(VariantSettings.MODEL, lamp15Identifier))
+                )
+        );
     }
 
     @Override

@@ -2,6 +2,7 @@ package net.napsternpt.prixilium.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -196,16 +197,30 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
 
         offer2x2CompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS, ModBlocks.PRIXILIUM);
-        ShapedRecipeJsonBuilder.create(
-                        RecipeCategory.BUILDING_BLOCKS,
-                        ModBlocks.PRIXILIUM_BRICKS_WALL,
-                        6
-                )
-                .pattern("###")
-                .pattern("###")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS_WALL, 6)
                 .input('#', ModBlocks.PRIXILIUM_BRICKS)
+                .pattern("###")
+                .pattern("###")
                 .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
                 .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP, 1)
+                .input('#', ModBlocks.PRIXILIUM)
+                .input('!', Items.REDSTONE)
+                .input('%', Blocks.GLOWSTONE)
+                .pattern("#!#")
+                .pattern("!%!")
+                .pattern("#!#")
+                .criterion(hasItem(ModBlocks.PRIXILIUM_LAMP), conditionsFromItem(ModBlocks.PRIXILIUM_LAMP))
+                .offerTo(exporter, Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_glowstone"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP, 1)
+                .input('#', ModBlocks.PRIXILIUM)
+                .input('!', Blocks.REDSTONE_LAMP)
+                .pattern(" # ")
+                .pattern("#!#")
+                .pattern(" # ")
+                .criterion(hasItem(ModBlocks.PRIXILIUM_LAMP), conditionsFromItem(ModBlocks.PRIXILIUM_LAMP))
+                .offerTo(exporter, Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_redstone_lamp"));
     }
 
     private void offerPrixiliumUpgrade(RecipeExporter exporter, Item input, RecipeCategory category) {

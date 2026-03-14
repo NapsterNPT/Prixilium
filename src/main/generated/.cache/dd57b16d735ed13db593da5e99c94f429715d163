@@ -1,6 +1,7 @@
-// 1.21.1	2026-03-07T22:04:06.4264022	Prixilium/Block Loot Tables
+// 1.21.1	2026-03-14T15:04:00.8060452	Prixilium/Block Loot Tables
 b22ecca7e1f64659b1b8ae78c8dabc2f778b95b7 data\prixilium\loot_table\blocks\prixilium_slab.json
 3c1e4a3cc6ab28fb7754c63a9901633bb1991ed7 data\prixilium\loot_table\blocks\prixilium_bricks.json
+0a45661b95af4f21a0c122d72e4062b4dd1b99e9 data\prixilium\loot_table\blocks\prixilium_lamp.json
 1bcdf9e830977ddaef2ab987a120c3e651b48b0e data\prixilium\loot_table\blocks\prixilium_planks.json
 3b33db19a1e9bfb230d117be64fe582813b3766f data\prixilium\loot_table\blocks\prixilium_fence.json
 fb3fe77b4ccc747ea6cf168b81a6896b5facd005 data\prixilium\loot_table\blocks\prixilium_leaves.json
