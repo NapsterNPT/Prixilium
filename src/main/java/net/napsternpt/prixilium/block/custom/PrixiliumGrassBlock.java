@@ -85,7 +85,7 @@ public class PrixiliumGrassBlock extends Block {
             }
 
             if (canSpreadTo(targetState) && canSurvive(state, world, targetPos)) {
-                world.setBlockState(targetPos, this.getDefaultState());
+                world.setBlockState(targetPos, getDefaultState());
                 continue;
             }
 

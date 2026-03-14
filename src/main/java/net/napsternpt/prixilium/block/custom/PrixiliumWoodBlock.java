@@ -31,7 +31,7 @@ public class PrixiliumWoodBlock extends PillarBlock {
             BlockState targetState = world.getBlockState(targetPos);
 
             if (canSpreadTo(targetState)) {
-                BlockState newState = this.getDefaultState();
+                BlockState newState = getDefaultState();
                 if (targetState.contains(AXIS)) {
                     newState = newState.with(AXIS, targetState.get(AXIS));
                 }

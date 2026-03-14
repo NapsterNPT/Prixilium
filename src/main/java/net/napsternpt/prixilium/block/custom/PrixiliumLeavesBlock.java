@@ -6,7 +6,6 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.World;
 
 public class PrixiliumLeavesBlock extends LeavesBlock {
 
@@ -36,7 +35,7 @@ public class PrixiliumLeavesBlock extends LeavesBlock {
             BlockState targetState = world.getBlockState(targetPos);
 
             if (canSpreadTo(targetState)) {
-                BlockState newState = this.getDefaultState();
+                BlockState newState = getDefaultState();
                 if (targetState.contains(PERSISTENT)) {
                     newState = newState.with(PERSISTENT, targetState.get(PERSISTENT));
                 }

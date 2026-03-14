@@ -17,7 +17,7 @@ public class PrixiliumLampBlock extends Block {
 
     public PrixiliumLampBlock(Settings settings) {
         super(settings);
-        setDefaultState(this.getDefaultState().with(LIGHT, 0).with(POWERED, false));
+        setDefaultState(getDefaultState().with(LIGHT, 0).with(POWERED, false));
     }
 
     @Override
