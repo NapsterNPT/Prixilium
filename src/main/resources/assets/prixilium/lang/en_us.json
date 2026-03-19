@@ -96,5 +96,8 @@
   "block.prixilium.prixilium_trapdoor": "Prixilium Trapdoor",
   "block.prixilium.prixilium_bricks": "Prixilium Bricks",
   "block.prixilium.prixilium_bricks_wall": "Prixilium Bricks Wall",
-  "block.prixilium.prixilium_lamp": "Prixilium Lamp"
+  "block.prixilium.prixilium_lamp": "Prixilium Lamp",
+
+
+  "sounds.prixilium.prixilium_expand": "Prixilium Expand"
 }

@@ -4,8 +4,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.napsternpt.prixilium.sound.ModSounds;
 
 public class PrixiliumLeavesBlock extends LeavesBlock {
 
@@ -43,6 +45,7 @@ public class PrixiliumLeavesBlock extends LeavesBlock {
                     newState = newState.with(DISTANCE, targetState.get(DISTANCE));
                 }
                 world.setBlockState(targetPos, newState);
+                world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
             }
         }
     }

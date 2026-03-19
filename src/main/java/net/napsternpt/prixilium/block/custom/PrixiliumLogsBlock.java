@@ -4,9 +4,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.sound.ModSounds;
 
 public class PrixiliumLogsBlock extends PillarBlock {
     public PrixiliumLogsBlock(Settings settings) {
@@ -36,11 +38,13 @@ public class PrixiliumLogsBlock extends PillarBlock {
                     newState = newState.with(AXIS, targetState.get(AXIS));
                 }
                 world.setBlockState(targetPos, newState);
+                world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
                 continue;
             }
 
             if (canSpreadToBecomeLeaves(targetState)) {
                 world.setBlockState(targetPos, ModBlocks.PRIXILIUM_LEAVES.getDefaultState());
+                world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
             }
         }
     }

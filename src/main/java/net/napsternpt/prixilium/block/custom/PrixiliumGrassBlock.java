@@ -18,6 +18,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.sound.ModSounds;
 
 public class PrixiliumGrassBlock extends Block {
     public PrixiliumGrassBlock(Settings settings) {
@@ -86,11 +87,13 @@ public class PrixiliumGrassBlock extends Block {
 
             if (canSpreadTo(targetState) && canSurvive(state, world, targetPos)) {
                 world.setBlockState(targetPos, getDefaultState());
+                world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
                 continue;
             }
 
             if (canSpreadToBecomePrixilium(targetState)) {
                 world.setBlockState(targetPos, ModBlocks.PRIXILIUM.getDefaultState());
+                world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
                 continue;
             }
 
@@ -101,11 +104,13 @@ public class PrixiliumGrassBlock extends Block {
                             targetState.get(net.minecraft.block.PillarBlock.AXIS));
                 }
                 world.setBlockState(targetPos, newState);
+                world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
                 continue;
             }
 
             if (canSpreadToBecomePrixiliumWood(targetState)) {
                 world.setBlockState(targetPos, ModBlocks.PRIXILIUM_WOOD.getDefaultState());
+                world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
             }
         }
     }
