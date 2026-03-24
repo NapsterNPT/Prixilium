@@ -99,5 +99,11 @@
   "block.prixilium.prixilium_lamp": "Prixilium Lamp",
 
 
-  "sounds.prixilium.prixilium_expand": "Prixilium Expand"
+  "sounds.prixilium.prixilium_expand": "Prixilium Expand",
+
+
+  "effect.prixilium.prixilium_slowness": "Prixilium Slowness",
+
+
+  "tag.item.prixilium.prevent_prixilium_slowness": "Prevents Prixilium Slowness"
 }

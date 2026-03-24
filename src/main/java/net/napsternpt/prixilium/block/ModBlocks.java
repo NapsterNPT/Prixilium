@@ -22,7 +22,7 @@ public class ModBlocks {
             ));
 
     public static final Block PRIXILIUM = registerBlock("prixilium",
-            new ShortPlantBlock(AbstractBlock.Settings.create()
+            new PrixiliumBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.GOLD)
                     .replaceable()
                     .noCollision()
@@ -119,6 +119,7 @@ public class ModBlocks {
                     .strength(0.5F)
                     .sounds(BlockSoundGroup.GLASS)
                     .mapColor(MapColor.LIGHT_GRAY)
+                    .nonOpaque()
                     .luminance(state -> state.get(PrixiliumLampBlock.LIGHT))
             ));
 

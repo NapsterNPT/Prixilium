@@ -2,6 +2,7 @@ package net.napsternpt.prixilium;
 
 import net.fabricmc.api.ModInitializer;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.item.ModItemGroups;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.sound.ModSounds;
@@ -18,5 +19,6 @@ public class Prixilium implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModSounds.registerSounds();
+		ModEffects.registerEffects();
 	}
 }
