@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "!": {
-      "item": "minecraft:redstone"
-    },
-    "#": {
-      "item": "prixilium:prixilium"
-    },
-    "%": {
-      "item": "minecraft:glowstone"
-    }
+    "!": "minecraft:redstone",
+    "#": "prixilium:prixilium",
+    "%": "minecraft:glowstone"
   },
   "pattern": [
     "#!#",

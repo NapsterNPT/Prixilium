@@ -3,9 +3,7 @@
   "category": "misc",
   "group": "prixilium",
   "ingredients": [
-    {
-      "item": "prixilium:prixilium_log"
-    }
+    "prixilium:prixilium_log"
   ],
   "result": {
     "count": 4,

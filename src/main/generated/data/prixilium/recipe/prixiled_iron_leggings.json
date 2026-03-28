@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "prixilium:prixilium"
-  },
-  "base": {
-    "item": "minecraft:iron_leggings"
-  },
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:iron_leggings",
   "result": {
     "count": 1,
     "id": "prixilium:prixiled_iron_leggings"
   },
-  "template": {
-    "item": "prixilium:prixilium_upgrade_smithing_template"
-  }
+  "template": "prixilium:prixilium_upgrade_smithing_template"
 }

@@ -25,7 +25,7 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
     @Override
     public void accept(BiConsumer<RegistryKey<LootTable>, LootTable.Builder> lootTableBiConsumer) {
         lootTableBiConsumer.accept(
-                EntityType.BAT.getLootTableId(),
+                EntityType.BAT.getLootTableKey().orElseThrow(),
                 LootTable.builder()
                         .pool(LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1))

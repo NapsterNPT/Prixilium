@@ -10,6 +10,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.block.WireOrientation;
 
 public class PrixiliumLampBlock extends Block {
     public static final IntProperty LIGHT = IntProperty.of("power", 0, 15);
@@ -47,7 +48,7 @@ public class PrixiliumLampBlock extends Block {
     }
 
     @Override
-    protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+    protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, WireOrientation orientation, boolean notify) {
         if (!world.isClient) {
             int receivedPower = world.getReceivedRedstonePower(pos);
 

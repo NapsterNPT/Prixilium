@@ -6,8 +6,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
@@ -30,7 +30,7 @@ public class PrixiliumHookItem extends Item {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+    public ActionResult  use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
         UUID playerId = player.getUuid();
 
@@ -40,7 +40,7 @@ public class PrixiliumHookItem extends Item {
                 world.playSound(null, player.getX(), player.getY(), player.getZ(),
                         SoundEvents.ITEM_CROSSBOW_LOADING_END,
                         SoundCategory.PLAYERS, 0.5f, 1.2f);
-                return TypedActionResult.success(stack, false);
+                return ActionResult.SUCCESS;
             }
 
             Vec3d start = player.getEyePos();
@@ -76,7 +76,7 @@ public class PrixiliumHookItem extends Item {
             }
         }
 
-        return TypedActionResult.success(stack, world.isClient());
+        return ActionResult.SUCCESS;
     }
 
     public static void tickGrapples(World world) {

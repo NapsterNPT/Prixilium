@@ -14,10 +14,10 @@ public class ModEffects {
 
     public static final RegistryEntry<StatusEffect> PRIXILIUM_SLOWNESS = registerStatusEffect("prixilium_slowness",
             new PrixiliumSlownessEffect(StatusEffectCategory.HARMFUL, 0xffcb00)
-                    .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                    .addAttributeModifier(EntityAttributes.MOVEMENT_SPEED,
                             Identifier.of(Prixilium.MOD_ID, "prixilium_slowness_speed"), -0.25f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
-                    .addAttributeModifier(EntityAttributes.GENERIC_JUMP_STRENGTH,
+                    .addAttributeModifier(EntityAttributes.JUMP_STRENGTH,
                             Identifier.of(Prixilium.MOD_ID, "prixilium_slowness_jump"), -0.5f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 

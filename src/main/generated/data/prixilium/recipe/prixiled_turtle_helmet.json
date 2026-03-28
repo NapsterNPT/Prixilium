@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "prixilium:prixilium"
-  },
-  "base": {
-    "item": "minecraft:turtle_helmet"
-  },
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:turtle_helmet",
   "result": {
     "count": 1,
     "id": "prixilium:prixiled_turtle_helmet"
   },
-  "template": {
-    "item": "prixilium:prixilium_upgrade_smithing_template"
-  }
+  "template": "prixilium:prixilium_upgrade_smithing_template"
 }

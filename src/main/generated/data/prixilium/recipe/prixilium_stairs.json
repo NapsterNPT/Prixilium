@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "prixilium:prixilium_planks"
-    }
+    "#": "prixilium:prixilium_planks"
   },
   "pattern": [
     "#  ",

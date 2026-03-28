@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:diamond"
-    },
-    "C": {
-      "item": "prixilium:prixilium"
-    },
-    "S": {
-      "item": "prixilium:prixilium_upgrade_smithing_template"
-    }
+    "#": "minecraft:diamond",
+    "C": "prixilium:prixilium",
+    "S": "prixilium:prixilium_upgrade_smithing_template"
   },
   "pattern": [
     "#S#",

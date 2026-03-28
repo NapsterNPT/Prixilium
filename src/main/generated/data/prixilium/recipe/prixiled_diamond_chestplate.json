@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "prixilium:prixilium"
-  },
-  "base": {
-    "item": "minecraft:diamond_chestplate"
-  },
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:diamond_chestplate",
   "result": {
     "count": 1,
     "id": "prixilium:prixiled_diamond_chestplate"
   },
-  "template": {
-    "item": "prixilium:prixilium_upgrade_smithing_template"
-  }
+  "template": "prixilium:prixilium_upgrade_smithing_template"
 }

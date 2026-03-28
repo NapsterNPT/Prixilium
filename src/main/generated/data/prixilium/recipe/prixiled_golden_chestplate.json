@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "prixilium:prixilium"
-  },
-  "base": {
-    "item": "minecraft:golden_chestplate"
-  },
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:golden_chestplate",
   "result": {
     "count": 1,
     "id": "prixilium:prixiled_golden_chestplate"
   },
-  "template": {
-    "item": "prixilium:prixilium_upgrade_smithing_template"
-  }
+  "template": "prixilium:prixilium_upgrade_smithing_template"
 }

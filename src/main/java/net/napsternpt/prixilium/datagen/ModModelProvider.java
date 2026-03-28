@@ -3,7 +3,8 @@ package net.napsternpt.prixilium.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
-import net.minecraft.item.ArmorItem;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.equipment.EquipmentModel;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
@@ -178,58 +179,88 @@ public class ModModelProvider extends FabricModelProvider {
         //region [Armors]
 
         //region [leather]
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_LEATHER_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_LEATHER_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_LEATHER_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_LEATHER_BOOTS));
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_HELMET, Identifier.of(Prixilium.MOD_ID, "prixiled_leather"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_leather")).build(), EquipmentSlot.HEAD);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_CHESTPLATE, Identifier.of(Prixilium.MOD_ID, "prixiled_leather"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_leather")).build(), EquipmentSlot.CHEST);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_LEGGINGS, Identifier.of(Prixilium.MOD_ID, "prixiled_leather"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_leather")).build(), EquipmentSlot.LEGS);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_BOOTS, Identifier.of(Prixilium.MOD_ID, "prixiled_leather"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_leather")).build(), EquipmentSlot.FEET);
         //endregion
 
         //region [chainmail]
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_CHAINMAIL_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_CHAINMAIL_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_CHAINMAIL_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_CHAINMAIL_BOOTS));
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_HELMET, Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail")).build(), EquipmentSlot.HEAD);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_CHESTPLATE, Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail")).build(), EquipmentSlot.CHEST);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_LEGGINGS, Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail")).build(), EquipmentSlot.LEGS);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_BOOTS, Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail")).build(), EquipmentSlot.FEET);
         //endregion
 
         //region [copper]
         /* 1.21.9+
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_COPPER_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_COPPER_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_COPPER_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_COPPER_BOOTS));
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_HELMET, Identifier.of(Prixilium.MOD_ID, "prixiled_copper"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_copper")).build(), EquipmentSlot.HEAD);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_CHESTPLATE, Identifier.of(Prixilium.MOD_ID, "prixiled_copper"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_copper")).build(), EquipmentSlot.CHEST);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_LEGGINGS, Identifier.of(Prixilium.MOD_ID, "prixiled_copper"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_copper")).build(), EquipmentSlot.LEGS);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_BOOTS, Identifier.of(Prixilium.MOD_ID, "prixiled_copper"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_copper")).build(), EquipmentSlot.FEET);
          */
         //endregion
 
         //region [iron]
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_IRON_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_IRON_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_IRON_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_IRON_BOOTS));
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_HELMET, Identifier.of(Prixilium.MOD_ID, "prixiled_iron"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_iron")).build(), EquipmentSlot.HEAD);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_CHESTPLATE, Identifier.of(Prixilium.MOD_ID, "prixiled_iron"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_iron")).build(), EquipmentSlot.CHEST);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_LEGGINGS, Identifier.of(Prixilium.MOD_ID, "prixiled_iron"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_iron")).build(), EquipmentSlot.LEGS);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_BOOTS, Identifier.of(Prixilium.MOD_ID, "prixiled_iron"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_iron")).build(), EquipmentSlot.FEET);
         //endregion
 
         //region [golden]
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_GOLDEN_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_GOLDEN_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_GOLDEN_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_GOLDEN_BOOTS));
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_HELMET, Identifier.of(Prixilium.MOD_ID, "prixiled_golden"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_golden")).build(), EquipmentSlot.HEAD);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_CHESTPLATE, Identifier.of(Prixilium.MOD_ID, "prixiled_golden"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_golden")).build(), EquipmentSlot.CHEST);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_LEGGINGS, Identifier.of(Prixilium.MOD_ID, "prixiled_golden"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_golden")).build(), EquipmentSlot.LEGS);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_BOOTS, Identifier.of(Prixilium.MOD_ID, "prixiled_golden"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_golden")).build(), EquipmentSlot.FEET);
         //endregion
 
         //region [diamond]
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_DIAMOND_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_DIAMOND_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_DIAMOND_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_DIAMOND_BOOTS));
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_HELMET, Identifier.of(Prixilium.MOD_ID, "prixiled_diamond"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_diamond")).build(), EquipmentSlot.HEAD);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_CHESTPLATE, Identifier.of(Prixilium.MOD_ID, "prixiled_diamond"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_diamond")).build(), EquipmentSlot.CHEST);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_LEGGINGS, Identifier.of(Prixilium.MOD_ID, "prixiled_diamond"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_diamond")).build(), EquipmentSlot.LEGS);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_BOOTS, Identifier.of(Prixilium.MOD_ID, "prixiled_diamond"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_diamond")).build(), EquipmentSlot.FEET);
         //endregion
 
         //region [netherite]
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_NETHERITE_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_NETHERITE_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_NETHERITE_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_NETHERITE_BOOTS));
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_HELMET, Identifier.of(Prixilium.MOD_ID, "prixiled_netherite"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_netherite")).build(), EquipmentSlot.HEAD);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_CHESTPLATE, Identifier.of(Prixilium.MOD_ID, "prixiled_netherite"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_netherite")).build(), EquipmentSlot.CHEST);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_LEGGINGS, Identifier.of(Prixilium.MOD_ID, "prixiled_netherite"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_netherite")).build(), EquipmentSlot.LEGS);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_BOOTS, Identifier.of(Prixilium.MOD_ID, "prixiled_netherite"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_netherite")).build(), EquipmentSlot.FEET);
         //endregion
 
         //region [turtle]
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PRIXILED_TURTLE_HELMET));
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_TURTLE_HELMET, Identifier.of(Prixilium.MOD_ID, "prixiled_turtle"),
+                EquipmentModel.builder().addHumanoidLayers(Identifier.of(Prixilium.MOD_ID, "prixiled_turtle")).build(), EquipmentSlot.HEAD);
+        //endregion
         //endregion
 
         //region [horse]

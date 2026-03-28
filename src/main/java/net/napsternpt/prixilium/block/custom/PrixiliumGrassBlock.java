@@ -10,7 +10,8 @@ import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ItemActionResult;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -26,9 +27,9 @@ public class PrixiliumGrassBlock extends Block {
     }
 
     @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world,
-                                             BlockPos pos, PlayerEntity player,
-                                             net.minecraft.util.Hand hand, BlockHitResult hit) {
+    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world,
+                                         BlockPos pos, PlayerEntity player,
+                                         Hand hand, BlockHitResult hit) {
 
         if (stack.isOf(Items.SHEARS)) {
             if (!world.isClient) {
@@ -53,8 +54,7 @@ public class PrixiliumGrassBlock extends Block {
                         1.0F
                 );
             }
-
-            return ItemActionResult.success(world.isClient);
+            return ActionResult.SUCCESS;
         }
 
         return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
@@ -176,7 +176,7 @@ public class PrixiliumGrassBlock extends Block {
     private boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
         BlockPos abovePos = pos.up();
         BlockState aboveState = world.getBlockState(abovePos);
-        return !aboveState.isOpaqueFullCube(world, abovePos);
+        return !aboveState.isOpaqueFullCube();
     }
 
     private boolean isUnderwater(ServerWorld world, BlockPos pos) {

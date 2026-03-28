@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "prixilium:prixiled_copper"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "prixilium:prixiled_copper"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "prixilium:prixiled_copper"
+      }
+    ]
+  }
+}

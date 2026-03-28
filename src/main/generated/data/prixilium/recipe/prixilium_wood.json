@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "prixilium:prixilium_log"
-    }
+    "#": "prixilium:prixilium_log"
   },
   "pattern": [
     "##",

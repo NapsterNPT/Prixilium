@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:prixilium_planks_from_prixilium_log"
+        "recipe": "minecraft:prixilium_planks_from_prixilium_log"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "prixilium:prixilium_planks_from_prixilium_log"
+      "minecraft:prixilium_planks_from_prixilium_log"
     ]
   }
 }

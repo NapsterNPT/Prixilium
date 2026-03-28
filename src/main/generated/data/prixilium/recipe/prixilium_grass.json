@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "minecraft:grass_block"
-    },
-    {
-      "item": "prixilium:prixilium"
-    }
+    "minecraft:grass_block",
+    "prixilium:prixilium"
   ],
   "result": {
     "count": 1,

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "prixilium:prixilium_planks"
-    }
+    "#": "minecraft:stick",
+    "W": "prixilium:prixilium_planks"
   },
   "pattern": [
     "#W#",

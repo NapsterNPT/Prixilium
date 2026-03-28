@@ -1,16 +1,10 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": {
-    "item": "prixilium:prixilium"
-  },
-  "base": {
-    "item": "minecraft:diamond_horse_armor"
-  },
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:diamond_horse_armor",
   "result": {
     "count": 1,
     "id": "prixilium:prixiled_diamond_horse_armor"
   },
-  "template": {
-    "item": "prixilium:prixilium_upgrade_smithing_template"
-  }
+  "template": "prixilium:prixilium_upgrade_smithing_template"
 }
