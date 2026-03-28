@@ -217,7 +217,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!%!")
                         .pattern("#!#")
                         .criterion(hasItem(ModBlocks.PRIXILIUM_LAMP), conditionsFromItem(ModBlocks.PRIXILIUM_LAMP))
-                        .offerTo(exporter);
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_glowstone")));
                 createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP, 1)
                         .input('#', ModBlocks.PRIXILIUM)
                         .input('!', Blocks.REDSTONE_LAMP)
