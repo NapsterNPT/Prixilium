@@ -28,7 +28,6 @@ public class PrixiliumLampBlock extends Block {
                 world.setBlockState(pos, state.cycle(LIGHT));
             }
         }
-
         return ActionResult.SUCCESS;
     }
 
