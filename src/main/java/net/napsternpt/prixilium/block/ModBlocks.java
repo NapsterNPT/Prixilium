@@ -146,9 +146,9 @@ public class ModBlocks {
     }
 
     private static void registerBlockItem(String name, Block block) {
-        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name));
         Registry.register(Registries.ITEM, Identifier.of(Prixilium.MOD_ID, name),
-                new BlockItem(block, new Item.Settings().registryKey(itemKey)));
+                new BlockItem(block, new Item.Settings()
+                        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name))).useBlockPrefixedTranslationKey()));
     }
 
     public static void registerModBlocks() {
