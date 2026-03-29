@@ -36,7 +36,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_LEAVES);
 
         getOrCreateTagBuilder(BlockTags.LOGS)
-                .add(ModBlocks.PRIXILIUM_LOG);
+                .add(ModBlocks.PRIXILIUM_LOG)
+                .add(ModBlocks.PRIXILIUM_WOOD);
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.PRIXILIUM_PLANKS);

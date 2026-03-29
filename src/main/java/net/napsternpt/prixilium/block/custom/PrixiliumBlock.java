@@ -1,7 +1,8 @@
 package net.napsternpt.prixilium.block.custom;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ShortPlantBlock;
+import net.minecraft.block.SaplingBlock;
+import net.minecraft.block.SaplingGenerator;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -10,9 +11,9 @@ import net.minecraft.world.World;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.util.ModTags;
 
-public class PrixiliumBlock extends ShortPlantBlock {
-    public PrixiliumBlock(Settings settings) {
-        super(settings);
+public class PrixiliumBlock extends SaplingBlock {
+    public PrixiliumBlock(SaplingGenerator generator, Settings settings) {
+        super(generator, settings);
     }
 
     @Override

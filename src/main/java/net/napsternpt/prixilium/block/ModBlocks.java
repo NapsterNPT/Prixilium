@@ -12,6 +12,10 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.custom.*;
+import net.napsternpt.prixilium.world.ModConfiguredFeatures;
+import net.napsternpt.prixilium.world.tree.ModSaplingGenerators;
+
+import java.util.Optional;
 
 public class ModBlocks {
 
@@ -25,17 +29,20 @@ public class ModBlocks {
             ));
 
     public static final Block PRIXILIUM = registerBlock("prixilium",
-            new PrixiliumBlock(AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium")))
-                    .mapColor(MapColor.GOLD)
-                    .replaceable()
-                    .noCollision()
-                    .breakInstantly()
-                    .sounds(BlockSoundGroup.GRASS)
-                    .offset(AbstractBlock.OffsetType.XYZ)
-                    .pistonBehavior(PistonBehavior.DESTROY)
-                    .luminance(state -> 7)
-            ));
+            new PrixiliumBlock(
+                    ModSaplingGenerators.PRIXILIUM,
+                    AbstractBlock.Settings.create()
+                            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium")))
+                            .mapColor(MapColor.GOLD)
+                            .replaceable()
+                            .noCollision()
+                            .breakInstantly()
+                            .sounds(BlockSoundGroup.GRASS)
+                            .offset(AbstractBlock.OffsetType.XYZ)
+                            .pistonBehavior(PistonBehavior.DESTROY)
+                            .luminance(state -> 7)
+            )
+    );
 
     public static final Block PRIXILIUM_LOG = registerBlock("prixilium_log",
             new PrixiliumLogsBlock(AbstractBlock.Settings.create()

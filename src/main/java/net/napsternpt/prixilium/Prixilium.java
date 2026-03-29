@@ -6,6 +6,7 @@ import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.item.ModItemGroups;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.sound.ModSounds;
+import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,5 +21,6 @@ public class Prixilium implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModSounds.registerSounds();
 		ModEffects.registerEffects();
+		ModWorldGeneration.generateModWorldGen();
 	}
 }

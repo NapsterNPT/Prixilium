@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
+import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.util.ModTags;
 
@@ -106,6 +107,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE)
                 .add(ModItems.PRIXILED_MACE);
+
+        // Blocks
+        getOrCreateTagBuilder(ItemTags.LOGS)
+                .add(ModBlocks.PRIXILIUM_LOG.asItem())
+                .add(ModBlocks.PRIXILIUM_WOOD.asItem());
+
+        getOrCreateTagBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.PRIXILIUM_PLANKS.asItem());
 
         // Mod Tags
         getOrCreateTagBuilder(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)
