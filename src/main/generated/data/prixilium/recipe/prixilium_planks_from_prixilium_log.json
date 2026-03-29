@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "prixilium",
+  "ingredients": [
+    "prixilium:prixilium_log"
+  ],
+  "result": {
+    "count": 4,
+    "id": "prixilium:prixilium_planks"
+  }
+}
