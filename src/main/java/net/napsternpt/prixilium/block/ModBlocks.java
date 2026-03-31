@@ -12,10 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.custom.*;
-import net.napsternpt.prixilium.world.ModConfiguredFeatures;
 import net.napsternpt.prixilium.world.tree.ModSaplingGenerators;
-
-import java.util.Optional;
 
 public class ModBlocks {
 

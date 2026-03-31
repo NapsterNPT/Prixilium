@@ -12,6 +12,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
 import net.napsternpt.prixilium.item.custom.PrixiliumVirusAliveItem;
 
@@ -28,9 +29,15 @@ public class ModItems {
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_upgrade_smithing_template")))
     ));
+
     public static final Item PRIXILIUM_HOOK = registerItem("prixilium_hook", new PrixiliumHookItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_hook")))
             .maxDamage(32)
+    ));
+
+    public static final Item BLIKO_SPAWN_EGG = registerItem("bliko_spawn_egg", new SpawnEggItem(
+            ModEntities.BLIKO, 0xffcb00, 0x8f7200, new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "bliko_spawn_egg")))
     ));
 
     //region [Tools]

@@ -24,6 +24,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILIUM_VIRUS_DEAD);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_HOOK);
+                        entries.add(ModItems.BLIKO_SPAWN_EGG);
 
                         //region [Tools]
 

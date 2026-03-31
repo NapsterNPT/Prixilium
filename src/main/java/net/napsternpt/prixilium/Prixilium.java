@@ -1,8 +1,11 @@
 package net.napsternpt.prixilium;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.effect.ModEffects;
+import net.napsternpt.prixilium.entity.ModEntities;
+import net.napsternpt.prixilium.entity.custom.BlikoEntity;
 import net.napsternpt.prixilium.item.ModItemGroups;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.sound.ModSounds;
@@ -21,6 +24,9 @@ public class Prixilium implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModSounds.registerSounds();
 		ModEffects.registerEffects();
+		ModEntities.registerModEntities();
 		ModWorldGeneration.generateModWorldGen();
+
+		FabricDefaultAttributeRegistry.register(ModEntities.BLIKO, BlikoEntity.createAttributes());
 	}
 }
