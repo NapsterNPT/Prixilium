@@ -36,7 +36,7 @@ public class ModItems {
     ));
 
     public static final Item BLIKO_SPAWN_EGG = registerItem("bliko_spawn_egg", new SpawnEggItem(
-            ModEntities.BLIKO, 0xffcb00, 0x8f7200, new Item.Settings()
+            ModEntities.BLIKO, 0x1e1e1e, 0x1e1e1e, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "bliko_spawn_egg")))
     ));
 
