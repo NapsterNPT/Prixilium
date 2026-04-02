@@ -24,8 +24,7 @@ import org.jetbrains.annotations.Nullable;
 public class BlikoEntity extends TameableEntity {
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState walkAnimationState = new AnimationState();
-    public final AnimationState holdingFoodAnimationState = new AnimationState();
-    private int idleAnimationTimeout = 0;
+    public final AnimationState sitAnimationState = new AnimationState();
 
     public BlikoEntity(EntityType<? extends TameableEntity> entityType, World world) {
         super(entityType, world);
@@ -34,8 +33,8 @@ public class BlikoEntity extends TameableEntity {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new FollowOwnerGoal(this, 1.5F, 10.0F, 2.0F));
-        this.goalSelector.add(2, new SitGoal(this));
+        this.goalSelector.add(1, new SitGoal(this));
+        this.goalSelector.add(2, new FollowOwnerGoal(this, 1.5F, 10.0F, 2.0F));
         this.goalSelector.add(3, new AnimalMateGoal(this, 1.15D));
         this.goalSelector.add(4, new TemptGoal(this, 1.25D, Ingredient.ofItem(ModBlocks.PRIXILIUM), false));
         this.goalSelector.add(5, new FollowParentGoal(this, 1.1D));
@@ -46,7 +45,7 @@ public class BlikoEntity extends TameableEntity {
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.MAX_HEALTH, 20)
+                .add(EntityAttributes.MAX_HEALTH, 10)
                 .add(EntityAttributes.MOVEMENT_SPEED, 0.25)
                 .add(EntityAttributes.FOLLOW_RANGE, 20)
                 .add(EntityAttributes.TEMPT_RANGE, 10);
@@ -57,30 +56,25 @@ public class BlikoEntity extends TameableEntity {
         ItemStack stack = player.getStackInHand(hand);
 
         if (!this.isTamed()) {
-            if (Ingredient.ofItem(ModBlocks.PRIXILIUM).requiresTesting()) {
+            if (stack.isOf(ModBlocks.PRIXILIUM.asItem())) {
                 if (!player.getAbilities().creativeMode) {
                     stack.decrement(1);
                 }
                 if (this.random.nextInt(3) == 0) {
                     this.setOwner(player);
-                    this.setSitting(true);
                     this.getWorld().sendEntityStatus(this, (byte) 7);
                 } else {
                     this.getWorld().sendEntityStatus(this, (byte) 6);
                 }
                 return ActionResult.SUCCESS;
             }
+        } else {
+            if (this.isOwner(player) && stack.isEmpty()) {
+                this.setSitting(!this.isSitting());
+                return ActionResult.SUCCESS;
+            }
         }
         return super.interactMob(player, hand);
-    }
-
-    private void setupAnimationStates() {
-        if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 80;
-            this.idleAnimationState.start(this.age);
-        } else {
-            --this.idleAnimationTimeout;
-        }
     }
 
     @Override
@@ -88,12 +82,20 @@ public class BlikoEntity extends TameableEntity {
         super.tick();
 
         if (this.getWorld().isClient) {
-            if (this.getVelocity().horizontalLengthSquared() > 0.001) {
-                this.walkAnimationState.startIfNotRunning(this.age);
+            if (this.isSitting()) {
                 this.idleAnimationState.stop();
-            } else {
                 this.walkAnimationState.stop();
-                this.idleAnimationState.startIfNotRunning(this.age);
+                this.sitAnimationState.startIfNotRunning(this.age);
+            } else {
+                if (this.getVelocity().horizontalLengthSquared() != 0) {
+                    this.idleAnimationState.stop();
+                    this.walkAnimationState.startIfNotRunning(this.age);
+                    this.sitAnimationState.stop();
+                } else {
+                    this.idleAnimationState.startIfNotRunning(this.age);
+                    this.walkAnimationState.stop();
+                    this.sitAnimationState.stop();
+                }
             }
         }
     }
@@ -116,12 +118,14 @@ public class BlikoEntity extends TameableEntity {
 
         if (!this.getWorld().isClient && !this.isBaby()) {
             ServerWorld world = (ServerWorld) this.getWorld();
-
             for (int i = 0; i < 2; i++) {
-                BlikoEntity baby = ModEntities.BLIKO.create(world, SpawnReason.BREEDING);
-
+                BlikoEntity baby = ModEntities.BLIKO.create(world, SpawnReason.CONVERSION);
                 if (baby != null) {
                     baby.setBaby(true);
+                    if (this.isTamed() && this.getOwner() != null) {
+                        baby.setOwner((PlayerEntity) this.getOwner());
+                        baby.setSitting(false);
+                    }
                     baby.refreshPositionAndAngles(
                             this.getX(),
                             this.getY(),
@@ -129,6 +133,11 @@ public class BlikoEntity extends TameableEntity {
                             world.random.nextFloat() * 360F,
                             0.0F
                     );
+                    baby.setVelocity(
+                            -0.1 + this.random.nextDouble() * 0.2,
+                            0.1 + this.random.nextDouble() * 0.15,
+                            -0.1 + this.random.nextDouble() * 0.2
+                    );      //min + random.nextDouble() * (max - min)
                     world.spawnEntity(baby);
                 }
             }

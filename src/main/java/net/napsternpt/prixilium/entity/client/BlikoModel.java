@@ -44,6 +44,6 @@ public class BlikoModel extends EntityModel<BlikoRenderState> {
         super.setAngles(state);
         this.animate(state.walkAnimationState, BlikoAnimations.WALK, state.age);
         this.animate(state.idleAnimationState, BlikoAnimations.IDLE, state.age);
-        this.animate(state.holdingFoodAnimationState, BlikoAnimations.HOLDING_FOOD, state.age);
+        this.animate(state.sitAnimationState, BlikoAnimations.SITTING, state.age);
     }
 }

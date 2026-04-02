@@ -6,6 +6,6 @@ import net.minecraft.entity.AnimationState;
 public class BlikoRenderState extends LivingEntityRenderState {
     public final AnimationState walkAnimationState = new AnimationState();
     public final AnimationState idleAnimationState = new AnimationState();
-    public final AnimationState holdingFoodAnimationState = new AnimationState();
+    public final AnimationState sitAnimationState = new AnimationState();
     public boolean isBaby = false;
 }

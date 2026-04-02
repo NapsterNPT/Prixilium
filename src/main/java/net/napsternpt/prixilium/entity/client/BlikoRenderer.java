@@ -25,7 +25,7 @@ public class BlikoRenderer extends MobEntityRenderer<BlikoEntity, BlikoRenderSta
         super.updateRenderState(entity, state, tickDelta);
         state.walkAnimationState.copyFrom(entity.walkAnimationState);
         state.idleAnimationState.copyFrom(entity.idleAnimationState);
-        state.holdingFoodAnimationState.copyFrom(entity.holdingFoodAnimationState);
+        state.sitAnimationState.copyFrom(entity.sitAnimationState);
         state.isBaby = entity.isBaby();
     }
 
