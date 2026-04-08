@@ -52,7 +52,7 @@ public class BlikoAnimations {
                     new Keyframe(1.0F, AnimationHelper.createRotationalVector(7.5F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
             )).build();
 
-    public static final Animation SITTING = Animation.Builder.create(1.0F)
+    public static final Animation SIT = Animation.Builder.create(1.0F)
             .addBoneAnimation("Body", new Transformation(Transformation.Targets.ROTATE,
                     new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(0.5833F, AnimationHelper.createRotationalVector(-22.5F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
