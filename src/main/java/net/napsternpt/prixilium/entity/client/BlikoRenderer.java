@@ -30,9 +30,7 @@ public class BlikoRenderer extends MobEntityRenderer<BlikoEntity, BlikoRenderSta
     }
 
     @Override
-    public Identifier getTexture(BlikoRenderState state) {
-        return TEXTURE;
-    }
+    public Identifier getTexture(BlikoRenderState state) {return TEXTURE;}
 
     @Override
     protected void scale(BlikoRenderState state, MatrixStack matrices) {
