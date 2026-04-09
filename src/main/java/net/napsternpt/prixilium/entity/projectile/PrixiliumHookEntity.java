@@ -11,18 +11,12 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class PrixiliumHookEntity extends ProjectileEntity {
     private static final double SPEED = 5.0;
-    private static final double MAX_DISTANCE_SQ = 2500.0;
-    private static final double PULL_FORCE = 0.15;
-    private static final double MIN_DISTANCE = 1.5;
-    private static final int MAX_LIFETIME = 200;
-
-    private int lifetime = 0;
+    private static final double MAX_DISTANCE_SQ = 10000.0;
 
     private static final TrackedData<Boolean> IN_BLOCK;
     private static final TrackedData<Float> LENGTH;
@@ -39,12 +33,8 @@ public class PrixiliumHookEntity extends ProjectileEntity {
     public PrixiliumHookEntity(World world, PlayerEntity owner) {
         this((EntityType<PrixiliumHookEntity>) net.napsternpt.prixilium.entity.ModEntities.PRIXILIUM_HOOK, world);
         this.setOwner(owner);
-        
-        Vec3d spawnPos = new Vec3d(owner.getX(), owner.getEyeY() - 0.1, owner.getZ());
-        this.setPosition(spawnPos);
-        
-        Vec3d direction = owner.getRotationVector();
-        this.setVelocity(direction.multiply(SPEED));
+        this.setPosition(owner.getX(), owner.getEyeY() - 0.1, owner.getZ());
+        this.setVelocity(owner.getRotationVector().multiply(SPEED));
     }
 
     @Override
@@ -61,73 +51,31 @@ public class PrixiliumHookEntity extends ProjectileEntity {
     @Override
     public void tick() {
         super.tick();
-        
-        lifetime++;
-        
         PlayerEntity owner = this.getPlayerOwner();
-        if (owner == null) {
-            this.discard();
-            return;
-        }
-        
-        if (!this.getWorld().isClient()) {
-            Vec3d pos = this.getPos();
-            Vec3d vel = this.getVelocity();
+        if (owner != null && (!this.getWorld().isClient() || !this.shouldRetract(owner))) {
+            Vec3d currentPos = this.getPos();
+            Vec3d velocity = this.getVelocity();
+            Vec3d nextPos = currentPos.add(velocity);
             
-            if (vel.length() > 0.01) {
-                Vec3d nextPos = pos.add(vel);
-                
-                var raycast = this.getWorld().raycast(new net.minecraft.world.RaycastContext(
-                    pos, nextPos,
-                    net.minecraft.world.RaycastContext.ShapeType.COLLIDER,
-                    net.minecraft.world.RaycastContext.FluidHandling.NONE,
-                    this
-                ));
-                
-                if (raycast.getType() != HitResult.Type.MISS) {
-                    this.setPosition(raycast.getPos());
-                    this.setVelocity(Vec3d.ZERO);
-                    this.setInBlock(true);
-                    double distance = owner.getEyePos().distanceTo(raycast.getPos());
-                    this.setHookLength(Math.max((float) distance * 0.5f - 3.0f, 1.5f));
-                    lifetime = 0;
-                } else {
-                    this.setPosition(nextPos);
-                }
-                
-                this.velocityDirty = true;
+            var raycast = this.getWorld().raycast(new net.minecraft.world.RaycastContext(
+                currentPos, nextPos,
+                net.minecraft.world.RaycastContext.ShapeType.COLLIDER,
+                net.minecraft.world.RaycastContext.FluidHandling.NONE,
+                this
+            ));
+            
+            if (raycast.getType() != HitResult.Type.MISS) {
+                this.setPosition(raycast.getPos());
+                this.setVelocity(Vec3d.ZERO);
+                this.setInBlock(true);
+                double distance = owner.getEyePos().distanceTo(raycast.getPos());
+                this.setHookLength(Math.max((float) distance * 0.5f - 3.0f, 1.5f));
+            } else {
+                this.setPosition(nextPos);
             }
             
-            if (this.inBlock()) {
-                Vec3d playerPos = owner.getPos().add(0, owner.getHeight() / 2, 0);
-                Vec3d hookPos = this.getPos();
-                double distance = playerPos.distanceTo(hookPos);
-                
-                if (distance > MIN_DISTANCE) {
-                    Vec3d direction = hookPos.subtract(playerPos).normalize();
-                    double forceFactor = Math.min(distance / 10.0, 2.0);
-                    Vec3d pullForce = direction.multiply(PULL_FORCE * forceFactor);
-                    
-                    Vec3d currentVelocity = owner.getVelocity();
-                    Vec3d newVelocity = currentVelocity.add(pullForce);
-                    
-                    double maxSpeed = 2.0;
-                    if (newVelocity.length() > maxSpeed) {
-                        newVelocity = newVelocity.normalize().multiply(maxSpeed);
-                    }
-                    
-                    owner.setVelocity(newVelocity);
-                    owner.velocityModified = true;
-                    owner.fallDistance = 0;
-                } else {
-                    owner.setVelocity(owner.getVelocity().multiply(0.5, 0.5, 0.5));
-                    owner.velocityModified = true;
-                }
-            }
-        }
-
-        if (!this.getWorld().isClient() && (this.shouldRetract(owner) || lifetime > MAX_LIFETIME)) {
-            net.napsternpt.prixilium.item.custom.PrixiliumHookItem.clearClientHook(owner.getUuid());
+            this.velocityDirty = true;
+        } else {
             this.discard();
         }
     }
@@ -136,6 +84,7 @@ public class PrixiliumHookEntity extends ProjectileEntity {
         if (!player.isRemoved() && player.isAlive() && player.isHolding(ModItems.PRIXILIUM_HOOK) && !(this.squaredDistanceTo(player) > MAX_DISTANCE_SQ)) {
             return false;
         } else {
+            this.discard();
             return true;
         }
     }
