@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "prixilium:item/prixilium_hook"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "prixilium:hook_active": 1
+      },
+      "model": "prixilium:item/prixilium_hook_active"
+    }
+  ]
+}

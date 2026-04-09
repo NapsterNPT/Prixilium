@@ -8,6 +8,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.entity.custom.BlikoEntity;
+import net.napsternpt.prixilium.entity.projectile.PrixiliumHookEntity;
 
 public class ModEntities {
 
@@ -16,6 +17,12 @@ public class ModEntities {
             EntityType.Builder.create(BlikoEntity::new, SpawnGroup.CREATURE)
                     .dimensions(0.65F, 0.7F)
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "bliko")))
+    );
+
+    public static final EntityType<PrixiliumHookEntity> PRIXILIUM_HOOK = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Prixilium.MOD_ID, "prixilium_hook"),
+            EntityType.Builder.<PrixiliumHookEntity>create(PrixiliumHookEntity::new, SpawnGroup.MISC)
+                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "prixilium_hook")))
     );
 
     public static void registerModEntities() {
