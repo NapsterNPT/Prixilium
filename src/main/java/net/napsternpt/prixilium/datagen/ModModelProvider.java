@@ -103,6 +103,13 @@ public class ModModelProvider extends FabricModelProvider {
                         .register(15, BlockStateVariant.create().put(VariantSettings.MODEL, lamp15Identifier))
                 )
         );
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.VIRUS_REACTOR,
+                        Identifier.of(Prixilium.MOD_ID, "block/virus_reactor")
+                )
+        );
     }
 
     @Override
@@ -111,8 +118,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILIUM_VIRUS_ALIVE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_VIRUS_DEAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG,
-                new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
         //region [Tools]
 

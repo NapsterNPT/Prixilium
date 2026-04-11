@@ -144,6 +144,14 @@ public class ModBlocks {
                     .luminance(state -> state.get(PrixiliumLampBlock.LIGHT))
             ));
 
+    public static final Block VIRUS_REACTOR = registerBlock("virus_reactor",
+            new VirusReactorBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "virus_reactor")))
+                    .strength(3.0F, 6.0F)
+                    .mapColor(MapColor.LIGHT_GRAY)
+                    .nonOpaque()
+            ));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Prixilium.MOD_ID, name), block);
