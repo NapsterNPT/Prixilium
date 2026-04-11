@@ -4,5 +4,28 @@
     "sounds": [
       "prixilium:prixilium_expand"
     ]
+  },
+
+
+  "bliko_ambient": {
+    "subtitle": "sounds.prixilium.bliko_ambient",
+    "sounds": [
+      "prixilium:bliko_ambient_1",
+      "prixilium:bliko_ambient_2",
+      "prixilium:bliko_ambient_3",
+      "prixilium:bliko_ambient_4"
+    ]
+  },
+  "bliko_hurt": {
+    "subtitle": "sounds.prixilium.bliko_hurt",
+    "sounds": [
+      "prixilium:bliko_hurt"
+    ]
+  },
+  "bliko_death": {
+    "subtitle": "sounds.prixilium.bliko_death",
+    "sounds": [
+      "prixilium:bliko_death"
+    ]
   }
 }

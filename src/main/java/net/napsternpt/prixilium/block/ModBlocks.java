@@ -156,6 +156,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        Prixilium.LOGGER.info("Registering Prixilium Blocks");
+        Prixilium.LOGGER.info("Registering Prixilium Blocks.");
     }
 }

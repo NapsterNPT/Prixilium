@@ -26,6 +26,6 @@ public class ModEntities {
     );
 
     public static void registerModEntities() {
-        Prixilium.LOGGER.info("Registering Prixilium Entities");
+        Prixilium.LOGGER.info("Registering Prixilium Entities.");
     }
 }

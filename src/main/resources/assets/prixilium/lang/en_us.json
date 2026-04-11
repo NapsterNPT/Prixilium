@@ -101,12 +101,16 @@
 
 
   "sounds.prixilium.prixilium_expand": "Prixilium Expand",
+  "sounds.prixilium.bliko_ambient": "Bliko Wanders",
+  "sounds.prixilium.bliko_hurt": "Bliko Hurts",
+  "sounds.prixilium.bliko_death": "Bliko Dies",
 
 
   "effect.prixilium.prixilium_slowness": "Prixilium Slowness",
 
 
   "tag.item.prixilium.prevent_prixilium_slowness": "Prevents Prixilium Slowness",
+  "tag.item.prixilium.immune_to_prixilium_slowness": "Immune to Prixilium Slowness",
 
 
   "entity.prixilium.bliko": "Bliko"

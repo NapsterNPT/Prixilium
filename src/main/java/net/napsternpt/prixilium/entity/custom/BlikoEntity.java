@@ -14,11 +14,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.entity.ModEntities;
+import net.napsternpt.prixilium.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
 public class BlikoEntity extends TameableEntity {
@@ -145,4 +147,19 @@ public class BlikoEntity extends TameableEntity {
     }
 
 
+    //Sounds
+    @Override
+    protected @Nullable SoundEvent getAmbientSound() {
+        return ModSounds.BLIKO_AMBIENT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getHurtSound(DamageSource source) {
+        return ModSounds.BLIKO_HURT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getDeathSound() {
+        return ModSounds.BLIKO_DEATH;
+    }
 }

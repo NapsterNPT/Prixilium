@@ -9,12 +9,17 @@ import net.napsternpt.prixilium.Prixilium;
 public class ModSounds {
     public static final SoundEvent PRIXILIUM_EXPAND = registerSoundEvent("prixilium_expand");
 
+    //Entities
+    public static final SoundEvent BLIKO_AMBIENT = registerSoundEvent("bliko_ambient");
+    public static final SoundEvent BLIKO_HURT = registerSoundEvent("bliko_hurt");
+    public static final SoundEvent BLIKO_DEATH = registerSoundEvent("bliko_death");
+
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(Prixilium.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
 
     public static void registerSounds() {
-        Prixilium.LOGGER.info("Registering Prixilium Sounds");
+        Prixilium.LOGGER.info("Registering Prixilium Sounds.");
     }
 }

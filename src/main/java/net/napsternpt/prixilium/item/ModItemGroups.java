@@ -181,6 +181,6 @@ public class ModItemGroups {
                     }).build());
 
     public static void registerItemGroups() {
-        Prixilium.LOGGER.info("Registering Prixilium Item Groups");
+        Prixilium.LOGGER.info("Registering Prixilium Item Groups.");
     }
 }

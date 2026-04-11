@@ -463,6 +463,6 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        Prixilium.LOGGER.info("Registering Prixilium Items");
+        Prixilium.LOGGER.info("Registering Prixilium Items.");
     }
 }
