@@ -19,14 +19,10 @@ public class PrixiliumBlock extends SaplingBlock {
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && entity instanceof LivingEntity livingEntity) {
-            if (!hasProtectionItem(livingEntity)) {
-                livingEntity.addStatusEffect(
-                        new net.minecraft.entity.effect.StatusEffectInstance(
-                                ModEffects.PRIXILIUM_SLOWNESS,
-                                40,
-                                0
-                        )
-                );
+            if (!hasProtectionItem(livingEntity) && !livingEntity.getType().isIn(ModTags.Entities.IMMUNE_TO_PRIXILIUM_SLOWNESS)) {
+                    livingEntity.addStatusEffect(
+                            new net.minecraft.entity.effect.StatusEffectInstance(ModEffects.PRIXILIUM_SLOWNESS, 40, 0)
+                    );
             }
         }
         super.onEntityCollision(state, world, pos, entity);

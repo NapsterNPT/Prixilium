@@ -1,4 +1,4 @@
-// 1.21.3	2026-04-09T20:30:45.355223	Prixilium/Model Definitions
+// 1.21.3	2026-04-11T18:33:43.3363228	Prixilium/Model Definitions
 778f28f29989f689032e0e31d93f1e0c387a97ec assets\prixilium\models\item\prixiled_netherite_helmet_netherite_trim.json
 ad438deb92b7e175e83ba7b4dc4b5019f0998746 assets\prixilium\models\block\prixilium_stairs.json
 a84a338aff8ae99c1a0ac52ead8433786ff543da assets\prixilium\models\item\prixilium_wood.json
@@ -83,7 +83,6 @@ e0ab42fba538667a2500295663219d1b4e5115ec assets\prixilium\models\block\prixilium
 7962259f3e0d9f74e330484e6ba0466a0e3dc404 assets\prixilium\models\item\prixiled_iron_leggings_redstone_trim.json
 3be014d3292e5847cb3ff3bea44556d3a0052666 assets\prixilium\models\item\prixiled_golden_boots_quartz_trim.json
 a370bcc3399270a61c9fd4d6d206c514a0046bc7 assets\prixilium\models\block\prixilium_slab_top.json
-e3d0583bed5023031e5d130997a9fc0d1764098d assets\prixilium\models\item\prixilium_hook.json
 450a873c442afa88ebc5446682375b9f497f8a8e assets\prixilium\models\item\prixiled_diamond_leggings_diamond_trim.json
 88b838f99f79c18c06bc6d46b312ad47f6619922 assets\prixilium\models\item\prixiled_diamond_leggings_emerald_trim.json
 80360e66ea50c6ba46983f97d7142384b4e4ee98 assets\prixilium\models\item\prixiled_chainmail_helmet_amethyst_trim.json

@@ -23,7 +23,7 @@ public class ModModelPredicates {
 
         ModelPredicateProviderRegistry.register(
                 ModItems.PRIXILIUM_HOOK,
-                Identifier.of(Prixilium.MOD_ID, "hook_active"),
+                Identifier.of(Prixilium.MOD_ID, "hook_extended"),
                 (stack, world, entity, seed) -> {
                     if (entity == null) return 0.0F;
                     return PrixiliumHookItem.hasActiveHook(entity) ? 1.0F : 0.0F;

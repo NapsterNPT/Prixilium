@@ -6,9 +6,9 @@
   "overrides": [
     {
       "predicate": {
-        "prixilium:hook_active": 1
+        "prixilium:hook_extended": 1
       },
-      "model": "prixilium:item/prixilium_hook_active"
+      "model": "prixilium:item/prixilium_hook_extended"
     }
   ]
 }
