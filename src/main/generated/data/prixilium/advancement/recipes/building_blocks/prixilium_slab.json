@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_prixilium_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:prixilium_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:prixilium_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_prixilium_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:prixilium_slab"
+    ]
+  }
+}

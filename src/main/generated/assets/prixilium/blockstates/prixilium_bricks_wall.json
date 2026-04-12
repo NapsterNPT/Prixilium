@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "prixilium:block/prixilium_bricks_wall",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "prixilium:block/prixilium_bricks_wall"
+    },
+    "facing=south": {
+      "model": "prixilium:block/prixilium_bricks_wall",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "prixilium:block/prixilium_bricks_wall",
+      "y": 270
+    }
+  }
+}
