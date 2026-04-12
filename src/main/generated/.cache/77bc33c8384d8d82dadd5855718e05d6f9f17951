@@ -1,4 +1,4 @@
-// 1.21.3	2026-04-12T15:51:57.8297282	Prixilium/Prixilium recipes.
+// 1.21.3	2026-04-12T22:11:53.174495	Prixilium/Prixilium recipes.
 1ab115dd07ae6b2276dc6c6549e67915f85728b5 data\prixilium\recipe\prixiled_iron_boots.json
 e4e21c0ef57c67f45ff6e692e2d1276a2750be93 data\prixilium\advancement\recipes\tools\prixiled_netherite_shovel.json
 38494ecfdfa8149541eb2ac588b4911f29f1b098 data\prixilium\recipe\prixilium_fence_gate.json
@@ -40,8 +40,8 @@ a4cccfd8b26a4a747bb8606e4545d9afc86c55df data\prixilium\recipe\prixiled_iron_pic
 1537d966202c080a87ca95460ec674c2155e7b6b data\prixilium\advancement\recipes\misc\prixilium_upgrade_smithing_template.json
 8da0afe421fad46e9a21243e0a6f7bf865ac4b35 data\prixilium\recipe\prixiled_leather_helmet.json
 bfb49b9d456dce80b9f62a30439b94dddd0d27e5 data\prixilium\advancement\recipes\decorations\prixilium_fence.json
-9a8fd36f915377775dfd1349b7e2e566112bc2d9 data\prixilium\advancement\recipes\combat\prixiled_diamond_helmet.json
 3def426dd2f21582cd5adcceebf87b4712fb3de7 data\prixilium\recipe\prixiled_golden_boots.json
+9a8fd36f915377775dfd1349b7e2e566112bc2d9 data\prixilium\advancement\recipes\combat\prixiled_diamond_helmet.json
 a4fe43595d79f65c9f4a1b920c867ea47c91c514 data\prixilium\recipe\prixiled_netherite_chestplate.json
 2dcb4998a3a6dc0ff0b35cdc74be53c254306469 data\prixilium\recipe\prixiled_stone_hoe.json
 e9a0fe4fafb53b1d1ea519cb1829adf1946b8ef1 data\prixilium\advancement\recipes\combat\prixiled_diamond_sword.json
