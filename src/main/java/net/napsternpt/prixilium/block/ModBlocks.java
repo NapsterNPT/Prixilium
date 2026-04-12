@@ -1,5 +1,6 @@
 package net.napsternpt.prixilium.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
@@ -127,7 +128,7 @@ public class ModBlocks {
                     .mapColor(MapColor.CYAN)
             ));
     public static final Block PRIXILIUM_BRICKS_WALL = registerBlock("prixilium_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.create()
+            new PrixiliumBricksWallBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_bricks_wall")))
                     .requiresTool()
                     .strength(1.5F, 6.0F)

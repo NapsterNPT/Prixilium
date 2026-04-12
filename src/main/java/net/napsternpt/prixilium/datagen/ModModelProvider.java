@@ -63,8 +63,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoor(ModBlocks.PRIXILIUM_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.PRIXILIUM_TRAPDOOR);
 
-        BlockStateModelGenerator.BlockTexturePool prixiliumBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_BRICKS);
-        prixiliumBricksPool.wall(ModBlocks.PRIXILIUM_BRICKS_WALL);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_BRICKS);
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.PRIXILIUM_BRICKS_WALL);
 
         Identifier lamp0Identifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector);
         Identifier lamp1Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_1", Models.CUBE_ALL, TextureMap::all);
