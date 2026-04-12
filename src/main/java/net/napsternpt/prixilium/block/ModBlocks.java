@@ -145,10 +145,24 @@ public class ModBlocks {
                     .luminance(state -> state.get(PrixiliumLampBlock.LIGHT))
             ));
 
+    public static final Block STAND = registerBlock("stand",
+            new StandBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "stand")))
+                    .strength(3.5F, 6.0F)
+                    .mapColor(MapColor.LIGHT_GRAY)
+                    .nonOpaque()
+            ));
+    public static final Block REACTOR_CORE = registerBlock("reactor_core",
+            new ReactorCoreBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "reactor_core")))
+                    .strength(4.0F, 6.5F)
+                    .mapColor(MapColor.LIGHT_GRAY)
+                    .nonOpaque()
+            ));
     public static final Block VIRUS_REACTOR = registerBlock("virus_reactor",
             new VirusReactorBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "virus_reactor")))
-                    .strength(3.0F, 6.0F)
+                    .strength(5.0F, 7.0F)
                     .mapColor(MapColor.LIGHT_GRAY)
                     .nonOpaque()
             ));

@@ -17,8 +17,8 @@ public class PrixiliumBricksWallBlock extends HorizontalFacingBlock {
 
     public static final MapCodec<PrixiliumBricksWallBlock> CODEC = createCodec(PrixiliumBricksWallBlock::new);
 
-    private static final VoxelShape SHAPE_NS = Block.createCuboidShape(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
-    private static final VoxelShape SHAPE_EW = Block.createCuboidShape(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+    private static final VoxelShape SHAPE_NS = Block.createCuboidShape(0.0, 0.0, 5.0, 16.0, 16.0, 11.0);
+    private static final VoxelShape SHAPE_EW = Block.createCuboidShape(5.0, 0.0, 0.0, 11.0, 16.0, 16.0);
 
     public PrixiliumBricksWallBlock(Settings settings) {
         super(settings);

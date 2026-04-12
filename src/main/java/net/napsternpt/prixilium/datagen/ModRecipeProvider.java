@@ -209,7 +209,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP, 1)
+                createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP)
                         .input('#', ModBlocks.PRIXILIUM)
                         .input('!', Items.REDSTONE)
                         .input('%', Blocks.GLOWSTONE)
@@ -218,7 +218,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("#!#")
                         .criterion(hasItem(ModBlocks.PRIXILIUM_LAMP), conditionsFromItem(ModBlocks.PRIXILIUM_LAMP))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_glowstone")));
-                createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP, 1)
+                createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP)
                         .input('#', ModBlocks.PRIXILIUM)
                         .input('!', Blocks.REDSTONE_LAMP)
                         .pattern(" # ")
@@ -226,7 +226,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" # ")
                         .criterion(hasItem(ModBlocks.PRIXILIUM_LAMP), conditionsFromItem(ModBlocks.PRIXILIUM_LAMP))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_redstone_lamp")));
+
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STAND)
+                        .input('!', Blocks.DEEPSLATE_BRICK_WALL)
+                        .input('#', Blocks.DEEPSLATE_BRICKS)
+                        .pattern(" ! ")
+                        .pattern("###")
+                        .criterion(hasItem(Blocks.DEEPSLATE_BRICK_WALL), conditionsFromItem(Blocks.DEEPSLATE_BRICK_WALL))
+                        .criterion(hasItem(Blocks.DEEPSLATE_BRICKS), conditionsFromItem(Blocks.DEEPSLATE_BRICKS))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.REACTOR_CORE)
+                        .input('!', Blocks.GLASS_PANE)
+                        .input('#', Blocks.DEEPSLATE_BRICKS)
+                        .pattern(" ! ")
+                        .pattern("! !")
+                        .pattern("###")
+                        .criterion(hasItem(Blocks.GLASS_PANE), conditionsFromItem(Blocks.GLASS_PANE))
+                        .criterion(hasItem(Blocks.DEEPSLATE_BRICKS), conditionsFromItem(Blocks.DEEPSLATE_BRICKS))
+                        .offerTo(exporter);
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.VIRUS_REACTOR)
+                        .input(ModBlocks.REACTOR_CORE)
+                        .input(ModBlocks.STAND)
+                        .criterion(hasItem(ModBlocks.REACTOR_CORE), conditionsFromItem(ModBlocks.REACTOR_CORE))
+                        .criterion(hasItem(ModBlocks.STAND), conditionsFromItem(ModBlocks.STAND))
+                        .offerTo(exporter);
             }
+
             private void offerPrixiliumUpgrade(RecipeExporter exporter, Item input, RecipeCategory category) {
                 Identifier inputId = Registries.ITEM.getId(input);
 

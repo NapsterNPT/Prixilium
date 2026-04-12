@@ -176,6 +176,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
                         entries.add(ModBlocks.PRIXILIUM_LAMP);
+                        entries.add(ModBlocks.STAND);
+                        entries.add(ModBlocks.REACTOR_CORE);
                         entries.add(ModBlocks.VIRUS_REACTOR);
                         //endregion
 

@@ -106,6 +106,18 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.STAND,
+                        Identifier.of(Prixilium.MOD_ID, "block/stand")
+                )
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.REACTOR_CORE,
+                        Identifier.of(Prixilium.MOD_ID, "block/reactor_core")
+                )
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
                         ModBlocks.VIRUS_REACTOR,
                         Identifier.of(Prixilium.MOD_ID, "block/virus_reactor")
                 )

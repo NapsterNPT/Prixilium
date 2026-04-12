@@ -24,6 +24,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_LEAVES);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.STAND)
+                .add(ModBlocks.REACTOR_CORE)
+                .add(ModBlocks.VIRUS_REACTOR)
+                .add(ModBlocks.PRIXILIUM_BRICKS);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(ModBlocks.REACTOR_CORE)
+                .add(ModBlocks.VIRUS_REACTOR)
                 .add(ModBlocks.PRIXILIUM_BRICKS);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
