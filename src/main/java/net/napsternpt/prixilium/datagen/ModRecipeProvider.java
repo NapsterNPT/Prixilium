@@ -32,6 +32,34 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 // Items
                 offerSmithingTemplateCopyingRecipe(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, ModBlocks.PRIXILIUM);
 
+                createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_CHARM)
+                        .input('!', Items.EMERALD)
+                        .input('#', ModBlocks.PRIXILIUM)
+                        .pattern("#!#")
+                        .pattern("! !")
+                        .pattern("#!#")
+                        .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
+                        .criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_TRANSFER_CHARM)
+                        .input('!', Items.ENDER_PEARL)
+                        .input('#', ModItems.PRIXILIUM_CHARM)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM), conditionsFromItem(ModItems.PRIXILIUM_CHARM))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_CONTAINER_CHARM)
+                        .input('!', Blocks.CHEST)
+                        .input('#', ModItems.PRIXILIUM_CHARM)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(Blocks.CHEST), conditionsFromItem(Blocks.CHEST))
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM), conditionsFromItem(ModItems.PRIXILIUM_CHARM))
+                        .offerTo(exporter);
+
                 //region [Tools]
 
                 //region [wood]

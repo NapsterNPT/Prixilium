@@ -130,6 +130,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILIUM_VIRUS_ALIVE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_VIRUS_DEAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_CHARM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_TRANSFER_CHARM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_CONTAINER_CHARM, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
         itemModelGenerator.register(ModItems.BLOKITO_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
@@ -193,7 +196,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HOE, Models.HANDHELD);
         //endregion
 
-        itemModelGenerator.register(ModItems.PRIXILED_MACE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_MACE, Models.HANDHELD_MACE);
 
         //endregion
 

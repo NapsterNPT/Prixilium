@@ -28,6 +28,19 @@ public class ModItems {
 
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_upgrade_smithing_template")))
+    )); //TODO: apparently new SmithingTemplateItem is a thing
+
+    public static final Item PRIXILIUM_CHARM = registerItem("prixilium_charm", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm")))
+            .maxCount(1)
+    ));
+    public static final Item PRIXILIUM_TRANSFER_CHARM = registerItem("prixilium_transfer_charm", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm")))
+            .maxCount(1)
+    ));
+    public static final Item PRIXILIUM_CONTAINER_CHARM = registerItem("prixilium_container_charm", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_container_charm")))
+            .maxCount(1)
     ));
 
     public static final Item PRIXILIUM_HOOK = registerItem("prixilium_hook", new PrixiliumHookItem(new Item.Settings()

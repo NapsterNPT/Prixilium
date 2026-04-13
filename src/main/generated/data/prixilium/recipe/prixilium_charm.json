@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": "minecraft:emerald",
+    "#": "prixilium:prixilium"
+  },
+  "pattern": [
+    "#!#",
+    "! !",
+    "#!#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixilium_charm"
+  }
+}

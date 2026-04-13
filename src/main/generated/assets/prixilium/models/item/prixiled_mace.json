@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/handheld",
+  "parent": "minecraft:item/handheld_mace",
   "textures": {
     "layer0": "prixilium:item/prixiled_mace"
   }

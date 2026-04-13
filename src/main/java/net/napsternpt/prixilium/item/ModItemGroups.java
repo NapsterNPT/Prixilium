@@ -23,6 +23,9 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILIUM_VIRUS_ALIVE);
                         entries.add(ModItems.PRIXILIUM_VIRUS_DEAD);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
+                        entries.add(ModItems.PRIXILIUM_CHARM);
+                        entries.add(ModItems.PRIXILIUM_TRANSFER_CHARM);
+                        entries.add(ModItems.PRIXILIUM_CONTAINER_CHARM);
                         entries.add(ModItems.PRIXILIUM_HOOK);
                         entries.add(ModItems.BLIKO_SPAWN_EGG);
                         entries.add(ModItems.BLOKITO_SPAWN_EGG);
