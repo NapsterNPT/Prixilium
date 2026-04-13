@@ -15,6 +15,7 @@ public class ModEntities {
     public static final EntityType<PrixiliumHookEntity> PRIXILIUM_HOOK = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "prixilium_hook"),
             EntityType.Builder.<PrixiliumHookEntity>create(PrixiliumHookEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.0F, 0.0F)
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "prixilium_hook")))
     );
 
