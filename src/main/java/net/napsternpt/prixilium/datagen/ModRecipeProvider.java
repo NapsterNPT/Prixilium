@@ -255,7 +255,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             private void offerPrixiliumUpgrade(RecipeExporter exporter, Item input, RecipeCategory category) {
                 Identifier inputId = Registries.ITEM.getId(input);
 
-                Identifier resultId = Identifier.of("prixilium", "prixiled_" + inputId.getPath());
+                Identifier resultId = Identifier.of(Prixilium.MOD_ID, "prixiled_" + inputId.getPath());
 
                 Item result = Registries.ITEM.get(resultId);
 
