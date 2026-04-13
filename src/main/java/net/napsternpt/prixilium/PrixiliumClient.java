@@ -7,9 +7,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.entity.ModEntities;
-import net.napsternpt.prixilium.entity.client.BlikoModel;
-import net.napsternpt.prixilium.entity.client.BlikoRenderer;
-import net.napsternpt.prixilium.entity.client.PrixiliumHookRenderer;
+import net.napsternpt.prixilium.entity.client.*;
 import net.napsternpt.prixilium.util.ModModelPredicates;
 
 public class PrixiliumClient implements ClientModInitializer {
@@ -25,6 +23,8 @@ public class PrixiliumClient implements ClientModInitializer {
 
 		EntityModelLayerRegistry.registerModelLayer(BlikoModel.BLIKO, BlikoModel::getTexturedModelData);
 		EntityRendererRegistry.register(ModEntities.BLIKO, BlikoRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(BlokitoModel.BLOKITO, BlokitoModel::getTexturedModelData);
+		EntityRendererRegistry.register(ModEntities.BLOKITO, BlokitoRenderer::new);
 		EntityRendererRegistry.register(ModEntities.PRIXILIUM_HOOK, PrixiliumHookRenderer::new);
     }
 }

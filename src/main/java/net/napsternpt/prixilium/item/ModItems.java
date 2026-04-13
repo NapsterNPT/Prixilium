@@ -39,6 +39,10 @@ public class ModItems {
             ModEntities.BLIKO, 0x1e1e1e, 0x1e1e1e, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "bliko_spawn_egg")))
     ));
+    public static final Item BLOKITO_SPAWN_EGG = registerItem("blokito_spawn_egg", new SpawnEggItem(
+            ModEntities.BLOKITO, 0x1e1e1e, 0x1e1e1e, new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "blokito_spawn_egg")))
+    ));
 
     //region [Tools]
 

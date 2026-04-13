@@ -1,4 +1,4 @@
-// 1.21.3	2026-04-12T22:11:53.1689886	Prixilium/Model Definitions
+// 1.21.3	2026-04-13T15:33:57.8014907	Prixilium/Model Definitions
 778f28f29989f689032e0e31d93f1e0c387a97ec assets\prixilium\models\item\prixiled_netherite_helmet_netherite_trim.json
 ad438deb92b7e175e83ba7b4dc4b5019f0998746 assets\prixilium\models\block\prixilium_stairs.json
 a84a338aff8ae99c1a0ac52ead8433786ff543da assets\prixilium\models\item\prixilium_wood.json
@@ -354,6 +354,7 @@ c59de5a5e6a6b15377a50fc761468dfb939fb70a assets\prixilium\models\item\prixiled_g
 d41b8b84ceb78763a93a2ebc872e88335673fbb7 assets\prixilium\models\item\prixiled_leather_leggings_iron_trim.json
 ec70be14f8cb3e9e82e600795494ea343dd83f93 assets\prixilium\models\item\prixiled_diamond_boots_copper_trim.json
 c2c328def578ddbd7a8e0a55a753924b8f09000c assets\prixilium\models\item\prixiled_golden_chestplate_emerald_trim.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\prixilium\models\item\blokito_spawn_egg.json
 c1193306b64b57df82e553ddc088020ff4705c83 assets\prixilium\models\item\prixiled_netherite_chestplate.json
 a7cbccd7ce675fd4b30c84031b8136ee6ad8db1f assets\prixilium\models\item\prixiled_turtle_helmet_amethyst_trim.json
 9b3081e0051684f787e95bde325c1276f477e266 assets\prixilium\models\item\prixiled_chainmail_chestplate_diamond_trim.json
