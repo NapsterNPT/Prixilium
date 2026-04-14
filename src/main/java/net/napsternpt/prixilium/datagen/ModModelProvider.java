@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.equipment.EquipmentModel;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
@@ -296,5 +297,16 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_HORSE_ARMOR, Models.GENERATED);
         // 1.21.11+ itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR, Models.GENERATED);
         //endregion
+    }
+
+    private void registerCharm(ItemModelGenerator gen, Item item, String overlay) {
+        Models.GENERATED.upload(
+                ModelIds.getItemModelId(item),
+                TextureMap.layered(
+                        Identifier.of(Prixilium.MOD_ID, "item/prixilium_charm"),
+                        Identifier.of(Prixilium.MOD_ID, "item/" + overlay)
+                ),
+                gen.writer
+        );
     }
 }
