@@ -10,6 +10,7 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
@@ -83,17 +84,14 @@ public class BlokitoEntity extends ZombieEntity {
 
     //Sounds
     @Override
-    protected @Nullable SoundEvent getAmbientSound() {
-        return ModSounds.BLIKO_AMBIENT;
-    }
+    protected @Nullable SoundEvent getAmbientSound() {return ModSounds.BLIKO_AMBIENT;}
 
     @Override
-    protected @Nullable SoundEvent getHurtSound(DamageSource source) {
-        return ModSounds.BLIKO_HURT;
-    }
+    protected @Nullable SoundEvent getHurtSound(DamageSource source) {return ModSounds.BLIKO_HURT;}
 
     @Override
-    protected @Nullable SoundEvent getDeathSound() {
-        return ModSounds.BLIKO_DEATH;
-    }
+    protected @Nullable SoundEvent getDeathSound() {return ModSounds.BLIKO_DEATH;}
+
+    @Override
+    protected SoundEvent getStepSound() {return SoundEvents.ITEM_MACE_SMASH_GROUND_HEAVY;}
 }

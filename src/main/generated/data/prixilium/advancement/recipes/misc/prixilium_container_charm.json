@@ -1,16 +1,6 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chest": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:chest"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_prixilium_charm": {
       "conditions": {
         "items": [
@@ -31,7 +21,6 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_chest",
       "has_prixilium_charm"
     ]
   ],

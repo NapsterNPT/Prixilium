@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:prixilium_transfer_charm"
+        "recipe": "prixilium:prixilium_rollback_charm"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "prixilium:prixilium_transfer_charm"
+      "prixilium:prixilium_rollback_charm"
     ]
   }
 }

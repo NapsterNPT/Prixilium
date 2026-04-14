@@ -2,18 +2,24 @@ package net.napsternpt.prixilium.item;
 
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.DyedColorComponent;
+import net.minecraft.component.type.EquippableComponent;
 import net.minecraft.component.type.UnbreakableComponent;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
+import net.minecraft.item.equipment.EquipmentModels;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.minecraft.util.Unit;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
+import net.napsternpt.prixilium.item.custom.PrixiliumTransferCharmItem;
 import net.napsternpt.prixilium.item.custom.PrixiliumVirusAliveItem;
 
 public class ModItems {
@@ -34,13 +40,23 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm")))
             .maxCount(1)
     ));
-    public static final Item PRIXILIUM_TRANSFER_CHARM = registerItem("prixilium_transfer_charm", new Item(new Item.Settings()
+    public static final Item PRIXILIUM_TRANSFER_CHARM = registerItem("prixilium_transfer_charm", new PrixiliumTransferCharmItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm")))
             .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.RARE)
     ));
     public static final Item PRIXILIUM_CONTAINER_CHARM = registerItem("prixilium_container_charm", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_container_charm")))
             .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.RARE)
+    ));
+    public static final Item PRIXILIUM_ROLLBACK_CHARM = registerItem("prixilium_rollback_charm", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_rollback_charm")))
+            .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.RARE)
     ));
 
     public static final Item PRIXILIUM_HOOK = registerItem("prixilium_hook", new PrixiliumHookItem(new Item.Settings()
@@ -49,11 +65,11 @@ public class ModItems {
     ));
 
     public static final Item BLIKO_SPAWN_EGG = registerItem("bliko_spawn_egg", new SpawnEggItem(
-            ModEntities.BLIKO, 0x1e1e1e, 0x1e1e1e, new Item.Settings()
+            ModEntities.BLIKO, 0xffe995, 0xffcb00, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "bliko_spawn_egg")))
     ));
     public static final Item BLOKITO_SPAWN_EGG = registerItem("blokito_spawn_egg", new SpawnEggItem(
-            ModEntities.BLOKITO, 0x1e1e1e, 0x1e1e1e, new Item.Settings()
+            ModEntities.BLOKITO, 0xffcb00, 0x8f7200, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "blokito_spawn_egg")))
     ));
 

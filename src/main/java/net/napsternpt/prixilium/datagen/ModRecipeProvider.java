@@ -47,7 +47,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .pattern("!#!")
                         .pattern(" ! ")
-                        .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM), conditionsFromItem(ModItems.PRIXILIUM_CHARM))
                         .offerTo(exporter);
                 createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_CONTAINER_CHARM)
@@ -56,7 +55,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .pattern("!#!")
                         .pattern(" ! ")
-                        .criterion(hasItem(Blocks.CHEST), conditionsFromItem(Blocks.CHEST))
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM), conditionsFromItem(ModItems.PRIXILIUM_CHARM))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_ROLLBACK_CHARM)
+                        .input('!', Items.ENDER_PEARL)
+                        .input('@', Items.CLOCK)
+                        .input('€', Items.COMPASS)
+                        .input('#', ModItems.PRIXILIUM_CHARM)
+                        .pattern(" @ ")
+                        .pattern("!#!")
+                        .pattern(" € ")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM), conditionsFromItem(ModItems.PRIXILIUM_CHARM))
                         .offerTo(exporter);
 

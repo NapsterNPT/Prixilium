@@ -133,6 +133,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILIUM_CHARM, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_TRANSFER_CHARM, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_CONTAINER_CHARM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_ROLLBACK_CHARM, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
         itemModelGenerator.register(ModItems.BLOKITO_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 

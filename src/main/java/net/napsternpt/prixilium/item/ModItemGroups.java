@@ -26,6 +26,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILIUM_CHARM);
                         entries.add(ModItems.PRIXILIUM_TRANSFER_CHARM);
                         entries.add(ModItems.PRIXILIUM_CONTAINER_CHARM);
+                        entries.add(ModItems.PRIXILIUM_ROLLBACK_CHARM);
                         entries.add(ModItems.PRIXILIUM_HOOK);
                         entries.add(ModItems.BLIKO_SPAWN_EGG);
                         entries.add(ModItems.BLOKITO_SPAWN_EGG);

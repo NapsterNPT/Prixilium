@@ -1,4 +1,4 @@
-// 1.21.3	2026-04-13T22:38:11.6976516	Prixilium/Model Definitions
+// 1.21.3	2026-04-14T18:16:16.7844528	Prixilium/Model Definitions
 ad438deb92b7e175e83ba7b4dc4b5019f0998746 assets\prixilium\models\block\prixilium_stairs.json
 778f28f29989f689032e0e31d93f1e0c387a97ec assets\prixilium\models\item\prixiled_netherite_helmet_netherite_trim.json
 a84a338aff8ae99c1a0ac52ead8433786ff543da assets\prixilium\models\item\prixilium_wood.json
@@ -375,6 +375,7 @@ b13d886b8d314974d4e98b718357109d3de4e115 assets\prixilium\models\item\prixiled_g
 f0e34c07d9aa8fd8b3cf81061cfa5856ed5f3edd assets\prixilium\models\item\prixiled_golden_leggings_iron_trim.json
 63e859e7211206845a8967e72c29af7a7f04a20b assets\prixilium\models\item\prixiled_chainmail_boots_quartz_trim.json
 730bd49fb1ce77cf4802b89b76596f9e7aa78f94 assets\prixilium\models\item\prixiled_iron_boots_iron_trim.json
+f1f381a416a61eb977d02cb6f643367630a76f51 assets\prixilium\models\item\prixilium_rollback_charm.json
 1e1b106de9cac1221663670e914fbcbae6629ceb assets\prixilium\models\item\prixiled_diamond_boots_iron_trim.json
 568d45ef29d7a80737498451e183c3fd1800ae96 assets\prixilium\models\item\prixiled_leather_boots_diamond_trim.json
 2235a36286eb2180ef339c4c4584b10abcdafdda assets\prixilium\models\item\prixiled_golden_boots_lapis_trim.json

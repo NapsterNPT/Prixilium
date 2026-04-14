@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": "minecraft:ender_pearl",
+    "#": "prixilium:prixilium_charm",
+    "@": "minecraft:clock",
+    "€": "minecraft:compass"
+  },
+  "pattern": [
+    " @ ",
+    "!#!",
+    " € "
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixilium_rollback_charm"
+  }
+}
