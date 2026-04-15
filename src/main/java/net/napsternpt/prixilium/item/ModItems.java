@@ -2,20 +2,15 @@ package net.napsternpt.prixilium.item;
 
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.DyedColorComponent;
-import net.minecraft.component.type.EquippableComponent;
 import net.minecraft.component.type.UnbreakableComponent;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
-import net.minecraft.item.equipment.EquipmentModels;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-import net.minecraft.util.Unit;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
@@ -34,30 +29,80 @@ public class ModItems {
 
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_upgrade_smithing_template")))
-    )); //TODO: apparently new SmithingTemplateItem is a thing
+    ));
 
-    public static final Item PRIXILIUM_CHARM = registerItem("prixilium_charm", new Item(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm")))
+    //region [charms]
+    // Tier I
+    public static final Item PRIXILIUM_CHARM_I = registerItem("prixilium_charm_i", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm_i")))
             .maxCount(1)
     ));
-    public static final Item PRIXILIUM_TRANSFER_CHARM = registerItem("prixilium_transfer_charm", new PrixiliumTransferCharmItem(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm")))
+    public static final Item PRIXILIUM_TRANSFER_CHARM_I = registerItem("prixilium_transfer_charm_i", new PrixiliumTransferCharmItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm_i")))
+            .maxCount(1)
+            .maxDamage(4)
+            .rarity(Rarity.UNCOMMON)
+    ));
+    public static final Item PRIXILIUM_CONTAINER_CHARM_I = registerItem("prixilium_container_charm_i", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_container_charm_i")))
+            .maxCount(1)
+            .rarity(Rarity.UNCOMMON)
+    ));
+    public static final Item PRIXILIUM_ROLLBACK_CHARM_I = registerItem("prixilium_rollback_charm_i", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_rollback_charm_i")))
+            .maxCount(1)
+            .maxDamage(4)
+            .rarity(Rarity.UNCOMMON)
+    ));
+
+    // Tier II
+    public static final Item PRIXILIUM_CHARM_II = registerItem("prixilium_charm_ii", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm_ii")))
+            .maxCount(1)
+            .rarity(Rarity.UNCOMMON)
+    ));
+    public static final Item PRIXILIUM_TRANSFER_CHARM_II = registerItem("prixilium_transfer_charm_ii", new PrixiliumTransferCharmItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm_ii")))
+            .maxCount(1)
+            .maxDamage(16)
+            .rarity(Rarity.RARE)
+    ));
+    public static final Item PRIXILIUM_CONTAINER_CHARM_II = registerItem("prixilium_container_charm_ii", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_container_charm_ii")))
+            .maxCount(1)
+            .rarity(Rarity.RARE)
+    ));
+    public static final Item PRIXILIUM_ROLLBACK_CHARM_II = registerItem("prixilium_rollback_charm_ii", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_rollback_charm_ii")))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.RARE)
     ));
-    public static final Item PRIXILIUM_CONTAINER_CHARM = registerItem("prixilium_container_charm", new Item(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_container_charm")))
+
+    // Tier III
+    public static final Item PRIXILIUM_CHARM_III = registerItem("prixilium_charm_iii", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm_iii")))
             .maxCount(1)
-            .maxDamage(32)
             .rarity(Rarity.RARE)
     ));
-    public static final Item PRIXILIUM_ROLLBACK_CHARM = registerItem("prixilium_rollback_charm", new Item(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_rollback_charm")))
+    public static final Item PRIXILIUM_TRANSFER_CHARM_III = registerItem("prixilium_transfer_charm_iii", new PrixiliumTransferCharmItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm_iii")))
             .maxCount(1)
             .maxDamage(32)
-            .rarity(Rarity.RARE)
+            .rarity(Rarity.EPIC)
     ));
+    public static final Item PRIXILIUM_CONTAINER_CHARM_III = registerItem("prixilium_container_charm_iii", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_container_charm_iii")))
+            .maxCount(1)
+            .rarity(Rarity.EPIC)
+    ));
+    public static final Item PRIXILIUM_ROLLBACK_CHARM_III = registerItem("prixilium_rollback_charm_iii", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_rollback_charm_iii")))
+            .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.EPIC)
+    ));
+    //endregion
 
     public static final Item PRIXILIUM_HOOK = registerItem("prixilium_hook", new PrixiliumHookItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_hook")))
