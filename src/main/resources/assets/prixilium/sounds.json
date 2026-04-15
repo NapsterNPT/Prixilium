@@ -27,5 +27,23 @@
     "sounds": [
       "prixilium:bliko_death"
     ]
+  },
+  "blokito_hurt": {
+    "subtitle": "sounds.prixilium.blokito_hurt",
+    "sounds": [
+      "prixilium:blokito_hurt"
+    ]
+  },
+  "blokito_death": {
+    "subtitle": "sounds.prixilium.blokito_death",
+    "sounds": [
+      "prixilium:blokito_death"
+    ]
+  },
+  "blokito_walk": {
+    "subtitle": "sounds.prixilium.blokito_walk",
+    "sounds": [
+      "prixilium:blokito_walk"
+    ]
   }
 }

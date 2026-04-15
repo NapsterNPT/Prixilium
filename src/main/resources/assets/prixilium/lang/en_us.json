@@ -108,10 +108,14 @@
   "block.prixilium.virus_reactor": "Virus Reactor",
 
 
-  "sounds.prixilium.prixilium_expand": "Prixilium Expand",
+  "sounds.prixilium.prixilium_expand": "Prixilium Expands",
+
   "sounds.prixilium.bliko_ambient": "Bliko Wanders",
   "sounds.prixilium.bliko_hurt": "Bliko Hurts",
   "sounds.prixilium.bliko_death": "Bliko Dies",
+  "sounds.prixilium.blokito_hurt": "Blokito Hurts",
+  "sounds.prixilium.blokito_death": "Blokito Dies",
+  "sounds.prixilium.blokito_walk": "Blokito Walks",
 
 
   "effect.prixilium.prixilium_slowness": "Prixilium Slowness",
