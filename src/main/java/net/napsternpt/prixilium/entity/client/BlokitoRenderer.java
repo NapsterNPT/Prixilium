@@ -15,9 +15,7 @@ public class BlokitoRenderer extends MobEntityRenderer<BlokitoEntity, BlokitoRen
     }
 
     @Override
-    public BlokitoRenderState createRenderState() {
-        return new BlokitoRenderState();
-    }
+    public BlokitoRenderState createRenderState() {return new BlokitoRenderState();}
 
     @Override
     public void updateRenderState(BlokitoEntity entity, BlokitoRenderState state, float tickDelta) {

@@ -12,6 +12,7 @@
   "item.prixilium.prixilium_hook": "Prixilium Hook",
   "item.prixilium.bliko_spawn_egg": "Bliko Spawn Egg",
   "item.prixilium.blokito_spawn_egg": "Blokito Spawn Egg",
+  "item.prixilium.airis_spawn_egg": "Airis Spawn Egg",
 
   "item.prixilium.prixiled_wooden_sword": "Prixiled Wooden Sword",
   "item.prixilium.prixiled_wooden_pickaxe": "Prixiled Wooden Pickaxe",
@@ -126,5 +127,6 @@
 
 
   "entity.prixilium.bliko": "Bliko",
-  "entity.prixilium.blokito": "Blokito"
+  "entity.prixilium.blokito": "Blokito",
+  "entity.prixilium.airis": "Airis"
 }

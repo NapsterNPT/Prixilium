@@ -29,5 +29,6 @@ public class Prixilium implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.BLIKO, BlikoEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BLOKITO, BlokitoEntity.createAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.AIRIS, AirisEntity.createAttributes());
 	}
 }

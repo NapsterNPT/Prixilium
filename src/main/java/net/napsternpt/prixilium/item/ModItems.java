@@ -117,6 +117,10 @@ public class ModItems {
             ModEntities.BLOKITO, 0xffcb00, 0x8f7200, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "blokito_spawn_egg")))
     ));
+    public static final Item AIRIS_SPAWN_EGG = registerItem("airis_spawn_egg", new SpawnEggItem(
+            ModEntities.AIRIS, 0xffcb00, 0x7afff3, new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "airis_spawn_egg")))
+    ));
 
     //region [Tools]
 

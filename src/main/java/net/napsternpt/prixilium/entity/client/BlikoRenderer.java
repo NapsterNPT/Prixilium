@@ -16,9 +16,7 @@ public class BlikoRenderer extends MobEntityRenderer<BlikoEntity, BlikoRenderSta
     }
 
     @Override
-    public BlikoRenderState createRenderState() {
-        return new BlikoRenderState();
-    }
+    public BlikoRenderState createRenderState() {return new BlikoRenderState();}
 
     @Override
     public void updateRenderState(BlikoEntity entity, BlikoRenderState state, float tickDelta) {
