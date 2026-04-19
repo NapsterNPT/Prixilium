@@ -32,6 +32,38 @@ public class ModItemGroups {
                         entries.add(ModItems.BLOKITO_SPAWN_EGG);
                         entries.add(ModItems.AIRIS_SPAWN_EGG);
 
+                        //endregion
+
+                        //region [Blocks]
+
+                        entries.add(ModBlocks.PRIXILIUM);
+                        entries.add(ModBlocks.PRIXILIUM_GRASS);
+                        entries.add(ModBlocks.PRIXILIUM_LEAVES);
+                        entries.add(ModBlocks.PRIXILIUM_LOG);
+                        entries.add(ModBlocks.PRIXILIUM_WOOD);
+                        entries.add(ModBlocks.PRIXILIUM_PLANKS);
+                        entries.add(ModBlocks.PRIXILIUM_STAIRS);
+                        entries.add(ModBlocks.PRIXILIUM_SLAB);
+                        entries.add(ModBlocks.PRIXILIUM_FENCE);
+                        entries.add(ModBlocks.PRIXILIUM_FENCE_GATE);
+                        entries.add(ModBlocks.PRIXILIUM_DOOR);
+                        entries.add(ModBlocks.PRIXILIUM_TRAPDOOR);
+                        entries.add(ModBlocks.PRIXILIUM_BRICKS);
+                        entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
+                        entries.add(ModBlocks.PRIXILIUM_LAMP);
+                        entries.add(ModBlocks.STAND);
+                        entries.add(ModBlocks.REACTOR_CORE);
+                        entries.add(ModBlocks.VIRUS_REACTOR);
+                        //endregion
+
+                    }).build());
+
+    public static final ItemGroup PRIXILED_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Prixilium.MOD_ID, "prixiled_items"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PRIXILED_DIAMOND_SWORD))
+                    .displayName(Text.translatable("itemgroup.prixilium.prixiled_items"))
+                    .entries((displayContext, entries) -> {
+
                         //region [Tools]
 
                         //region [wood]
@@ -165,31 +197,7 @@ public class ModItemGroups {
 
                         //endregion
 
-                        //region [Blocks]
-
-                        entries.add(ModBlocks.PRIXILIUM);
-                        entries.add(ModBlocks.PRIXILIUM_GRASS);
-                        entries.add(ModBlocks.PRIXILIUM_LEAVES);
-                        entries.add(ModBlocks.PRIXILIUM_LOG);
-                        entries.add(ModBlocks.PRIXILIUM_WOOD);
-                        entries.add(ModBlocks.PRIXILIUM_PLANKS);
-                        entries.add(ModBlocks.PRIXILIUM_STAIRS);
-                        entries.add(ModBlocks.PRIXILIUM_SLAB);
-                        entries.add(ModBlocks.PRIXILIUM_FENCE);
-                        entries.add(ModBlocks.PRIXILIUM_FENCE_GATE);
-                        entries.add(ModBlocks.PRIXILIUM_DOOR);
-                        entries.add(ModBlocks.PRIXILIUM_TRAPDOOR);
-                        entries.add(ModBlocks.PRIXILIUM_BRICKS);
-                        entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
-                        entries.add(ModBlocks.PRIXILIUM_LAMP);
-                        entries.add(ModBlocks.STAND);
-                        entries.add(ModBlocks.REACTOR_CORE);
-                        entries.add(ModBlocks.VIRUS_REACTOR);
-                        //endregion
-
                     }).build());
 
-    public static void registerItemGroups() {
-        Prixilium.LOGGER.info("Registering Prixilium Item Groups.");
-    }
+    public static void registerItemGroups() {Prixilium.LOGGER.info("Registering Prixilium Item Groups.");}
 }

@@ -36,7 +36,7 @@ public class ModEntities {
     public static final EntityType<AirisEntity> AIRIS = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "airis"),
             EntityType.Builder.create(AirisEntity::new, SpawnGroup.CREATURE)
-                    .dimensions(0.99F, 0.99F)
+                    .dimensions(0.99F, 0.5F)
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "airis")))
     );
 
