@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "prixilium:item/prixilium_virus_alive"
+    "layer0": "prixilium:item/virus_dead"
   }
 }

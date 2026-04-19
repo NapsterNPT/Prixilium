@@ -29,7 +29,7 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
                 LootTable.builder()
                         .pool(LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1))
-                                .with(ItemEntry.builder(ModItems.PRIXILIUM_VIRUS_ALIVE)
+                                .with(ItemEntry.builder(ModItems.VIRUS_ALIVE)
                                         .apply(SetCountLootFunction.builder(
                                                 ConstantLootNumberProvider.create(1)))
                                 )

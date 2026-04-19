@@ -21,6 +21,9 @@ public class ModEffects {
                             Identifier.of(Prixilium.MOD_ID, "prixilium_slowness_jump"), -0.5f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 
+    public static final RegistryEntry<StatusEffect> ILLNESS = registerStatusEffect("illness",
+            new IllnessEffect(StatusEffectCategory.NEUTRAL, 0x6baf00));
+
     public static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Prixilium.MOD_ID, name), statusEffect);
     }

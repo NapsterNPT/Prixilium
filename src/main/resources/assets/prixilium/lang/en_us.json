@@ -3,8 +3,8 @@
   "itemgroup.prixilium.prixiled_items": "Prixiled Items",
 
 
-  "item.prixilium.prixilium_virus_alive": "Prixilium Virus (Alive)",
-  "item.prixilium.prixilium_virus_dead": "Prixilium Virus (Dead)",
+  "item.prixilium.virus_alive": "Virus (Alive)",
+  "item.prixilium.virus_dead": "Virus (Dead)",
   "item.prixilium.prixilium_upgrade_smithing_template": "Prixilium Smithing Template",
   "item.prixilium.prixilium_charm": "Prixilium Charm",
   "item.prixilium.prixilium_transfer_charm": "Prixilium Transfer Charm",
@@ -121,6 +121,7 @@
 
 
   "effect.prixilium.prixilium_slowness": "Prixilium Slowness",
+  "effect.prixilium.illness": "Illness",
 
 
   "tag.item.prixilium.prevent_prixilium_slowness": "Prevents Prixilium Slowness",

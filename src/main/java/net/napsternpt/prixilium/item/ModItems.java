@@ -15,16 +15,16 @@ import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
 import net.napsternpt.prixilium.item.custom.PrixiliumTransferCharmItem;
-import net.napsternpt.prixilium.item.custom.PrixiliumVirusAliveItem;
+import net.napsternpt.prixilium.item.custom.VirusAliveItem;
 
 public class ModItems {
-    public static final Item PRIXILIUM_VIRUS_ALIVE = registerItem("prixilium_virus_alive", new PrixiliumVirusAliveItem(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_virus_alive")))
+    public static final Item VIRUS_ALIVE = registerItem("virus_alive", new VirusAliveItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "virus_alive")))
             .maxCount(1)
             .maxDamage(100)
     ));
-    public static final Item PRIXILIUM_VIRUS_DEAD = registerItem("prixilium_virus_dead", new Item(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_virus_dead")))
+    public static final Item VIRUS_DEAD = registerItem("virus_dead", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "virus_dead")))
     ));
 
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()

@@ -5,6 +5,7 @@ import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.SaplingGenerator;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -20,9 +21,7 @@ public class PrixiliumBlock extends SaplingBlock {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && entity instanceof LivingEntity livingEntity) {
             if (!hasProtectionItem(livingEntity) && !livingEntity.getType().isIn(ModTags.Entities.IMMUNE_TO_PRIXILIUM_SLOWNESS)) {
-                    livingEntity.addStatusEffect(
-                            new net.minecraft.entity.effect.StatusEffectInstance(ModEffects.PRIXILIUM_SLOWNESS, 40, 0)
-                    );
+                    livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.PRIXILIUM_SLOWNESS, 40, 0));
             }
         }
         super.onEntityCollision(state, world, pos, entity);
