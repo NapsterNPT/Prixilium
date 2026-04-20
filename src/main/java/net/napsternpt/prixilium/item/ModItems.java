@@ -22,6 +22,7 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "virus_alive")))
             .maxCount(1)
             .maxDamage(100)
+            .rarity(Rarity.RARE)
     ));
     public static final Item VIRUS_DEAD = registerItem("virus_dead", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "virus_dead")))

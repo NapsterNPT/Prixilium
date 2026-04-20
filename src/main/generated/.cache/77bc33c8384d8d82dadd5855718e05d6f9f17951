@@ -1,12 +1,12 @@
-// 1.21.3	2026-04-19T12:06:23.8514902	Prixilium/Prixilium recipes.
+// 1.21.3	2026-04-19T13:30:48.5337235	Prixilium/Prixilium recipes.
 1ab115dd07ae6b2276dc6c6549e67915f85728b5 data\prixilium\recipe\prixiled_iron_boots.json
 e4e21c0ef57c67f45ff6e692e2d1276a2750be93 data\prixilium\advancement\recipes\tools\prixiled_netherite_shovel.json
 38494ecfdfa8149541eb2ac588b4911f29f1b098 data\prixilium\recipe\prixilium_fence_gate.json
 18bdb82a64e298533f69a2a13a2cb6f6e23711de data\prixilium\recipe\prixilium_planks_from_prixilium_log.json
 d3947f42721b3b85fdd385792e627fc8bb7c1166 data\prixilium\recipe\prixilium_door.json
 2d386cfead9ffb3d3069f2ddc452edadca0a2a05 data\prixilium\recipe\prixiled_iron_axe.json
-d4312a5d0ca57d8b9998139ec5307402d3680dc5 data\prixilium\recipe\prixiled_wooden_shovel.json
 2ad3cf2baa88985ac02edc3e03ee33470cb9f950 data\prixilium\advancement\recipes\tools\prixiled_wooden_axe.json
+d4312a5d0ca57d8b9998139ec5307402d3680dc5 data\prixilium\recipe\prixiled_wooden_shovel.json
 08b58d1bd8f841b96bb28f2f2605f33521bddf58 data\prixilium\recipe\prixiled_leather_leggings.json
 e64f78c2b64ba70f003ac13bc99cdc4b283ee335 data\prixilium\recipe\prixiled_stone_pickaxe.json
 561a6bc71579a694025ca38381e8df0a137acc31 data\prixilium\recipe\prixiled_chainmail_boots.json

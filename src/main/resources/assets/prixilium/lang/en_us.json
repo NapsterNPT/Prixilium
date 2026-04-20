@@ -130,5 +130,9 @@
 
   "entity.prixilium.bliko": "Bliko",
   "entity.prixilium.blokito": "Blokito",
-  "entity.prixilium.airis": "Airis"
+  "entity.prixilium.airis": "Airis",
+
+
+  "tooltip.prixilium.virus_alive.1": "§7This Virus has",
+  "tooltip.prixilium.virus_alive.2": "§7manage carefully..."
 }
