@@ -16,9 +16,7 @@ import java.util.List;
 public class VirusAliveItem extends Item {
     private static final int DAMAGE_INTERVAL = 50;
 
-    public VirusAliveItem(Settings settings) {
-        super(settings);
-    }
+    public VirusAliveItem(Settings settings) {super(settings);}
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
@@ -33,8 +31,10 @@ public class VirusAliveItem extends Item {
                 stack.setDamage(stack.getDamage() + 1);
 
                 if (stack.getDamage() >= stack.getMaxDamage()) {
-                    if (entity instanceof LivingEntity livingEntity)
-                        livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.ILLNESS, Integer.MAX_VALUE));
+                    if (entity instanceof LivingEntity livingEntity) {
+                        int duration = 1000 + livingEntity.getRandom().nextInt(23001);
+                        livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.ILLNESS, duration, 0, true, false, false));
+                    }
                     ItemStack newStack = new ItemStack(ModItems.VIRUS_DEAD);
 
                     if (entity instanceof net.minecraft.entity.player.PlayerEntity player) {
