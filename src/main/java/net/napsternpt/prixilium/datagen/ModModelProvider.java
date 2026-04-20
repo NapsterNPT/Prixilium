@@ -130,6 +130,7 @@ public class ModModelProvider extends FabricModelProvider {
         //hook and bow made by hand
         itemModelGenerator.register(ModItems.VIRUS_ALIVE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VIRUS_DEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_CHARM, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_TRANSFER_CHARM, Models.GENERATED);

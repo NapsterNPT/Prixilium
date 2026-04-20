@@ -31,8 +31,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             public void generate() {
                 // Items
                 offerSmithingTemplateCopyingRecipe(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, ModBlocks.PRIXILIUM);
+                createShaped(RecipeCategory.MISC, ModItems.THERMOMETER)
+                        .input('!', Items.REDSTONE)
+                        .input('#', Blocks.GLASS_PANE)
+                        .input('@', Items.GLASS_BOTTLE)
+                        .pattern(" ! ")
+                        .pattern(" # ")
+                        .pattern(" @ ")
+                        .criterion(hasItem(Items.GLASS_BOTTLE), conditionsFromItem(Items.GLASS_BOTTLE))
+                        .offerTo(exporter);
 
+<<<<<<< HEAD
                 createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_CHARM)
+=======
+                //region [charms]
+                
+                //Tier I
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CHARM_I)
+>>>>>>> 77cf6e8 (we got the thermometer... Noice)
                         .input('!', Items.EMERALD)
                         .input('#', ModBlocks.PRIXILIUM)
                         .pattern("#!#")
@@ -41,7 +57,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
                         .offerTo(exporter);
+<<<<<<< HEAD
                 createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_TRANSFER_CHARM)
+=======
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_TRANSFER_CHARM_I)
+>>>>>>> 77cf6e8 (we got the thermometer... Noice)
                         .input('!', Items.ENDER_PEARL)
                         .input('#', ModItems.PRIXILIUM_CHARM)
                         .pattern(" ! ")
@@ -49,7 +69,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM), conditionsFromItem(ModItems.PRIXILIUM_CHARM))
                         .offerTo(exporter);
+<<<<<<< HEAD
                 createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_CONTAINER_CHARM)
+=======
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CONTAINER_CHARM_I)
+>>>>>>> 77cf6e8 (we got the thermometer... Noice)
                         .input('!', Blocks.CHEST)
                         .input('#', ModItems.PRIXILIUM_CHARM)
                         .pattern(" ! ")
@@ -57,7 +81,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM), conditionsFromItem(ModItems.PRIXILIUM_CHARM))
                         .offerTo(exporter);
+<<<<<<< HEAD
                 createShaped(RecipeCategory.MISC, ModItems.PRIXILIUM_ROLLBACK_CHARM)
+=======
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_ROLLBACK_CHARM_I)
+>>>>>>> 77cf6e8 (we got the thermometer... Noice)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
                         .input('€', Items.COMPASS)
@@ -67,6 +95,37 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM), conditionsFromItem(ModItems.PRIXILIUM_CHARM))
                         .offerTo(exporter);
+<<<<<<< HEAD
+=======
+                
+                //Tier II
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CHARM_II)
+                        .input('!', ModItems.PRIXILIUM_CHARM_I)
+                        .input('#', Items.AMETHYST_SHARD)
+                        .pattern("###")
+                        .pattern("#!#")
+                        .pattern("###")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_I), conditionsFromItem(ModItems.PRIXILIUM_CHARM_I))
+                        .offerTo(exporter);
+                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_TRANSFER_CHARM_I);
+                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_CONTAINER_CHARM_I);
+                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_ROLLBACK_CHARM_I);
+
+                //Tier III
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CHARM_III)
+                        .input('!', ModItems.PRIXILIUM_CHARM_II)
+                        .input('#', Items.NETHERITE_INGOT)
+                        .pattern(" # ")
+                        .pattern("#!#")
+                        .pattern(" # ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_II), conditionsFromItem(ModItems.PRIXILIUM_CHARM_II))
+                        .offerTo(exporter);
+                charmUpgradeToTierIII(exporter, ModItems.PRIXILIUM_TRANSFER_CHARM_II);
+                charmUpgradeToTierIII(exporter, ModItems.PRIXILIUM_CONTAINER_CHARM_II);
+                charmUpgradeToTierIII(exporter, ModItems.PRIXILIUM_ROLLBACK_CHARM_II);
+
+                //endregion
+>>>>>>> 77cf6e8 (we got the thermometer... Noice)
 
                 //region [Tools]
 
@@ -201,7 +260,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 //endregion
 
-                // Blocks
+                //region[Blocks]
                 createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_GRASS)
                         .input(Items.GRASS_BLOCK)
                         .input(ModBlocks.PRIXILIUM)
@@ -286,6 +345,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.REACTOR_CORE), conditionsFromItem(ModBlocks.REACTOR_CORE))
                         .criterion(hasItem(ModBlocks.STAND), conditionsFromItem(ModBlocks.STAND))
                         .offerTo(exporter);
+
+                //endregion
+
             }
 
             private void offerPrixiliumUpgrade(RecipeExporter exporter, Item input, RecipeCategory category) {
@@ -305,6 +367,39 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .offerTo(exporter, String.valueOf(resultId));
             }
+<<<<<<< HEAD
+=======
+
+            private void charmUpgradeToTierII(RecipeExporter exporter, Item  inputCharm) {
+                Identifier inputId = Registries.ITEM.getId(inputCharm);
+                Item  output = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "i"));
+
+                createShaped(RecipeCategory.TOOLS, output)
+                        .input('!', inputCharm)
+                        .input('#', Items.AMETHYST_SHARD)
+                        .pattern("###")
+                        .pattern("#!#")
+                        .pattern("###")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_II), conditionsFromItem(ModItems.PRIXILIUM_CHARM_II))
+                        .criterion(hasItem(inputCharm), conditionsFromItem(inputCharm))
+                        .offerTo(exporter);
+                }
+
+            private void charmUpgradeToTierIII(RecipeExporter exporter, Item  inputCharm) {
+                Identifier inputId = Registries.ITEM.getId(inputCharm);
+                Item  output = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "i"));
+
+                createShaped(RecipeCategory.TOOLS, output)
+                        .input('!', inputCharm)
+                        .input('#', Items.NETHERITE_INGOT)
+                        .pattern(" # ")
+                        .pattern("#!#")
+                        .pattern(" # ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_III), conditionsFromItem(ModItems.PRIXILIUM_CHARM_III))
+                        .criterion(hasItem(inputCharm), conditionsFromItem(inputCharm))
+                        .offerTo(exporter);
+            }
+>>>>>>> 77cf6e8 (we got the thermometer... Noice)
         };
     }
 

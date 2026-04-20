@@ -28,6 +28,11 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "virus_dead")))
     ));
 
+    public static final Item THERMOMETER = registerItem("thermometer", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "thermometer")))
+            .maxCount(1)
+    ));
+
     public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem("prixilium_upgrade_smithing_template", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_upgrade_smithing_template")))
     ));
@@ -545,7 +550,5 @@ public class ModItems {
         return Registry.register(Registries.ITEM, Identifier.of(Prixilium.MOD_ID, name), item);
     }
 
-    public static void registerModItems() {
-        Prixilium.LOGGER.info("Registering Prixilium Items.");
-    }
+    public static void registerModItems() {Prixilium.LOGGER.info("Registering Prixilium Items.");}
 }

@@ -22,6 +22,7 @@ public class ModItemGroups {
 
                         entries.add(ModItems.VIRUS_ALIVE);
                         entries.add(ModItems.VIRUS_DEAD);
+                        entries.add(ModItems.THERMOMETER);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_CHARM);
                         entries.add(ModItems.PRIXILIUM_TRANSFER_CHARM);
