@@ -70,6 +70,12 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
+    public static final Item PRIXILIUM_REGENERATION_CHARM_I = registerItem("prixilium_regeneration_charm_i", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_regeneration_charm_i")))
+            .maxCount(1)
+            .maxDamage(4)
+            .rarity(Rarity.UNCOMMON)
+    ));
 
     // Tier II
     public static final Item PRIXILIUM_CHARM_II = registerItem("prixilium_charm_ii", new Item(new Item.Settings()
@@ -91,7 +97,13 @@ public class ModItems {
     public static final Item PRIXILIUM_ROLLBACK_CHARM_II = registerItem("prixilium_rollback_charm_ii", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_rollback_charm_ii")))
             .maxCount(1)
-            .maxDamage(32)
+            .maxDamage(16)
+            .rarity(Rarity.RARE)
+    ));
+    public static final Item PRIXILIUM_REGENERATION_CHARM_II = registerItem("prixilium_regeneration_charm_ii", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_regeneration_charm_ii")))
+            .maxCount(1)
+            .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
 
@@ -114,6 +126,12 @@ public class ModItems {
     ));
     public static final Item PRIXILIUM_ROLLBACK_CHARM_III = registerItem("prixilium_rollback_charm_iii", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_rollback_charm_iii")))
+            .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.EPIC)
+    ));
+    public static final Item PRIXILIUM_REGENERATION_CHARM_III = registerItem("prixilium_regeneration_charm_iii", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_regeneration_charm_iii")))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.EPIC)

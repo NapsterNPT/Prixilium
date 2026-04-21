@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.Item;
 import net.minecraft.item.equipment.EquipmentModel;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
@@ -132,10 +131,21 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.VIRUS_DEAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PRIXILIUM_CHARM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PRIXILIUM_TRANSFER_CHARM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PRIXILIUM_CONTAINER_CHARM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PRIXILIUM_ROLLBACK_CHARM, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_CHARM_I, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_TRANSFER_CHARM_I, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_CONTAINER_CHARM_I, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_ROLLBACK_CHARM_I, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_REGENERATION_CHARM_I, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_CHARM_II, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_TRANSFER_CHARM_II, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_CONTAINER_CHARM_II, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_ROLLBACK_CHARM_II, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_REGENERATION_CHARM_II, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_CHARM_III, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_TRANSFER_CHARM_III, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_CONTAINER_CHARM_III, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_ROLLBACK_CHARM_III, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_REGENERATION_CHARM_III, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
         itemModelGenerator.register(ModItems.BLOKITO_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
         itemModelGenerator.register(ModItems.AIRIS_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
@@ -299,16 +309,5 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_HORSE_ARMOR, Models.GENERATED);
         // 1.21.11+ itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR, Models.GENERATED);
         //endregion
-    }
-
-    private void registerCharm(ItemModelGenerator gen, Item item, String overlay) {
-        Models.GENERATED.upload(
-                ModelIds.getItemModelId(item),
-                TextureMap.layered(
-                        Identifier.of(Prixilium.MOD_ID, "item/prixilium_charm"),
-                        Identifier.of(Prixilium.MOD_ID, "item/" + overlay)
-                ),
-                gen.writer
-        );
     }
 }
