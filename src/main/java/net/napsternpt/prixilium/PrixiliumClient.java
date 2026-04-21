@@ -5,7 +5,10 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.block.entity.ModBlockEntities;
+import net.napsternpt.prixilium.block.entity.renderer.VirusReactorBlockEntityRenderer;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.client.*;
 import net.napsternpt.prixilium.util.ModModelPredicates;
@@ -18,6 +21,8 @@ public class PrixiliumClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PRIXILIUM_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.REACTOR_CORE, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIRUS_REACTOR, RenderLayer.getCutout());
+
+		BlockEntityRendererFactories.register(ModBlockEntities.VIRUS_REACTOR_BE, VirusReactorBlockEntityRenderer::new);
 
 		ModModelPredicates.registerModelPredicates();
 
