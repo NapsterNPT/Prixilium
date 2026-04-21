@@ -120,6 +120,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 //endregion
 
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_HOOK)
+                        .input('#', ModBlocks.PRIXILIUM)
+                        .pattern(" ##")
+                        .pattern(" ##")
+                        .pattern("#  ")
+                        .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
+                        .offerTo(exporter);
+
                 //region [Tools]
 
                 //region [wood]

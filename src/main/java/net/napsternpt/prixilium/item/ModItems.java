@@ -52,7 +52,14 @@ public class ModItems {
     public static final Item PRIXILIUM_CHARM_I = registerItem("prixilium_charm_i", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm_i")))
             .maxCount(1)
-    ));
+    ){
+        @Override
+        public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(Text.translatable("tooltip.prixilium.prixilium_charm.1"));
+            tooltip.add(Text.translatable("tooltip.prixilium.prixilium_charm.2"));
+            super.appendTooltip(stack, context, tooltip, type);
+        }
+    });
     public static final Item PRIXILIUM_TRANSFER_CHARM_I = registerItem("prixilium_transfer_charm_i", new PrixiliumTransferCharmItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm_i")))
             .maxCount(1)
@@ -82,7 +89,14 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm_ii")))
             .maxCount(1)
             .rarity(Rarity.UNCOMMON)
-    ));
+    ){
+        @Override
+        public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(Text.translatable("tooltip.prixilium.prixilium_charm.1"));
+            tooltip.add(Text.translatable("tooltip.prixilium.prixilium_charm.2"));
+            super.appendTooltip(stack, context, tooltip, type);
+        }
+    });
     public static final Item PRIXILIUM_TRANSFER_CHARM_II = registerItem("prixilium_transfer_charm_ii", new PrixiliumTransferCharmItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm_ii")))
             .maxCount(1)
@@ -112,7 +126,14 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_charm_iii")))
             .maxCount(1)
             .rarity(Rarity.RARE)
-    ));
+    ){
+        @Override
+        public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(Text.translatable("tooltip.prixilium.prixilium_charm.1"));
+            tooltip.add(Text.translatable("tooltip.prixilium.prixilium_charm_final"));
+            super.appendTooltip(stack, context, tooltip, type);
+        }
+    });
     public static final Item PRIXILIUM_TRANSFER_CHARM_III = registerItem("prixilium_transfer_charm_iii", new PrixiliumTransferCharmItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixilium_transfer_charm_iii")))
             .maxCount(1)
