@@ -5,10 +5,12 @@ import net.minecraft.component.type.DyedColorComponent;
 import net.minecraft.component.type.UnbreakableComponent;
 import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.napsternpt.prixilium.Prixilium;
@@ -16,6 +18,8 @@ import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
 import net.napsternpt.prixilium.item.custom.PrixiliumTransferCharmItem;
 import net.napsternpt.prixilium.item.custom.VirusAliveItem;
+
+import java.util.List;
 
 public class ModItems {
     public static final Item VIRUS_ALIVE = registerItem("virus_alive", new VirusAliveItem(new Item.Settings()
@@ -26,7 +30,13 @@ public class ModItems {
     ));
     public static final Item VIRUS_DEAD = registerItem("virus_dead", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "virus_dead")))
-    ));
+    ){
+        @Override
+        public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+            tooltip.add(Text.translatable("tooltip.prixilium.virus_dead"));
+            super.appendTooltip(stack, context, tooltip, type);
+        }
+    });
 
     public static final Item THERMOMETER = registerItem("thermometer", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "thermometer")))
