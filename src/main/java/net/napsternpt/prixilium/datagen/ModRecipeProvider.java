@@ -43,7 +43,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 //region [charms]
                 
-                //Tier I
+                //region [Tier I]
                 createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CHARM_I)
                         .input('!', Items.EMERALD)
                         .input('#', ModBlocks.PRIXILIUM)
@@ -89,22 +89,64 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM_I), conditionsFromItem(ModItems.PRIXILIUM_CHARM_I))
                         .offerTo(exporter);
+                //endregion
                 
-                //Tier II
+                //region [Tier II]
                 createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CHARM_II)
-                        .input('!', ModItems.PRIXILIUM_CHARM_I)
+                        .input('!', ModItems.PRIXILIUM_CHARM_II)
                         .input('#', Items.AMETHYST_SHARD)
                         .pattern("###")
                         .pattern("#!#")
                         .pattern("###")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM_I), conditionsFromItem(ModItems.PRIXILIUM_CHARM_I))
                         .offerTo(exporter);
-                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_TRANSFER_CHARM_I);
-                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_CONTAINER_CHARM_I);
-                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_ROLLBACK_CHARM_I);
-                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_REGENERATION_CHARM_I);
 
-                //Tier III
+                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_TRANSFER_CHARM_I);
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_TRANSFER_CHARM_II)
+                        .input('!', Items.ENDER_PEARL)
+                        .input('#', ModItems.PRIXILIUM_CHARM_II)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_II), conditionsFromItem(ModItems.PRIXILIUM_CHARM_II))
+                        .offerTo(exporter, ModItems.PRIXILIUM_TRANSFER_CHARM_II + "_default");
+
+                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_CONTAINER_CHARM_I);
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CONTAINER_CHARM_II)
+                        .input('!', Blocks.CHEST)
+                        .input('#', ModItems.PRIXILIUM_CHARM_II)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_II), conditionsFromItem(ModItems.PRIXILIUM_CHARM_II))
+                        .offerTo(exporter, ModItems.PRIXILIUM_CONTAINER_CHARM_II + "_default");
+
+                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_ROLLBACK_CHARM_I);
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_ROLLBACK_CHARM_II)
+                        .input('!', Items.ENDER_PEARL)
+                        .input('@', Items.CLOCK)
+                        .input('€', Items.COMPASS)
+                        .input('#', ModItems.PRIXILIUM_CHARM_II)
+                        .pattern(" @ ")
+                        .pattern("!#!")
+                        .pattern(" € ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_II), conditionsFromItem(ModItems.PRIXILIUM_CHARM_II))
+                        .offerTo(exporter, ModItems.PRIXILIUM_ROLLBACK_CHARM_II + "_default");
+
+                charmUpgradeToTierII(exporter, ModItems.PRIXILIUM_REGENERATION_CHARM_I);
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_REGENERATION_CHARM_II)
+                        .input('!', Items.COOKED_BEEF)
+                        .input('@', Items.GHAST_TEAR)
+                        .input('€', Items.PUFFERFISH)
+                        .input('#', ModItems.PRIXILIUM_CHARM_II)
+                        .pattern(" @ ")
+                        .pattern("!#!")
+                        .pattern(" € ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_II), conditionsFromItem(ModItems.PRIXILIUM_CHARM_II))
+                        .offerTo(exporter, ModItems.PRIXILIUM_REGENERATION_CHARM_II + "_default");
+                //endregion
+
+                //region [Tier III]
                 createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CHARM_III)
                         .input('!', ModItems.PRIXILIUM_CHARM_II)
                         .input('#', Items.NETHERITE_INGOT)
@@ -113,10 +155,51 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" # ")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM_II), conditionsFromItem(ModItems.PRIXILIUM_CHARM_II))
                         .offerTo(exporter);
+
                 charmUpgradeToTierIII(exporter, ModItems.PRIXILIUM_TRANSFER_CHARM_II);
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_TRANSFER_CHARM_III)
+                        .input('!', Items.ENDER_PEARL)
+                        .input('#', ModItems.PRIXILIUM_CHARM_III)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_III), conditionsFromItem(ModItems.PRIXILIUM_CHARM_III))
+                        .offerTo(exporter, ModItems.PRIXILIUM_TRANSFER_CHARM_III + "_default");
+
                 charmUpgradeToTierIII(exporter, ModItems.PRIXILIUM_CONTAINER_CHARM_II);
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_CONTAINER_CHARM_III)
+                        .input('!', Blocks.CHEST)
+                        .input('#', ModItems.PRIXILIUM_CHARM_III)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_III), conditionsFromItem(ModItems.PRIXILIUM_CHARM_III))
+                        .offerTo(exporter, ModItems.PRIXILIUM_CONTAINER_CHARM_III + "_default");
+
                 charmUpgradeToTierIII(exporter, ModItems.PRIXILIUM_ROLLBACK_CHARM_II);
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_ROLLBACK_CHARM_III)
+                        .input('!', Items.ENDER_PEARL)
+                        .input('@', Items.CLOCK)
+                        .input('€', Items.COMPASS)
+                        .input('#', ModItems.PRIXILIUM_CHARM_III)
+                        .pattern(" @ ")
+                        .pattern("!#!")
+                        .pattern(" € ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_III), conditionsFromItem(ModItems.PRIXILIUM_CHARM_III))
+                        .offerTo(exporter, ModItems.PRIXILIUM_ROLLBACK_CHARM_III + "_default");
+
                 charmUpgradeToTierIII(exporter, ModItems.PRIXILIUM_REGENERATION_CHARM_II);
+                createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_REGENERATION_CHARM_III)
+                        .input('!', Items.COOKED_BEEF)
+                        .input('@', Items.GHAST_TEAR)
+                        .input('€', Items.PUFFERFISH)
+                        .input('#', ModItems.PRIXILIUM_CHARM_III)
+                        .pattern(" @ ")
+                        .pattern("!#!")
+                        .pattern(" € ")
+                        .criterion(hasItem(ModItems.PRIXILIUM_CHARM_III), conditionsFromItem(ModItems.PRIXILIUM_CHARM_III))
+                        .offerTo(exporter, ModItems.PRIXILIUM_REGENERATION_CHARM_III + "_default");
+                //endregion
 
                 //endregion
 
@@ -381,7 +464,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("###")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM_II), conditionsFromItem(ModItems.PRIXILIUM_CHARM_II))
                         .criterion(hasItem(inputCharm), conditionsFromItem(inputCharm))
-                        .offerTo(exporter);
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, inputId.getPath() + "_upgraded")));
                 }
 
             private void charmUpgradeToTierIII(RecipeExporter exporter, Item  inputCharm) {
@@ -396,7 +479,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" # ")
                         .criterion(hasItem(ModItems.PRIXILIUM_CHARM_III), conditionsFromItem(ModItems.PRIXILIUM_CHARM_III))
                         .criterion(hasItem(inputCharm), conditionsFromItem(inputCharm))
-                        .offerTo(exporter);
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, inputId.getPath() + "_upgraded")));
             }
         };
     }

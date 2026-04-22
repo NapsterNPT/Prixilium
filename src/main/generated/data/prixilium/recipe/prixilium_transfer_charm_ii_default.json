@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": "minecraft:ender_pearl",
+    "#": "prixilium:prixilium_charm_ii"
+  },
+  "pattern": [
+    " ! ",
+    "!#!",
+    " ! "
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixilium_transfer_charm_ii"
+  }
+}
