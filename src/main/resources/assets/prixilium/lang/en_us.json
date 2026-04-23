@@ -25,7 +25,10 @@
   "item.prixilium.prixilium_hook": "Prixilium Hook",
   "item.prixilium.bliko_spawn_egg": "Bliko Spawn Egg",
   "item.prixilium.blokito_spawn_egg": "Blokito Spawn Egg",
-  "item.prixilium.airis_spawn_egg": "Airis Spawn Egg",
+
+  "item.minecraft.potion.effect.prixilium_slowness_potion": "Prixilium Slowness Potion",
+  "item.minecraft.splash_potion.effect.prixilium_slowness_potion": "Prixilium Slowness Splash Potion",
+  "item.minecraft.lingering_potion.effect.prixilium_slowness_potion": "Prixilium Slowness Lingering Potion",
 
   "item.prixilium.prixiled_wooden_sword": "Prixiled Wooden Sword",
   "item.prixilium.prixiled_wooden_pickaxe": "Prixiled Wooden Pickaxe",
