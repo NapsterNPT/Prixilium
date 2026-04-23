@@ -37,7 +37,7 @@ public class ModArmorMaterials {
                 map.put(EquipmentType.CHESTPLATE, idk);
                 map.put(EquipmentType.HELMET, idk);
                 map.put(EquipmentType.BODY, idk);
-            }), idk, SoundEvents.ITEM_ARMOR_EQUIP_COPPER, 0, 0, ItemTags.REPAIRS_COPPER_ARMOR),
+            }), idk, SoundEvents.ITEM_ARMOR_EQUIP_COPPER, 0, 0, ItemTags.REPAIRS_COPPER_ARMOR,
             Identifier.of(Prixilium.MOD_ID, "prixiled_copper"));
 
      */

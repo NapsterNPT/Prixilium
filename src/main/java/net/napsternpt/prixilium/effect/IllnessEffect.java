@@ -16,8 +16,4 @@ public class IllnessEffect extends StatusEffect {
         return false;
     }
 
-    @Override
-    public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        return false;
-    }
 }
