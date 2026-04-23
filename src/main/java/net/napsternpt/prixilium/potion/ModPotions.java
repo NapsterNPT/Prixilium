@@ -10,11 +10,11 @@ import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.effect.ModEffects;
 
 public class ModPotions {
-    public static final RegistryEntry<Potion> PRIXILIUM_SLOWNESS_POTION = registerPotion("prixilium_slowness_potion",
-            new Potion(null, new StatusEffectInstance(ModEffects.PRIXILIUM_SLOWNESS, 1200, 0)));
+    public static final RegistryEntry<Potion> PRIXILIUM_SLOWNESS_POTION = registerPotion(
+            new Potion("prixilium_slowness_potion", new StatusEffectInstance(ModEffects.PRIXILIUM_SLOWNESS, 1200, 0)));
 
-    private static RegistryEntry<Potion> registerPotion(String name, Potion potion) {
-        return Registry.registerReference(Registries.POTION, Identifier.of(Prixilium.MOD_ID, name), potion);
+    private static RegistryEntry<Potion> registerPotion(Potion potion) {
+        return Registry.registerReference(Registries.POTION, Identifier.of(Prixilium.MOD_ID, potion.getBaseName()), potion);
     };
 
     public static void registerPotions() {Prixilium.LOGGER.info("Registering Prixilium Potions.");}
