@@ -1,0 +1,25 @@
+name: Sync Modrinth description
+
+on:
+  push:
+    paths:
+      - README.md
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read README and update Modrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        run: |
+          DESCRIPTION=$(jq -Rs . < README.md)
+
+          curl -X PATCH "https://api.modrinth.com/v2/project/prixilium" \
+            -H "Authorization: $MODRINTH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"body\": $DESCRIPTION}"
