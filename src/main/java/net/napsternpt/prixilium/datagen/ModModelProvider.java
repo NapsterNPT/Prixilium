@@ -128,6 +128,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        //hook made by hand
         itemModelGenerator.register(ModItems.VIRUS_ALIVE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VIRUS_DEAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
