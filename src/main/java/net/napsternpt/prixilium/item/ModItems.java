@@ -17,6 +17,7 @@ import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
 import net.napsternpt.prixilium.item.custom.PrixiliumTransferCharmItem;
+import net.napsternpt.prixilium.item.custom.ThermometerItem;
 import net.napsternpt.prixilium.item.custom.VirusAliveItem;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public class ModItems {
         }
     });
 
-    public static final Item THERMOMETER = registerItem("thermometer", new Item(new Item.Settings()
+    public static final Item THERMOMETER = registerItem("thermometer", new ThermometerItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "thermometer")))
             .maxCount(1)
     ));

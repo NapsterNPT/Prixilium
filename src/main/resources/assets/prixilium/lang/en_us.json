@@ -134,6 +134,9 @@
   "sounds.prixilium.blokito_hurt": "Blokito Hurts",
   "sounds.prixilium.blokito_death": "Blokito Dies",
   "sounds.prixilium.blokito_walk": "Blokito Walks",
+  "sounds.prixilium.airis_ambient": "Airis Wanders",
+  "sounds.prixilium.airis_hurt": "Airis Hurts",
+  "sounds.prixilium.airis_death": "Airis Dies",
 
 
   "effect.prixilium.prixilium_slowness": "Prixilium Slowness",

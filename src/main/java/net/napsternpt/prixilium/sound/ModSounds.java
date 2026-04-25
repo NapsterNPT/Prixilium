@@ -18,6 +18,10 @@ public class ModSounds {
     public static final SoundEvent BLOKITO_DEATH = registerSoundEvent("blokito_death");
     public static final SoundEvent BLOKITO_WALK = registerSoundEvent("blokito_walk");
 
+    public static final SoundEvent AIRIS_AMBIENT = registerSoundEvent("airis_ambient");
+    public static final SoundEvent AIRIS_HURT = registerSoundEvent("airis_hurt");
+    public static final SoundEvent AIRIS_DEATH = registerSoundEvent("airis_death");
+
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(Prixilium.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));

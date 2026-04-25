@@ -78,11 +78,11 @@ public class AirisEntity extends HostileEntity {
 
     //Sounds
     @Override
-    protected @Nullable SoundEvent getAmbientSound() {return ModSounds.BLIKO_AMBIENT;}
+    protected @Nullable SoundEvent getAmbientSound() {return ModSounds.AIRIS_AMBIENT;}
 
     @Override
-    protected @Nullable SoundEvent getHurtSound(DamageSource source) {return ModSounds.BLIKO_HURT;}
+    protected @Nullable SoundEvent getHurtSound(DamageSource source) {return ModSounds.AIRIS_HURT;}
 
     @Override
-    protected @Nullable SoundEvent getDeathSound() {return ModSounds.BLIKO_DEATH;}
+    protected @Nullable SoundEvent getDeathSound() {return ModSounds.AIRIS_DEATH;}
 }

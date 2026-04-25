@@ -28,6 +28,7 @@
       "prixilium:bliko_death"
     ]
   },
+
   "blokito_hurt": {
     "subtitle": "sounds.prixilium.blokito_hurt",
     "sounds": [
@@ -44,6 +45,28 @@
     "subtitle": "sounds.prixilium.blokito_walk",
     "sounds": [
       "prixilium:blokito_walk"
+    ]
+  },
+
+  "airis_ambient": {
+    "subtitle": "sounds.prixilium.airis_ambient",
+    "sounds": [
+      "prixilium:airis_ambient_1",
+      "prixilium:airis_ambient_2",
+      "prixilium:airis_ambient_3",
+      "prixilium:airis_ambient_4"
+    ]
+  },
+  "airis_hurt": {
+    "subtitle": "sounds.prixilium.airis_hurt",
+    "sounds": [
+      "prixilium:airis_hurt"
+    ]
+  },
+  "airis_death": {
+    "subtitle": "sounds.prixilium.airis_death",
+    "sounds": [
+      "prixilium:airis_death"
     ]
   }
 }

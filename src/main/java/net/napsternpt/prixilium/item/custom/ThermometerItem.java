@@ -6,4 +6,6 @@ public class ThermometerItem extends Item {
     public ThermometerItem(Settings settings) {
         super(settings);
     }
+
+
 }
