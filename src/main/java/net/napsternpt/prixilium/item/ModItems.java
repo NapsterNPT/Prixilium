@@ -166,15 +166,15 @@ public class ModItems {
     ));
 
     public static final Item BLIKO_SPAWN_EGG = registerItem("bliko_spawn_egg", new SpawnEggItem(
-            ModEntities.BLIKO, 0xffe995, 0xffcb00, new Item.Settings()
+            ModEntities.BLIKO, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "bliko_spawn_egg")))
     ));
     public static final Item BLOKITO_SPAWN_EGG = registerItem("blokito_spawn_egg", new SpawnEggItem(
-            ModEntities.BLOKITO, 0xffcb00, 0x8f7200, new Item.Settings()
+            ModEntities.BLOKITO, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "blokito_spawn_egg")))
     ));
     public static final Item AIRIS_SPAWN_EGG = registerItem("airis_spawn_egg", new SpawnEggItem(
-            ModEntities.AIRIS, 0xffcb00, 0x7afff3, new Item.Settings()
+            ModEntities.AIRIS, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "airis_spawn_egg")))
     ));
 
@@ -198,7 +198,7 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
     public static final Item PRIXILED_WOODEN_HOE = registerItem("prixiled_wooden_hoe", new HoeItem(ToolMaterial.WOOD, 0, -3, new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixiled_stone_sword")))
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "prixiled_wooden_hoe")))
             .component(DataComponentTypes.UNBREAKABLE, new UnbreakableComponent(true))
     ));
     //endregion

@@ -1,7 +1,10 @@
 package net.napsternpt.prixilium.item;
 
 import net.minecraft.item.equipment.ArmorMaterial;
+import net.minecraft.item.equipment.EquipmentAsset;
 import net.minecraft.item.equipment.EquipmentType;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
@@ -11,79 +14,80 @@ import net.napsternpt.prixilium.Prixilium;
 import java.util.EnumMap;
 
 public class ModArmorMaterials {
+    static RegistryKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY = RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset"));
 
+    public static final RegistryKey<EquipmentAsset> PRIXILIUM_LEATHER_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_leather"));
     public static final ArmorMaterial PRIXILIUM_LEATHER = new ArmorMaterial(5, Util.make(new EnumMap<>(EquipmentType.class), map -> {
                 map.put(EquipmentType.BOOTS, 1);
                 map.put(EquipmentType.LEGGINGS, 2);
                 map.put(EquipmentType.CHESTPLATE, 3);
                 map.put(EquipmentType.HELMET, 1);
                 map.put(EquipmentType.BODY, 3);
-            }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0, 0, ItemTags.REPAIRS_LEATHER_ARMOR,
-            Identifier.of(Prixilium.MOD_ID, "prixiled_leather"));
+            }), 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0, 0, ItemTags.REPAIRS_LEATHER_ARMOR, PRIXILIUM_LEATHER_KEY);
 
+    public static final RegistryKey<EquipmentAsset> PRIXILIUM_CHAIN_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_chain"));
     public static final ArmorMaterial PRIXILIUM_CHAIN = new ArmorMaterial(15, Util.make(new EnumMap<>(EquipmentType.class), map -> {
                 map.put(EquipmentType.BOOTS, 1);
                 map.put(EquipmentType.LEGGINGS, 4);
                 map.put(EquipmentType.CHESTPLATE, 5);
                 map.put(EquipmentType.HELMET, 2);
                 map.put(EquipmentType.BODY, 4);
-            }), 12, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, 0, ItemTags.REPAIRS_CHAIN_ARMOR,
-            Identifier.of(Prixilium.MOD_ID, "prixiled_chainmail"));
+            }), 12, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, 0, ItemTags.REPAIRS_CHAIN_ARMOR, PRIXILIUM_CHAIN_KEY);
 
     /* 1.21.9+
+    public static final RegistryKey<EquipmentAsset> PRIXILIUM_COPPER_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_copper"));
     public static final ArmorMaterial PRIXILIUM_COPPER = new ArmorMaterial(durability, Util.make(new EnumMap<>(EquipmentType.class), map -> {
                 map.put(EquipmentType.BOOTS, idk);
                 map.put(EquipmentType.LEGGINGS, idk);
                 map.put(EquipmentType.CHESTPLATE, idk);
                 map.put(EquipmentType.HELMET, idk);
                 map.put(EquipmentType.BODY, idk);
-            }), idk, SoundEvents.ITEM_ARMOR_EQUIP_COPPER, 0, 0, ItemTags.REPAIRS_COPPER_ARMOR,
-            Identifier.of(Prixilium.MOD_ID, "prixiled_copper"));
+            }), idk, SoundEvents.ITEM_ARMOR_EQUIP_COPPER, 0, 0, ItemTags.REPAIRS_COPPER_ARMOR, PRIXILIUM_COPPER_KEY);
 
      */
 
+    public static final RegistryKey<EquipmentAsset> PRIXILIUM_IRON_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_iron"));
     public static final ArmorMaterial PRIXILIUM_IRON = new ArmorMaterial(15, Util.make(new EnumMap<>(EquipmentType.class), map -> {
                 map.put(EquipmentType.BOOTS, 2);
                 map.put(EquipmentType.LEGGINGS, 5);
                 map.put(EquipmentType.CHESTPLATE, 6);
                 map.put(EquipmentType.HELMET, 2);
                 map.put(EquipmentType.BODY, 5);
-            }), 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0, 0, ItemTags.REPAIRS_IRON_ARMOR,
-            Identifier.of(Prixilium.MOD_ID, "prixiled_iron"));
+            }), 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0, 0, ItemTags.REPAIRS_IRON_ARMOR, PRIXILIUM_IRON_KEY);
 
+    public static final RegistryKey<EquipmentAsset> PRIXILIUM_GOLD_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_gold"));
     public static final ArmorMaterial PRIXILIUM_GOLD = new ArmorMaterial(7, Util.make(new EnumMap<>(EquipmentType.class), map -> {
                 map.put(EquipmentType.BOOTS, 1);
                 map.put(EquipmentType.LEGGINGS, 3);
                 map.put(EquipmentType.CHESTPLATE, 5);
                 map.put(EquipmentType.HELMET, 2);
                 map.put(EquipmentType.BODY, 7);
-            }), 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0, 0, ItemTags.REPAIRS_GOLD_ARMOR,
-            Identifier.of(Prixilium.MOD_ID, "prixiled_gold"));
+            }), 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0, 0, ItemTags.REPAIRS_GOLD_ARMOR, PRIXILIUM_GOLD_KEY);
 
+    public static final RegistryKey<EquipmentAsset> PRIXILIUM_DIAMOND_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_diamond"));
     public static final ArmorMaterial PRIXILIUM_DIAMOND = new ArmorMaterial(33, Util.make(new EnumMap<>(EquipmentType.class), map -> {
                 map.put(EquipmentType.BOOTS, 3);
                 map.put(EquipmentType.LEGGINGS, 6);
                 map.put(EquipmentType.CHESTPLATE, 8);
                 map.put(EquipmentType.HELMET, 3);
                 map.put(EquipmentType.BODY, 11);
-            }), 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, 0, ItemTags.REPAIRS_DIAMOND_ARMOR,
-            Identifier.of(Prixilium.MOD_ID, "prixiled_diamond"));
+            }), 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, 0, ItemTags.REPAIRS_DIAMOND_ARMOR, PRIXILIUM_DIAMOND_KEY);
 
+    public static final RegistryKey<EquipmentAsset> PRIXILIUM_NETHERITE_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_netherite"));
     public static final ArmorMaterial PRIXILIUM_NETHERITE = new ArmorMaterial(37, Util.make(new EnumMap<>(EquipmentType.class), map -> {
                 map.put(EquipmentType.BOOTS, 3);
                 map.put(EquipmentType.LEGGINGS, 6);
                 map.put(EquipmentType.CHESTPLATE, 8);
                 map.put(EquipmentType.HELMET, 3);
                 map.put(EquipmentType.BODY, 11);
-            }), 10, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, ItemTags.REPAIRS_NETHERITE_ARMOR,
-            Identifier.of(Prixilium.MOD_ID, "prixiled_netherite"));
+            }), 10, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, ItemTags.REPAIRS_NETHERITE_ARMOR, PRIXILIUM_NETHERITE_KEY);
 
+    public static final RegistryKey<EquipmentAsset> PRIXILIUM_TURTLE_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_turtle"));
     public static final ArmorMaterial PRIXILIUM_TURTLE = new ArmorMaterial(25, Util.make(new EnumMap<>(EquipmentType.class), map -> {
                 map.put(EquipmentType.BOOTS, 2);
                 map.put(EquipmentType.LEGGINGS, 5);
                 map.put(EquipmentType.CHESTPLATE, 6);
                 map.put(EquipmentType.HELMET, 2);
                 map.put(EquipmentType.BODY, 5);
-            }), 9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 0, 0, ItemTags.REPAIRS_TURTLE_HELMET,
-            Identifier.of(Prixilium.MOD_ID, "prixiled_turtle_scute"));
+            }), 9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 0, 0, ItemTags.REPAIRS_TURTLE_HELMET, PRIXILIUM_TURTLE_KEY);
 }

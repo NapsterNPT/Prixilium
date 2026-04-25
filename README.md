@@ -3,9 +3,11 @@
   background: linear-gradient(to right, yellow, orange);
   -webkit-background-clip: text;
   color: transparent;
-">
-  PRIXILIUM
-</h1>
+">PRIXILIUM</h1>
+
+<p style="display: inline-block;
+  -webkit-background-clip: text;
+">v: 1.21.4</p>
 
 ## COMING SOON with a Wiki that you might need.
 

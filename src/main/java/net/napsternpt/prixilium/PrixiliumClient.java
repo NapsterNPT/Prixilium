@@ -11,7 +11,6 @@ import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.block.entity.renderer.VirusReactorBlockEntityRenderer;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.client.*;
-import net.napsternpt.prixilium.util.ModModelPredicates;
 
 public class PrixiliumClient implements ClientModInitializer {
 	@Override
@@ -23,8 +22,6 @@ public class PrixiliumClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIRUS_REACTOR, RenderLayer.getCutout());
 
 		BlockEntityRendererFactories.register(ModBlockEntities.VIRUS_REACTOR_BE, VirusReactorBlockEntityRenderer::new);
-
-		ModModelPredicates.registerModelPredicates();
 
 		EntityModelLayerRegistry.registerModelLayer(BlikoModel.BLIKO, BlikoModel::getTexturedModelData);
 		EntityRendererRegistry.register(ModEntities.BLIKO, BlikoRenderer::new);

@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.potion.Potions;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
+import net.napsternpt.prixilium.component.ModDataComponentTypes;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.custom.*;
@@ -27,6 +28,7 @@ public class Prixilium implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
+		ModDataComponentTypes.registerDataComponentTypes();
 		ModSounds.registerSounds();
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
