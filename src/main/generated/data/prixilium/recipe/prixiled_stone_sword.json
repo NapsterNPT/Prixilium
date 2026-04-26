@@ -3,7 +3,6 @@
   "addition": "prixilium:prixilium",
   "base": "minecraft:stone_sword",
   "result": {
-    "count": 1,
     "id": "prixilium:prixiled_stone_sword"
   },
   "template": "prixilium:prixilium_upgrade_smithing_template"

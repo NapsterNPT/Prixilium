@@ -3,7 +3,6 @@
   "addition": "prixilium:prixilium",
   "base": "minecraft:bow",
   "result": {
-    "count": 1,
     "id": "prixilium:prixiled_bow"
   },
   "template": "prixilium:prixilium_upgrade_smithing_template"

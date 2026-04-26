@@ -1,17 +1,20 @@
 package net.napsternpt.prixilium.item.custom;
 
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
-import net.minecraft.world.World;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.item.ModItems;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 public class VirusAliveItem extends Item {
     private static final int DAMAGE_INTERVAL = 50;
@@ -19,7 +22,7 @@ public class VirusAliveItem extends Item {
     public VirusAliveItem(Settings settings) {super(settings);}
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+    public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
         if (!world.isClient) {
             if (entity instanceof net.minecraft.entity.player.PlayerEntity player) {
                 if (player.isCreative() || player.isSpectator()) {
@@ -38,17 +41,19 @@ public class VirusAliveItem extends Item {
                     ItemStack newStack = new ItemStack(ModItems.VIRUS_DEAD);
 
                     if (entity instanceof net.minecraft.entity.player.PlayerEntity player) {
-                        player.getInventory().setStack(slot, newStack);
+                        if (slot != null) {
+                            player.getInventory().setStack(slot.getEntitySlotId(), newStack);
+                        }
                     }
                 }
             }
         }
 
-        super.inventoryTick(stack, world, entity, slot, selected);
+        super.inventoryTick(stack, world, entity, slot);
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
         int hp = 100 - stack.getDamage();
         String color = "4";
         if (hp >= 75) {
@@ -61,8 +66,8 @@ public class VirusAliveItem extends Item {
         Text line = Text.translatable("tooltip.prixilium.virus_alive.1")
                 .append(" §" + color + (hp) + " / 100 HP.");
 
-        tooltip.add(line);
-        tooltip.add(Text.translatable("tooltip.prixilium.virus_alive.2"));
-        super.appendTooltip(stack, context, tooltip, type);
+        textConsumer.accept(line);
+        textConsumer.accept(Text.translatable("tooltip.prixilium.virus_alive.2"));
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }

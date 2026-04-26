@@ -64,7 +64,7 @@ public class AirisEntity extends HostileEntity {
     }
 
     @Override
-    public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource source) {
+    public boolean handleFallDamage(double fallDistance, float damagePerDistance, DamageSource damageSource) {
         // No
         return false;
     }

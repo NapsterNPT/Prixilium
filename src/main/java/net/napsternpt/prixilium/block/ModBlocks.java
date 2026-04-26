@@ -4,6 +4,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -57,7 +58,7 @@ public class ModBlocks {
             ));
 
     public static final Block PRIXILIUM_LEAVES = registerBlock("prixilium_leaves",
-            new PrixiliumLeavesBlock(AbstractBlock.Settings.create()
+            new PrixiliumLeavesBlock(0.02f, ParticleTypes.CHERRY_LEAVES,AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_leaves")))
                     .strength(0.2F)
                     .sounds(BlockSoundGroup.GRASS)

@@ -3,7 +3,6 @@
   "addition": "prixilium:prixilium",
   "base": "minecraft:stone_hoe",
   "result": {
-    "count": 1,
     "id": "prixilium:prixiled_stone_hoe"
   },
   "template": "prixilium:prixilium_upgrade_smithing_template"

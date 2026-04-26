@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -13568
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -7376384
-      }
-    ]
+    "model": "prixilium:item/blokito_spawn_egg"
   }
 }

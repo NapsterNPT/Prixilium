@@ -3,7 +3,6 @@
   "addition": "prixilium:prixilium",
   "base": "minecraft:stone_axe",
   "result": {
-    "count": 1,
     "id": "prixilium:prixiled_stone_axe"
   },
   "template": "prixilium:prixilium_upgrade_smithing_template"

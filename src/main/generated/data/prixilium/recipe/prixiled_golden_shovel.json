@@ -3,7 +3,6 @@
   "addition": "prixilium:prixilium",
   "base": "minecraft:golden_shovel",
   "result": {
-    "count": 1,
     "id": "prixilium:prixiled_golden_shovel"
   },
   "template": "prixilium:prixilium_upgrade_smithing_template"

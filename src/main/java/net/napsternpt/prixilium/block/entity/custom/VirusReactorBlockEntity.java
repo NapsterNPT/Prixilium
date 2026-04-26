@@ -9,6 +9,7 @@ import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.napsternpt.prixilium.block.entity.ImplementedInventory;
@@ -34,6 +35,12 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
             rotation = 0;
         }
         return rotation;
+    }
+
+    @Override
+    public void onBlockReplaced(BlockPos pos, BlockState oldState) {
+        ItemScatterer.spawn(world, pos, (this));
+        super.onBlockReplaced(pos, oldState);
     }
 
     @Override

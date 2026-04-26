@@ -1,16 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "minecraft:item/template_spawn_egg",
-    "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -8716301
-      },
-      {
-        "type": "minecraft:constant",
-        "value": -13568
-      }
-    ]
+    "model": "prixilium:item/airis_spawn_egg"
   }
 }

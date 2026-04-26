@@ -7,7 +7,10 @@ import net.minecraft.client.item.ItemAsset;
 import net.minecraft.client.render.item.model.ConditionItemModel;
 import net.minecraft.client.render.item.model.ItemModel;
 import net.minecraft.client.render.item.property.bool.HasComponentProperty;
+import net.minecraft.client.render.model.json.ModelVariant;
+import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.Pool;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.custom.PrixiliumLampBlock;
@@ -45,18 +48,19 @@ public class ModModelProvider extends FabricModelProvider {
                 blockStateModelGenerator.modelCollector);
 
         blockStateModelGenerator.blockStateCollector.accept(
-                VariantsBlockStateSupplier.create(ModBlocks.PRIXILIUM_GRASS,
-                        BlockStateVariant.create().put(VariantSettings.MODEL, prixiliumGrassModel1),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, prixiliumGrassModel2),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, prixiliumGrassModel3),
-                        BlockStateVariant.create().put(VariantSettings.MODEL, prixiliumGrassModel4)
-                )
+                VariantsBlockModelDefinitionCreator.of(ModBlocks.PRIXILIUM_GRASS,
+                        new WeightedVariant(Pool.<ModelVariant>builder()
+                                .add(new ModelVariant(prixiliumGrassModel1))
+                                .add(new ModelVariant(prixiliumGrassModel2))
+                                .add(new ModelVariant(prixiliumGrassModel3))
+                                .add(new ModelVariant(prixiliumGrassModel4))
+                                .build()))
         );
 
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.PRIXILIUM_GRASS, prixiliumGrassModel1);
         blockStateModelGenerator.registerSingleton(ModBlocks.PRIXILIUM_LEAVES, TexturedModel.LEAVES);
 
-        blockStateModelGenerator.registerLog(ModBlocks.PRIXILIUM_LOG).log(ModBlocks.PRIXILIUM_LOG).wood(ModBlocks.PRIXILIUM_WOOD);
+        blockStateModelGenerator.createLogTexturePool(ModBlocks.PRIXILIUM_LOG).log(ModBlocks.PRIXILIUM_LOG).wood(ModBlocks.PRIXILIUM_WOOD);
         BlockStateModelGenerator.BlockTexturePool prixiliumPlanksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_PLANKS);
         prixiliumPlanksPool.stairs(ModBlocks.PRIXILIUM_STAIRS);
         prixiliumPlanksPool.slab(ModBlocks.PRIXILIUM_SLAB);
@@ -85,43 +89,43 @@ public class ModModelProvider extends FabricModelProvider {
         Identifier lamp14Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_14", Models.CUBE_ALL, TextureMap::all);
         Identifier lamp15Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_15", Models.CUBE_ALL, TextureMap::all);
 
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.PRIXILIUM_LAMP)
-                .coordinate(BlockStateVariantMap.create(PrixiliumLampBlock.LIGHT)
-                        .register(0, BlockStateVariant.create().put(VariantSettings.MODEL, lamp0Identifier))
-                        .register(1, BlockStateVariant.create().put(VariantSettings.MODEL, lamp1Identifier))
-                        .register(2, BlockStateVariant.create().put(VariantSettings.MODEL, lamp2Identifier))
-                        .register(3, BlockStateVariant.create().put(VariantSettings.MODEL, lamp3Identifier))
-                        .register(4, BlockStateVariant.create().put(VariantSettings.MODEL, lamp4Identifier))
-                        .register(5, BlockStateVariant.create().put(VariantSettings.MODEL, lamp5Identifier))
-                        .register(6, BlockStateVariant.create().put(VariantSettings.MODEL, lamp6Identifier))
-                        .register(7, BlockStateVariant.create().put(VariantSettings.MODEL, lamp7Identifier))
-                        .register(8, BlockStateVariant.create().put(VariantSettings.MODEL, lamp8Identifier))
-                        .register(9, BlockStateVariant.create().put(VariantSettings.MODEL, lamp9Identifier))
-                        .register(10, BlockStateVariant.create().put(VariantSettings.MODEL, lamp10Identifier))
-                        .register(11, BlockStateVariant.create().put(VariantSettings.MODEL, lamp11Identifier))
-                        .register(12, BlockStateVariant.create().put(VariantSettings.MODEL, lamp12Identifier))
-                        .register(13, BlockStateVariant.create().put(VariantSettings.MODEL, lamp13Identifier))
-                        .register(14, BlockStateVariant.create().put(VariantSettings.MODEL, lamp14Identifier))
-                        .register(15, BlockStateVariant.create().put(VariantSettings.MODEL, lamp15Identifier))
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.PRIXILIUM_LAMP)
+                .with(BlockStateVariantMap.models(PrixiliumLampBlock.LIGHT)
+                        .register(0,  BlockStateModelGenerator.createWeightedVariant(lamp0Identifier))
+                        .register(1,  BlockStateModelGenerator.createWeightedVariant(lamp1Identifier))
+                        .register(2,  BlockStateModelGenerator.createWeightedVariant(lamp2Identifier))
+                        .register(3,  BlockStateModelGenerator.createWeightedVariant(lamp3Identifier))
+                        .register(4,  BlockStateModelGenerator.createWeightedVariant(lamp4Identifier))
+                        .register(5,  BlockStateModelGenerator.createWeightedVariant(lamp5Identifier))
+                        .register(6,  BlockStateModelGenerator.createWeightedVariant(lamp6Identifier))
+                        .register(7,  BlockStateModelGenerator.createWeightedVariant(lamp7Identifier))
+                        .register(8,  BlockStateModelGenerator.createWeightedVariant(lamp8Identifier))
+                        .register(9,  BlockStateModelGenerator.createWeightedVariant(lamp9Identifier))
+                        .register(10, BlockStateModelGenerator.createWeightedVariant(lamp10Identifier))
+                        .register(11, BlockStateModelGenerator.createWeightedVariant(lamp11Identifier))
+                        .register(12, BlockStateModelGenerator.createWeightedVariant(lamp12Identifier))
+                        .register(13, BlockStateModelGenerator.createWeightedVariant(lamp13Identifier))
+                        .register(14, BlockStateModelGenerator.createWeightedVariant(lamp14Identifier))
+                        .register(15, BlockStateModelGenerator.createWeightedVariant(lamp15Identifier))
                 )
         );
 
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(
                         ModBlocks.STAND,
-                        Identifier.of(Prixilium.MOD_ID, "block/stand")
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/stand"))
                 )
         );
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(
                         ModBlocks.REACTOR_CORE,
-                        Identifier.of(Prixilium.MOD_ID, "block/reactor_core")
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/reactor_core"))
                 )
         );
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(
                         ModBlocks.VIRUS_REACTOR,
-                        Identifier.of(Prixilium.MOD_ID, "block/virus_reactor")
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/virus_reactor"))
                 )
         );
     }
@@ -148,9 +152,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILIUM_CONTAINER_CHARM_III, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_ROLLBACK_CHARM_III, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_REGENERATION_CHARM_III, Models.GENERATED);
-        itemModelGenerator.registerSpawnEgg(ModItems.BLIKO_SPAWN_EGG, 0xffe995, 0xffcb00);
-        itemModelGenerator.registerSpawnEgg(ModItems.BLOKITO_SPAWN_EGG, 0xffcb00, 0x8f7200);
-        itemModelGenerator.registerSpawnEgg(ModItems.AIRIS_SPAWN_EGG, 0x7afff3, 0xffcb00);
+        itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLOKITO_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.AIRIS_SPAWN_EGG, Models.GENERATED);
 
         //region [Tools]
 
@@ -215,45 +219,45 @@ public class ModModelProvider extends FabricModelProvider {
 
         //region [Armors]
 
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_HELMET, ModArmorMaterials.PRIXILIUM_LEATHER_KEY, "helmet", true);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_CHESTPLATE, ModArmorMaterials.PRIXILIUM_LEATHER_KEY, "chestplate", true);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_LEGGINGS, ModArmorMaterials.PRIXILIUM_LEATHER_KEY, "leggings", true);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_BOOTS, ModArmorMaterials.PRIXILIUM_LEATHER_KEY, "boots", true);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_HELMET, ModArmorMaterials.PRIXILIUM_LEATHER_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, true);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_CHESTPLATE, ModArmorMaterials.PRIXILIUM_LEATHER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, true);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_LEGGINGS, ModArmorMaterials.PRIXILIUM_LEATHER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, true);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_LEATHER_BOOTS, ModArmorMaterials.PRIXILIUM_LEATHER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, true);
 
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_HELMET, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_CHESTPLATE, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_LEGGINGS, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_BOOTS, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_HELMET, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_CHESTPLATE, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_LEGGINGS, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_BOOTS, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
         /* 1.21.9+
 
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_HELMET, ModArmorMaterials.PRIXILIUM_COPPER_KEY, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_CHESTPLATE, ModArmorMaterials.PRIXILIUM_COPPER_KEY, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_LEGGINGS, ModArmorMaterials.PRIXILIUM_COPPER_KEY, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_BOOTS, ModArmorMaterials.PRIXILIUM_COPPER_KEY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_HELMET, ModArmorMaterials.PRIXILIUM_COPPER_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_CHESTPLATE, ModArmorMaterials.PRIXILIUM_COPPER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_LEGGINGS, ModArmorMaterials.PRIXILIUM_COPPER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_BOOTS, ModArmorMaterials.PRIXILIUM_COPPER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
          */
 
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_HELMET, ModArmorMaterials.PRIXILIUM_IRON_KEY, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_CHESTPLATE, ModArmorMaterials.PRIXILIUM_IRON_KEY, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_LEGGINGS, ModArmorMaterials.PRIXILIUM_IRON_KEY, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_BOOTS, ModArmorMaterials.PRIXILIUM_IRON_KEY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_HELMET, ModArmorMaterials.PRIXILIUM_IRON_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_CHESTPLATE, ModArmorMaterials.PRIXILIUM_IRON_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_LEGGINGS, ModArmorMaterials.PRIXILIUM_IRON_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_BOOTS, ModArmorMaterials.PRIXILIUM_IRON_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_HELMET, ModArmorMaterials.PRIXILIUM_GOLD_KEY, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_CHESTPLATE, ModArmorMaterials.PRIXILIUM_GOLD_KEY, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_LEGGINGS, ModArmorMaterials.PRIXILIUM_GOLD_KEY, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_BOOTS, ModArmorMaterials.PRIXILIUM_GOLD_KEY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_HELMET, ModArmorMaterials.PRIXILIUM_GOLD_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_CHESTPLATE, ModArmorMaterials.PRIXILIUM_GOLD_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_LEGGINGS, ModArmorMaterials.PRIXILIUM_GOLD_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_GOLDEN_BOOTS, ModArmorMaterials.PRIXILIUM_GOLD_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_HELMET, ModArmorMaterials.PRIXILIUM_DIAMOND_KEY, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_CHESTPLATE, ModArmorMaterials.PRIXILIUM_DIAMOND_KEY, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_LEGGINGS, ModArmorMaterials.PRIXILIUM_DIAMOND_KEY, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_BOOTS, ModArmorMaterials.PRIXILIUM_DIAMOND_KEY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_HELMET, ModArmorMaterials.PRIXILIUM_DIAMOND_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_CHESTPLATE, ModArmorMaterials.PRIXILIUM_DIAMOND_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_LEGGINGS, ModArmorMaterials.PRIXILIUM_DIAMOND_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_DIAMOND_BOOTS, ModArmorMaterials.PRIXILIUM_DIAMOND_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_HELMET, ModArmorMaterials.PRIXILIUM_NETHERITE_KEY, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_CHESTPLATE, ModArmorMaterials.PRIXILIUM_NETHERITE_KEY, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_LEGGINGS, ModArmorMaterials.PRIXILIUM_NETHERITE_KEY, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_BOOTS, ModArmorMaterials.PRIXILIUM_NETHERITE_KEY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_HELMET, ModArmorMaterials.PRIXILIUM_NETHERITE_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_CHESTPLATE, ModArmorMaterials.PRIXILIUM_NETHERITE_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_LEGGINGS, ModArmorMaterials.PRIXILIUM_NETHERITE_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_NETHERITE_BOOTS, ModArmorMaterials.PRIXILIUM_NETHERITE_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
-        itemModelGenerator.registerArmor(ModItems.PRIXILED_TURTLE_HELMET, ModArmorMaterials.PRIXILIUM_TURTLE_KEY, "helmet", false);
+        itemModelGenerator.registerArmor(ModItems.PRIXILED_TURTLE_HELMET, ModArmorMaterials.PRIXILIUM_TURTLE_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
 
 
         itemModelGenerator.register(ModItems.PRIXILED_LEATHER_HORSE_ARMOR, Models.GENERATED);

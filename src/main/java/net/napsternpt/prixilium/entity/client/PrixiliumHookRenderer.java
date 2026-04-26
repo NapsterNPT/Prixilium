@@ -4,21 +4,14 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
-import net.minecraft.util.Identifier;
-import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.entity.projectile.PrixiliumHookEntity;
 
 public class PrixiliumHookRenderer extends EntityRenderer<PrixiliumHookEntity, PrixiliumHookRenderState> {
-    
-    private static final Identifier TEXTURE = Identifier.of(Prixilium.MOD_ID, "textures/entity/prixilium_hook.png");
 
     public PrixiliumHookRenderer(EntityRendererFactory.Context context) {
         super(context);
-    }
-
-    public Identifier getTexture(PrixiliumHookEntity entity) {
-        return TEXTURE;
     }
 
     public PrixiliumHookRenderState createRenderState() {
@@ -32,12 +25,10 @@ public class PrixiliumHookRenderer extends EntityRenderer<PrixiliumHookEntity, P
         net.minecraft.entity.player.PlayerEntity owner = entity.getPlayerOwner();
         if (owner == null) return;
         
-        if (entity.inBlock()) {
-            spawnBeamParticles(entity, owner, tickDelta);
-        }
+        spawnBeamParticles(entity, owner, tickDelta);
     }
     
-    private void spawnBeamParticles(PrixiliumHookEntity entity, net.minecraft.entity.player.PlayerEntity owner, float tickDelta) {
+    private void spawnBeamParticles(PrixiliumHookEntity entity, PlayerEntity owner, float tickDelta) {
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.world == null) return;
         
@@ -46,27 +37,25 @@ public class PrixiliumHookRenderer extends EntityRenderer<PrixiliumHookEntity, P
         
         net.minecraft.util.math.Vec3d diff = playerPos.subtract(hookPos);
         double dist = diff.length();
-        if (dist < 0.1) return;
+        if (dist < 0.5) return;
         
-        net.minecraft.util.math.Vec3d dir = diff.normalize();
+        int particleCount = (int) (dist / 3.0);
+        particleCount = Math.clamp(particleCount, 3, 15);
         
-        int particleCount = (int) (dist / 2.0);
+        net.minecraft.world.World world = client.world;
+        
         for (int i = 0; i < particleCount; i++) {
-            double t = (double) i / particleCount;
+            double t = (double) i / (particleCount - 1);
             
-            net.minecraft.util.math.Vec3d particlePos = hookPos.add(diff.multiply(t));
+            double x = hookPos.x + diff.x * t;
+            double y = hookPos.y + diff.y * t;
+            double z = hookPos.z + diff.z * t;
             
-            particlePos = particlePos.add(
-                (Math.random() - 0.5) * 0.2,
-                (Math.random() - 0.5) * 0.2,
-                (Math.random() - 0.5) * 0.2
-            );
+            x += (Math.random() - 0.5) * 0.2;
+            y += (Math.random() - 0.5) * 0.2;
+            z += (Math.random() - 0.5) * 0.2;
             
-            client.world.addParticle(
-                ParticleTypes.GLOW,
-                particlePos.x, particlePos.y, particlePos.z,
-                0.0, 0.0, 0.0
-            );
+            world.addParticleClient(ParticleTypes.WAX_ON, x, y, z, 0.0, 0.0, 0.0);
         }
     }
 }

@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.animation.Transformation;
 
 public class AirisAnimations {
     public static final Animation IDLE = Animation.Builder.create(10.0F).looping()
-            .addBoneAnimation("Bottom", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("Bottom", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.5F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(1.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(3.0F, AnimationHelper.createTranslationalVector(0.0F, 1.0F, 0.0F), Transformation.Interpolations.CUBIC),
@@ -15,7 +15,7 @@ public class AirisAnimations {
                     new Keyframe(7.0F, AnimationHelper.createTranslationalVector(0.0F, 1.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(9.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(10.0F, AnimationHelper.createTranslationalVector(0.0F, 0.5F, 0.0F), Transformation.Interpolations.CUBIC)
-            )).addBoneAnimation("Body", new Transformation(Transformation.Targets.TRANSLATE,
+            )).addBoneAnimation("Body", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(2.5F, AnimationHelper.createTranslationalVector(0.0F, 3.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(5.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
@@ -72,12 +72,12 @@ public class AirisAnimations {
             )).build();
 
     public static final Animation WALK = Animation.Builder.create(2.0F).looping()
-            .addBoneAnimation("Bottom", new Transformation(Transformation.Targets.TRANSLATE,
+            .addBoneAnimation("Bottom", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.5F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(0.5F, AnimationHelper.createTranslationalVector(0.0F, 1.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(1.5F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(2.0F, AnimationHelper.createTranslationalVector(0.0F, 0.5F, 0.0F), Transformation.Interpolations.CUBIC)
-            )).addBoneAnimation("Body", new Transformation(Transformation.Targets.TRANSLATE,
+            )).addBoneAnimation("Body", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                     new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(1.0F, AnimationHelper.createTranslationalVector(0.0F, 3.0F, 0.0F), Transformation.Interpolations.CUBIC),
                     new Keyframe(2.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)

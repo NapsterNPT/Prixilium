@@ -84,7 +84,7 @@ public class PrixiliumHookEntity extends ProjectileEntity {
                 double x = baseX + (Math.random() - 0.5) * 0.15;
                 double y = baseY + (Math.random() - 0.5) * 0.15;
                 double z = baseZ + (Math.random() - 0.5) * 0.15;
-                world.addParticle(ParticleTypes.WAX_ON, x, y, z, 0, 0, 0);
+                world.addParticleClient(ParticleTypes.WAX_ON, x, y, z, 0, 0, 0);
             }
         }
     }
@@ -141,15 +141,6 @@ public class PrixiliumHookEntity extends ProjectileEntity {
                 this.velocityDirty = true;
             }
             
-            if (traveledDistance > MAX_TRAVEL_DISTANCE) {
-                owner.getWorld().playSound(null, owner.getX(), owner.getY(), owner.getZ(),
-                        net.minecraft.sound.SoundEvents.ITEM_CROSSBOW_LOADING_END,
-                        net.minecraft.sound.SoundCategory.PLAYERS, 0.5f, 1.2f);
-                net.napsternpt.prixilium.item.custom.PrixiliumHookItem.clearHook(owner);
-                this.discard();
-                return;
-            }
-            
             if (this.inBlock()) {
                 Vec3d playerPos = owner.getPos().add(0, owner.getHeight() / 2, 0);
                 Vec3d hookPos = this.getPos();
@@ -199,8 +190,10 @@ public class PrixiliumHookEntity extends ProjectileEntity {
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
-        this.setInBlock(nbt.getBoolean("in_block"));
-        this.setHookLength(nbt.getFloat("length"));
+        if (nbt.getBoolean("in_block").isPresent() && nbt.getFloat("length").isPresent()) {
+            this.setInBlock(nbt.getBoolean("in_block").get());
+            this.setHookLength(nbt.getFloat("length").get());
+        }
     }
 
     public boolean inBlock() {

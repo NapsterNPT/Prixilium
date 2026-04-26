@@ -9,7 +9,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -48,18 +47,6 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
     @Override
     protected BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
-    }
-
-    @Override
-    protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if(state.getBlock() != newState.getBlock()) {
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof VirusReactorBlockEntity) {
-                ItemScatterer.spawn(world, pos, ((VirusReactorBlockEntity) blockEntity));
-                world.updateComparators(pos, this);
-            }
-            super.onStateReplaced(state, world, pos, newState, moved);
-        }
     }
 
     @Override

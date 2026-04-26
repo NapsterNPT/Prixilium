@@ -2,17 +2,18 @@ package net.napsternpt.prixilium.block.custom;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.UntintedParticleLeavesBlock;
+import net.minecraft.particle.ParticleEffect;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.napsternpt.prixilium.sound.ModSounds;
 
-public class PrixiliumLeavesBlock extends LeavesBlock {
+public class PrixiliumLeavesBlock extends UntintedParticleLeavesBlock {
 
-    public PrixiliumLeavesBlock(Settings settings) {
-        super(settings);
+    public PrixiliumLeavesBlock(float leafParticleChance, ParticleEffect leafParticleEffect, Settings settings) {
+        super(leafParticleChance, leafParticleEffect, settings);
     }
 
     @Override

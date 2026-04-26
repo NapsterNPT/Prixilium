@@ -3,7 +3,6 @@
   "addition": "prixilium:prixilium",
   "base": "minecraft:chainmail_chestplate",
   "result": {
-    "count": 1,
     "id": "prixilium:prixiled_chainmail_chestplate"
   },
   "template": "prixilium:prixilium_upgrade_smithing_template"

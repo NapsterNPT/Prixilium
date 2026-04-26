@@ -2,14 +2,11 @@ package net.napsternpt.prixilium.mixin;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
-import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.effect.ModEffects;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

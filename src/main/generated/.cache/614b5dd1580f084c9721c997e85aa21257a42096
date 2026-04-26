@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	Prixilium/Model Definitions
+// 1.21.5	-999999999-01-01T00:00:00	Prixilium/Model Definitions
 a51c5f7cc3c2e2965b56d8701c8a3e71427fa32b assets/prixilium/blockstates/prixilium.json
 5b3422a7d667e5eeb83836be7d5aa577644fdd16 assets/prixilium/blockstates/prixilium_bricks.json
 d5064af8946cb42b166f72dea81edbaa7264f371 assets/prixilium/blockstates/prixilium_bricks_wall.json
@@ -17,9 +17,9 @@ b831627f0b5f803f21d77eef646200dca663d90f assets/prixilium/blockstates/prixilium_
 404ba07bf73c0a5560f67f0d7244aa78370fa6af assets/prixilium/blockstates/reactor_core.json
 bea07b4824e3c92e38898e0809834dbc2638c4c9 assets/prixilium/blockstates/stand.json
 414c2f8a9720dd5e6de2472f8a76e3ba08631405 assets/prixilium/blockstates/virus_reactor.json
-b6bc9c88057e045df5af5ab9b5f6e54d1fc91af5 assets/prixilium/items/airis_spawn_egg.json
-a546b7aa370e5a90db27d81a575d80dd18a0bc19 assets/prixilium/items/bliko_spawn_egg.json
-7cfdf223fbecfdb90f1fef3ab51d001fb559306f assets/prixilium/items/blokito_spawn_egg.json
+df00882d3b8e7b3cbb1c1f2beb95e11fc3b75ad6 assets/prixilium/items/airis_spawn_egg.json
+10c42a5a4f9a02d9c7b9f6f8f1cba813c39ea3da assets/prixilium/items/bliko_spawn_egg.json
+5ae88eff2e35a881bbc449209930289ff6e1a8bb assets/prixilium/items/blokito_spawn_egg.json
 4a01fabb7805818f204bf944fb8dc05f7d6a813c assets/prixilium/items/prixiled_bow.json
 8a14023593691fc7fd12555a1053465eba0c610a assets/prixilium/items/prixiled_chainmail_boots.json
 a2a4db230c5d332846a9ec3f718d936d9b64e572 assets/prixilium/items/prixiled_chainmail_chestplate.json
@@ -169,6 +169,9 @@ a9aa5f89709e109b6757a17dc6cd7871da456461 assets/prixilium/models/block/prixilium
 5b37c787257348d67f77f9a2d8b0162bcb952dcb assets/prixilium/models/block/prixilium_trapdoor_open.json
 4c1a47de03f71e693d8d6d9cb82ae574ba6285a0 assets/prixilium/models/block/prixilium_trapdoor_top.json
 721ec0928d4f2cd152553f53f2d95076eab76ee4 assets/prixilium/models/block/prixilium_wood.json
+3782fe82776cb76c92deaa511ad49a0300b4df62 assets/prixilium/models/item/airis_spawn_egg.json
+3ca15b1727fba697cde3cf77b07e8f585e7e0845 assets/prixilium/models/item/bliko_spawn_egg.json
+547c09bd4500712343608986d988300dfd23baff assets/prixilium/models/item/blokito_spawn_egg.json
 5a49a426e45069261233b6759c6bd9e719c9fe0b assets/prixilium/models/item/prixiled_bow.json
 2ff5a0fb6272d04cfa9c01c9630e3556daf716a1 assets/prixilium/models/item/prixiled_bow_pulling_0.json
 484b7bd666ca9f9b4c95a1574f62019074e05acd assets/prixilium/models/item/prixiled_bow_pulling_1.json
