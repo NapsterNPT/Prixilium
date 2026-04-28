@@ -1,10 +1,5 @@
 {
   "layers": {
-    "horse_body": [
-      {
-        "texture": "prixilium:prixiled_turtle_scute"
-      }
-    ],
     "humanoid": [
       {
         "texture": "prixilium:prixiled_turtle_scute"

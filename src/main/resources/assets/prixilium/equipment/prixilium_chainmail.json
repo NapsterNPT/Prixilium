@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "prixilium:prixiled_chainmail"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "prixilium:prixiled_chainmail"
+      }
+    ]
+  }
+}
