@@ -600,5 +600,5 @@ public class ModItems {
         return Registry.register(Registries.ITEM, Identifier.of(Prixilium.MOD_ID, name), item);
     }
 
-    public static void registerModItems() {Prixilium.LOGGER.info("Registering Prixilium Items.");}
+    public static void registerItems() {Prixilium.LOGGER.info("Registering Prixilium Items.");}
 }

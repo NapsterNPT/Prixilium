@@ -12,6 +12,7 @@ import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.custom.*;
 import net.napsternpt.prixilium.item.ModItemGroups;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.potion.ModPotions;
 import net.napsternpt.prixilium.sound.ModSounds;
 import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
@@ -25,14 +26,16 @@ public class Prixilium implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
+		ModItems.registerItems();
+		ModBlocks.registerBlocks();
 		ModBlockEntities.registerBlockEntities();
 		ModDataComponentTypes.registerDataComponentTypes();
 		ModSounds.registerSounds();
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
-		ModEntities.registerModEntities();
+		ModEntities.registerEntities();
+		ModParticles.registerModParticles();
+
 		ModWorldGeneration.generateModWorldGen();
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {

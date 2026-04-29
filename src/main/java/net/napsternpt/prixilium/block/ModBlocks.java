@@ -4,7 +4,6 @@ import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -13,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.custom.*;
+import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.world.tree.ModSaplingGenerators;
 
 public class ModBlocks {
@@ -58,7 +58,7 @@ public class ModBlocks {
             ));
 
     public static final Block PRIXILIUM_LEAVES = registerBlock("prixilium_leaves",
-            new PrixiliumLeavesBlock(0.02f, ParticleTypes.CHERRY_LEAVES,AbstractBlock.Settings.create()
+            new PrixiliumLeavesBlock(0.1F, ModParticles.PRIXILIUM_LEAVES_PARTICLE,AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_leaves")))
                     .strength(0.2F)
                     .sounds(BlockSoundGroup.GRASS)
@@ -178,5 +178,5 @@ public class ModBlocks {
                         .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name))).useBlockPrefixedTranslationKey()));
     }
 
-    public static void registerModBlocks() {Prixilium.LOGGER.info("Registering Prixilium Blocks.");}
+    public static void registerBlocks() {Prixilium.LOGGER.info("Registering Prixilium Blocks.");}
 }

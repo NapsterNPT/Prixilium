@@ -2,6 +2,7 @@ package net.napsternpt.prixilium;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
@@ -11,6 +12,9 @@ import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.block.entity.renderer.VirusReactorBlockEntityRenderer;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.client.*;
+import net.napsternpt.prixilium.particle.ModParticles;
+import net.napsternpt.prixilium.particle.PrixiliumAmbientParticles;
+import net.napsternpt.prixilium.particle.PrixiliumLeavesParticles;
 
 public class PrixiliumClient implements ClientModInitializer {
 	@Override
@@ -30,5 +34,8 @@ public class PrixiliumClient implements ClientModInitializer {
 		EntityModelLayerRegistry.registerModelLayer(AirisModel.AIRIS, AirisModel::getTexturedModelData);
 		EntityRendererRegistry.register(ModEntities.AIRIS, AirisRenderer::new);
 		EntityRendererRegistry.register(ModEntities.PRIXILIUM_HOOK, PrixiliumHookRenderer::new);
+
+		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_AMBIENT, PrixiliumAmbientParticles.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_LEAVES_PARTICLE, PrixiliumLeavesParticles.Factory::new);
     }
 }

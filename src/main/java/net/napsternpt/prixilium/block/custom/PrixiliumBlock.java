@@ -9,8 +9,10 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.effect.ModEffects;
+import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.util.ModTags;
 
 public class PrixiliumBlock extends SaplingBlock {
@@ -35,5 +37,16 @@ public class PrixiliumBlock extends SaplingBlock {
             }
         }
         return false;
+    }
+
+    @Override
+    public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        if (random.nextInt(5) == 0) {
+            double x = pos.getX() + random.nextDouble();
+            double y = pos.getY() + random.nextDouble();
+            double z = pos.getZ() + random.nextDouble();
+
+            world.addParticleClient(ModParticles.PRIXILIUM_AMBIENT, x, y, z, 0, 0.1, 0);
+        }
     }
 }

@@ -40,7 +40,7 @@ public class ModEntities {
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "airis")))
     );
 
-    public static void registerModEntities() {
+    public static void registerEntities() {
         Prixilium.LOGGER.info("Registering Prixilium Entities.");
     }
 }
