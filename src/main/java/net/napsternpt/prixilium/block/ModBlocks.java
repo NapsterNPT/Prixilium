@@ -58,7 +58,7 @@ public class ModBlocks {
             ));
 
     public static final Block PRIXILIUM_LEAVES = registerBlock("prixilium_leaves",
-            new PrixiliumLeavesBlock(0.1F, ModParticles.PRIXILIUM_LEAVES_PARTICLE,AbstractBlock.Settings.create()
+            new PrixiliumLeavesBlock(0.1F, ModParticles.PRIXILIUM_LEAVES,AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_leaves")))
                     .strength(0.2F)
                     .sounds(BlockSoundGroup.GRASS)

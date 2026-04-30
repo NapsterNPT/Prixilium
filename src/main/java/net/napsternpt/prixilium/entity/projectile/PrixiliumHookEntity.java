@@ -8,19 +8,18 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.particle.ModParticles;
 import org.jetbrains.annotations.Nullable;
 
 public class PrixiliumHookEntity extends ProjectileEntity {
     private static final double SPEED = 5.0;
     private static final double MAX_RANGE_BLOCKS = 64.0;
     private static final double MAX_DISTANCE_SQ = MAX_RANGE_BLOCKS * MAX_RANGE_BLOCKS;
-    private static final double MAX_TRAVEL_DISTANCE = 64.0;
     private static final double PULL_FORCE = 0.15;
     private static final double MIN_DISTANCE = 1.5;
 
@@ -84,7 +83,7 @@ public class PrixiliumHookEntity extends ProjectileEntity {
                 double x = baseX + (Math.random() - 0.5) * 0.15;
                 double y = baseY + (Math.random() - 0.5) * 0.15;
                 double z = baseZ + (Math.random() - 0.5) * 0.15;
-                world.addParticleClient(ParticleTypes.WAX_ON, x, y, z, 0, 0, 0);
+                world.addParticleClient(ModParticles.PRIXILIUM_HOOK, x, y, z, 0, 0, 0);
             }
         }
     }
@@ -213,26 +212,11 @@ public class PrixiliumHookEntity extends ProjectileEntity {
     }
 
     @Override
-    public void remove(RemovalReason reason) {
-        this.updateOwnerInfo();
-        super.remove(reason);
-    }
-
-    @Override
-    public void onRemoved() {
-        this.updateOwnerInfo();
-    }
-
-    private void updateOwnerInfo() {
-    }
+    public void remove(RemovalReason reason) {super.remove(reason);}
 
     @Nullable
     public PlayerEntity getPlayerOwner() {
         Entity owner = this.getOwner();
         return owner instanceof PlayerEntity player ? player : null;
     }
-
-    public boolean isInBlock() {return false;}
-
-    public float getHookLength() {return 0.0f;}
 }
