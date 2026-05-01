@@ -1,5 +1,6 @@
 package net.napsternpt.prixilium.entity.custom;
 
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -13,15 +14,20 @@ import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class BlikoEntity extends TameableEntity {
     public final AnimationState idleAnimationState = new AnimationState();
@@ -65,6 +71,10 @@ public class BlikoEntity extends TameableEntity {
                 if (this.random.nextInt(3) == 0) {
                     this.setOwner(player);
                     this.getWorld().sendEntityStatus(this, (byte) 7);
+                    if (!this.getWorld().isClient && player instanceof ServerPlayerEntity serverPlayer) {
+                        AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "team_bliko"));
+                        serverPlayer.getAdvancementTracker().grantCriterion(advancement, "team_bliko");
+                    }
                 } else {
                     this.getWorld().sendEntityStatus(this, (byte) 6);
                 }
@@ -118,29 +128,36 @@ public class BlikoEntity extends TameableEntity {
     public void onDeath(DamageSource source) {
         super.onDeath(source);
 
-        if (!this.getWorld().isClient && !this.isBaby()) {
-            ServerWorld world = (ServerWorld) this.getWorld();
-            for (int i = 0; i < 2; i++) {
-                BlikoEntity baby = ModEntities.BLIKO.create(world, SpawnReason.CONVERSION);
-                if (baby != null) {
-                    baby.setBaby(true);
-                    if (this.isTamed() && this.getOwner() != null) {
-                        baby.setOwner((PlayerEntity) this.getOwner());
-                        baby.setSitting(false);
+        if (!this.getWorld().isClient) {
+            if (source.getAttacker() instanceof ServerPlayerEntity killer) {
+                AdvancementEntry advancement = Objects.requireNonNull(killer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "kill_bliko"));
+                killer.getAdvancementTracker().grantCriterion(advancement, "kill_bliko");
+            }
+
+            if (!this.isBaby()) {
+                ServerWorld world = (ServerWorld) this.getWorld();
+                for (int i = 0; i < 2; i++) {
+                    BlikoEntity baby = ModEntities.BLIKO.create(world, SpawnReason.CONVERSION);
+                    if (baby != null) {
+                        baby.setBaby(true);
+                        if (this.isTamed() && this.getOwner() != null) {
+                            baby.setOwner(this.getOwner());
+                            baby.setSitting(false);
+                        }
+                        baby.refreshPositionAndAngles(
+                                this.getX(),
+                                this.getY(),
+                                this.getZ(),
+                                world.random.nextFloat() * 360F,
+                                0.0F
+                        );
+                        baby.setVelocity(
+                                -0.1 + this.random.nextDouble() * 0.2,
+                                0.1 + this.random.nextDouble() * 0.15,
+                                -0.1 + this.random.nextDouble() * 0.2
+                        ); //min + random.nextDouble() * (max - min)
+                        world.spawnEntity(baby);
                     }
-                    baby.refreshPositionAndAngles(
-                            this.getX(),
-                            this.getY(),
-                            this.getZ(),
-                            world.random.nextFloat() * 360F,
-                            0.0F
-                    );
-                    baby.setVelocity(
-                            -0.1 + this.random.nextDouble() * 0.2,
-                            0.1 + this.random.nextDouble() * 0.15,
-                            -0.1 + this.random.nextDouble() * 0.2
-                    );      //min + random.nextDouble() * (max - min)
-                    world.spawnEntity(baby);
                 }
             }
         }

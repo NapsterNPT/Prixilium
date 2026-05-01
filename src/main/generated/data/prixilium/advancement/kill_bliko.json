@@ -1,0 +1,27 @@
+{
+  "parent": "prixilium:root",
+  "criteria": {
+    "kill_bliko": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.kill_bliko.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "prixilium:bliko_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.prixilium.kill_bliko.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_bliko"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

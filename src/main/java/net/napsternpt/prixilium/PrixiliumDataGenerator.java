@@ -19,6 +19,7 @@ public class PrixiliumDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModRegistryDataGenerator::new);
+		pack.addProvider(ModAdvancementProvider::new);
 
 		//Tags
 		pack.addProvider(ModItemTagProvider::new);

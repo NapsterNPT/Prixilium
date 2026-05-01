@@ -158,5 +158,17 @@
   "tooltip.prixilium.virus_dead": "§7Simply trash item...",
   "tooltip.prixilium.prixilium_charm.1": "§7This is a §edefault §7charm,",
   "tooltip.prixilium.prixilium_charm.2": "§7you can §aspecialize §7it or §bupgrade §7it.",
-  "tooltip.prixilium.prixilium_charm_final": "§7you can only §aspecialize §7it."
+  "tooltip.prixilium.prixilium_charm_final": "§7you can only §aspecialize §7it.",
+
+
+  "advancements.prixilium.root.title": "Prixilium",
+  "advancements.prixilium.root.description": "Welcome to Prixilium",
+  "advancements.prixilium.virus_dead.title": "It's Dead...",
+  "advancements.prixilium.virus_dead.description": "Let the virus die",
+  "advancements.prixilium.prixilium_hook.title": "Let's Go Flying!",
+  "advancements.prixilium.prixilium_hook.description": "Use the prixilium hook",
+  "advancements.prixilium.team_bliko.title": "Hello There",
+  "advancements.prixilium.team_bliko.description": "Team a Bliko",
+  "advancements.prixilium.kill_bliko.title": "It Duplicates!?",
+  "advancements.prixilium.kill_bliko.description": "Kill a Bliko"
 }

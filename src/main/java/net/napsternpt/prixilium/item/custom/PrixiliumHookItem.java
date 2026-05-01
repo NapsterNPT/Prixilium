@@ -1,5 +1,6 @@
 package net.napsternpt.prixilium.item.custom;
 
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -9,11 +10,13 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.component.ModDataComponentTypes;
 import net.napsternpt.prixilium.entity.projectile.PrixiliumHookEntity;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 
 public class PrixiliumHookItem extends Item {
@@ -64,6 +67,9 @@ public class PrixiliumHookItem extends Item {
                     hand == Hand.MAIN_HAND
                             ? net.minecraft.entity.EquipmentSlot.MAINHAND
                             : net.minecraft.entity.EquipmentSlot.OFFHAND);
+
+            AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(net.minecraft.util.Identifier.of(Prixilium.MOD_ID, "prixilium_hook"));
+            serverPlayer.getAdvancementTracker().grantCriterion(advancement, "use_prixilium_hook");
         }
 
         return ActionResult.SUCCESS;

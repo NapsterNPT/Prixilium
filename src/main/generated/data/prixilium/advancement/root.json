@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "got_virus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:virus_alive"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "prixilium:gui/advancements/backgrounds/prixilium",
+    "description": {
+      "translate": "advancements.prixilium.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:prixilium"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.prixilium.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_virus"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

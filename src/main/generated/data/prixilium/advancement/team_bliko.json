@@ -1,0 +1,26 @@
+{
+  "parent": "prixilium:root",
+  "criteria": {
+    "team_bliko": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.team_bliko.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:bliko_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.prixilium.team_bliko.title"
+    }
+  },
+  "requirements": [
+    [
+      "team_bliko"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
