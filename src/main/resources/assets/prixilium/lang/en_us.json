@@ -162,7 +162,7 @@
 
 
   "advancements.prixilium.root.title": "Prixilium",
-  "advancements.prixilium.root.description": "Welcome to Prixilium",
+  "advancements.prixilium.root.description": "Let the infestation begin",
   "advancements.prixilium.virus_dead.title": "It's Dead...",
   "advancements.prixilium.virus_dead.description": "Let the virus die",
   "advancements.prixilium.prixilium_hook.title": "Let's Go Flying!",
@@ -170,5 +170,10 @@
   "advancements.prixilium.team_bliko.title": "Hello There",
   "advancements.prixilium.team_bliko.description": "Team a Bliko",
   "advancements.prixilium.kill_bliko.title": "It Duplicates!?",
-  "advancements.prixilium.kill_bliko.description": "Kill a Bliko"
+  "advancements.prixilium.kill_bliko.description": "Kill a Bliko",
+  "advancements.prixilium.step_on_prixilium.title": "Why It's Hard to Move?",
+  "advancements.prixilium.step_on_prixilium.description": "Step on Prixilium",
+
+  "advancements.prixilium.tp_to_dimension.title": "Is This a Dream?",
+  "advancements.prixilium.tp_to_dimension.description": "Sleep while ill"
 }

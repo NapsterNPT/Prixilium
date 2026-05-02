@@ -7,13 +7,16 @@ import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.advancement.criterion.EffectsChangedCriterion;
 import net.minecraft.advancement.criterion.ImpossibleCriterion;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
+import net.minecraft.predicate.entity.EntityEffectPredicate;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.item.ModItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -40,7 +43,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("got_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_ALIVE))
                 .build(consumer, Prixilium.MOD_ID + ":root");
 
-        // Advancement
+        //region [Normal Advancement]
         Advancement.Builder.create()
                 .parent(root)
                 .display(ModItems.VIRUS_DEAD,
@@ -76,5 +79,28 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .criterion("kill_bliko", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":kill_bliko");
+
+        Advancement.Builder.create()
+                .parent(root)
+                .display(ModBlocks.PRIXILIUM,
+                        Text.translatable("advancements.prixilium.step_on_prixilium.title"),
+                        Text.translatable("advancements.prixilium.step_on_prixilium.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("step_on_prixilium", EffectsChangedCriterion.Conditions.create(EntityEffectPredicate.Builder.create().addEffect(ModEffects.PRIXILIUM_SLOWNESS)))
+                .build(consumer, Prixilium.MOD_ID + ":step_on_prixilium");
+
+        //endregion
+
+        //region [Dimension Advancement]
+        AdvancementEntry dimension = Advancement.Builder.create()
+                .parent(root)
+                .display(ModBlocks.PRIXILIUM_GRASS,
+                        Text.translatable("advancements.prixilium.tp_to_dimension.title"),
+                        Text.translatable("advancements.prixilium.tp_to_dimension.description"), null, AdvancementFrame.TASK, true, true, true
+                )
+                .criterion("tp_to_dimension", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":tp_to_dimension");
+
+        //endregion
     }
 }

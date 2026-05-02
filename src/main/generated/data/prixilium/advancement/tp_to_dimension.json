@@ -1,0 +1,27 @@
+{
+  "parent": "prixilium:root",
+  "criteria": {
+    "tp_to_dimension": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.tp_to_dimension.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "prixilium:prixilium_grass"
+    },
+    "title": {
+      "translate": "advancements.prixilium.tp_to_dimension.title"
+    }
+  },
+  "requirements": [
+    [
+      "tp_to_dimension"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
