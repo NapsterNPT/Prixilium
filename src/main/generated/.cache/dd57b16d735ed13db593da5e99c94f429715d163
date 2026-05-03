@@ -1,8 +1,10 @@
 // 1.21.5	-999999999-01-01T00:00:00	Prixilium/Block Loot Tables
+398e25328c64de77f42f3d5f83ca0fddea24ef06 data/prixilium/loot_table/blocks/cracked_prixilium_bricks.json
 d38c4205d741b44303c48b7ac6ff55858502548c data/prixilium/loot_table/blocks/prixilium.json
 3c1e4a3cc6ab28fb7754c63a9901633bb1991ed7 data/prixilium/loot_table/blocks/prixilium_bricks.json
 852d3cf1129a5c5ea94f3498651b1c673be258f1 data/prixilium/loot_table/blocks/prixilium_bricks_wall.json
 8f5753c8fbb43817a4ff7b09e3a7ff9da2e528bc data/prixilium/loot_table/blocks/prixilium_door.json
+2ce43e53d9483d9d79299fbf4c649160740517ed data/prixilium/loot_table/blocks/prixilium_exhaust.json
 3b33db19a1e9bfb230d117be64fe582813b3766f data/prixilium/loot_table/blocks/prixilium_fence.json
 e6fae92fc20076cde8074bb10cf63a8c219797af data/prixilium/loot_table/blocks/prixilium_fence_gate.json
 1232440474cf9b562e9243ff2e1af5aa33a31f0b data/prixilium/loot_table/blocks/prixilium_grass.json

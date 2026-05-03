@@ -155,7 +155,7 @@ public class BlikoEntity extends TameableEntity {
                                 -0.1 + this.random.nextDouble() * 0.2,
                                 0.1 + this.random.nextDouble() * 0.15,
                                 -0.1 + this.random.nextDouble() * 0.2
-                        ); //min + random.nextDouble() * (max - min)
+                        );
                         world.spawnEntity(baby);
                     }
                 }

@@ -27,12 +27,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.STAND)
                 .add(ModBlocks.REACTOR_CORE)
                 .add(ModBlocks.VIRUS_REACTOR)
-                .add(ModBlocks.PRIXILIUM_BRICKS);
+                .add(ModBlocks.PRIXILIUM_BRICKS)
+                .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
+                .add(ModBlocks.PRIXILIUM_EXHAUST);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.REACTOR_CORE)
-                .add(ModBlocks.VIRUS_REACTOR)
-                .add(ModBlocks.PRIXILIUM_BRICKS);
+                .add(ModBlocks.VIRUS_REACTOR);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.PRIXILIUM_BRICKS)
+                .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
+                .add(ModBlocks.PRIXILIUM_EXHAUST);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.PRIXILIUM_GRASS);

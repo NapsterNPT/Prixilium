@@ -12,10 +12,7 @@ import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.block.entity.renderer.VirusReactorBlockEntityRenderer;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.client.*;
-import net.napsternpt.prixilium.particle.ModParticles;
-import net.napsternpt.prixilium.particle.PrixiliumAmbientParticles;
-import net.napsternpt.prixilium.particle.PrixiliumHookParticles;
-import net.napsternpt.prixilium.particle.PrixiliumLeavesParticles;
+import net.napsternpt.prixilium.particle.*;
 
 public class PrixiliumClient implements ClientModInitializer {
 	@Override
@@ -39,5 +36,6 @@ public class PrixiliumClient implements ClientModInitializer {
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_AMBIENT, PrixiliumAmbientParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_LEAVES, PrixiliumLeavesParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_HOOK, PrixiliumHookParticles.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_SMOKE, PrixiliumSmokeParticles.Factory::new);
     }
 }

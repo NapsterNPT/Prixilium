@@ -5,18 +5,25 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.particle.SimpleParticleType;
 import org.jetbrains.annotations.Nullable;
 
-public class PrixiliumAmbientParticles extends SpriteBillboardParticle {
-    public PrixiliumAmbientParticles(ClientWorld clientWorld, double x, double y, double z, SpriteProvider spriteProvider, double xSpeed, double ySpeed, double zSpeed) {
+public class PrixiliumSmokeParticles extends SpriteBillboardParticle {
+    private final SpriteProvider spriteProvider;
+
+    public PrixiliumSmokeParticles(ClientWorld clientWorld, double x, double y, double z, SpriteProvider spriteProvider, double xSpeed, double ySpeed, double zSpeed) {
         super(clientWorld, x, y, z, xSpeed, ySpeed, zSpeed);
 
         this.maxAge = 100;
+        float g = (float) (0.25 + random.nextDouble() * 0.25);
+        this.scale = g;
+        this.setBoundingBoxSpacing(g, g);
+        this.spriteProvider = spriteProvider;
         this.setSpriteForAge(spriteProvider);
     }
 
     @Override
     public void tick() {
         super.tick();
-        this.alpha = (float) Math.pow(1.0f - ((float) this.age / (float) this.maxAge), 0.1);
+        this.setSpriteForAge(this.spriteProvider);
+        this.alpha = (float) Math.pow(1.0f - ((float) this.age / (float) this.maxAge), 0.5);
     }
 
     @Override
@@ -33,7 +40,7 @@ public class PrixiliumAmbientParticles extends SpriteBillboardParticle {
 
         @Override
         public @Nullable Particle createParticle(SimpleParticleType parameters, ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-            return new PrixiliumAmbientParticles(world, x, y, z, spriteProvider, velocityX, velocityY, velocityZ);
+            return new PrixiliumSmokeParticles(world, x, y, z, spriteProvider, velocityX, velocityY, velocityZ);
         }
     }
 }

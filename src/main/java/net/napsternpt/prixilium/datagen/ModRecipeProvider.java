@@ -17,6 +17,7 @@ import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.item.ModItems;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -381,6 +382,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .offerTo(exporter);
 
                 offer2x2CompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS, ModBlocks.PRIXILIUM);
+                offerSmelting(List.of(ModBlocks.PRIXILIUM_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_PRIXILIUM_BRICKS, 0.1f, 200, "cracked_prixilium_bricks");
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS_WALL, 6)
                         .input('#', ModBlocks.PRIXILIUM_BRICKS)
                         .pattern("###")
@@ -405,6 +407,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" # ")
                         .criterion(hasItem(ModBlocks.PRIXILIUM_LAMP), conditionsFromItem(ModBlocks.PRIXILIUM_LAMP))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_redstone_lamp")));
+
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_EXHAUST)
+                        .input('#', ModBlocks.PRIXILIUM_BRICKS)
+                        .input('!', ModBlocks.PRIXILIUM)
+                        .input('@', Items.GUNPOWDER)
+                        .pattern("#!#")
+                        .pattern("#@#")
+                        .pattern("###")
+                        .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
+                        .offerTo(exporter);
 
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STAND)
                         .input('!', Blocks.DEEPSLATE_BRICK_WALL)

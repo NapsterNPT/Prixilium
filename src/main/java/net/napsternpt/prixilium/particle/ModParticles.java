@@ -11,6 +11,7 @@ public class ModParticles {
     public static final SimpleParticleType PRIXILIUM_AMBIENT = registerParticle("prixilium_ambient", FabricParticleTypes.simple());
     public static final SimpleParticleType PRIXILIUM_LEAVES = registerParticle("prixilium_leaves", FabricParticleTypes.simple());
     public static final SimpleParticleType PRIXILIUM_HOOK = registerParticle("prixilium_hook", FabricParticleTypes.simple());
+    public static final SimpleParticleType PRIXILIUM_SMOKE = registerParticle("prixilium_smoke", FabricParticleTypes.simple());
 
     private static SimpleParticleType registerParticle(String name, SimpleParticleType particleType) {
         return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Prixilium.MOD_ID, name), particleType);

@@ -127,6 +127,13 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+    public static final Block CRACKED_PRIXILIUM_BRICKS = registerBlock("cracked_prixilium_bricks",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "cracked_prixilium_bricks")))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
     public static final Block PRIXILIUM_BRICKS_WALL = registerBlock("prixilium_bricks_wall",
             new PrixiliumBricksWallBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_bricks_wall")))
@@ -143,6 +150,14 @@ public class ModBlocks {
                     .mapColor(MapColor.LIGHT_GRAY)
                     .nonOpaque()
                     .luminance(state -> state.get(PrixiliumLampBlock.LIGHT))
+            ));
+
+    public static final Block PRIXILIUM_EXHAUST = registerBlock("prixilium_exhaust",
+            new PrixiliumExhaustBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_exhaust")))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
             ));
 
     public static final Block STAND = registerBlock("stand",

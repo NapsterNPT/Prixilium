@@ -70,6 +70,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTrapdoor(ModBlocks.PRIXILIUM_TRAPDOOR);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_PRIXILIUM_BRICKS);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.PRIXILIUM_BRICKS_WALL);
 
         Identifier lamp0Identifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector);
@@ -107,6 +108,20 @@ public class ModModelProvider extends FabricModelProvider {
                         .register(13, BlockStateModelGenerator.createWeightedVariant(lamp13Identifier))
                         .register(14, BlockStateModelGenerator.createWeightedVariant(lamp14Identifier))
                         .register(15, BlockStateModelGenerator.createWeightedVariant(lamp15Identifier))
+                )
+        );
+
+        Identifier prixiliumExhaustModel = Models.CUBE_BOTTOM_TOP.upload(
+                ModBlocks.PRIXILIUM_EXHAUST, "", new TextureMap()
+                        .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_side"))
+                        .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_side"))
+                        .put(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_top")),
+                blockStateModelGenerator.modelCollector
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.PRIXILIUM_EXHAUST,
+                        BlockStateModelGenerator.createWeightedVariant(prixiliumExhaustModel)
                 )
         );
 
