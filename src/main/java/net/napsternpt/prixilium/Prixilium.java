@@ -1,12 +1,14 @@
 package net.napsternpt.prixilium;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerEntityWorldChangeEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.potion.Potions;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.component.ModDataComponentTypes;
+import net.napsternpt.prixilium.datagen.ModWorldGen;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.custom.*;
@@ -18,6 +20,8 @@ import net.napsternpt.prixilium.sound.ModSounds;
 import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Set;
 
 public class Prixilium implements ModInitializer {
 	public static final String MOD_ID = "prixilium";
@@ -44,5 +48,11 @@ public class Prixilium implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.BLIKO, BlikoEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BLOKITO, BlokitoEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.AIRIS, AirisEntity.createAttributes());
+
+		ServerEntityWorldChangeEvents.AFTER_PLAYER_CHANGE_WORLD.register((player, origin, destination) -> {
+			if (destination.getRegistryKey().equals(ModWorldGen.PRIXILIUM_WORLD)) {
+				player.teleport(destination, 100.5, 120, 0.5, Set.of(), 90, 0, true);
+			}
+		});
 	}
 }

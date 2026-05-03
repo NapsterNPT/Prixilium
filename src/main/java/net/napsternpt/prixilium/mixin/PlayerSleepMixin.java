@@ -2,18 +2,19 @@ package net.napsternpt.prixilium.mixin;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.effect.ModEffects;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Objects;
 
 @Mixin(PlayerEntity.class)
 public class PlayerSleepMixin {
@@ -27,7 +28,7 @@ public class PlayerSleepMixin {
 				MinecraftServer server = serverPlayer.getServer();
 
                 assert server != null;
-                RegistryKey<World> dimensionKey = Objects.requireNonNull(server.getWorld(World.NETHER)).getRegistryKey(); //RegistryKey.of(RegistryKeys.WORLD, Identifier.of(Prixilium.MOD_ID, "prixiverse"));
+                RegistryKey<World> dimensionKey = RegistryKey.of(RegistryKeys.WORLD, Identifier.of(Prixilium.MOD_ID, "prixiverse"));
 
                 ServerWorld destination = server.getWorld(dimensionKey);
 
