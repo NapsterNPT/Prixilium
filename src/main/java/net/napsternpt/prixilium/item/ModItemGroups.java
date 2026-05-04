@@ -62,7 +62,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PRIXILIUM_TRAPDOOR);
                         entries.add(ModBlocks.PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.CRACKED_PRIXILIUM_BRICKS);
+                        entries.add(ModBlocks.PRIXILIUM_BRICK_STAIRS);
+                        entries.add(ModBlocks.PRIXILIUM_BRICK_SLAB);
                         entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
+                        entries.add(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.PRIXILIUM_EXHAUST);
                         entries.add(ModBlocks.PRIXILIUM_LAMP);
                         entries.add(ModBlocks.STAND);

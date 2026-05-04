@@ -141,6 +141,27 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+    public static final Block PRIXILIUM_BRICK_STAIRS = registerBlock("prixilium_brick_stairs",
+            new StairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_brick_stairs")))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+    public static final Block PRIXILIUM_BRICK_SLAB = registerBlock("prixilium_brick_slab",
+            new SlabBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_brick_slab")))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+    public static final Block CHISELED_PRIXILIUM_BRICKS = registerBlock("chiseled_prixilium_bricks",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "chiseled_prixilium_bricks")))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
 
     public static final Block PRIXILIUM_LAMP = registerBlock("prixilium_lamp",
             new PrixiliumLampBlock(AbstractBlock.Settings.create()

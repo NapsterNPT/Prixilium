@@ -5,6 +5,9 @@
     "prixilium:virus_reactor",
     "prixilium:prixilium_bricks",
     "prixilium:cracked_prixilium_bricks",
+    "prixilium:prixilium_brick_stairs",
+    "prixilium:prixilium_brick_slab",
+    "prixilium:chiseled_prixilium_bricks",
     "prixilium:prixilium_exhaust"
   ]
 }

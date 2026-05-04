@@ -5,10 +5,10 @@ cce923f156a6c480db9826bae734577f584a759d data/minecraft/tags/block/dirt.json
 ee59d0fc268efdcdcdfc21a036eb7fce6d779dc2 data/minecraft/tags/block/logs.json
 56a091bc1aeab592b7a06108fd3a67d12fa850db data/minecraft/tags/block/mineable/axe.json
 7739c434158e2408664571cf64315575544f79c8 data/minecraft/tags/block/mineable/hoe.json
-e278207aa3bfef136a886b4842a20553c070985c data/minecraft/tags/block/mineable/pickaxe.json
+94bed765118a12942b71072c18e792d56b29a80f data/minecraft/tags/block/mineable/pickaxe.json
 cce923f156a6c480db9826bae734577f584a759d data/minecraft/tags/block/mineable/shovel.json
 0415a9ad3728b15789e698fa4c7dbf58ba9c7d07 data/minecraft/tags/block/needs_diamond_tool.json
-8fe3043ca645ed5a1e6436c1445a9bc8c36c246c data/minecraft/tags/block/needs_iron_tool.json
+5c5a2ea96d67261523e48c8414df210eeaf93c97 data/minecraft/tags/block/needs_iron_tool.json
 c85b6f1519b254e7c8d739b72dbcd82a8b458f4b data/minecraft/tags/block/planks.json
 f5a912cf1d8fefdc416541c77b01570aa54ff394 data/minecraft/tags/block/snaps_goat_horn.json
 54bf7833eb05f2a45c8c3b4eca48b6441e16fde3 data/minecraft/tags/block/walls.json

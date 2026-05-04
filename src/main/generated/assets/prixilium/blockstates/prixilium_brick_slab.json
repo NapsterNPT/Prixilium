@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "prixilium:block/prixilium_brick_slab"
+    },
+    "type=double": {
+      "model": "prixilium:block/prixilium_bricks"
+    },
+    "type=top": {
+      "model": "prixilium:block/prixilium_brick_slab_top"
+    }
+  }
+}
