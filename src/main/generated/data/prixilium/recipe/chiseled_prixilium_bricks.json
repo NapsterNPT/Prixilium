@@ -5,8 +5,8 @@
     "#": "prixilium:prixilium_brick_slab"
   },
   "pattern": [
-    " # ",
-    " # "
+    "#",
+    "#"
   ],
   "result": {
     "count": 1,

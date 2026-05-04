@@ -395,11 +395,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICK_SLAB, Ingredient.ofItems(ModBlocks.PRIXILIUM_BRICKS))
                         .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
                         .offerTo(exporter);
-                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_PRIXILIUM_BRICKS)
-                        .input('#', ModBlocks.PRIXILIUM_BRICK_SLAB)
-                        .pattern(" # ")
-                        .pattern(" # ")
-                        .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
+                createChiseledBlockRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_PRIXILIUM_BRICKS, Ingredient.ofItem(ModBlocks.PRIXILIUM_BRICK_SLAB))
+                        .criterion(hasItem(ModBlocks.PRIXILIUM_BRICK_SLAB), conditionsFromItem(ModBlocks.PRIXILIUM_BRICK_SLAB))
                         .offerTo(exporter);
 
                 createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP)
