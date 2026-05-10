@@ -17,8 +17,8 @@ public class PrixiliumExhaustBlock extends Block {
                 double y = pos.getY() + 1;
                 double z = pos.getZ() + 0.5;
 
-                double vS = -0.75 + random.nextDouble() * 1.5;
-                double vY = random.nextDouble() * 100;
+                double vS = -0.75 + random.nextFloat() * 1.5;
+                double vY = random.nextFloat() * 100;
 
                 world.addParticleClient(ModParticles.PRIXILIUM_SMOKE, x, y, z, vS, vY, vS);
             }

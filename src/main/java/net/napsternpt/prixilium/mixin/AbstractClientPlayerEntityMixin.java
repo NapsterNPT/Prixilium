@@ -30,10 +30,7 @@ public abstract class AbstractClientPlayerEntityMixin extends PlayerEntity {
             g = g > 1.0f ? 1.0f : g * g;
             float f = info.getReturnValue();
             f *= 1.0f - g * 0.15f;
-            info.setReturnValue(MathHelper.lerp(
-                    MinecraftClient.getInstance().options.getFovEffectScale().getValue().floatValue(),
-                    1.0f, f
-            ));
+            info.setReturnValue(MathHelper.lerp(MinecraftClient.getInstance().options.getFovEffectScale().getValue().floatValue(), 1.0f, f));
         }
     }
 }
