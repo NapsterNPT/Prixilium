@@ -10,6 +10,7 @@ import net.napsternpt.prixilium.Prixilium;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> PRIXILIUM_CONVERTIBLE = createTag("prixilium_convertable");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name));

@@ -2,9 +2,11 @@ package net.napsternpt.prixilium.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -73,5 +75,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.PRIXILIUM_BRICKS_WALL);
+
+        // Mod Tags
+        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)
+                .add(Blocks.GRASS_BLOCK)
+                .add(Blocks.DIRT);
     }
 }

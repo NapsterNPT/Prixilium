@@ -126,6 +126,8 @@ public class PrixiliumGrassBlock extends Block {
     private boolean canSpreadToBecomePrixilium(BlockState state) {
         return state.isOf(Blocks.SHORT_GRASS) ||
                 state.isOf(Blocks.FERN) ||
+                state.isOf(Blocks.BUSH) ||
+                state.isOf(Blocks.FIREFLY_BUSH) ||
                 state.isOf(Blocks.DEAD_BUSH) ||
                 state.isOf(Blocks.DANDELION) ||
                 state.isOf(Blocks.TORCHFLOWER) ||
