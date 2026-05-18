@@ -65,8 +65,7 @@ public class Prixilium implements ModInitializer {
 
 		ModWorldGeneration.generateModWorldGen();
 
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder ->
-			builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.PRIXILIUM.asItem(), ModPotions.PRIXILIUM_SLOWNESS_POTION));
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.PRIXILIUM.asItem(), ModPotions.PRIXILIUM_SLOWNESS_POTION));
 
 		FabricDefaultAttributeRegistry.register(ModEntities.BLIKO, BlikoEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BLOKITO, BlokitoEntity.createAttributes());
@@ -74,7 +73,7 @@ public class Prixilium implements ModInitializer {
 
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			ServerWorld prixiverse = server.getWorld(ModWorldGen.PRIXILIUM_WORLD);
-			if (prixiverse == null) {return;}
+			if (prixiverse == null) return;
 			placeSpawnStructure(server, prixiverse);
 		});
 
@@ -87,9 +86,7 @@ public class Prixilium implements ModInitializer {
 	private static void placeSpawnStructure(MinecraftServer server, ServerWorld world) {
 		PrixiverseSpawnState state = world.getPersistentStateManager().getOrCreate(PrixiverseSpawnState.TYPE);
 
-		if (state.isSpawnPlaced()) {
-			return;
-		}
+		if (state.isSpawnPlaced()) return;
 
 		world.getChunk(new BlockPos(SPAWN_X, 0, SPAWN_Z));
 		int surfaceY = world.getTopY(Heightmap.Type.WORLD_SURFACE, SPAWN_X, SPAWN_Z);
@@ -103,18 +100,16 @@ public class Prixilium implements ModInitializer {
 				NbtCompound nbt = NbtIo.readCompressed(stream, NbtSizeTracker.ofUnlimitedBytes());
 				template = templateManager.createTemplate(nbt);
 			} catch (IOException e) {
-				LOGGER.error("[Prixilium] Failed to read spawn.nbt: {}", e.getMessage());
 				return;
 			}
 		}
 
-		BlockPos structureOrigin = new BlockPos(SPAWN_X, surfaceY, SPAWN_Z);
+        assert template != null;
+        BlockPos structureOrigin = new BlockPos(SPAWN_X - template.getSize().getX() / 2, surfaceY - 1, SPAWN_Z - template.getSize().getZ() / 2);
 		StructurePlacementData placementData = new StructurePlacementData()
 				.setMirror(BlockMirror.NONE)
 				.setRotation(BlockRotation.NONE)
 				.setIgnoreEntities(false);
-
-        assert template != null;
         template.place(world, structureOrigin, structureOrigin, placementData, world.getRandom(), Block.NOTIFY_ALL);
 
 		state.markSpawnPlaced();
