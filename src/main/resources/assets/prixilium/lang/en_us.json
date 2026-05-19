@@ -164,7 +164,12 @@
   "tooltip.prixilium.prixilium_charm.1": "§7This is a §edefault §7charm,",
   "tooltip.prixilium.prixilium_charm.2": "§7you can §aspecialize §7it or §bupgrade §7it.",
   "tooltip.prixilium.prixilium_charm_final": "§7you can only §aspecialize §7it.",
+  "tooltip.prixilium.thermometer": "§7Hold right click to measure your temperature.",
 
+  "hud.termometer.player_scanning": "§fScanning",
+  "hud.termometer.player_ill": "§fThe player is §cill§f...",
+  "hud.termometer.player_not_ill": "§fThe player is §anot ill§f.",
+  "hud.termometer.player_not_found": "§fPlayer not found.",
 
   "advancements.prixilium.root.title": "Prixilium",
   "advancements.prixilium.root.description": "Let the infestation begin",

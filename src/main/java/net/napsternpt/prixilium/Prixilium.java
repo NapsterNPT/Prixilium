@@ -28,6 +28,7 @@ import net.napsternpt.prixilium.datagen.ModWorldGen;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.custom.*;
+import net.napsternpt.prixilium.hud.*;
 import net.napsternpt.prixilium.item.ModItemGroups;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.particle.ModParticles;
@@ -63,6 +64,8 @@ public class Prixilium implements ModInitializer {
 		ModEntities.registerEntities();
 		ModParticles.registerModParticles();
 
+		ThermometerHud.register();
+
 		ModWorldGeneration.generateModWorldGen();
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.PRIXILIUM.asItem(), ModPotions.PRIXILIUM_SLOWNESS_POTION));
@@ -78,9 +81,7 @@ public class Prixilium implements ModInitializer {
 		});
 
 		ServerEntityWorldChangeEvents.AFTER_PLAYER_CHANGE_WORLD.register((player, origin, destination) -> {
-			if (destination.getRegistryKey().equals(ModWorldGen.PRIXILIUM_WORLD)) {
-				player.teleport(destination, SPAWN_X + 0.5, 120, SPAWN_Z + 0.5, Set.of(), 90, 0, true);
-			}
+			if (destination.getRegistryKey().equals(ModWorldGen.PRIXILIUM_WORLD)) {player.teleport(destination, SPAWN_X + 0.5, 120, SPAWN_Z + 0.5, Set.of(), 90, 0, true);}
 		});
 	}
 	private static void placeSpawnStructure(MinecraftServer server, ServerWorld world) {
