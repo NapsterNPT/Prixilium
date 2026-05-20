@@ -85,8 +85,4 @@ public class PrixiliumHookItem extends Item {
         if (main.getItem() instanceof PrixiliumHookItem) main.remove(ModDataComponentTypes.HOOK_ACTIVE);
         if (off.getItem() instanceof PrixiliumHookItem) off.remove(ModDataComponentTypes.HOOK_ACTIVE);
     }
-
-    public static boolean isStackActive(ItemStack stack) {
-        return stack.getOrDefault(ModDataComponentTypes.HOOK_ACTIVE, false);
-    }
 }

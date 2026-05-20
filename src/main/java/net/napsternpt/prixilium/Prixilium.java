@@ -62,9 +62,8 @@ public class Prixilium implements ModInitializer {
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
 		ModEntities.registerEntities();
-		ModParticles.registerModParticles();
-
-		ThermometerHud.register();
+		ModParticles.registerParticles();
+		ModHuds.registerHuds();
 
 		ModWorldGeneration.generateModWorldGen();
 

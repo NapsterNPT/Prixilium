@@ -19,6 +19,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.custom.VirusReactorBlockEntity;
+import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,11 +30,8 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
     private static final VoxelShape SHAPE = VoxelShapes.union(BOTTOM, MIDDLE, TOP);
     public static final MapCodec<VirusReactorBlock> CODEC = VirusReactorBlock.createCodec(VirusReactorBlock::new);
 
-    public static final BooleanProperty POWERED = BooleanProperty.of("powered");
-
     public VirusReactorBlock(Settings settings) {
         super(settings);
-        setDefaultState(getDefaultState().with(POWERED, false));
     }
 
     @Override
@@ -58,7 +56,7 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
 
     @Override
     protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(world.getBlockEntity(pos) instanceof VirusReactorBlockEntity virusReactorEntity && !state.get(POWERED)) {
+        if(world.getBlockEntity(pos) instanceof VirusReactorBlockEntity virusReactorEntity) {
             if(virusReactorEntity.isEmpty() && !stack.isEmpty()) {
                 virusReactorEntity.setStack(0, stack.copyWithCount(1));
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
@@ -67,17 +65,18 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                 virusReactorEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
 
-                BlockPos center = pos.down();
+                if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE)) {
+                    BlockPos center = pos.down();
 
-                for (int x = -2; x <= 2; x++) {
-                    for (int z = -2; z <= 2; z++) {
-                        if (x * x + z * z <= 2 * 2) {
+                    for (int x = -2; x <= 2; x++) {
+                        for (int z = -2; z <= 2; z++) {
+                            if (x * x + z * z <= 2 * 2) {
+                                BlockPos targetPos = center.add(x, 0, z);
+                                BlockState targetState = world.getBlockState(targetPos);
 
-                            BlockPos targetPos = center.add(x, 0, z);
-                            BlockState targetState = world.getBlockState(targetPos);
-
-                            if (targetState.isIn(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)) {
-                                world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
+                                if (targetState.isIn(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)) {
+                                    world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
+                                }
                             }
                         }
                     }
@@ -95,10 +94,5 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
             return ActionResult.SUCCESS;
         }
         return ActionResult.FAIL;
-    }
-
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(POWERED);
     }
 }

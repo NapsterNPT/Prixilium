@@ -17,5 +17,5 @@ public class ModParticles {
         return Registry.register(Registries.PARTICLE_TYPE, Identifier.of(Prixilium.MOD_ID, name), particleType);
     }
 
-    public static void registerModParticles() {Prixilium.LOGGER.info("Registering Prixilium Particles.");}
+    public static void registerParticles() {Prixilium.LOGGER.info("Registering Prixilium Particles.");}
 }

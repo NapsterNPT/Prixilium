@@ -1,11 +1,20 @@
 package net.napsternpt.prixilium.hud;
 
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.fabricmc.fabric.api.client.rendering.v1.HudLayerRegistrationCallback;
+import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.effect.ModEffects;
 
 public class ThermometerHud {
+
+    private static final Identifier BAR = Identifier.of(Prixilium.MOD_ID, "textures/gui/thermometer/bar.png");
+    private static final Identifier BAR_BACKGROUND = Identifier.of(Prixilium.MOD_ID, "textures/gui/thermometer/bar_background.png");
 
     private static int value = 0;
     private static boolean active = false;
@@ -21,46 +30,50 @@ public class ThermometerHud {
     }
 
     public static void register() {
-        HudRenderCallback.EVENT.register((drawContext, tickDelta) -> {
+        HudLayerRegistrationCallback.EVENT.register(layeredDrawer -> layeredDrawer.attachLayerAfter(IdentifiedLayer.MISC_OVERLAYS,
+                        Identifier.of(Prixilium.MOD_ID, "thermometer_hud"),
+                        ThermometerHud::render
+        ));
+    }
 
-            MinecraftClient client = MinecraftClient.getInstance();
+    private static void render(DrawContext drawContext, RenderTickCounter tickCounter) {
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (!active || client.player == null) return;
 
-            if (!active || client.player == null) return;
+        int screenWidth = client.getWindow().getScaledWidth();
+        int screenHeight = client.getWindow().getScaledHeight();
+        int guiWidth = 256;
+        int guiHeight = 75;
+        int centerX = screenWidth / 2;
+        int x = (screenWidth - guiWidth) / 2;
+        int y = (screenHeight - guiHeight) / 2;
+        int barWidth = 256;
+        int barHeight = 64;
 
-            int screenWidth = client.getWindow().getScaledWidth();
-            int screenHeight = client.getWindow().getScaledHeight();
-            int guiWidth = 240;
-            int guiHeight = 60;
-            int x = (screenWidth - guiWidth) / 2;
-            int y = (screenHeight - guiHeight) / 2;
+        int filledWidth = (int) (barWidth * (value / 100.0f));
+        drawContext.drawTexture(RenderLayer::getGuiTextured, BAR_BACKGROUND, x, y, 0, 0, barWidth, barHeight, barWidth, barHeight);
+        drawContext.drawTexture(RenderLayer::getGuiTextured, BAR, x, y, 0, 0, filledWidth, barHeight, barWidth, barHeight);
 
-            drawContext.fill(x, y, x + guiWidth, y + guiHeight, 0xAA000000);
-            drawContext.drawBorder(x, y, guiWidth, guiHeight, 0xFFFFCB00);
-            drawContext.drawCenteredTextWithShadow(client.textRenderer, Text.literal("Thermometer"), screenWidth / 2, y + 8, 0xFFFFCB00);
-
-            int barWidth = guiWidth - 20;
-            int filledWidth = (int)(barWidth * (value / 100.0f));
-
-            drawContext.fill(x + 10, y + 25, x + 10 + barWidth, y + 35, 0xFF333333);
-            drawContext.fill(x + 10, y + 25, x + 10 + filledWidth, y + 35, 0xFFFF4444);
-
-            if (value != 100) {
-                assert client.world != null;
-                long ticks = client.world.getTime() % 40;
-                String dot = "";
-                if (ticks >= 10) dot += ".";
-                if (ticks >= 20) dot += ".";
-                if (ticks >= 30) dot += ".";
-                drawContext.drawCenteredTextWithShadow(client.textRenderer, Text.translatable("hud.termometer.player_scanning").getString() + dot, screenWidth / 2, y + 42, 0xFFFFFFFF);
+        if (value != 100) {
+            assert client.world != null;
+            long ticks = client.world.getTime() % 40;
+            String dot = "";
+            if (ticks >= 10) dot += ".";
+            if (ticks >= 20) dot += ".";
+            if (ticks >= 30) dot += ".";
+            drawContext.drawCenteredTextWithShadow(client.textRenderer,
+                    Text.translatable("hud.thermometer.player_measuring").getString() + dot,
+                    centerX, y + guiHeight - 10, 0xFFFFFFFF);
+        } else {
+            if (client.player.hasStatusEffect(ModEffects.ILLNESS)){
+                drawContext.drawCenteredTextWithShadow(client.textRenderer,
+                        Text.translatable("hud.thermometer.player_ill"),
+                        centerX, y + guiHeight - 10, 0xFFFFFFFF);
             } else {
-                if (client.player != null && client.player.hasStatusEffect(ModEffects.ILLNESS) && value == 100) {
-                    drawContext.drawCenteredTextWithShadow(client.textRenderer, Text.translatable("hud.termometer.player_ill"), screenWidth / 2, y + 42, 0xFFFFFFFF);
-                } else if (client.player != null && !client.player.hasStatusEffect(ModEffects.ILLNESS) && value == 100) {
-                    drawContext.drawCenteredTextWithShadow(client.textRenderer, Text.translatable("hud.termometer.player_not_ill"), screenWidth / 2, y + 42, 0xFFFFFFFF);
-                } else {
-                    drawContext.drawCenteredTextWithShadow(client.textRenderer, Text.translatable("hud.termometer.player_not_found"), screenWidth / 2, y + 42, 0xFFFFFFFF);
-                }
+                drawContext.drawCenteredTextWithShadow(client.textRenderer,
+                        Text.translatable("hud.thermometer.player_not_ill"),
+                        centerX, y + guiHeight - 10, 0xFFFFFFFF);
             }
-        });
+        }
     }
 }

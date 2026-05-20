@@ -8,8 +8,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.gen.placementmodifier.*;
@@ -41,8 +39,8 @@ public class ModPlacedFeatures {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 
-    private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key,
-                                                                                    RegistryEntry<ConfiguredFeature<?, ?>> configuration, PlacementModifier... modifiers) {
+    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key,
+                                 RegistryEntry<ConfiguredFeature<?, ?>> configuration, PlacementModifier... modifiers) {
         register(context, key, configuration, List.of(modifiers));
     }
 }
