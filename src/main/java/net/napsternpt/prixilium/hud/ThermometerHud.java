@@ -6,6 +6,9 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.RenderTickCounter;
+import net.minecraft.item.Item;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
@@ -19,6 +22,8 @@ public class ThermometerHud {
     private static int value = 0;
     private static boolean active = false;
 
+    private static final TagKey<Item> TEMPERATURE_TOOLS = TagKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "temperature_tools"));
+
     public static void increment() {
         active = true;
         value = Math.min(value + 1, 100);
@@ -28,6 +33,8 @@ public class ThermometerHud {
         value = 0;
         active = false;
     }
+
+    public static boolean isActive() {return active;}
 
     public static void register() {
         HudLayerRegistrationCallback.EVENT.register(layeredDrawer -> layeredDrawer.attachLayerAfter(IdentifiedLayer.MISC_OVERLAYS,
@@ -39,6 +46,12 @@ public class ThermometerHud {
     private static void render(DrawContext drawContext, RenderTickCounter tickCounter) {
         MinecraftClient client = MinecraftClient.getInstance();
         if (!active || client.player == null) return;
+
+        boolean holdingCorrectItem = client.player.getMainHandStack().isIn(TEMPERATURE_TOOLS) || client.player.getOffHandStack().isIn(TEMPERATURE_TOOLS);
+        if (!holdingCorrectItem) {
+            reset();
+            return;
+        }
 
         int screenWidth = client.getWindow().getScaledWidth();
         int screenHeight = client.getWindow().getScaledHeight();

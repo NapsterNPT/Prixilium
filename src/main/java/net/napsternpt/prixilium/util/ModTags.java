@@ -11,6 +11,10 @@ import net.napsternpt.prixilium.Prixilium;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> PRIXILIUM_CONVERTIBLE = createTag("prixilium_convertable");
+        public static final TagKey<Block> PRIXILIUM_GRASS_CONVERTIBLE = createTag("prixilium_grass_convertable");
+        public static final TagKey<Block> PRIXILIUM_LOG_CONVERTIBLE = createTag("prixilium_log_convertable");
+        public static final TagKey<Block> PRIXILIUM_WOOD_CONVERTIBLE = createTag("prixilium_wood_convertable");
+        public static final TagKey<Block> PRIXILIUM_LEAVES_CONVERTIBLE = createTag("prixilium_leaves_convertable");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name));
@@ -19,6 +23,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> PREVENT_PRIXILIUM_SLOWNESS = createTag("prevent_prixilium_slowness");
+        public static final TagKey<Item> TEMPERATURE_TOOLS = createTag("temperature_tools");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name));

@@ -7,8 +7,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -74,7 +72,7 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                                 BlockPos targetPos = center.add(x, 0, z);
                                 BlockState targetState = world.getBlockState(targetPos);
 
-                                if (targetState.isIn(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)) {
+                                if (targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) {
                                     world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
                                 }
                             }

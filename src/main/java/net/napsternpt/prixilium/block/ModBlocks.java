@@ -43,14 +43,14 @@ public class ModBlocks {
     );
 
     public static final Block PRIXILIUM_LOG = registerBlock("prixilium_log",
-            new PrixiliumLogsBlock(AbstractBlock.Settings.create()
+            new PrixiliumLogsAndWoodBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_log")))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.TEAL)
             ));
     public static final Block PRIXILIUM_WOOD = registerBlock("prixilium_wood",
-            new PrixiliumWoodBlock(AbstractBlock.Settings.create()
+            new PrixiliumLogsAndWoodBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_wood")))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)

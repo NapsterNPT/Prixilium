@@ -125,5 +125,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_GOLDEN_BOOTS)
                 .add(ModItems.PRIXILED_DIAMOND_BOOTS)
                 .add(ModItems.PRIXILED_NETHERITE_BOOTS);
+
+        getOrCreateTagBuilder(ModTags.Items.TEMPERATURE_TOOLS)
+                .add(ModItems.THERMOMETER);
     }
 }

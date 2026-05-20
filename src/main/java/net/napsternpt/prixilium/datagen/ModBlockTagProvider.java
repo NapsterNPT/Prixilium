@@ -78,7 +78,73 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         // Mod Tags
         getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)
+                .add(Blocks.SHORT_GRASS)
+                .add(Blocks.FERN)
+                .add(Blocks.BUSH)
+                .add(Blocks.FIREFLY_BUSH)
+                .add(Blocks.DEAD_BUSH)
+                .add(Blocks.DANDELION)
+                .add(Blocks.TORCHFLOWER)
+                .add(Blocks.POPPY)
+                .add(Blocks.BLUE_ORCHID)
+                .add(Blocks.ALLIUM)
+                .add(Blocks.RED_TULIP)
+                .add(Blocks.ORANGE_TULIP)
+                .add(Blocks.WHITE_TULIP)
+                .add(Blocks.PINK_TULIP)
+                .add(Blocks.OXEYE_DAISY)
+                .add(Blocks.CORNFLOWER)
+                .add(Blocks.AZURE_BLUET)
+                .add(Blocks.LILY_OF_THE_VALLEY)
+                .add(Blocks.SUNFLOWER)
+                .add(Blocks.LILAC)
+                .add(Blocks.ROSE_BUSH)
+                .add(Blocks.PEONY)
+                .add(Blocks.TALL_GRASS)
+                .add(Blocks.LARGE_FERN)
+                .add(Blocks.PITCHER_PLANT);
+
+        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)
+                .add(Blocks.DIRT)
                 .add(Blocks.GRASS_BLOCK)
-                .add(Blocks.DIRT);
+                .add(Blocks.PODZOL)
+                .add(Blocks.MYCELIUM)
+                .add(Blocks.COARSE_DIRT);
+
+        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_LOG_CONVERTIBLE)
+                .add(Blocks.OAK_LOG)
+                .add(Blocks.SPRUCE_LOG)
+                .add(Blocks.BIRCH_LOG)
+                .add(Blocks.JUNGLE_LOG)
+                .add(Blocks.ACACIA_LOG)
+                .add(Blocks.DARK_OAK_LOG)
+                .add(Blocks.MANGROVE_LOG)
+                .add(Blocks.CHERRY_LOG)
+                .add(Blocks.CRIMSON_STEM)
+                .add(Blocks.WARPED_STEM);
+
+        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_WOOD_CONVERTIBLE)
+                .add(Blocks.OAK_WOOD)
+                .add(Blocks.SPRUCE_WOOD)
+                .add(Blocks.BIRCH_WOOD)
+                .add(Blocks.JUNGLE_WOOD)
+                .add(Blocks.ACACIA_WOOD)
+                .add(Blocks.DARK_OAK_WOOD)
+                .add(Blocks.MANGROVE_WOOD)
+                .add(Blocks.CHERRY_WOOD);
+
+        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_LEAVES_CONVERTIBLE)
+                .add(Blocks.OAK_LEAVES)
+                .add(Blocks.SPRUCE_LEAVES)
+                .add(Blocks.BIRCH_LEAVES)
+                .add(Blocks.JUNGLE_LEAVES)
+                .add(Blocks.ACACIA_LEAVES)
+                .add(Blocks.DARK_OAK_LEAVES)
+                .add(Blocks.MANGROVE_LEAVES)
+                .add(Blocks.CHERRY_LEAVES)
+                .add(Blocks.AZALEA_LEAVES)
+                .add(Blocks.FLOWERING_AZALEA_LEAVES)
+                .add(Blocks.NETHER_WART_BLOCK)
+                .add(Blocks.WARPED_WART_BLOCK);
     }
 }
