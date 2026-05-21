@@ -3,6 +3,8 @@ package net.napsternpt.prixilium.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
@@ -15,10 +17,9 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.block.entity.custom.VirusReactorBlockEntity;
 import net.napsternpt.prixilium.item.ModItems;
-import net.napsternpt.prixilium.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 public class VirusReactorBlock extends BlockWithEntity implements BlockEntityProvider {
@@ -64,20 +65,11 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                 world.updateListeners(pos, state, state, 0);
 
                 if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE)) {
-                    BlockPos center = pos.down();
-
-                    for (int x = -2; x <= 2; x++) {
-                        for (int z = -2; z <= 2; z++) {
-                            if (x * x + z * z <= 2 * 2) {
-                                BlockPos targetPos = center.add(x, 0, z);
-                                BlockState targetState = world.getBlockState(targetPos);
-
-                                if (targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) {
-                                    world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
-                                }
-                            }
-                        }
+                    if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE)) {
+                        virusReactorEntity.startSpread();
                     }
+                    virusReactorEntity.clear();
+                    world.updateListeners(pos, state, state, 0);
                 }
 
             } else if(stack.isEmpty() && !player.isSneaking() && !virusReactorEntity.isEmpty()) {
@@ -92,5 +84,10 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
             return ActionResult.SUCCESS;
         }
         return ActionResult.FAIL;
+    }
+
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return validateTicker(type, ModBlockEntities.VIRUS_REACTOR_BE, VirusReactorBlockEntity::tick);
     }
 }
