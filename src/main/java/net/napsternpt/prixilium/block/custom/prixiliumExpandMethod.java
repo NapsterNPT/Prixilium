@@ -6,6 +6,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.sound.ModSounds;
 import net.napsternpt.prixilium.util.ModTags;
 
@@ -28,6 +29,8 @@ public class prixiliumExpandMethod {
             if (targetState.isIn(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)) {
                 world.setBlockState(targetPos, ModBlocks.PRIXILIUM.getDefaultState());
                 world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
+                world.spawnParticles(ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
+                        3, 0.2, 0.2, 0.2, 0);
             }
 
             // Grass
@@ -41,6 +44,8 @@ public class prixiliumExpandMethod {
                 if (targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) {
                     world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
                     world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
+                    world.spawnParticles(ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
+                            3, 0.2, 0.2, 0.2, 0);
                 }
             }
 
@@ -53,12 +58,16 @@ public class prixiliumExpandMethod {
                 }
                 world.setBlockState(targetPos, newState);
                 world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
+                world.spawnParticles(ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
+                        3, 0.2, 0.2, 0.2, 0);
             }
 
             // Wood
             if (targetState.isIn(ModTags.Blocks.PRIXILIUM_WOOD_CONVERTIBLE)) {
                 world.setBlockState(targetPos, ModBlocks.PRIXILIUM_WOOD.getDefaultState());
                 world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
+                world.spawnParticles(ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
+                        3, 0.2, 0.2, 0.2, 0);
             }
 
             // Leaves
@@ -68,6 +77,8 @@ public class prixiliumExpandMethod {
                 if (targetState.contains(DISTANCE)) newState = newState.with(DISTANCE, targetState.get(DISTANCE));
                 world.setBlockState(targetPos, newState);
                 world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
+                world.spawnParticles(ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
+                        3, 0.2, 0.2, 0.2, 0);
             }
         }
     }

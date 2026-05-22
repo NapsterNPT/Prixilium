@@ -8,7 +8,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -19,6 +18,7 @@ import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ImplementedInventory;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.sound.ModSounds;
 import net.napsternpt.prixilium.util.ModTags;
 import org.jetbrains.annotations.Nullable;
@@ -96,7 +96,7 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
                     if (targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) {
                         world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
                         if (world instanceof ServerWorld serverWorld) serverWorld.spawnParticles(
-                                ParticleTypes.SCULK_SOUL, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
+                                ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
                                     3, 0.2, 0.2, 0.2, 0);
                     }
                 }

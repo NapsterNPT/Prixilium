@@ -37,5 +37,6 @@ public class PrixiliumClient implements ClientModInitializer {
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_LEAVES, PrixiliumLeavesParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_HOOK, PrixiliumHookParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_SMOKE, PrixiliumSmokeParticles.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_EXPAND, PrixiliumExpandParticles.Factory::new);
     }
 }
