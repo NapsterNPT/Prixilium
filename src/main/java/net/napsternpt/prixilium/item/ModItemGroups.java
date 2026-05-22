@@ -24,25 +24,26 @@ public class ModItemGroups {
                         entries.add(ModItems.VIRUS_DEAD);
                         entries.add(ModItems.THERMOMETER);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
-                        entries.add(ModItems.PRIXILIUM_CHARM_I);
-                        entries.add(ModItems.PRIXILIUM_TRANSFER_CHARM_I);
-                        entries.add(ModItems.PRIXILIUM_CONTAINER_CHARM_I);
-                        entries.add(ModItems.PRIXILIUM_ROLLBACK_CHARM_I);
-                        entries.add(ModItems.PRIXILIUM_REGENERATION_CHARM_I);
-                        entries.add(ModItems.PRIXILIUM_CHARM_II);
-                        entries.add(ModItems.PRIXILIUM_TRANSFER_CHARM_II);
-                        entries.add(ModItems.PRIXILIUM_CONTAINER_CHARM_II);
-                        entries.add(ModItems.PRIXILIUM_ROLLBACK_CHARM_II);
-                        entries.add(ModItems.PRIXILIUM_REGENERATION_CHARM_II);
-                        entries.add(ModItems.PRIXILIUM_CHARM_III);
-                        entries.add(ModItems.PRIXILIUM_TRANSFER_CHARM_III);
-                        entries.add(ModItems.PRIXILIUM_CONTAINER_CHARM_III);
-                        entries.add(ModItems.PRIXILIUM_ROLLBACK_CHARM_III);
-                        entries.add(ModItems.PRIXILIUM_REGENERATION_CHARM_III);
                         entries.add(ModItems.PRIXILIUM_HOOK);
                         entries.add(ModItems.BLIKO_SPAWN_EGG);
                         entries.add(ModItems.BLOKITO_SPAWN_EGG);
                         entries.add(ModItems.AIRIS_SPAWN_EGG);
+
+                        entries.add(ModItems.CHARM_I);
+                        entries.add(ModItems.TRANSFER_CHARM_I);
+                        entries.add(ModItems.CONTAINER_CHARM_I);
+                        entries.add(ModItems.ROLLBACK_CHARM_I);
+                        entries.add(ModItems.REGENERATION_CHARM_I);
+                        entries.add(ModItems.CHARM_II);
+                        entries.add(ModItems.TRANSFER_CHARM_II);
+                        entries.add(ModItems.CONTAINER_CHARM_II);
+                        entries.add(ModItems.ROLLBACK_CHARM_II);
+                        entries.add(ModItems.REGENERATION_CHARM_II);
+                        entries.add(ModItems.CHARM_III);
+                        entries.add(ModItems.TRANSFER_CHARM_III);
+                        entries.add(ModItems.CONTAINER_CHARM_III);
+                        entries.add(ModItems.ROLLBACK_CHARM_III);
+                        entries.add(ModItems.REGENERATION_CHARM_III);
 
                         //endregion
 

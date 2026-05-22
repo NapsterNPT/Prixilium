@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": "minecraft:cooked_beef",
+    "#": "prixilium:charm_ii",
+    "@": "minecraft:ghast_tear",
+    "€": "minecraft:pufferfish"
+  },
+  "pattern": [
+    " @ ",
+    "!#!",
+    " € "
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:regeneration_charm_ii"
+  }
+}

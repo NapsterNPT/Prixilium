@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": "prixilium:regeneration_charm_ii",
+    "#": "minecraft:netherite_ingot"
+  },
+  "pattern": [
+    " # ",
+    "#!#",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:regeneration_charm_iii"
+  }
+}

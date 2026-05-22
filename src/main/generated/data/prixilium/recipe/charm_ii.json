@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": "prixilium:charm_ii",
+    "#": "minecraft:amethyst_shard"
+  },
+  "pattern": [
+    "###",
+    "#!#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:charm_ii"
+  }
+}
