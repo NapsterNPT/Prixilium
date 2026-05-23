@@ -1,19 +1,90 @@
 {
-  "variants": {
-    "facing=east": {
-      "model": "prixilium:block/prixilium_bricks_wall",
-      "y": 90
+  "multipart": [
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_post"
+      },
+      "when": {
+        "up": "true"
+      }
     },
-    "facing=north": {
-      "model": "prixilium:block/prixilium_bricks_wall"
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_side",
+        "uvlock": true
+      },
+      "when": {
+        "north": "low"
+      }
     },
-    "facing=south": {
-      "model": "prixilium:block/prixilium_bricks_wall",
-      "y": 180
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_side",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "low"
+      }
     },
-    "facing=west": {
-      "model": "prixilium:block/prixilium_bricks_wall",
-      "y": 270
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_side",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "low"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_side",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "low"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_side_tall",
+        "uvlock": true
+      },
+      "when": {
+        "north": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_side_tall",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_side_tall",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "tall"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixilium_bricks_wall_side_tall",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "tall"
+      }
     }
-  }
+  ]
 }

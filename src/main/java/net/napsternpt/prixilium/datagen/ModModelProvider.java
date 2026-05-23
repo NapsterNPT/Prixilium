@@ -73,7 +73,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_PRIXILIUM_BRICKS);
         prixiliumBricksPool.stairs(ModBlocks.PRIXILIUM_BRICK_STAIRS);
         prixiliumBricksPool.slab(ModBlocks.PRIXILIUM_BRICK_SLAB);
-        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.PRIXILIUM_BRICKS_WALL);
+        prixiliumBricksPool.wall(ModBlocks.PRIXILIUM_BRICKS_WALL);
 
         Identifier lamp0Identifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector);
         Identifier lamp1Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_1", Models.CUBE_ALL, TextureMap::all);
@@ -164,16 +164,19 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CONTAINER_CHARM_I, Models.GENERATED);
         itemModelGenerator.register(ModItems.ROLLBACK_CHARM_I, Models.GENERATED);
         itemModelGenerator.register(ModItems.REGENERATION_CHARM_I, Models.GENERATED);
+        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_I, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHARM_II, Models.GENERATED);
         itemModelGenerator.register(ModItems.TRANSFER_CHARM_II, Models.GENERATED);
         itemModelGenerator.register(ModItems.CONTAINER_CHARM_II, Models.GENERATED);
         itemModelGenerator.register(ModItems.ROLLBACK_CHARM_II, Models.GENERATED);
         itemModelGenerator.register(ModItems.REGENERATION_CHARM_II, Models.GENERATED);
+        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_II, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHARM_III, Models.GENERATED);
         itemModelGenerator.register(ModItems.TRANSFER_CHARM_III, Models.GENERATED);
         itemModelGenerator.register(ModItems.CONTAINER_CHARM_III, Models.GENERATED);
         itemModelGenerator.register(ModItems.ROLLBACK_CHARM_III, Models.GENERATED);
         itemModelGenerator.register(ModItems.REGENERATION_CHARM_III, Models.GENERATED);
+        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_III, Models.GENERATED);
 
         //region [Tools]
 

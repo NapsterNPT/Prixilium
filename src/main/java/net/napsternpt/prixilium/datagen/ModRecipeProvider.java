@@ -98,6 +98,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter);
+                createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_I)
+                        .input(Items.TOTEM_OF_UNDYING)
+                        .input(ModItems.CHARM_I)
+                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .offerTo(exporter);
                 //endregion
 
                 //region [Tier II]
@@ -153,6 +158,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.REGENERATION_CHARM_II + "_default");
+
+                charmUpgradeToTierII(exporter, ModItems.POSTMORTAL_CHARM_I);
+                createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_II)
+                        .input(Items.TOTEM_OF_UNDYING)
+                        .input(ModItems.CHARM_II)
+                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
+                        .offerTo(exporter, ModItems.POSTMORTAL_CHARM_II + "_default");
                 //endregion
 
                 //region [Tier III]
@@ -208,6 +220,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.REGENERATION_CHARM_III + "_default");
+
+                charmUpgradeToTierIII(exporter, ModItems.POSTMORTAL_CHARM_II);
+                createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_III)
+                        .input(Items.TOTEM_OF_UNDYING)
+                        .input(ModItems.CHARM_III)
+                        .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
+                        .offerTo(exporter, ModItems.POSTMORTAL_CHARM_III + "_default");
                 //endregion
 
                 //endregion

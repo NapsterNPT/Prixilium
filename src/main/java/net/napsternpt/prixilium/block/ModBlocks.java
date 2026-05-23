@@ -135,7 +135,7 @@ public class ModBlocks {
                     .mapColor(MapColor.CYAN)
             ));
     public static final Block PRIXILIUM_BRICKS_WALL = registerBlock("prixilium_bricks_wall",
-            new PrixiliumBricksWallBlock(AbstractBlock.Settings.create()
+            new WallBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, "prixilium_bricks_wall")))
                     .requiresTool()
                     .strength(1.5F, 6.0F)
@@ -187,6 +187,7 @@ public class ModBlocks {
                     .strength(3.5F, 6.0F)
                     .mapColor(MapColor.LIGHT_GRAY)
                     .nonOpaque()
+                    .pistonBehavior(PistonBehavior.BLOCK)
             ));
     public static final Block REACTOR_CORE = registerBlock("reactor_core",
             new ReactorCoreBlock(AbstractBlock.Settings.create()
@@ -194,6 +195,7 @@ public class ModBlocks {
                     .strength(4.0F, 6.5F)
                     .mapColor(MapColor.LIGHT_GRAY)
                     .nonOpaque()
+                    .pistonBehavior(PistonBehavior.BLOCK)
             ));
     public static final Block VIRUS_REACTOR = registerBlock("virus_reactor",
             new VirusReactorBlock(AbstractBlock.Settings.create()

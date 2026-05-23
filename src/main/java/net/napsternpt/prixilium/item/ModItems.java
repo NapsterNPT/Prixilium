@@ -59,43 +59,48 @@ public class ModItems {
 
     //region [charms]
     // Tier I
-    public static final Item CHARM_I = registerItem("charm_i", new Item(new Item.Settings()
+    public static final Item CHARM_I = registerItem("charm_i", new GeneralCharmItem(true, true, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "charm_i")))
             .maxCount(1)
     ){
         @Override
         public void appendTooltip(ItemStack stack, TooltipContext context, net.minecraft.component.type.TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
             textConsumer.accept(Text.translatable("tooltip.prixilium.charm"));
-            textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.specialize_and_update"));
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_I = registerItem("transfer_charm_i", new Item(new Item.Settings()
+    public static final Item TRANSFER_CHARM_I = registerItem("transfer_charm_i", new GeneralCharmItem(true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "transfer_charm_i")))
             .maxCount(1)
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item CONTAINER_CHARM_I = registerItem("container_charm_i", new ContainerCharmItem(1, new Item.Settings()
+    public static final Item CONTAINER_CHARM_I = registerItem("container_charm_i", new ContainerCharmItem(1, true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "container_charm_i")))
             .maxCount(1)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item ROLLBACK_CHARM_I = registerItem("rollback_charm_i", new Item(new Item.Settings()
+    public static final Item ROLLBACK_CHARM_I = registerItem("rollback_charm_i", new GeneralCharmItem(true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "rollback_charm_i")))
             .maxCount(1)
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item REGENERATION_CHARM_I = registerItem("regeneration_charm_i", new Item(new Item.Settings()
+    public static final Item REGENERATION_CHARM_I = registerItem("regeneration_charm_i", new GeneralCharmItem(true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "regeneration_charm_i")))
+            .maxCount(1)
+            .maxDamage(4)
+            .rarity(Rarity.UNCOMMON)
+    ));
+    public static final Item POSTMORTAL_CHARM_I = registerItem("postmortal_charm_i", new GeneralCharmItem(true, false, new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "postmortal_charm_i")))
             .maxCount(1)
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
 
     // Tier II
-    public static final Item CHARM_II = registerItem("charm_ii", new Item(new Item.Settings()
+    public static final Item CHARM_II = registerItem("charm_ii", new GeneralCharmItem(true, true, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "charm_ii")))
             .maxCount(1)
             .rarity(Rarity.UNCOMMON)
@@ -103,36 +108,41 @@ public class ModItems {
         @Override
         public void appendTooltip(ItemStack stack, TooltipContext context, net.minecraft.component.type.TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
             textConsumer.accept(Text.translatable("tooltip.prixilium.charm"));
-            textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.specialize_and_update"));
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_II = registerItem("transfer_charm_ii", new Item(new Item.Settings()
+    public static final Item TRANSFER_CHARM_II = registerItem("transfer_charm_ii", new GeneralCharmItem(true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "transfer_charm_ii")))
             .maxCount(1)
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
-    public static final Item CONTAINER_CHARM_II = registerItem("container_charm_ii", new ContainerCharmItem(3, new Item.Settings()
+    public static final Item CONTAINER_CHARM_II = registerItem("container_charm_ii", new ContainerCharmItem(3, true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "container_charm_ii")))
             .maxCount(1)
             .rarity(Rarity.RARE)
     ));
-    public static final Item ROLLBACK_CHARM_II = registerItem("rollback_charm_ii", new Item(new Item.Settings()
+    public static final Item ROLLBACK_CHARM_II = registerItem("rollback_charm_ii", new GeneralCharmItem(true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "rollback_charm_ii")))
             .maxCount(1)
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
-    public static final Item REGENERATION_CHARM_II = registerItem("regeneration_charm_ii", new Item(new Item.Settings()
+    public static final Item REGENERATION_CHARM_II = registerItem("regeneration_charm_ii", new GeneralCharmItem(true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "regeneration_charm_ii")))
+            .maxCount(1)
+            .maxDamage(16)
+            .rarity(Rarity.RARE)
+    ));
+    public static final Item POSTMORTAL_CHARM_II = registerItem("postmortal_charm_ii", new GeneralCharmItem(true, false, new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "postmortal_charm_ii")))
             .maxCount(1)
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
 
     // Tier III
-    public static final Item CHARM_III = registerItem("charm_iii", new Item(new Item.Settings()
+    public static final Item CHARM_III = registerItem("charm_iii", new GeneralCharmItem(false, true, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "charm_iii")))
             .maxCount(1)
             .rarity(Rarity.RARE)
@@ -140,33 +150,39 @@ public class ModItems {
         @Override
         public void appendTooltip(ItemStack stack, TooltipContext context, net.minecraft.component.type.TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
             textConsumer.accept(Text.translatable("tooltip.prixilium.charm"));
-            textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.specialize"));
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_III = registerItem("transfer_charm_iii", new Item(new Item.Settings()
+    public static final Item TRANSFER_CHARM_III = registerItem("transfer_charm_iii", new GeneralCharmItem(false, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "transfer_charm_iii")))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item CONTAINER_CHARM_III = registerItem("container_charm_iii", new ContainerCharmItem(6, new Item.Settings()
+    public static final Item CONTAINER_CHARM_III = registerItem("container_charm_iii", new ContainerCharmItem(6, false, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "container_charm_iii")))
             .maxCount(1)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item ROLLBACK_CHARM_III = registerItem("rollback_charm_iii", new Item(new Item.Settings()
+    public static final Item ROLLBACK_CHARM_III = registerItem("rollback_charm_iii", new GeneralCharmItem(false, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "rollback_charm_iii")))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item REGENERATION_CHARM_III = registerItem("regeneration_charm_iii", new Item(new Item.Settings()
+    public static final Item REGENERATION_CHARM_III = registerItem("regeneration_charm_iii", new GeneralCharmItem(false, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "regeneration_charm_iii")))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
+    public static final Item POSTMORTAL_CHARM_III = registerItem("postmortal_charm_iii", new GeneralCharmItem(false, false, new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "postmortal_charm_iii")))
+            .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.EPIC)
+    ));
+
     //endregion
 
     //region [Tools]

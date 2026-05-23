@@ -2,7 +2,6 @@ package net.napsternpt.prixilium.item.custom;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.screen.GenericContainerScreenHandler;
@@ -15,10 +14,11 @@ import net.minecraft.world.World;
 
 import java.util.function.Consumer;
 
-public class ContainerCharmItem extends Item {
+public class ContainerCharmItem extends GeneralCharmItem {
     private final int raw;
-    public ContainerCharmItem(int raw, Settings settings) {
-        super(settings);
+
+    public ContainerCharmItem(int raw, boolean upgradable, boolean specializable, Settings settings) {
+        super(upgradable, specializable, settings);
         this.raw = raw;
     }
 
@@ -46,14 +46,12 @@ public class ContainerCharmItem extends Item {
 
             user.openHandledScreen(factory);
         }
-
         return ActionResult.SUCCESS;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, net.minecraft.component.type.TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
         textConsumer.accept(Text.translatable("tooltip.prixilium.container_charm"));
-        textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.update"));
         super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }
