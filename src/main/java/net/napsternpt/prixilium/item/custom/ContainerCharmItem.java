@@ -46,7 +46,7 @@ public class ContainerCharmItem extends GeneralCharmItem {
 
             user.openHandledScreen(factory);
         }
-        return ActionResult.SUCCESS;
+        return ActionResult.CONSUME;
     }
 
     @Override

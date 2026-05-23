@@ -171,7 +171,8 @@
   "tooltip.prixilium.general_charm.update": "§7you can only §bupgrade §7it.",
   "tooltip.prixilium.general_charm.specialize_and_update": "§7you can §aspecialize §7it or §bupgrade §7it.",
   "tooltip.prixilium.charm": "§7This is a §edefault §7charm,",
-  "tooltip.prixilium.container_charm": "§7This is a §econtainer §7charm.",
+  "tooltip.prixilium.container_charm": "§7This charm will give you extra §einventory spaces§7.",
+  "tooltip.prixilium.postmortal_charm": "§7This charm won't make you §elose §7any of your charms.",
 
   "hud.thermometer.player_measuring": "§fMeasuring",
   "hud.thermometer.player_ill": "§fThe player is §cill§f...",
@@ -194,6 +195,6 @@
   "advancements.prixilium.step_on_prixilium.title": "Why It's Hard to Move?",
   "advancements.prixilium.step_on_prixilium.description": "Step on Prixilium",
 
-  "advancements.prixilium.tp_to_dimension.title": "Is This a Dream?",
-  "advancements.prixilium.tp_to_dimension.description": "Sleep while ill"
+  "advancements.prixilium.enter_prixiverse.title": "Is This a Nightmare?",
+  "advancements.prixilium.enter_prixiverse.description": "Sleep while ill"
 }

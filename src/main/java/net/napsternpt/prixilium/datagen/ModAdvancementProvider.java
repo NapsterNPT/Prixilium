@@ -95,11 +95,11 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         AdvancementEntry dimension = Advancement.Builder.create()
                 .parent(root)
                 .display(ModBlocks.PRIXILIUM_GRASS,
-                        Text.translatable("advancements.prixilium.tp_to_dimension.title"),
-                        Text.translatable("advancements.prixilium.tp_to_dimension.description"), null, AdvancementFrame.TASK, true, true, true
+                        Text.translatable("advancements.prixilium.enter_prixiverse.title"),
+                        Text.translatable("advancements.prixilium.enter_prixiverse.description"), null, AdvancementFrame.TASK, true, true, true
                 )
-                .criterion("tp_to_dimension", impossibleCriterion)
-                .build(consumer, Prixilium.MOD_ID + ":tp_to_dimension");
+                .criterion("enter_prixiverse", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":enter_prixiverse");
 
         //endregion
     }

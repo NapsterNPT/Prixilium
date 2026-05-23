@@ -1,13 +1,13 @@
 {
   "parent": "prixilium:root",
   "criteria": {
-    "tp_to_dimension": {
+    "enter_prixiverse": {
       "trigger": "minecraft:impossible"
     }
   },
   "display": {
     "description": {
-      "translate": "advancements.prixilium.tp_to_dimension.description"
+      "translate": "advancements.prixilium.enter_prixiverse.description"
     },
     "hidden": true,
     "icon": {
@@ -15,12 +15,12 @@
       "id": "prixilium:prixilium_grass"
     },
     "title": {
-      "translate": "advancements.prixilium.tp_to_dimension.title"
+      "translate": "advancements.prixilium.enter_prixiverse.title"
     }
   },
   "requirements": [
     [
-      "tp_to_dimension"
+      "enter_prixiverse"
     ]
   ],
   "sends_telemetry_event": true

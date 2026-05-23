@@ -92,7 +92,7 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item POSTMORTAL_CHARM_I = registerItem("postmortal_charm_i", new GeneralCharmItem(true, false, new Item.Settings()
+    public static final Item POSTMORTAL_CHARM_I = registerItem("postmortal_charm_i", new PostmortalCharmItem(true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "postmortal_charm_i")))
             .maxCount(1)
             .maxDamage(4)
@@ -134,7 +134,7 @@ public class ModItems {
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
-    public static final Item POSTMORTAL_CHARM_II = registerItem("postmortal_charm_ii", new GeneralCharmItem(true, false, new Item.Settings()
+    public static final Item POSTMORTAL_CHARM_II = registerItem("postmortal_charm_ii", new PostmortalCharmItem(true, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "postmortal_charm_ii")))
             .maxCount(1)
             .maxDamage(16)
@@ -176,7 +176,7 @@ public class ModItems {
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item POSTMORTAL_CHARM_III = registerItem("postmortal_charm_iii", new GeneralCharmItem(false, false, new Item.Settings()
+    public static final Item POSTMORTAL_CHARM_III = registerItem("postmortal_charm_iii", new PostmortalCharmItem(false, false, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "postmortal_charm_iii")))
             .maxCount(1)
             .maxDamage(32)

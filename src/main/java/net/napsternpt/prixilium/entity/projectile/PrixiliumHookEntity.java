@@ -8,11 +8,15 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
 import net.napsternpt.prixilium.particle.ModParticles;
 import org.jetbrains.annotations.Nullable;
 
@@ -63,14 +67,14 @@ public class PrixiliumHookEntity extends ProjectileEntity {
         PlayerEntity owner = this.getPlayerOwner();
         if (owner == null || !this.getWorld().isClient()) return;
         
-        net.minecraft.util.math.Vec3d hookPos = this.getPos();
-        net.minecraft.util.math.Vec3d playerPos = owner.getEyePos();
+        Vec3d hookPos = this.getPos();
+        Vec3d playerPos = owner.getEyePos();
         
-        net.minecraft.util.math.Vec3d diff = playerPos.subtract(hookPos);
+        Vec3d diff = playerPos.subtract(hookPos);
         double dist = diff.length();
         if (dist < 1.0) return;
         
-        net.minecraft.world.World world = this.getWorld();
+        World world = this.getWorld();
         
         int count = Math.min((int)(dist * 3.0), 100);
         for (int i = 0; i < count; i++) {
@@ -106,9 +110,9 @@ public class PrixiliumHookEntity extends ProjectileEntity {
             double distFromPlayer = this.squaredDistanceTo(owner);
             if (distFromPlayer > MAX_DISTANCE_SQ) {
                 owner.getWorld().playSound(null, owner.getX(), owner.getY(), owner.getZ(),
-                        net.minecraft.sound.SoundEvents.ITEM_CROSSBOW_LOADING_END,
-                        net.minecraft.sound.SoundCategory.PLAYERS, 0.5f, 1.2f);
-                net.napsternpt.prixilium.item.custom.PrixiliumHookItem.clearHook(owner);
+                        SoundEvents.ITEM_CROSSBOW_LOADING_END,
+                        SoundCategory.PLAYERS, 0.5f, 1.2f);
+                PrixiliumHookItem.clearHook(owner);
                 this.discard();
                 return;
             }
@@ -119,10 +123,10 @@ public class PrixiliumHookEntity extends ProjectileEntity {
             if (vel.length() > 0.01) {
                 Vec3d nextPos = pos.add(vel);
                 
-                var raycast = this.getWorld().raycast(new net.minecraft.world.RaycastContext(
+                var raycast = this.getWorld().raycast(new RaycastContext(
                     pos, nextPos,
-                    net.minecraft.world.RaycastContext.ShapeType.COLLIDER,
-                    net.minecraft.world.RaycastContext.FluidHandling.NONE,
+                    RaycastContext.ShapeType.COLLIDER,
+                    RaycastContext.FluidHandling.NONE,
                     this
                 ));
                 
@@ -141,6 +145,8 @@ public class PrixiliumHookEntity extends ProjectileEntity {
             }
             
             if (this.inBlock()) {
+                if (owner.isSpectator() || owner.getAbilities().flying) return;
+
                 Vec3d playerPos = owner.getPos().add(0, owner.getHeight() / 2, 0);
                 Vec3d hookPos = this.getPos();
                 double distance = playerPos.distanceTo(hookPos);
@@ -170,9 +176,9 @@ public class PrixiliumHookEntity extends ProjectileEntity {
 
         if (!this.getWorld().isClient() && this.shouldRetract(owner)) {
             owner.getWorld().playSound(null, owner.getX(), owner.getY(), owner.getZ(),
-                    net.minecraft.sound.SoundEvents.ITEM_CROSSBOW_LOADING_END,
-                    net.minecraft.sound.SoundCategory.PLAYERS, 0.5f, 1.2f);
-            net.napsternpt.prixilium.item.custom.PrixiliumHookItem.clearHook(owner);
+                    SoundEvents.ITEM_CROSSBOW_LOADING_END,
+                    SoundCategory.PLAYERS, 0.5f, 1.2f);
+            PrixiliumHookItem.clearHook(owner);
             this.discard();
         }
     }

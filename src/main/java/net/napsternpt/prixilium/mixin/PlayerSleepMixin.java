@@ -31,6 +31,10 @@ public class PlayerSleepMixin {
 
 				if (destination != null) {
 					serverPlayer.teleportTo(new TeleportTarget(destination, serverPlayer.getPos(), serverPlayer.getVelocity(), serverPlayer.getYaw(), serverPlayer.getPitch(), TeleportTarget.NO_OP));
+					serverPlayer.getAdvancementTracker().grantCriterion(
+							player.getServer().getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "enter_prixiverse")),
+							"enter_prixiverse"
+					);
 				}
 			}
 		}

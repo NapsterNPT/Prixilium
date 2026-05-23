@@ -1,6 +1,7 @@
 package net.napsternpt.prixilium.item.custom;
 
 import net.minecraft.advancement.AdvancementEntry;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -9,6 +10,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.component.ModDataComponentTypes;
@@ -63,12 +65,11 @@ public class PrixiliumHookItem extends Item {
                 SoundCategory.PLAYERS, 1.0f, 1.2f);
 
         if (player instanceof ServerPlayerEntity serverPlayer) {
-            stack.damage(1, serverPlayer,
-                    hand == Hand.MAIN_HAND
-                            ? net.minecraft.entity.EquipmentSlot.MAINHAND
-                            : net.minecraft.entity.EquipmentSlot.OFFHAND);
+            stack.damage(1, serverPlayer, hand == Hand.MAIN_HAND
+                            ? EquipmentSlot.MAINHAND
+                            : EquipmentSlot.OFFHAND);
 
-            AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(net.minecraft.util.Identifier.of(Prixilium.MOD_ID, "prixilium_hook"));
+            AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "prixilium_hook"));
             serverPlayer.getAdvancementTracker().grantCriterion(advancement, "use_prixilium_hook");
         }
 
