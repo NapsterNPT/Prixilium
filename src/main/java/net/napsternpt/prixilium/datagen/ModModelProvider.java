@@ -74,6 +74,14 @@ public class ModModelProvider extends FabricModelProvider {
         prixiliumBricksPool.stairs(ModBlocks.PRIXILIUM_BRICK_STAIRS);
         prixiliumBricksPool.slab(ModBlocks.PRIXILIUM_BRICK_SLAB);
         prixiliumBricksPool.wall(ModBlocks.PRIXILIUM_BRICKS_WALL);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
+
+        BlockStateModelGenerator.BlockTexturePool darkPrixiliumBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DARK_PRIXILIUM_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS);
+        darkPrixiliumBricksPool.stairs(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
+        darkPrixiliumBricksPool.slab(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
+        darkPrixiliumBricksPool.wall(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS);
 
         Identifier lamp0Identifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector);
         Identifier lamp1Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_1", Models.CUBE_ALL, TextureMap::all);
@@ -91,8 +99,6 @@ public class ModModelProvider extends FabricModelProvider {
         Identifier lamp13Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_13", Models.CUBE_ALL, TextureMap::all);
         Identifier lamp14Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_14", Models.CUBE_ALL, TextureMap::all);
         Identifier lamp15Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_15", Models.CUBE_ALL, TextureMap::all);
-
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
 
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.PRIXILIUM_LAMP)
                 .with(BlockStateVariantMap.models(PrixiliumLampBlock.LIGHT)

@@ -129,6 +129,12 @@
   "block.prixilium.prixilium_brick_stairs": "Prixilium Brick Stairs",
   "block.prixilium.prixilium_brick_slab": "Prixilium Brick Slab",
   "block.prixilium.chiseled_prixilium_bricks": "Chiseled Prixilium Bricks",
+  "block.prixilium.dark_prixilium_bricks": "Dark Prixilium Bricks",
+  "block.prixilium.cracked_dark_prixilium_bricks": "Cracked Dark Prixilium Bricks",
+  "block.prixilium.dark_rixilium_bricks_wall": "Dark Prixilium Bricks Wall",
+  "block.prixilium.dark_prixilium_brick_stairs": "Dark Prixilium Brick Stairs",
+  "block.prixilium.dark_prixilium_brick_slab": "Dark Prixilium Brick Slab",
+  "block.prixilium.chiseled_dark_prixilium_bricks": "Chiseled Dark Prixilium Bricks",
   "block.prixilium.prixilium_lamp": "Prixilium Lamp",
   "block.prixilium.prixilium_exhaust": "Prixilium Exhaust",
   "block.prixilium.stand": "Stand",
@@ -155,6 +161,7 @@
 
   "tag.item.prixilium.prevent_prixilium_slowness": "Prevents Prixilium Slowness",
   "tag.item.prixilium.temperature_tools": "Immune to Prixilium Slowness",
+  "tag.item.prixilium.charms": "Charms",
 
 
   "entity.prixilium.bliko": "Bliko",

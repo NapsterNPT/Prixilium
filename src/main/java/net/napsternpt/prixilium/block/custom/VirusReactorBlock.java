@@ -60,17 +60,12 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                 virusReactorEntity.setStack(0, stack.copyWithCount(1));
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
-
                 virusReactorEntity.markDirty();
-                world.updateListeners(pos, state, state, 0);
-
                 if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE)) {
-                    if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE)) {
-                        virusReactorEntity.startSpread();
-                    }
-                    virusReactorEntity.clear();
-                    world.updateListeners(pos, state, state, 0);
+                    virusReactorEntity.startSpread();
                 }
+                world.updateListeners(pos, state, state, 0);
+                return ActionResult.SUCCESS;
 
             } else if(stack.isEmpty() && !player.isSneaking() && !virusReactorEntity.isEmpty()) {
                 ItemStack stackOnVirusReactor = virusReactorEntity.getStack(0);
@@ -80,8 +75,8 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
 
                 virusReactorEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
+                return ActionResult.SUCCESS;
             }
-            return ActionResult.SUCCESS;
         }
         return ActionResult.FAIL;
     }

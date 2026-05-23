@@ -5,6 +5,11 @@
     "prixilium:prixilium_brick_stairs",
     "prixilium:prixilium_brick_slab",
     "prixilium:chiseled_prixilium_bricks",
+    "prixilium:dark_prixilium_bricks",
+    "prixilium:cracked_dark_prixilium_bricks",
+    "prixilium:dark_prixilium_brick_stairs",
+    "prixilium:dark_prixilium_brick_slab",
+    "prixilium:chiseled_dark_prixilium_bricks",
     "prixilium:prixilium_exhaust"
   ]
 }

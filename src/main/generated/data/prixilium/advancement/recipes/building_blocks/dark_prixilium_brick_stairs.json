@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dark_prixilium_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:dark_prixilium_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:dark_prixilium_brick_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dark_prixilium_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:dark_prixilium_brick_stairs"
+    ]
+  }
+}

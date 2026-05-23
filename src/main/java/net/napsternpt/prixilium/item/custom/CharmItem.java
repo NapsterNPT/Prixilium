@@ -24,7 +24,7 @@ public class CharmItem extends Item {
 
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
-        return ActionResult.CONSUME;
+        return ActionResult.SUCCESS;
     }
 
         @Override

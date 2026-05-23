@@ -32,9 +32,7 @@ public class PrixiliumBlock extends SaplingBlock {
 
     private boolean hasProtectionItem(LivingEntity entity) {
         for (EquipmentSlot slot : new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}) {
-            if (entity.getEquippedStack(slot).isIn(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)) {
-                return true;
-            }
+            if (entity.getEquippedStack(slot).isIn(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)) return true;
         }
         return false;
     }

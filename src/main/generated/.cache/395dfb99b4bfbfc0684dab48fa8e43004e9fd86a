@@ -5,13 +5,13 @@ cce923f156a6c480db9826bae734577f584a759d data/minecraft/tags/block/dirt.json
 ee59d0fc268efdcdcdfc21a036eb7fce6d779dc2 data/minecraft/tags/block/logs.json
 56a091bc1aeab592b7a06108fd3a67d12fa850db data/minecraft/tags/block/mineable/axe.json
 7739c434158e2408664571cf64315575544f79c8 data/minecraft/tags/block/mineable/hoe.json
-94bed765118a12942b71072c18e792d56b29a80f data/minecraft/tags/block/mineable/pickaxe.json
+e4544aabdab800ca1ff2e3a21edd906ae512bf16 data/minecraft/tags/block/mineable/pickaxe.json
 cce923f156a6c480db9826bae734577f584a759d data/minecraft/tags/block/mineable/shovel.json
 0415a9ad3728b15789e698fa4c7dbf58ba9c7d07 data/minecraft/tags/block/needs_diamond_tool.json
-5c5a2ea96d67261523e48c8414df210eeaf93c97 data/minecraft/tags/block/needs_iron_tool.json
+f8c3038e53f098c3eef4830223dc4f74bcd475ee data/minecraft/tags/block/needs_iron_tool.json
 c85b6f1519b254e7c8d739b72dbcd82a8b458f4b data/minecraft/tags/block/planks.json
 f5a912cf1d8fefdc416541c77b01570aa54ff394 data/minecraft/tags/block/snaps_goat_horn.json
-54bf7833eb05f2a45c8c3b4eca48b6441e16fde3 data/minecraft/tags/block/walls.json
+0520e2185dd7a04ce361deb095ed51fdef9c11c2 data/minecraft/tags/block/walls.json
 386047582be9cb5ea54edd02e37449252881819d data/minecraft/tags/block/wooden_fences.json
 af584d30d6a3756e3619104acd0ecb6bef6d99f0 data/prixilium/tags/block/prixilium_convertable.json
 6f5f3f749606d0b6e12ff13833eefeff91ac9d2a data/prixilium/tags/block/prixilium_grass_convertable.json

@@ -34,6 +34,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICKS)
+                .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
+                .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
@@ -46,6 +51,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICKS)
+                .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
+                .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
@@ -74,7 +84,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_FENCE_GATE);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(ModBlocks.PRIXILIUM_BRICKS_WALL);
+                .add(ModBlocks.PRIXILIUM_BRICKS_WALL)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
 
         // Mod Tags
         getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)
