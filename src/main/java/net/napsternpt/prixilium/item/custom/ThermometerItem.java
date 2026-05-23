@@ -1,5 +1,6 @@
 package net.napsternpt.prixilium.item.custom;
 
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -43,7 +44,7 @@ public class ThermometerItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, net.minecraft.component.type.TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
         textConsumer.accept(Text.translatable("tooltip.prixilium.thermometer.1"));
         textConsumer.accept(Text.translatable("tooltip.prixilium.thermometer.2"));
         super.appendTooltip(stack, context, displayComponent, textConsumer, type);

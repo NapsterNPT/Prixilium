@@ -28,7 +28,6 @@ import net.napsternpt.prixilium.datagen.ModWorldGen;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.custom.*;
-import net.napsternpt.prixilium.event.PostmortalCharmHandler;
 import net.napsternpt.prixilium.hud.*;
 import net.napsternpt.prixilium.item.ModItemGroups;
 import net.napsternpt.prixilium.item.ModItems;
