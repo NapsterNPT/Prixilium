@@ -2,6 +2,12 @@
   "values": [
     "prixilium:prixilium_log",
     "prixilium:prixilium_wood",
-    "prixilium:prixilium_planks"
+    "prixilium:prixilium_planks",
+    "prixilium:prixilium_stairs",
+    "prixilium:prixilium_slab",
+    "prixilium:prixilium_fence",
+    "prixilium:prixilium_fence_gate",
+    "prixilium:prixilium_door",
+    "prixilium:prixilium_trapdoor"
   ]
 }

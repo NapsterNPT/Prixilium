@@ -19,6 +19,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PRIXILIUM, drops(ModBlocks.PRIXILIUM));
         addDrop(ModBlocks.PRIXILIUM_LEAVES, leavesDrops(ModBlocks.PRIXILIUM_LEAVES, ModBlocks.PRIXILIUM, 0.0625F));
         addDrop(ModBlocks.PRIXILIUM_LOG);
+        addDrop(ModBlocks.PRIXILIUM_WOOD);
         addDrop(ModBlocks.PRIXILIUM_PLANKS);
         addDrop(ModBlocks.PRIXILIUM_STAIRS);
         addDrop(ModBlocks.PRIXILIUM_SLAB, slabDrops(ModBlocks.PRIXILIUM_SLAB));

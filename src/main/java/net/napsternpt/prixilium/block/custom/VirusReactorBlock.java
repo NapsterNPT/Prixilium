@@ -63,6 +63,7 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                 virusReactorEntity.markDirty();
                 if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE)) {
                     virusReactorEntity.startSpread();
+                    virusReactorEntity.clear();
                 }
                 world.updateListeners(pos, state, state, 0);
                 return ActionResult.SUCCESS;

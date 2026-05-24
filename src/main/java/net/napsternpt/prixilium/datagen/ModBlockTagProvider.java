@@ -17,14 +17,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-                .add(ModBlocks.PRIXILIUM_LOG)
-                .add(ModBlocks.PRIXILIUM_WOOD)
-                .add(ModBlocks.PRIXILIUM_PLANKS);
-
-        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
-                .add(ModBlocks.PRIXILIUM_LEAVES);
-
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.STAND)
                 .add(ModBlocks.REACTOR_CORE)
@@ -40,6 +32,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
+
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.PRIXILIUM_LOG)
+                .add(ModBlocks.PRIXILIUM_WOOD)
+                .add(ModBlocks.PRIXILIUM_PLANKS)
+                .add(ModBlocks.PRIXILIUM_STAIRS)
+                .add(ModBlocks.PRIXILIUM_SLAB)
+                .add(ModBlocks.PRIXILIUM_FENCE)
+                .add(ModBlocks.PRIXILIUM_FENCE_GATE)
+                .add(ModBlocks.PRIXILIUM_DOOR)
+                .add(ModBlocks.PRIXILIUM_TRAPDOOR);
+
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+                .add(ModBlocks.PRIXILIUM_GRASS);
+
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+                .add(ModBlocks.PRIXILIUM_LEAVES);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.REACTOR_CORE)
@@ -58,14 +67,20 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 
-        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
-                .add(ModBlocks.PRIXILIUM_GRASS);
+        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                .add(ModBlocks.PRIXILIUM);
 
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.PRIXILIUM_GRASS);
 
+        getOrCreateTagBuilder(BlockTags.ENDERMAN_HOLDABLE)
+                .add(ModBlocks.PRIXILIUM_GRASS);
+
         getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.PRIXILIUM_LEAVES);
+
+        getOrCreateTagBuilder(BlockTags.COMPLETES_FIND_TREE_TUTORIAL)
+                .add(ModBlocks.PRIXILIUM_LOG);
 
         getOrCreateTagBuilder(BlockTags.LOGS)
                 .add(ModBlocks.PRIXILIUM_LOG)
@@ -75,13 +90,42 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.SNAPS_GOAT_HORN)
-                .add(ModBlocks.PRIXILIUM_LOG);
+                .add(ModBlocks.PRIXILIUM_LOG)
+                .add(ModBlocks.PRIXILIUM_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
+                .add(ModBlocks.PRIXILIUM_STAIRS);
+
+        getOrCreateTagBuilder(BlockTags.STAIRS)
+                .add(ModBlocks.PRIXILIUM_STAIRS)
+                .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
+                .add(ModBlocks.PRIXILIUM_SLAB);
+
+        getOrCreateTagBuilder(BlockTags.SLABS)
+                .add(ModBlocks.PRIXILIUM_SLAB)
+                .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
                 .add(ModBlocks.PRIXILIUM_FENCE);
 
+        getOrCreateTagBuilder(BlockTags.FENCES)
+                .add(ModBlocks.PRIXILIUM_FENCE);
+
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
                 .add(ModBlocks.PRIXILIUM_FENCE_GATE);
+
+        getOrCreateTagBuilder(BlockTags.DOORS)
+                .add(ModBlocks.PRIXILIUM_DOOR);
+
+        getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.PRIXILIUM_TRAPDOOR);
+
+        getOrCreateTagBuilder(BlockTags.TRAPDOORS)
+                .add(ModBlocks.PRIXILIUM_TRAPDOOR);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.PRIXILIUM_BRICKS_WALL)
