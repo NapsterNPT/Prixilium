@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
-import net.napsternpt.prixilium.hud.ThermometerHud;
+import net.napsternpt.prixilium.screen.hud.ThermometerHud;
 
 import java.util.function.Consumer;
 

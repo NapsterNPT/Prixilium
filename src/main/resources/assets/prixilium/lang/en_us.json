@@ -1,4 +1,6 @@
 {
+  "thank_you": "Thank you for playing Prixilium!",
+
   "itemgroup.prixilium.prixilium": "Prixilium",
   "itemgroup.prixilium.prixiled_items": "Prixiled Items",
 
@@ -140,6 +142,7 @@
   "block.prixilium.stand": "Stand",
   "block.prixilium.reactor_core": "Reactor Core",
   "block.prixilium.virus_reactor": "Virus Reactor",
+  "block.prixilium.prixiverse_portal": "Prixiverse Portal Block",
 
 
   "sounds.prixilium.prixilium_expand": "Prixilium Expands",

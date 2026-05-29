@@ -153,6 +153,13 @@ public class ModModelProvider extends FabricModelProvider {
                         BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/virus_reactor"))
                 )
         );
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.PRIXIVERSE_PORTAL,
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal"))
+                )
+        );
     }
 
     @Override

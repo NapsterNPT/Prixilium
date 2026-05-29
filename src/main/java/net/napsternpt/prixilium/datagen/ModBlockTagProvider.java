@@ -130,6 +130,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.PRIXILIUM_BRICKS_WALL)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
+        
+        getOrCreateTagBuilder(BlockTags.INVALID_SPAWN_INSIDE)
+                .add(ModBlocks.PRIXIVERSE_PORTAL);
+
+        getOrCreateTagBuilder(BlockTags.PORTALS)
+                .add(ModBlocks.PRIXIVERSE_PORTAL);
+
+        getOrCreateTagBuilder(BlockTags.DRAGON_IMMUNE)
+                .add(ModBlocks.PRIXIVERSE_PORTAL);
+
+        getOrCreateTagBuilder(BlockTags.WITHER_IMMUNE)
+                .add(ModBlocks.PRIXIVERSE_PORTAL);
 
         // Mod Tags
         getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)

@@ -28,11 +28,12 @@ import net.napsternpt.prixilium.datagen.ModWorldGen;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.custom.*;
-import net.napsternpt.prixilium.hud.*;
 import net.napsternpt.prixilium.item.ModItemGroups;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.network.ModPackets;
 import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.potion.ModPotions;
+import net.napsternpt.prixilium.screen.hud.ModHuds;
 import net.napsternpt.prixilium.sound.ModSounds;
 import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
 import net.napsternpt.prixilium.world.PrixiverseSpawnState;
@@ -48,13 +49,14 @@ public class Prixilium implements ModInitializer {
 	public static final String MOD_ID = "prixilium";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	private static final int SPAWN_X = 100;
-	private static final int SPAWN_Z = 0;
+	private static final BlockPos SPAWN_POS = new BlockPos(100, 120, 0);
 
 	@Override
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerItems();
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.PRIXILIUM.asItem(), ModPotions.PRIXILIUM_SLOWNESS_POTION));
+
 		ModBlocks.registerBlocks();
 		ModBlockEntities.registerBlockEntities();
 		ModDataComponentTypes.registerDataComponentTypes();
@@ -62,16 +64,14 @@ public class Prixilium implements ModInitializer {
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
 		ModEntities.registerEntities();
+		FabricDefaultAttributeRegistry.register(ModEntities.BLIKO, BlikoEntity.createAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.BLOKITO, BlokitoEntity.createAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.AIRIS, AirisEntity.createAttributes());
+
 		ModParticles.registerParticles();
 		ModHuds.registerHuds();
 
 		ModWorldGeneration.generateModWorldGen();
-
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.PRIXILIUM.asItem(), ModPotions.PRIXILIUM_SLOWNESS_POTION));
-
-		FabricDefaultAttributeRegistry.register(ModEntities.BLIKO, BlikoEntity.createAttributes());
-		FabricDefaultAttributeRegistry.register(ModEntities.BLOKITO, BlokitoEntity.createAttributes());
-		FabricDefaultAttributeRegistry.register(ModEntities.AIRIS, AirisEntity.createAttributes());
 
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			ServerWorld prixiverse = server.getWorld(ModWorldGen.PRIXILIUM_WORLD);
@@ -80,16 +80,19 @@ public class Prixilium implements ModInitializer {
 		});
 
 		ServerEntityWorldChangeEvents.AFTER_PLAYER_CHANGE_WORLD.register((player, origin, destination) -> {
-			if (destination.getRegistryKey().equals(ModWorldGen.PRIXILIUM_WORLD)) {player.teleport(destination, SPAWN_X + 0.5, 120, SPAWN_Z + 0.5, Set.of(), 90, 0, true);}
+			if (destination.getRegistryKey().equals(ModWorldGen.PRIXILIUM_WORLD)) {player.teleport(destination, SPAWN_POS.getX() + 0.5, SPAWN_POS.getY(), SPAWN_POS.getZ() + 0.5, Set.of(), 90, 0, true);}
 		});
+
+		ModPackets.registerServer();
+		ModPackets.registerReturnHandler();
 	}
 	private static void placeSpawnStructure(MinecraftServer server, ServerWorld world) {
 		PrixiverseSpawnState state = world.getPersistentStateManager().getOrCreate(PrixiverseSpawnState.TYPE);
 
 		if (state.isSpawnPlaced()) return;
 
-		world.getChunk(new BlockPos(SPAWN_X, 0, SPAWN_Z));
-		int surfaceY = world.getTopY(Heightmap.Type.WORLD_SURFACE, SPAWN_X, SPAWN_Z);
+		world.getChunk(new BlockPos(SPAWN_POS.getX(), 0, SPAWN_POS.getZ()));
+		int surfaceY = world.getTopY(Heightmap.Type.WORLD_SURFACE, SPAWN_POS.getX(), SPAWN_POS.getZ());
 		StructureTemplateManager templateManager = server.getStructureTemplateManager();
 		Identifier resourceId = Identifier.of(MOD_ID, "structures/spawn.nbt");
 		Optional<Resource> resourceOpt = server.getResourceManager().getResource(resourceId);
@@ -105,7 +108,7 @@ public class Prixilium implements ModInitializer {
 		}
 
         assert template != null;
-        BlockPos structureOrigin = new BlockPos(SPAWN_X - template.getSize().getX() / 2, surfaceY - 1, SPAWN_Z - template.getSize().getZ() / 2);
+        BlockPos structureOrigin = new BlockPos(SPAWN_POS.getX() - template.getSize().getX() / 2, surfaceY - 1, SPAWN_POS.getZ() - template.getSize().getZ() / 2);
 		StructurePlacementData placementData = new StructurePlacementData()
 				.setMirror(BlockMirror.NONE)
 				.setRotation(BlockRotation.NONE)

@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.hud;
+package net.napsternpt.prixilium.screen.hud;
 
 import net.napsternpt.prixilium.Prixilium;
 

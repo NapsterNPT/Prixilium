@@ -2,9 +2,11 @@
 f5a912cf1d8fefdc416541c77b01570aa54ff394 data/minecraft/tags/block/completes_find_tree_tutorial.json
 cce923f156a6c480db9826bae734577f584a759d data/minecraft/tags/block/dirt.json
 cc9234e7b1b60df24ee6338807f43df61133f924 data/minecraft/tags/block/doors.json
+a6d3b0159a84d7181824594436975f2266e129a8 data/minecraft/tags/block/dragon_immune.json
 cce923f156a6c480db9826bae734577f584a759d data/minecraft/tags/block/enderman_holdable.json
 62ef9dfec8bb83063009d9b461d77c97f667eda2 data/minecraft/tags/block/fence_gates.json
 386047582be9cb5ea54edd02e37449252881819d data/minecraft/tags/block/fences.json
+a6d3b0159a84d7181824594436975f2266e129a8 data/minecraft/tags/block/invalid_spawn_inside.json
 7739c434158e2408664571cf64315575544f79c8 data/minecraft/tags/block/leaves.json
 ee59d0fc268efdcdcdfc21a036eb7fce6d779dc2 data/minecraft/tags/block/logs.json
 82a44bb733c75e8c07b0bc626e7589c9660df7f2 data/minecraft/tags/block/mineable/axe.json
@@ -14,12 +16,14 @@ cce923f156a6c480db9826bae734577f584a759d data/minecraft/tags/block/mineable/shov
 0415a9ad3728b15789e698fa4c7dbf58ba9c7d07 data/minecraft/tags/block/needs_diamond_tool.json
 f8c3038e53f098c3eef4830223dc4f74bcd475ee data/minecraft/tags/block/needs_iron_tool.json
 c85b6f1519b254e7c8d739b72dbcd82a8b458f4b data/minecraft/tags/block/planks.json
+a6d3b0159a84d7181824594436975f2266e129a8 data/minecraft/tags/block/portals.json
 ac207cd30a06a5134c11f9674917bcab7430006d data/minecraft/tags/block/saplings.json
 619456755c1bbff370cc1eb75e42211d17caf928 data/minecraft/tags/block/slabs.json
 ee59d0fc268efdcdcdfc21a036eb7fce6d779dc2 data/minecraft/tags/block/snaps_goat_horn.json
 101d93c6ef7436d193421143a64b57436f4aa4b2 data/minecraft/tags/block/stairs.json
 4d0dde84892a7871e6287db26492f1d35e9d36b4 data/minecraft/tags/block/trapdoors.json
 0520e2185dd7a04ce361deb095ed51fdef9c11c2 data/minecraft/tags/block/walls.json
+a6d3b0159a84d7181824594436975f2266e129a8 data/minecraft/tags/block/wither_immune.json
 386047582be9cb5ea54edd02e37449252881819d data/minecraft/tags/block/wooden_fences.json
 9b6826d45c6dda233e54c7aa906d9e801c3c6550 data/minecraft/tags/block/wooden_slabs.json
 39f1c87b08eb7a2fdbf264befbd02aaebe61957c data/minecraft/tags/block/wooden_stairs.json

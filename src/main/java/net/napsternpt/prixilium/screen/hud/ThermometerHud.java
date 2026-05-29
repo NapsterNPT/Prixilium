@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.hud;
+package net.napsternpt.prixilium.screen.hud;
 
 import net.fabricmc.fabric.api.client.rendering.v1.HudLayerRegistrationCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;

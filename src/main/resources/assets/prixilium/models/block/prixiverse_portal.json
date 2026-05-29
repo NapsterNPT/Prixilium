@@ -1,0 +1,20 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made by NapsterNPT",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "prixilium:block/prixiverse_portal",
+		"particle": "prixilium:block/prixiverse_portal"
+	},
+	"elements": [
+		{
+			"from": [0, 6, 0],
+			"to": [16, 12, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 6, 0]},
+			"faces": {
+				"up": {"uv": [8, 8, 0, 0], "texture": "#0"},
+				"down": {"uv": [8, 8, 0, 16], "texture": "#0"}
+			}
+		}
+	]
+}

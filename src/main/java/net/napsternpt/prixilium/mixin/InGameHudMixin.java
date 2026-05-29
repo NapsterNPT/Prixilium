@@ -3,7 +3,7 @@ package net.napsternpt.prixilium.mixin;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.render.RenderTickCounter;
-import net.napsternpt.prixilium.hud.ThermometerHud;
+import net.napsternpt.prixilium.screen.hud.ThermometerHud;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
