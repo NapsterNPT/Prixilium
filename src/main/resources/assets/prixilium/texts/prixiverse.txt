@@ -1,6 +1,6 @@
 §3Well... I guess you made it...
 
-§2Who? I? I made it?
+§2Who? Me? I made it?
 
 §3Yeh, you fought, you survived, and you escaped.
 
@@ -47,10 +47,10 @@
 
 
 §7Yo, I'm NapsterNPT, I wanted to let you know that I'm really thankful that you played this mod,
-§7if you don't know who I'm, im the guy that made all of this.
-§7So I hope you had fun playing this mod as match I had making it.
-§7And just for a bit of context, the poem you read before, it's based of a real story,
-§7I started programming this mod and after two month I decided that I should §kkill my self§7.
+§7if you don't know who I'm, I am the guy that made all of this.
+§7So I hope you had fun playing this mod as match as I had making it.
+§7And just for a bit of context, the poem you read before, it's based on a real story,
+§7I started programming this mod and after two months I decided that I should §kkill my self§7.
 §7Yes, I'm fine now...
 
 §3Dude, let him go, it's getting late...

@@ -206,5 +206,10 @@
   "advancements.prixilium.step_on_prixilium.description": "Step on Prixilium",
 
   "advancements.prixilium.enter_prixiverse.title": "Is This a Nightmare?",
-  "advancements.prixilium.enter_prixiverse.description": "Sleep while ill"
+  "advancements.prixilium.enter_prixiverse.description": "Sleep while ill",
+
+
+  "gamerule.allowIllness": "§7(§6Prixilium§7)§f Allow Illness",
+  "gamerule.prixiliumExpands": "§7(§6Prixilium§7)§f Prixilium Expands",
+  "gamerule.disableVirusReactor": "§7(§6Prixilium§7)§f Disable Virus Reactor"
 }

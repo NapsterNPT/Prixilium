@@ -35,6 +35,7 @@ import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.potion.ModPotions;
 import net.napsternpt.prixilium.screen.hud.ModHuds;
 import net.napsternpt.prixilium.sound.ModSounds;
+import net.napsternpt.prixilium.util.ModGameRules;
 import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
 import net.napsternpt.prixilium.world.PrixiverseSpawnState;
 import org.slf4j.Logger;
@@ -70,6 +71,7 @@ public class Prixilium implements ModInitializer {
 
 		ModParticles.registerParticles();
 		ModHuds.registerHuds();
+		ModGameRules.registerGameRules();
 
 		ModWorldGeneration.generateModWorldGen();
 

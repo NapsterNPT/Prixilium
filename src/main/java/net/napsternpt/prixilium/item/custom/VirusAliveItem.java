@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
@@ -12,6 +13,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.util.ModGameRules;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
@@ -34,13 +36,13 @@ public class VirusAliveItem extends Item {
                 stack.setDamage(stack.getDamage() + 1);
 
                 if (stack.getDamage() >= stack.getMaxDamage()) {
-                    if (entity instanceof LivingEntity livingEntity) {
+                    if (entity instanceof LivingEntity livingEntity && world.getGameRules().getBoolean(ModGameRules.ALLOW_ILLNESS)) {
                         int duration = 1000 + livingEntity.getRandom().nextInt(23001);
                         livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.ILLNESS, duration, 0, true, false, false));
                     }
                     ItemStack newStack = new ItemStack(ModItems.VIRUS_DEAD);
 
-                    if (entity instanceof net.minecraft.entity.player.PlayerEntity player) {
+                    if (entity instanceof PlayerEntity player) {
                         if (slot != null) {
                             player.getInventory().setStack(slot.getEntitySlotId(), newStack);
                         }

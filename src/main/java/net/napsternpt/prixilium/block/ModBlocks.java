@@ -272,5 +272,7 @@ public class ModBlocks {
                         .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name))).useBlockPrefixedTranslationKey()));
     }
 
-    public static void registerBlocks() {Prixilium.LOGGER.info("Registering Prixilium Blocks.");}
+    public static void registerBlocks() {
+        Prixilium.LOGGER.info("Registering Prixilium Blocks.");
+    }
 }
