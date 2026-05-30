@@ -7,7 +7,6 @@ import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -21,7 +20,6 @@ import net.minecraft.world.World;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.block.entity.custom.VirusReactorBlockEntity;
 import net.napsternpt.prixilium.item.ModItems;
-import net.napsternpt.prixilium.util.ModGameRules;
 import org.jetbrains.annotations.Nullable;
 
 public class VirusReactorBlock extends BlockWithEntity implements BlockEntityProvider {
@@ -63,8 +61,7 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
                 virusReactorEntity.markDirty();
-                ServerWorld serverWorld = (ServerWorld) world;
-                if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE) && !serverWorld.getGameRules().getBoolean(ModGameRules.DISABLE_VIRUS_REACTOR)) {
+                if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE)) {
                     virusReactorEntity.startSpread();
                     virusReactorEntity.clear();
                 }

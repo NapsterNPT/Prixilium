@@ -14,10 +14,6 @@ public class ModGameRules {
             GameRules.Category.UPDATES,
             GameRuleFactory.createBooleanRule(true));
 
-    public static final GameRules.Key<GameRules.BooleanRule> DISABLE_VIRUS_REACTOR = GameRuleRegistry.register("disableVirusReactor",
-            GameRules.Category.UPDATES,
-            GameRuleFactory.createBooleanRule(false));
-
     public static void registerGameRules() {
         Prixilium.LOGGER.info("Registering Prixilium GameRules.");
     }

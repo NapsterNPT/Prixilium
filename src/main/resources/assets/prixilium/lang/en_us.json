@@ -210,6 +210,5 @@
 
 
   "gamerule.allowIllness": "§7(§6Prixilium§7)§f Allow Illness",
-  "gamerule.prixiliumExpands": "§7(§6Prixilium§7)§f Prixilium Expands",
-  "gamerule.disableVirusReactor": "§7(§6Prixilium§7)§f Disable Virus Reactor"
+  "gamerule.prixiliumExpands": "§7(§6Prixilium§7)§f Prixilium Expands"
 }
