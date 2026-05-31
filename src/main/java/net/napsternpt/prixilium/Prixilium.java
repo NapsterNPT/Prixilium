@@ -76,9 +76,9 @@ public class Prixilium implements ModInitializer {
 		ModPackets.registerServer();
 		ModPackets.registerReturnHandler();
 
-		ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(MOD_ID, "2d_charms"),
+		ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(MOD_ID, "static_charms"),
 				FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(),
-				Text.translatable("resourcepacks.2d_charms"),
+				Text.translatable("resourcepacks.static_charms"),
 				ResourcePackActivationType.NORMAL
 		);
 	}

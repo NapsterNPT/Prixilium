@@ -24,6 +24,6 @@ public class PrixiliumLeavesBlock extends UntintedParticleLeavesBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        new prixiliumExpandMethod(world, pos);
+        new PrixiliumExpandMethod(world, pos);
     }
 }

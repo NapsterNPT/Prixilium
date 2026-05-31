@@ -18,6 +18,6 @@ public class PrixiliumLogsAndWoodBlock extends PillarBlock {
 
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        new prixiliumExpandMethod(world, pos);
+        new PrixiliumExpandMethod(world, pos);
     }
 }

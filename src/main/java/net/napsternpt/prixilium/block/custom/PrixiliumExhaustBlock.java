@@ -11,16 +11,13 @@ public class PrixiliumExhaustBlock extends Block {
     public PrixiliumExhaustBlock(Settings settings) {super(settings);}
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (random.nextInt(5) == 0 && world.getBlockState(pos.up()).isAir() && !world.isReceivingRedstonePower(pos)) {
-            for (int i = 0; i < 100; i++) {
+        if (random.nextInt(10) == 0 && world.getBlockState(pos.up()).isAir() && !world.isReceivingRedstonePower(pos)) {
+            for (int i = 0; i < 50; i++) {
                 double x = pos.getX() + 0.5;
                 double y = pos.getY() + 1;
                 double z = pos.getZ() + 0.5;
 
-                double vS = -0.75 + random.nextFloat() * 1.5;
-                double vY = random.nextFloat() * 100;
-
-                world.addParticleClient(ModParticles.PRIXILIUM_SMOKE, x, y, z, vS, vY, vS);
+                world.addParticleClient(ModParticles.PRIXILIUM_SMOKE, x, y, z, 0, 0.5, 0);
             }
         }
     }

@@ -14,9 +14,9 @@ import net.napsternpt.prixilium.util.ModTags;
 import static net.minecraft.block.LeavesBlock.DISTANCE;
 import static net.minecraft.block.LeavesBlock.PERSISTENT;
 
-public class prixiliumExpandMethod {
+public class PrixiliumExpandMethod {
 
-    public prixiliumExpandMethod(ServerWorld world, BlockPos pos) {
+    public PrixiliumExpandMethod(ServerWorld world, BlockPos pos) {
         if (world.getGameRules().getBoolean(ModGameRules.PRIXILIUM_EXPANDS)) {
             for (int i = 0; i < 128; ++i) {
                 BlockPos targetPos = pos.add(

@@ -71,7 +71,7 @@ public class PrixiliumGrassBlock extends Block {
             return;
         }
 
-        new prixiliumExpandMethod(world, pos);
+        new PrixiliumExpandMethod(world, pos);
     }
 
     private boolean canSurvive(WorldView world, BlockPos pos) {

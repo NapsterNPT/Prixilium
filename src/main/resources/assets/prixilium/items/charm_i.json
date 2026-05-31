@@ -1,9 +1,0 @@
-{
-  "model": {
-    "type": "minecraft:special",
-    "base": "prixilium:item/charm_i",
-    "model": {
-      "type": "geckolib:geckolib"
-    }
-  }
-}
