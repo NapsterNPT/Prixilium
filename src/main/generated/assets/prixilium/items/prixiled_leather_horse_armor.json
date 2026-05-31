@@ -1,6 +1,12 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "prixilium:item/prixiled_leather_horse_armor"
+    "model": "prixilium:item/prixiled_leather_horse_armor",
+    "tints": [
+      {
+        "type": "minecraft:dye",
+        "default": -6265536
+      }
+    ]
   }
 }

@@ -295,7 +295,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PRIXILED_TURTLE_HELMET, ModArmorMaterials.PRIXILIUM_TURTLE_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
 
 
-        itemModelGenerator.register(ModItems.PRIXILED_LEATHER_HORSE_ARMOR, Models.GENERATED);
+        itemModelGenerator.registerDyeable(ModItems.PRIXILED_LEATHER_HORSE_ARMOR, -6265536);
         // 1.21.9+ itemModelGenerator.register(ModItems.PRIXILED_COPPER_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILED_IRON_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_HORSE_ARMOR, Models.GENERATED);
