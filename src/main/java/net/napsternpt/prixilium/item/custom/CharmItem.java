@@ -2,14 +2,10 @@ package net.napsternpt.prixilium.item.custom;
 
 import com.google.common.base.Suppliers;
 import net.minecraft.component.type.TooltipDisplayComponent;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
 import net.napsternpt.prixilium.client.CharmItemRenderer;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -20,7 +16,6 @@ import software.bernie.geckolib.animatable.processing.AnimationController;
 import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
-import software.bernie.geckolib.util.RenderUtil;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -46,12 +41,6 @@ public class CharmItem extends Item implements GeoItem {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
-    }
-
-    @Override
-    public double getTick(Object itemStack) {
-        return RenderUtil.getCurrentTick();
-        //return GeoItem.super.getTick(itemStack);
     }
 
     @Override
