@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "!": "prixilium:postmortal_charm_ii",
+    "!": "prixilium:rollback_charm_i",
     "#": "minecraft:netherite_ingot"
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:postmortal_charm_iii"
+    "id": "prixilium:rollback_charm_ii"
   }
 }

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_charm_ii": {
+    "has_charm_iii": {
       "conditions": {
         "items": [
           {
-            "items": "prixilium:charm_ii"
+            "items": "prixilium:charm_iii"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:transfer_charm_i_upgraded"
+        "recipe": "prixilium:transfer_charm_i_upgraded_to_tear_iii"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -31,13 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_charm_ii",
+      "has_charm_iii",
       "has_transfer_charm_i"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prixilium:transfer_charm_i_upgraded"
+      "prixilium:transfer_charm_i_upgraded_to_tear_iii"
     ]
   }
 }

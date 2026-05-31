@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "!": "prixilium:charm_ii",
+    "!": "prixilium:charm_i",
     "#": "minecraft:amethyst_shard"
   },
   "pattern": [

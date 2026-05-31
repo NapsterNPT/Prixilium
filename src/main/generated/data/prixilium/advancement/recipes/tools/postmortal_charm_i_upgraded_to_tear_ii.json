@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:postmortal_charm_i_upgraded"
+        "recipe": "prixilium:postmortal_charm_i_upgraded_to_tear_ii"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "prixilium:postmortal_charm_i_upgraded"
+      "prixilium:postmortal_charm_i_upgraded_to_tear_ii"
     ]
   }
 }

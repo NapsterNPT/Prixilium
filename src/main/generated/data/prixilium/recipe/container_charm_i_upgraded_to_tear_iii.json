@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "!": "prixilium:transfer_charm_ii",
+    "!": "prixilium:container_charm_i",
     "#": "minecraft:netherite_ingot"
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:transfer_charm_iii"
+    "id": "prixilium:container_charm_ii"
   }
 }

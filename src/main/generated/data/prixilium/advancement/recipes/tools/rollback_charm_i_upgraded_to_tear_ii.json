@@ -1,11 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_charm_iii": {
+    "has_charm_ii": {
       "conditions": {
         "items": [
           {
-            "items": "prixilium:charm_iii"
+            "items": "prixilium:charm_ii"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rollback_charm_i": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:rollback_charm_i"
           }
         ]
       },
@@ -13,31 +23,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:transfer_charm_ii_upgraded"
+        "recipe": "prixilium:rollback_charm_i_upgraded_to_tear_ii"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_transfer_charm_ii": {
-      "conditions": {
-        "items": [
-          {
-            "items": "prixilium:transfer_charm_ii"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_charm_iii",
-      "has_transfer_charm_ii"
+      "has_charm_ii",
+      "has_rollback_charm_i"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prixilium:transfer_charm_ii_upgraded"
+      "prixilium:rollback_charm_i_upgraded_to_tear_ii"
     ]
   }
 }
