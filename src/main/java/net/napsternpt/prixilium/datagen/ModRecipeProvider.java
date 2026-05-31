@@ -106,15 +106,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //endregion
 
                 //region [Tier II]
-                createShaped(RecipeCategory.TOOLS, ModItems.CHARM_II)
-                        .input('!', ModItems.CHARM_I)
-                        .input('#', Items.AMETHYST_SHARD)
-                        .pattern("###")
-                        .pattern("#!#")
-                        .pattern("###")
-                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter);
-
                 createShaped(RecipeCategory.TOOLS, ModItems.TRANSFER_CHARM_II)
                         .input('!', Items.ENDER_PEARL)
                         .input('#', ModItems.CHARM_II)
@@ -163,15 +154,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //endregion
 
                 //region [Tier III]
-                createShaped(RecipeCategory.TOOLS, ModItems.CHARM_III)
-                        .input('!', ModItems.CHARM_II)
-                        .input('#', Items.NETHERITE_INGOT)
-                        .pattern(" # ")
-                        .pattern("#!#")
-                        .pattern(" # ")
-                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter);
-
                 createShaped(RecipeCategory.TOOLS, ModItems.TRANSFER_CHARM_III)
                         .input('!', Items.ENDER_PEARL)
                         .input('#', ModItems.CHARM_III)
@@ -219,6 +201,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .offerTo(exporter, ModItems.POSTMORTAL_CHARM_III + "_default");
                 //endregion
 
+                charmUpgrade(exporter, ModItems.CHARM_I);
                 charmUpgrade(exporter, ModItems.TRANSFER_CHARM_I);
                 charmUpgrade(exporter, ModItems.CONTAINER_CHARM_I);
                 charmUpgrade(exporter, ModItems.ROLLBACK_CHARM_I);
