@@ -172,24 +172,24 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BLOKITO_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.AIRIS_SPAWN_EGG, Models.GENERATED);
 
-        //itemModelGenerator.register(ModItems.CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TRANSFER_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CONTAINER_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.REGENERATION_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TRANSFER_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CONTAINER_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.REGENERATION_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TRANSFER_CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CONTAINER_CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.REGENERATION_CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_III, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CHARM_I, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.TRANSFER_CHARM_I, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CONTAINER_CHARM_I, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_I, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.REGENERATION_CHARM_I, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_I, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CHARM_II, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.TRANSFER_CHARM_II, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CONTAINER_CHARM_II, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_II, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.REGENERATION_CHARM_II, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_II, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CHARM_III, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.TRANSFER_CHARM_III, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.CONTAINER_CHARM_III, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_III, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.REGENERATION_CHARM_III, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_III, Models.GENERATED);
 
         //region [Tools]
 

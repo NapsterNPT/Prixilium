@@ -210,5 +210,8 @@
 
 
   "gamerule.allowIllness": "§7(§6Prixilium§7)§f Allow Illness",
-  "gamerule.prixiliumExpands": "§7(§6Prixilium§7)§f Prixilium Expands"
+  "gamerule.prixiliumExpands": "§7(§6Prixilium§7)§f Prixilium Expands",
+
+
+  "resourcepacks.2d_charms": "§7(§6Prixilium§7)§f 2D Charms"
 }
