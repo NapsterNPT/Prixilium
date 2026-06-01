@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "prixilium:item/transfer_charm_i"
+    "layer0": "prixilium:item/charm_i",
+    "layer1": "prixilium:item/transfer_charm"
   }
 }

@@ -9,6 +9,8 @@ import net.minecraft.client.render.item.model.ItemModel;
 import net.minecraft.client.render.item.property.bool.HasComponentProperty;
 import net.minecraft.client.render.model.json.ModelVariant;
 import net.minecraft.client.render.model.json.WeightedVariant;
+import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.Pool;
 import net.napsternpt.prixilium.Prixilium;
@@ -173,23 +175,23 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.AIRIS_SPAWN_EGG, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TRANSFER_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CONTAINER_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.REGENERATION_CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_I, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TRANSFER_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CONTAINER_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.REGENERATION_CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_II, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TRANSFER_CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CONTAINER_CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROLLBACK_CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.REGENERATION_CHARM_III, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POSTMORTAL_CHARM_III, Models.GENERATED);
+        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_I, ModItems.CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_I, ModItems.CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_I, ModItems.CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_I, ModItems.CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_I, ModItems.CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_II, ModItems.CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_II, ModItems.CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_II, ModItems.CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_II, ModItems.CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_II, ModItems.CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_III, ModItems.CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_III, ModItems.CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_III, ModItems.CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_III, ModItems.CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_III, ModItems.CHARM_III);
 
         //region [Tools]
 
@@ -303,5 +305,12 @@ public class ModModelProvider extends FabricModelProvider {
         // 1.21.11+ itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR, Models.GENERATED);
 
         //endregion
+    }
+
+    private void registerLayeredCharm(ItemModelGenerator gen, Item item, Item baseCharm) {
+        String path = Registries.ITEM.getId(item).getPath();
+        String overlayPath = path.replaceFirst("_(iii|ii|i)$", "");
+        Identifier model = gen.uploadTwoLayers(item, TextureMap.getId(baseCharm), Identifier.of(Prixilium.MOD_ID, "item/" + overlayPath));
+        gen.output.accept(item, ItemModels.basic(model));
     }
 }
