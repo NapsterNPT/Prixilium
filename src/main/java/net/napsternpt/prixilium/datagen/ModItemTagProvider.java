@@ -136,17 +136,20 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.ROLLBACK_CHARM_I)
                 .add(ModItems.REGENERATION_CHARM_I)
                 .add(ModItems.POSTMORTAL_CHARM_I)
+                .add(ModItems.STOPWATCH_CHARM_I)
                 .add(ModItems.CHARM_II)
                 .add(ModItems.TRANSFER_CHARM_II)
                 .add(ModItems.CONTAINER_CHARM_II)
                 .add(ModItems.ROLLBACK_CHARM_II)
                 .add(ModItems.REGENERATION_CHARM_II)
                 .add(ModItems.POSTMORTAL_CHARM_II)
+                .add(ModItems.STOPWATCH_CHARM_II)
                 .add(ModItems.CHARM_III)
                 .add(ModItems.TRANSFER_CHARM_III)
                 .add(ModItems.CONTAINER_CHARM_III)
                 .add(ModItems.ROLLBACK_CHARM_III)
                 .add(ModItems.REGENERATION_CHARM_III)
-                .add(ModItems.POSTMORTAL_CHARM_III);
+                .add(ModItems.POSTMORTAL_CHARM_III)
+                .add(ModItems.STOPWATCH_CHARM_III);
     }
 }

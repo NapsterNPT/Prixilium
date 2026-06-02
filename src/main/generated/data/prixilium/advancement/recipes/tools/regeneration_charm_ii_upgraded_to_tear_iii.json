@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:regeneration_charm_i_upgraded_to_tear_iii"
+        "recipe": "prixilium:regeneration_charm_ii_upgraded_to_tear_iii"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "prixilium:regeneration_charm_i_upgraded_to_tear_iii"
+      "prixilium:regeneration_charm_ii_upgraded_to_tear_iii"
     ]
   }
 }

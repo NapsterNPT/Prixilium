@@ -107,6 +107,13 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
+    public static final Item STOPWATCH_CHARM_I = registerItem(name = "stopwatch_charm_i", new CharmItem((CharmSettings) new CharmSettings()
+            .upgradable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(4)
+            .rarity(Rarity.UNCOMMON)
+    ));
 
     // Tier II
     public static final Item CHARM_II = registerItem(name = "charm_ii", new CharmItem((CharmSettings) new CharmSettings()
@@ -155,6 +162,13 @@ public class ModItems {
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
+    public static final Item STOPWATCH_CHARM_II = registerItem(name = "stopwatch_charm_ii", new CharmItem((CharmSettings) new CharmSettings()
+            .upgradable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(16)
+            .rarity(Rarity.RARE)
+    ));
 
     // Tier III
     public static final Item CHARM_III = registerItem(name = "charm_iii", new CharmItem((CharmSettings) new CharmSettings()
@@ -197,6 +211,13 @@ public class ModItems {
             .rarity(Rarity.EPIC)
     ));
     public static final Item POSTMORTAL_CHARM_III = registerItem(name = "postmortal_charm_iii", new PostmortalCharmItem((CharmSettings) new CharmSettings()
+            .specializable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.EPIC)
+    ));
+    public static final Item STOPWATCH_CHARM_III = registerItem(name = "stopwatch_charm_iii", new CharmItem((CharmSettings) new CharmSettings()
             .specializable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)

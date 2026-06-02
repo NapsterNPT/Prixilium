@@ -177,21 +177,24 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHARM_I, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHARM_II, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHARM_III, Models.GENERATED);
-        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_I, ModItems.CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_I, ModItems.CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_I, ModItems.CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_I, ModItems.CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_I, ModItems.CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_II, ModItems.CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_II, ModItems.CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_II, ModItems.CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_II, ModItems.CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_II, ModItems.CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_III, ModItems.CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_III, ModItems.CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_III, ModItems.CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_III, ModItems.CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_III, ModItems.CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.ROLLBACK_CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_III);
 
         //region [Tools]
 
@@ -307,8 +310,12 @@ public class ModModelProvider extends FabricModelProvider {
         //endregion
     }
 
-    private void registerLayeredCharm(ItemModelGenerator gen, Item item, Item baseCharm) {
+    private void registerLayeredCharm(ItemModelGenerator gen, Item item) {
         String path = Registries.ITEM.getId(item).getPath();
+        Item baseCharm;
+        if (path.contains("_iii")) baseCharm = ModItems.CHARM_III;
+        else if (path.contains("_ii")) baseCharm = ModItems.CHARM_II;
+        else baseCharm = ModItems.CHARM_I;
         String overlayPath = path.replaceFirst("_(iii|ii|i)$", "");
         Identifier model = gen.uploadTwoLayers(item, TextureMap.getId(baseCharm), Identifier.of(Prixilium.MOD_ID, "item/" + overlayPath));
         gen.output.accept(item, ItemModels.basic(model));

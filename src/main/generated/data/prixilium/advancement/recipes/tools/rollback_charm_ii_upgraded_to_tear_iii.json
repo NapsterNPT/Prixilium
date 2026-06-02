@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_postmortal_charm_i": {
+    "has_rollback_charm_i": {
       "conditions": {
         "items": [
           {
-            "items": "prixilium:postmortal_charm_i"
+            "items": "prixilium:rollback_charm_i"
           }
         ]
       },
@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:postmortal_charm_i_upgraded_to_tear_iii"
+        "recipe": "prixilium:rollback_charm_ii_upgraded_to_tear_iii"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -32,12 +32,12 @@
     [
       "has_the_recipe",
       "has_charm_iii",
-      "has_postmortal_charm_i"
+      "has_rollback_charm_i"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prixilium:postmortal_charm_i_upgraded_to_tear_iii"
+      "prixilium:rollback_charm_ii_upgraded_to_tear_iii"
     ]
   }
 }

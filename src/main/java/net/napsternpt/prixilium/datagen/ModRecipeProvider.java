@@ -103,6 +103,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input(ModItems.CHARM_I)
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter);
+                createShaped(RecipeCategory.TOOLS, ModItems.STOPWATCH_CHARM_I)
+                        .input('!', Items.CLOCK)
+                        .input('#', ModItems.CHARM_I)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .offerTo(exporter, ModItems.STOPWATCH_CHARM_I + "_default");
                 //endregion
 
                 //region [Tier II]
@@ -114,7 +122,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.TRANSFER_CHARM_II + "_default");
-
                 createShaped(RecipeCategory.TOOLS, ModItems.CONTAINER_CHARM_II)
                         .input('!', Blocks.CHEST)
                         .input('#', ModItems.CHARM_II)
@@ -123,7 +130,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.CONTAINER_CHARM_II + "_default");
-
                 createShaped(RecipeCategory.TOOLS, ModItems.ROLLBACK_CHARM_II)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
@@ -134,7 +140,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.ROLLBACK_CHARM_II + "_default");
-
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_II)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
@@ -145,12 +150,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.REGENERATION_CHARM_II + "_default");
-
                 createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_II)
                         .input(Items.TOTEM_OF_UNDYING)
                         .input(ModItems.CHARM_II)
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.POSTMORTAL_CHARM_II + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.STOPWATCH_CHARM_II)
+                        .input('!', Items.CLOCK)
+                        .input('#', ModItems.CHARM_II)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
+                        .offerTo(exporter, ModItems.STOPWATCH_CHARM_II + "_default");
                 //endregion
 
                 //region [Tier III]
@@ -162,7 +174,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.TRANSFER_CHARM_III + "_default");
-
                 createShaped(RecipeCategory.TOOLS, ModItems.CONTAINER_CHARM_III)
                         .input('!', Blocks.CHEST)
                         .input('#', ModItems.CHARM_III)
@@ -171,7 +182,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.CONTAINER_CHARM_III + "_default");
-
                 createShaped(RecipeCategory.TOOLS, ModItems.ROLLBACK_CHARM_III)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
@@ -182,7 +192,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.ROLLBACK_CHARM_III + "_default");
-
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_III)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
@@ -193,12 +202,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.REGENERATION_CHARM_III + "_default");
-
                 createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_III)
                         .input(Items.TOTEM_OF_UNDYING)
                         .input(ModItems.CHARM_III)
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.POSTMORTAL_CHARM_III + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.STOPWATCH_CHARM_III)
+                        .input('!', Items.CLOCK)
+                        .input('#', ModItems.CHARM_III)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
+                        .offerTo(exporter, ModItems.STOPWATCH_CHARM_III + "_default");
                 //endregion
 
                 charmUpgrade(exporter, ModItems.CHARM_I);
@@ -207,6 +223,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 charmUpgrade(exporter, ModItems.ROLLBACK_CHARM_I);
                 charmUpgrade(exporter, ModItems.REGENERATION_CHARM_I);
                 charmUpgrade(exporter, ModItems.POSTMORTAL_CHARM_I);
+                charmUpgrade(exporter, ModItems.STOPWATCH_CHARM_I);
 
                 //endregion
 
@@ -511,7 +528,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" # ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .criterion(hasItem(inputCharm), conditionsFromItem(inputCharm))
-                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, inputId.getPath() + "_upgraded_to_tear_iii")));
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, inputId.getPath() + "i_upgraded_to_tear_iii")));
             }
         };
     }
