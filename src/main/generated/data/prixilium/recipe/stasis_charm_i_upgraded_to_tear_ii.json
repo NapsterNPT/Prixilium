@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "!": "prixilium:rollback_charm_i",
+    "!": "prixilium:stasis_charm_i",
     "#": "minecraft:amethyst_shard"
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:rollback_charm_ii"
+    "id": "prixilium:stasis_charm_ii"
   }
 }

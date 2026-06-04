@@ -2,6 +2,7 @@ package net.napsternpt.prixilium.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.napsternpt.prixilium.block.ModBlocks;
@@ -133,23 +134,27 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.CHARM_I)
                 .add(ModItems.TRANSFER_CHARM_I)
                 .add(ModItems.CONTAINER_CHARM_I)
-                .add(ModItems.ROLLBACK_CHARM_I)
+                .add(ModItems.STASIS_CHARM_I)
                 .add(ModItems.REGENERATION_CHARM_I)
                 .add(ModItems.POSTMORTAL_CHARM_I)
                 .add(ModItems.STOPWATCH_CHARM_I)
                 .add(ModItems.CHARM_II)
                 .add(ModItems.TRANSFER_CHARM_II)
                 .add(ModItems.CONTAINER_CHARM_II)
-                .add(ModItems.ROLLBACK_CHARM_II)
+                .add(ModItems.STASIS_CHARM_II)
                 .add(ModItems.REGENERATION_CHARM_II)
                 .add(ModItems.POSTMORTAL_CHARM_II)
                 .add(ModItems.STOPWATCH_CHARM_II)
                 .add(ModItems.CHARM_III)
                 .add(ModItems.TRANSFER_CHARM_III)
                 .add(ModItems.CONTAINER_CHARM_III)
-                .add(ModItems.ROLLBACK_CHARM_III)
+                .add(ModItems.STASIS_CHARM_III)
                 .add(ModItems.REGENERATION_CHARM_III)
                 .add(ModItems.POSTMORTAL_CHARM_III)
                 .add(ModItems.STOPWATCH_CHARM_III);
+
+        getOrCreateTagBuilder(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE)
+                .addTag(ModTags.Items.CHARMS)
+                .add(Blocks.SHULKER_BOX.asItem());
     }
 }

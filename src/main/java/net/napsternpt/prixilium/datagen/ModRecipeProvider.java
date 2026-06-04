@@ -78,7 +78,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter);
-                createShaped(RecipeCategory.TOOLS, ModItems.ROLLBACK_CHARM_I)
+                createShaped(RecipeCategory.TOOLS, ModItems.STASIS_CHARM_I)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
                         .input('€', Items.COMPASS)
@@ -130,7 +130,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.CONTAINER_CHARM_II + "_default");
-                createShaped(RecipeCategory.TOOLS, ModItems.ROLLBACK_CHARM_II)
+                createShaped(RecipeCategory.TOOLS, ModItems.STASIS_CHARM_II)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
                         .input('€', Items.COMPASS)
@@ -139,7 +139,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.ROLLBACK_CHARM_II + "_default");
+                        .offerTo(exporter, ModItems.STASIS_CHARM_II + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_II)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
@@ -182,7 +182,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.CONTAINER_CHARM_III + "_default");
-                createShaped(RecipeCategory.TOOLS, ModItems.ROLLBACK_CHARM_III)
+                createShaped(RecipeCategory.TOOLS, ModItems.STASIS_CHARM_III)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
                         .input('€', Items.COMPASS)
@@ -191,7 +191,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" € ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.ROLLBACK_CHARM_III + "_default");
+                        .offerTo(exporter, ModItems.STASIS_CHARM_III + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_III)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
@@ -220,7 +220,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 charmUpgrade(exporter, ModItems.CHARM_I);
                 charmUpgrade(exporter, ModItems.TRANSFER_CHARM_I);
                 charmUpgrade(exporter, ModItems.CONTAINER_CHARM_I);
-                charmUpgrade(exporter, ModItems.ROLLBACK_CHARM_I);
+                charmUpgrade(exporter, ModItems.STASIS_CHARM_I);
                 charmUpgrade(exporter, ModItems.REGENERATION_CHARM_I);
                 charmUpgrade(exporter, ModItems.POSTMORTAL_CHARM_I);
                 charmUpgrade(exporter, ModItems.STOPWATCH_CHARM_I);

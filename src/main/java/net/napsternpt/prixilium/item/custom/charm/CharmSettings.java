@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.item.custom;
+package net.napsternpt.prixilium.item.custom.charm;
 
 import net.minecraft.item.Item;
 

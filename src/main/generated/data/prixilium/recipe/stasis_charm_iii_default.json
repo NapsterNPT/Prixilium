@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "!": "minecraft:ender_pearl",
-    "#": "prixilium:charm_i",
+    "#": "prixilium:charm_iii",
     "@": "minecraft:clock",
     "€": "minecraft:compass"
   },
@@ -14,6 +14,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:rollback_charm_i"
+    "id": "prixilium:stasis_charm_iii"
   }
 }

@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
+import net.napsternpt.prixilium.item.custom.charm.CharmSettings;
 
 import java.util.function.Consumer;
 

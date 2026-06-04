@@ -25,6 +25,7 @@ public class ModTags {
         public static final TagKey<Item> PREVENT_PRIXILIUM_SLOWNESS = createTag("prevent_prixilium_slowness");
         public static final TagKey<Item> TEMPERATURE_TOOLS = createTag("temperature_tools");
         public static final TagKey<Item> CHARMS = createTag("charms");
+        public static final TagKey<Item> CONTAINER_CHARM_UNHOLDABLE = createTag("container_charm_unholdable");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name));

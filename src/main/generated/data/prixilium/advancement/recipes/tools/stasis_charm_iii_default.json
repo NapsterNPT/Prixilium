@@ -11,19 +11,9 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_rollback_charm_i": {
-      "conditions": {
-        "items": [
-          {
-            "items": "prixilium:rollback_charm_i"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:rollback_charm_ii_upgraded_to_tear_iii"
+        "recipe": "prixilium:stasis_charm_iii_default"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,13 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_charm_iii",
-      "has_rollback_charm_i"
+      "has_charm_iii"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prixilium:rollback_charm_ii_upgraded_to_tear_iii"
+      "prixilium:stasis_charm_iii_default"
     ]
   }
 }

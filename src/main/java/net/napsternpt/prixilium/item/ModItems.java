@@ -17,6 +17,7 @@ import net.minecraft.util.Unit;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.custom.*;
+import net.napsternpt.prixilium.item.custom.charm.*;
 
 import java.util.function.Consumer;
 
@@ -73,7 +74,7 @@ public class ModItems {
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_I = registerItem(name = "transfer_charm_i", new CharmItem((CharmSettings) new CharmSettings()
+    public static final Item TRANSFER_CHARM_I = registerItem(name = "transfer_charm_i", new TransferCharmItem((CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -86,14 +87,14 @@ public class ModItems {
             .maxCount(1)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item ROLLBACK_CHARM_I = registerItem(name = "rollback_charm_i", new CharmItem((CharmSettings) new CharmSettings()
+    public static final Item STASIS_CHARM_I = registerItem(name = "stasis_charm_i", new StasisCharmItem((CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item REGENERATION_CHARM_I = registerItem(name = "regeneration_charm_i", new CharmItem((CharmSettings) new CharmSettings()
+    public static final Item REGENERATION_CHARM_I = registerItem(name = "regeneration_charm_i", new RegenerationCharmItem((CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -107,7 +108,7 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item STOPWATCH_CHARM_I = registerItem(name = "stopwatch_charm_i", new CharmItem((CharmSettings) new CharmSettings()
+    public static final Item STOPWATCH_CHARM_I = registerItem(name = "stopwatch_charm_i", new StopwatchCharmItem((CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -128,7 +129,7 @@ public class ModItems {
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_II = registerItem(name = "transfer_charm_ii", new CharmItem((CharmSettings) new CharmSettings()
+    public static final Item TRANSFER_CHARM_II = registerItem(name = "transfer_charm_ii", new TransferCharmItem((CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -141,14 +142,14 @@ public class ModItems {
             .maxCount(1)
             .rarity(Rarity.RARE)
     ));
-    public static final Item ROLLBACK_CHARM_II = registerItem(name = "rollback_charm_ii", new CharmItem((CharmSettings) new CharmSettings()
+    public static final Item STASIS_CHARM_II = registerItem(name = "stasis_charm_ii", new StasisCharmItem((CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
-    public static final Item REGENERATION_CHARM_II = registerItem(name = "regeneration_charm_ii", new CharmItem((CharmSettings) new CharmSettings()
+    public static final Item REGENERATION_CHARM_II = registerItem(name = "regeneration_charm_ii", new RegenerationCharmItem((CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -162,7 +163,7 @@ public class ModItems {
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
-    public static final Item STOPWATCH_CHARM_II = registerItem(name = "stopwatch_charm_ii", new CharmItem((CharmSettings) new CharmSettings()
+    public static final Item STOPWATCH_CHARM_II = registerItem(name = "stopwatch_charm_ii", new StopwatchCharmItem((CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -183,42 +184,36 @@ public class ModItems {
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_III = registerItem(name = "transfer_charm_iii", new CharmItem((CharmSettings) new CharmSettings()
-            .specializable()
+    public static final Item TRANSFER_CHARM_III = registerItem(name = "transfer_charm_iii", new TransferCharmItem((CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
     public static final Item CONTAINER_CHARM_III = registerItem(name = "container_charm_iii", new ContainerCharmItem(6, (CharmSettings) new CharmSettings()
-            .specializable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item ROLLBACK_CHARM_III = registerItem(name = "rollback_charm_iii", new CharmItem((CharmSettings) new CharmSettings()
-            .specializable()
+    public static final Item STASIS_CHARM_III = registerItem(name = "stasis_charm_iii", new StasisCharmItem((CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item REGENERATION_CHARM_III = registerItem(name = "regeneration_charm_iii", new CharmItem((CharmSettings) new CharmSettings()
-            .specializable()
+    public static final Item REGENERATION_CHARM_III = registerItem(name = "regeneration_charm_iii", new RegenerationCharmItem((CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
     public static final Item POSTMORTAL_CHARM_III = registerItem(name = "postmortal_charm_iii", new PostmortalCharmItem((CharmSettings) new CharmSettings()
-            .specializable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item STOPWATCH_CHARM_III = registerItem(name = "stopwatch_charm_iii", new CharmItem((CharmSettings) new CharmSettings()
-            .specializable()
+    public static final Item STOPWATCH_CHARM_III = registerItem(name = "stopwatch_charm_iii", new StopwatchCharmItem((CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)

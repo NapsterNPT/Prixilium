@@ -11,9 +11,19 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_stasis_charm_i": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:stasis_charm_i"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:rollback_charm_iii_default"
+        "recipe": "prixilium:stasis_charm_ii_upgraded_to_tear_iii"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_charm_iii"
+      "has_charm_iii",
+      "has_stasis_charm_i"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prixilium:rollback_charm_iii_default"
+      "prixilium:stasis_charm_ii_upgraded_to_tear_iii"
     ]
   }
 }
