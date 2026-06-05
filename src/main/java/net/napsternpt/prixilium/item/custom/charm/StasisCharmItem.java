@@ -34,9 +34,8 @@ public class StasisCharmItem extends CharmItem {
 
     @Override
     public ActionResult use(World world, PlayerEntity player, Hand hand) {
-        if (!(player instanceof ServerPlayerEntity serverPlayer)) return ActionResult.SUCCESS;
-        ItemStack stack = player.getStackInHand(hand);
-        if (!world.isClient()) {
+        if (player instanceof ServerPlayerEntity serverPlayer) {
+            ItemStack stack = player.getStackInHand(hand);
             if (stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt().contains(POS_X)) {
                 var nbt = Objects.requireNonNull(stack.get(DataComponentTypes.CUSTOM_DATA)).copyNbt();
                 double x = nbt.getDouble(POS_X).orElseThrow();
