@@ -1,15 +1,17 @@
 package net.napsternpt.prixilium.item.custom;
 
 import net.minecraft.component.type.TooltipDisplayComponent;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
+import net.minecraft.world.World;
 import net.napsternpt.prixilium.item.custom.charm.CharmSettings;
 
 import java.util.function.Consumer;
 
-public class CharmItem extends Item {
+public abstract class CharmItem extends Item {
 
     private final boolean upgradable;
     private final boolean specializable;

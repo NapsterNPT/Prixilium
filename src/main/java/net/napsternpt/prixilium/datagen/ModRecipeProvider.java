@@ -111,6 +111,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter, ModItems.STOPWATCH_CHARM_I + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.INVULNERABILITY_CHARM_I)
+                        .input('!', Items.TURTLE_HELMET)
+                        .input('#', ModItems.CHARM_I)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_I + "_default");
                 //endregion
 
                 //region [Tier II]
@@ -163,6 +171,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.STOPWATCH_CHARM_II + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.INVULNERABILITY_CHARM_II)
+                        .input('!', Items.TURTLE_HELMET)
+                        .input('#', ModItems.CHARM_I)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_II + "_default");
                 //endregion
 
                 //region [Tier III]
@@ -215,6 +231,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.STOPWATCH_CHARM_III + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.INVULNERABILITY_CHARM_III)
+                        .input('!', Items.TURTLE_HELMET)
+                        .input('#', ModItems.CHARM_I)
+                        .pattern(" ! ")
+                        .pattern("!#!")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_III + "_default");
                 //endregion
 
                 charmUpgrade(exporter, ModItems.CHARM_I);
@@ -224,6 +248,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 charmUpgrade(exporter, ModItems.REGENERATION_CHARM_I);
                 charmUpgrade(exporter, ModItems.POSTMORTAL_CHARM_I);
                 charmUpgrade(exporter, ModItems.STOPWATCH_CHARM_I);
+                charmUpgrade(exporter, ModItems.INVULNERABILITY_CHARM_I);
 
                 //endregion
 

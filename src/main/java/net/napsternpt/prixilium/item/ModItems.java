@@ -24,6 +24,7 @@ import java.util.function.Consumer;
 public class ModItems {
     private static String name;
 
+    //region [Other]
     public static final Item VIRUS_ALIVE = registerItem(name = "virus_alive", new VirusAliveItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -60,9 +61,11 @@ public class ModItems {
             ModEntities.AIRIS, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
+    //endregion
 
-    //region [charms]
-    // Tier I
+
+    //region [Charms]
+    //region [Tier I]
     public static final Item CHARM_I = registerItem(name = "charm_i", new CharmItem((CharmSettings) new CharmSettings()
             .upgradable().specializable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
@@ -115,8 +118,15 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
+    public static final Item INVULNERABILITY_CHARM_I = registerItem(name = "invulnerability_charm_i", new InvulnerabilityCharmItem(5, (CharmSettings) new CharmSettings()
+            .upgradable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .rarity(Rarity.UNCOMMON)
+    ));
+    //endregion
 
-    // Tier II
+    //region [Tier II]
     public static final Item CHARM_II = registerItem(name = "charm_ii", new CharmItem((CharmSettings) new CharmSettings()
             .upgradable().specializable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
@@ -170,8 +180,15 @@ public class ModItems {
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
+    public static final Item INVULNERABILITY_CHARM_II = registerItem(name = "invulnerability_charm_ii", new InvulnerabilityCharmItem(15, (CharmSettings) new CharmSettings()
+            .upgradable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .rarity(Rarity.RARE)
+    ));
+    //endregion
 
-    // Tier III
+    //region [Tier III]
     public static final Item CHARM_III = registerItem(name = "charm_iii", new CharmItem((CharmSettings) new CharmSettings()
             .specializable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
@@ -219,8 +236,14 @@ public class ModItems {
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
-
+    public static final Item INVULNERABILITY_CHARM_III = registerItem(name = "invulnerability_charm_iii", new InvulnerabilityCharmItem(30, (CharmSettings) new CharmSettings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .rarity(Rarity.EPIC)
+    ));
     //endregion
+    //endregion
+
 
     //region [Tools]
 

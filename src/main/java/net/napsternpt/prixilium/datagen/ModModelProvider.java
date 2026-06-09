@@ -183,18 +183,21 @@ public class ModModelProvider extends FabricModelProvider {
         registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_I);
         registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_I);
         registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_I);
+        registerLayeredCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_I);
         registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_II);
         registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_II);
         registerLayeredCharm(itemModelGenerator, ModItems.STASIS_CHARM_II);
         registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_II);
         registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_II);
         registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_II);
+        registerLayeredCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_II);
         registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_III);
         registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_III);
         registerLayeredCharm(itemModelGenerator, ModItems.STASIS_CHARM_III);
         registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_III);
         registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_III);
         registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_III);
+        registerLayeredCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_III);
 
         //region [Tools]
 
