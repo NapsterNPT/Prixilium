@@ -6,10 +6,19 @@
 		"HideEffectsMixin",
 		"InGameHudMixin",
 		"MilkBucketMixin",
-		"PlayerSleepMixin"
+		"PlayerSleepMixin",
+
+		"TimeStopEntityMixin",
+		"TimeStopLivingEntityMixin",
+		"TimeStopServerWorldMixin",
+		"TimeStopWorldMixin"
 	],
 	"client": [
-		"AbstractClientPlayerEntityMixin"
+		"AbstractClientPlayerEntityMixin",
+		"GameRendererDesaturateMixin",
+
+		"TimeStopClientEntityMixin",
+		"TimeStopClientLivingEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

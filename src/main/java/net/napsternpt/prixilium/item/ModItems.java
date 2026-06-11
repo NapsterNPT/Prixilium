@@ -111,7 +111,7 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item STOPWATCH_CHARM_I = registerItem(name = "stopwatch_charm_i", new StopwatchCharmItem((CharmSettings) new CharmSettings()
+    public static final Item STOPWATCH_CHARM_I = registerItem(name = "stopwatch_charm_i", new StopwatchCharmItem(5, (CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -122,6 +122,7 @@ public class ModItems {
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
+            .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
     //endregion
@@ -173,7 +174,7 @@ public class ModItems {
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
-    public static final Item STOPWATCH_CHARM_II = registerItem(name = "stopwatch_charm_ii", new StopwatchCharmItem((CharmSettings) new CharmSettings()
+    public static final Item STOPWATCH_CHARM_II = registerItem(name = "stopwatch_charm_ii", new StopwatchCharmItem(15, (CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -184,6 +185,7 @@ public class ModItems {
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
+            .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
     //endregion
@@ -230,7 +232,7 @@ public class ModItems {
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item STOPWATCH_CHARM_III = registerItem(name = "stopwatch_charm_iii", new StopwatchCharmItem((CharmSettings) new CharmSettings()
+    public static final Item STOPWATCH_CHARM_III = registerItem(name = "stopwatch_charm_iii", new StopwatchCharmItem(30, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
@@ -239,6 +241,7 @@ public class ModItems {
     public static final Item INVULNERABILITY_CHARM_III = registerItem(name = "invulnerability_charm_iii", new InvulnerabilityCharmItem(30, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
+            .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
     //endregion

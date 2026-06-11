@@ -28,6 +28,7 @@ import net.napsternpt.prixilium.potion.ModPotions;
 import net.napsternpt.prixilium.screen.hud.ModHuds;
 import net.napsternpt.prixilium.sound.ModSounds;
 import net.napsternpt.prixilium.util.ModGameRules;
+import net.napsternpt.prixilium.util.TimeStopState;
 import net.napsternpt.prixilium.world.ModStructures;
 import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -62,6 +63,8 @@ public class Prixilium implements ModInitializer {
 		ModGameRules.registerGameRules();
 
 		ModWorldGeneration.generateModWorldGen();
+
+		TimeStopState.setOnExpiryCallback(ModPackets::sendTimeStopEnd);
 
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			ServerWorld prixiverse = server.getWorld(ModWorldGen.PRIXILIUM_WORLD);

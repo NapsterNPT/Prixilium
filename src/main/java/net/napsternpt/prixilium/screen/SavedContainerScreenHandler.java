@@ -8,6 +8,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
+import net.napsternpt.prixilium.item.custom.CharmItem;
 import net.napsternpt.prixilium.item.custom.charm.ContainerCharmItem;
 import net.napsternpt.prixilium.util.ModTags;
 
@@ -31,7 +32,7 @@ public class SavedContainerScreenHandler extends ScreenHandler {
                 this.addSlot(new Slot(inventory, index, 8 + col * 18, 18 + row * 18) {
                     @Override
                     public boolean canInsert(ItemStack stack) {
-                        return !stack.isIn(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE);
+                        return !stack.isIn(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE) && !(stack.getItem() instanceof CharmItem);
                     }
                 });
             }
@@ -48,6 +49,9 @@ public class SavedContainerScreenHandler extends ScreenHandler {
         Slot slot2 = this.slots.get(slot);
         if (slot2.hasStack()) {
             ItemStack itemStack2 = slot2.getStack();
+            if (slot >= this.rows * 9 && (itemStack2.isIn(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE) || itemStack2.getItem() instanceof CharmItem)) {
+                return ItemStack.EMPTY;
+            }
             itemStack = itemStack2.copy();
             if (slot < this.rows * 9)
                 if (!this.insertItem(itemStack2, this.rows * 9, this.slots.size(), true)) return ItemStack.EMPTY;
