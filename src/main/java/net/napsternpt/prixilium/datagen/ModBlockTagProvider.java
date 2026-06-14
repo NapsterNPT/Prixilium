@@ -23,14 +23,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.VIRUS_REACTOR)
                 .add(ModBlocks.PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
+                .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
+                .add(ModBlocks.PRIXILIUM_GRATE)
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
-                .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS)
+                .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
+                .add(ModBlocks.DARK_PRIXILIUM_GRATE)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
-                .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
@@ -54,17 +56,19 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.REACTOR_CORE)
                 .add(ModBlocks.VIRUS_REACTOR);
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
+                .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
+                .add(ModBlocks.PRIXILIUM_GRATE)
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
-                .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS)
+                .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
+                .add(ModBlocks.DARK_PRIXILIUM_GRATE)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
-                .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 
         getOrCreateTagBuilder(BlockTags.SAPLINGS)

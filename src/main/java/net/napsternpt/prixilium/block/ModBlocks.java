@@ -133,6 +133,22 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+    public static final Block CHISELED_PRIXILIUM_BRICKS = registerBlock(name = "chiseled_prixilium_bricks",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+    public static final Block PRIXILIUM_GRATE = registerBlock(name = "prixilium_grate",
+            new GrateBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .requiresTool()
+                    .strength(3.0F)
+                    .sounds(BlockSoundGroup.COPPER_GRATE)
+                    .mapColor(MapColor.GOLD)
+                    .nonOpaque()
+            ));
     public static final Block PRIXILIUM_BRICKS_WALL = registerBlock(name = "prixilium_bricks_wall",
             new WallBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -154,13 +170,6 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
-    public static final Block CHISELED_PRIXILIUM_BRICKS = registerBlock(name = "chiseled_prixilium_bricks",
-            new Block(AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .requiresTool()
-                    .strength(1.5F, 6.0F)
-                    .mapColor(MapColor.CYAN)
-            ));
 
     public static final Block DARK_PRIXILIUM_BRICKS = registerBlock(name = "dark_prixilium_bricks",
             new Block(AbstractBlock.Settings.create()
@@ -175,6 +184,22 @@ public class ModBlocks {
                     .requiresTool()
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
+            ));
+    public static final Block CHISELED_DARK_PRIXILIUM_BRICKS = registerBlock(name = "chiseled_dark_prixilium_bricks",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+    public static final Block DARK_PRIXILIUM_GRATE = registerBlock(name = "dark_prixilium_grate",
+            new GrateBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .requiresTool()
+                    .strength(3.0F)
+                    .sounds(BlockSoundGroup.COPPER_GRATE)
+                    .mapColor(MapColor.GOLD)
+                    .nonOpaque()
             ));
     public static final Block DARK_PRIXILIUM_BRICKS_WALL = registerBlock(name = "dark_prixilium_bricks_wall",
             new WallBlock(AbstractBlock.Settings.create()
@@ -192,13 +217,6 @@ public class ModBlocks {
             ));
     public static final Block DARK_PRIXILIUM_BRICK_SLAB = registerBlock(name = "dark_prixilium_brick_slab",
             new SlabBlock(AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .requiresTool()
-                    .strength(1.5F, 6.0F)
-                    .mapColor(MapColor.CYAN)
-            ));
-    public static final Block CHISELED_DARK_PRIXILIUM_BRICKS = registerBlock(name = "chiseled_dark_prixilium_bricks",
-            new Block(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .requiresTool()
                     .strength(1.5F, 6.0F)

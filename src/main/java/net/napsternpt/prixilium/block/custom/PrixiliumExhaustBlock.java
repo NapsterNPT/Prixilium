@@ -11,7 +11,7 @@ public class PrixiliumExhaustBlock extends Block {
     public PrixiliumExhaustBlock(Settings settings) {super(settings);}
 
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (random.nextInt(10) == 0 && world.getBlockState(pos.up()).isAir() && !world.isReceivingRedstonePower(pos)) {
+        if (random.nextInt(10) == 0 && world.getBlockState(pos.up()).isTransparent() && !world.isReceivingRedstonePower(pos)) {
             for (int i = 0; i < 50; i++) {
                 double x = pos.getX() + 0.5;
                 double y = pos.getY() + 1;

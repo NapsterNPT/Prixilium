@@ -423,14 +423,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 offer2x2CompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS, ModBlocks.PRIXILIUM);
                 offerSmelting(List.of(ModBlocks.PRIXILIUM_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_PRIXILIUM_BRICKS, 0.1f, 200, "cracked_prixilium_bricks");
+                createChiseledBlockRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_PRIXILIUM_BRICKS, Ingredient.ofItem(ModBlocks.PRIXILIUM_BRICK_SLAB))
+                        .criterion(hasItem(ModBlocks.PRIXILIUM_BRICK_SLAB), conditionsFromItem(ModBlocks.PRIXILIUM_BRICK_SLAB))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_GRATE, 4)
+                        .input('!', ModBlocks.PRIXILIUM_BRICKS)
+                        .pattern(" ! ")
+                        .pattern("! !")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
+                        .offerTo(exporter);
                 createStairsRecipe(ModBlocks.PRIXILIUM_BRICK_STAIRS, Ingredient.ofItems(ModBlocks.PRIXILIUM_BRICKS))
                         .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
                         .offerTo(exporter);
                 createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICK_SLAB, Ingredient.ofItems(ModBlocks.PRIXILIUM_BRICKS))
                         .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
-                        .offerTo(exporter);
-                createChiseledBlockRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_PRIXILIUM_BRICKS, Ingredient.ofItem(ModBlocks.PRIXILIUM_BRICK_SLAB))
-                        .criterion(hasItem(ModBlocks.PRIXILIUM_BRICK_SLAB), conditionsFromItem(ModBlocks.PRIXILIUM_BRICK_SLAB))
                         .offerTo(exporter);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS_WALL, 6)
                         .input('#', ModBlocks.PRIXILIUM_BRICKS)
@@ -441,14 +448,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 offer2x2CompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DARK_PRIXILIUM_BRICKS, ModBlocks.PRIXILIUM_BRICKS);
                 offerSmelting(List.of(ModBlocks.DARK_PRIXILIUM_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS, 0.1f, 200, "cracked_prixilium_bricks");
+                createChiseledBlockRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS, Ingredient.ofItem(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB))
+                        .criterion(hasItem(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB), conditionsFromItem(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DARK_PRIXILIUM_GRATE, 4)
+                        .input('!', ModBlocks.PRIXILIUM_BRICKS)
+                        .pattern(" ! ")
+                        .pattern("! !")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModBlocks.DARK_PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.DARK_PRIXILIUM_BRICKS))
+                        .offerTo(exporter);
                 createStairsRecipe(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS, Ingredient.ofItems(ModBlocks.DARK_PRIXILIUM_BRICKS))
                         .criterion(hasItem(ModBlocks.DARK_PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.DARK_PRIXILIUM_BRICKS))
                         .offerTo(exporter);
                 createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DARK_PRIXILIUM_BRICK_SLAB, Ingredient.ofItems(ModBlocks.DARK_PRIXILIUM_BRICKS))
                         .criterion(hasItem(ModBlocks.DARK_PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.DARK_PRIXILIUM_BRICKS))
-                        .offerTo(exporter);
-                createChiseledBlockRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS, Ingredient.ofItem(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB))
-                        .criterion(hasItem(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB), conditionsFromItem(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB))
                         .offerTo(exporter);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DARK_PRIXILIUM_BRICKS_WALL, 6)
                         .input('#', ModBlocks.DARK_PRIXILIUM_BRICKS)

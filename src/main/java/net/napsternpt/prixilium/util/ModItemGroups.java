@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.item;
+package net.napsternpt.prixilium.util;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
@@ -9,6 +9,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.item.ModItems;
 
 public class ModItemGroups {
 
@@ -72,16 +73,18 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PRIXILIUM_TRAPDOOR);
                         entries.add(ModBlocks.PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.CRACKED_PRIXILIUM_BRICKS);
+                        entries.add(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
+                        entries.add(ModBlocks.PRIXILIUM_GRATE);
                         entries.add(ModBlocks.PRIXILIUM_BRICK_STAIRS);
                         entries.add(ModBlocks.PRIXILIUM_BRICK_SLAB);
                         entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
-                        entries.add(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS);
+                        entries.add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS);
+                        entries.add(ModBlocks.DARK_PRIXILIUM_GRATE);
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
-                        entries.add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.PRIXILIUM_EXHAUST);
                         entries.add(ModBlocks.PRIXILIUM_LAMP);
                         entries.add(ModBlocks.STAND);

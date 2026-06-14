@@ -73,17 +73,19 @@ public class ModModelProvider extends FabricModelProvider {
 
         BlockStateModelGenerator.BlockTexturePool prixiliumBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_BRICKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_PRIXILIUM_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXILIUM_GRATE);
         prixiliumBricksPool.stairs(ModBlocks.PRIXILIUM_BRICK_STAIRS);
         prixiliumBricksPool.slab(ModBlocks.PRIXILIUM_BRICK_SLAB);
         prixiliumBricksPool.wall(ModBlocks.PRIXILIUM_BRICKS_WALL);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
 
         BlockStateModelGenerator.BlockTexturePool darkPrixiliumBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DARK_PRIXILIUM_BRICKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DARK_PRIXILIUM_GRATE);
         darkPrixiliumBricksPool.stairs(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
         darkPrixiliumBricksPool.slab(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
         darkPrixiliumBricksPool.wall(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS);
 
         Identifier lamp0Identifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector);
         Identifier lamp1Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_1", Models.CUBE_ALL, TextureMap::all);
