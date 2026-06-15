@@ -1,15 +1,21 @@
 package net.napsternpt.prixilium.block.custom;
 
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.sound.ModSounds;
 import net.napsternpt.prixilium.util.ModGameRules;
 import net.napsternpt.prixilium.util.ModTags;
+
+import java.util.Objects;
 
 import static net.minecraft.block.LeavesBlock.DISTANCE;
 import static net.minecraft.block.LeavesBlock.PERSISTENT;
@@ -33,6 +39,10 @@ public class PrixiliumExpandMethod {
                     world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
                     world.spawnParticles(ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
                             3, 0.2, 0.2, 0.2, 0);
+                    for (ServerPlayerEntity player : world.getPlayers()) {
+                        AdvancementEntry advancement = Objects.requireNonNull(player.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "its_spreading"));
+                        player.getAdvancementTracker().grantCriterion(advancement, "its_spreading");
+                    }
                 }
 
                 // Grass

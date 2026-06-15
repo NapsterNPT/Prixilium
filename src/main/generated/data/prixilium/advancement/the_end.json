@@ -1,25 +1,26 @@
 {
   "parent": "prixilium:enter_prixiverse",
   "criteria": {
-    "team_bliko": {
+    "the_end": {
       "trigger": "minecraft:impossible"
     }
   },
   "display": {
     "description": {
-      "translate": "advancements.prixilium.team_bliko.description"
+      "translate": "advancements.prixilium.the_end.description"
     },
+    "frame": "challenge",
     "icon": {
       "count": 1,
-      "id": "prixilium:bliko_spawn_egg"
+      "id": "prixilium:virus_dead"
     },
     "title": {
-      "translate": "advancements.prixilium.team_bliko.title"
+      "translate": "advancements.prixilium.the_end.title"
     }
   },
   "requirements": [
     [
-      "team_bliko"
+      "the_end"
     ]
   ],
   "sends_telemetry_event": true

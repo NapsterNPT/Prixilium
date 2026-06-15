@@ -1,5 +1,6 @@
 package net.napsternpt.prixilium.item.custom.charm;
 
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.EquipmentSlot;
@@ -16,6 +17,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.item.custom.CharmItem;
 
 import java.util.Objects;
@@ -46,6 +48,9 @@ public class StasisCharmItem extends CharmItem {
                 ServerWorld targetWorld = Objects.requireNonNull(serverPlayer.getServer()).getWorld(RegistryKey.of(RegistryKeys.WORLD, Identifier.of(dimId)));
                 if (targetWorld == null) targetWorld = serverPlayer.getServerWorld();
                 serverPlayer.teleport(targetWorld, x + 0.5, y,z + 0.5, Set.of(), serverPlayer.getYaw(), serverPlayer.getPitch(), false);
+
+                AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "warp_traveler"));
+                serverPlayer.getAdvancementTracker().grantCriterion(advancement, "warp_traveler");
 
                 nbt.remove(POS_X);
                 nbt.remove(POS_Y);

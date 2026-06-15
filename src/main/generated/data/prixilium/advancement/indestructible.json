@@ -1,0 +1,26 @@
+{
+  "parent": "prixilium:charm_i",
+  "criteria": {
+    "indestructible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.indestructible.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:invulnerability_charm_iii"
+    },
+    "title": {
+      "translate": "advancements.prixilium.indestructible.title"
+    }
+  },
+  "requirements": [
+    [
+      "indestructible"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

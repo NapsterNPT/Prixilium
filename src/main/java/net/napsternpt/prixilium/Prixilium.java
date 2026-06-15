@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
-import net.napsternpt.prixilium.component.ModDataComponentTypes;
+import net.napsternpt.prixilium.util.ModDataComponentTypes;
 import net.napsternpt.prixilium.datagen.ModWorldGen;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;

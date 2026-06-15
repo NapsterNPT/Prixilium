@@ -1,0 +1,26 @@
+{
+  "parent": "prixilium:charm_i",
+  "criteria": {
+    "time_stopper": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.time_stopper.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:stopwatch_charm_iii"
+    },
+    "title": {
+      "translate": "advancements.prixilium.time_stopper.title"
+    }
+  },
+  "requirements": [
+    [
+      "time_stopper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

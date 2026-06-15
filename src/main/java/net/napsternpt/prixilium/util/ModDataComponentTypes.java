@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.component;
+package net.napsternpt.prixilium.util;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.component.ComponentType;

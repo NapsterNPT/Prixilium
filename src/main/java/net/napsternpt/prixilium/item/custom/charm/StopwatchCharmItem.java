@@ -1,5 +1,6 @@
 package net.napsternpt.prixilium.item.custom.charm;
 
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
@@ -7,14 +8,19 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.item.custom.CharmItem;
 import net.napsternpt.prixilium.network.ModPackets;
 import net.napsternpt.prixilium.util.TimeStopState;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class StopwatchCharmItem extends CharmItem {
     private final int duration;
@@ -42,6 +48,11 @@ public class StopwatchCharmItem extends CharmItem {
             stack.set(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true);
 
             ModPackets.sendTimeStopStart(serverWorld, durationTicks, player.getUuid());
+
+            if (player instanceof ServerPlayerEntity serverPlayer) {
+                AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "time_stopper"));
+                serverPlayer.getAdvancementTracker().grantCriterion(advancement, "time_stopper");
+            }
 
             if (!player.isInCreativeMode()) {
                 EquipmentSlot slot = hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;

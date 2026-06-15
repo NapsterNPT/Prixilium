@@ -1,26 +1,32 @@
 package net.napsternpt.prixilium.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.block.entity.custom.VirusReactorBlockEntity;
 import net.napsternpt.prixilium.item.ModItems;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class VirusReactorBlock extends BlockWithEntity implements BlockEntityProvider {
     private static final VoxelShape BOTTOM = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 2.0, 15.0);
@@ -64,6 +70,10 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                 if (virusReactorEntity.getStack(0).isOf(ModItems.VIRUS_ALIVE)) {
                     virusReactorEntity.startSpread();
                     virusReactorEntity.clear();
+                    if (player instanceof ServerPlayerEntity serverPlayer) {
+                        AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "square_zero"));
+                        serverPlayer.getAdvancementTracker().grantCriterion(advancement, "square_zero");
+                    }
                 }
                 world.updateListeners(pos, state, state, 0);
                 return ActionResult.SUCCESS;

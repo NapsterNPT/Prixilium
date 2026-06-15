@@ -203,6 +203,12 @@
 
   "advancements.prixilium.root.title": "Prixilium",
   "advancements.prixilium.root.description": "Let the infestation begin",
+
+  "advancements.prixilium.enter_prixiverse.title": "Is This a Nightmare?",
+  "advancements.prixilium.enter_prixiverse.description": "Sleep while ill",
+  "advancements.prixilium.the_end.title": "This is the End",
+  "advancements.prixilium.the_end.description": "Find the exit",
+
   "advancements.prixilium.virus_dead.title": "It's Dead...",
   "advancements.prixilium.virus_dead.description": "Let the virus die",
   "advancements.prixilium.charm_i.title": "How Many Are There?",
@@ -211,15 +217,32 @@
   "advancements.prixilium.charm_iii.description": "Get a Tier III Charm",
   "advancements.prixilium.prixilium_hook.title": "Let's Go Flying!",
   "advancements.prixilium.prixilium_hook.description": "Use the prixilium hook",
+  "advancements.prixilium.time_stopper.title": "Time Stopper",
+  "advancements.prixilium.time_stopper.description": "Freeze the world around you",
+  "advancements.prixilium.indestructible.title": "Indestructible",
+  "advancements.prixilium.indestructible.description": "Become invulnerable",
+  "advancements.prixilium.warp_traveler.title": "Warp Traveler",
+  "advancements.prixilium.warp_traveler.description": "Bend space to your will",
+  "advancements.prixilium.smith.title": "Smith of the Void",
+  "advancements.prixilium.smith.description": "Get a Prixilium Smithing Template",
+
+  "advancements.prixilium.square_zero.title": "Square Zero",
+  "advancements.prixilium.square_zero.description": "Trigger the virus reactor",
+  "advancements.prixilium.its_spreading.title": "It's Spreading",
+  "advancements.prixilium.its_spreading.description": "Watch the corruption grow",
+  "advancements.prixilium.step_on_prixilium.title": "Why It's Hard to Move?",
+  "advancements.prixilium.step_on_prixilium.description": "Step on Prixilium",
+  "advancements.prixilium.tree.title": "Is this a tree?",
+  "advancements.prixilium.tree.description": "Harvest a Prixilium Log",
+
   "advancements.prixilium.team_bliko.title": "Hello There",
   "advancements.prixilium.team_bliko.description": "Team a Bliko",
   "advancements.prixilium.kill_bliko.title": "It Duplicates!?",
   "advancements.prixilium.kill_bliko.description": "Kill a Bliko",
-  "advancements.prixilium.step_on_prixilium.title": "Why It's Hard to Move?",
-  "advancements.prixilium.step_on_prixilium.description": "Step on Prixilium",
+  "advancements.prixilium.block_entity.title": "Is This a Block Entity?",
+  "advancements.prixilium.block_entity.description": "Kill a Blokito",
 
-  "advancements.prixilium.enter_prixiverse.title": "Is This a Nightmare?",
-  "advancements.prixilium.enter_prixiverse.description": "Sleep while ill",
+
 
 
   "gamerule.allowIllness": "§7(§6Prixilium§7)§f Allow Illness",

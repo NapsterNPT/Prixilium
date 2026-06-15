@@ -1,5 +1,5 @@
 {
-  "parent": "prixilium:root",
+  "parent": "prixilium:enter_prixiverse",
   "criteria": {
     "kill_bliko": {
       "trigger": "minecraft:impossible"

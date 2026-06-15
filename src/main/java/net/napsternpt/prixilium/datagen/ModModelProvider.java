@@ -16,7 +16,7 @@ import net.minecraft.util.collection.Pool;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.custom.PrixiliumLampBlock;
-import net.napsternpt.prixilium.component.ModDataComponentTypes;
+import net.napsternpt.prixilium.util.ModDataComponentTypes;
 import net.napsternpt.prixilium.item.ModArmorMaterials;
 import net.napsternpt.prixilium.item.ModItems;
 

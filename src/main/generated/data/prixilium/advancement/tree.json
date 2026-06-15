@@ -1,0 +1,33 @@
+{
+  "parent": "prixilium:enter_prixiverse",
+  "criteria": {
+    "tree": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:prixilium_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.tree.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:prixilium_log"
+    },
+    "title": {
+      "translate": "advancements.prixilium.tree.title"
+    }
+  },
+  "requirements": [
+    [
+      "tree"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

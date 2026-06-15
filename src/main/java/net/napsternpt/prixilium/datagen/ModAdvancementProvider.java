@@ -43,7 +43,28 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("get_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_ALIVE))
                 .build(consumer, Prixilium.MOD_ID + ":root");
 
-        //region [Normal Advancement]
+        //region [Prixiverse]
+        AdvancementEntry dimension = Advancement.Builder.create()
+                .parent(root)
+                .display(ModBlocks.PRIXILIUM_GRASS,
+                        Text.translatable("advancements.prixilium.enter_prixiverse.title"),
+                        Text.translatable("advancements.prixilium.enter_prixiverse.description"), null, AdvancementFrame.TASK, true, true, true
+                )
+                .criterion("enter_prixiverse", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":enter_prixiverse");
+
+        Advancement.Builder.create()
+                .parent(dimension)
+                .display(ModItems.VIRUS_DEAD,
+                        Text.translatable("advancements.prixilium.the_end.title"),
+                        Text.translatable("advancements.prixilium.the_end.description"), null, AdvancementFrame.CHALLENGE, true, true, false
+                )
+                .criterion("the_end", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":the_end");
+
+        //endregion
+
+        //region [Items]
         Advancement.Builder.create()
                 .parent(root)
                 .display(ModItems.VIRUS_DEAD,
@@ -81,22 +102,61 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .build(consumer, Prixilium.MOD_ID + ":prixilium_hook");
 
         Advancement.Builder.create()
-                .parent(root)
-                .display(ModItems.BLIKO_SPAWN_EGG,
-                        Text.translatable("advancements.prixilium.team_bliko.title"),
-                        Text.translatable("advancements.prixilium.team_bliko.description"), null, AdvancementFrame.TASK, true, true, false
+                .parent(charm)
+                .display(ModItems.STOPWATCH_CHARM_III,
+                        Text.translatable("advancements.prixilium.time_stopper.title"),
+                        Text.translatable("advancements.prixilium.time_stopper.description"), null, AdvancementFrame.TASK, true, true, false
                 )
-                .criterion("team_bliko", impossibleCriterion)
-                .build(consumer, Prixilium.MOD_ID + ":team_bliko");
+                .criterion("time_stopper", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":time_stopper");
+
+        Advancement.Builder.create()
+                .parent(charm)
+                .display(ModItems.INVULNERABILITY_CHARM_III,
+                        Text.translatable("advancements.prixilium.indestructible.title"),
+                        Text.translatable("advancements.prixilium.indestructible.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("indestructible", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":indestructible");
+
+        Advancement.Builder.create()
+                .parent(charm)
+                .display(ModItems.STASIS_CHARM_III,
+                        Text.translatable("advancements.prixilium.warp_traveler.title"),
+                        Text.translatable("advancements.prixilium.warp_traveler.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("warp_traveler", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":warp_traveler");
 
         Advancement.Builder.create()
                 .parent(root)
-                .display(ModItems.BLIKO_SPAWN_EGG,
-                        Text.translatable("advancements.prixilium.kill_bliko.title"),
-                        Text.translatable("advancements.prixilium.kill_bliko.description"), null, AdvancementFrame.TASK, true, true, true
+                .display(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE,
+                        Text.translatable("advancements.prixilium.smith.title"),
+                        Text.translatable("advancements.prixilium.smith.description"), null, AdvancementFrame.TASK, true, true, false
                 )
-                .criterion("kill_bliko", impossibleCriterion)
-                .build(consumer, Prixilium.MOD_ID + ":kill_bliko");
+                .criterion("smith", InventoryChangedCriterion.Conditions.items(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE))
+                .build(consumer, Prixilium.MOD_ID + ":smith");
+
+        //endregion
+
+        //region [Blocks]
+        AdvancementEntry itsSpreading = Advancement.Builder.create()
+                .parent(root)
+                .display(ModBlocks.VIRUS_REACTOR,
+                        Text.translatable("advancements.prixilium.square_zero.title"),
+                        Text.translatable("advancements.prixilium.square_zero.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("square_zero", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":square_zero");
+
+        Advancement.Builder.create()
+                .parent(itsSpreading)
+                .display(ModBlocks.PRIXILIUM_GRASS,
+                        Text.translatable("advancements.prixilium.its_spreading.title"),
+                        Text.translatable("advancements.prixilium.its_spreading.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("its_spreading", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":its_spreading");
 
         Advancement.Builder.create()
                 .parent(root)
@@ -107,17 +167,44 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("step_on_prixilium", EffectsChangedCriterion.Conditions.create(EntityEffectPredicate.Builder.create().addEffect(ModEffects.PRIXILIUM_SLOWNESS)))
                 .build(consumer, Prixilium.MOD_ID + ":step_on_prixilium");
 
+        Advancement.Builder.create()
+                .parent(dimension)
+                .display(ModBlocks.PRIXILIUM_LOG,
+                        Text.translatable("advancements.prixilium.tree.title"),
+                        Text.translatable("advancements.prixilium.tree.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("tree", InventoryChangedCriterion.Conditions.items(ModBlocks.PRIXILIUM_LOG))
+                .build(consumer, Prixilium.MOD_ID + ":tree");
+
         //endregion
 
-        //region [Dimension Advancement]
-        AdvancementEntry dimension = Advancement.Builder.create()
-                .parent(root)
-                .display(ModBlocks.PRIXILIUM_GRASS,
-                        Text.translatable("advancements.prixilium.enter_prixiverse.title"),
-                        Text.translatable("advancements.prixilium.enter_prixiverse.description"), null, AdvancementFrame.TASK, true, true, true
+        //region [Entities]
+        Advancement.Builder.create()
+                .parent(dimension)
+                .display(ModItems.BLIKO_SPAWN_EGG,
+                        Text.translatable("advancements.prixilium.team_bliko.title"),
+                        Text.translatable("advancements.prixilium.team_bliko.description"), null, AdvancementFrame.TASK, true, true, false
                 )
-                .criterion("enter_prixiverse", impossibleCriterion)
-                .build(consumer, Prixilium.MOD_ID + ":enter_prixiverse");
+                .criterion("team_bliko", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":team_bliko");
+
+        Advancement.Builder.create()
+                .parent(dimension)
+                .display(ModItems.BLIKO_SPAWN_EGG,
+                        Text.translatable("advancements.prixilium.kill_bliko.title"),
+                        Text.translatable("advancements.prixilium.kill_bliko.description"), null, AdvancementFrame.TASK, true, true, true
+                )
+                .criterion("kill_bliko", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":kill_bliko");
+
+        Advancement.Builder.create()
+                .parent(dimension)
+                .display(ModItems.BLOKITO_SPAWN_EGG,
+                        Text.translatable("advancements.prixilium.block_entity.title"),
+                        Text.translatable("advancements.prixilium.block_entity.description"), null, AdvancementFrame.TASK, true, true, true
+                )
+                .criterion("block_entity", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":block_entity");
 
         //endregion
     }

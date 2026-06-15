@@ -1,11 +1,13 @@
 package net.napsternpt.prixilium.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCollisionHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -15,6 +17,7 @@ import net.napsternpt.prixilium.datagen.ModWorldGen;
 import net.napsternpt.prixilium.network.ModPackets;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
@@ -54,6 +57,8 @@ public class PrixiversePortalBlock extends Block {
                 }
                 VIEWING_PLAYERS.add(uuid);
                 ModPackets.sendShowCredits(player);
+                AdvancementEntry advancement = Objects.requireNonNull(player.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "the_end"));
+                player.getAdvancementTracker().grantCriterion(advancement, "the_end");
                 Prixilium.LOGGER.info(Text.translatable("thank_you").getString());
             }
         }
