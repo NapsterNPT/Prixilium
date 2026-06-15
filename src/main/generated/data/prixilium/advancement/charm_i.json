@@ -1,11 +1,11 @@
 {
   "parent": "prixilium:root",
   "criteria": {
-    "get_dead_virus": {
+    "get_charm_i": {
       "conditions": {
         "items": [
           {
-            "items": "prixilium:virus_dead"
+            "items": "prixilium:charm_i"
           }
         ]
       },
@@ -14,19 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancements.prixilium.virus_dead.description"
+      "translate": "advancements.prixilium.charm_i.description"
     },
     "icon": {
       "count": 1,
-      "id": "prixilium:virus_dead"
+      "id": "prixilium:charm_i"
     },
     "title": {
-      "translate": "advancements.prixilium.virus_dead.title"
+      "translate": "advancements.prixilium.charm_i.title"
     }
   },
   "requirements": [
     [
-      "get_dead_virus"
+      "get_charm_i"
     ]
   ],
   "sends_telemetry_event": true

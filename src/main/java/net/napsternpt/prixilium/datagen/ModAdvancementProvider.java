@@ -40,7 +40,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         Identifier.of(Prixilium.MOD_ID, "gui/advancements/backgrounds/prixilium"),
                         AdvancementFrame.TASK, false, false, false
                 )
-                .criterion("got_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_ALIVE))
+                .criterion("get_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_ALIVE))
                 .build(consumer, Prixilium.MOD_ID + ":root");
 
         //region [Normal Advancement]
@@ -50,8 +50,26 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         Text.translatable("advancements.prixilium.virus_dead.title"),
                         Text.translatable("advancements.prixilium.virus_dead.description"), null, AdvancementFrame.TASK, true, true, false
                 )
-                .criterion("got_dead_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_DEAD))
+                .criterion("get_dead_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_DEAD))
                 .build(consumer, Prixilium.MOD_ID + ":virus_dead");
+
+        AdvancementEntry charm = Advancement.Builder.create()
+                .parent(root)
+                .display(ModItems.CHARM_I,
+                        Text.translatable("advancements.prixilium.charm_i.title"),
+                        Text.translatable("advancements.prixilium.charm_i.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("get_charm_i", InventoryChangedCriterion.Conditions.items(ModItems.CHARM_I))
+                .build(consumer, Prixilium.MOD_ID + ":charm_i");
+
+        Advancement.Builder.create()
+                .parent(charm)
+                .display(ModItems.CHARM_III,
+                        Text.translatable("advancements.prixilium.charm_iii.title"),
+                        Text.translatable("advancements.prixilium.charm_iii.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("get_charm_iii", InventoryChangedCriterion.Conditions.items(ModItems.CHARM_III))
+                .build(consumer, Prixilium.MOD_ID + ":charm_iii");
 
         Advancement.Builder.create()
                 .parent(root)

@@ -1,6 +1,6 @@
 {
   "criteria": {
-    "got_virus": {
+    "get_virus": {
       "conditions": {
         "items": [
           {
@@ -28,7 +28,7 @@
   },
   "requirements": [
     [
-      "got_virus"
+      "get_virus"
     ]
   ],
   "sends_telemetry_event": true
