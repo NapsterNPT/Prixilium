@@ -7,6 +7,7 @@
 		"InGameHudMixin",
 		"MilkBucketMixin",
 		"PlayerSleepMixin",
+		"PostmortalCharmMixin",
 
 		"TimeStopEntityMixin",
 		"TimeStopLivingEntityMixin",

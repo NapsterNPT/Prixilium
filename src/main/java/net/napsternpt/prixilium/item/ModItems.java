@@ -108,7 +108,7 @@ public class ModItems {
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .maxDamage(4)
+            .maxDamage(1)
             .rarity(Rarity.UNCOMMON)
     ));
     public static final Item STOPWATCH_CHARM_I = registerItem(name = "stopwatch_charm_i", new StopwatchCharmItem(5, (CharmSettings) new CharmSettings()
@@ -171,7 +171,7 @@ public class ModItems {
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .maxDamage(16)
+            .maxDamage(4)
             .rarity(Rarity.RARE)
     ));
     public static final Item STOPWATCH_CHARM_II = registerItem(name = "stopwatch_charm_ii", new StopwatchCharmItem(15, (CharmSettings) new CharmSettings()
@@ -229,7 +229,7 @@ public class ModItems {
     public static final Item POSTMORTAL_CHARM_III = registerItem(name = "postmortal_charm_iii", new PostmortalCharmItem((CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .maxDamage(32)
+            .maxDamage(8)
             .rarity(Rarity.EPIC)
     ));
     public static final Item STOPWATCH_CHARM_III = registerItem(name = "stopwatch_charm_iii", new StopwatchCharmItem(30, (CharmSettings) new CharmSettings()

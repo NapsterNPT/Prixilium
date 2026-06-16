@@ -22,8 +22,8 @@ public abstract class CharmItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
-        if (upgradable && specializable) textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.specialize_and_update"));
-        else if (upgradable) textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.update"));
+        if (upgradable && specializable) textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.specialize_and_upgrade"));
+        else if (upgradable) textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.upgrade"));
         else if (specializable) textConsumer.accept(Text.translatable("tooltip.prixilium.general_charm.specialize"));
         super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }

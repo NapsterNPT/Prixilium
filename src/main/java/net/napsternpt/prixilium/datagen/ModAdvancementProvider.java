@@ -74,6 +74,24 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("get_dead_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_DEAD))
                 .build(consumer, Prixilium.MOD_ID + ":virus_dead");
 
+        Advancement.Builder.create()
+                .parent(root)
+                .display(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE,
+                        Text.translatable("advancements.prixilium.smith.title"),
+                        Text.translatable("advancements.prixilium.smith.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("smith", InventoryChangedCriterion.Conditions.items(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE))
+                .build(consumer, Prixilium.MOD_ID + ":smith");
+
+        Advancement.Builder.create()
+                .parent(root)
+                .display(ModItems.PRIXILIUM_HOOK,
+                        Text.translatable("advancements.prixilium.prixilium_hook.title"),
+                        Text.translatable("advancements.prixilium.prixilium_hook.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("use_prixilium_hook", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":prixilium_hook");
+
         AdvancementEntry charm = Advancement.Builder.create()
                 .parent(root)
                 .display(ModItems.CHARM_I,
@@ -91,15 +109,6 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .criterion("get_charm_iii", InventoryChangedCriterion.Conditions.items(ModItems.CHARM_III))
                 .build(consumer, Prixilium.MOD_ID + ":charm_iii");
-
-        Advancement.Builder.create()
-                .parent(root)
-                .display(ModItems.PRIXILIUM_HOOK,
-                        Text.translatable("advancements.prixilium.prixilium_hook.title"),
-                        Text.translatable("advancements.prixilium.prixilium_hook.description"), null, AdvancementFrame.TASK, true, true, false
-                )
-                .criterion("use_prixilium_hook", impossibleCriterion)
-                .build(consumer, Prixilium.MOD_ID + ":prixilium_hook");
 
         Advancement.Builder.create()
                 .parent(charm)
@@ -129,13 +138,22 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .build(consumer, Prixilium.MOD_ID + ":warp_traveler");
 
         Advancement.Builder.create()
-                .parent(root)
-                .display(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE,
-                        Text.translatable("advancements.prixilium.smith.title"),
-                        Text.translatable("advancements.prixilium.smith.description"), null, AdvancementFrame.TASK, true, true, false
+                .parent(charm)
+                .display(ModItems.POSTMORTAL_CHARM_I,
+                        Text.translatable("advancements.prixilium.postmortal.title"),
+                        Text.translatable("advancements.prixilium.postmortal.description"), null, AdvancementFrame.TASK, true, true, false
                 )
-                .criterion("smith", InventoryChangedCriterion.Conditions.items(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE))
-                .build(consumer, Prixilium.MOD_ID + ":smith");
+                .criterion("postmortal", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":postmortal");
+
+        Advancement.Builder.create()
+                .parent(charm)
+                .display(ModItems.POSTMORTAL_CHARM_III,
+                        Text.translatable("advancements.prixilium.postmortal_final.title"),
+                        Text.translatable("advancements.prixilium.postmortal_final.description"), null, AdvancementFrame.TASK, true, true, true
+                )
+                .criterion("postmortal_final", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":postmortal_final");
 
         //endregion
 
