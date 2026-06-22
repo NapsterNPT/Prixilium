@@ -8,6 +8,7 @@
     "prixilium:postmortal_charm_i",
     "prixilium:stopwatch_charm_i",
     "prixilium:invulnerability_charm_i",
+    "prixilium:sonic_boom_charm_i",
     "prixilium:charm_ii",
     "prixilium:transfer_charm_ii",
     "prixilium:container_charm_ii",
@@ -16,6 +17,7 @@
     "prixilium:postmortal_charm_ii",
     "prixilium:stopwatch_charm_ii",
     "prixilium:invulnerability_charm_ii",
+    "prixilium:sonic_boom_charm_ii",
     "prixilium:charm_iii",
     "prixilium:transfer_charm_iii",
     "prixilium:container_charm_iii",
@@ -23,6 +25,7 @@
     "prixilium:regeneration_charm_iii",
     "prixilium:postmortal_charm_iii",
     "prixilium:stopwatch_charm_iii",
-    "prixilium:invulnerability_charm_iii"
+    "prixilium:invulnerability_charm_iii",
+    "prixilium:sonic_boom_charm_iii"
   ]
 }

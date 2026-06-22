@@ -4,13 +4,13 @@
   "key": {
     "!": "minecraft:cooked_beef",
     "#": "prixilium:charm_iii",
-    "@": "minecraft:ghast_tear",
-    "€": "minecraft:pufferfish"
+    "?": "minecraft:pufferfish",
+    "@": "minecraft:ghast_tear"
   },
   "pattern": [
     " @ ",
     "!#!",
-    " € "
+    " ? "
   ],
   "result": {
     "count": 1,

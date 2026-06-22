@@ -4,13 +4,13 @@
   "key": {
     "!": "minecraft:ender_pearl",
     "#": "prixilium:charm_ii",
-    "@": "minecraft:clock",
-    "€": "minecraft:compass"
+    "?": "minecraft:compass",
+    "@": "minecraft:clock"
   },
   "pattern": [
     " @ ",
     "!#!",
-    " € "
+    " ? "
   ],
   "result": {
     "count": 1,

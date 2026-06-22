@@ -30,7 +30,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         return new RecipeGenerator(registryLookup, exporter) {
             @Override
             public void generate() {
-                // Items
+                //region [Items]
                 offerSmithingTemplateCopyingRecipe(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, ModBlocks.PRIXILIUM);
                 createShaped(RecipeCategory.MISC, ModItems.THERMOMETER)
                         .input('!', Items.REDSTONE)
@@ -81,21 +81,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.TOOLS, ModItems.STASIS_CHARM_I)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
-                        .input('€', Items.COMPASS)
+                        .input('?', Items.COMPASS)
                         .input('#', ModItems.CHARM_I)
                         .pattern(" @ ")
                         .pattern("!#!")
-                        .pattern(" € ")
+                        .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_I)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
-                        .input('€', Items.PUFFERFISH)
+                        .input('?', Items.PUFFERFISH)
                         .input('#', ModItems.CHARM_I)
                         .pattern(" @ ")
                         .pattern("!#!")
-                        .pattern(" € ")
+                        .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter);
                 createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_I)
@@ -119,6 +119,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_I + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_I)
+                        .input('!', Blocks.SCULK_SHRIEKER)
+                        .input('?', Blocks.SCULK_CATALYST)
+                        .input('@', Items.ECHO_SHARD)
+                        .input('#', ModItems.CHARM_I)
+                        .pattern(" @ ")
+                        .pattern("@#@")
+                        .pattern("?!?")
+                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_I + "_default");
                 //endregion
 
                 //region [Tier II]
@@ -141,21 +151,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.TOOLS, ModItems.STASIS_CHARM_II)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
-                        .input('€', Items.COMPASS)
+                        .input('?', Items.COMPASS)
                         .input('#', ModItems.CHARM_II)
                         .pattern(" @ ")
                         .pattern("!#!")
-                        .pattern(" € ")
+                        .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.STASIS_CHARM_II + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_II)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
-                        .input('€', Items.PUFFERFISH)
+                        .input('?', Items.PUFFERFISH)
                         .input('#', ModItems.CHARM_II)
                         .pattern(" @ ")
                         .pattern("!#!")
-                        .pattern(" € ")
+                        .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.REGENERATION_CHARM_II + "_default");
                 createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_II)
@@ -173,12 +183,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .offerTo(exporter, ModItems.STOPWATCH_CHARM_II + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.INVULNERABILITY_CHARM_II)
                         .input('!', Items.TURTLE_HELMET)
-                        .input('#', ModItems.CHARM_I)
+                        .input('#', ModItems.CHARM_II)
                         .pattern(" ! ")
                         .pattern("!#!")
                         .pattern(" ! ")
-                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_II + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_II)
+                        .input('!', Blocks.SCULK_SHRIEKER)
+                        .input('?', Blocks.SCULK_CATALYST)
+                        .input('@', Items.ECHO_SHARD)
+                        .input('#', ModItems.CHARM_II)
+                        .pattern(" @ ")
+                        .pattern("@#@")
+                        .pattern("?!?")
+                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
+                        .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_II + "_default");
                 //endregion
 
                 //region [Tier III]
@@ -201,21 +221,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.TOOLS, ModItems.STASIS_CHARM_III)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
-                        .input('€', Items.COMPASS)
+                        .input('?', Items.COMPASS)
                         .input('#', ModItems.CHARM_III)
                         .pattern(" @ ")
                         .pattern("!#!")
-                        .pattern(" € ")
+                        .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.STASIS_CHARM_III + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_III)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
-                        .input('€', Items.PUFFERFISH)
+                        .input('?', Items.PUFFERFISH)
                         .input('#', ModItems.CHARM_III)
                         .pattern(" @ ")
                         .pattern("!#!")
-                        .pattern(" € ")
+                        .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.REGENERATION_CHARM_III + "_default");
                 createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_III)
@@ -239,6 +259,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_III + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_III)
+                        .input('!', Blocks.SCULK_SHRIEKER)
+                        .input('?', Blocks.SCULK_CATALYST)
+                        .input('@', Items.ECHO_SHARD)
+                        .input('#', ModItems.CHARM_III)
+                        .pattern(" @ ")
+                        .pattern("@#@")
+                        .pattern("?!?")
+                        .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
+                        .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_III + "_default");
                 //endregion
 
                 charmUpgrade(exporter, ModItems.CHARM_I);
@@ -249,6 +279,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 charmUpgrade(exporter, ModItems.POSTMORTAL_CHARM_I);
                 charmUpgrade(exporter, ModItems.STOPWATCH_CHARM_I);
                 charmUpgrade(exporter, ModItems.INVULNERABILITY_CHARM_I);
+                charmUpgrade(exporter, ModItems.SONIC_BOOM_CHARM_I);
 
                 //endregion
 
@@ -333,7 +364,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.CHAINMAIL_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
-                //region [copper armor]
+                //region [copper]
                 /* 1.21.9+
                 prixiliumUpgrade(exporter, ModItems.COPPER_HELMET, RecipeCategory.COMBAT);
                 prixiliumUpgrade(exporter, ModItems.COPPER_CHESTPLATE, RecipeCategory.COMBAT);
@@ -381,6 +412,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.GOLDEN_HORSE_ARMOR, RecipeCategory.COMBAT);
                 prixiliumUpgrade(exporter, Items.DIAMOND_HORSE_ARMOR, RecipeCategory.COMBAT);
                 // 1.21.11+ prixiliumUpgrade(exporter, Items.NETHERITE_LEATHER_ARMOR, RecipeCategory.COMBAT);
+                //endregion
+
                 //endregion
 
                 //endregion

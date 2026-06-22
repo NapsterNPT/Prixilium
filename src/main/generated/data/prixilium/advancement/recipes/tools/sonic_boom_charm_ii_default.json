@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:invulnerability_charm_ii_default"
+        "recipe": "prixilium:sonic_boom_charm_ii_default"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "prixilium:invulnerability_charm_ii_default"
+      "prixilium:sonic_boom_charm_ii_default"
     ]
   }
 }

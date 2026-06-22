@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": "prixilium:sonic_boom_charm_i",
+    "#": "minecraft:amethyst_shard"
+  },
+  "pattern": [
+    "###",
+    "#!#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:sonic_boom_charm_ii"
+  }
+}

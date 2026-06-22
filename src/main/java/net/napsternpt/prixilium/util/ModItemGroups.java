@@ -38,6 +38,7 @@ public class ModItemGroups {
                         entries.add(ModItems.POSTMORTAL_CHARM_I);
                         entries.add(ModItems.STOPWATCH_CHARM_I);
                         entries.add(ModItems.INVULNERABILITY_CHARM_I);
+                        entries.add(ModItems.SONIC_BOOM_CHARM_I);
                         entries.add(ModItems.CHARM_II);
                         entries.add(ModItems.TRANSFER_CHARM_II);
                         entries.add(ModItems.CONTAINER_CHARM_II);
@@ -46,6 +47,7 @@ public class ModItemGroups {
                         entries.add(ModItems.POSTMORTAL_CHARM_II);
                         entries.add(ModItems.STOPWATCH_CHARM_II);
                         entries.add(ModItems.INVULNERABILITY_CHARM_II);
+                        entries.add(ModItems.SONIC_BOOM_CHARM_II);
                         entries.add(ModItems.CHARM_III);
                         entries.add(ModItems.TRANSFER_CHARM_III);
                         entries.add(ModItems.CONTAINER_CHARM_III);
@@ -54,6 +56,7 @@ public class ModItemGroups {
                         entries.add(ModItems.POSTMORTAL_CHARM_III);
                         entries.add(ModItems.STOPWATCH_CHARM_III);
                         entries.add(ModItems.INVULNERABILITY_CHARM_III);
+                        entries.add(ModItems.SONIC_BOOM_CHARM_III);
 
                         //endregion
 

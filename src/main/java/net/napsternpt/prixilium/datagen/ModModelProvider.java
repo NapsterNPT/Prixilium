@@ -179,27 +179,30 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHARM_I, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHARM_II, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHARM_III, Models.GENERATED);
-        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.STASIS_CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_I);
-        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.STASIS_CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_II);
-        registerLayeredCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.STASIS_CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_III);
-        registerLayeredCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.STASIS_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.SONIC_BOOM_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.STASIS_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.SONIC_BOOM_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.TRANSFER_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.STASIS_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.SONIC_BOOM_CHARM_III);
 
         //region [Tools]
 
@@ -315,7 +318,7 @@ public class ModModelProvider extends FabricModelProvider {
         //endregion
     }
 
-    private void registerLayeredCharm(ItemModelGenerator gen, Item item) {
+    private void registerCharm(ItemModelGenerator gen, Item item) {
         String path = Registries.ITEM.getId(item).getPath();
         Item baseCharm;
         if (path.contains("_iii")) baseCharm = ModItems.CHARM_III;

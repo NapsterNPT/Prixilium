@@ -125,6 +125,13 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
+    public static final Item SONIC_BOOM_CHARM_I = registerItem(name = "sonic_boom_charm_i", new SonicBoomCharmItem(5.0F, (CharmSettings) new CharmSettings()
+            .upgradable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(4)
+            .rarity(Rarity.UNCOMMON)
+    ));
     //endregion
 
     //region [Tier II]
@@ -188,6 +195,13 @@ public class ModItems {
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
+    public static final Item SONIC_BOOM_CHARM_II = registerItem(name = "sonic_boom_charm_ii", new SonicBoomCharmItem(10.0F, (CharmSettings) new CharmSettings()
+            .upgradable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(16)
+            .rarity(Rarity.RARE)
+    ));
     //endregion
 
     //region [Tier III]
@@ -239,6 +253,12 @@ public class ModItems {
             .rarity(Rarity.EPIC)
     ));
     public static final Item INVULNERABILITY_CHARM_III = registerItem(name = "invulnerability_charm_iii", new InvulnerabilityCharmItem(30, (CharmSettings) new CharmSettings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.EPIC)
+    ));
+    public static final Item SONIC_BOOM_CHARM_III = registerItem(name = "sonic_boom_charm_iii", new SonicBoomCharmItem(15.0F, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)

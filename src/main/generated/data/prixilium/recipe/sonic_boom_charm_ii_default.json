@@ -2,18 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "!": "minecraft:cooked_beef",
+    "!": "minecraft:sculk_shrieker",
     "#": "prixilium:charm_ii",
-    "?": "minecraft:pufferfish",
-    "@": "minecraft:ghast_tear"
+    "?": "minecraft:sculk_catalyst",
+    "@": "minecraft:echo_shard"
   },
   "pattern": [
     " @ ",
-    "!#!",
-    " ? "
+    "@#@",
+    "?!?"
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:regeneration_charm_ii"
+    "id": "prixilium:sonic_boom_charm_ii"
   }
 }
