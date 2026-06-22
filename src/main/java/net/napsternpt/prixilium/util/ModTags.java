@@ -2,6 +2,7 @@ package net.napsternpt.prixilium.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.damage.DamageType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -37,6 +38,14 @@ public class ModTags {
 
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(Prixilium.MOD_ID, name));
+        }
+    }
+
+    public static class DamageTypes {
+        public static final TagKey<DamageType> SONIC_BOOM = createTag("sonic_boom");
+
+        private static TagKey<DamageType> createTag(String name) {
+            return TagKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Prixilium.MOD_ID, name));
         }
     }
 }

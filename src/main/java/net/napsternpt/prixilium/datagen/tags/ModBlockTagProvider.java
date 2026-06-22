@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.datagen;
+package net.napsternpt.prixilium.datagen.tags;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

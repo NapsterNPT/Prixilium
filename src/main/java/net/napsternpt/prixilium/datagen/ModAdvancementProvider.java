@@ -10,7 +10,13 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.advancement.criterion.EffectsChangedCriterion;
 import net.minecraft.advancement.criterion.ImpossibleCriterion;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
+import net.minecraft.advancement.criterion.OnKilledCriterion;
+import net.minecraft.entity.EntityType;
+import net.minecraft.predicate.TagPredicate;
+import net.minecraft.predicate.entity.DamageSourcePredicate;
 import net.minecraft.predicate.entity.EntityEffectPredicate;
+import net.minecraft.predicate.entity.EntityPredicate;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -18,6 +24,7 @@ import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.util.ModTags;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -154,6 +161,17 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .criterion("postmortal_final", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":postmortal_final");
+
+        Advancement.Builder.create()
+                .parent(charm)
+                .display(ModItems.SONIC_BOOM_CHARM_III,
+                        Text.translatable("advancements.prixilium.sonic_boom.title"),
+                        Text.translatable("advancements.prixilium.sonic_boom.description"), null, AdvancementFrame.CHALLENGE, true, true, true
+                )
+                .criterion("kill_warden", OnKilledCriterion.Conditions.createPlayerKilledEntity(
+                        EntityPredicate.Builder.create().type(registryLookup.getOrThrow(RegistryKeys.ENTITY_TYPE), EntityType.WARDEN),
+                        DamageSourcePredicate.Builder.create().tag(TagPredicate.expected(ModTags.DamageTypes.SONIC_BOOM))))
+                .build(consumer, Prixilium.MOD_ID + ":sonic_boom");
 
         //endregion
 

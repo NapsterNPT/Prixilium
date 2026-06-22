@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 import net.napsternpt.prixilium.datagen.*;
+import net.napsternpt.prixilium.datagen.tags.*;
 import net.napsternpt.prixilium.world.ModConfiguredFeatures;
 import net.napsternpt.prixilium.world.ModPlacedFeatures;
 
@@ -25,6 +26,7 @@ public class PrixiliumDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModEntityTagProvider::new);
+		pack.addProvider(ModDamageTypeTagProvider::new);
 
 		//Dimension
 		pack.addProvider(ModBiomeProvider::new);
