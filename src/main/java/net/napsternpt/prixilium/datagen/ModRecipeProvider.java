@@ -62,14 +62,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
                         .offerTo(exporter);
-                createShaped(RecipeCategory.TOOLS, ModItems.TRANSFER_CHARM_I)
-                        .input('!', Items.ENDER_PEARL)
-                        .input('#', ModItems.CHARM_I)
-                        .pattern(" ! ")
-                        .pattern("!#!")
-                        .pattern(" ! ")
-                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.CONTAINER_CHARM_I)
                         .input('!', Blocks.CHEST)
                         .input('#', ModItems.CHARM_I)
@@ -129,17 +121,29 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("?!?")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_I + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_I)
+                        .input('?', Items.WITHER_SKELETON_SKULL)
+                        .input('!', Items.WITHER_ROSE)
+                        .input('ì', Blocks.SOUL_SAND)
+                        .input('#', ModItems.CHARM_III)
+                        .pattern(" ? ")
+                        .pattern("!#!")
+                        .pattern("ììì")
+                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .offerTo(exporter, ModItems.WITHER_CHARM_I + "_default_soul_sand");
+                createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_I)
+                        .input('?', Items.WITHER_SKELETON_SKULL)
+                        .input('!', Items.WITHER_ROSE)
+                        .input('ì', Blocks.SOUL_SOIL)
+                        .input('#', ModItems.CHARM_III)
+                        .pattern(" ? ")
+                        .pattern("!#!")
+                        .pattern("ììì")
+                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
+                        .offerTo(exporter, ModItems.WITHER_CHARM_I + "_default_soul_soil");
                 //endregion
 
                 //region [Tier II]
-                createShaped(RecipeCategory.TOOLS, ModItems.TRANSFER_CHARM_II)
-                        .input('!', Items.ENDER_PEARL)
-                        .input('#', ModItems.CHARM_II)
-                        .pattern(" ! ")
-                        .pattern("!#!")
-                        .pattern(" ! ")
-                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.TRANSFER_CHARM_II + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.CONTAINER_CHARM_II)
                         .input('!', Blocks.CHEST)
                         .input('#', ModItems.CHARM_II)
@@ -199,17 +203,29 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("?!?")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_II + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_II)
+                        .input('?', Items.WITHER_SKELETON_SKULL)
+                        .input('!', Items.WITHER_ROSE)
+                        .input('ì', Blocks.SOUL_SAND)
+                        .input('#', ModItems.CHARM_III)
+                        .pattern(" ? ")
+                        .pattern("!#!")
+                        .pattern("ììì")
+                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
+                        .offerTo(exporter, ModItems.WITHER_CHARM_II + "_default_soul_sand");
+                createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_II)
+                        .input('?', Items.WITHER_SKELETON_SKULL)
+                        .input('!', Items.WITHER_ROSE)
+                        .input('ì', Blocks.SOUL_SOIL)
+                        .input('#', ModItems.CHARM_III)
+                        .pattern(" ? ")
+                        .pattern("!#!")
+                        .pattern("ììì")
+                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
+                        .offerTo(exporter, ModItems.WITHER_CHARM_II + "_default_soul_soil");
                 //endregion
 
                 //region [Tier III]
-                createShaped(RecipeCategory.TOOLS, ModItems.TRANSFER_CHARM_III)
-                        .input('!', Items.ENDER_PEARL)
-                        .input('#', ModItems.CHARM_III)
-                        .pattern(" ! ")
-                        .pattern("!#!")
-                        .pattern(" ! ")
-                        .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.TRANSFER_CHARM_III + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.CONTAINER_CHARM_III)
                         .input('!', Blocks.CHEST)
                         .input('#', ModItems.CHARM_III)
@@ -269,10 +285,29 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("?!?")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_III + "_default");
+                createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_III)
+                        .input('?', Items.WITHER_SKELETON_SKULL)
+                        .input('!', Items.WITHER_ROSE)
+                        .input('ì', Blocks.SOUL_SAND)
+                        .input('#', ModItems.CHARM_III)
+                        .pattern(" ? ")
+                        .pattern("!#!")
+                        .pattern("ììì")
+                        .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
+                        .offerTo(exporter, ModItems.WITHER_CHARM_III + "_default_soul_sand");
+                createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_III)
+                        .input('?', Items.WITHER_SKELETON_SKULL)
+                        .input('!', Items.WITHER_ROSE)
+                        .input('ì', Blocks.SOUL_SOIL)
+                        .input('#', ModItems.CHARM_III)
+                        .pattern(" ? ")
+                        .pattern("!#!")
+                        .pattern("ììì")
+                        .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
+                        .offerTo(exporter, ModItems.WITHER_CHARM_III + "_default_soul_soil");
                 //endregion
 
                 charmUpgrade(exporter, ModItems.CHARM_I);
-                charmUpgrade(exporter, ModItems.TRANSFER_CHARM_I);
                 charmUpgrade(exporter, ModItems.CONTAINER_CHARM_I);
                 charmUpgrade(exporter, ModItems.STASIS_CHARM_I);
                 charmUpgrade(exporter, ModItems.REGENERATION_CHARM_I);
@@ -280,6 +315,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 charmUpgrade(exporter, ModItems.STOPWATCH_CHARM_I);
                 charmUpgrade(exporter, ModItems.INVULNERABILITY_CHARM_I);
                 charmUpgrade(exporter, ModItems.SONIC_BOOM_CHARM_I);
+                charmUpgrade(exporter, ModItems.WITHER_CHARM_I);
 
                 //endregion
 

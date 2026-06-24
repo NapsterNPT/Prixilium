@@ -13,20 +13,31 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:transfer_charm_iii_default"
+        "recipe": "prixilium:wither_charm_ii_upgraded_to_tear_iii"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wither_charm_i": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:wither_charm_i"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_charm_iii"
+      "has_charm_iii",
+      "has_wither_charm_i"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prixilium:transfer_charm_iii_default"
+      "prixilium:wither_charm_ii_upgraded_to_tear_iii"
     ]
   }
 }

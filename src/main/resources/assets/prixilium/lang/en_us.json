@@ -15,7 +15,6 @@
   "item.prixilium.airis_spawn_egg": "Airis Spawn Egg",
 
   "item.prixilium.charm_i": "Charm ★",
-  "item.prixilium.transfer_charm_i": "Transfer Charm ★",
   "item.prixilium.container_charm_i": "Container Charm ★",
   "item.prixilium.stasis_charm_i": "Stasis Charm ★",
   "item.prixilium.regeneration_charm_i": "Regeneration Charm ★",
@@ -23,8 +22,8 @@
   "item.prixilium.stopwatch_charm_i": "Stopwatch Charm ★",
   "item.prixilium.invulnerability_charm_i": "Invulnerability Charm ★",
   "item.prixilium.sonic_boom_charm_i": "Sonic Boom Charm ★",
+  "item.prixilium.wither_charm_i": "Wither Charm ★",
   "item.prixilium.charm_ii": "Charm ★★",
-  "item.prixilium.transfer_charm_ii": "Transfer Charm ★★",
   "item.prixilium.container_charm_ii": "Container Charm ★★",
   "item.prixilium.stasis_charm_ii": "Stasis Charm ★★",
   "item.prixilium.regeneration_charm_ii": "Regeneration Charm ★★",
@@ -32,8 +31,8 @@
   "item.prixilium.stopwatch_charm_ii": "Stopwatch Charm ★★",
   "item.prixilium.invulnerability_charm_ii": "Invulnerability Charm ★★",
   "item.prixilium.sonic_boom_charm_ii": "Sonic Boom Charm ★★",
+  "item.prixilium.wither_charm_ii": "Wither Charm ★★",
   "item.prixilium.charm_iii": "Charm ★★★",
-  "item.prixilium.transfer_charm_iii": "Transfer Charm ★★★",
   "item.prixilium.container_charm_iii": "Container Charm ★★★",
   "item.prixilium.stasis_charm_iii": "Stasis Charm ★★★",
   "item.prixilium.regeneration_charm_iii": "Regeneration Charm ★★★",
@@ -41,6 +40,7 @@
   "item.prixilium.stopwatch_charm_iii": "Stopwatch Charm ★★★",
   "item.prixilium.invulnerability_charm_iii": "Invulnerability Charm ★★★",
   "item.prixilium.sonic_boom_charm_iii": "Sonic Boom Charm ★★★",
+  "item.prixilium.wither_charm_iii": "Wither Charm ★★★",
 
   "item.minecraft.potion.effect.prixilium_slowness_potion": "Potion of Prixilium Slowness",
   "item.minecraft.splash_potion.effect.prixilium_slowness_potion": "Splash Potion of Prixilium Slowness",
@@ -250,8 +250,6 @@
   "advancements.prixilium.kill_bliko.description": "Kill a Bliko",
   "advancements.prixilium.block_entity.title": "Is This a Block Entity?",
   "advancements.prixilium.block_entity.description": "Kill a Blokito",
-
-
 
 
   "gamerule.allowIllness": "§7(§6Prixilium§7)§f Allow Illness",

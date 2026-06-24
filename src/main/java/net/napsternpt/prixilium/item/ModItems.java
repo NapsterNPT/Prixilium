@@ -77,13 +77,6 @@ public class ModItems {
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_I = registerItem(name = "transfer_charm_i", new TransferCharmItem((CharmSettings) new CharmSettings()
-            .upgradable()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .maxCount(1)
-            .maxDamage(4)
-            .rarity(Rarity.UNCOMMON)
-    ));
     public static final Item CONTAINER_CHARM_I = registerItem(name = "container_charm_i", new ContainerCharmItem(1, (CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
@@ -132,6 +125,13 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
+    public static final Item WITHER_CHARM_I = registerItem(name = "wither_charm_i", new WitherCharmItem(200, (CharmSettings) new CharmSettings()
+            .upgradable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(4)
+            .rarity(Rarity.UNCOMMON)
+    ));
     //endregion
 
     //region [Tier II]
@@ -147,13 +147,6 @@ public class ModItems {
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_II = registerItem(name = "transfer_charm_ii", new TransferCharmItem((CharmSettings) new CharmSettings()
-            .upgradable()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .maxCount(1)
-            .maxDamage(16)
-            .rarity(Rarity.RARE)
-    ));
     public static final Item CONTAINER_CHARM_II = registerItem(name = "container_charm_ii", new ContainerCharmItem(3, (CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
@@ -202,6 +195,13 @@ public class ModItems {
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
+    public static final Item WITHER_CHARM_II = registerItem(name = "wither_charm_ii", new WitherCharmItem(300, (CharmSettings) new CharmSettings()
+            .upgradable()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(16)
+            .rarity(Rarity.RARE)
+    ));
     //endregion
 
     //region [Tier III]
@@ -217,12 +217,6 @@ public class ModItems {
             super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
-    public static final Item TRANSFER_CHARM_III = registerItem(name = "transfer_charm_iii", new TransferCharmItem((CharmSettings) new CharmSettings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .maxCount(1)
-            .maxDamage(32)
-            .rarity(Rarity.EPIC)
-    ));
     public static final Item CONTAINER_CHARM_III = registerItem(name = "container_charm_iii", new ContainerCharmItem(6, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -259,6 +253,12 @@ public class ModItems {
             .rarity(Rarity.EPIC)
     ));
     public static final Item SONIC_BOOM_CHARM_III = registerItem(name = "sonic_boom_charm_iii", new SonicBoomCharmItem(15.0F, (CharmSettings) new CharmSettings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .maxDamage(32)
+            .rarity(Rarity.EPIC)
+    ));
+    public static final Item WITHER_CHARM_III = registerItem(name = "wither_charm_iii", new WitherCharmItem(400, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)

@@ -13,31 +13,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:transfer_charm_ii_upgraded_to_tear_iii"
+        "recipe": "prixilium:wither_charm_iii_default_soul_soil"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_transfer_charm_i": {
-      "conditions": {
-        "items": [
-          {
-            "items": "prixilium:transfer_charm_i"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_charm_iii",
-      "has_transfer_charm_i"
+      "has_charm_iii"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prixilium:transfer_charm_ii_upgraded_to_tear_iii"
+      "prixilium:wither_charm_iii_default_soul_soil"
     ]
   }
 }
