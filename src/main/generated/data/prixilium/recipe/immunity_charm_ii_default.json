@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "!": "minecraft:turtle_helmet",
-    "#": "prixilium:charm_i"
+    "#": "prixilium:charm_ii"
   },
   "pattern": [
     " ! ",
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:invulnerability_charm_i"
+    "id": "prixilium:immunity_charm_ii"
   }
 }

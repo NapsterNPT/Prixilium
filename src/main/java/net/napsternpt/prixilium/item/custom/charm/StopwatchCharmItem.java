@@ -3,13 +3,16 @@ package net.napsternpt.prixilium.item.custom.charm;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -21,6 +24,7 @@ import net.napsternpt.prixilium.util.TimeStopState;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class StopwatchCharmItem extends CharmItem {
     private final int duration;
@@ -75,5 +79,11 @@ public class StopwatchCharmItem extends CharmItem {
             }
         }
         super.inventoryTick(stack, world, entity, slot);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+        textConsumer.accept(Text.translatable("tooltip.prixilium.stopwatch_charm"));
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }

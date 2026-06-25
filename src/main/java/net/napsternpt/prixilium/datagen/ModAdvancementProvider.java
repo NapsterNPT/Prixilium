@@ -128,7 +128,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
 
         Advancement.Builder.create()
                 .parent(charm)
-                .display(ModItems.INVULNERABILITY_CHARM_III,
+                .display(ModItems.IMMUNITY_CHARM_III,
                         Text.translatable("advancements.prixilium.indestructible.title"),
                         Text.translatable("advancements.prixilium.indestructible.description"), null, AdvancementFrame.TASK, true, true, false
                 )

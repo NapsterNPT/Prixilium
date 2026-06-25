@@ -3,15 +3,18 @@ package net.napsternpt.prixilium.item.custom.charm;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -21,12 +24,13 @@ import net.napsternpt.prixilium.item.custom.CharmItem;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
-public class InvulnerabilityCharmItem extends CharmItem {
+public class ImmunityCharmItem extends CharmItem {
     private final int duration;
     private static final String ACTIVE_KEY = "Active";
 
-    public InvulnerabilityCharmItem(int duration, CharmSettings settings) {
+    public ImmunityCharmItem(int duration, CharmSettings settings) {
         super(settings);
         this.duration = duration;
     }
@@ -66,5 +70,11 @@ public class InvulnerabilityCharmItem extends CharmItem {
             }
         }
         super.inventoryTick(stack, world, entity, slot);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+        textConsumer.accept(Text.translatable("tooltip.prixilium.immunity_charm"));
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }

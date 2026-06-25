@@ -184,7 +184,7 @@ public class ModModelProvider extends FabricModelProvider {
         registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_I);
-        registerCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_I);
+        registerCharm(itemModelGenerator, ModItems.IMMUNITY_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.SONIC_BOOM_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.WITHER_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_II);
@@ -192,7 +192,7 @@ public class ModModelProvider extends FabricModelProvider {
         registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_II);
-        registerCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_II);
+        registerCharm(itemModelGenerator, ModItems.IMMUNITY_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.SONIC_BOOM_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.WITHER_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_III);
@@ -200,7 +200,7 @@ public class ModModelProvider extends FabricModelProvider {
         registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_III);
         registerCharm(itemModelGenerator, ModItems.POSTMORTAL_CHARM_III);
         registerCharm(itemModelGenerator, ModItems.STOPWATCH_CHARM_III);
-        registerCharm(itemModelGenerator, ModItems.INVULNERABILITY_CHARM_III);
+        registerCharm(itemModelGenerator, ModItems.IMMUNITY_CHARM_III);
         registerCharm(itemModelGenerator, ModItems.SONIC_BOOM_CHARM_III);
         registerCharm(itemModelGenerator, ModItems.WITHER_CHARM_III);
 

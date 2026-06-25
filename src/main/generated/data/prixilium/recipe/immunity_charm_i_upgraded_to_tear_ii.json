@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "!": "prixilium:invulnerability_charm_i",
+    "!": "prixilium:immunity_charm_i",
     "#": "minecraft:amethyst_shard"
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:invulnerability_charm_ii"
+    "id": "prixilium:immunity_charm_ii"
   }
 }

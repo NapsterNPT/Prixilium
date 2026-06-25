@@ -1,13 +1,16 @@
 package net.napsternpt.prixilium.item.custom.charm;
 
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Box;
@@ -16,6 +19,7 @@ import net.minecraft.world.World;
 import net.napsternpt.prixilium.item.custom.CharmItem;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class SonicBoomCharmItem extends CharmItem {
     private final float damage;
@@ -69,5 +73,11 @@ public class SonicBoomCharmItem extends CharmItem {
             }
         }
         return ActionResult.SUCCESS;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+        textConsumer.accept(Text.translatable("tooltip.prixilium.sonic_boom_charm"));
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }

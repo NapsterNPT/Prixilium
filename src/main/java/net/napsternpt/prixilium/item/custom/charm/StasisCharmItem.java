@@ -3,14 +3,17 @@ package net.napsternpt.prixilium.item.custom.charm;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.NbtComponent;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
@@ -22,6 +25,7 @@ import net.napsternpt.prixilium.item.custom.CharmItem;
 
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public class StasisCharmItem extends CharmItem {
 
@@ -77,5 +81,11 @@ public class StasisCharmItem extends CharmItem {
             }
         }
         return ActionResult.SUCCESS;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+        textConsumer.accept(Text.translatable("tooltip.prixilium.stasis_charm"));
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 }

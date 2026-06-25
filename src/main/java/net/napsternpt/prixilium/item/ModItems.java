@@ -111,7 +111,7 @@ public class ModItems {
             .maxDamage(4)
             .rarity(Rarity.UNCOMMON)
     ));
-    public static final Item INVULNERABILITY_CHARM_I = registerItem(name = "invulnerability_charm_i", new InvulnerabilityCharmItem(5, (CharmSettings) new CharmSettings()
+    public static final Item IMMUNITY_CHARM_I = registerItem(name = "immunity_charm_i", new ImmunityCharmItem(5, (CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -181,7 +181,7 @@ public class ModItems {
             .maxDamage(16)
             .rarity(Rarity.RARE)
     ));
-    public static final Item INVULNERABILITY_CHARM_II = registerItem(name = "invulnerability_charm_ii", new InvulnerabilityCharmItem(15, (CharmSettings) new CharmSettings()
+    public static final Item IMMUNITY_CHARM_II = registerItem(name = "immunity_charm_ii", new ImmunityCharmItem(15, (CharmSettings) new CharmSettings()
             .upgradable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -246,7 +246,7 @@ public class ModItems {
             .maxDamage(32)
             .rarity(Rarity.EPIC)
     ));
-    public static final Item INVULNERABILITY_CHARM_III = registerItem(name = "invulnerability_charm_iii", new InvulnerabilityCharmItem(30, (CharmSettings) new CharmSettings()
+    public static final Item IMMUNITY_CHARM_III = registerItem(name = "immunity_charm_iii", new ImmunityCharmItem(30, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)

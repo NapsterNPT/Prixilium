@@ -103,14 +103,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
                         .offerTo(exporter, ModItems.STOPWATCH_CHARM_I + "_default");
-                createShaped(RecipeCategory.TOOLS, ModItems.INVULNERABILITY_CHARM_I)
+                createShaped(RecipeCategory.TOOLS, ModItems.IMMUNITY_CHARM_I)
                         .input('!', Items.TURTLE_HELMET)
                         .input('#', ModItems.CHARM_I)
                         .pattern(" ! ")
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_I + "_default");
+                        .offerTo(exporter, ModItems.IMMUNITY_CHARM_I + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_I)
                         .input('!', Blocks.SCULK_SHRIEKER)
                         .input('?', Blocks.SCULK_CATALYST)
@@ -185,14 +185,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .offerTo(exporter, ModItems.STOPWATCH_CHARM_II + "_default");
-                createShaped(RecipeCategory.TOOLS, ModItems.INVULNERABILITY_CHARM_II)
+                createShaped(RecipeCategory.TOOLS, ModItems.IMMUNITY_CHARM_II)
                         .input('!', Items.TURTLE_HELMET)
                         .input('#', ModItems.CHARM_II)
                         .pattern(" ! ")
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_II + "_default");
+                        .offerTo(exporter, ModItems.IMMUNITY_CHARM_II + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_II)
                         .input('!', Blocks.SCULK_SHRIEKER)
                         .input('?', Blocks.SCULK_CATALYST)
@@ -267,14 +267,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .offerTo(exporter, ModItems.STOPWATCH_CHARM_III + "_default");
-                createShaped(RecipeCategory.TOOLS, ModItems.INVULNERABILITY_CHARM_III)
+                createShaped(RecipeCategory.TOOLS, ModItems.IMMUNITY_CHARM_III)
                         .input('!', Items.TURTLE_HELMET)
                         .input('#', ModItems.CHARM_I)
                         .pattern(" ! ")
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter, ModItems.INVULNERABILITY_CHARM_III + "_default");
+                        .offerTo(exporter, ModItems.IMMUNITY_CHARM_III + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_III)
                         .input('!', Blocks.SCULK_SHRIEKER)
                         .input('?', Blocks.SCULK_CATALYST)
@@ -313,7 +313,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 charmUpgrade(exporter, ModItems.REGENERATION_CHARM_I);
                 charmUpgrade(exporter, ModItems.POSTMORTAL_CHARM_I);
                 charmUpgrade(exporter, ModItems.STOPWATCH_CHARM_I);
-                charmUpgrade(exporter, ModItems.INVULNERABILITY_CHARM_I);
+                charmUpgrade(exporter, ModItems.IMMUNITY_CHARM_I);
                 charmUpgrade(exporter, ModItems.SONIC_BOOM_CHARM_I);
                 charmUpgrade(exporter, ModItems.WITHER_CHARM_I);
 
