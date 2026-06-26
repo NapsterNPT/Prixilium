@@ -1,10 +1,10 @@
 package net.napsternpt.prixilium.screen.hud;
 
-import net.fabricmc.fabric.api.client.rendering.v1.HudLayerRegistrationCallback;
-import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
@@ -37,10 +37,9 @@ public class ThermometerHud {
     public static boolean isActive() {return active;}
 
     public static void register() {
-        HudLayerRegistrationCallback.EVENT.register(layeredDrawer -> layeredDrawer.attachLayerAfter(IdentifiedLayer.MISC_OVERLAYS,
-                        Identifier.of(Prixilium.MOD_ID, "thermometer_hud"),
-                        ThermometerHud::render
-        ));
+        HudElementRegistry.attachElementAfter(VanillaHudElements.MISC_OVERLAYS,
+                Identifier.of(Prixilium.MOD_ID, "thermometer_hud"),
+                ThermometerHud::render);
     }
 
     private static void render(DrawContext drawContext, RenderTickCounter tickCounter) {
@@ -64,8 +63,8 @@ public class ThermometerHud {
         int barHeight = 64;
 
         int filledWidth = (int) (barWidth * (value / 100.0f));
-        drawContext.drawTexture(RenderLayer::getGuiTextured, BAR_BACKGROUND, x, y, 0, 0, barWidth, barHeight, barWidth, barHeight);
-        drawContext.drawTexture(RenderLayer::getGuiTextured, BAR, x, y, 0, 0, filledWidth, barHeight, barWidth, barHeight);
+        drawContext.drawTexture(RenderPipelines.GUI_TEXTURED, BAR_BACKGROUND, x, y, 0, 0, barWidth, barHeight, barWidth, barHeight);
+        drawContext.drawTexture(RenderPipelines.GUI_TEXTURED, BAR, x, y, 0, 0, filledWidth, barHeight, barWidth, barHeight);
 
         if (value != 100) {
             assert client.world != null;

@@ -27,5 +27,7 @@ public class ModSounds {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
 
-    public static void registerSounds() {Prixilium.LOGGER.info("Registering Prixilium Sounds.");}
+    public static void registerSounds() {
+        Prixilium.LOGGER.info("Registering Prixilium Sounds.");
+    }
 }

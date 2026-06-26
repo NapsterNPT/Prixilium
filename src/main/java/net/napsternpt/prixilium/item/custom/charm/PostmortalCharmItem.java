@@ -78,7 +78,7 @@ public class PostmortalCharmItem extends CharmItem {
             charmStack.damage(1, player, EquipmentSlot.MAINHAND);
         }
 
-        ServerWorld serverWorld = player.getServerWorld();
+        ServerWorld serverWorld = player.getWorld();
         serverWorld.spawnParticles(ParticleTypes.TOTEM_OF_UNDYING,
                 player.getX(), player.getY() + 1.0, player.getZ(),
                 64, player.getWidth() / 2.0, player.getHeight() / 2.0, player.getWidth() / 2.0, 0.1);

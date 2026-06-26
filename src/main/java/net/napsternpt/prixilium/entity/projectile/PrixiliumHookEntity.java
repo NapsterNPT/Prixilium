@@ -10,6 +10,8 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
@@ -188,17 +190,17 @@ public class PrixiliumHookEntity extends ProjectileEntity {
     }
 
     @Override
-    public void writeCustomDataToNbt(NbtCompound nbt) {
-        nbt.putBoolean("in_block", this.inBlock());
-        nbt.putFloat("length", this.hookLength());
+    public void writeData(WriteView view) {
+        super.writeData(view);
+        view.putBoolean("in_block", this.inBlock());
+        view.putFloat("length", this.hookLength());
     }
 
     @Override
-    public void readCustomDataFromNbt(NbtCompound nbt) {
-        if (nbt.getBoolean("in_block").isPresent() && nbt.getFloat("length").isPresent()) {
-            this.setInBlock(nbt.getBoolean("in_block").get());
-            this.setHookLength(nbt.getFloat("length").get());
-        }
+    public void readData(ReadView view) {
+        super.readData(view);
+        this.setInBlock(view.getBoolean("in_block", false));
+        this.setHookLength(view.getFloat("length", 0));
     }
 
     public boolean inBlock() {

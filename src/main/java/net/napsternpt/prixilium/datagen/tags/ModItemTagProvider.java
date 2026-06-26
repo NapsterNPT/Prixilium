@@ -18,7 +18,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ItemTags.SWORDS)
+        valueLookupBuilder(ItemTags.SWORDS)
                 .add(ModItems.PRIXILED_WOODEN_SWORD)
                 .add(ModItems.PRIXILED_STONE_SWORD)
                 //1.12.9+ .add(ModItems.PRIXILED_COPPER_SWORD)
@@ -27,7 +27,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_DIAMOND_SWORD)
                 .add(ModItems.PRIXILED_NETHERITE_SWORD);
 
-        getOrCreateTagBuilder(ItemTags.PICKAXES)
+        valueLookupBuilder(ItemTags.PICKAXES)
                 .add(ModItems.PRIXILED_WOODEN_PICKAXE)
                 .add(ModItems.PRIXILED_STONE_PICKAXE)
                 //1.12.9+ .add(ModItems.PRIXILED_COPPER_PICKAXE)
@@ -36,7 +36,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_DIAMOND_PICKAXE)
                 .add(ModItems.PRIXILED_NETHERITE_PICKAXE);
 
-        getOrCreateTagBuilder(ItemTags.AXES)
+        valueLookupBuilder(ItemTags.AXES)
                 .add(ModItems.PRIXILED_WOODEN_AXE)
                 .add(ModItems.PRIXILED_STONE_AXE)
                 //1.12.9+ .add(ModItems.PRIXILED_COPPER_AXE)
@@ -45,7 +45,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_DIAMOND_AXE)
                 .add(ModItems.PRIXILED_NETHERITE_AXE);
 
-        getOrCreateTagBuilder(ItemTags.SHOVELS)
+        valueLookupBuilder(ItemTags.SHOVELS)
                 .add(ModItems.PRIXILED_WOODEN_SHOVEL)
                 .add(ModItems.PRIXILED_STONE_SHOVEL)
                 //1.12.9+ .add(ModItems.PRIXILED_COPPER_SHOVEL)
@@ -54,7 +54,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_DIAMOND_SHOVEL)
                 .add(ModItems.PRIXILED_NETHERITE_SHOVEL);
 
-        getOrCreateTagBuilder(ItemTags.HOES)
+        valueLookupBuilder(ItemTags.HOES)
                 .add(ModItems.PRIXILED_WOODEN_HOE)
                 .add(ModItems.PRIXILED_STONE_HOE)
                 //1.12.9+ .add(ModItems.PRIXILED_COPPER_HOE)
@@ -63,7 +63,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_DIAMOND_HOE)
                 .add(ModItems.PRIXILED_NETHERITE_HOE);
 
-        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.PRIXILED_LEATHER_HELMET)
                 .add(ModItems.PRIXILED_LEATHER_CHESTPLATE)
                 .add(ModItems.PRIXILED_LEATHER_LEGGINGS)
@@ -96,29 +96,29 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_NETHERITE_BOOTS)
                 .add(ModItems.PRIXILED_TURTLE_HELMET);
 
-        getOrCreateTagBuilder(ItemTags.DYEABLE)
+        valueLookupBuilder(ItemTags.DYEABLE)
                 .add(ModItems.PRIXILED_LEATHER_HELMET)
                 .add(ModItems.PRIXILED_LEATHER_CHESTPLATE)
                 .add(ModItems.PRIXILED_LEATHER_LEGGINGS)
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)
                 .add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
 
-        getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.PRIXILED_BOW);
 
-        getOrCreateTagBuilder(ItemTags.MACE_ENCHANTABLE)
+        valueLookupBuilder(ItemTags.MACE_ENCHANTABLE)
                 .add(ModItems.PRIXILED_MACE);
 
         // Blocks
-        getOrCreateTagBuilder(ItemTags.LOGS)
+        valueLookupBuilder(ItemTags.LOGS)
                 .add(ModBlocks.PRIXILIUM_LOG.asItem())
                 .add(ModBlocks.PRIXILIUM_WOOD.asItem());
 
-        getOrCreateTagBuilder(ItemTags.PLANKS)
+        valueLookupBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.PRIXILIUM_PLANKS.asItem());
 
         // Mod Tags
-        getOrCreateTagBuilder(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)
+        valueLookupBuilder(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)
                 .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
                 //1.21.9+ .add(ModItems.PRIXILED_COPPER_BOOTS)
@@ -127,10 +127,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_DIAMOND_BOOTS)
                 .add(ModItems.PRIXILED_NETHERITE_BOOTS);
 
-        getOrCreateTagBuilder(ModTags.Items.TEMPERATURE_TOOLS)
+        valueLookupBuilder(ModTags.Items.TEMPERATURE_TOOLS)
                 .add(ModItems.THERMOMETER);
 
-        getOrCreateTagBuilder(ModTags.Items.CHARMS)
+        valueLookupBuilder(ModTags.Items.CHARMS)
                 .add(ModItems.CHARM_I)
                 .add(ModItems.CONTAINER_CHARM_I)
                 .add(ModItems.STASIS_CHARM_I)
@@ -159,7 +159,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.SONIC_BOOM_CHARM_III)
                 .add(ModItems.WITHER_CHARM_III);
 
-        getOrCreateTagBuilder(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE)
+        valueLookupBuilder(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE)
                 .addTag(ModTags.Items.CHARMS)
                 .add(Blocks.SHULKER_BOX.asItem());
     }

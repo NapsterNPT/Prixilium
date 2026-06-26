@@ -1,26 +1,37 @@
-package net.napsternpt.prixilium.entity.client;
+package net.napsternpt.prixilium.entity.client.models;
 
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.entity.client.renderstates.BlikoRenderState;
+import net.napsternpt.prixilium.entity.client.animations.BlikoAnimations;
 
 public class BlikoModel extends EntityModel<BlikoRenderState> {
     public static final EntityModelLayer BLIKO = new EntityModelLayer(
             Identifier.of(Prixilium.MOD_ID, "bliko"), "main");
+
+    private final Animation idleingAnimation;
+    private final Animation walkingAnimation;
+    private final Animation sitingAnimation;
 
     public BlikoModel(ModelPart root) {
         super(root);
         ModelPart body = root.getChild("Body");
         ModelPart main = body.getChild("Main");
         ModelPart arms = main.getChild("Arms");
-        ModelPart leftArm = arms.getChild("LeftArm");
-        ModelPart rightArm = arms.getChild("RightArm");
-        ModelPart top = body.getChild("Top");
+        arms.getChild("LeftArm");
+        arms.getChild("RightArm");
+        body.getChild("Top");
         ModelPart legs = root.getChild("Legs");
-        ModelPart leftLeg = legs.getChild("LeftLeg");
-        ModelPart rightLeg = legs.getChild("RightLeg");
+        legs.getChild("LeftLeg");
+        legs.getChild("RightLeg");
+
+        this.idleingAnimation = BlikoAnimations.IDLE.createAnimation(root);
+        this.walkingAnimation = BlikoAnimations.WALK.createAnimation(root);
+        this.sitingAnimation = BlikoAnimations.SIT.createAnimation(root);
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -50,8 +61,8 @@ public class BlikoModel extends EntityModel<BlikoRenderState> {
     @Override
     public void setAngles(BlikoRenderState state) {
         super.setAngles(state);
-        this.animate(state.walkAnimationState, BlikoAnimations.WALK, state.age);
-        this.animate(state.idleAnimationState, BlikoAnimations.IDLE, state.age);
-        this.animate(state.sitAnimationState, BlikoAnimations.SIT, state.age);
+        this.walkingAnimation.applyWalking(state.limbSwingAnimationProgress, state.limbSwingAmplitude, 2f, 2.5f);
+        this.idleingAnimation.apply(state.idleAnimationState, state.age, 1f);
+        this.sitingAnimation.apply(state.sitAnimationState, state.age, 1f);
     }
 }

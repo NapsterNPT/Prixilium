@@ -261,7 +261,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.output.accept(ModItems.PRIXILIUM_HOOK,
                 new ItemAsset(new ConditionItemModel.Unbaked(new HasComponentProperty(ModDataComponentTypes.HOOK_ACTIVE, false),
                         unbakedExtendedPrixiliumHook, unbakedPrixiliumHook),
-                        new ItemAsset.Properties(false)).model());
+                        new ItemAsset.Properties(false, false)).model());
 
         //endregion
 

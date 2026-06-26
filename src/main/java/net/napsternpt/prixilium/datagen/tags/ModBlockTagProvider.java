@@ -17,7 +17,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.STAND)
                 .add(ModBlocks.REACTOR_CORE)
                 .add(ModBlocks.VIRUS_REACTOR)
@@ -35,7 +35,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+        valueLookupBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.PRIXILIUM_LOG)
                 .add(ModBlocks.PRIXILIUM_WOOD)
                 .add(ModBlocks.PRIXILIUM_PLANKS)
@@ -46,17 +46,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_DOOR)
                 .add(ModBlocks.PRIXILIUM_TRAPDOOR);
 
-        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+        valueLookupBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.PRIXILIUM_GRASS);
 
-        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+        valueLookupBuilder(BlockTags.HOE_MINEABLE)
                 .add(ModBlocks.PRIXILIUM_LEAVES);
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+        valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.REACTOR_CORE)
                 .add(ModBlocks.VIRUS_REACTOR);
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+        valueLookupBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
@@ -71,84 +71,84 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 
-        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+        valueLookupBuilder(BlockTags.SAPLINGS)
                 .add(ModBlocks.PRIXILIUM);
 
-        getOrCreateTagBuilder(BlockTags.DIRT)
+        valueLookupBuilder(BlockTags.DIRT)
                 .add(ModBlocks.PRIXILIUM_GRASS);
 
-        getOrCreateTagBuilder(BlockTags.ENDERMAN_HOLDABLE)
+        valueLookupBuilder(BlockTags.ENDERMAN_HOLDABLE)
                 .add(ModBlocks.PRIXILIUM_GRASS);
 
-        getOrCreateTagBuilder(BlockTags.LEAVES)
+        valueLookupBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.PRIXILIUM_LEAVES);
 
-        getOrCreateTagBuilder(BlockTags.COMPLETES_FIND_TREE_TUTORIAL)
+        valueLookupBuilder(BlockTags.COMPLETES_FIND_TREE_TUTORIAL)
                 .add(ModBlocks.PRIXILIUM_LOG);
 
-        getOrCreateTagBuilder(BlockTags.LOGS)
+        valueLookupBuilder(BlockTags.LOGS)
                 .add(ModBlocks.PRIXILIUM_LOG)
                 .add(ModBlocks.PRIXILIUM_WOOD);
 
-        getOrCreateTagBuilder(BlockTags.PLANKS)
+        valueLookupBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.PRIXILIUM_PLANKS);
 
-        getOrCreateTagBuilder(BlockTags.SNAPS_GOAT_HORN)
+        valueLookupBuilder(BlockTags.SNAPS_GOAT_HORN)
                 .add(ModBlocks.PRIXILIUM_LOG)
                 .add(ModBlocks.PRIXILIUM_WOOD);
 
-        getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
+        valueLookupBuilder(BlockTags.WOODEN_STAIRS)
                 .add(ModBlocks.PRIXILIUM_STAIRS);
 
-        getOrCreateTagBuilder(BlockTags.STAIRS)
+        valueLookupBuilder(BlockTags.STAIRS)
                 .add(ModBlocks.PRIXILIUM_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
 
-        getOrCreateTagBuilder(BlockTags.WOODEN_SLABS)
+        valueLookupBuilder(BlockTags.WOODEN_SLABS)
                 .add(ModBlocks.PRIXILIUM_SLAB);
 
-        getOrCreateTagBuilder(BlockTags.SLABS)
+        valueLookupBuilder(BlockTags.SLABS)
                 .add(ModBlocks.PRIXILIUM_SLAB)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
 
-        getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
+        valueLookupBuilder(BlockTags.WOODEN_FENCES)
                 .add(ModBlocks.PRIXILIUM_FENCE);
 
-        getOrCreateTagBuilder(BlockTags.FENCES)
+        valueLookupBuilder(BlockTags.FENCES)
                 .add(ModBlocks.PRIXILIUM_FENCE);
 
-        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
+        valueLookupBuilder(BlockTags.FENCE_GATES)
                 .add(ModBlocks.PRIXILIUM_FENCE_GATE);
 
-        getOrCreateTagBuilder(BlockTags.DOORS)
+        valueLookupBuilder(BlockTags.DOORS)
                 .add(ModBlocks.PRIXILIUM_DOOR);
 
-        getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)
+        valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS)
                 .add(ModBlocks.PRIXILIUM_TRAPDOOR);
 
-        getOrCreateTagBuilder(BlockTags.TRAPDOORS)
+        valueLookupBuilder(BlockTags.TRAPDOORS)
                 .add(ModBlocks.PRIXILIUM_TRAPDOOR);
 
-        getOrCreateTagBuilder(BlockTags.WALLS)
+        valueLookupBuilder(BlockTags.WALLS)
                 .add(ModBlocks.PRIXILIUM_BRICKS_WALL)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
         
-        getOrCreateTagBuilder(BlockTags.INVALID_SPAWN_INSIDE)
+        valueLookupBuilder(BlockTags.INVALID_SPAWN_INSIDE)
                 .add(ModBlocks.PRIXIVERSE_PORTAL);
 
-        getOrCreateTagBuilder(BlockTags.PORTALS)
+        valueLookupBuilder(BlockTags.PORTALS)
                 .add(ModBlocks.PRIXIVERSE_PORTAL);
 
-        getOrCreateTagBuilder(BlockTags.DRAGON_IMMUNE)
+        valueLookupBuilder(BlockTags.DRAGON_IMMUNE)
                 .add(ModBlocks.PRIXIVERSE_PORTAL);
 
-        getOrCreateTagBuilder(BlockTags.WITHER_IMMUNE)
+        valueLookupBuilder(BlockTags.WITHER_IMMUNE)
                 .add(ModBlocks.PRIXIVERSE_PORTAL);
 
         // Mod Tags
-        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)
+        valueLookupBuilder(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)
                 .add(Blocks.SHORT_GRASS)
                 .add(Blocks.FERN)
                 .add(Blocks.BUSH)
@@ -175,14 +175,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.LARGE_FERN)
                 .add(Blocks.PITCHER_PLANT);
 
-        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)
+        valueLookupBuilder(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)
                 .add(Blocks.DIRT)
                 .add(Blocks.GRASS_BLOCK)
                 .add(Blocks.PODZOL)
                 .add(Blocks.MYCELIUM)
                 .add(Blocks.COARSE_DIRT);
 
-        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_LOG_CONVERTIBLE)
+        valueLookupBuilder(ModTags.Blocks.PRIXILIUM_LOG_CONVERTIBLE)
                 .add(Blocks.OAK_LOG)
                 .add(Blocks.SPRUCE_LOG)
                 .add(Blocks.BIRCH_LOG)
@@ -194,7 +194,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.CRIMSON_STEM)
                 .add(Blocks.WARPED_STEM);
 
-        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_WOOD_CONVERTIBLE)
+        valueLookupBuilder(ModTags.Blocks.PRIXILIUM_WOOD_CONVERTIBLE)
                 .add(Blocks.OAK_WOOD)
                 .add(Blocks.SPRUCE_WOOD)
                 .add(Blocks.BIRCH_WOOD)
@@ -204,7 +204,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.MANGROVE_WOOD)
                 .add(Blocks.CHERRY_WOOD);
 
-        getOrCreateTagBuilder(ModTags.Blocks.PRIXILIUM_LEAVES_CONVERTIBLE)
+        valueLookupBuilder(ModTags.Blocks.PRIXILIUM_LEAVES_CONVERTIBLE)
                 .add(Blocks.OAK_LEAVES)
                 .add(Blocks.SPRUCE_LEAVES)
                 .add(Blocks.BIRCH_LEAVES)

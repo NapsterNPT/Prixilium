@@ -11,8 +11,12 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
+import net.minecraft.storage.NbtReadView;
+import net.minecraft.storage.NbtWriteView;
+import net.minecraft.storage.ReadView;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.ErrorReporter;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.item.custom.CharmItem;
@@ -51,13 +55,15 @@ public class ContainerCharmItem extends CharmItem {
 
     private void loadInventory(ItemStack stack, SimpleInventory inventory, RegistryWrapper.WrapperLookup lookup) {
         NbtCompound nbt = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt();
-        if (nbt.contains(ITEMS_KEY)) Inventories.readNbt(nbt, inventory.getHeldStacks(), lookup);
+        if (nbt.contains(ITEMS_KEY)) {
+            ReadView view = NbtReadView.create(ErrorReporter.EMPTY, lookup, nbt);
+            Inventories.readData(view, inventory.getHeldStacks());
+        }
     }
 
-    public static void saveInventory(ItemStack stack, SimpleInventory inventory, RegistryWrapper.WrapperLookup lookup) {
-        NbtCompound nbt = new NbtCompound();
-        Inventories.writeNbt(nbt, inventory.getHeldStacks(), lookup);
-        stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
+    public static void saveInventory(SimpleInventory inventory, RegistryWrapper.WrapperLookup lookup) {
+        NbtWriteView writeView = NbtWriteView.create(ErrorReporter.EMPTY, lookup);
+        Inventories.writeData(writeView, inventory.getHeldStacks());
     }
 
     @Override

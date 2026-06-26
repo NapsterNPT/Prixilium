@@ -76,7 +76,7 @@ public class SavedContainerScreenHandler extends ScreenHandler {
     @Override
     public void onClosed(PlayerEntity player) {
         super.onClosed(player);
-        if (!player.getWorld().isClient) ContainerCharmItem.saveInventory(stack, inventory, lookup);
+        if (!player.getWorld().isClient) ContainerCharmItem.saveInventory(inventory, lookup);
     }
 
     @Override

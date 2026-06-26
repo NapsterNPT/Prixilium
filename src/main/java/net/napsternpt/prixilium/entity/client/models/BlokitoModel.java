@@ -1,18 +1,26 @@
-package net.napsternpt.prixilium.entity.client;
+package net.napsternpt.prixilium.entity.client.models;
 
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.entity.client.renderstates.BlokitoRenderState;
+import net.napsternpt.prixilium.entity.client.animations.BlokitoAnimations;
 
 public class BlokitoModel extends EntityModel<BlokitoRenderState> {
     public static final EntityModelLayer BLOKITO = new EntityModelLayer(
             Identifier.of(Prixilium.MOD_ID, "blokito"), "main");
 
-    protected BlokitoModel(ModelPart root) {
+    private final Animation idleingAnimation;
+    private final Animation walkingAnimation;
+
+    public BlokitoModel(ModelPart root) {
         super(root);
-        ModelPart body = root.getChild("Body");
+        root.getChild("Body");
+        this.idleingAnimation = BlokitoAnimations.IDLE.createAnimation(root);
+        this.walkingAnimation = BlokitoAnimations.WALK.createAnimation(root);
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -25,7 +33,7 @@ public class BlokitoModel extends EntityModel<BlokitoRenderState> {
 
     public void setAngles(BlokitoRenderState state) {
         super.setAngles(state);
-        this.animate(state.walkAnimationState, BlokitoAnimations.WALK, state.age);
-        this.animate(state.idleAnimationState, BlokitoAnimations.IDLE, state.age);
+        this.walkingAnimation.applyWalking(state.limbSwingAnimationProgress, state.limbSwingAmplitude, 2f, 2.5f);
+        this.idleingAnimation.apply(state.idleAnimationState, state.age, 1f);
     }
 }

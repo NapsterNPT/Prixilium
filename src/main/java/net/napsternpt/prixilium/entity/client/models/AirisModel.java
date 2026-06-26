@@ -1,27 +1,36 @@
-package net.napsternpt.prixilium.entity.client;
+package net.napsternpt.prixilium.entity.client.models;
 
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.entity.client.renderstates.AirisRenderState;
+import net.napsternpt.prixilium.entity.client.animations.AirisAnimations;
 
 public class AirisModel extends EntityModel<AirisRenderState> {
     public static final EntityModelLayer AIRIS = new EntityModelLayer(
             Identifier.of(Prixilium.MOD_ID, "airis"), "main");
 
+    private final Animation idleingAnimation;
+    private final Animation walkingAnimation;
+
     public AirisModel(ModelPart root) {
         super(root);
         ModelPart body = root.getChild("Body");
-        ModelPart eyes = body.getChild("Eyes");
-        ModelPart c1 = body.getChild("c1");
-        ModelPart c2 = body.getChild("c2");
-        ModelPart c3 = body.getChild("c3");
-        ModelPart c4 = body.getChild("c4");
-        ModelPart c5 = body.getChild("c5");
-        ModelPart c6 = body.getChild("c6");
-        ModelPart c7 = body.getChild("c7");
-        ModelPart bottom = body.getChild("Bottom");
+        body.getChild("Eyes");
+        body.getChild("c1");
+        body.getChild("c2");
+        body.getChild("c3");
+        body.getChild("c4");
+        body.getChild("c5");
+        body.getChild("c6");
+        body.getChild("c7");
+        body.getChild("Bottom");
+
+        this.idleingAnimation = AirisAnimations.IDLE.createAnimation(root);
+        this.walkingAnimation = AirisAnimations.WALK.createAnimation(root);
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -56,7 +65,8 @@ public class AirisModel extends EntityModel<AirisRenderState> {
     @Override
     public void setAngles(AirisRenderState state) {
         super.setAngles(state);
-        this.animate(state.walkAnimationState, AirisAnimations.WALK, state.age);
-        this.animate(state.idleAnimationState, AirisAnimations.IDLE, state.age);
+        this.walkingAnimation.applyWalking(state.limbSwingAnimationProgress, state.limbSwingAmplitude, 2f, 2.5f);
+        this.idleingAnimation.apply(state.idleAnimationState, state.age, 1f);
+
     }
 }

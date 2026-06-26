@@ -11,6 +11,8 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -111,21 +113,21 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.writeNbt(nbt, registryLookup);
-        Inventories.writeNbt(nbt, inventory, registryLookup);
-        nbt.putBoolean("spreading", spreading);
-        nbt.putInt("currentRadius", currentRadius);
-        nbt.putInt("tickCounter", tickCounter);
+    protected void writeData(WriteView view) {
+        super.writeData(view);
+        Inventories.writeData(view, inventory);
+        view.putBoolean("spreading", spreading);
+        view.putInt("currentRadius", currentRadius);
+        view.putInt("tickCounter", tickCounter);
     }
 
     @Override
-    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.readNbt(nbt, registryLookup);
-        Inventories.readNbt(nbt, inventory, registryLookup);
-        spreading = nbt.getBoolean("spreading").orElse(false);
-        currentRadius = nbt.getInt("currentRadius").orElse(0);
-        tickCounter = nbt.getInt("tickCounter").orElse(0);
+    protected void readData(ReadView view) {
+        super.readData(view);
+        Inventories.readData(view, inventory);
+        spreading = view.getBoolean("spreading", false);
+        currentRadius = view.getInt("currentRadius", 0);
+        tickCounter = view.getInt("tickCounter", 0);
     }
 
     @Override

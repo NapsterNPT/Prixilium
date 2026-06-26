@@ -85,5 +85,5 @@ public class PrixiverseCreditsScreen extends Screen {
     }
 
     @Override
-    protected void applyBlur() {}
+    protected void applyBlur(DrawContext context) {}
 }

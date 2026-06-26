@@ -1,12 +1,9 @@
-package net.napsternpt.prixilium.entity.client;
+package net.napsternpt.prixilium.entity.client.animations;
 
-import net.minecraft.client.render.entity.animation.Animation;
-import net.minecraft.client.render.entity.animation.AnimationHelper;
-import net.minecraft.client.render.entity.animation.Keyframe;
-import net.minecraft.client.render.entity.animation.Transformation;
+import net.minecraft.client.render.entity.animation.*;
 
 public class BlikoAnimations {
-        public static final Animation IDLE = Animation.Builder.create(4.0F).looping()
+        public static final AnimationDefinition IDLE = AnimationDefinition.Builder.create(4.0F).looping()
                 .addBoneAnimation("Body", new Transformation(Transformation.Targets.MOVE_ORIGIN,
                         new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                         new Keyframe(2.0F, AnimationHelper.createTranslationalVector(0.0F, 0.5F, 0.0F), Transformation.Interpolations.CUBIC),
@@ -25,7 +22,7 @@ public class BlikoAnimations {
                         new Keyframe(4.0F, AnimationHelper.createRotationalVector(2.5F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
                 )).build();
 
-        public static final Animation WALK = Animation.Builder.create(1.0F).looping()
+        public static final AnimationDefinition WALK = AnimationDefinition.Builder.create(1.0F).looping()
                 .addBoneAnimation("Body",new Transformation(Transformation.Targets.MOVE_ORIGIN,
                         new Keyframe(0.0F, AnimationHelper.createTranslationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                         new Keyframe(0.5F, AnimationHelper.createTranslationalVector(0.0F, 0.5F, 0.0F), Transformation.Interpolations.CUBIC),
@@ -52,7 +49,7 @@ public class BlikoAnimations {
                         new Keyframe(1.0F, AnimationHelper.createRotationalVector(7.5F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
                 )).build();
 
-        public static final Animation SIT = Animation.Builder.create(1.0F)
+        public static final AnimationDefinition SIT = AnimationDefinition.Builder.create(1.0F)
                 .addBoneAnimation("Body", new Transformation(Transformation.Targets.ROTATE,
                         new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC),
                         new Keyframe(0.5833F, AnimationHelper.createRotationalVector(-22.5F, 0.0F, 0.0F), Transformation.Interpolations.CUBIC)
