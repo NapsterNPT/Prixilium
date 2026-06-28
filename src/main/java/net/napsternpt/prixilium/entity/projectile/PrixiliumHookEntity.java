@@ -67,16 +67,16 @@ public class PrixiliumHookEntity extends ProjectileEntity {
 
     private void spawnClientParticles() {
         PlayerEntity owner = this.getPlayerOwner();
-        if (owner == null || !this.getEntityWorld().isClient()) return;
+        if (owner == null || !this.getWorld().isClient()) return;
         
-        Vec3d hookPos = this.getEntityPos();
+        Vec3d hookPos = this.getPos();
         Vec3d playerPos = owner.getEyePos();
         
         Vec3d diff = playerPos.subtract(hookPos);
         double dist = diff.length();
         if (dist < 1.0) return;
         
-        World world = this.getEntityWorld();
+        World world = this.getWorld();
         
         int count = Math.min((int)(dist * 3.0), 100);
         for (int i = 0; i < count; i++) {
@@ -98,7 +98,7 @@ public class PrixiliumHookEntity extends ProjectileEntity {
     public void tick() {
         super.tick();
         
-        if (this.getEntityWorld().isClient()) {
+        if (this.getWorld().isClient()) {
             this.spawnClientParticles();
         }
         
@@ -108,10 +108,10 @@ public class PrixiliumHookEntity extends ProjectileEntity {
             return;
         }
         
-        if (!this.getEntityWorld().isClient()) {
+        if (!this.getWorld().isClient()) {
             double distFromPlayer = this.squaredDistanceTo(owner);
             if (distFromPlayer > MAX_DISTANCE_SQ) {
-                owner.getEntityWorld().playSound(null, owner.getX(), owner.getY(), owner.getZ(),
+                owner.getWorld().playSound(null, owner.getX(), owner.getY(), owner.getZ(),
                         SoundEvents.ITEM_CROSSBOW_LOADING_END,
                         SoundCategory.PLAYERS, 0.5f, 1.2f);
                 PrixiliumHookItem.clearHook(owner);
@@ -119,13 +119,13 @@ public class PrixiliumHookEntity extends ProjectileEntity {
                 return;
             }
             
-            Vec3d pos = this.getEntityPos();
+            Vec3d pos = this.getPos();
             Vec3d vel = this.getVelocity();
             
             if (vel.length() > 0.01) {
                 Vec3d nextPos = pos.add(vel);
                 
-                var raycast = this.getEntityWorld().raycast(new RaycastContext(
+                var raycast = this.getWorld().raycast(new RaycastContext(
                     pos, nextPos,
                     RaycastContext.ShapeType.COLLIDER,
                     RaycastContext.FluidHandling.NONE,
@@ -149,8 +149,8 @@ public class PrixiliumHookEntity extends ProjectileEntity {
             if (this.inBlock()) {
                 if (owner.isSpectator() || owner.getAbilities().flying) return;
 
-                Vec3d playerPos = owner.getEntityPos().add(0, owner.getHeight() / 2, 0);
-                Vec3d hookPos = this.getEntityPos();
+                Vec3d playerPos = owner.getPos().add(0, owner.getHeight() / 2, 0);
+                Vec3d hookPos = this.getPos();
                 double distance = playerPos.distanceTo(hookPos);
                 
                 if (distance > MIN_DISTANCE) {
@@ -176,8 +176,8 @@ public class PrixiliumHookEntity extends ProjectileEntity {
             }
         }
 
-        if (!this.getEntityWorld().isClient() && this.shouldRetract(owner)) {
-            owner.getEntityWorld().playSound(null, owner.getX(), owner.getY(), owner.getZ(),
+        if (!this.getWorld().isClient() && this.shouldRetract(owner)) {
+            owner.getWorld().playSound(null, owner.getX(), owner.getY(), owner.getZ(),
                     SoundEvents.ITEM_CROSSBOW_LOADING_END,
                     SoundCategory.PLAYERS, 0.5f, 1.2f);
             PrixiliumHookItem.clearHook(owner);

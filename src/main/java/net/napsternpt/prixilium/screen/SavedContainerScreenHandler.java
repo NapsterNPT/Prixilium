@@ -4,7 +4,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
@@ -18,13 +17,6 @@ public class SavedContainerScreenHandler extends ScreenHandler {
     private final ItemStack stack;
     private final SimpleInventory inventory;
     private final int rows;
-
-    private boolean isInContainerCharmUnholdable(ItemStack stack) {
-        return lookup.getOrThrow(RegistryKeys.ITEM)
-                .getOptional(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE)
-                .map(tag -> tag.contains(stack.getRegistryEntry()))
-                .orElse(false);
-    }
 
     public SavedContainerScreenHandler(int syncId, PlayerInventory playerInventory, SimpleInventory inventory, ItemStack stack, int rows, RegistryWrapper.WrapperLookup lookup) {
         super(getType(rows), syncId);
@@ -40,7 +32,7 @@ public class SavedContainerScreenHandler extends ScreenHandler {
                 this.addSlot(new Slot(inventory, index, 8 + col * 18, 18 + row * 18) {
                     @Override
                     public boolean canInsert(ItemStack stack) {
-                        return !isInContainerCharmUnholdable(stack) && !(stack.getItem() instanceof CharmItem);
+                        return !stack.isIn(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE) && !(stack.getItem() instanceof CharmItem);
                     }
                 });
             }
@@ -57,7 +49,7 @@ public class SavedContainerScreenHandler extends ScreenHandler {
         Slot slot2 = this.slots.get(slot);
         if (slot2.hasStack()) {
             ItemStack itemStack2 = slot2.getStack();
-            if (slot >= this.rows * 9 && (isInContainerCharmUnholdable(itemStack2) || itemStack2.getItem() instanceof CharmItem)) {
+            if (slot >= this.rows * 9 && (itemStack2.isIn(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE) || itemStack2.getItem() instanceof CharmItem)) {
                 return ItemStack.EMPTY;
             }
             itemStack = itemStack2.copy();
@@ -83,12 +75,8 @@ public class SavedContainerScreenHandler extends ScreenHandler {
 
     @Override
     public void onClosed(PlayerEntity player) {
-        try {
-            if (!player.getEntityWorld().isClient()) ContainerCharmItem.saveInventory(stack, inventory);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         super.onClosed(player);
+        if (!player.getWorld().isClient) ContainerCharmItem.saveInventory(inventory, lookup);
     }
 
     @Override

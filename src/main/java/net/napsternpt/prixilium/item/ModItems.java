@@ -49,17 +49,17 @@ public class ModItems {
             .maxDamage(32)
     ));
 
-    public static final Item BLIKO_SPAWN_EGG = registerItem(name = "bliko_spawn_egg", new SpawnEggItem(new Item.Settings()
+    public static final Item BLIKO_SPAWN_EGG = registerItem(name = "bliko_spawn_egg", new SpawnEggItem(
+            ModEntities.BLIKO, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .spawnEgg(ModEntities.BLIKO)
     ));
-    public static final Item BLOKITO_SPAWN_EGG = registerItem(name = "blokito_spawn_egg", new SpawnEggItem(new Item.Settings()
+    public static final Item BLOKITO_SPAWN_EGG = registerItem(name = "blokito_spawn_egg", new SpawnEggItem(
+            ModEntities.BLOKITO, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .spawnEgg(ModEntities.BLIKO)
     ));
-    public static final Item AIRIS_SPAWN_EGG = registerItem(name = "airis_spawn_egg", new SpawnEggItem(new Item.Settings()
+    public static final Item AIRIS_SPAWN_EGG = registerItem(name = "airis_spawn_egg", new SpawnEggItem(
+            ModEntities.AIRIS, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .spawnEgg(ModEntities.AIRIS)
     ));
     //endregion
 
@@ -317,26 +317,28 @@ public class ModItems {
     //endregion
 
     //region [copper]
-    public static final Item PRIXILED_COPPER_SWORD = registerItem(name = "prixiled_copper_sword", new Item(new Item.Settings().sword(ToolMaterial.COPPER, 3.0F, -2.4F)
+    /* 1.21.9+
+    public static final Item PRIXILED_COPPER_SWORD = registerItem(name = "prixiled_copper_sword", new Item(new Item.Settings().sword(ToolMaterial.COPPER, idk, idk)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_PICKAXE = registerItem(name = "prixiled_copper_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.COPPER, 1.0F, -2.8F)
+    public static final Item PRIXILED_COPPER_PICKAXE = registerItem(name = "prixiled_copper_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.COPPER, idk, idk)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_AXE = registerItem(name = "prixiled_copper_axe", new AxeItem(ToolMaterial.COPPER, 7.0F, -3.2F, new Item.Settings()
+    public static final Item PRIXILED_COPPER_AXE = registerItem(name = "prixiled_copper_axe", new AxeItem(ToolMaterial.COPPER, idk, idk, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_SHOVEL = registerItem(name = "prixiled_copper_shovel", new ShovelItem(ToolMaterial.COPPER , 1.5F, -3.0F, new Item.Settings()
+    public static final Item PRIXILED_COPPER_SHOVEL = registerItem(name = "prixiled_copper_shovel", new ShovelItem(ToolMaterial.COPPER , idk, idk, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_HOE = registerItem(name = "prixiled_copper_hoe", new HoeItem(ToolMaterial.COPPER, -1.0F, -2.0F, new Item.Settings()
+    public static final Item PRIXILED_COPPER_HOE = registerItem(name = "prixiled_copper_hoe", new HoeItem(ToolMaterial.COPPER, idk, idk, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
+     */
     //endregion
 
     //region [iron]
@@ -513,6 +515,7 @@ public class ModItems {
     //endregion
 
     //region [copper]
+    /* 1.21.9+
     public static final Item PRIXILED_COPPER_HELMET = registerItem(name = "prixiled_copper_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -536,6 +539,7 @@ public class ModItems {
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
+     */
     //endregion
 
     //region [iron]
@@ -649,11 +653,13 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540))
     ));
+    /* 1.21.9+
     public static final Item PRIXILED_COPPER_HORSE_ARMOR = registerItem(name = "prixiled_copper_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_COPPER)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             ));
+    */
     public static final Item PRIXILED_IRON_HORSE_ARMOR = registerItem(name = "prixiled_iron_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_IRON)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)

@@ -3,7 +3,6 @@ package net.napsternpt.prixilium.block.custom;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -32,7 +31,7 @@ public class PrixiliumGrassBlock extends Block {
                                          Hand hand, BlockHitResult hit) {
 
         if (stack.isOf(Items.SHEARS)) {
-            if (!world.isClient()) {
+            if (!world.isClient) {
                 world.setBlockState(pos, Blocks.GRASS_BLOCK.getDefaultState());
 
                 ItemScatterer.spawn(
@@ -43,7 +42,7 @@ public class PrixiliumGrassBlock extends Block {
                         new ItemStack(ModBlocks.PRIXILIUM)
                 );
 
-                stack.damage(1, player, hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+                stack.damage(1, player, LivingEntity.getSlotForHand(hand));
 
                 world.playSound(
                         null,

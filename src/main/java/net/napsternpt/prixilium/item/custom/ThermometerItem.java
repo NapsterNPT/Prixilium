@@ -29,12 +29,12 @@ public class ThermometerItem extends Item {
 
     @Override
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
-        if (world.isClient()) ThermometerHud.increment();
+        if (world.isClient) ThermometerHud.increment();
     }
 
     @Override
     public boolean onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (world.isClient()) ThermometerHud.reset();
+        if (world.isClient) ThermometerHud.reset();
         return false;
     }
 

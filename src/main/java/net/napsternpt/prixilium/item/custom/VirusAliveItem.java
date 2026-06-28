@@ -25,7 +25,7 @@ public class VirusAliveItem extends Item {
 
     @Override
     public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
-        if (!world.isClient()) {
+        if (!world.isClient) {
             if (entity instanceof net.minecraft.entity.player.PlayerEntity player) {
                 if (player.isCreative() || player.isSpectator()) {
                     return;
@@ -42,8 +42,10 @@ public class VirusAliveItem extends Item {
                     }
                     ItemStack newStack = new ItemStack(ModItems.VIRUS_DEAD);
 
-                    if (entity instanceof PlayerEntity player && slot != null) {
-                        player.getInventory().setStack(slot.getEntitySlotId(), newStack);
+                    if (entity instanceof PlayerEntity player) {
+                        if (slot != null) {
+                            player.getInventory().setStack(slot.getEntitySlotId(), newStack);
+                        }
                     }
                 }
             }
@@ -53,30 +55,21 @@ public class VirusAliveItem extends Item {
     }
 
     @Override
-    public Text getName(ItemStack stack) {
-        String color = getColorFromDamage(stack);
-        return Text.translatable(this.translationKey)
-                .copy()
-                .append(Text.literal(" §7(§" + color + "Alive§7)"));
-    }
-
-    @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
-        int hp = stack.getMaxDamage() - stack.getDamage();
-        String color = getColorFromDamage(stack);
+        int hp = 100 - stack.getDamage();
+        String color = "4";
+        if (hp >= 75) {
+            color = "a";
+        } else if (hp >= 50) {
+            color = "e";
+        } else if (hp >= 25) {
+            color = "6";
+        }
         Text line = Text.translatable("tooltip.prixilium.virus_alive.1")
                 .append(" §" + color + (hp) + " / 100 HP.");
+
         textConsumer.accept(line);
         textConsumer.accept(Text.translatable("tooltip.prixilium.virus_alive.2"));
         super.appendTooltip(stack, context, displayComponent, textConsumer, type);
-    }
-
-    private String getColorFromDamage(ItemStack stack) {
-        int hp = stack.getMaxDamage() - stack.getDamage();
-        String color = "c";
-        if (hp >= 75) color = "a";
-        else if (hp >= 50) color = "e";
-        else if (hp >= 25) color = "6";
-        return color;
     }
 }

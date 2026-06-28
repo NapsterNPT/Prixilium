@@ -9,7 +9,7 @@ import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
-import net.napsternpt.prixilium.block.entity.renderers.VirusReactorBlockEntityRenderer;
+import net.napsternpt.prixilium.block.entity.renderer.VirusReactorBlockEntityRenderer;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.client.models.*;
 import net.napsternpt.prixilium.entity.client.renderers.*;

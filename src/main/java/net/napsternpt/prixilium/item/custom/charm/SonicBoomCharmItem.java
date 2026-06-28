@@ -32,7 +32,7 @@ public class SonicBoomCharmItem extends CharmItem {
     @Override
     public ActionResult use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
-        if (!world.isClient()) {
+        if (!world.isClient) {
             ServerWorld serverWorld = (ServerWorld) world;
 
             Vec3d start = player.getEyePos();
@@ -50,11 +50,11 @@ public class SonicBoomCharmItem extends CharmItem {
                     entity -> entity != player && entity.isAlive());
 
             for (LivingEntity target : targets) {
-                Vec3d toTarget = target.getEntityPos().subtract(start);
+                Vec3d toTarget = target.getPos().subtract(start);
                 double projection = toTarget.dotProduct(direction);
                 if (projection < 0) continue;
                 Vec3d closest = start.add(direction.multiply(projection));
-                if (target.getEntityPos().distanceTo(closest) > 2.5) continue;
+                if (target.getPos().distanceTo(closest) > 2.5) continue;
 
                 target.damage(serverWorld, serverWorld.getDamageSources().sonicBoom(player), damage);
                 Vec3d knockback = direction.multiply(2.5);

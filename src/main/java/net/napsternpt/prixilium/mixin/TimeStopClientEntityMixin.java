@@ -13,8 +13,8 @@ public class TimeStopClientEntityMixin {
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
     private void onTick(CallbackInfo ci) {
         Entity entity = (Entity) (Object) this;
-        World world = entity.getEntityWorld();
-        if (world.isClient()) {
+        World world = entity.getWorld();
+        if (world.isClient) {
             if (TimeStopClientEffects.isTimeStopped() && TimeStopClientEffects.isActivator(entity.getUuid())) {
                 ci.cancel();
             }

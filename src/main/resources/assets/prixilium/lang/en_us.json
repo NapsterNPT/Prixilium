@@ -1,13 +1,12 @@
 {
   "thank_you": "Thank you for playing Prixilium!",
 
-
   "itemgroup.prixilium.prixilium": "Prixilium",
   "itemgroup.prixilium.prixiled_items": "Prixiled Items",
 
 
-  "item.prixilium.virus_alive": "Virus",
-  "item.prixilium.virus_dead": "Virus §7(§cDead§7)",
+  "item.prixilium.virus_alive": "Virus (Alive)",
+  "item.prixilium.virus_dead": "Virus (Dead)",
   "item.prixilium.thermometer": "Thermometer",
   "item.prixilium.prixilium_upgrade_smithing_template": "Prixilium Smithing Template",
   "item.prixilium.prixilium_hook": "Prixilium Hook",

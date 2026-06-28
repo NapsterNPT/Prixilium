@@ -46,7 +46,7 @@ public class AirisEntity extends HostileEntity {
     public void tick() {
         super.tick();
 
-        if (this.getEntityWorld().isClient()) {
+        if (this.getWorld().isClient) {
             if (this.getVelocity().horizontalLengthSquared() != 0) {
                 this.idleAnimationState.stop();
                 this.walkAnimationState.startIfNotRunning(this.age);

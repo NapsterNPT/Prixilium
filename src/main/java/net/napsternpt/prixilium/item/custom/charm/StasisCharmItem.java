@@ -49,11 +49,11 @@ public class StasisCharmItem extends CharmItem {
                 double z = nbt.getDouble(POS_Z).orElseThrow();
                 String dimId = nbt.getString(DIM).orElseThrow();
 
-                ServerWorld targetWorld = Objects.requireNonNull(world.getServer()).getWorld(RegistryKey.of(RegistryKeys.WORLD, Identifier.of(dimId)));
-                if (targetWorld == null) targetWorld = serverPlayer.getEntityWorld();
+                ServerWorld targetWorld = Objects.requireNonNull(serverPlayer.getServer()).getWorld(RegistryKey.of(RegistryKeys.WORLD, Identifier.of(dimId)));
+                if (targetWorld == null) targetWorld = serverPlayer.getWorld();
                 serverPlayer.teleport(targetWorld, x + 0.5, y,z + 0.5, Set.of(), serverPlayer.getYaw(), serverPlayer.getPitch(), false);
 
-                AdvancementEntry advancement = world.getServer().getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "warp_traveler"));
+                AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "warp_traveler"));
                 serverPlayer.getAdvancementTracker().grantCriterion(advancement, "warp_traveler");
 
                 nbt.remove(POS_X);

@@ -9,7 +9,6 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.block.WireOrientation;
 
@@ -24,8 +23,10 @@ public class PrixiliumLampBlock extends Block {
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (!world.isClient() && !state.get(POWERED)) {
-            world.setBlockState(pos, state.cycle(LIGHT));
+        if (!world.isClient) {
+            if (!state.get(POWERED)) {
+                world.setBlockState(pos, state.cycle(LIGHT));
+            }
         }
         return ActionResult.SUCCESS;
     }
@@ -41,13 +42,13 @@ public class PrixiliumLampBlock extends Block {
     }
 
     @Override
-    protected int getComparatorOutput(BlockState state, World world, BlockPos pos, Direction direction) {
+    protected int getComparatorOutput(BlockState state, World world, BlockPos pos) {
         return state.get(LIGHT);
     }
 
     @Override
     protected void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, WireOrientation orientation, boolean notify) {
-        if (!world.isClient()) {
+        if (!world.isClient) {
             int receivedPower = world.getReceivedRedstonePower(pos);
 
             if (receivedPower > 0) {

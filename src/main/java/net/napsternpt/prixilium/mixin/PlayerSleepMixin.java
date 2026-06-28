@@ -22,17 +22,17 @@ public class PlayerSleepMixin {
 	private void onWakeUp(CallbackInfo ci) {
 		PlayerEntity player = (PlayerEntity)(Object)this;
 
-		if (!player.getEntityWorld().isClient() && player.hasStatusEffect(ModEffects.ILLNESS)) {
+		if (!player.getWorld().isClient && player.hasStatusEffect(ModEffects.ILLNESS)) {
 			if (player instanceof ServerPlayerEntity serverPlayer) {
-				MinecraftServer server = player.getEntityWorld().getServer();
+				MinecraftServer server = serverPlayer.getServer();
 
                 assert server != null;
                 ServerWorld destination = server.getWorld(RegistryKey.of(RegistryKeys.WORLD, Identifier.of(Prixilium.MOD_ID, "prixiverse")));
 
 				if (destination != null) {
-					serverPlayer.teleportTo(new TeleportTarget(destination, serverPlayer.getEntityPos(), serverPlayer.getVelocity(), serverPlayer.getYaw(), serverPlayer.getPitch(), TeleportTarget.NO_OP));
+					serverPlayer.teleportTo(new TeleportTarget(destination, serverPlayer.getPos(), serverPlayer.getVelocity(), serverPlayer.getYaw(), serverPlayer.getPitch(), TeleportTarget.NO_OP));
 					serverPlayer.getAdvancementTracker().grantCriterion(
-							server.getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "enter_prixiverse")),
+							player.getServer().getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "enter_prixiverse")),
 							"enter_prixiverse"
 					);
 				}

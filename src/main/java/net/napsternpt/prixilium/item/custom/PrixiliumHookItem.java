@@ -34,7 +34,7 @@ public class PrixiliumHookItem extends Item {
         ItemStack stack = player.getStackInHand(hand);
         UUID playerId = player.getUuid();
 
-        if (world.isClient()) {
+        if (world.isClient) {
             return ActionResult.SUCCESS;
         }
 
@@ -69,7 +69,7 @@ public class PrixiliumHookItem extends Item {
                             ? EquipmentSlot.MAINHAND
                             : EquipmentSlot.OFFHAND);
 
-            AdvancementEntry advancement = Objects.requireNonNull(world.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "prixilium_hook"));
+            AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "prixilium_hook"));
             serverPlayer.getAdvancementTracker().grantCriterion(advancement, "use_prixilium_hook");
         }
 

@@ -4,7 +4,7 @@
     },
     "passes": [
         {
-            "vertex_shader": "minecraft:core/screenquad",
+            "vertex_shader": "minecraft:post/blit",
             "fragment_shader": "prixilium:post/desaturate",
             "inputs": [
                 {
@@ -12,10 +12,11 @@
                     "target": "minecraft:main"
                 }
             ],
-            "output": "swap"
+            "output": "swap",
+            "uniforms": []
         },
         {
-            "vertex_shader": "minecraft:core/screenquad",
+            "vertex_shader": "minecraft:post/blit",
             "fragment_shader": "minecraft:post/blit",
             "inputs": [
                 {
@@ -24,15 +25,13 @@
                 }
             ],
             "output": "minecraft:main",
-            "uniforms": {
-                "BlitConfig": [
-                    {
-                        "name": "ColorModulate",
-                        "type": "vec4",
-                        "value": [ 1.0, 1.0, 1.0, 1.0 ]
-                    }
-                ]
-            }
+            "uniforms": [
+                {
+                    "name": "ColorModulate",
+                    "type": "vec4",
+                    "values": [ 1.0, 1.0, 1.0, 1.0 ]
+                }
+            ]
         }
     ]
 }
