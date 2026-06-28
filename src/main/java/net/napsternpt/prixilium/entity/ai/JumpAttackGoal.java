@@ -67,7 +67,7 @@ public class JumpAttackGoal extends Goal {
                 }
             }
             case JUMP -> {
-                if (this.mob.getWorld() instanceof ServerWorld serverWorld) {
+                if (this.mob.getEntityWorld() instanceof ServerWorld serverWorld) {
                     if (this.mob.squaredDistanceTo(target) < 6.0) {
                         this.mob.tryAttack(serverWorld, target);
                         cooldownTimer = JUMP_COOLDOWN;
@@ -88,7 +88,7 @@ public class JumpAttackGoal extends Goal {
 
         Vec3d targetHead = new Vec3d(target.getX(), target.getY() + target.getHeight(), target.getZ());
 
-        Vec3d toTarget = targetHead.subtract(this.mob.getPos()).normalize();
+        Vec3d toTarget = targetHead.subtract(this.mob.getEntityPos()).normalize();
 
         this.mob.setVelocity(toTarget.x * 0.8, 0.5, toTarget.z * 0.8);
         this.mob.velocityModified = true;

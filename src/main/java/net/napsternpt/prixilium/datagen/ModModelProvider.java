@@ -219,13 +219,11 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILED_STONE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_STONE_HOE, Models.HANDHELD);
 
-        /* 1.21.9+
         itemModelGenerator.register(ModItems.PRIXILED_COPPER_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_COPPER_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_COPPER_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_COPPER_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_COPPER_HOE, Models.HANDHELD);
-        */
 
         itemModelGenerator.register(ModItems.PRIXILED_IRON_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_IRON_PICKAXE, Models.HANDHELD);
@@ -277,13 +275,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_LEGGINGS, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PRIXILED_CHAINMAIL_BOOTS, ModArmorMaterials.PRIXILIUM_CHAIN_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
-        /* 1.21.9+
-
         itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_HELMET, ModArmorMaterials.PRIXILIUM_COPPER_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_CHESTPLATE, ModArmorMaterials.PRIXILIUM_COPPER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_LEGGINGS, ModArmorMaterials.PRIXILIUM_COPPER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PRIXILED_COPPER_BOOTS, ModArmorMaterials.PRIXILIUM_COPPER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-         */
 
         itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_HELMET, ModArmorMaterials.PRIXILIUM_IRON_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PRIXILED_IRON_CHESTPLATE, ModArmorMaterials.PRIXILIUM_IRON_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
@@ -309,7 +304,7 @@ public class ModModelProvider extends FabricModelProvider {
 
 
         itemModelGenerator.registerDyeable(ModItems.PRIXILED_LEATHER_HORSE_ARMOR, -6265536);
-        // 1.21.9+ itemModelGenerator.register(ModItems.PRIXILED_COPPER_HORSE_ARMOR, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COPPER_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILED_IRON_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_HORSE_ARMOR, Models.GENERATED);

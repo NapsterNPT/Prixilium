@@ -21,13 +21,13 @@ public class PrixiliumBlock extends SaplingBlock {
     }
 
     @Override
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler) {
-        if (!world.isClient && entity instanceof LivingEntity livingEntity) {
+    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler, boolean bl) {
+        if (!world.isClient() && entity instanceof LivingEntity livingEntity) {
             if (!hasProtectionItem(livingEntity) && !livingEntity.getType().isIn(ModTags.Entities.IMMUNE_TO_PRIXILIUM_SLOWNESS)) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.PRIXILIUM_SLOWNESS, 40, 0));
             }
         }
-        super.onEntityCollision(state, world, pos, entity, handler);
+        super.onEntityCollision(state, world, pos, entity, handler, bl);
     }
 
     private boolean hasProtectionItem(LivingEntity entity) {

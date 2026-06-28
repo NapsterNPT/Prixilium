@@ -122,13 +122,11 @@ public class ModItemGroups {
                         //endregion
 
                         //region [copper]
-                        /* 1.21.9+
                         entries.add(ModItems.PRIXILED_COPPER_SWORD);
                         entries.add(ModItems.PRIXILED_COPPER_PICKAXE);
                         entries.add(ModItems.PRIXILED_COPPER_AXE);
                         entries.add(ModItems.PRIXILED_COPPER_SHOVEL);
                         entries.add(ModItems.PRIXILED_COPPER_HOE);
-                         */
                         //endregion
 
                         //region [iron]
@@ -185,12 +183,10 @@ public class ModItemGroups {
                         //endregion
 
                         //region [copper]
-                        /* 1.21.9+
                         entries.add(ModItems.PRIXILED_COPPER_HELMET);
                         entries.add(ModItems.PRIXILED_COPPER_CHESTPLATE);
                         entries.add(ModItems.PRIXILED_COPPER_LEGGINGS);
                         entries.add(ModItems.PRIXILED_COPPER_BOOTS);
-                         */
                         //endregion
 
                         //region [iron]
@@ -227,7 +223,7 @@ public class ModItemGroups {
 
                         //region [horse]
                         entries.add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
-                        // 1.21.9+ entries.add(ModItems.PRIXILED_COPPER_HORSE_ARMOR);
+                        entries.add(ModItems.PRIXILED_COPPER_HORSE_ARMOR);
                         entries.add(ModItems.PRIXILED_IRON_HORSE_ARMOR);
                         entries.add(ModItems.PRIXILED_GOLDEN_HORSE_ARMOR);
                         entries.add(ModItems.PRIXILED_DIAMOND_HORSE_ARMOR);

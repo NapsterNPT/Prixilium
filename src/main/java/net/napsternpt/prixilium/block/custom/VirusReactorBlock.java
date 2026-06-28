@@ -71,7 +71,7 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                     virusReactorEntity.startSpread();
                     virusReactorEntity.clear();
                     if (player instanceof ServerPlayerEntity serverPlayer) {
-                        AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "square_zero"));
+                        AdvancementEntry advancement = Objects.requireNonNull(world.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "square_zero"));
                         serverPlayer.getAdvancementTracker().grantCriterion(advancement, "square_zero");
                     }
                 }

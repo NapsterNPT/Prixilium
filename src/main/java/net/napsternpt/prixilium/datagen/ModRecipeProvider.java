@@ -338,13 +338,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //endregion
 
                 //region [copper]
-                /* 1.21.9+
                 prixiliumUpgrade(exporter, Items.COPPER_SWORD, RecipeCategory.COMBAT);
                 prixiliumUpgrade(exporter, Items.COPPER_PICKAXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.COPPER_AXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.COPPER_SHOVEL, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.COPPER_HOE, RecipeCategory.TOOLS);
-                */
                 //endregion
 
                 //region [iron]
@@ -401,12 +399,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //endregion
 
                 //region [copper]
-                /* 1.21.9+
-                prixiliumUpgrade(exporter, ModItems.COPPER_HELMET, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, ModItems.COPPER_CHESTPLATE, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, ModItems.COPPER_LEGGINGS, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, ModItems.COPPER_BOOTS, RecipeCategory.COMBAT);
-                 */
+                prixiliumUpgrade(exporter, Items.COPPER_HELMET, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.COPPER_CHESTPLATE, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.COPPER_LEGGINGS, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.COPPER_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [iron]
@@ -443,7 +439,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 //region [horse]
                 prixiliumUpgrade(exporter, Items.LEATHER_HORSE_ARMOR, RecipeCategory.COMBAT);
-                // 1.21.9+ prixiliumUpgrade(exporter, Items.COPPER_LEATHER_ARMOR, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.COPPER_HORSE_ARMOR, RecipeCategory.COMBAT);
                 prixiliumUpgrade(exporter, Items.IRON_HORSE_ARMOR, RecipeCategory.COMBAT);
                 prixiliumUpgrade(exporter, Items.GOLDEN_HORSE_ARMOR, RecipeCategory.COMBAT);
                 prixiliumUpgrade(exporter, Items.DIAMOND_HORSE_ARMOR, RecipeCategory.COMBAT);

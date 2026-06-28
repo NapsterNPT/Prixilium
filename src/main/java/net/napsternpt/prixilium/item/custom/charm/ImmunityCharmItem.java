@@ -38,12 +38,12 @@ public class ImmunityCharmItem extends CharmItem {
     @Override
     public ActionResult use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
-        if (!world.isClient) {
+        if (!world.isClient()) {
             NbtCompound nbt = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt();
             if (nbt.getBoolean(ACTIVE_KEY).orElse(false)) return ActionResult.FAIL;
             player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, duration * 20, 4, false, false, false));
             if (player instanceof ServerPlayerEntity serverPlayer) {
-                AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "indestructible"));
+                AdvancementEntry advancement = Objects.requireNonNull(world.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "indestructible"));
                 serverPlayer.getAdvancementTracker().grantCriterion(advancement, "indestructible");
             }
             nbt.putBoolean(ACTIVE_KEY, true);
@@ -59,7 +59,7 @@ public class ImmunityCharmItem extends CharmItem {
 
     @Override
     public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
-        if (!world.isClient && entity instanceof PlayerEntity player) {
+        if (!world.isClient() && entity instanceof PlayerEntity player) {
             if (stack.contains(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE)) {
                 NbtCompound nbt = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt();
                 if (nbt.getBoolean(ACTIVE_KEY).orElse(false) && !player.hasStatusEffect(StatusEffects.RESISTANCE)) {

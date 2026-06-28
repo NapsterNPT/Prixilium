@@ -38,7 +38,7 @@ public class StopwatchCharmItem extends CharmItem {
     @Override
     public ActionResult use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
-        if (!world.isClient) {
+        if (!world.isClient()) {
             ServerWorld serverWorld = (ServerWorld) world;
             NbtCompound nbt = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt();
             if (nbt.getBoolean(ACTIVE_KEY).orElse(false)) return ActionResult.FAIL;
@@ -54,7 +54,7 @@ public class StopwatchCharmItem extends CharmItem {
             ModPackets.sendTimeStopStart(serverWorld, durationTicks, player.getUuid());
 
             if (player instanceof ServerPlayerEntity serverPlayer) {
-                AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "time_stopper"));
+                AdvancementEntry advancement = serverWorld.getServer().getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "time_stopper"));
                 serverPlayer.getAdvancementTracker().grantCriterion(advancement, "time_stopper");
             }
 
@@ -68,7 +68,7 @@ public class StopwatchCharmItem extends CharmItem {
 
     @Override
     public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
-        if (!world.isClient && entity instanceof PlayerEntity) {
+        if (!world.isClient() && entity instanceof PlayerEntity) {
             if (stack.contains(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE)) {
                 NbtCompound nbt = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT).copyNbt();
                 if (nbt.getBoolean(ACTIVE_KEY).orElse(false) && !TimeStopState.isTimeStopped(world)) {

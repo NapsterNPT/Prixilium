@@ -59,7 +59,7 @@ public class BlokitoEntity extends ZombieEntity {
     public void tick() {
         super.tick();
 
-        if (this.getWorld().isClient) {
+        if (this.getEntityWorld().isClient()) {
             if (this.getVelocity().horizontalLengthSquared() != 0) {
                 this.idleAnimationState.stop();
                 this.walkAnimationState.startIfNotRunning(this.age);
@@ -90,8 +90,8 @@ public class BlokitoEntity extends ZombieEntity {
     @Override
     public void onDeath(DamageSource source) {
         super.onDeath(source);
-        if (!this.getWorld().isClient && source.getAttacker() instanceof ServerPlayerEntity serverPlayer) {
-            AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "block_entity"));
+        if (!this.getEntityWorld().isClient() && source.getAttacker() instanceof ServerPlayerEntity serverPlayer) {
+            AdvancementEntry advancement = Objects.requireNonNull(this.getEntityWorld().getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "block_entity"));
             serverPlayer.getAdvancementTracker().grantCriterion(advancement, "block_entity");
         }
     }
