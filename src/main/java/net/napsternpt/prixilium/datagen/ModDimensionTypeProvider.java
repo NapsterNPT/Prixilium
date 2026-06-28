@@ -3,14 +3,13 @@ package net.napsternpt.prixilium.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.world.attribute.EnvironmentAttributeMap;
 import net.minecraft.world.dimension.DimensionType;
-import net.minecraft.world.dimension.DimensionTypes;
 import org.jspecify.annotations.NonNull;
 
-import java.util.Optional;
-import java.util.OptionalLong;
 import java.util.concurrent.CompletableFuture;
 
 public class ModDimensionTypeProvider extends FabricDynamicRegistryProvider {
@@ -22,11 +21,13 @@ public class ModDimensionTypeProvider extends FabricDynamicRegistryProvider {
     @Override
     protected void configure(RegistryWrapper.@NonNull WrapperLookup lookup, Entries entries) {
         entries.add(ModWorldGen.PRIXILIUM_DIMENSION_TYPE, new DimensionType(
-                OptionalLong.of(18000L), false, true, false, false,
-                1.0, false, false, 0, 256, 256,
-                BlockTags.INFINIBURN_END, DimensionTypes.THE_END, 0.1f,
-                Optional.empty(),
-                new DimensionType.MonsterSettings(false, false, UniformIntProvider.create(0, 7), 0)
+                true, false, true, 1.0, 0, 256, 256,
+                BlockTags.INFINIBURN_END, 0.1f,
+                new DimensionType.MonsterSettings(UniformIntProvider.create(0, 7), 0),
+                DimensionType.Skybox.NONE,
+                DimensionType.CardinalLightType.DEFAULT,
+                EnvironmentAttributeMap.builder().build(),
+                RegistryEntryList.empty()
         ));
     }
 

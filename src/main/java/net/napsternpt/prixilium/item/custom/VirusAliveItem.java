@@ -36,7 +36,7 @@ public class VirusAliveItem extends Item {
                 stack.setDamage(stack.getDamage() + 1);
 
                 if (stack.getDamage() >= stack.getMaxDamage()) {
-                    if (entity instanceof LivingEntity livingEntity && world.getGameRules().getBoolean(ModGameRules.ALLOW_ILLNESS)) {
+                    if (entity instanceof LivingEntity livingEntity && world.getGameRules().getValue(ModGameRules.ALLOW_ILLNESS)) {
                         int duration = 1000 + livingEntity.getRandom().nextInt(23001);
                         livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.ILLNESS, duration, 0, true, false, false));
                     }

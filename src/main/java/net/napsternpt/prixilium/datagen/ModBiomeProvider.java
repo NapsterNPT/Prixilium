@@ -9,6 +9,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
+import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.PlacedFeature;
@@ -42,11 +43,11 @@ public class ModBiomeProvider extends FabricDynamicRegistryProvider {
                 .temperature(0.5f)
                 .downfall(0.0f)
                 .effects(new BiomeEffects.Builder()
-                        .skyColor(0xFFCB00)
-                        .fogColor(0x1A0A2E)
                         .waterColor(0x6BAF00)
-                        .waterFogColor(0x329011)
                         .build())
+                .setEnvironmentAttribute(EnvironmentAttributes.SKY_COLOR_VISUAL, 0xFFCB00)
+                .setEnvironmentAttribute(EnvironmentAttributes.FOG_COLOR_VISUAL, 0x1A0A2E)
+                .setEnvironmentAttribute(EnvironmentAttributes.WATER_FOG_COLOR_VISUAL, 0x329011)
                 .spawnSettings(spawnSettings.build())
                 .generationSettings(generationSettings.build())
                 .build()

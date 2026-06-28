@@ -12,7 +12,7 @@ import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.Pool;
+import net.minecraft.util.collection.WeightedPool;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.custom.PrixiliumLampBlock;
@@ -51,7 +51,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.blockStateCollector.accept(
                 VariantsBlockModelDefinitionCreator.of(ModBlocks.PRIXILIUM_GRASS,
-                        new WeightedVariant(Pool.<ModelVariant>builder()
+                        new WeightedVariant(WeightedPool.<ModelVariant>builder()
                                 .add(new ModelVariant(prixiliumGrassModel1))
                                 .add(new ModelVariant(prixiliumGrassModel2))
                                 .add(new ModelVariant(prixiliumGrassModel3))

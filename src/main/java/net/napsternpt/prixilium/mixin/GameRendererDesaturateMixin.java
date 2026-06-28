@@ -6,7 +6,7 @@ import net.minecraft.client.gl.PostEffectProcessor;
 import net.minecraft.client.render.DefaultFramebufferSet;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.render.RenderTickCounter;
-import net.minecraft.client.util.Pool;
+import net.minecraft.client.util.memory.ObjectPool;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.client.TimeStopClientEffects;
@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(GameRenderer.class)
 public abstract class GameRendererDesaturateMixin {
     @Shadow @Final private MinecraftClient client;
-    @Shadow @Final private Pool pool;
+    @Shadow @Final private ObjectPool pool;
 
     @Unique
     private PostEffectProcessor desaturateEffect = null;
