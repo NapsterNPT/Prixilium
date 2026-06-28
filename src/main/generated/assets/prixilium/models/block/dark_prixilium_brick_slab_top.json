@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "prixilium:block/dark_prixilium_bricks",
-    "side": "prixilium:block/dark_prixilium_bricks",
-    "top": "prixilium:block/dark_prixilium_bricks"
-  }
-}

@@ -61,7 +61,7 @@ public class WitherCharmItem extends CharmItem {
                 target.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, effectDuration, 1));
                 Vec3d knockback = direction.multiply(1.5);
                 target.setVelocity(target.getVelocity().add(knockback));
-                target.velocityModified = true;
+                target.velocityDirty = true;
             }
 
             serverWorld.playSound(null, player.getX(), player.getY(), player.getZ(),

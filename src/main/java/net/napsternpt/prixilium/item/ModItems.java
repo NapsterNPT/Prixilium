@@ -669,12 +669,10 @@ public class ModItems {
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    /* 1.21.11+
     public static final Item PRIXILED_NETHERITE_HORSE_ARMOR = registerItem(name = "prixiled_netherite_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_NETHERITE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
-    */
     //endregion
 
 

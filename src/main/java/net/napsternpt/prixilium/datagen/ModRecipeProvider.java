@@ -443,7 +443,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.IRON_HORSE_ARMOR, RecipeCategory.COMBAT);
                 prixiliumUpgrade(exporter, Items.GOLDEN_HORSE_ARMOR, RecipeCategory.COMBAT);
                 prixiliumUpgrade(exporter, Items.DIAMOND_HORSE_ARMOR, RecipeCategory.COMBAT);
-                // 1.21.11+ prixiliumUpgrade(exporter, Items.NETHERITE_LEATHER_ARMOR, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.NETHERITE_HORSE_ARMOR, RecipeCategory.COMBAT);
                 //endregion
 
                 //endregion

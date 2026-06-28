@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "prixilium:item/charm_ii",
-    "layer1": "prixilium:item/postmortal_charm"
-  }
-}

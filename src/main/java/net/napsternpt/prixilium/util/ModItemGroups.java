@@ -227,7 +227,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILED_IRON_HORSE_ARMOR);
                         entries.add(ModItems.PRIXILED_GOLDEN_HORSE_ARMOR);
                         entries.add(ModItems.PRIXILED_DIAMOND_HORSE_ARMOR);
-                        // 1.21.11+ entries.add(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR);
+                        entries.add(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR);
                         //endregion
 
                         //endregion

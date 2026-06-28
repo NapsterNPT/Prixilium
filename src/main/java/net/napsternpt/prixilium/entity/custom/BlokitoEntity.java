@@ -76,7 +76,7 @@ public class BlokitoEntity extends ZombieEntity {
     }
 
     @Override
-    protected boolean isAffectedByDaylight() {
+    protected boolean burnsInDaylight() {
         // No
         return false;
     }

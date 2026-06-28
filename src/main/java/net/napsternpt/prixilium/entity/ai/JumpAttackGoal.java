@@ -91,6 +91,6 @@ public class JumpAttackGoal extends Goal {
         Vec3d toTarget = targetHead.subtract(this.mob.getEntityPos()).normalize();
 
         this.mob.setVelocity(toTarget.x * 0.8, 0.5, toTarget.z * 0.8);
-        this.mob.velocityModified = true;
+        this.mob.velocityDirty = true;
     }
 }

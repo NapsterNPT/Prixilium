@@ -59,7 +59,7 @@ public class SonicBoomCharmItem extends CharmItem {
                 target.damage(serverWorld, serverWorld.getDamageSources().sonicBoom(player), damage);
                 Vec3d knockback = direction.multiply(2.5);
                 target.setVelocity(target.getVelocity().add(knockback));
-                target.velocityModified = true;
+                target.velocityDirty = true;
             }
 
             serverWorld.playSound(null, player.getX(), player.getY(), player.getZ(),

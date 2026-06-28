@@ -259,7 +259,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.output.accept(ModItems.PRIXILIUM_HOOK,
                 new ItemAsset(new ConditionItemModel.Unbaked(new HasComponentProperty(ModDataComponentTypes.HOOK_ACTIVE, false),
                         unbakedExtendedPrixiliumHook, unbakedPrixiliumHook),
-                        new ItemAsset.Properties(false, false)).model());
+                        new ItemAsset.Properties(false, false, 1f)).model());
 
         //endregion
 
@@ -308,7 +308,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILED_IRON_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_HORSE_ARMOR, Models.GENERATED);
-        // 1.21.11+ itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR, Models.GENERATED);
 
         //endregion
     }

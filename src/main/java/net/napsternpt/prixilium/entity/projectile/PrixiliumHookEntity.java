@@ -167,11 +167,11 @@ public class PrixiliumHookEntity extends ProjectileEntity {
                     }
                     
                     owner.setVelocity(newVelocity);
-                    owner.velocityModified = true;
+                    owner.velocityDirty = true;
                     owner.fallDistance = 0;
                 } else {
                     owner.setVelocity(owner.getVelocity().multiply(0.5, 0.5, 0.5));
-                    owner.velocityModified = true;
+                    owner.velocityDirty = true;
                 }
             }
         }

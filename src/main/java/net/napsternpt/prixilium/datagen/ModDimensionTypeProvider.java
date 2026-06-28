@@ -7,6 +7,7 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.dimension.DimensionTypes;
+import org.jspecify.annotations.NonNull;
 
 import java.util.Optional;
 import java.util.OptionalLong;
@@ -19,11 +20,11 @@ public class ModDimensionTypeProvider extends FabricDynamicRegistryProvider {
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup lookup, Entries entries) {
+    protected void configure(RegistryWrapper.@NonNull WrapperLookup lookup, Entries entries) {
         entries.add(ModWorldGen.PRIXILIUM_DIMENSION_TYPE, new DimensionType(
                 OptionalLong.of(18000L), false, true, false, false,
                 1.0, false, false, 0, 256, 256,
-                BlockTags.INFINIBURN_END, DimensionTypes.THE_END_ID, 0.1f,
+                BlockTags.INFINIBURN_END, DimensionTypes.THE_END, 0.1f,
                 Optional.empty(),
                 new DimensionType.MonsterSettings(false, false, UniformIntProvider.create(0, 7), 0)
         ));
