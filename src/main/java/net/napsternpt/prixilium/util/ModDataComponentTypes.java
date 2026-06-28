@@ -16,5 +16,7 @@ public class ModDataComponentTypes {
                     .build()
     );
 
-    public static void registerDataComponentTypes() {Prixilium.LOGGER.info("Registering Data Component Types.");}
+    public static void registerDataComponentTypes() {
+        Prixilium.LOGGER.info("Registering Data Component Types.");
+    }
 }

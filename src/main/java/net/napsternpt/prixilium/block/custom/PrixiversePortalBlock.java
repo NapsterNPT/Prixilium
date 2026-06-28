@@ -6,6 +6,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCollisionHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -41,29 +42,26 @@ public class PrixiversePortalBlock extends Block {
         return CODEC;
     }
 
-
     @Override
     protected BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
     }
 
     @Override
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler) {
-        if (!world.isClient && entity instanceof ServerPlayerEntity player) {
-            if (player.getWorld().getRegistryKey().equals(ModWorldGen.PRIXILIUM_WORLD)) {
+    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler, boolean bl) {
+        if (!world.isClient() && entity instanceof ServerPlayerEntity player) {
+            if (player.getEntityWorld().getRegistryKey().equals(ModWorldGen.PRIXILIUM_WORLD)) {
                 UUID uuid = player.getUuid();
-                if (VIEWING_PLAYERS.contains(uuid)) {
-                    return;
-                }
+                if (VIEWING_PLAYERS.contains(uuid)) return;
                 VIEWING_PLAYERS.add(uuid);
                 ModPackets.sendShowCredits(player);
-                AdvancementEntry advancement = Objects.requireNonNull(player.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "the_end"));
+                AdvancementEntry advancement = Objects.requireNonNull(world.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "the_end"));
                 player.getAdvancementTracker().grantCriterion(advancement, "the_end");
                 Prixilium.LOGGER.info(Text.translatable("thank_you").getString());
             }
         }
 
-        super.onEntityCollision(state, world, pos, entity, handler);
+        super.onEntityCollision(state, world, pos, entity, handler, bl);
     }
 
     public static void markCreditsFinished(ServerPlayerEntity player) {

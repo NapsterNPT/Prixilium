@@ -36,7 +36,7 @@ public class ContainerCharmItem extends CharmItem {
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
-        if (!world.isClient) {
+        if (!world.isClient()) {
             RegistryWrapper.WrapperLookup lookup = world.getRegistryManager();
             user.openHandledScreen(new SimpleNamedScreenHandlerFactory((syncId, inv, player) -> {
                 SimpleInventory inventory = new SimpleInventory(raw * 9);

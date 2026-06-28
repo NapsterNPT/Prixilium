@@ -20,7 +20,7 @@ public class RegenerationCharmItem extends CharmItem {
 
     @Override
     public ActionResult use(World world, PlayerEntity player, Hand hand) {
-        if (!world.isClient) {
+        if (!world.isClient()) {
             boolean healed = false;
 
             if (player.getHealth() < player.getMaxHealth()) {

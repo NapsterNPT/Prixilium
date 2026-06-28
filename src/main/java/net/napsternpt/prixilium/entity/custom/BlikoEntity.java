@@ -70,13 +70,13 @@ public class BlikoEntity extends TameableEntity {
                 }
                 if (this.random.nextInt(3) == 0) {
                     this.setOwner(player);
-                    this.getWorld().sendEntityStatus(this, (byte) 7);
-                    if (!this.getWorld().isClient && player instanceof ServerPlayerEntity serverPlayer) {
-                        AdvancementEntry advancement = Objects.requireNonNull(serverPlayer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "team_bliko"));
+                    this.getEntityWorld().sendEntityStatus(this, (byte) 7);
+                    if (!this.getEntityWorld().isClient() && player instanceof ServerPlayerEntity serverPlayer) {
+                        AdvancementEntry advancement = Objects.requireNonNull(this.getEntityWorld().getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "team_bliko"));
                         serverPlayer.getAdvancementTracker().grantCriterion(advancement, "team_bliko");
                     }
                 } else {
-                    this.getWorld().sendEntityStatus(this, (byte) 6);
+                    this.getEntityWorld().sendEntityStatus(this, (byte) 6);
                 }
                 return ActionResult.SUCCESS;
             }
@@ -93,7 +93,7 @@ public class BlikoEntity extends TameableEntity {
     public void tick() {
         super.tick();
 
-        if (this.getWorld().isClient) {
+        if (this.getEntityWorld().isClient()) {
             if (this.isSitting()) {
                 this.idleAnimationState.stop();
                 this.walkAnimationState.stop();
@@ -128,14 +128,14 @@ public class BlikoEntity extends TameableEntity {
     public void onDeath(DamageSource source) {
         super.onDeath(source);
 
-        if (!this.getWorld().isClient) {
+        if (!this.getEntityWorld().isClient()) {
             if (source.getAttacker() instanceof ServerPlayerEntity killer) {
-                AdvancementEntry advancement = Objects.requireNonNull(killer.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "kill_bliko"));
+                AdvancementEntry advancement = Objects.requireNonNull(this.getEntityWorld().getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "kill_bliko"));
                 killer.getAdvancementTracker().grantCriterion(advancement, "kill_bliko");
             }
 
             if (!this.isBaby()) {
-                ServerWorld world = (ServerWorld) this.getWorld();
+                ServerWorld world = (ServerWorld) this.getEntityWorld();
                 for (int i = 0; i < 2; i++) {
                     BlikoEntity baby = ModEntities.BLIKO.create(world, SpawnReason.CONVERSION);
                     if (baby != null) {
