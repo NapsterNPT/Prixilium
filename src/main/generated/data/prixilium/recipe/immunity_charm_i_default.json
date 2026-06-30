@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": "minecraft:turtle_helmet",
+    "#": "prixilium:charm_i"
+  },
+  "pattern": [
+    " ! ",
+    "!#!",
+    " ! "
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:immunity_charm_i"
+  }
+}

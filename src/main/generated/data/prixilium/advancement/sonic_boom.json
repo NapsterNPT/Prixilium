@@ -1,0 +1,47 @@
+{
+  "parent": "prixilium:charm_i",
+  "criteria": {
+    "kill_warden": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:warden"
+            }
+          }
+        ],
+        "killing_blow": {
+          "tags": [
+            {
+              "expected": true,
+              "id": "prixilium:sonic_boom"
+            }
+          ]
+        }
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.sonic_boom.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "prixilium:sonic_boom_charm_iii"
+    },
+    "title": {
+      "translate": "advancements.prixilium.sonic_boom.title"
+    }
+  },
+  "requirements": [
+    [
+      "kill_warden"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

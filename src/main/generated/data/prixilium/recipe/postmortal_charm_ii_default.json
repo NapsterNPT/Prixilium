@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:totem_of_undying",
+    "prixilium:charm_ii"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:postmortal_charm_ii"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "parent": "prixilium:enter_prixiverse",
+  "criteria": {
+    "block_entity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.block_entity.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "prixilium:blokito_spawn_egg"
+    },
+    "title": {
+      "translate": "advancements.prixilium.block_entity.title"
+    }
+  },
+  "requirements": [
+    [
+      "block_entity"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

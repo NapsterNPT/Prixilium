@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "!": "minecraft:redstone",
+    "#": "prixilium:prixilium",
+    "%": "minecraft:glowstone"
+  },
+  "pattern": [
+    "#!#",
+    "!%!",
+    "#!#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixilium_lamp"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": "minecraft:sculk_shrieker",
+    "#": "prixilium:charm_iii",
+    "?": "minecraft:sculk_catalyst",
+    "@": "minecraft:echo_shard"
+  },
+  "pattern": [
+    " @ ",
+    "@#@",
+    "?!?"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:sonic_boom_charm_iii"
+  }
+}

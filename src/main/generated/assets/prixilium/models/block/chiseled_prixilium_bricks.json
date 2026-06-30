@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "prixilium:block/chiseled_prixilium_bricks"
+  }
+}

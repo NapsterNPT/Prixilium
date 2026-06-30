@@ -1,0 +1,33 @@
+{
+  "parent": "prixilium:root",
+  "criteria": {
+    "smith": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:prixilium_upgrade_smithing_template"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.smith.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:prixilium_upgrade_smithing_template"
+    },
+    "title": {
+      "translate": "advancements.prixilium.smith.title"
+    }
+  },
+  "requirements": [
+    [
+      "smith"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:bow",
+  "result": {
+    "id": "prixilium:prixiled_bow"
+  },
+  "template": "prixilium:prixilium_upgrade_smithing_template"
+}

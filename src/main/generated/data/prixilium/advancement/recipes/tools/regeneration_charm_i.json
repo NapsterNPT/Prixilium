@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_charm_i": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:charm_i"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:regeneration_charm_i"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_charm_i"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:regeneration_charm_i"
+    ]
+  }
+}

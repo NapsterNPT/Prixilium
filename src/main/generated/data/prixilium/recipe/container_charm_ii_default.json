@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": "minecraft:chest",
+    "#": "prixilium:charm_ii"
+  },
+  "pattern": [
+    " ! ",
+    "!#!",
+    " ! "
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:container_charm_ii"
+  }
+}

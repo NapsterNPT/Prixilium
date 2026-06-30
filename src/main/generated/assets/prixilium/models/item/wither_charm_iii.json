@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "prixilium:item/charm_iii",
+    "layer1": "prixilium:item/wither_charm"
+  }
+}

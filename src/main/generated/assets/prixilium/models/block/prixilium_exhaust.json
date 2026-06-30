@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "prixilium:block/prixilium_exhaust_side",
+    "side": "prixilium:block/prixilium_exhaust_side",
+    "top": "prixilium:block/prixilium_exhaust_top"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "cracked_prixilium_bricks",
+  "ingredient": "prixilium:dark_prixilium_bricks",
+  "result": {
+    "id": "prixilium:cracked_dark_prixilium_bricks"
+  }
+}

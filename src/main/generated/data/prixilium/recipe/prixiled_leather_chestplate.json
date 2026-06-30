@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:leather_chestplate",
+  "result": {
+    "id": "prixilium:prixiled_leather_chestplate"
+  },
+  "template": "prixilium:prixilium_upgrade_smithing_template"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:copper_leggings",
+  "result": {
+    "id": "prixilium:prixiled_copper_leggings"
+  },
+  "template": "prixilium:prixilium_upgrade_smithing_template"
+}

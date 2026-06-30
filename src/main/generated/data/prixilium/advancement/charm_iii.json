@@ -1,0 +1,33 @@
+{
+  "parent": "prixilium:charm_i",
+  "criteria": {
+    "get_charm_iii": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:charm_iii"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.charm_iii.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:charm_iii"
+    },
+    "title": {
+      "translate": "advancements.prixilium.charm_iii.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_charm_iii"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "prixilium:block/prixilium_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "prixilium:block/prixilium_log"
+    },
+    "axis=z": {
+      "model": "prixilium:block/prixilium_log_horizontal",
+      "x": 90
+    }
+  }
+}

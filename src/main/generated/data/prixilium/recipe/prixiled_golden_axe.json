@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:golden_axe",
+  "result": {
+    "id": "prixilium:prixiled_golden_axe"
+  },
+  "template": "prixilium:prixilium_upgrade_smithing_template"
+}

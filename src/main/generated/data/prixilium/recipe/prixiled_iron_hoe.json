@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:iron_hoe",
+  "result": {
+    "id": "prixilium:prixiled_iron_hoe"
+  },
+  "template": "prixilium:prixilium_upgrade_smithing_template"
+}

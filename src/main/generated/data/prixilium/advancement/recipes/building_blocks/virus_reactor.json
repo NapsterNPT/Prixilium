@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_reactor_core": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:reactor_core"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:stand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:virus_reactor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_reactor_core",
+      "has_stand"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:virus_reactor"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "parent": "prixilium:enter_prixiverse",
+  "criteria": {
+    "the_end": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.the_end.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "prixilium:virus_dead"
+    },
+    "title": {
+      "translate": "advancements.prixilium.the_end.title"
+    }
+  },
+  "requirements": [
+    [
+      "the_end"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "prixilium:root",
+  "criteria": {
+    "get_dead_virus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:virus_dead"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.virus_dead.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:virus_dead"
+    },
+    "title": {
+      "translate": "advancements.prixilium.virus_dead.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_dead_virus"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

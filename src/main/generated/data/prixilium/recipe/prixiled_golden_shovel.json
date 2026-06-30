@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:golden_shovel",
+  "result": {
+    "id": "prixilium:prixiled_golden_shovel"
+  },
+  "template": "prixilium:prixilium_upgrade_smithing_template"
+}
