@@ -6,6 +6,7 @@ import net.minecraft.entity.damage.DamageType;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.napsternpt.prixilium.util.ModTags;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -15,7 +16,7 @@ public class ModDamageTypeTagProvider extends FabricTagProvider<DamageType> {
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+    protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
         builder(ModTags.DamageTypes.SONIC_BOOM);
     }
 }

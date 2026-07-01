@@ -1,5 +1,5 @@
 {
-  "parent": "prixilium:enter_prixiverse",
+  "parent": "prixilium:root",
   "criteria": {
     "tree": {
       "conditions": {

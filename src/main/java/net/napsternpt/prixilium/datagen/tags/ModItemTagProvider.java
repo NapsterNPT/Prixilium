@@ -8,6 +8,7 @@ import net.minecraft.registry.tag.ItemTags;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.util.ModTags;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,7 +18,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+    protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
         valueLookupBuilder(ItemTags.SWORDS)
                 .add(ModItems.PRIXILED_WOODEN_SWORD)
                 .add(ModItems.PRIXILED_STONE_SWORD)

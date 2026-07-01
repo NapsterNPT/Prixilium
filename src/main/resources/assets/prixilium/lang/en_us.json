@@ -1,5 +1,5 @@
 {
-  "thank_you": "Thank you for playing Prixilium!",
+  "thank_you": "Thank you for playing §6§lPrixilium§r!",
 
 
   "itemgroup.prixilium.prixilium": "Prixilium",
@@ -11,6 +11,7 @@
   "item.prixilium.thermometer": "Thermometer",
   "item.prixilium.prixilium_upgrade_smithing_template": "Prixilium Smithing Template",
   "item.prixilium.prixilium_hook": "Prixilium Hook",
+  "item.prixilium.napsternpt_plushy": "NapsterNPT Plushy",
   "item.prixilium.bliko_spawn_egg": "Bliko Spawn Egg",
   "item.prixilium.blokito_spawn_egg": "Blokito Spawn Egg",
   "item.prixilium.airis_spawn_egg": "Airis Spawn Egg",
@@ -214,6 +215,8 @@
 
   "advancements.prixilium.root.title": "Prixilium",
   "advancements.prixilium.root.description": "Let the infestation begin",
+  "advancements.prixilium.completionist.title": "Completionist",
+  "advancements.prixilium.completionist.description": "Complete every Prixilium advancement",
 
   "advancements.prixilium.enter_prixiverse.title": "Is This a Nightmare?",
   "advancements.prixilium.enter_prixiverse.description": "Sleep while ill",

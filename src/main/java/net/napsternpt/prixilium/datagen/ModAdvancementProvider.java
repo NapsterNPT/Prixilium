@@ -25,6 +25,7 @@ import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.util.ModTags;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -36,7 +37,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
     }
 
     @Override
-    public void generateAdvancement(RegistryWrapper.WrapperLookup registryLookup, Consumer<AdvancementEntry> consumer) {
+    public void generateAdvancement(RegistryWrapper.WrapperLookup registryLookup, @NonNull Consumer<AdvancementEntry> consumer) {
         AdvancementCriterion<ImpossibleCriterion.Conditions> impossibleCriterion = Criteria.IMPOSSIBLE.create(new ImpossibleCriterion.Conditions());
 
         // Root
@@ -49,6 +50,15 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .criterion("get_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_ALIVE))
                 .build(consumer, Prixilium.MOD_ID + ":root");
+
+        Advancement.Builder.create()
+                .parent(root)
+                .display(ModItems.NAPSTERNPT_PLUSHY,
+                        Text.translatable("advancements.prixilium.completionist.title"),
+                        Text.translatable("advancements.prixilium.completionist.description"), null, AdvancementFrame.CHALLENGE, true, true, true
+                )
+                .criterion("completionist", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":completionist");
 
         //region [Prixiverse]
         AdvancementEntry dimension = Advancement.Builder.create()
@@ -99,6 +109,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("use_prixilium_hook", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":prixilium_hook");
 
+        //region [Charms]
         AdvancementEntry charm = Advancement.Builder.create()
                 .parent(root)
                 .display(ModItems.CHARM_I,
@@ -172,11 +183,12 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         EntityPredicate.Builder.create().type(registryLookup.getOrThrow(RegistryKeys.ENTITY_TYPE), EntityType.WARDEN),
                         DamageSourcePredicate.Builder.create().tag(TagPredicate.expected(ModTags.DamageTypes.SONIC_BOOM))))
                 .build(consumer, Prixilium.MOD_ID + ":sonic_boom");
+        //endregion
 
         //endregion
 
         //region [Blocks]
-        AdvancementEntry itsSpreading = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .parent(root)
                 .display(ModBlocks.VIRUS_REACTOR,
                         Text.translatable("advancements.prixilium.square_zero.title"),
@@ -186,7 +198,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .build(consumer, Prixilium.MOD_ID + ":square_zero");
 
         Advancement.Builder.create()
-                .parent(itsSpreading)
+                .parent(root)
                 .display(ModBlocks.PRIXILIUM_GRASS,
                         Text.translatable("advancements.prixilium.its_spreading.title"),
                         Text.translatable("advancements.prixilium.its_spreading.description"), null, AdvancementFrame.TASK, true, true, false
@@ -204,7 +216,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .build(consumer, Prixilium.MOD_ID + ":step_on_prixilium");
 
         Advancement.Builder.create()
-                .parent(dimension)
+                .parent(root)
                 .display(ModBlocks.PRIXILIUM_LOG,
                         Text.translatable("advancements.prixilium.tree.title"),
                         Text.translatable("advancements.prixilium.tree.description"), null, AdvancementFrame.TASK, true, true, false

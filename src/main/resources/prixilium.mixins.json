@@ -3,6 +3,7 @@
 	"package": "net.napsternpt.prixilium.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"AdvancementTrackerMixin",
 		"HideEffectsMixin",
 		"InGameHudMixin",
 		"MilkBucketMixin",

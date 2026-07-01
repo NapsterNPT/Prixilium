@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.util.ModTags;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -14,7 +15,7 @@ public class ModEntityTagProvider extends FabricTagProvider.EntityTypeTagProvide
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+    protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
         // Mod Tags
         valueLookupBuilder(ModTags.Entities.IMMUNE_TO_PRIXILIUM_SLOWNESS)
                 .add(ModEntities.BLIKO)

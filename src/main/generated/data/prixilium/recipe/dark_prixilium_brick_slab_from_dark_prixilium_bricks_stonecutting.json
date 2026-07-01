@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "prixilium:dark_prixilium_bricks",
+  "result": {
+    "count": 2,
+    "id": "prixilium:dark_prixilium_brick_slab"
+  }
+}

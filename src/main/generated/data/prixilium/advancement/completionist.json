@@ -1,25 +1,27 @@
 {
   "parent": "prixilium:root",
   "criteria": {
-    "its_spreading": {
+    "completionist": {
       "trigger": "minecraft:impossible"
     }
   },
   "display": {
     "description": {
-      "translate": "advancements.prixilium.its_spreading.description"
+      "translate": "advancements.prixilium.completionist.description"
     },
+    "frame": "challenge",
+    "hidden": true,
     "icon": {
       "count": 1,
-      "id": "prixilium:prixilium_grass"
+      "id": "prixilium:napsternpt_plushy"
     },
     "title": {
-      "translate": "advancements.prixilium.its_spreading.title"
+      "translate": "advancements.prixilium.completionist.title"
     }
   },
   "requirements": [
     [
-      "its_spreading"
+      "completionist"
     ]
   ],
   "sends_telemetry_event": true

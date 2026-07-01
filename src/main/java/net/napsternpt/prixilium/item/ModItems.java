@@ -49,6 +49,19 @@ public class ModItems {
             .maxDamage(32)
     ));
 
+    public static final Item NAPSTERNPT_PLUSHY = registerItem(name = "napsternpt_plushy", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+            .fireproof()
+            .rarity(Rarity.EPIC)
+    ){
+        @Override
+        public void appendTooltip(ItemStack stack, Item.TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+            textConsumer.accept(Text.translatable("thank_you"));
+            super.appendTooltip(stack, context, displayComponent, textConsumer, type);
+        }
+    });
+
     public static final Item BLIKO_SPAWN_EGG = registerItem(name = "bliko_spawn_egg", new SpawnEggItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .spawnEgg(ModEntities.BLIKO)
@@ -209,6 +222,7 @@ public class ModItems {
             .specializable()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
+            .fireproof()
             .rarity(Rarity.RARE)
     ){
         @Override
@@ -220,48 +234,56 @@ public class ModItems {
     public static final Item CONTAINER_CHARM_III = registerItem(name = "container_charm_iii", new ContainerCharmItem(6, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
+            .fireproof()
             .rarity(Rarity.EPIC)
     ));
     public static final Item STASIS_CHARM_III = registerItem(name = "stasis_charm_iii", new StasisCharmItem((CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
+            .fireproof()
             .rarity(Rarity.EPIC)
     ));
     public static final Item REGENERATION_CHARM_III = registerItem(name = "regeneration_charm_iii", new RegenerationCharmItem((CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
+            .fireproof()
             .rarity(Rarity.EPIC)
     ));
     public static final Item POSTMORTAL_CHARM_III = registerItem(name = "postmortal_charm_iii", new PostmortalCharmItem((CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(8)
+            .fireproof()
             .rarity(Rarity.EPIC)
     ));
     public static final Item STOPWATCH_CHARM_III = registerItem(name = "stopwatch_charm_iii", new StopwatchCharmItem(30, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
+            .fireproof()
             .rarity(Rarity.EPIC)
     ));
     public static final Item IMMUNITY_CHARM_III = registerItem(name = "immunity_charm_iii", new ImmunityCharmItem(30, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
+            .fireproof()
             .rarity(Rarity.EPIC)
     ));
     public static final Item SONIC_BOOM_CHARM_III = registerItem(name = "sonic_boom_charm_iii", new SonicBoomCharmItem(15.0F, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
+            .fireproof()
             .rarity(Rarity.EPIC)
     ));
     public static final Item WITHER_CHARM_III = registerItem(name = "wither_charm_iii", new WitherCharmItem(400, (CharmSettings) new CharmSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(32)
+            .fireproof()
             .rarity(Rarity.EPIC)
     ));
     //endregion

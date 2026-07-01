@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "!": "prixilium:prixilium_bricks"
+    "!": "prixilium:dark_prixilium_bricks"
   },
   "pattern": [
     " ! ",
