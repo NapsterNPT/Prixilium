@@ -6,9 +6,7 @@
     }
   },
   "display": {
-    "description": {
-      "translate": "advancements.prixilium.completionist.description"
-    },
+    "description": "translation{key='advancements.prixilium.completionist.description', args=[]}",
     "frame": "challenge",
     "hidden": true,
     "icon": {

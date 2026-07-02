@@ -8,6 +8,8 @@ import net.napsternpt.prixilium.datagen.*;
 import net.napsternpt.prixilium.datagen.tags.*;
 import net.napsternpt.prixilium.world.ModConfiguredFeatures;
 import net.napsternpt.prixilium.world.ModPlacedFeatures;
+import net.napsternpt.prixilium.world.ModStructures;
+import net.napsternpt.prixilium.world.ModTemplatePools;
 
 public class PrixiliumDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -27,6 +29,7 @@ public class PrixiliumDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModEntityTagProvider::new);
 		pack.addProvider(ModDamageTypeTagProvider::new);
+		pack.addProvider(ModBiomeTagProvider::new);
 
 		//Dimension
 		pack.addProvider(ModBiomeProvider::new);
@@ -37,5 +40,7 @@ public class PrixiliumDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.STRUCTURE, ModStructures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.TEMPLATE_POOL, ModTemplatePools::bootstrap);
 	}
 }

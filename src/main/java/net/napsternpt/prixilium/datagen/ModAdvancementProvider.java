@@ -55,7 +55,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root)
                 .display(ModItems.NAPSTERNPT_PLUSHY,
                         Text.translatable("advancements.prixilium.completionist.title"),
-                        Text.translatable("advancements.prixilium.completionist.description"), null, AdvancementFrame.CHALLENGE, true, true, true
+                        Text.of(Text.translatable("advancements.prixilium.completionist.description") + ""), null, AdvancementFrame.CHALLENGE, true, true, true
                 )
                 .criterion("completionist", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":completionist");

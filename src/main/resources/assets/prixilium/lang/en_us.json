@@ -1,5 +1,5 @@
 {
-  "thank_you": "Thank you for playing §6§lPrixilium§r!",
+  "thank_you": "Thank you for playing §6Prixilium§r!",
 
 
   "itemgroup.prixilium.prixilium": "Prixilium",
@@ -263,9 +263,9 @@
   "advancements.prixilium.block_entity.description": "Kill a Blokito",
 
 
-  "gamerule.allowIllness": "§7(§6Prixilium§7)§f Allow Illness",
-  "gamerule.prixiliumExpands": "§7(§6Prixilium§7)§f Prixilium Expands",
+  "gamerule.prixilium.allow_illness": "§7(§6Prixilium§7)§r Allow Illness",
+  "gamerule.prixilium.prixilium_expands": "§7(§6Prixilium§7)§r Prixilium Expands",
 
 
-  "resourcepacks.static_charms": "§7(§6Prixilium§7)§f Static Charms"
+  "resourcepacks.static_charms": "§7(§6Prixilium§7)§r Static Charms"
 }

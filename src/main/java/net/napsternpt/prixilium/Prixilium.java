@@ -5,8 +5,8 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerEntityWorldChangeEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
+import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.potion.Potions;
 import net.minecraft.server.world.ServerWorld;
@@ -79,10 +79,11 @@ public class Prixilium implements ModInitializer {
 		ModPackets.registerServer();
 		ModPackets.registerReturnHandler();
 
-		ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of(MOD_ID, "static_charms"),
+		ResourceLoader.registerBuiltinPack(
+				Identifier.of(MOD_ID, "static_charms"),
 				FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(),
 				Text.translatable("resourcepacks.static_charms"),
-				ResourcePackActivationType.NORMAL
+				PackActivationType.NORMAL
 		);
 	}
 }

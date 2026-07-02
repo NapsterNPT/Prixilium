@@ -4,9 +4,9 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
+import net.minecraft.client.render.entity.EntityRendererFactories;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.block.entity.renderers.VirusReactorBlockEntityRenderer;
@@ -30,12 +30,12 @@ public class PrixiliumClient implements ClientModInitializer {
 		BlockEntityRendererFactories.register(ModBlockEntities.VIRUS_REACTOR_BE, VirusReactorBlockEntityRenderer::new);
 
 		EntityModelLayerRegistry.registerModelLayer(BlikoModel.BLIKO, BlikoModel::getTexturedModelData);
-		EntityRendererRegistry.register(ModEntities.BLIKO, BlikoRenderer::new);
+		EntityRendererFactories.register(ModEntities.BLIKO, BlikoRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(BlokitoModel.BLOKITO, BlokitoModel::getTexturedModelData);
-		EntityRendererRegistry.register(ModEntities.BLOKITO, BlokitoRenderer::new);
+		EntityRendererFactories.register(ModEntities.BLOKITO, BlokitoRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(AirisModel.AIRIS, AirisModel::getTexturedModelData);
-		EntityRendererRegistry.register(ModEntities.AIRIS, AirisRenderer::new);
-		EntityRendererRegistry.register(ModEntities.PRIXILIUM_HOOK, PrixiliumHookRenderer::new);
+		EntityRendererFactories.register(ModEntities.AIRIS, AirisRenderer::new);
+		EntityRendererFactories.register(ModEntities.PRIXILIUM_HOOK, PrixiliumHookRenderer::new);
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_AMBIENT, PrixiliumAmbientParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_LEAVES, PrixiliumLeavesParticles.Factory::new);
