@@ -126,6 +126,7 @@
 
   "block.prixilium.prixilium": "Prixilium",
   "block.prixilium.prixilium_grass": "Prixilium Grass",
+
   "block.prixilium.prixilium_leaves": "Prixilium Leaves",
   "block.prixilium.prixilium_log": "Prixilium Log",
   "block.prixilium.prixilium_wood": "Prixilium Wood",
@@ -136,6 +137,17 @@
   "block.prixilium.prixilium_fence_gate": "Prixilium Fence Gate",
   "block.prixilium.prixilium_door": "Prixilium Door",
   "block.prixilium.prixilium_trapdoor": "Prixilium Trapdoor",
+
+  "block.prixilium.burned_prixilium_log": "Burned Prixilium Log",
+  "block.prixilium.burned_prixilium_wood": "Burned Prixilium Wood",
+  "block.prixilium.burned_prixilium_planks": "Burned Prixilium Planks",
+  "block.prixilium.burned_prixilium_stairs": "Burned Prixilium Stairs",
+  "block.prixilium.burned_prixilium_slab": "Burned Prixilium Slab",
+  "block.prixilium.burned_prixilium_fence": "Burned Prixilium Fence",
+  "block.prixilium.burned_prixilium_fence_gate": "Burned Prixilium Fence Gate",
+  "block.prixilium.burned_prixilium_door": "Burned Prixilium Door",
+  "block.prixilium.burned_prixilium_trapdoor": "Burned Prixilium Trapdoor",
+
   "block.prixilium.prixilium_bricks": "Prixilium Bricks",
   "block.prixilium.cracked_prixilium_bricks": "Cracked Prixilium Bricks",
   "block.prixilium.chiseled_prixilium_bricks": "Chiseled Prixilium Bricks",
@@ -143,6 +155,7 @@
   "block.prixilium.prixilium_bricks_wall": "Prixilium Bricks Wall",
   "block.prixilium.prixilium_brick_stairs": "Prixilium Brick Stairs",
   "block.prixilium.prixilium_brick_slab": "Prixilium Brick Slab",
+
   "block.prixilium.dark_prixilium_bricks": "Dark Prixilium Bricks",
   "block.prixilium.cracked_dark_prixilium_bricks": "Cracked Dark Prixilium Bricks",
   "block.prixilium.chiseled_dark_prixilium_bricks": "Chiseled Dark Prixilium Bricks",
@@ -150,13 +163,13 @@
   "block.prixilium.dark_prixilium_bricks_wall": "Dark Prixilium Bricks Wall",
   "block.prixilium.dark_prixilium_brick_stairs": "Dark Prixilium Brick Stairs",
   "block.prixilium.dark_prixilium_brick_slab": "Dark Prixilium Brick Slab",
+
   "block.prixilium.prixilium_lamp": "Prixilium Lamp",
   "block.prixilium.prixilium_exhaust": "Prixilium Exhaust",
   "block.prixilium.stand": "Stand",
   "block.prixilium.reactor_core": "Reactor Core",
   "block.prixilium.virus_reactor": "Virus Reactor",
   "block.prixilium.prixiverse_portal": "Prixiverse Portal Block",
-
 
   "sounds.prixilium.prixilium_expand": "Prixilium Expands",
 
@@ -184,6 +197,7 @@
   "entity.prixilium.bliko": "Bliko",
   "entity.prixilium.blokito": "Blokito",
   "entity.prixilium.airis": "Airis",
+  "entity.prixilium.prixilium_hook": "Prixilium Hook",
 
 
   "tooltip.prixilium.virus_alive.1": "§7This Virus has",
@@ -197,8 +211,8 @@
 
   "tooltip.prixilium.charm": "§7This is a §edefault §7charm,",
   "tooltip.prixilium.container_charm": "§7This charm will give you extra §einventory spaces§7.",
-  "tooltip.prixilium.stasis_charm": "§7This charm will make you set a §estesis chamber §7.",
-  "tooltip.prixilium.regeneration_charm": "§7This charm will regenerate §eharts§7, §ehunger §7and §eoxygen§7.",
+  "tooltip.prixilium.stasis_charm": "§7This charm will make you set a §estasis chamber§7.",
+  "tooltip.prixilium.regeneration_charm": "§7This charm will regenerate §ehearts§7, §ehunger §7and §eoxygen§7.",
   "tooltip.prixilium.postmortal_charm": "§7This charm will §esave you §7from death.",
   "tooltip.prixilium.stopwatch_charm": "§7This charm will §estop time§7.",
   "tooltip.prixilium.immunity_charm": "§7This charm will make you §eimmune§7.",
@@ -208,7 +222,6 @@
   "hud.thermometer.player_measuring": "§fMeasuring",
   "hud.thermometer.player_ill": "§fThe player is §cill§f...",
   "hud.thermometer.player_not_ill": "§fThe player is §anot ill§f.",
-  "hud.thermometer.player_not_found": "§fPlayer not found.",
 
   "hud.prixilium.container_charm.title": "Prixilium Container Charm",
 
@@ -242,7 +255,7 @@
   "advancements.prixilium.postmortal.title": "Bluetooth Postmortal",
   "advancements.prixilium.postmortal.description": "Avoid death with a postmortal charm",
   "advancements.prixilium.postmortal_final.title": "Pay More Attention Next Time",
-  "advancements.prixilium.postmortal_final.description": "You might have died to many times",
+  "advancements.prixilium.postmortal_final.description": "You might have died too many times",
   "advancements.prixilium.sonic_boom.title": "Sonic Boom",
   "advancements.prixilium.sonic_boom.description": "Kill a Warden with his own weapon",
 
@@ -255,8 +268,8 @@
   "advancements.prixilium.tree.title": "Is this a tree?",
   "advancements.prixilium.tree.description": "Harvest a Prixilium Log",
 
-  "advancements.prixilium.team_bliko.title": "Hello There",
-  "advancements.prixilium.team_bliko.description": "Team a Bliko",
+  "advancements.prixilium.tame_bliko.title": "Hello There",
+  "advancements.prixilium.tame_bliko.description": "Tame a Bliko",
   "advancements.prixilium.kill_bliko.title": "It Duplicates!?",
   "advancements.prixilium.kill_bliko.description": "Kill a Bliko",
   "advancements.prixilium.block_entity.title": "Is This a Block Entity?",

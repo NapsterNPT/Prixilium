@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "prixilium:block/burned_prixilium_door_bottom",
+    "top": "prixilium:block/burned_prixilium_door_top"
+  }
+}

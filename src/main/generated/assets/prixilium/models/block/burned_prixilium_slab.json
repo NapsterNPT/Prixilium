@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "prixilium:block/burned_prixilium_planks",
+    "side": "prixilium:block/burned_prixilium_planks",
+    "top": "prixilium:block/burned_prixilium_planks"
+  }
+}

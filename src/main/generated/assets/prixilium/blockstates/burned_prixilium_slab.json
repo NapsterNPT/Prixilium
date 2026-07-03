@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "prixilium:block/burned_prixilium_slab"
+    },
+    "type=double": {
+      "model": "prixilium:block/burned_prixilium_planks"
+    },
+    "type=top": {
+      "model": "prixilium:block/burned_prixilium_slab_top"
+    }
+  }
+}

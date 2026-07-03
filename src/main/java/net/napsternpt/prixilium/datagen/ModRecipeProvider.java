@@ -488,6 +488,41 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 //endregion
 
+                //region [Burned Planks]
+                offerShapelessRecipe(ModBlocks.BURNED_PRIXILIUM_PLANKS, ModBlocks.BURNED_PRIXILIUM_LOG, "burned_prixilium", 4);
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BURNED_PRIXILIUM_WOOD, 3)
+                        .input('#', ModBlocks.BURNED_PRIXILIUM_LOG)
+                        .pattern("##")
+                        .pattern("##")
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_LOG), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_LOG))
+                        .offerTo(exporter);
+
+                createStairsRecipe(ModBlocks.BURNED_PRIXILIUM_STAIRS, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BURNED_PRIXILIUM_SLAB, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                createDoorRecipe(ModBlocks.BURNED_PRIXILIUM_DOOR, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                createTrapdoorRecipe(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                createFenceRecipe(ModBlocks.BURNED_PRIXILIUM_FENCE, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                createFenceGateRecipe(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                //endregion
+
                 //region [Bricks]
                 offer2x2CompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS, ModBlocks.PRIXILIUM);
 

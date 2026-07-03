@@ -72,8 +72,8 @@ public class BlikoEntity extends TameableEntity {
                     this.setOwner(player);
                     this.getEntityWorld().sendEntityStatus(this, (byte) 7);
                     if (!this.getEntityWorld().isClient() && player instanceof ServerPlayerEntity serverPlayer) {
-                        AdvancementEntry advancement = Objects.requireNonNull(this.getEntityWorld().getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "team_bliko"));
-                        serverPlayer.getAdvancementTracker().grantCriterion(advancement, "team_bliko");
+                        AdvancementEntry advancement = Objects.requireNonNull(this.getEntityWorld().getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "tame_bliko"));
+                        serverPlayer.getAdvancementTracker().grantCriterion(advancement, "tame_bliko");
                     }
                 } else {
                     this.getEntityWorld().sendEntityStatus(this, (byte) 6);

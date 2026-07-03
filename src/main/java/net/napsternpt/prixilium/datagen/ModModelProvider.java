@@ -60,8 +60,8 @@ public class ModModelProvider extends FabricModelProvider {
         );
 
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.PRIXILIUM_GRASS, prixiliumGrassModel1);
-        blockStateModelGenerator.registerSingleton(ModBlocks.PRIXILIUM_LEAVES, TexturedModel.LEAVES);
 
+        blockStateModelGenerator.registerSingleton(ModBlocks.PRIXILIUM_LEAVES, TexturedModel.LEAVES);
         blockStateModelGenerator.createLogTexturePool(ModBlocks.PRIXILIUM_LOG).log(ModBlocks.PRIXILIUM_LOG).wood(ModBlocks.PRIXILIUM_WOOD);
         BlockStateModelGenerator.BlockTexturePool prixiliumPlanksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_PLANKS);
         prixiliumPlanksPool.stairs(ModBlocks.PRIXILIUM_STAIRS);
@@ -70,6 +70,15 @@ public class ModModelProvider extends FabricModelProvider {
         prixiliumPlanksPool.fenceGate(ModBlocks.PRIXILIUM_FENCE_GATE);
         blockStateModelGenerator.registerDoor(ModBlocks.PRIXILIUM_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.PRIXILIUM_TRAPDOOR);
+
+        blockStateModelGenerator.createLogTexturePool(ModBlocks.BURNED_PRIXILIUM_LOG).log(ModBlocks.BURNED_PRIXILIUM_LOG).wood(ModBlocks.BURNED_PRIXILIUM_WOOD);
+        BlockStateModelGenerator.BlockTexturePool burnedPrixiliumPlanksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.BURNED_PRIXILIUM_PLANKS);
+        burnedPrixiliumPlanksPool.stairs(ModBlocks.BURNED_PRIXILIUM_STAIRS);
+        burnedPrixiliumPlanksPool.slab(ModBlocks.BURNED_PRIXILIUM_SLAB);
+        burnedPrixiliumPlanksPool.fence(ModBlocks.BURNED_PRIXILIUM_FENCE);
+        burnedPrixiliumPlanksPool.fenceGate(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE);
+        blockStateModelGenerator.registerDoor(ModBlocks.BURNED_PRIXILIUM_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR);
 
         BlockStateModelGenerator.BlockTexturePool prixiliumBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_BRICKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_PRIXILIUM_BRICKS);

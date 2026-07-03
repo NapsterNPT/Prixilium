@@ -68,7 +68,7 @@ public class PostmortalCharmItem extends CharmItem {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 400, 0, false, true, true));
 
                 if (charmStack.getDamage() == 7) {
-                    AdvancementEntry advancement = player.getEntityWorld().getServer().getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "postmortal_final"));
+                    AdvancementEntry advancement = Objects.requireNonNull(player.getEntityWorld().getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "postmortal_final"));
                     player.getAdvancementTracker().grantCriterion(advancement, "postmortal_final");
                 }
             }
@@ -88,6 +88,7 @@ public class PostmortalCharmItem extends CharmItem {
                 player.getX(), player.getY() + 1.0, player.getZ(),
                 64, player.getWidth() / 2.0, player.getHeight() / 2.0, player.getWidth() / 2.0, 0.1);
 
+        assert serverWorld.getServer() != null;
         AdvancementEntry advancement = serverWorld.getServer().getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "postmortal"));
         player.getAdvancementTracker().grantCriterion(advancement, "postmortal");
 

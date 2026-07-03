@@ -14,13 +14,11 @@ import net.napsternpt.prixilium.util.ModTags;
 
 public class SavedContainerScreenHandler extends ScreenHandler {
     private final RegistryWrapper.WrapperLookup lookup;
-    private final ItemStack stack;
     private final SimpleInventory inventory;
     private final int rows;
 
     public SavedContainerScreenHandler(int syncId, PlayerInventory playerInventory, SimpleInventory inventory, ItemStack stack, int rows, RegistryWrapper.WrapperLookup lookup) {
         super(getType(rows), syncId);
-        this.stack = stack;
         this.inventory = inventory;
         this.lookup = lookup;
         this.rows = rows;

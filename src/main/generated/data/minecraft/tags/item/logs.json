@@ -1,6 +1,8 @@
 {
   "values": [
     "prixilium:prixilium_log",
-    "prixilium:prixilium_wood"
+    "prixilium:prixilium_wood",
+    "prixilium:burned_prixilium_log",
+    "prixilium:burned_prixilium_wood"
   ]
 }

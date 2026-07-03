@@ -23,7 +23,6 @@ import net.napsternpt.prixilium.network.ModPackets;
 import net.napsternpt.prixilium.util.TimeStopState;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Objects;
 import java.util.function.Consumer;
 
 public class StopwatchCharmItem extends CharmItem {
@@ -54,6 +53,7 @@ public class StopwatchCharmItem extends CharmItem {
             ModPackets.sendTimeStopStart(serverWorld, durationTicks, player.getUuid());
 
             if (player instanceof ServerPlayerEntity serverPlayer) {
+                assert serverWorld.getServer() != null;
                 AdvancementEntry advancement = serverWorld.getServer().getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "time_stopper"));
                 serverPlayer.getAdvancementTracker().grantCriterion(advancement, "time_stopper");
             }

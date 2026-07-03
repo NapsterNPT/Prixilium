@@ -17,9 +17,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.PRIXILIUM_GRASS, drops(ModBlocks.PRIXILIUM_GRASS, Blocks.DIRT));
         addDrop(ModBlocks.PRIXILIUM, drops(ModBlocks.PRIXILIUM));
-        addDrop(ModBlocks.PRIXILIUM_LEAVES, leavesDrops(ModBlocks.PRIXILIUM_LEAVES, ModBlocks.PRIXILIUM, 0.0625F));
+
         addDrop(ModBlocks.PRIXILIUM_LOG);
         addDrop(ModBlocks.PRIXILIUM_WOOD);
+        addDrop(ModBlocks.PRIXILIUM_LEAVES, leavesDrops(ModBlocks.PRIXILIUM_LEAVES, ModBlocks.PRIXILIUM, 0.0625F));
         addDrop(ModBlocks.PRIXILIUM_PLANKS);
         addDrop(ModBlocks.PRIXILIUM_STAIRS);
         addDrop(ModBlocks.PRIXILIUM_SLAB, slabDrops(ModBlocks.PRIXILIUM_SLAB));
@@ -27,20 +28,34 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PRIXILIUM_FENCE_GATE);
         addDrop(ModBlocks.PRIXILIUM_DOOR, doorDrops(ModBlocks.PRIXILIUM_DOOR));
         addDrop(ModBlocks.PRIXILIUM_TRAPDOOR);
+
+        addDrop(ModBlocks.BURNED_PRIXILIUM_LOG);
+        addDrop(ModBlocks.BURNED_PRIXILIUM_WOOD);
+        addDrop(ModBlocks.BURNED_PRIXILIUM_PLANKS);
+        addDrop(ModBlocks.BURNED_PRIXILIUM_STAIRS);
+        addDrop(ModBlocks.BURNED_PRIXILIUM_SLAB, slabDrops(ModBlocks.BURNED_PRIXILIUM_SLAB));
+        addDrop(ModBlocks.BURNED_PRIXILIUM_FENCE);
+        addDrop(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE);
+        addDrop(ModBlocks.BURNED_PRIXILIUM_DOOR, doorDrops(ModBlocks.BURNED_PRIXILIUM_DOOR));
+        addDrop(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR);
+
         addDrop(ModBlocks.PRIXILIUM_BRICKS);
         addDrop(ModBlocks.CRACKED_PRIXILIUM_BRICKS);
         addDrop(ModBlocks.PRIXILIUM_BRICK_STAIRS);
         addDrop(ModBlocks.PRIXILIUM_BRICK_SLAB, slabDrops(ModBlocks.PRIXILIUM_BRICK_SLAB));
         addDrop(ModBlocks.PRIXILIUM_BRICKS_WALL);
         addDrop(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
+
         addDrop(ModBlocks.DARK_PRIXILIUM_BRICKS);
         addDrop(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS);
         addDrop(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
         addDrop(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB, slabDrops(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB));
         addDrop(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
         addDrop(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS);
+
         addDrop(ModBlocks.PRIXILIUM_LAMP);
         addDrop(ModBlocks.PRIXILIUM_EXHAUST);
+
         addDrop(ModBlocks.STAND);
         addDrop(ModBlocks.REACTOR_CORE);
         addDrop(ModBlocks.VIRUS_REACTOR);

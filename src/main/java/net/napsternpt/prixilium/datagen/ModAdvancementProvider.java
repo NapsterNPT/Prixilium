@@ -55,7 +55,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root)
                 .display(ModItems.NAPSTERNPT_PLUSHY,
                         Text.translatable("advancements.prixilium.completionist.title"),
-                        Text.of(Text.translatable("advancements.prixilium.completionist.description") + ""), null, AdvancementFrame.CHALLENGE, true, true, true
+                        Text.translatable("advancements.prixilium.completionist.description").append(". 764251675739346c544a67"), null, AdvancementFrame.CHALLENGE, true, true, true
                 )
                 .criterion("completionist", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":completionist");
@@ -230,11 +230,11 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         Advancement.Builder.create()
                 .parent(dimension)
                 .display(ModItems.BLIKO_SPAWN_EGG,
-                        Text.translatable("advancements.prixilium.team_bliko.title"),
-                        Text.translatable("advancements.prixilium.team_bliko.description"), null, AdvancementFrame.TASK, true, true, false
+                        Text.translatable("advancements.prixilium.tame_bliko.title"),
+                        Text.translatable("advancements.prixilium.tame_bliko.description"), null, AdvancementFrame.TASK, true, true, false
                 )
-                .criterion("team_bliko", impossibleCriterion)
-                .build(consumer, Prixilium.MOD_ID + ":team_bliko");
+                .criterion("tame_bliko", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":tame_bliko");
 
         Advancement.Builder.create()
                 .parent(dimension)

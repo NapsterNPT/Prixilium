@@ -45,7 +45,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_FENCE)
                 .add(ModBlocks.PRIXILIUM_FENCE_GATE)
                 .add(ModBlocks.PRIXILIUM_DOOR)
-                .add(ModBlocks.PRIXILIUM_TRAPDOOR);
+                .add(ModBlocks.PRIXILIUM_TRAPDOOR)
+
+                .add(ModBlocks.BURNED_PRIXILIUM_LOG)
+                .add(ModBlocks.BURNED_PRIXILIUM_WOOD)
+                .add(ModBlocks.BURNED_PRIXILIUM_PLANKS)
+                .add(ModBlocks.BURNED_PRIXILIUM_STAIRS)
+                .add(ModBlocks.BURNED_PRIXILIUM_SLAB)
+                .add(ModBlocks.BURNED_PRIXILIUM_FENCE)
+                .add(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE)
+                .add(ModBlocks.BURNED_PRIXILIUM_DOOR)
+                .add(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR);
 
         valueLookupBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.PRIXILIUM_GRASS);
@@ -64,12 +74,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_GRATE)
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
+
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.DARK_PRIXILIUM_GRATE)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
+
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 
         valueLookupBuilder(BlockTags.SAPLINGS)
@@ -85,52 +97,71 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_LEAVES);
 
         valueLookupBuilder(BlockTags.COMPLETES_FIND_TREE_TUTORIAL)
-                .add(ModBlocks.PRIXILIUM_LOG);
+                .add(ModBlocks.PRIXILIUM_LOG)
+                .add(ModBlocks.BURNED_PRIXILIUM_LOG);
 
         valueLookupBuilder(BlockTags.LOGS)
                 .add(ModBlocks.PRIXILIUM_LOG)
-                .add(ModBlocks.PRIXILIUM_WOOD);
+                .add(ModBlocks.PRIXILIUM_WOOD)
+                .add(ModBlocks.BURNED_PRIXILIUM_LOG)
+                .add(ModBlocks.BURNED_PRIXILIUM_WOOD);
 
         valueLookupBuilder(BlockTags.PLANKS)
-                .add(ModBlocks.PRIXILIUM_PLANKS);
+                .add(ModBlocks.PRIXILIUM_PLANKS)
+                .add(ModBlocks.BURNED_PRIXILIUM_PLANKS);
 
         valueLookupBuilder(BlockTags.SNAPS_GOAT_HORN)
                 .add(ModBlocks.PRIXILIUM_LOG)
-                .add(ModBlocks.PRIXILIUM_WOOD);
+                .add(ModBlocks.PRIXILIUM_WOOD)
+                .add(ModBlocks.BURNED_PRIXILIUM_LOG)
+                .add(ModBlocks.BURNED_PRIXILIUM_WOOD);
 
         valueLookupBuilder(BlockTags.WOODEN_STAIRS)
-                .add(ModBlocks.PRIXILIUM_STAIRS);
+                .add(ModBlocks.PRIXILIUM_STAIRS)
+                .add(ModBlocks.BURNED_PRIXILIUM_STAIRS);
 
         valueLookupBuilder(BlockTags.STAIRS)
                 .add(ModBlocks.PRIXILIUM_STAIRS)
+                .add(ModBlocks.BURNED_PRIXILIUM_STAIRS)
+
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
 
         valueLookupBuilder(BlockTags.WOODEN_SLABS)
-                .add(ModBlocks.PRIXILIUM_SLAB);
+                .add(ModBlocks.PRIXILIUM_SLAB)
+                .add(ModBlocks.BURNED_PRIXILIUM_SLAB);
 
         valueLookupBuilder(BlockTags.SLABS)
                 .add(ModBlocks.PRIXILIUM_SLAB)
+                .add(ModBlocks.BURNED_PRIXILIUM_SLAB)
+
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
 
         valueLookupBuilder(BlockTags.WOODEN_FENCES)
-                .add(ModBlocks.PRIXILIUM_FENCE);
+                .add(ModBlocks.PRIXILIUM_FENCE)
+                .add(ModBlocks.BURNED_PRIXILIUM_FENCE);
 
         valueLookupBuilder(BlockTags.FENCES)
-                .add(ModBlocks.PRIXILIUM_FENCE);
+                .add(ModBlocks.PRIXILIUM_FENCE)
+                .add(ModBlocks.BURNED_PRIXILIUM_FENCE);
+
 
         valueLookupBuilder(BlockTags.FENCE_GATES)
-                .add(ModBlocks.PRIXILIUM_FENCE_GATE);
+                .add(ModBlocks.PRIXILIUM_FENCE_GATE)
+                .add(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE);
 
         valueLookupBuilder(BlockTags.DOORS)
-                .add(ModBlocks.PRIXILIUM_DOOR);
+                .add(ModBlocks.PRIXILIUM_DOOR)
+                .add(ModBlocks.BURNED_PRIXILIUM_DOOR);
 
         valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS)
-                .add(ModBlocks.PRIXILIUM_TRAPDOOR);
+                .add(ModBlocks.PRIXILIUM_TRAPDOOR)
+                .add(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR);
 
         valueLookupBuilder(BlockTags.TRAPDOORS)
-                .add(ModBlocks.PRIXILIUM_TRAPDOOR);
+                .add(ModBlocks.PRIXILIUM_TRAPDOOR)
+                .add(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR);
 
         valueLookupBuilder(BlockTags.WALLS)
                 .add(ModBlocks.PRIXILIUM_BRICKS_WALL)

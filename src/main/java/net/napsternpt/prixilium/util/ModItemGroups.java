@@ -64,6 +64,7 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.PRIXILIUM);
                         entries.add(ModBlocks.PRIXILIUM_GRASS);
+
                         entries.add(ModBlocks.PRIXILIUM_LEAVES);
                         entries.add(ModBlocks.PRIXILIUM_LOG);
                         entries.add(ModBlocks.PRIXILIUM_WOOD);
@@ -74,6 +75,17 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PRIXILIUM_FENCE_GATE);
                         entries.add(ModBlocks.PRIXILIUM_DOOR);
                         entries.add(ModBlocks.PRIXILIUM_TRAPDOOR);
+
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_LOG);
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_WOOD);
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_PLANKS);
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_STAIRS);
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_SLAB);
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_FENCE);
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE);
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_DOOR);
+                        entries.add(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR);
+
                         entries.add(ModBlocks.PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.CRACKED_PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.CHISELED_PRIXILIUM_BRICKS);
@@ -81,6 +93,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PRIXILIUM_BRICK_STAIRS);
                         entries.add(ModBlocks.PRIXILIUM_BRICK_SLAB);
                         entries.add(ModBlocks.PRIXILIUM_BRICKS_WALL);
+
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS);
                         entries.add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS);
@@ -88,6 +101,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
+
                         entries.add(ModBlocks.PRIXILIUM_EXHAUST);
                         entries.add(ModBlocks.PRIXILIUM_LAMP);
                         entries.add(ModBlocks.STAND);

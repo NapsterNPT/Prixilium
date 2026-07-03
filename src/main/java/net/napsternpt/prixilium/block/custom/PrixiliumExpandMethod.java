@@ -19,7 +19,6 @@ import static net.minecraft.block.LeavesBlock.DISTANCE;
 import static net.minecraft.block.LeavesBlock.PERSISTENT;
 
 public class PrixiliumExpandMethod {
-
     public PrixiliumExpandMethod(ServerWorld world, BlockPos pos) {
         if (world.getGameRules().getValue(ModGameRules.PRIXILIUM_EXPANDS)) {
             for (int i = 0; i < 128; ++i) {

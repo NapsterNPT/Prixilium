@@ -12,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.custom.*;
+import net.napsternpt.prixilium.block.custom.woodSet.*;
 import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.world.tree.ModSaplingGenerators;
 
@@ -33,6 +34,7 @@ public class ModBlocks {
                     .mapColor(MapColor.GOLD)
                     .replaceable()
                     .noCollision()
+                    .burnable()
                     .breakInstantly()
                     .sounds(BlockSoundGroup.GRASS)
                     .offset(AbstractBlock.OffsetType.XYZ)
@@ -41,15 +43,17 @@ public class ModBlocks {
             )
     );
 
+    //region [Planks]
     public static final Block PRIXILIUM_LOG = registerBlock(name = "prixilium_log",
-            new PrixiliumLogsAndWoodBlock(AbstractBlock.Settings.create()
+            new PrixiliumLogBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.TEAL)
             ));
+
     public static final Block PRIXILIUM_WOOD = registerBlock(name = "prixilium_wood",
-            new PrixiliumLogsAndWoodBlock(AbstractBlock.Settings.create()
+            new PrixiliumWoodBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
@@ -63,55 +67,53 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.GRASS)
                     .mapColor(MapColor.GOLD)
                     .ticksRandomly()
+                    .burnable()
                     .nonOpaque()
                     .luminance(state -> 7)
             ));
 
     public static final Block PRIXILIUM_PLANKS = registerBlock(name = "prixilium_planks",
-            new Block(AbstractBlock.Settings.create()
+            new PrixiliumPlanksBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block PRIXILIUM_STAIRS = registerBlock(name = "prixilium_stairs",
-            new StairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
+            new PrixiliumStairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block PRIXILIUM_SLAB = registerBlock(name = "prixilium_slab",
-            new SlabBlock(AbstractBlock.Settings.create()
+            new PrixiliumSlabBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block PRIXILIUM_FENCE = registerBlock(name = "prixilium_fence",
-            new FenceBlock(AbstractBlock.Settings.create()
+            new PrixiliumFenceBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block PRIXILIUM_FENCE_GATE = registerBlock(name = "prixilium_fence_gate",
-            new FenceGateBlock(WoodType.SPRUCE, AbstractBlock.Settings.create()
+            new PrixiliumFenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block PRIXILIUM_DOOR = registerBlock(name = "prixilium_door",
-            new DoorBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .strength(2.0F)
-                    .sounds(BlockSoundGroup.WOOD)
-                    .mapColor(MapColor.CYAN)
-                    .nonOpaque()
-            ));
-    public static final Block PRIXILIUM_TRAPDOOR = registerBlock(name = "prixilium_trapdoor",
-            new TrapdoorBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create()
+            new PrixiliumDoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
@@ -119,6 +121,95 @@ public class ModBlocks {
                     .nonOpaque()
             ));
 
+    public static final Block PRIXILIUM_TRAPDOOR = registerBlock(name = "prixilium_trapdoor",
+            new PrixiliumTrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.CYAN)
+                    .nonOpaque()
+            ));
+
+    //endregion
+
+    //region [Burned Planks]
+    public static final Block BURNED_PRIXILIUM_LOG = registerBlock(name = "burned_prixilium_log",
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.LIGHT_GRAY)
+            ));
+
+    public static final Block BURNED_PRIXILIUM_WOOD = registerBlock(name = "burned_prixilium_wood",
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.LIGHT_GRAY)
+            ));
+
+    public static final Block BURNED_PRIXILIUM_PLANKS = registerBlock(name = "burned_prixilium_planks",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.GRAY)
+            ));
+
+    public static final Block BURNED_PRIXILIUM_STAIRS = registerBlock(name = "burned_prixilium_stairs",
+            new StairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.GRAY)
+            ));
+
+    public static final Block BURNED_PRIXILIUM_SLAB = registerBlock(name = "burned_prixilium_slab",
+            new SlabBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.GRAY)
+            ));
+
+    public static final Block BURNED_PRIXILIUM_FENCE = registerBlock(name = "burned_prixilium_fence",
+            new FenceBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.GRAY)
+            ));
+
+    public static final Block BURNED_PRIXILIUM_FENCE_GATE = registerBlock(name = "burned_prixilium_fence_gate",
+            new FenceGateBlock(WoodType.SPRUCE, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.GRAY)
+            ));
+
+    public static final Block BURNED_PRIXILIUM_DOOR = registerBlock(name = "burned_prixilium_door",
+            new DoorBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.GRAY)
+                    .nonOpaque()
+            ));
+
+    public static final Block BURNED_PRIXILIUM_TRAPDOOR = registerBlock(name = "burned_prixilium_trapdoor",
+            new TrapdoorBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .mapColor(MapColor.GRAY)
+                    .nonOpaque()
+            ));
+
+    //endregion
+
+    //region [Bricks]
     public static final Block PRIXILIUM_BRICKS = registerBlock(name = "prixilium_bricks",
             new Block(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -126,6 +217,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block CRACKED_PRIXILIUM_BRICKS = registerBlock(name = "cracked_prixilium_bricks",
             new Block(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -133,6 +225,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block CHISELED_PRIXILIUM_BRICKS = registerBlock(name = "chiseled_prixilium_bricks",
             new Block(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -140,6 +233,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block PRIXILIUM_GRATE = registerBlock(name = "prixilium_grate",
             new GrateBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -149,6 +243,7 @@ public class ModBlocks {
                     .mapColor(MapColor.GOLD)
                     .nonOpaque()
             ));
+
     public static final Block PRIXILIUM_BRICKS_WALL = registerBlock(name = "prixilium_bricks_wall",
             new WallBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -156,6 +251,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block PRIXILIUM_BRICK_STAIRS = registerBlock(name = "prixilium_brick_stairs",
             new StairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -163,6 +259,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block PRIXILIUM_BRICK_SLAB = registerBlock(name = "prixilium_brick_slab",
             new SlabBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -171,6 +268,9 @@ public class ModBlocks {
                     .mapColor(MapColor.CYAN)
             ));
 
+    //endregion
+
+    //region [Dark Bricks]
     public static final Block DARK_PRIXILIUM_BRICKS = registerBlock(name = "dark_prixilium_bricks",
             new Block(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -178,6 +278,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block CRACKED_DARK_PRIXILIUM_BRICKS = registerBlock(name = "cracked_dark_prixilium_bricks",
             new Block(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -185,6 +286,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block CHISELED_DARK_PRIXILIUM_BRICKS = registerBlock(name = "chiseled_dark_prixilium_bricks",
             new Block(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -192,6 +294,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block DARK_PRIXILIUM_GRATE = registerBlock(name = "dark_prixilium_grate",
             new GrateBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -201,6 +304,7 @@ public class ModBlocks {
                     .mapColor(MapColor.GOLD)
                     .nonOpaque()
             ));
+
     public static final Block DARK_PRIXILIUM_BRICKS_WALL = registerBlock(name = "dark_prixilium_bricks_wall",
             new WallBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -208,6 +312,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block DARK_PRIXILIUM_BRICK_STAIRS = registerBlock(name = "dark_prixilium_brick_stairs",
             new StairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -215,6 +320,7 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
     public static final Block DARK_PRIXILIUM_BRICK_SLAB = registerBlock(name = "dark_prixilium_brick_slab",
             new SlabBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -222,6 +328,8 @@ public class ModBlocks {
                     .strength(1.5F, 6.0F)
                     .mapColor(MapColor.CYAN)
             ));
+
+    //endregion
 
     public static final Block PRIXILIUM_LAMP = registerBlock(name = "prixilium_lamp",
             new PrixiliumLampBlock(AbstractBlock.Settings.create()

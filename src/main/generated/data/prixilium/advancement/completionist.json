@@ -6,7 +6,12 @@
     }
   },
   "display": {
-    "description": "translation{key='advancements.prixilium.completionist.description', args=[]}",
+    "description": {
+      "extra": [
+        ". 764251675739346c544a67"
+      ],
+      "translate": "advancements.prixilium.completionist.description"
+    },
     "frame": "challenge",
     "hidden": true,
     "icon": {

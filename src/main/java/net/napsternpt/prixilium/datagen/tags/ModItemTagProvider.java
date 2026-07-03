@@ -111,10 +111,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         // Blocks
         valueLookupBuilder(ItemTags.LOGS)
                 .add(ModBlocks.PRIXILIUM_LOG.asItem())
-                .add(ModBlocks.PRIXILIUM_WOOD.asItem());
+                .add(ModBlocks.PRIXILIUM_WOOD.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_LOG.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_WOOD.asItem());
 
         valueLookupBuilder(ItemTags.PLANKS)
-                .add(ModBlocks.PRIXILIUM_PLANKS.asItem());
+                .add(ModBlocks.PRIXILIUM_PLANKS.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_PLANKS.asItem());
 
         // Mod Tags
         valueLookupBuilder(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)

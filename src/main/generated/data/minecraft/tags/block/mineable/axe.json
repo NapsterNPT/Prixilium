@@ -8,6 +8,15 @@
     "prixilium:prixilium_fence",
     "prixilium:prixilium_fence_gate",
     "prixilium:prixilium_door",
-    "prixilium:prixilium_trapdoor"
+    "prixilium:prixilium_trapdoor",
+    "prixilium:burned_prixilium_log",
+    "prixilium:burned_prixilium_wood",
+    "prixilium:burned_prixilium_planks",
+    "prixilium:burned_prixilium_stairs",
+    "prixilium:burned_prixilium_slab",
+    "prixilium:burned_prixilium_fence",
+    "prixilium:burned_prixilium_fence_gate",
+    "prixilium:burned_prixilium_door",
+    "prixilium:burned_prixilium_trapdoor"
   ]
 }

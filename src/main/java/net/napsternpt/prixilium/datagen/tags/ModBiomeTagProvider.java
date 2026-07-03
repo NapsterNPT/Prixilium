@@ -6,7 +6,6 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.minecraft.registry.tag.TagEntry;
 import net.minecraft.world.biome.Biome;
 import net.napsternpt.prixilium.Prixilium;
 import org.jspecify.annotations.NonNull;

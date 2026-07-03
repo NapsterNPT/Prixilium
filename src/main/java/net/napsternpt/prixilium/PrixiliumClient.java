@@ -22,10 +22,12 @@ public class PrixiliumClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_DOOR, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_TRAPDOOR, BlockRenderLayer.CUTOUT);
-		BlockRenderLayerMap.putBlock(ModBlocks.REACTOR_CORE, BlockRenderLayer.CUTOUT);
-		BlockRenderLayerMap.putBlock(ModBlocks.VIRUS_REACTOR, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.BURNED_PRIXILIUM_DOOR, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_GRATE, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.DARK_PRIXILIUM_GRATE, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.REACTOR_CORE, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.VIRUS_REACTOR, BlockRenderLayer.CUTOUT);
 
 		BlockEntityRendererFactories.register(ModBlockEntities.VIRUS_REACTOR_BE, VirusReactorBlockEntityRenderer::new);
 

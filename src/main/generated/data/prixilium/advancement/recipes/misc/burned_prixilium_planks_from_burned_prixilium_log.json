@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_burned_prixilium_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:burned_prixilium_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:burned_prixilium_planks_from_burned_prixilium_log"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_burned_prixilium_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:burned_prixilium_planks_from_burned_prixilium_log"
+    ]
+  }
+}

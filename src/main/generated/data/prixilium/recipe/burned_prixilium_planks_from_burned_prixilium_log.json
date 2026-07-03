@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "burned_prixilium",
+  "ingredients": [
+    "prixilium:burned_prixilium_log"
+  ],
+  "result": {
+    "count": 4,
+    "id": "prixilium:burned_prixilium_planks"
+  }
+}
