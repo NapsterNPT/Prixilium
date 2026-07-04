@@ -18,6 +18,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
+        valueLookupBuilder(BlockTags.SHOVEL_MINEABLE)
+                .add(ModBlocks.PRIXILIUM_GRASS);
+
         valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.STAND)
                 .add(ModBlocks.REACTOR_CORE)
@@ -56,9 +59,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE)
                 .add(ModBlocks.BURNED_PRIXILIUM_DOOR)
                 .add(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR);
-
-        valueLookupBuilder(BlockTags.SHOVEL_MINEABLE)
-                .add(ModBlocks.PRIXILIUM_GRASS);
 
         valueLookupBuilder(BlockTags.HOE_MINEABLE)
                 .add(ModBlocks.PRIXILIUM_LEAVES);

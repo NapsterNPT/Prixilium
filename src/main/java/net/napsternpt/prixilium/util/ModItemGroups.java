@@ -120,59 +120,66 @@ public class ModItemGroups {
                         //region [Tools]
 
                         //region [wood]
-                        entries.add(ModItems.PRIXILED_WOODEN_SWORD);
+                        entries.add(ModItems.PRIXILED_WOODEN_SHOVEL);
                         entries.add(ModItems.PRIXILED_WOODEN_PICKAXE);
                         entries.add(ModItems.PRIXILED_WOODEN_AXE);
-                        entries.add(ModItems.PRIXILED_WOODEN_SHOVEL);
                         entries.add(ModItems.PRIXILED_WOODEN_HOE);
+                        entries.add(ModItems.PRIXILED_WOODEN_SWORD);
+                        entries.add(ModItems.PRIXILED_WOODEN_SPEAR);
                         //endregion
 
                         //region [stone]
-                        entries.add(ModItems.PRIXILED_STONE_SWORD);
+                        entries.add(ModItems.PRIXILED_STONE_SHOVEL);
                         entries.add(ModItems.PRIXILED_STONE_PICKAXE);
                         entries.add(ModItems.PRIXILED_STONE_AXE);
-                        entries.add(ModItems.PRIXILED_STONE_SHOVEL);
                         entries.add(ModItems.PRIXILED_STONE_HOE);
+                        entries.add(ModItems.PRIXILED_STONE_SWORD);
+                        entries.add(ModItems.PRIXILED_STONE_SPEAR);
                         //endregion
 
                         //region [copper]
-                        entries.add(ModItems.PRIXILED_COPPER_SWORD);
+                        entries.add(ModItems.PRIXILED_COPPER_SHOVEL);
                         entries.add(ModItems.PRIXILED_COPPER_PICKAXE);
                         entries.add(ModItems.PRIXILED_COPPER_AXE);
-                        entries.add(ModItems.PRIXILED_COPPER_SHOVEL);
                         entries.add(ModItems.PRIXILED_COPPER_HOE);
+                        entries.add(ModItems.PRIXILED_COPPER_SWORD);
+                        entries.add(ModItems.PRIXILED_COPPER_SPEAR);
                         //endregion
 
                         //region [iron]
-                        entries.add(ModItems.PRIXILED_IRON_SWORD);
+                        entries.add(ModItems.PRIXILED_IRON_SHOVEL);
                         entries.add(ModItems.PRIXILED_IRON_PICKAXE);
                         entries.add(ModItems.PRIXILED_IRON_AXE);
-                        entries.add(ModItems.PRIXILED_IRON_SHOVEL);
                         entries.add(ModItems.PRIXILED_IRON_HOE);
+                        entries.add(ModItems.PRIXILED_IRON_SWORD);
+                        entries.add(ModItems.PRIXILED_IRON_SPEAR);
                         //endregion
 
                         //region [gold]
-                        entries.add(ModItems.PRIXILED_GOLDEN_SWORD);
+                        entries.add(ModItems.PRIXILED_GOLDEN_SHOVEL);
                         entries.add(ModItems.PRIXILED_GOLDEN_PICKAXE);
                         entries.add(ModItems.PRIXILED_GOLDEN_AXE);
-                        entries.add(ModItems.PRIXILED_GOLDEN_SHOVEL);
                         entries.add(ModItems.PRIXILED_GOLDEN_HOE);
+                        entries.add(ModItems.PRIXILED_GOLDEN_SWORD);
+                        entries.add(ModItems.PRIXILED_GOLDEN_SPEAR);
                         //endregion
 
                         //region [diamond]
-                        entries.add(ModItems.PRIXILED_DIAMOND_SWORD);
+                        entries.add(ModItems.PRIXILED_DIAMOND_SHOVEL);
                         entries.add(ModItems.PRIXILED_DIAMOND_PICKAXE);
                         entries.add(ModItems.PRIXILED_DIAMOND_AXE);
-                        entries.add(ModItems.PRIXILED_DIAMOND_SHOVEL);
                         entries.add(ModItems.PRIXILED_DIAMOND_HOE);
+                        entries.add(ModItems.PRIXILED_DIAMOND_SWORD);
+                        entries.add(ModItems.PRIXILED_DIAMOND_SPEAR);
                         //endregion
 
                         //region [netherite]
-                        entries.add(ModItems.PRIXILED_NETHERITE_SWORD);
+                        entries.add(ModItems.PRIXILED_NETHERITE_SHOVEL);
                         entries.add(ModItems.PRIXILED_NETHERITE_PICKAXE);
                         entries.add(ModItems.PRIXILED_NETHERITE_AXE);
-                        entries.add(ModItems.PRIXILED_NETHERITE_SHOVEL);
                         entries.add(ModItems.PRIXILED_NETHERITE_HOE);
+                        entries.add(ModItems.PRIXILED_NETHERITE_SWORD);
+                        entries.add(ModItems.PRIXILED_NETHERITE_SPEAR);
                         //endregion
 
                         entries.add(ModItems.PRIXILED_BOW);

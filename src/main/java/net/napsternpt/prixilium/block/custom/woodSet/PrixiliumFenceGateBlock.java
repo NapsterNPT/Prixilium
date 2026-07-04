@@ -20,6 +20,6 @@ public class PrixiliumFenceGateBlock extends FenceGateBlock {
 
     @Override
     protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        return BurnableBlock.convert(stack, state, world, pos, player, hand, ModBlocks.BURNED_PRIXILIUM_FENCE_GATE);
+        return BurnableBlock.convert(stack, state, world, pos, player, hand, ModBlocks.BURNED_PRIXILIUM_FENCE_GATE, () -> super.onUse(state, world, pos, player, hit));
     }
 }

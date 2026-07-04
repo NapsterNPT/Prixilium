@@ -15,8 +15,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
+import java.util.function.Supplier;
+
 public class BurnableBlock {
-    public static ActionResult convert(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, Block output) {
+    public static ActionResult convert(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, Block output, Supplier<ActionResult> fallback) {
         if (stack.isOf(Items.FLINT_AND_STEEL)) {
             if (!world.isClient()) {
                 world.setBlockState(pos, output.getStateWithProperties(state));
@@ -35,7 +37,7 @@ public class BurnableBlock {
                 }
             }
             return ActionResult.SUCCESS;
-
-        } else return ActionResult.PASS;
+        }
+        return fallback.get();
     }
 }

@@ -19,14 +19,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
-        valueLookupBuilder(ItemTags.SWORDS)
-                .add(ModItems.PRIXILED_WOODEN_SWORD)
-                .add(ModItems.PRIXILED_STONE_SWORD)
-                .add(ModItems.PRIXILED_COPPER_SWORD)
-                .add(ModItems.PRIXILED_IRON_SWORD)
-                .add(ModItems.PRIXILED_GOLDEN_SWORD)
-                .add(ModItems.PRIXILED_DIAMOND_SWORD)
-                .add(ModItems.PRIXILED_NETHERITE_SWORD);
+        valueLookupBuilder(ItemTags.SHOVELS)
+                .add(ModItems.PRIXILED_WOODEN_SHOVEL)
+                .add(ModItems.PRIXILED_STONE_SHOVEL)
+                .add(ModItems.PRIXILED_COPPER_SHOVEL)
+                .add(ModItems.PRIXILED_IRON_SHOVEL)
+                .add(ModItems.PRIXILED_GOLDEN_SHOVEL)
+                .add(ModItems.PRIXILED_DIAMOND_SHOVEL)
+                .add(ModItems.PRIXILED_NETHERITE_SHOVEL);
 
         valueLookupBuilder(ItemTags.PICKAXES)
                 .add(ModItems.PRIXILED_WOODEN_PICKAXE)
@@ -46,15 +46,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_DIAMOND_AXE)
                 .add(ModItems.PRIXILED_NETHERITE_AXE);
 
-        valueLookupBuilder(ItemTags.SHOVELS)
-                .add(ModItems.PRIXILED_WOODEN_SHOVEL)
-                .add(ModItems.PRIXILED_STONE_SHOVEL)
-                .add(ModItems.PRIXILED_COPPER_SHOVEL)
-                .add(ModItems.PRIXILED_IRON_SHOVEL)
-                .add(ModItems.PRIXILED_GOLDEN_SHOVEL)
-                .add(ModItems.PRIXILED_DIAMOND_SHOVEL)
-                .add(ModItems.PRIXILED_NETHERITE_SHOVEL);
-
         valueLookupBuilder(ItemTags.HOES)
                 .add(ModItems.PRIXILED_WOODEN_HOE)
                 .add(ModItems.PRIXILED_STONE_HOE)
@@ -63,6 +54,24 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_GOLDEN_HOE)
                 .add(ModItems.PRIXILED_DIAMOND_HOE)
                 .add(ModItems.PRIXILED_NETHERITE_HOE);
+
+        valueLookupBuilder(ItemTags.SWORDS)
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD);
+
+        valueLookupBuilder(ItemTags.SPEARS)
+                .add(ModItems.PRIXILED_WOODEN_SPEAR)
+                .add(ModItems.PRIXILED_STONE_SPEAR)
+                .add(ModItems.PRIXILED_COPPER_SPEAR)
+                .add(ModItems.PRIXILED_IRON_SPEAR)
+                .add(ModItems.PRIXILED_GOLDEN_SPEAR)
+                .add(ModItems.PRIXILED_DIAMOND_SPEAR)
+                .add(ModItems.PRIXILED_NETHERITE_SPEAR);
 
         valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.PRIXILED_LEATHER_HELMET)

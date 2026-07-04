@@ -32,6 +32,6 @@ public class PrixiliumWoodBlock extends PillarBlock {
 
     @Override
     protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        return BurnableBlock.convert(stack, state, world, pos, player, hand, ModBlocks.BURNED_PRIXILIUM_WOOD);
+        return BurnableBlock.convert(stack, state, world, pos, player, hand, ModBlocks.BURNED_PRIXILIUM_WOOD, () -> super.onUse(state, world, pos, player, hit));
     }
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/spear_in_hand",
+  "textures": {
+    "layer0": "prixilium:item/prixiled_wooden_spear_in_hand"
+  }
+}

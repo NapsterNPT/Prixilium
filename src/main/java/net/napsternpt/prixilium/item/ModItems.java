@@ -293,7 +293,7 @@ public class ModItems {
     //region [Tools]
 
     //region [wood]
-    public static final Item PRIXILED_WOODEN_SWORD = registerItem(name = "prixiled_wooden_sword", new Item(new Item.Settings().sword(ToolMaterial.WOOD, 3, -2.4F)
+    public static final Item PRIXILED_WOODEN_SHOVEL = registerItem(name = "prixiled_wooden_shovel", new ShovelItem(ToolMaterial.WOOD, 1.5F, -3, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
@@ -305,18 +305,22 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_WOODEN_SHOVEL = registerItem(name = "prixiled_wooden_shovel", new ShovelItem(ToolMaterial.WOOD, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_WOODEN_HOE = registerItem(name = "prixiled_wooden_hoe", new HoeItem(ToolMaterial.WOOD, 0, -3, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_WOODEN_HOE = registerItem(name = "prixiled_wooden_hoe", new HoeItem(ToolMaterial.WOOD, 0, -3, new Item.Settings()
+    public static final Item PRIXILED_WOODEN_SWORD = registerItem(name = "prixiled_wooden_sword", new Item(new Item.Settings().sword(ToolMaterial.WOOD, 3, -2.4F)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
+    public static final Item PRIXILED_WOODEN_SPEAR = registerItem(name = "prixiled_wooden_spear", new Item(new Item.Settings().spear(ToolMaterial.WOOD, 0.65F, 0.7F, 0.75F, 5.0F, 14.0F, 10.0F, 5.1F, 15.0F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [stone]
-    public static final Item PRIXILED_STONE_SWORD = registerItem(name = "prixiled_stone_sword", new Item(new Item.Settings().sword(ToolMaterial.STONE, 3, -2.4F)
+    public static final Item PRIXILED_STONE_SHOVEL = registerItem(name = "prixiled_stone_shovel", new ShovelItem(ToolMaterial.STONE, 1.5F, -3, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
@@ -328,18 +332,22 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_STONE_SHOVEL = registerItem(name = "prixiled_stone_shovel", new ShovelItem(ToolMaterial.STONE, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_STONE_HOE = registerItem(name = "prixiled_stone_hoe", new HoeItem(ToolMaterial.STONE, -1, -2, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_STONE_HOE = registerItem(name = "prixiled_stone_hoe", new HoeItem(ToolMaterial.STONE, -1, -2, new Item.Settings()
+    public static final Item PRIXILED_STONE_SWORD = registerItem(name = "prixiled_stone_sword", new Item(new Item.Settings().sword(ToolMaterial.STONE, 3, -2.4F)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
+    public static final Item PRIXILED_STONE_SPEAR = registerItem(name = "prixiled_stone_spear", new Item(new Item.Settings().spear(ToolMaterial.STONE, 0.75F, 0.82F, 0.7F, 4.5F, 10.0F, 9.0F, 5.1F, 13.75F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [copper]
-    public static final Item PRIXILED_COPPER_SWORD = registerItem(name = "prixiled_copper_sword", new Item(new Item.Settings().sword(ToolMaterial.COPPER, 3.0F, -2.4F)
+    public static final Item PRIXILED_COPPER_SHOVEL = registerItem(name = "prixiled_copper_shovel", new ShovelItem(ToolMaterial.COPPER , 1.5F, -3.0F, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
@@ -351,18 +359,22 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_SHOVEL = registerItem(name = "prixiled_copper_shovel", new ShovelItem(ToolMaterial.COPPER , 1.5F, -3.0F, new Item.Settings()
+    public static final Item PRIXILED_COPPER_HOE = registerItem(name = "prixiled_copper_hoe", new HoeItem(ToolMaterial.COPPER, -1.0F, -2.0F, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_HOE = registerItem(name = "prixiled_copper_hoe", new HoeItem(ToolMaterial.COPPER, -1.0F, -2.0F, new Item.Settings()
+    public static final Item PRIXILED_COPPER_SWORD = registerItem(name = "prixiled_copper_sword", new Item(new Item.Settings().sword(ToolMaterial.COPPER, 3.0F, -2.4F)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
+    public static final Item PRIXILED_COPPER_SPEAR = registerItem(name = "prixiled_copper_spear", new Item(new Item.Settings().spear(ToolMaterial.COPPER, 0.85F, 0.82F, 0.65F, 4.0F, 9.0F, 8.25F, 5.1F, 12.5F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [iron]
-    public static final Item PRIXILED_IRON_SWORD = registerItem(name = "prixiled_iron_sword", new Item(new Item.Settings().sword(ToolMaterial.IRON, 3, -2.4F)
+    public static final Item PRIXILED_IRON_SHOVEL = registerItem(name = "prixiled_iron_shovel", new ShovelItem(ToolMaterial.IRON, 1.5F, -3, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
@@ -374,18 +386,22 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_IRON_SHOVEL = registerItem(name = "prixiled_iron_shovel", new ShovelItem(ToolMaterial.IRON, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_IRON_HOE = registerItem(name = "prixiled_iron_hoe", new HoeItem(ToolMaterial.IRON, -2, -1, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_IRON_HOE = registerItem(name = "prixiled_iron_hoe", new HoeItem(ToolMaterial.IRON, -2, -1, new Item.Settings()
+    public static final Item PRIXILED_IRON_SWORD = registerItem(name = "prixiled_iron_sword", new Item(new Item.Settings().sword(ToolMaterial.IRON, 3, -2.4F)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
+    public static final Item PRIXILED_IRON_SPEAR = registerItem(name = "prixiled_iron_spear", new Item(new Item.Settings().spear(ToolMaterial.IRON, 0.95F, 0.95F, 0.6F, 2.5F, 8.0F, 6.75F, 5.1F, 11.25F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [gold]
-    public static final Item PRIXILED_GOLDEN_SWORD = registerItem(name = "prixiled_golden_sword", new Item(new Item.Settings().sword(ToolMaterial.GOLD, 3, -2.4F)
+    public static final Item PRIXILED_GOLDEN_SHOVEL = registerItem(name = "prixiled_golden_shovel", new ShovelItem(ToolMaterial.GOLD, 1.5F, -3, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
@@ -397,18 +413,22 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_GOLDEN_SHOVEL = registerItem(name = "prixiled_golden_shovel", new ShovelItem(ToolMaterial.GOLD, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_HOE = registerItem(name = "prixiled_golden_hoe", new HoeItem(ToolMaterial.GOLD, 0, -3, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_GOLDEN_HOE = registerItem(name = "prixiled_golden_hoe", new HoeItem(ToolMaterial.GOLD, 0, -3, new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_SWORD = registerItem(name = "prixiled_golden_sword", new Item(new Item.Settings().sword(ToolMaterial.GOLD, 3, -2.4F)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
+    public static final Item PRIXILED_GOLDEN_SPEAR = registerItem(name = "prixiled_golden_spear", new Item(new Item.Settings().spear(ToolMaterial.GOLD, 0.95F, 0.7F, 0.7F, 3.5F, 10.0F, 8.5F, 5.1F, 13.75F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [diamond]
-    public static final Item PRIXILED_DIAMOND_SWORD = registerItem(name = "prixiled_diamond_sword", new Item(new Item.Settings().sword(ToolMaterial.DIAMOND, 3, -2.4F)
+    public static final Item PRIXILED_DIAMOND_SHOVEL = registerItem(name = "prixiled_diamond_shovel", new ShovelItem(ToolMaterial.DIAMOND, 1.5F, -3, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
@@ -420,18 +440,22 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_DIAMOND_SHOVEL = registerItem(name = "prixiled_diamond_shovel", new ShovelItem(ToolMaterial.DIAMOND, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_DIAMOND_HOE = registerItem(name = "prixiled_diamond_hoe", new HoeItem(ToolMaterial.DIAMOND, -3, 0, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_DIAMOND_HOE = registerItem(name = "prixiled_diamond_hoe", new HoeItem(ToolMaterial.DIAMOND, -3, 0, new Item.Settings()
+    public static final Item PRIXILED_DIAMOND_SWORD = registerItem(name = "prixiled_diamond_sword", new Item(new Item.Settings().sword(ToolMaterial.DIAMOND, 3, -2.4F)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
+    public static final Item PRIXILED_DIAMOND_SPEAR = registerItem(name = "prixiled_diamond_spear", new Item(new Item.Settings().spear(ToolMaterial.DIAMOND, 1.05F, 1.075F, 0.5F, 3.0F, 7.5F, 6.5F, 5.1F, 10.0F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [netherite]
-    public static final Item PRIXILED_NETHERITE_SWORD = registerItem(name = "prixiled_netherite_sword", new Item(new Item.Settings().sword(ToolMaterial.NETHERITE, 3, -2.4F)
+    public static final Item PRIXILED_NETHERITE_SHOVEL = registerItem(name = "prixiled_netherite_shovel", new ShovelItem(ToolMaterial.NETHERITE, 1.5F, -3, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
@@ -446,12 +470,17 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_SHOVEL = registerItem(name = "prixiled_netherite_shovel", new ShovelItem(ToolMaterial.NETHERITE, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_NETHERITE_HOE = registerItem(name = "prixiled_netherite_hoe", new HoeItem(ToolMaterial.NETHERITE, -4, 0, new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_HOE = registerItem(name = "prixiled_netherite_hoe", new HoeItem(ToolMaterial.NETHERITE, -4, 0, new Item.Settings()
+    public static final Item PRIXILED_NETHERITE_SWORD = registerItem(name = "prixiled_netherite_sword", new Item(new Item.Settings().sword(ToolMaterial.NETHERITE, 3, -2.4F)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+            .fireproof()
+    ));
+    public static final Item PRIXILED_NETHERITE_SPEAR = registerItem(name = "prixiled_netherite_spear", new Item(new Item.Settings().spear(ToolMaterial.NETHERITE, 1.15F, 1.2F, 0.4F, 2.5F, 7.0F, 5.5F, 5.1F, 8.75F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()

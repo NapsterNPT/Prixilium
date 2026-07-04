@@ -216,47 +216,55 @@ public class ModModelProvider extends FabricModelProvider {
         //region [Tools]
 
         //region [Prixiled]
-        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_WOODEN_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_WOODEN_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_WOODEN_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_WOODEN_SWORD, Models.HANDHELD);
+        itemModelGenerator.registerSpear(ModItems.PRIXILED_WOODEN_SPEAR);
 
-        itemModelGenerator.register(ModItems.PRIXILED_STONE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_STONE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_STONE_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_STONE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PRIXILED_STONE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_STONE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_STONE_SWORD, Models.HANDHELD);
+        itemModelGenerator.registerSpear(ModItems.PRIXILED_STONE_SPEAR);
 
-        itemModelGenerator.register(ModItems.PRIXILED_COPPER_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_COPPER_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_COPPER_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_COPPER_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PRIXILED_COPPER_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_COPPER_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_COPPER_SWORD, Models.HANDHELD);
+        itemModelGenerator.registerSpear(ModItems.PRIXILED_COPPER_SPEAR);
 
-        itemModelGenerator.register(ModItems.PRIXILED_IRON_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_IRON_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_IRON_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_IRON_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PRIXILED_IRON_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_IRON_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_IRON_SWORD, Models.HANDHELD);
+        itemModelGenerator.registerSpear(ModItems.PRIXILED_IRON_SPEAR);
 
-        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_SWORD, Models.HANDHELD);
+        itemModelGenerator.registerSpear(ModItems.PRIXILED_GOLDEN_SPEAR);
 
-        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_DIAMOND_SWORD, Models.HANDHELD);
+        itemModelGenerator.registerSpear(ModItems.PRIXILED_DIAMOND_SPEAR);
 
-        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_SWORD, Models.HANDHELD);
+        itemModelGenerator.registerSpear(ModItems.PRIXILED_NETHERITE_SPEAR);
+
         //endregion
 
         itemModelGenerator.register(ModItems.PRIXILED_MACE, Models.HANDHELD_MACE);
