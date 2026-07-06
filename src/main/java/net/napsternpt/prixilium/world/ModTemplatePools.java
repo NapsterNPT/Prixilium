@@ -16,6 +16,7 @@ import java.util.List;
 public class ModTemplatePools {
     public static final RegistryKey<StructurePool> SPAWN_START_POOL = RegistryKey.of(RegistryKeys.TEMPLATE_POOL, Identifier.of(Prixilium.MOD_ID, "spawn/start_pool"));
     public static final RegistryKey<StructurePool> PORTAL_START_POOL = RegistryKey.of(RegistryKeys.TEMPLATE_POOL, Identifier.of(Prixilium.MOD_ID, "portal/start_pool"));
+    public static final RegistryKey<StructurePool> EXHAUST_TOWER_START__POOL = RegistryKey.of(RegistryKeys.TEMPLATE_POOL, Identifier.of(Prixilium.MOD_ID, "exhaust_tower/start_pool"));
 
     public static void bootstrap(Registerable<StructurePool> context) {
         RegistryEntry.Reference<StructurePool> empty = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(StructurePools.EMPTY);
@@ -26,6 +27,10 @@ public class ModTemplatePools {
 
         context.register(PORTAL_START_POOL, new StructurePool(empty,
                 List.of(Pair.of(StructurePoolElement.ofSingle(String.valueOf(Identifier.of(Prixilium.MOD_ID, "portal"))), 1)),
+                StructurePool.Projection.RIGID));
+
+        context.register(EXHAUST_TOWER_START__POOL, new StructurePool(empty,
+                List.of(Pair.of(StructurePoolElement.ofSingle(String.valueOf(Identifier.of(Prixilium.MOD_ID, "exhaust_tower"))), 1)),
                 StructurePool.Projection.RIGID));
     }
 }

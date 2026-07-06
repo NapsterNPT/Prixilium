@@ -1,0 +1,26 @@
+{
+  "parent": "prixilium:root",
+  "criteria": {
+    "dark_mode": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.square_zero.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:burned_prixilium_planks"
+    },
+    "title": {
+      "translate": "advancements.prixilium.dark_mode.title"
+    }
+  },
+  "requirements": [
+    [
+      "dark_mode"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

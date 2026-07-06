@@ -38,10 +38,12 @@ import java.util.Optional;
 public class ModStructures {
     public static final RegistryKey<Structure> SPAWN = RegistryKey.of(RegistryKeys.STRUCTURE, Identifier.of(Prixilium.MOD_ID, "spawn"));
     public static final RegistryKey<Structure> PORTAL = RegistryKey.of(RegistryKeys.STRUCTURE, Identifier.of(Prixilium.MOD_ID, "portal"));
+    public static final RegistryKey<Structure> EXHAUST_TOWER = RegistryKey.of(RegistryKeys.STRUCTURE, Identifier.of(Prixilium.MOD_ID, "exhaust_tower"));
 
     public static void bootstrap(Registerable<Structure> context) {
         RegistryEntry.Reference<StructurePool> spawnPool = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(ModTemplatePools.SPAWN_START_POOL);
         RegistryEntry.Reference<StructurePool> portalPool = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(ModTemplatePools.PORTAL_START_POOL);
+        RegistryEntry.Reference<StructurePool> exhaustTowerPool = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(ModTemplatePools.EXHAUST_TOWER_START__POOL);
 
         RegistryEntryList<Biome> biomes = context.getRegistryLookup(RegistryKeys.BIOME)
                 .getOrThrow(TagKey.of(RegistryKeys.BIOME, Identifier.of(Prixilium.MOD_ID, "has_structure/structures")));
@@ -53,6 +55,9 @@ public class ModStructures {
                 ConstantHeightProvider.create(YOffset.fixed(0)), false, Heightmap.Type.WORLD_SURFACE_WG));
 
         context.register(PORTAL, new JigsawStructure(config, portalPool, 1,
+                ConstantHeightProvider.create(YOffset.fixed(0)), false, Heightmap.Type.WORLD_SURFACE_WG));
+
+        context.register(EXHAUST_TOWER, new JigsawStructure(config, exhaustTowerPool, 1,
                 ConstantHeightProvider.create(YOffset.fixed(0)), false, Heightmap.Type.WORLD_SURFACE_WG));
     }
 
