@@ -59,5 +59,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.STAND);
         addDrop(ModBlocks.REACTOR_CORE);
         addDrop(ModBlocks.VIRUS_REACTOR);
+        addDrop(ModBlocks.OBELISK_OF_CHARMS);
     }
 }

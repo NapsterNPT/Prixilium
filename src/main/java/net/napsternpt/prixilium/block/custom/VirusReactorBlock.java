@@ -29,11 +29,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 
 public class VirusReactorBlock extends BlockWithEntity implements BlockEntityProvider {
+    public static final MapCodec<VirusReactorBlock> CODEC = VirusReactorBlock.createCodec(VirusReactorBlock::new);
     private static final VoxelShape BOTTOM = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 2.0, 15.0);
     private static final VoxelShape MIDDLE = Block.createCuboidShape(6.0, 2.0, 6.0, 10.0, 9.0, 10.0);
     private static final VoxelShape TOP = Block.createCuboidShape(2.0, 9.0, 2.0, 14.0, 21.0, 14.0);
     private static final VoxelShape SHAPE = VoxelShapes.union(BOTTOM, MIDDLE, TOP);
-    public static final MapCodec<VirusReactorBlock> CODEC = VirusReactorBlock.createCodec(VirusReactorBlock::new);
 
     public VirusReactorBlock(Settings settings) {
         super(settings);

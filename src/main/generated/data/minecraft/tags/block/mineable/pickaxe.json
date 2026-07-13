@@ -1,8 +1,5 @@
 {
   "values": [
-    "prixilium:stand",
-    "prixilium:reactor_core",
-    "prixilium:virus_reactor",
     "prixilium:prixilium_bricks",
     "prixilium:cracked_prixilium_bricks",
     "prixilium:chiseled_prixilium_bricks",
@@ -15,6 +12,10 @@
     "prixilium:dark_prixilium_grate",
     "prixilium:dark_prixilium_brick_stairs",
     "prixilium:dark_prixilium_brick_slab",
-    "prixilium:prixilium_exhaust"
+    "prixilium:prixilium_exhaust",
+    "prixilium:stand",
+    "prixilium:reactor_core",
+    "prixilium:virus_reactor",
+    "prixilium:obelisk_of_charms"
   ]
 }

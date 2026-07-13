@@ -22,9 +22,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_GRASS);
 
         valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.STAND)
-                .add(ModBlocks.REACTOR_CORE)
-                .add(ModBlocks.VIRUS_REACTOR)
                 .add(ModBlocks.PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
@@ -37,7 +34,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DARK_PRIXILIUM_GRATE)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
-                .add(ModBlocks.PRIXILIUM_EXHAUST);
+                .add(ModBlocks.PRIXILIUM_EXHAUST)
+                .add(ModBlocks.STAND)
+                .add(ModBlocks.REACTOR_CORE)
+                .add(ModBlocks.VIRUS_REACTOR)
+                .add(ModBlocks.OBELISK_OF_CHARMS);
 
         valueLookupBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.PRIXILIUM_LOG)
@@ -65,7 +66,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.REACTOR_CORE)
-                .add(ModBlocks.VIRUS_REACTOR);
+                .add(ModBlocks.VIRUS_REACTOR)
+                .add(ModBlocks.OBELISK_OF_CHARMS);
 
         valueLookupBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.PRIXILIUM_BRICKS)

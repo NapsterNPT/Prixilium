@@ -107,6 +107,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.STAND);
                         entries.add(ModBlocks.REACTOR_CORE);
                         entries.add(ModBlocks.VIRUS_REACTOR);
+                        entries.add(ModBlocks.OBELISK_OF_CHARMS);
                         //endregion
 
                     }).build());

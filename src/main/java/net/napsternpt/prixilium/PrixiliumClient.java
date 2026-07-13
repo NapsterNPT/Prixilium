@@ -9,6 +9,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.entity.EntityRendererFactories;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
+import net.napsternpt.prixilium.block.entity.renderers.ObeliskOfCharmsBlockEntityRenderer;
 import net.napsternpt.prixilium.block.entity.renderers.VirusReactorBlockEntityRenderer;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.client.models.*;
@@ -28,8 +29,10 @@ public class PrixiliumClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlock(ModBlocks.DARK_PRIXILIUM_GRATE, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.REACTOR_CORE, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.VIRUS_REACTOR, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.OBELISK_OF_CHARMS, BlockRenderLayer.CUTOUT);
 
 		BlockEntityRendererFactories.register(ModBlockEntities.VIRUS_REACTOR_BE, VirusReactorBlockEntityRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.OBELISK_OF_CHARMS_BE, ObeliskOfCharmsBlockEntityRenderer::new);
 
 		EntityModelLayerRegistry.registerModelLayer(BlikoModel.BLIKO, BlikoModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.BLIKO, BlikoRenderer::new);

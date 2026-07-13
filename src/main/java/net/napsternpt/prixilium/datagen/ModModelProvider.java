@@ -166,6 +166,12 @@ public class ModModelProvider extends FabricModelProvider {
                         BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/virus_reactor"))
                 )
         );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.OBELISK_OF_CHARMS,
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/obelisk_of_charms"))
+                )
+        );
 
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(

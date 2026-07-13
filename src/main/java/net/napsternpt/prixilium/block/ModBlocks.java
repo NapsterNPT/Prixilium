@@ -372,6 +372,13 @@ public class ModBlocks {
                     .mapColor(MapColor.LIGHT_GRAY)
                     .nonOpaque()
             ));
+    public static final Block OBELISK_OF_CHARMS = registerBlock(name = "obelisk_of_charms",
+            new ObeliskOfCharmsBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(5.0F, 7.0F)
+                    .mapColor(MapColor.LIGHT_GRAY)
+                    .nonOpaque()
+            ));
 
     public static final Block PRIXIVERSE_PORTAL = registerBlock(name = "prixiverse_portal",
             new PrixiversePortalBlock(AbstractBlock.Settings.create()
