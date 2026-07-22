@@ -1,6 +1,7 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made by NapsterNPT",
+	"parent": "prixilium:block/default_display",
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "prixilium:block/reactor_core",
@@ -157,37 +158,5 @@
 				"west": {"uv": [1.5, 9, 2.25, 10.5], "texture": "#0"}
 			}
 		}
-	],
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [45, 0, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"thirdperson_lefthand": {
-			"rotation": [45, 0, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"firstperson_righthand": {
-			"rotation": [0, 30, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"firstperson_lefthand": {
-			"rotation": [0, 30, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"ground": {
-			"translation": [0, 0.75, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"gui": {
-			"rotation": [30, 45, 0],
-			"scale": [0.75, 0.75, 0.75]
-		},
-		"head": {
-			"scale": [1.5, 1.5, 1.5]
-		},
-		"fixed": {
-			"scale": [0.75, 0.75, 0.75]
-		}
-	}
+	]
 }
