@@ -26,7 +26,7 @@ public class VirusAliveItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
         if (!world.isClient()) {
-            if (entity instanceof net.minecraft.entity.player.PlayerEntity player) {
+            if (entity instanceof PlayerEntity player) {
                 if (player.isCreative() || player.isSpectator()) {
                     return;
                 }

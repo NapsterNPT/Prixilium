@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.entity.EntityRendererFactories;
@@ -16,6 +17,8 @@ import net.napsternpt.prixilium.entity.client.models.*;
 import net.napsternpt.prixilium.entity.client.renderers.*;
 import net.napsternpt.prixilium.network.ModPackets;
 import net.napsternpt.prixilium.particle.*;
+import net.napsternpt.prixilium.screen.ModScreenHandlers;
+import net.napsternpt.prixilium.screen.custom.ObeliskOfCharmsScreen;
 
 public class PrixiliumClient implements ClientModInitializer {
 	@Override
@@ -33,6 +36,8 @@ public class PrixiliumClient implements ClientModInitializer {
 
 		BlockEntityRendererFactories.register(ModBlockEntities.VIRUS_REACTOR_BE, VirusReactorBlockEntityRenderer::new);
 		BlockEntityRendererFactories.register(ModBlockEntities.OBELISK_OF_CHARMS_BE, ObeliskOfCharmsBlockEntityRenderer::new);
+
+		HandledScreens.register(ModScreenHandlers.OBELISK_OF_CHARMS_SCREEN_HANDLER, ObeliskOfCharmsScreen::new);
 
 		EntityModelLayerRegistry.registerModelLayer(BlikoModel.BLIKO, BlikoModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.BLIKO, BlikoRenderer::new);

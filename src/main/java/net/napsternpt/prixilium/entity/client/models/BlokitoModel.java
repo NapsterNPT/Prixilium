@@ -6,8 +6,8 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.entity.client.renderstates.BlokitoRenderState;
 import net.napsternpt.prixilium.entity.client.animations.BlokitoAnimations;
+import net.napsternpt.prixilium.entity.client.renderstates.BlokitoRenderState;
 
 public class BlokitoModel extends EntityModel<BlokitoRenderState> {
     public static final EntityModelLayer BLOKITO = new EntityModelLayer(

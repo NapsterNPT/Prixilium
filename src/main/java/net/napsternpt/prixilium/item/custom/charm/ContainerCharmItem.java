@@ -20,7 +20,7 @@ import net.minecraft.util.ErrorReporter;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.item.custom.CharmItem;
-import net.napsternpt.prixilium.screen.SavedContainerScreenHandler;
+import net.napsternpt.prixilium.screen.custom.SavedContainerScreenHandler;
 
 import java.util.function.Consumer;
 
@@ -42,7 +42,7 @@ public class ContainerCharmItem extends CharmItem {
                 SimpleInventory inventory = new SimpleInventory(raw * 9);
                 loadInventory(stack, inventory, lookup);
                 return new SavedContainerScreenHandler(syncId, inv, inventory, stack, raw, lookup);
-                }, Text.translatable("hud.prixilium.container_charm.title")));
+                }, Text.translatable("screen.prixilium.container_charm.title")));
         }
         return ActionResult.SUCCESS;
     }

@@ -1,0 +1,12 @@
+{
+  "values": [
+    "prixilium:container_charm_ii",
+    "prixilium:stasis_charm_ii",
+    "prixilium:regeneration_charm_ii",
+    "prixilium:postmortal_charm_ii",
+    "prixilium:stopwatch_charm_ii",
+    "prixilium:immunity_charm_ii",
+    "prixilium:sonic_boom_charm_ii",
+    "prixilium:wither_charm_ii"
+  ]
+}

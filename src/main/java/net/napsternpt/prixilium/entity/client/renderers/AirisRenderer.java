@@ -4,8 +4,8 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.entity.client.renderstates.AirisRenderState;
 import net.napsternpt.prixilium.entity.client.models.AirisModel;
+import net.napsternpt.prixilium.entity.client.renderstates.AirisRenderState;
 import net.napsternpt.prixilium.entity.custom.AirisEntity;
 
 public class AirisRenderer extends MobEntityRenderer<AirisEntity, AirisRenderState, AirisModel> {

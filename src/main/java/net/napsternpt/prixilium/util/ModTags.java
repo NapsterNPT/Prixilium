@@ -26,6 +26,12 @@ public class ModTags {
         public static final TagKey<Item> PREVENT_PRIXILIUM_SLOWNESS = createTag("prevent_prixilium_slowness");
         public static final TagKey<Item> TEMPERATURE_TOOLS = createTag("temperature_tools");
         public static final TagKey<Item> CHARMS = createTag("charms");
+        public static final TagKey<Item> TIER_I_CHARMS = createTag("tier_i_charms");
+        public static final TagKey<Item> TIER_II_CHARMS = createTag("tier_ii_charms");
+        public static final TagKey<Item> TIER_III_CHARMS = createTag("tier_iii_charms");
+        public static final TagKey<Item> REPARABLE_CHARMS = createTag("reparable_charms");
+        public static final TagKey<Item> OBELISK_OF_CHARMS_FUEL = createTag("obelisk_of_charms_fuel");
+        public static final TagKey<Item> OBELISK_OF_CHARMS_FUEL_LONG = createTag("obelisk_of_charms_fuel_long");
         public static final TagKey<Item> CONTAINER_CHARM_UNHOLDABLE = createTag("container_charm_unholdable");
 
         private static TagKey<Item> createTag(String name) {

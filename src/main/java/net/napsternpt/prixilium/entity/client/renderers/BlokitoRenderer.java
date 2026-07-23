@@ -4,8 +4,8 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.entity.client.renderstates.BlokitoRenderState;
 import net.napsternpt.prixilium.entity.client.models.BlokitoModel;
+import net.napsternpt.prixilium.entity.client.renderstates.BlokitoRenderState;
 import net.napsternpt.prixilium.entity.custom.BlokitoEntity;
 
 public class BlokitoRenderer extends MobEntityRenderer<BlokitoEntity, BlokitoRenderState, BlokitoModel> {

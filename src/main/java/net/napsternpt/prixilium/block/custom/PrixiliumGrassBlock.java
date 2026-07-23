@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
@@ -80,7 +81,7 @@ public class PrixiliumGrassBlock extends Block {
         return !aboveState.isOpaqueFullCube() ||
                 aboveState.isOf(Blocks.WATER) ||
                 aboveState.isOf(Blocks.BUBBLE_COLUMN) ||
-                aboveState.getFluidState().isOf(net.minecraft.fluid.Fluids.WATER) ||
+                aboveState.getFluidState().isOf(Fluids.WATER) ||
                 aboveState.isOf(Blocks.LAVA);
     }
 }

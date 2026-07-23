@@ -199,6 +199,11 @@
   "tag.item.prixilium.prevent_prixilium_slowness": "Prevents Prixilium Slowness",
   "tag.item.prixilium.temperature_tools": "Immune to Prixilium Slowness",
   "tag.item.prixilium.charms": "Charms",
+  "tag.item.prixilium.tier_i_charms": "Tier I Charms",
+  "tag.item.prixilium.tier_ii_charms": "Tier II Charms",
+  "tag.item.prixilium.tier_iii_charms": "Tier III Charms",
+  "tag.item.prixilium.reparable_charms": "Reparable Charms",
+  "tag.item.prixilium.obelisk_of_charms_fuel": "Obelisk Of Charms Fuel",
   "tag.item.prixilium.container_charm_unholdable": "Container Charm Unholdable",
 
 
@@ -227,11 +232,11 @@
   "tooltip.prixilium.sonic_boom_charm": "§7This charm will fire a §eSonic Boom§7.",
   "tooltip.prixilium.wither_charm": "§7This charm will fire a §eWither§7 beam.",
 
-  "hud.thermometer.player_measuring": "§fMeasuring",
-  "hud.thermometer.player_ill": "§fThe player is §cill§f...",
-  "hud.thermometer.player_not_ill": "§fThe player is §anot ill§f.",
+  "screen.thermometer.player_measuring": "§fMeasuring",
+  "screen.thermometer.player_ill": "§fThe player is §cill§f...",
+  "screen.thermometer.player_not_ill": "§fThe player is §anot ill§f.",
 
-  "hud.prixilium.container_charm.title": "Prixilium Container Charm",
+  "screen.prixilium.container_charm.title": "Prixilium Container Charm",
 
 
   "advancements.prixilium.root.title": "Prixilium",

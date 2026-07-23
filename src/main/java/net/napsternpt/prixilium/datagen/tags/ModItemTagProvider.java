@@ -3,6 +3,7 @@ package net.napsternpt.prixilium.datagen.tags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.napsternpt.prixilium.block.ModBlocks;
@@ -142,7 +143,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.THERMOMETER);
 
         valueLookupBuilder(ModTags.Items.CHARMS)
-                .add(ModItems.CHARM_I)
+                .addTag(ModTags.Items.TIER_I_CHARMS)
+                .addTag(ModTags.Items.TIER_II_CHARMS)
+                .addTag(ModTags.Items.TIER_III_CHARMS);
+
+        valueLookupBuilder(ModTags.Items.TIER_I_CHARMS)
                 .add(ModItems.CONTAINER_CHARM_I)
                 .add(ModItems.STASIS_CHARM_I)
                 .add(ModItems.REGENERATION_CHARM_I)
@@ -150,8 +155,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.STOPWATCH_CHARM_I)
                 .add(ModItems.IMMUNITY_CHARM_I)
                 .add(ModItems.SONIC_BOOM_CHARM_I)
-                .add(ModItems.WITHER_CHARM_I)
-                .add(ModItems.CHARM_II)
+                .add(ModItems.WITHER_CHARM_I);
+
+        valueLookupBuilder(ModTags.Items.TIER_II_CHARMS)
                 .add(ModItems.CONTAINER_CHARM_II)
                 .add(ModItems.STASIS_CHARM_II)
                 .add(ModItems.REGENERATION_CHARM_II)
@@ -159,8 +165,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.STOPWATCH_CHARM_II)
                 .add(ModItems.IMMUNITY_CHARM_II)
                 .add(ModItems.SONIC_BOOM_CHARM_II)
-                .add(ModItems.WITHER_CHARM_II)
-                .add(ModItems.CHARM_III)
+                .add(ModItems.WITHER_CHARM_II);
+
+        valueLookupBuilder(ModTags.Items.TIER_III_CHARMS)
                 .add(ModItems.CONTAINER_CHARM_III)
                 .add(ModItems.STASIS_CHARM_III)
                 .add(ModItems.REGENERATION_CHARM_III)
@@ -169,6 +176,32 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.IMMUNITY_CHARM_III)
                 .add(ModItems.SONIC_BOOM_CHARM_III)
                 .add(ModItems.WITHER_CHARM_III);
+
+        valueLookupBuilder(ModTags.Items.REPARABLE_CHARMS)
+                .add(ModItems.STASIS_CHARM_I)
+                .add(ModItems.REGENERATION_CHARM_I)
+                .add(ModItems.POSTMORTAL_CHARM_I)
+                .add(ModItems.STOPWATCH_CHARM_I)
+                .add(ModItems.IMMUNITY_CHARM_I)
+                .add(ModItems.SONIC_BOOM_CHARM_I)
+                .add(ModItems.WITHER_CHARM_I)
+                .add(ModItems.STASIS_CHARM_II)
+                .add(ModItems.REGENERATION_CHARM_II)
+                .add(ModItems.POSTMORTAL_CHARM_II)
+                .add(ModItems.STOPWATCH_CHARM_II)
+                .add(ModItems.IMMUNITY_CHARM_II)
+                .add(ModItems.SONIC_BOOM_CHARM_II)
+                .add(ModItems.WITHER_CHARM_II)
+                .add(ModItems.STASIS_CHARM_III)
+                .add(ModItems.REGENERATION_CHARM_III)
+                .add(ModItems.POSTMORTAL_CHARM_III)
+                .add(ModItems.STOPWATCH_CHARM_III)
+                .add(ModItems.IMMUNITY_CHARM_III)
+                .add(ModItems.SONIC_BOOM_CHARM_III)
+                .add(ModItems.WITHER_CHARM_III);
+
+        valueLookupBuilder(ModTags.Items.OBELISK_OF_CHARMS_FUEL)
+                .add(Items.EXPERIENCE_BOTTLE);
 
         valueLookupBuilder(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE)
                 .addTag(ModTags.Items.CHARMS)

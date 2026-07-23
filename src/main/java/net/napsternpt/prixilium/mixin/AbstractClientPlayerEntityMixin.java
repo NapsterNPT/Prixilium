@@ -1,6 +1,5 @@
 package net.napsternpt.prixilium.mixin;
 
-
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;

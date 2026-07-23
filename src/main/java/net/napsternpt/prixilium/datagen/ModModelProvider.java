@@ -16,9 +16,9 @@ import net.minecraft.util.collection.WeightedPool;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.custom.PrixiliumLampBlock;
-import net.napsternpt.prixilium.util.ModDataComponentTypes;
 import net.napsternpt.prixilium.item.ModArmorMaterials;
 import net.napsternpt.prixilium.item.ModItems;
+import net.napsternpt.prixilium.util.ModDataComponentTypes;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {

@@ -6,8 +6,8 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.entity.client.renderstates.BlikoRenderState;
 import net.napsternpt.prixilium.entity.client.animations.BlikoAnimations;
+import net.napsternpt.prixilium.entity.client.renderstates.BlikoRenderState;
 
 public class BlikoModel extends EntityModel<BlikoRenderState> {
     public static final EntityModelLayer BLIKO = new EntityModelLayer(

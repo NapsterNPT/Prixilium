@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.custom.PrixiversePortalBlock;
 import net.napsternpt.prixilium.client.TimeStopClientEffects;
-import net.napsternpt.prixilium.screen.PrixiverseCreditsScreen;
+import net.napsternpt.prixilium.screen.custom.PrixiverseCreditsScreen;
 
 import java.util.Objects;
 import java.util.UUID;

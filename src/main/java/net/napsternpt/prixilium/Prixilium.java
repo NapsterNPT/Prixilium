@@ -15,19 +15,22 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
-import net.napsternpt.prixilium.util.ModDataComponentTypes;
 import net.napsternpt.prixilium.datagen.ModWorldGen;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
-import net.napsternpt.prixilium.entity.custom.*;
-import net.napsternpt.prixilium.util.ModItemGroups;
+import net.napsternpt.prixilium.entity.custom.AirisEntity;
+import net.napsternpt.prixilium.entity.custom.BlikoEntity;
+import net.napsternpt.prixilium.entity.custom.BlokitoEntity;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.network.ModPackets;
 import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.potion.ModPotions;
-import net.napsternpt.prixilium.screen.hud.ModHuds;
+import net.napsternpt.prixilium.screen.ModScreenHandlers;
+import net.napsternpt.prixilium.screen.ModScreens;
 import net.napsternpt.prixilium.sound.ModSounds;
+import net.napsternpt.prixilium.util.ModDataComponentTypes;
 import net.napsternpt.prixilium.util.ModGameRules;
+import net.napsternpt.prixilium.util.ModItemGroups;
 import net.napsternpt.prixilium.util.TimeStopState;
 import net.napsternpt.prixilium.world.ModStructures;
 import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
@@ -54,13 +57,14 @@ public class Prixilium implements ModInitializer {
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
 		ModEntities.registerEntities();
+		ModParticles.registerParticles();
+		ModScreenHandlers.registerScreenHandlers();
+		ModScreens.registerScreens();
+		ModGameRules.registerGameRules();
+
 		FabricDefaultAttributeRegistry.register(ModEntities.BLIKO, BlikoEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BLOKITO, BlokitoEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.AIRIS, AirisEntity.createAttributes());
-
-		ModParticles.registerParticles();
-		ModHuds.registerHuds();
-		ModGameRules.registerGameRules();
 
 		ModWorldGeneration.generateModWorldGen();
 

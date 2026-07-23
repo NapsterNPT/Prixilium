@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.screen;
+package net.napsternpt.prixilium.screen.custom;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;

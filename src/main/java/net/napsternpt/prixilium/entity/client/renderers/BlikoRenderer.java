@@ -5,8 +5,8 @@ import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.entity.client.renderstates.BlikoRenderState;
 import net.napsternpt.prixilium.entity.client.models.BlikoModel;
+import net.napsternpt.prixilium.entity.client.renderstates.BlikoRenderState;
 import net.napsternpt.prixilium.entity.custom.BlikoEntity;
 
 public class BlikoRenderer extends MobEntityRenderer<BlikoEntity, BlikoRenderState, BlikoModel> {

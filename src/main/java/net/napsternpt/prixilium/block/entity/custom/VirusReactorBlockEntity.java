@@ -16,6 +16,7 @@ import net.minecraft.storage.WriteView;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ImplementedInventory;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
@@ -67,7 +68,7 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
         markDirty();
     }
 
-    public static void tick(net.minecraft.world.World world, BlockPos pos, BlockState state, VirusReactorBlockEntity entity) {
+    public static void tick(World world, BlockPos pos, BlockState state, VirusReactorBlockEntity entity) {
         if (world.isClient()) return;
         if (!entity.spreading) return;
         entity.tickCounter++;
@@ -88,7 +89,7 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
         }
     }
 
-    private static void spreadCircle(net.minecraft.world.World world, BlockPos center, int radius) {
+    private static void spreadCircle(World world, BlockPos center, int radius) {
         for (int x = -radius; x <= radius; x++) {
             for (int z = -radius; z <= radius; z++) {
                 double distance = Math.sqrt(x * x + z * z);

@@ -13,8 +13,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.util.ModDataComponentTypes;
 import net.napsternpt.prixilium.entity.projectile.PrixiliumHookEntity;
+import net.napsternpt.prixilium.util.ModDataComponentTypes;
 
 import java.util.HashMap;
 import java.util.Map;

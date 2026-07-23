@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
-import net.napsternpt.prixilium.screen.hud.ThermometerHud;
+import net.napsternpt.prixilium.screen.custom.ThermometerScreen;
 
 import java.util.function.Consumer;
 
@@ -29,12 +29,12 @@ public class ThermometerItem extends Item {
 
     @Override
     public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
-        if (world.isClient()) ThermometerHud.increment();
+        if (world.isClient()) ThermometerScreen.increment();
     }
 
     @Override
     public boolean onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (world.isClient()) ThermometerHud.reset();
+        if (world.isClient()) ThermometerScreen.reset();
         return false;
     }
 

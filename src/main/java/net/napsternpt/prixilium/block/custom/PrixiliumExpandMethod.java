@@ -3,6 +3,8 @@ package net.napsternpt.prixilium.block.custom;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.PillarBlock;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -49,7 +51,7 @@ public class PrixiliumExpandMethod {
                 if (!targetAboveState.isOpaqueFullCube() ||
                         targetAboveState.isOf(Blocks.WATER) ||
                         targetAboveState.isOf(Blocks.BUBBLE_COLUMN) ||
-                        targetAboveState.getFluidState().isOf(net.minecraft.fluid.Fluids.WATER) ||
+                        targetAboveState.getFluidState().isOf(Fluids.WATER) ||
                         targetAboveState.isOf(Blocks.LAVA)) {
                     if (targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) {
                         world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
@@ -62,9 +64,9 @@ public class PrixiliumExpandMethod {
                 // Log
                 if (targetState.isIn(ModTags.Blocks.PRIXILIUM_LOG_CONVERTIBLE)) {
                     BlockState newState = ModBlocks.PRIXILIUM_LOG.getDefaultState();
-                    if (targetState.contains(net.minecraft.block.PillarBlock.AXIS)) {
-                        newState = newState.with(net.minecraft.block.PillarBlock.AXIS,
-                                targetState.get(net.minecraft.block.PillarBlock.AXIS));
+                    if (targetState.contains(PillarBlock.AXIS)) {
+                        newState = newState.with(PillarBlock.AXIS,
+                                targetState.get(PillarBlock.AXIS));
                     }
                     world.setBlockState(targetPos, newState);
                     world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);

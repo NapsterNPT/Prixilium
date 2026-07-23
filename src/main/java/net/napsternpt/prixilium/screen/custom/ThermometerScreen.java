@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.screen.hud;
+package net.napsternpt.prixilium.screen.custom;
 
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.effect.ModEffects;
 
-public class ThermometerHud {
+public class ThermometerScreen {
 
     private static final Identifier BAR = Identifier.of(Prixilium.MOD_ID, "textures/gui/thermometer/bar.png");
     private static final Identifier BAR_BACKGROUND = Identifier.of(Prixilium.MOD_ID, "textures/gui/thermometer/bar_background.png");
@@ -38,11 +38,11 @@ public class ThermometerHud {
 
     public static void register() {
         HudElementRegistry.attachElementAfter(VanillaHudElements.MISC_OVERLAYS,
-                Identifier.of(Prixilium.MOD_ID, "thermometer_hud"),
-                ThermometerHud::render);
+                Identifier.of(Prixilium.MOD_ID, "thermometer_screen"),
+                ThermometerScreen::render);
     }
 
-    private static void render(DrawContext drawContext, RenderTickCounter tickCounter) {
+    private static void render(DrawContext context, RenderTickCounter tickCounter) {
         MinecraftClient client = MinecraftClient.getInstance();
         if (!active || client.player == null) return;
 
@@ -63,8 +63,8 @@ public class ThermometerHud {
         int barHeight = 64;
 
         int filledWidth = (int) (barWidth * (value / 100.0f));
-        drawContext.drawTexture(RenderPipelines.GUI_TEXTURED, BAR_BACKGROUND, x, y, 0, 0, barWidth, barHeight, barWidth, barHeight);
-        drawContext.drawTexture(RenderPipelines.GUI_TEXTURED, BAR, x, y, 0, 0, filledWidth, barHeight, barWidth, barHeight);
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, BAR_BACKGROUND, x, y, 0, 0, barWidth, barHeight, barWidth, barHeight);
+        context.drawTexture(RenderPipelines.GUI_TEXTURED, BAR, x, y, 0, 0, filledWidth, barHeight, barWidth, barHeight);
 
         if (value != 100) {
             assert client.world != null;
@@ -73,17 +73,17 @@ public class ThermometerHud {
             if (ticks >= 10) dot += ".";
             if (ticks >= 20) dot += ".";
             if (ticks >= 30) dot += ".";
-            drawContext.drawCenteredTextWithShadow(client.textRenderer,
-                    Text.translatable("hud.thermometer.player_measuring").getString() + dot,
+            context.drawCenteredTextWithShadow(client.textRenderer,
+                    Text.translatable("screen.thermometer.player_measuring").getString() + dot,
                     centerX, y + guiHeight - 10, 0xFFFFFFFF);
         } else {
             if (client.player.hasStatusEffect(ModEffects.ILLNESS)){
-                drawContext.drawCenteredTextWithShadow(client.textRenderer,
-                        Text.translatable("hud.thermometer.player_ill"),
+                context.drawCenteredTextWithShadow(client.textRenderer,
+                        Text.translatable("screen.thermometer.player_ill"),
                         centerX, y + guiHeight - 10, 0xFFFFFFFF);
             } else {
-                drawContext.drawCenteredTextWithShadow(client.textRenderer,
-                        Text.translatable("hud.thermometer.player_not_ill"),
+                context.drawCenteredTextWithShadow(client.textRenderer,
+                        Text.translatable("screen.thermometer.player_not_ill"),
                         centerX, y + guiHeight - 10, 0xFFFFFFFF);
             }
         }
