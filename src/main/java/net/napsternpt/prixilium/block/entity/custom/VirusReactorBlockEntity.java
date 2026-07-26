@@ -31,8 +31,12 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
     private float rotation = 0;
     private static final int MAX_RADIUS = 5;
+    private static final int ANIMATION_DURATION = 100;
     private static final int SPREAD_DELAY = 5;
+
     private boolean spreading = false;
+    private boolean animationCompleted = false;
+
     private int currentRadius = 0;
     private int tickCounter = 0;
 
@@ -62,16 +66,31 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
     public void startSpread() {
         if (world == null || world.isClient()) return;
         this.spreading = true;
+        this.animationCompleted = false;
         this.currentRadius = 0;
         this.tickCounter = 0;
-        convertCenterBlock();
         markDirty();
+    }
+
+    public boolean isSpreading() {
+        return this.spreading;
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, VirusReactorBlockEntity entity) {
         if (world.isClient()) return;
         if (!entity.spreading) return;
+
         entity.tickCounter++;
+
+        if (!entity.animationCompleted) {
+            if (entity.tickCounter >= ANIMATION_DURATION) {
+                entity.animationCompleted = true;
+                entity.tickCounter = 0;
+                entity.convertCenterBlock();
+                entity.markDirty();
+            }
+            return;
+        }
 
         if (entity.tickCounter >= SPREAD_DELAY) {
             entity.tickCounter = 0;
@@ -120,6 +139,7 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
         view.putBoolean("spreading", spreading);
         view.putInt("currentRadius", currentRadius);
         view.putInt("tickCounter", tickCounter);
+        view.putBoolean("animationCompleted", animationCompleted);
     }
 
     @Override
@@ -129,6 +149,7 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
         spreading = view.getBoolean("spreading", false);
         currentRadius = view.getInt("currentRadius", 0);
         tickCounter = view.getInt("tickCounter", 0);
+        animationCompleted = view.getBoolean("animationCompleted", false);
     }
 
     @Override

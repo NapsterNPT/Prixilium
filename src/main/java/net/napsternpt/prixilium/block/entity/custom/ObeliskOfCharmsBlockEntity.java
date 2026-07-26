@@ -43,6 +43,8 @@ public class ObeliskOfCharmsBlockEntity extends BlockEntity implements ExtendedS
     private int fuelBurnTime = 0;
     private int maxFuelBurnTime = 0;
 
+    private final float rotation = (float)(Math.random() * 360);
+
     public ObeliskOfCharmsBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.OBELISK_OF_CHARMS_BE, pos, state);
 
@@ -75,6 +77,10 @@ public class ObeliskOfCharmsBlockEntity extends BlockEntity implements ExtendedS
         };
     }
 
+    public float getRenderingRotation() {
+        return rotation;
+    }
+
     @Override
     public @NonNull BlockPos getScreenOpeningData(@NonNull ServerPlayerEntity player) {
         return this.pos;
@@ -89,7 +95,6 @@ public class ObeliskOfCharmsBlockEntity extends BlockEntity implements ExtendedS
     public DefaultedList<ItemStack> getItems() {
         return inventory;
     }
-
 
     @Override
     public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
@@ -206,6 +211,10 @@ public class ObeliskOfCharmsBlockEntity extends BlockEntity implements ExtendedS
         int currentCount = this.getStack(OUTPUT_SLOT).getCount();
 
         return maxCount >= currentCount + count;
+    }
+
+    public boolean isBurning() {
+        return fuelBurnTime > 0;
     }
 
     @Override
