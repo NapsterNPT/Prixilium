@@ -272,6 +272,10 @@
   "advancements.prixilium.sonic_boom.title": "Sonic Boom",
   "advancements.prixilium.sonic_boom.description": "Kill a Warden with his own weapon",
 
+  "advancements.prixilium.get_reactor.title": "Get Reactor",
+  "advancements.prixilium.get_reactor.description": "Obtain a Virus Reactor",
+  "advancements.prixilium.reactor_squared.title": "Reactor²",
+  "advancements.prixilium.reactor_squared.description": "Place a Virus Reactor into a Virus Reactor",
   "advancements.prixilium.square_zero.title": "Square Zero",
   "advancements.prixilium.square_zero.description": "Trigger the virus reactor",
   "advancements.prixilium.its_spreading.title": "It's Spreading",

@@ -30,6 +30,7 @@ public class ModItems {
             .maxCount(1)
             .maxDamage(100)
             .rarity(Rarity.RARE)
+            .component(DataComponentTypes.TOOLTIP_DISPLAY, TooltipDisplayComponent.DEFAULT.with(DataComponentTypes.DAMAGE, true))
     ));
     public static final Item VIRUS_DEAD = registerItem(name = "virus_dead", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))

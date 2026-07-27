@@ -21,6 +21,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.block.entity.custom.VirusReactorBlockEntity;
 import net.napsternpt.prixilium.item.ModItems;
@@ -62,7 +63,7 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
     @Override
     protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if(world.getBlockEntity(pos) instanceof VirusReactorBlockEntity virusReactorEntity) {
-            if(virusReactorEntity.isEmpty() && !stack.isEmpty()) {
+            if(virusReactorEntity.isEmpty() && !stack.isEmpty() && !virusReactorEntity.isSpreading()) {
                 virusReactorEntity.setStack(0, stack.copyWithCount(1));
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
@@ -74,6 +75,11 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
                         AdvancementEntry advancement = Objects.requireNonNull(world.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "square_zero"));
                         serverPlayer.getAdvancementTracker().grantCriterion(advancement, "square_zero");
                     }
+                } else if (virusReactorEntity.getStack(0).isOf(ModBlocks.VIRUS_REACTOR.asItem())) {
+                    if (player instanceof ServerPlayerEntity serverPlayer) {
+                        AdvancementEntry advancement = Objects.requireNonNull(world.getServer()).getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "reactor_squared"));
+                        serverPlayer.getAdvancementTracker().grantCriterion(advancement, "reactor_squared");
+                    }
                 }
                 world.updateListeners(pos, state, state, 0);
                 return ActionResult.SUCCESS;
@@ -81,7 +87,7 @@ public class VirusReactorBlock extends BlockWithEntity implements BlockEntityPro
             } else if(stack.isEmpty() && !player.isSneaking() && !virusReactorEntity.isEmpty()) {
                 ItemStack stackOnVirusReactor = virusReactorEntity.getStack(0);
                 player.setStackInHand(Hand.MAIN_HAND, stackOnVirusReactor);
-                world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 1f);
+                world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS);
                 virusReactorEntity.clear();
 
                 virusReactorEntity.markDirty();

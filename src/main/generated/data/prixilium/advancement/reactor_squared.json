@@ -1,25 +1,25 @@
 {
   "parent": "prixilium:get_reactor",
   "criteria": {
-    "square_zero": {
+    "reactor_squared": {
       "trigger": "minecraft:impossible"
     }
   },
   "display": {
     "description": {
-      "translate": "advancements.prixilium.square_zero.description"
+      "translate": "advancements.prixilium.reactor_squared.description"
     },
     "icon": {
       "count": 1,
       "id": "prixilium:virus_reactor"
     },
     "title": {
-      "translate": "advancements.prixilium.square_zero.title"
+      "translate": "advancements.prixilium.reactor_squared.title"
     }
   },
   "requirements": [
     [
-      "square_zero"
+      "reactor_squared"
     ]
   ],
   "sends_telemetry_event": true

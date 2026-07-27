@@ -1,0 +1,33 @@
+{
+  "parent": "prixilium:root",
+  "criteria": {
+    "get_reactor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:virus_reactor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.get_reactor.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:virus_reactor"
+    },
+    "title": {
+      "translate": "advancements.prixilium.get_reactor.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_reactor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

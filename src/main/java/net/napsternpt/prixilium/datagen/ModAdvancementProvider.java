@@ -188,14 +188,34 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         //endregion
 
         //region [Blocks]
-        Advancement.Builder.create()
+        //region [Virus Reactor]
+        AdvancementEntry reactor = Advancement.Builder.create()
                 .parent(root)
+                .display(ModBlocks.VIRUS_REACTOR,
+                        Text.translatable("advancements.prixilium.get_reactor.title"),
+                        Text.translatable("advancements.prixilium.get_reactor.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("get_reactor", InventoryChangedCriterion.Conditions.items(ModBlocks.VIRUS_REACTOR))
+                .build(consumer, Prixilium.MOD_ID + ":get_reactor");
+
+        Advancement.Builder.create()
+                .parent(reactor)
+                .display(ModBlocks.VIRUS_REACTOR,
+                        Text.translatable("advancements.prixilium.reactor_squared.title"),
+                        Text.translatable("advancements.prixilium.reactor_squared.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("reactor_squared", impossibleCriterion)
+                .build(consumer, Prixilium.MOD_ID + ":reactor_squared");
+
+        Advancement.Builder.create()
+                .parent(reactor)
                 .display(ModBlocks.VIRUS_REACTOR,
                         Text.translatable("advancements.prixilium.square_zero.title"),
                         Text.translatable("advancements.prixilium.square_zero.description"), null, AdvancementFrame.TASK, true, true, false
                 )
                 .criterion("square_zero", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":square_zero");
+        //endregion
 
         Advancement.Builder.create()
                 .parent(root)
