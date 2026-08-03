@@ -37,6 +37,8 @@ import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Set;
 
 public class Prixilium implements ModInitializer {
@@ -89,5 +91,14 @@ public class Prixilium implements ModInitializer {
 				Text.translatable("resourcepacks.static_charms"),
 				PackActivationType.NORMAL
 		);
+
+		if (LocalDate.now().getMonth() == Month.APRIL && LocalDate.now().getDayOfMonth() == 1) {
+			ResourceLoader.registerBuiltinPack(
+					Identifier.of(MOD_ID, "translated_onehundred_times"),
+					FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(),
+					Text.translatable("resourcepacks.translated_onehundred_times"),
+					PackActivationType.ALWAYS_ENABLED
+			);
+		}
 	}
 }

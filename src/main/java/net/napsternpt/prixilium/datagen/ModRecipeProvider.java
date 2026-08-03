@@ -126,7 +126,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
                         .input('ì', Blocks.SOUL_SAND)
-                        .input('#', ModItems.CHARM_III)
+                        .input('#', ModItems.CHARM_I)
                         .pattern(" ? ")
                         .pattern("!#!")
                         .pattern("ììì")
@@ -136,7 +136,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
                         .input('ì', Blocks.SOUL_SOIL)
-                        .input('#', ModItems.CHARM_III)
+                        .input('#', ModItems.CHARM_I)
                         .pattern(" ? ")
                         .pattern("!#!")
                         .pattern("ììì")
@@ -208,7 +208,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
                         .input('ì', Blocks.SOUL_SAND)
-                        .input('#', ModItems.CHARM_III)
+                        .input('#', ModItems.CHARM_II)
                         .pattern(" ? ")
                         .pattern("!#!")
                         .pattern("ììì")
@@ -218,7 +218,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
                         .input('ì', Blocks.SOUL_SOIL)
-                        .input('#', ModItems.CHARM_III)
+                        .input('#', ModItems.CHARM_II)
                         .pattern(" ? ")
                         .pattern("!#!")
                         .pattern("ììì")
@@ -270,7 +270,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .offerTo(exporter, ModItems.STOPWATCH_CHARM_III + "_default");
                 createShaped(RecipeCategory.TOOLS, ModItems.IMMUNITY_CHARM_III)
                         .input('!', Items.TURTLE_HELMET)
-                        .input('#', ModItems.CHARM_I)
+                        .input('#', ModItems.CHARM_III)
                         .pattern(" ! ")
                         .pattern("!#!")
                         .pattern(" ! ")
@@ -328,6 +328,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.WOODEN_AXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.WOODEN_HOE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.WOODEN_SWORD, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.WOODEN_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [stone]
@@ -336,6 +337,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.STONE_AXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.STONE_HOE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.STONE_SWORD, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.STONE_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [copper]
@@ -344,6 +346,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.COPPER_AXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.COPPER_HOE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.COPPER_SWORD, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.COPPER_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [iron]
@@ -352,6 +355,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.IRON_AXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.IRON_HOE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.IRON_SWORD, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.IRON_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [gold]
@@ -360,6 +364,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.GOLDEN_AXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.GOLDEN_HOE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.GOLDEN_SWORD, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.GOLDEN_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [diamond]
@@ -368,6 +373,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.DIAMOND_AXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.DIAMOND_HOE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.DIAMOND_SWORD, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.DIAMOND_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [netherite]
@@ -376,6 +382,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 prixiliumUpgrade(exporter, Items.NETHERITE_AXE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.NETHERITE_HOE, RecipeCategory.TOOLS);
                 prixiliumUpgrade(exporter, Items.NETHERITE_SWORD, RecipeCategory.COMBAT);
+                prixiliumUpgrade(exporter, Items.NETHERITE_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 prixiliumUpgrade(exporter, Items.BOW, RecipeCategory.COMBAT);
@@ -684,9 +691,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
             private void charmUpgrade(RecipeExporter exporter, Item  inputCharm) {
                 Identifier inputId = Registries.ITEM.getId(inputCharm);
-                Item  output = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "i"));
+                Item  outputII = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "i"));
+                Item  outputIII = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "ii"));
 
-                createShaped(RecipeCategory.TOOLS, output)
+                createShaped(RecipeCategory.TOOLS, outputII)
                         .input('!', inputCharm)
                         .input('#', Items.AMETHYST_SHARD)
                         .pattern("###")
@@ -696,14 +704,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(inputCharm), conditionsFromItem(inputCharm))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, inputId.getPath() + "_upgraded_to_tear_ii")));
 
-                createShaped(RecipeCategory.TOOLS, output)
-                        .input('!', inputCharm)
+                createShaped(RecipeCategory.TOOLS, outputIII)
+                        .input('!', outputII)
                         .input('#', Items.NETHERITE_INGOT)
                         .pattern(" # ")
                         .pattern("#!#")
                         .pattern(" # ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .criterion(hasItem(inputCharm), conditionsFromItem(inputCharm))
+                        .criterion(hasItem(outputII), conditionsFromItem(outputII))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, inputId.getPath() + "i_upgraded_to_tear_iii")));
             }
         };

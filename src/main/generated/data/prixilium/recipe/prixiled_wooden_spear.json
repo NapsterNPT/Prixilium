@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "prixilium:prixilium",
+  "base": "minecraft:wooden_spear",
+  "result": {
+    "id": "prixilium:prixiled_wooden_spear"
+  },
+  "template": "prixilium:prixilium_upgrade_smithing_template"
+}

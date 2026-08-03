@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_regeneration_charm_i": {
+    "has_regeneration_charm_ii": {
       "conditions": {
         "items": [
           {
-            "items": "prixilium:regeneration_charm_i"
+            "items": "prixilium:regeneration_charm_ii"
           }
         ]
       },
@@ -32,7 +32,7 @@
     [
       "has_the_recipe",
       "has_charm_iii",
-      "has_regeneration_charm_i"
+      "has_regeneration_charm_ii"
     ]
   ],
   "rewards": {

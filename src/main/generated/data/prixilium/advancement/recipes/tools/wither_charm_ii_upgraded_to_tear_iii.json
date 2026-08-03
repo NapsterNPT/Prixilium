@@ -17,11 +17,11 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_wither_charm_i": {
+    "has_wither_charm_ii": {
       "conditions": {
         "items": [
           {
-            "items": "prixilium:wither_charm_i"
+            "items": "prixilium:wither_charm_ii"
           }
         ]
       },
@@ -32,7 +32,7 @@
     [
       "has_the_recipe",
       "has_charm_iii",
-      "has_wither_charm_i"
+      "has_wither_charm_ii"
     ]
   ],
   "rewards": {

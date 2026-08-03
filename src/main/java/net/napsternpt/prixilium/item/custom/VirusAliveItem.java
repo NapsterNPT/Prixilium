@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.util.ModGameRules;
@@ -54,29 +55,36 @@ public class VirusAliveItem extends Item {
 
     @Override
     public Text getName(ItemStack stack) {
-        String color = getColorFromDamage(stack);
+        Formatting color = getColorFromDamage(stack);
+
         return Text.translatable(this.translationKey)
                 .copy()
-                .append(Text.literal(" §7(§" + color + "Alive§7)"));
+                .append(Text.literal(" (").formatted(Formatting.GRAY))
+                .append(Text.translatable(this.translationKey + ".suffix").formatted(color))
+                .append(Text.literal(")").formatted(Formatting.GRAY));
     }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
         int hp = stack.getMaxDamage() - stack.getDamage();
-        String color = getColorFromDamage(stack);
+        Formatting color = getColorFromDamage(stack);
+
         Text line = Text.translatable("tooltip.prixilium.virus_alive.1")
-                .append(" §" + color + (hp) + " / 100 HP.");
+                .append(Text.literal(" "))
+                .append(Text.literal(hp + " / 100 HP").formatted(color))
+                .append(Text.literal("."));
+
         textConsumer.accept(line);
         textConsumer.accept(Text.translatable("tooltip.prixilium.virus_alive.2"));
         super.appendTooltip(stack, context, displayComponent, textConsumer, type);
     }
 
-    private String getColorFromDamage(ItemStack stack) {
+    private Formatting getColorFromDamage(ItemStack stack) {
         int hp = stack.getMaxDamage() - stack.getDamage();
-        String color = "c";
-        if (hp >= 75) color = "a";
-        else if (hp >= 50) color = "e";
-        else if (hp >= 25) color = "6";
-        return color;
+
+        if (hp >= 75) return Formatting.GREEN;
+        else if (hp >= 50) return Formatting.YELLOW;
+        else if (hp >= 25) return Formatting.GOLD;
+        else return Formatting.RED;
     }
 }

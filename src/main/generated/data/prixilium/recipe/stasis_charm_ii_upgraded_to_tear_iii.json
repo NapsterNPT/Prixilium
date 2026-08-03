@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "!": "prixilium:stasis_charm_i",
+    "!": "prixilium:stasis_charm_ii",
     "#": "minecraft:netherite_ingot"
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "prixilium:stasis_charm_ii"
+    "id": "prixilium:stasis_charm_iii"
   }
 }
