@@ -20,6 +20,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
+        //region [Item]
+
+        //region [Tools/Weapons]
         valueLookupBuilder(ItemTags.SHOVELS)
                 .add(ModItems.PRIXILED_WOODEN_SHOVEL)
                 .add(ModItems.PRIXILED_STONE_SHOVEL)
@@ -74,6 +77,16 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_DIAMOND_SPEAR)
                 .add(ModItems.PRIXILED_NETHERITE_SPEAR);
 
+        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItems.PRIXILED_BOW);
+
+        valueLookupBuilder(ItemTags.MACE_ENCHANTABLE)
+                .add(ModItems.PRIXILED_MACE);
+
+        //endregion
+
+        //region [Armor]
+
         valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.PRIXILED_LEATHER_HELMET)
                 .add(ModItems.PRIXILED_LEATHER_CHESTPLATE)
@@ -112,13 +125,103 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)
                 .add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
 
-        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
-                .add(ModItems.PRIXILED_BOW);
+        //endregion
 
-        valueLookupBuilder(ItemTags.MACE_ENCHANTABLE)
-                .add(ModItems.PRIXILED_MACE);
+        //region [Food]
+        valueLookupBuilder(ItemTags.MEAT)
+                .add(ModItems.PRIXILED_BEEF)
+                .add(ModItems.PRIXILED_COOKED_BEEF)
+                .add(ModItems.PRIXILED_PORKCHOP)
+                .add(ModItems.PRIXILED_COOKED_PORKCHOP)
+                .add(ModItems.PRIXILED_MUTTON)
+                .add(ModItems.PRIXILED_COOKED_MUTTON)
+                .add(ModItems.PRIXILED_CHICKEN)
+                .add(ModItems.PRIXILED_COOKED_CHICKEN)
+                .add(ModItems.PRIXILED_RABBIT)
+                .add(ModItems.PRIXILED_COOKED_RABBIT)
+                .add(ModItems.PRIXILED_ROTTEN_FLESH);
 
-        // Blocks
+        valueLookupBuilder(ItemTags.FISHES)
+                .add(ModItems.PRIXILED_COD)
+                .add(ModItems.PRIXILED_COOKED_COD)
+                .add(ModItems.PRIXILED_SALMON)
+                .add(ModItems.PRIXILED_COOKED_SALMON)
+                .add(ModItems.PRIXILED_TROPICAL_FISH)
+                .add(ModItems.PRIXILED_PUFFERFISH);
+
+        valueLookupBuilder(ItemTags.ARMADILLO_FOOD)
+                .add(ModItems.PRIXILED_SPIDER_EYE);
+
+        valueLookupBuilder(ItemTags.CAT_FOOD)
+                .add(ModItems.PRIXILED_COD)
+                .add(ModItems.PRIXILED_SALMON);
+
+        valueLookupBuilder(ItemTags.FOX_FOOD)
+                .add(ModItems.PRIXILED_SWEET_BERRIES)
+                .add(ModItems.PRIXILED_GLOW_BERRIES);
+
+        valueLookupBuilder(ItemTags.HORSE_FOOD)
+                .add(ModItems.PRIXILED_APPLE)
+                .add(ModItems.PRIXILED_GOLDEN_APPLE)
+                .add(ModItems.PRIXILED_ENCHANTED_GOLDEN_APPLE)
+                .add(ModItems.PRIXILED_CARROT)
+                .add(ModItems.PRIXILED_GOLDEN_CARROT);
+
+        valueLookupBuilder(ItemTags.HORSE_TEMPT_ITEMS)
+                .add(ModItems.PRIXILED_GOLDEN_APPLE)
+                .add(ModItems.PRIXILED_ENCHANTED_GOLDEN_APPLE)
+                .add(ModItems.PRIXILED_GOLDEN_CARROT);
+
+        valueLookupBuilder(ItemTags.NAUTILUS_TAMING_ITEMS)
+                .add(ModItems.PRIXILED_PUFFERFISH);
+
+        valueLookupBuilder(ItemTags.OCELOT_FOOD)
+                .add(ModItems.PRIXILED_COD)
+                .add(ModItems.PRIXILED_SALMON);
+
+        valueLookupBuilder(ItemTags.PARROT_POISONOUS_FOOD)
+                .add(ModItems.PRIXILED_COOKIE);
+
+        valueLookupBuilder(ItemTags.PIG_FOOD)
+                .add(ModItems.PRIXILED_CARROT)
+                .add(ModItems.PRIXILED_POTATO)
+                .add(ModItems.PRIXILED_BEETROOT);
+
+        valueLookupBuilder(ItemTags.PIGLIN_FOOD)
+                .add(ModItems.PRIXILED_PORKCHOP)
+                .add(ModItems.PRIXILED_COOKED_PORKCHOP);
+
+        valueLookupBuilder(ItemTags.PIGLIN_LOVED)
+                .add(ModItems.PRIXILED_GOLDEN_APPLE)
+                .add(ModItems.PRIXILED_ENCHANTED_GOLDEN_APPLE)
+                .add(ModItems.PRIXILED_GOLDEN_CARROT);
+
+        valueLookupBuilder(ItemTags.RABBIT_FOOD)
+                .add(ModItems.PRIXILED_CARROT)
+                .add(ModItems.PRIXILED_GOLDEN_CARROT);
+
+        valueLookupBuilder(ItemTags.VILLAGER_PICKS_UP)
+                .add(ModItems.PRIXILED_CARROT)
+                .add(ModItems.PRIXILED_POTATO)
+                .add(ModItems.PRIXILED_BEETROOT)
+                .add(ModItems.PRIXILED_BREAD);
+
+        valueLookupBuilder(ItemTags.WOLF_FOOD)
+                .add(ModItems.PRIXILED_COD)
+                .add(ModItems.PRIXILED_COOKED_COD)
+                .add(ModItems.PRIXILED_SALMON)
+                .add(ModItems.PRIXILED_TROPICAL_FISH)
+                .add(ModItems.PRIXILED_PUFFERFISH)
+                .add(ModItems.PRIXILED_RABBIT_STEW);
+
+        //endregion
+
+        //endregion
+
+        //region [Blocks]
+        valueLookupBuilder(ItemTags.LEAVES)
+                .add(ModBlocks.PRIXILIUM_LEAVES.asItem());
+
         valueLookupBuilder(ItemTags.LOGS)
                 .add(ModBlocks.PRIXILIUM_LOG.asItem())
                 .add(ModBlocks.PRIXILIUM_WOOD.asItem())
@@ -130,17 +233,50 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.BURNED_PRIXILIUM_PLANKS.asItem());
 
         // Mod Tags
-        valueLookupBuilder(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)
-                .add(ModItems.PRIXILED_LEATHER_BOOTS)
-                .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
-                .add(ModItems.PRIXILED_COPPER_BOOTS)
-                .add(ModItems.PRIXILED_IRON_BOOTS)
-                .add(ModItems.PRIXILED_GOLDEN_BOOTS)
-                .add(ModItems.PRIXILED_DIAMOND_BOOTS)
-                .add(ModItems.PRIXILED_NETHERITE_BOOTS);
-
         valueLookupBuilder(ModTags.Items.TEMPERATURE_TOOLS)
                 .add(ModItems.THERMOMETER);
+
+        valueLookupBuilder(ModTags.Items.PRIXILED_FOOD)
+                .add(ModItems.PRIXILIUM_OIL)
+                .add(ModItems.PRIXILED_APPLE)
+                .add(ModItems.PRIXILED_GOLDEN_APPLE)
+                .add(ModItems.PRIXILED_ENCHANTED_GOLDEN_APPLE)
+                .add(ModItems.PRIXILED_MELON_SLICE)
+                .add(ModItems.PRIXILED_SWEET_BERRIES)
+                .add(ModItems.PRIXILED_GLOW_BERRIES)
+                .add(ModItems.PRIXILED_CHORUS_FRUIT)
+                .add(ModItems.PRIXILED_CARROT)
+                .add(ModItems.PRIXILED_GOLDEN_CARROT)
+                .add(ModItems.PRIXILED_POTATO)
+                .add(ModItems.PRIXILED_BAKED_POTATO)
+                .add(ModItems.PRIXILED_POISONOUS_POTATO)
+                .add(ModItems.PRIXILED_BEETROOT)
+                .add(ModItems.PRIXILED_DRIED_KELP)
+                .add(ModItems.PRIXILED_BEEF)
+                .add(ModItems.PRIXILED_COOKED_BEEF)
+                .add(ModItems.PRIXILED_PORKCHOP)
+                .add(ModItems.PRIXILED_COOKED_PORKCHOP)
+                .add(ModItems.PRIXILED_MUTTON)
+                .add(ModItems.PRIXILED_COOKED_MUTTON)
+                .add(ModItems.PRIXILED_CHICKEN)
+                .add(ModItems.PRIXILED_COOKED_CHICKEN)
+                .add(ModItems.PRIXILED_RABBIT)
+                .add(ModItems.PRIXILED_COOKED_RABBIT)
+                .add(ModItems.PRIXILED_COD)
+                .add(ModItems.PRIXILED_COOKED_COD)
+                .add(ModItems.PRIXILED_SALMON)
+                .add(ModItems.PRIXILED_COOKED_SALMON)
+                .add(ModItems.PRIXILED_TROPICAL_FISH)
+                .add(ModItems.PRIXILED_PUFFERFISH)
+                .add(ModItems.PRIXILED_BREAD)
+                .add(ModItems.PRIXILED_COOKIE)
+                .add(ModItems.PRIXILED_PUMPKIN_PIE)
+                .add(ModItems.PRIXILED_ROTTEN_FLESH)
+                .add(ModItems.PRIXILED_SPIDER_EYE)
+                .add(ModItems.PRIXILED_MUSHROOM_STEW)
+                .add(ModItems.PRIXILED_BEETROOT_SOUP)
+                .add(ModItems.PRIXILED_RABBIT_STEW)
+                .add(ModItems.PRIXILED_HONEY_BOTTLE);
 
         valueLookupBuilder(ModTags.Items.CHARMS)
                 .addTag(ModTags.Items.TIER_I_CHARMS)
@@ -206,5 +342,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE)
                 .addTag(ModTags.Items.CHARMS)
                 .add(Blocks.SHULKER_BOX.asItem());
+
+        //endregion
     }
 }

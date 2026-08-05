@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mutton": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:mutton"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_prixilium_oil": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:prixilium_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:prixiled_mutton"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_prixilium_oil",
+      "has_mutton"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:prixiled_mutton"
+    ]
+  }
+}

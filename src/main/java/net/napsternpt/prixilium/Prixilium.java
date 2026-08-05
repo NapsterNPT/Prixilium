@@ -50,7 +50,10 @@ public class Prixilium implements ModInitializer {
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerItems();
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.PRIXILIUM.asItem(), ModPotions.PRIXILIUM_SLOWNESS_POTION));
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.PRIXILIUM.asItem(), ModPotions.PRIXILIUM_SLOWNESS_POTION);
+			builder.registerPotionRecipe(Potions.AWKWARD, ModItems.PRIXILIUM_OIL, ModPotions.PRIXILIUM_IMMUNITY_POTION);
+		});
 
 		ModBlocks.registerBlocks();
 		ModBlockEntities.registerBlockEntities();

@@ -390,6 +390,14 @@ public class ModBlocks {
                     .pistonBehavior(PistonBehavior.BLOCK)
             ), false);
 
+    public static final Block PRIXILED_CAKE = registerBlock(name = "prixiled_cake",
+            new PrixiledCakeBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .mapColor(MapColor.BROWN)
+                    .strength(0.5F)
+                    .sounds(BlockSoundGroup.WOOL)
+            ));
+
     private static Block registerBlock(String name, Block block) {
         return registerBlock(name, block, true);
     }

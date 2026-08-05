@@ -23,8 +23,8 @@ public class ModTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> PREVENT_PRIXILIUM_SLOWNESS = createTag("prevent_prixilium_slowness");
         public static final TagKey<Item> TEMPERATURE_TOOLS = createTag("temperature_tools");
+        public static final TagKey<Item> PRIXILED_FOOD = createTag("prixiled_food");
         public static final TagKey<Item> CHARMS = createTag("charms");
         public static final TagKey<Item> TIER_I_CHARMS = createTag("tier_i_charms");
         public static final TagKey<Item> TIER_II_CHARMS = createTag("tier_ii_charms");
@@ -40,7 +40,7 @@ public class ModTags {
     }
 
     public static class Entities {
-        public static final TagKey<EntityType<?>> IMMUNE_TO_PRIXILIUM_SLOWNESS = createTag("immune_to_prixilium_slowness");
+        public static final TagKey<EntityType<?>> IMMUNE_TO_PRIXILIUM = createTag("immune_to_prixilium");
 
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(Prixilium.MOD_ID, name));

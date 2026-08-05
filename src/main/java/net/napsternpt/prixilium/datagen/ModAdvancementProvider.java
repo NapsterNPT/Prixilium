@@ -16,6 +16,7 @@ import net.minecraft.predicate.TagPredicate;
 import net.minecraft.predicate.entity.DamageSourcePredicate;
 import net.minecraft.predicate.entity.EntityEffectPredicate;
 import net.minecraft.predicate.entity.EntityPredicate;
+import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.text.Text;
@@ -108,6 +109,16 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .criterion("use_prixilium_hook", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":prixilium_hook");
+
+        Advancement.Builder.create()
+                .parent(root)
+                .display(ModItems.PRIXILIUM_OIL,
+                        Text.translatable("advancements.prixilium.prixilium_food.title"),
+                        Text.translatable("advancements.prixilium.prixilium_food.description"), null, AdvancementFrame.TASK, true, true, false
+                )
+                .criterion("prixilium_food", InventoryChangedCriterion.Conditions.items(
+                        ItemPredicate.Builder.create().tag(registryLookup.getOrThrow(RegistryKeys.ITEM), ModTags.Items.PRIXILED_FOOD)))
+                .build(consumer, Prixilium.MOD_ID + ":prixilium_food");
 
         //region [Charms]
         AdvancementEntry charm = Advancement.Builder.create()

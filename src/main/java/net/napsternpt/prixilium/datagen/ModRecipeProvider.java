@@ -51,6 +51,48 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .offerTo(exporter);
 
+                offerSmelting(List.of(ModBlocks.PRIXILIUM), RecipeCategory.FOOD, ModItems.PRIXILIUM_OIL, 0.1f, 200, "prixilium_oil");
+
+                prixiledFoodUpgrade(exporter, Items.APPLE);
+                prixiledFoodUpgrade(exporter, Items.GOLDEN_APPLE);
+                prixiledFoodUpgrade(exporter, Items.ENCHANTED_GOLDEN_APPLE);
+                prixiledFoodUpgrade(exporter, Items.MELON_SLICE);
+                prixiledFoodUpgrade(exporter, Items.SWEET_BERRIES);
+                prixiledFoodUpgrade(exporter, Items.GLOW_BERRIES);
+                prixiledFoodUpgrade(exporter, Items.CHORUS_FRUIT);
+                prixiledFoodUpgrade(exporter, Items.CARROT);
+                prixiledFoodUpgrade(exporter, Items.GOLDEN_CARROT);
+                prixiledFoodUpgrade(exporter, Items.POTATO);
+                prixiledFoodUpgrade(exporter, Items.BAKED_POTATO);
+                prixiledFoodUpgrade(exporter, Items.POISONOUS_POTATO);
+                prixiledFoodUpgrade(exporter, Items.BEETROOT);
+                prixiledFoodUpgrade(exporter, Items.DRIED_KELP);
+                prixiledFoodUpgrade(exporter, Items.BEEF);
+                prixiledFoodUpgrade(exporter, Items.COOKED_BEEF);
+                prixiledFoodUpgrade(exporter, Items.PORKCHOP);
+                prixiledFoodUpgrade(exporter, Items.COOKED_PORKCHOP);
+                prixiledFoodUpgrade(exporter, Items.MUTTON);
+                prixiledFoodUpgrade(exporter, Items.COOKED_MUTTON);
+                prixiledFoodUpgrade(exporter, Items.CHICKEN);
+                prixiledFoodUpgrade(exporter, Items.COOKED_CHICKEN);
+                prixiledFoodUpgrade(exporter, Items.RABBIT);
+                prixiledFoodUpgrade(exporter, Items.COOKED_RABBIT);
+                prixiledFoodUpgrade(exporter, Items.COD);
+                prixiledFoodUpgrade(exporter, Items.COOKED_COD);
+                prixiledFoodUpgrade(exporter, Items.SALMON);
+                prixiledFoodUpgrade(exporter, Items.COOKED_SALMON);
+                prixiledFoodUpgrade(exporter, Items.TROPICAL_FISH);
+                prixiledFoodUpgrade(exporter, Items.PUFFERFISH);
+                prixiledFoodUpgrade(exporter, Items.BREAD);
+                prixiledFoodUpgrade(exporter, Items.COOKIE);
+                prixiledFoodUpgrade(exporter, Items.PUMPKIN_PIE);
+                prixiledFoodUpgrade(exporter, Items.ROTTEN_FLESH);
+                prixiledFoodUpgrade(exporter, Items.SPIDER_EYE);
+                prixiledFoodUpgrade(exporter, Items.MUSHROOM_STEW);
+                prixiledFoodUpgrade(exporter, Items.BEETROOT_SOUP);
+                prixiledFoodUpgrade(exporter, Items.RABBIT_STEW);
+                prixiledFoodUpgrade(exporter, Items.HONEY_BOTTLE);
+
                 //region [Charms]
 
                 //region [Tier I]
@@ -323,135 +365,135 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //region [Tools]
 
                 //region [wood]
-                prixiliumUpgrade(exporter, Items.WOODEN_SHOVEL, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.WOODEN_PICKAXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.WOODEN_AXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.WOODEN_HOE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.WOODEN_SWORD, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.WOODEN_SPEAR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.WOODEN_SHOVEL, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.WOODEN_PICKAXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.WOODEN_AXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.WOODEN_HOE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.WOODEN_SWORD, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.WOODEN_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [stone]
-                prixiliumUpgrade(exporter, Items.STONE_SHOVEL, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.STONE_PICKAXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.STONE_AXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.STONE_HOE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.STONE_SWORD, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.STONE_SPEAR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.STONE_SHOVEL, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.STONE_PICKAXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.STONE_AXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.STONE_HOE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.STONE_SWORD, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.STONE_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [copper]
-                prixiliumUpgrade(exporter, Items.COPPER_SHOVEL, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.COPPER_PICKAXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.COPPER_AXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.COPPER_HOE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.COPPER_SWORD, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.COPPER_SPEAR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.COPPER_SHOVEL, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.COPPER_PICKAXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.COPPER_AXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.COPPER_HOE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.COPPER_SWORD, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.COPPER_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [iron]
-                prixiliumUpgrade(exporter, Items.IRON_SHOVEL, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.IRON_PICKAXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.IRON_AXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.IRON_HOE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.IRON_SWORD, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.IRON_SPEAR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.IRON_SHOVEL, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.IRON_PICKAXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.IRON_AXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.IRON_HOE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.IRON_SWORD, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.IRON_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [gold]
-                prixiliumUpgrade(exporter, Items.GOLDEN_SHOVEL, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.GOLDEN_PICKAXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.GOLDEN_AXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.GOLDEN_HOE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.GOLDEN_SWORD, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.GOLDEN_SPEAR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_SHOVEL, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_PICKAXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_AXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_HOE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_SWORD, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [diamond]
-                prixiliumUpgrade(exporter, Items.DIAMOND_SHOVEL, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.DIAMOND_PICKAXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.DIAMOND_AXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.DIAMOND_HOE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.DIAMOND_SWORD, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.DIAMOND_SPEAR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_SHOVEL, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_PICKAXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_AXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_HOE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_SWORD, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [netherite]
-                prixiliumUpgrade(exporter, Items.NETHERITE_SHOVEL, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.NETHERITE_PICKAXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.NETHERITE_AXE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.NETHERITE_HOE, RecipeCategory.TOOLS);
-                prixiliumUpgrade(exporter, Items.NETHERITE_SWORD, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.NETHERITE_SPEAR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_SHOVEL, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_PICKAXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_AXE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_HOE, RecipeCategory.TOOLS);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_SWORD, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_SPEAR, RecipeCategory.COMBAT);
                 //endregion
 
-                prixiliumUpgrade(exporter, Items.BOW, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.MACE, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.BOW, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.MACE, RecipeCategory.COMBAT);
 
                 //endregion
 
                 //region [Armors]
 
                 //region [leather]
-                prixiliumUpgrade(exporter, Items.LEATHER_HELMET, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.LEATHER_CHESTPLATE, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.LEATHER_LEGGINGS, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.LEATHER_BOOTS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.LEATHER_HELMET, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.LEATHER_CHESTPLATE, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.LEATHER_LEGGINGS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.LEATHER_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [chainmail]
-                prixiliumUpgrade(exporter, Items.CHAINMAIL_HELMET, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.CHAINMAIL_CHESTPLATE, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.CHAINMAIL_LEGGINGS, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.CHAINMAIL_BOOTS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.CHAINMAIL_HELMET, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.CHAINMAIL_CHESTPLATE, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.CHAINMAIL_LEGGINGS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.CHAINMAIL_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [copper]
-                prixiliumUpgrade(exporter, Items.COPPER_HELMET, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.COPPER_CHESTPLATE, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.COPPER_LEGGINGS, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.COPPER_BOOTS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.COPPER_HELMET, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.COPPER_CHESTPLATE, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.COPPER_LEGGINGS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.COPPER_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [iron]
-                prixiliumUpgrade(exporter, Items.IRON_HELMET, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.IRON_CHESTPLATE, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.IRON_LEGGINGS, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.IRON_BOOTS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.IRON_HELMET, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.IRON_CHESTPLATE, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.IRON_LEGGINGS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.IRON_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [golden]
-                prixiliumUpgrade(exporter, Items.GOLDEN_HELMET, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.GOLDEN_CHESTPLATE, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.GOLDEN_LEGGINGS, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.GOLDEN_BOOTS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_HELMET, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_CHESTPLATE, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_LEGGINGS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [diamond]
-                prixiliumUpgrade(exporter, Items.DIAMOND_HELMET, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.DIAMOND_CHESTPLATE, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.DIAMOND_LEGGINGS, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.DIAMOND_BOOTS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_HELMET, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_CHESTPLATE, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_LEGGINGS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [netherite]
-                prixiliumUpgrade(exporter, Items.NETHERITE_HELMET, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_HELMET, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [turtle]
-                prixiliumUpgrade(exporter, Items.TURTLE_HELMET, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.TURTLE_HELMET, RecipeCategory.COMBAT);
                 //endregion
 
                 //region [horse]
-                prixiliumUpgrade(exporter, Items.LEATHER_HORSE_ARMOR, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.COPPER_HORSE_ARMOR, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.IRON_HORSE_ARMOR, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.GOLDEN_HORSE_ARMOR, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.DIAMOND_HORSE_ARMOR, RecipeCategory.COMBAT);
-                prixiliumUpgrade(exporter, Items.NETHERITE_HORSE_ARMOR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.LEATHER_HORSE_ARMOR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.COPPER_HORSE_ARMOR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.IRON_HORSE_ARMOR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.GOLDEN_HORSE_ARMOR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.DIAMOND_HORSE_ARMOR, RecipeCategory.COMBAT);
+                prixiledItemUpgrade(exporter, Items.NETHERITE_HORSE_ARMOR, RecipeCategory.COMBAT);
                 //endregion
 
                 //endregion
@@ -571,7 +613,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //region [Dark Bricks]
                 offer2x2CompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DARK_PRIXILIUM_BRICKS, ModBlocks.PRIXILIUM_BRICKS);
 
-                offerSmelting(List.of(ModBlocks.DARK_PRIXILIUM_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS, 0.1f, 200, "cracked_prixilium_bricks");
+                offerSmelting(List.of(ModBlocks.DARK_PRIXILIUM_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS, 0.1f, 200, "cracked_dark_prixilium_bricks");
 
                 offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS, ModBlocks.DARK_PRIXILIUM_BRICKS);
                 createChiseledBlockRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS, Ingredient.ofItem(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB))
@@ -671,9 +713,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
             }
 
-            private void prixiliumUpgrade(RecipeExporter exporter, Item input, RecipeCategory category) {
+            private void prixiledItemUpgrade(RecipeExporter exporter, Item input, RecipeCategory category) {
                 Identifier inputId = Registries.ITEM.getId(input);
-
                 Identifier resultId = Identifier.of(Prixilium.MOD_ID, "prixiled_" + inputId.getPath());
 
                 Item result = Registries.ITEM.get(resultId);
@@ -689,10 +730,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .offerTo(exporter, String.valueOf(resultId));
             }
 
-            private void charmUpgrade(RecipeExporter exporter, Item  inputCharm) {
+            private void prixiledFoodUpgrade(RecipeExporter exporter, Item input) {
+                Identifier inputId = Registries.ITEM.getId(input);
+                createShapeless(RecipeCategory.FOOD, Registries.ITEM.get(Identifier.of(Prixilium.MOD_ID, "prixiled_" + inputId.getPath())))
+                        .input(ModItems.PRIXILIUM_OIL)
+                        .input(input)
+                        .criterion(hasItem(ModItems.PRIXILIUM_OIL), conditionsFromItem(ModItems.PRIXILIUM_OIL))
+                        .criterion(hasItem(input), conditionsFromItem(input))
+                        .offerTo(exporter);
+            }
+
+            private void charmUpgrade(RecipeExporter exporter, Item inputCharm) {
                 Identifier inputId = Registries.ITEM.getId(inputCharm);
-                Item  outputII = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "i"));
-                Item  outputIII = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "ii"));
+                Item outputII = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "i"));
+                Item outputIII = Registries.ITEM.get(Identifier.of(inputId.getNamespace(), inputId.getPath() + "ii"));
 
                 createShaped(RecipeCategory.TOOLS, outputII)
                         .input('!', inputCharm)

@@ -20,7 +20,6 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
 
                         //region [Items]
-
                         entries.add(ModItems.VIRUS_ALIVE);
                         entries.add(ModItems.VIRUS_DEAD);
                         entries.add(ModItems.THERMOMETER);
@@ -256,5 +255,55 @@ public class ModItemGroups {
 
                     }).build());
 
-    public static void registerItemGroups() {Prixilium.LOGGER.info("Registering Prixilium Item Groups.");}
+    public static final ItemGroup PRIXILED_FOOD_GROUP = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(Prixilium.MOD_ID, "prixiled_food"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PRIXILED_GOLDEN_APPLE))
+                    .displayName(Text.translatable("itemgroup.prixilium.prixiled_food"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(ModItems.PRIXILIUM_OIL);
+                        entries.add(ModItems.PRIXILED_APPLE);
+                        entries.add(ModItems.PRIXILED_GOLDEN_APPLE);
+                        entries.add(ModItems.PRIXILED_ENCHANTED_GOLDEN_APPLE);
+                        entries.add(ModItems.PRIXILED_MELON_SLICE);
+                        entries.add(ModItems.PRIXILED_SWEET_BERRIES);
+                        entries.add(ModItems.PRIXILED_GLOW_BERRIES);
+                        entries.add(ModItems.PRIXILED_CHORUS_FRUIT);
+                        entries.add(ModItems.PRIXILED_CARROT);
+                        entries.add(ModItems.PRIXILED_GOLDEN_CARROT);
+                        entries.add(ModItems.PRIXILED_POTATO);
+                        entries.add(ModItems.PRIXILED_BAKED_POTATO);
+                        entries.add(ModItems.PRIXILED_POISONOUS_POTATO);
+                        entries.add(ModItems.PRIXILED_BEETROOT);
+                        entries.add(ModItems.PRIXILED_DRIED_KELP);
+                        entries.add(ModItems.PRIXILED_BEEF);
+                        entries.add(ModItems.PRIXILED_COOKED_BEEF);
+                        entries.add(ModItems.PRIXILED_PORKCHOP);
+                        entries.add(ModItems.PRIXILED_COOKED_PORKCHOP);
+                        entries.add(ModItems.PRIXILED_MUTTON);
+                        entries.add(ModItems.PRIXILED_COOKED_MUTTON);
+                        entries.add(ModItems.PRIXILED_CHICKEN);
+                        entries.add(ModItems.PRIXILED_COOKED_CHICKEN);
+                        entries.add(ModItems.PRIXILED_RABBIT);
+                        entries.add(ModItems.PRIXILED_COOKED_RABBIT);
+                        entries.add(ModItems.PRIXILED_COD);
+                        entries.add(ModItems.PRIXILED_COOKED_COD);
+                        entries.add(ModItems.PRIXILED_SALMON);
+                        entries.add(ModItems.PRIXILED_COOKED_SALMON);
+                        entries.add(ModItems.PRIXILED_TROPICAL_FISH);
+                        entries.add(ModItems.PRIXILED_PUFFERFISH);
+                        entries.add(ModItems.PRIXILED_BREAD);
+                        entries.add(ModItems.PRIXILED_COOKIE);
+                        entries.add(ModItems.PRIXILED_PUMPKIN_PIE);
+                        entries.add(ModItems.PRIXILED_ROTTEN_FLESH);
+                        entries.add(ModItems.PRIXILED_SPIDER_EYE);
+                        entries.add(ModItems.PRIXILED_MUSHROOM_STEW);
+                        entries.add(ModItems.PRIXILED_BEETROOT_SOUP);
+                        entries.add(ModItems.PRIXILED_RABBIT_STEW);
+                        entries.add(ModItems.PRIXILED_HONEY_BOTTLE);
+
+                    }).build());
+
+    public static void registerItemGroups() {
+        Prixilium.LOGGER.info("Registering Prixilium Item Groups.");
+    }
 }

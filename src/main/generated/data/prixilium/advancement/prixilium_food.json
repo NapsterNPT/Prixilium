@@ -1,0 +1,33 @@
+{
+  "parent": "prixilium:root",
+  "criteria": {
+    "prixilium_food": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#prixilium:prixiled_food"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.prixilium.prixilium_food.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "prixilium:prixilium_oil"
+    },
+    "title": {
+      "translate": "advancements.prixilium.prixilium_food.title"
+    }
+  },
+  "requirements": [
+    [
+      "prixilium_food"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

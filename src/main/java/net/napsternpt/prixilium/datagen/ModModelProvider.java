@@ -334,6 +334,51 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR, Models.GENERATED);
 
         //endregion
+
+        //region [Food]
+
+        itemModelGenerator.register(ModItems.PRIXILIUM_OIL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_APPLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_APPLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_ENCHANTED_GOLDEN_APPLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_MELON_SLICE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_SWEET_BERRIES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_GLOW_BERRIES, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_CHORUS_FRUIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_CARROT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_GOLDEN_CARROT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_POTATO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_BAKED_POTATO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_POISONOUS_POTATO, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_BEETROOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_DRIED_KELP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_BEEF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COOKED_BEEF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_PORKCHOP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COOKED_PORKCHOP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_MUTTON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COOKED_MUTTON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_CHICKEN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COOKED_CHICKEN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_RABBIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COOKED_RABBIT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COOKED_COD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_SALMON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COOKED_SALMON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_TROPICAL_FISH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_PUFFERFISH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_BREAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_COOKIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_PUMPKIN_PIE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_ROTTEN_FLESH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_SPIDER_EYE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_MUSHROOM_STEW, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_BEETROOT_SOUP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_RABBIT_STEW, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILED_HONEY_BOTTLE, Models.GENERATED);
+
+        //endregion
     }
 
     private void registerCharm(ItemModelGenerator gen, Item item) {

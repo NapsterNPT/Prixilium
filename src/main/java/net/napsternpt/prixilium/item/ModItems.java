@@ -1,9 +1,10 @@
 package net.napsternpt.prixilium.item;
 
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.DyedColorComponent;
-import net.minecraft.component.type.TooltipDisplayComponent;
+import net.minecraft.component.type.*;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.*;
+import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
@@ -15,11 +16,16 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.Unit;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
-import net.napsternpt.prixilium.item.custom.*;
+import net.napsternpt.prixilium.item.custom.CharmItem;
+import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
+import net.napsternpt.prixilium.item.custom.ThermometerItem;
+import net.napsternpt.prixilium.item.custom.VirusAliveItem;
 import net.napsternpt.prixilium.item.custom.charm.*;
 
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 public class ModItems {
     private static String name;
@@ -52,6 +58,7 @@ public class ModItems {
 
     public static final Item NAPSTERNPT_PLUSHY = registerItem(name = "napsternpt_plushy", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.DEATH_PROTECTION, DeathProtectionComponent.TOTEM_OF_UNDYING)
             .maxCount(1)
             .fireproof()
             .rarity(Rarity.EPIC)
@@ -594,66 +601,78 @@ public class ModItems {
     public static final Item PRIXILED_IRON_HELMET = registerItem(name = "prixiled_iron_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_IRON_CHESTPLATE = registerItem(name = "prixiled_iron_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_IRON_LEGGINGS = registerItem(name = "prixiled_iron_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_IRON_BOOTS = registerItem(name = "prixiled_iron_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
     //endregion
 
     //region [gold]
     public static final Item PRIXILED_GOLDEN_HELMET = registerItem(name = "prixiled_golden_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_GOLDEN_CHESTPLATE = registerItem(name = "prixiled_golden_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_GOLDEN_LEGGINGS = registerItem(name = "prixiled_golden_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_GOLDEN_BOOTS = registerItem(name = "prixiled_golden_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
     //endregion
 
     //region [diamond]
     public static final Item PRIXILED_DIAMOND_HELMET = registerItem(name = "prixiled_diamond_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_DIAMOND_CHESTPLATE = registerItem(name = "prixiled_diamond_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_DIAMOND_LEGGINGS = registerItem(name = "prixiled_diamond_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
 
     public static final Item PRIXILED_DIAMOND_BOOTS = registerItem(name = "prixiled_diamond_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
     //endregion
 
     //region [netherite]
@@ -724,9 +743,221 @@ public class ModItems {
     public static final Item PRIXILED_NETHERITE_HORSE_ARMOR = registerItem(name = "prixiled_netherite_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_NETHERITE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)));
+            .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
+    ));
     //endregion
 
+
+    //endregion
+
+    //region [Food]
+    private static ConsumableComponent addPrixiliumImmunity(ConsumableComponent base) {
+        return new ConsumableComponent(base.consumeSeconds(), base.useAction(), base.sound(), base.hasConsumeParticles(),
+                Stream.concat(base.onConsumeEffects().stream(),
+                        Stream.of(new ApplyEffectsConsumeEffect(new StatusEffectInstance(ModEffects.PRIXILIUM_IMMUNITY, 200, 0), 1.0F))
+                ).toList()
+        );
+    }
+
+    public static final Item PRIXILIUM_OIL = registerItem(name = "prixilium_oil", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.SPIDER_EYE, addPrixiliumImmunity(ConsumableComponents.SPIDER_EYE))
+    ));
+
+    public static final Item PRIXILED_APPLE = registerItem(name = "prixiled_apple", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.APPLE, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_GOLDEN_APPLE = registerItem(name = "prixiled_golden_apple", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.GOLDEN_APPLE, addPrixiliumImmunity(ConsumableComponents.GOLDEN_APPLE))
+    ));
+
+    public static final Item PRIXILED_ENCHANTED_GOLDEN_APPLE = registerItem(name = "prixiled_enchanted_golden_apple", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.ENCHANTED_GOLDEN_APPLE, addPrixiliumImmunity(ConsumableComponents.ENCHANTED_GOLDEN_APPLE))
+    ));
+
+    public static final Item PRIXILED_MELON_SLICE = registerItem(name = "prixiled_melon_slice", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.MELON_SLICE, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_SWEET_BERRIES = registerItem(name = "prixiled_sweet_berries", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.SWEET_BERRIES, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_GLOW_BERRIES = registerItem(name = "prixiled_glow_berries", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.GLOW_BERRIES, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_CHORUS_FRUIT = registerItem(name = "prixiled_chorus_fruit", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.CHORUS_FRUIT, addPrixiliumImmunity(ConsumableComponents.CHORUS_FRUIT))
+    ));
+
+    public static final Item PRIXILED_CARROT = registerItem(name = "prixiled_carrot", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.CARROT, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_GOLDEN_CARROT = registerItem(name = "prixiled_golden_carrot", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.GOLDEN_CARROT, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_POTATO = registerItem(name = "prixiled_potato", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.POTATO, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_BAKED_POTATO = registerItem(name = "prixiled_baked_potato", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.BAKED_POTATO, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_POISONOUS_POTATO = registerItem(name = "prixiled_poisonous_potato", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.POISONOUS_POTATO, addPrixiliumImmunity(ConsumableComponents.POISONOUS_POTATO))
+    ));
+
+    public static final Item PRIXILED_BEETROOT = registerItem(name = "prixiled_beetroot", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.BEETROOT, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_DRIED_KELP = registerItem(name = "prixiled_dried_kelp", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.DRIED_KELP, addPrixiliumImmunity(ConsumableComponents.DRIED_KELP))
+    ));
+
+    public static final Item PRIXILED_BEEF = registerItem(name = "prixiled_beef", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.BEEF, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_COOKED_BEEF = registerItem(name = "prixiled_cooked_beef", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COOKED_BEEF, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_PORKCHOP = registerItem(name = "prixiled_porkchop", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.PORKCHOP, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_COOKED_PORKCHOP = registerItem(name = "prixiled_cooked_porkchop", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COOKED_PORKCHOP, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_MUTTON = registerItem(name = "prixiled_mutton", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.MUTTON, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_COOKED_MUTTON = registerItem(name = "prixiled_cooked_mutton", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COOKED_MUTTON, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_CHICKEN = registerItem(name = "prixiled_chicken", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.CHICKEN, addPrixiliumImmunity(ConsumableComponents.RAW_CHICKEN))
+    ));
+
+    public static final Item PRIXILED_COOKED_CHICKEN = registerItem(name = "prixiled_cooked_chicken", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COOKED_CHICKEN, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_RABBIT = registerItem(name = "prixiled_rabbit", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.RABBIT, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_COOKED_RABBIT = registerItem(name = "prixiled_cooked_rabbit", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COOKED_RABBIT, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_COD = registerItem(name = "prixiled_cod", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COD, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_COOKED_COD = registerItem(name = "prixiled_cooked_cod", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COOKED_COD, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_SALMON = registerItem(name = "prixiled_salmon", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.SALMON, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_COOKED_SALMON = registerItem(name = "prixiled_cooked_salmon", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COOKED_SALMON, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_TROPICAL_FISH = registerItem(name = "prixiled_tropical_fish", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.TROPICAL_FISH, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_PUFFERFISH = registerItem(name = "prixiled_pufferfish", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.PUFFERFISH, addPrixiliumImmunity(ConsumableComponents.PUFFERFISH))
+    ));
+
+    public static final Item PRIXILED_BREAD = registerItem(name = "prixiled_bread", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.BREAD, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_COOKIE = registerItem(name = "prixiled_cookie", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.COOKIE, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_PUMPKIN_PIE = registerItem(name = "prixiled_pumpkin_pie", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.PUMPKIN_PIE, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_ROTTEN_FLESH = registerItem(name = "prixiled_rotten_flesh", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.ROTTEN_FLESH, addPrixiliumImmunity(ConsumableComponents.ROTTEN_FLESH))
+    ));
+
+    public static final Item PRIXILED_SPIDER_EYE = registerItem(name = "prixiled_spider_eye", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.SPIDER_EYE, addPrixiliumImmunity(ConsumableComponents.SPIDER_EYE))
+    ));
+
+    public static final Item PRIXILED_MUSHROOM_STEW = registerItem(name = "prixiled_mushroom_stew", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.MUSHROOM_STEW, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_BEETROOT_SOUP = registerItem(name = "prixiled_beetroot_soup", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.BEETROOT_SOUP, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_RABBIT_STEW = registerItem(name = "prixiled_rabbit_stew", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.RABBIT_STEW, addPrixiliumImmunity(ConsumableComponents.FOOD))
+    ));
+
+    public static final Item PRIXILED_HONEY_BOTTLE = registerItem(name = "prixiled_honey_bottle", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .food(FoodComponents.HONEY_BOTTLE, addPrixiliumImmunity(ConsumableComponents.HONEY_BOTTLE))
+    ));
 
     //endregion
 

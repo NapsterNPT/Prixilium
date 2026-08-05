@@ -13,6 +13,9 @@ public class ModPotions {
     public static final RegistryEntry<Potion> PRIXILIUM_SLOWNESS_POTION = registerPotion(
             new Potion("prixilium_slowness_potion", new StatusEffectInstance(ModEffects.PRIXILIUM_SLOWNESS, 1200, 0)));
 
+    public static final RegistryEntry<Potion> PRIXILIUM_IMMUNITY_POTION = registerPotion(
+            new Potion("prixilium_immunity_potion", new StatusEffectInstance(ModEffects.PRIXILIUM_IMMUNITY, 1200, 0)));
+
     private static RegistryEntry<Potion> registerPotion(Potion potion) {
         return Registry.registerReference(Registries.POTION, Identifier.of(Prixilium.MOD_ID, potion.getBaseName()), potion);
     }

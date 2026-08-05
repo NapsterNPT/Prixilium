@@ -17,7 +17,7 @@ public class ModEntityTagProvider extends FabricTagProvider.EntityTypeTagProvide
     @Override
     protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
         // Mod Tags
-        valueLookupBuilder(ModTags.Entities.IMMUNE_TO_PRIXILIUM_SLOWNESS)
+        valueLookupBuilder(ModTags.Entities.IMMUNE_TO_PRIXILIUM)
                 .add(ModEntities.BLIKO)
                 .add(ModEntities.BLOKITO)
                 .add(ModEntities.AIRIS);

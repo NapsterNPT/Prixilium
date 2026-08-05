@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "prixilium:prixilium_oil",
+    "minecraft:mutton"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixiled_mutton"
+  }
+}

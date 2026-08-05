@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_prixilium_oil": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:prixilium_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spider_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:spider_eye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:prixiled_spider_eye"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_prixilium_oil",
+      "has_spider_eye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:prixiled_spider_eye"
+    ]
+  }
+}

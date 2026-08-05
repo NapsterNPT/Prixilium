@@ -5,7 +5,6 @@ import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.SaplingGenerator;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCollisionHandler;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.util.math.BlockPos;
@@ -23,18 +22,11 @@ public class PrixiliumBlock extends SaplingBlock {
     @Override
     protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler, boolean bl) {
         if (!world.isClient() && entity instanceof LivingEntity livingEntity) {
-            if (!hasProtectionItem(livingEntity) && !livingEntity.getType().isIn(ModTags.Entities.IMMUNE_TO_PRIXILIUM_SLOWNESS)) {
+            if (!livingEntity.getType().isIn(ModTags.Entities.IMMUNE_TO_PRIXILIUM) && !livingEntity.hasStatusEffect(ModEffects.PRIXILIUM_IMMUNITY)) {
                     livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.PRIXILIUM_SLOWNESS, 40, 0));
             }
         }
         super.onEntityCollision(state, world, pos, entity, handler, bl);
-    }
-
-    private boolean hasProtectionItem(LivingEntity entity) {
-        for (EquipmentSlot slot : new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}) {
-            if (entity.getEquippedStack(slot).isIn(ModTags.Items.PREVENT_PRIXILIUM_SLOWNESS)) return true;
-        }
-        return false;
     }
 
     @Override

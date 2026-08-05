@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cooked_cod": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cooked_cod"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_prixilium_oil": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:prixilium_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:prixiled_cooked_cod"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_prixilium_oil",
+      "has_cooked_cod"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:prixiled_cooked_cod"
+    ]
+  }
+}

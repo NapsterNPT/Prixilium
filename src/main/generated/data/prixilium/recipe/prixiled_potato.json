@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "prixilium:prixilium_oil",
+    "minecraft:potato"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:prixiled_potato"
+  }
+}

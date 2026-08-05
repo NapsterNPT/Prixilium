@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.effect;
+package net.napsternpt.prixilium.effect.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
