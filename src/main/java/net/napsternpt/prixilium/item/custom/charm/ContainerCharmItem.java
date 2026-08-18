@@ -61,9 +61,10 @@ public class ContainerCharmItem extends CharmItem {
         }
     }
 
-    public static void saveInventory(SimpleInventory inventory, RegistryWrapper.WrapperLookup lookup) {
+    public static void saveInventory(ItemStack stack, SimpleInventory inventory, RegistryWrapper.WrapperLookup lookup) {
         NbtWriteView writeView = NbtWriteView.create(ErrorReporter.EMPTY, lookup);
         Inventories.writeData(writeView, inventory.getHeldStacks());
+        stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(writeView.getNbt()));
     }
 
     @Override

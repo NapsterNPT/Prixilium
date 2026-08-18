@@ -3,6 +3,7 @@ package net.napsternpt.prixilium.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -12,6 +13,8 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
+import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.item.ModItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -30,6 +33,20 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
                         .pool(LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1))
                                 .with(ItemEntry.builder(ModItems.VIRUS_ALIVE).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))))
+                                .conditionally(RandomChanceLootCondition.builder(0.25f))
+                        )
+        );
+
+        lootTableBiConsumer.accept(
+                ModEntities.BLIKO.getLootTableKey().orElseThrow(),
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1))
+                                .with(ItemEntry.builder(ModBlocks.PRIXILIUM).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))))
+                                .conditionally(RandomChanceLootCondition.builder(1f))
+                        ).pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1))
+                                .with(ItemEntry.builder(ModItems.PRIXILIUM_OIL).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))))
                                 .conditionally(RandomChanceLootCondition.builder(0.25f))
                         )
         );

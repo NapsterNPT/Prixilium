@@ -28,15 +28,16 @@
   "spawners": {
     "ambient": [],
     "axolotls": [],
-    "creature": [],
-    "misc": [],
-    "monster": [
+    "creature": [
       {
         "type": "prixilium:bliko",
         "maxCount": 2,
         "minCount": 1,
         "weight": 3
-      },
+      }
+    ],
+    "misc": [],
+    "monster": [
       {
         "type": "prixilium:blokito",
         "maxCount": 2,

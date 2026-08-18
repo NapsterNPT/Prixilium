@@ -15,11 +15,13 @@ import net.napsternpt.prixilium.util.ModTags;
 public class SavedContainerScreenHandler extends ScreenHandler {
     private final RegistryWrapper.WrapperLookup lookup;
     private final SimpleInventory inventory;
+    private final ItemStack stack;
     private final int rows;
 
     public SavedContainerScreenHandler(int syncId, PlayerInventory playerInventory, SimpleInventory inventory, ItemStack stack, int rows, RegistryWrapper.WrapperLookup lookup) {
         super(getType(rows), syncId);
         this.inventory = inventory;
+        this.stack = stack;
         this.lookup = lookup;
         this.rows = rows;
 
@@ -74,7 +76,7 @@ public class SavedContainerScreenHandler extends ScreenHandler {
     @Override
     public void onClosed(PlayerEntity player) {
         super.onClosed(player);
-        if (!player.getEntityWorld().isClient()) ContainerCharmItem.saveInventory(inventory, lookup);
+        if (!player.getEntityWorld().isClient()) ContainerCharmItem.saveInventory(stack, inventory, lookup);
     }
 
     @Override

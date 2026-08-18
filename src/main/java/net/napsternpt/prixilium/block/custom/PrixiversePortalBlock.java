@@ -23,7 +23,7 @@ import java.util.UUID;
 
 public class PrixiversePortalBlock extends Block {
     private static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 6.0, 0.0, 16.0, 12.0, 16.0);
-    public static final MapCodec<VirusReactorBlock> CODEC = VirusReactorBlock.createCodec(VirusReactorBlock::new);
+    public static final MapCodec<PrixiversePortalBlock> CODEC = createCodec(PrixiversePortalBlock::new);
 
     private static final Set<UUID> VIEWING_PLAYERS = new HashSet<>();
 
@@ -37,7 +37,7 @@ public class PrixiversePortalBlock extends Block {
     }
 
     @Override
-    protected MapCodec<? extends BlockWithEntity> getCodec() {
+    protected MapCodec<? extends Block> getCodec() {
         return CODEC;
     }
 

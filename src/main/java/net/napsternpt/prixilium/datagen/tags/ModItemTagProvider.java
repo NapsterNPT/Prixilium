@@ -339,6 +339,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ModTags.Items.OBELISK_OF_CHARMS_FUEL)
                 .add(Items.EXPERIENCE_BOTTLE);
 
+        valueLookupBuilder(ModTags.Items.OBELISK_OF_CHARMS_FUEL_LONG);
+
         valueLookupBuilder(ModTags.Items.CONTAINER_CHARM_UNHOLDABLE)
                 .addTag(ModTags.Items.CHARMS)
                 .add(Blocks.SHULKER_BOX.asItem());

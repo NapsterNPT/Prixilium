@@ -259,7 +259,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root)
                 .display(ModBlocks.BURNED_PRIXILIUM_PLANKS,
                         Text.translatable("advancements.prixilium.dark_mode.title"),
-                        Text.translatable("advancements.prixilium.square_zero.description"), null, AdvancementFrame.TASK, true, true, false
+                        Text.translatable("advancements.prixilium.dark_mode.description"), null, AdvancementFrame.TASK, true, true, false
                 )
                 .criterion("dark_mode", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":dark_mode");
