@@ -286,7 +286,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
 
         Advancement.Builder.create()
                 .parent(dimension)
-                .display(ModItems.BLOKITO_SPAWN_EGG,
+                .display(ModItems.BLOCKITO_SPAWN_EGG,
                         Text.translatable("advancements.prixilium.block_entity.title"),
                         Text.translatable("advancements.prixilium.block_entity.description"), null, AdvancementFrame.TASK, true, true, true
                 )

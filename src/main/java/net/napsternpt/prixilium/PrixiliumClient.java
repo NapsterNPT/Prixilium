@@ -41,8 +41,8 @@ public class PrixiliumClient implements ClientModInitializer {
 
 		EntityModelLayerRegistry.registerModelLayer(BlikoModel.BLIKO, BlikoModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.BLIKO, BlikoRenderer::new);
-		EntityModelLayerRegistry.registerModelLayer(BlokitoModel.BLOKITO, BlokitoModel::getTexturedModelData);
-		EntityRendererFactories.register(ModEntities.BLOKITO, BlokitoRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(BlockitoModel.BLOCKITO, BlockitoModel::getTexturedModelData);
+		EntityRendererFactories.register(ModEntities.BLOCKITO, BlockitoRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(AirisModel.AIRIS, AirisModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.AIRIS, AirisRenderer::new);
 		EntityRendererFactories.register(ModEntities.PRIXILIUM_HOOK, PrixiliumHookRenderer::new);

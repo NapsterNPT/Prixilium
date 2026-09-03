@@ -20,11 +20,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 
-public class BlokitoEntity extends ZombieEntity {
+public class BlockitoEntity extends ZombieEntity {
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState walkAnimationState = new AnimationState();
 
-    public BlokitoEntity(EntityType<? extends ZombieEntity> entityType, World world) {
+    public BlockitoEntity(EntityType<? extends ZombieEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -104,11 +104,11 @@ public class BlokitoEntity extends ZombieEntity {
     }
 
     @Override
-    protected @Nullable SoundEvent getHurtSound(DamageSource source) {return ModSounds.BLOKITO_HURT;}
+    protected @Nullable SoundEvent getHurtSound(DamageSource source) {return ModSounds.BLOCKITO_HURT;}
 
     @Override
-    protected @Nullable SoundEvent getDeathSound() {return ModSounds.BLOKITO_DEATH;}
+    protected @Nullable SoundEvent getDeathSound() {return ModSounds.BLOCKITO_DEATH;}
 
     @Override
-    protected SoundEvent getStepSound() {return ModSounds.BLOKITO_WALK;}
+    protected SoundEvent getStepSound() {return ModSounds.BLOCKITO_WALK;}
 }

@@ -15,7 +15,7 @@
   "item.prixilium.prixilium_hook": "Prixilium Hook",
   "item.prixilium.napsternpt_plushy": "NapsterNPT Plushy",
   "item.prixilium.bliko_spawn_egg": "Bliko Spawn Egg",
-  "item.prixilium.blokito_spawn_egg": "Blokito Spawn Egg",
+  "item.prixilium.blockito_spawn_egg": "Blockito Spawn Egg",
   "item.prixilium.airis_spawn_egg": "Airis Spawn Egg",
 
   "item.prixilium.charm_i": "Charm ★",
@@ -232,9 +232,9 @@
   "sounds.prixilium.bliko_ambient": "Bliko Wanders",
   "sounds.prixilium.bliko_hurt": "Bliko Hurts",
   "sounds.prixilium.bliko_death": "Bliko Dies",
-  "sounds.prixilium.blokito_hurt": "Blokito Hurts",
-  "sounds.prixilium.blokito_death": "Blokito Dies",
-  "sounds.prixilium.blokito_walk": "Blokito Walks",
+  "sounds.prixilium.blockito_hurt": "Blockito Hurts",
+  "sounds.prixilium.blockito_death": "Blockito Dies",
+  "sounds.prixilium.blockito_walk": "Blockito Walks",
   "sounds.prixilium.airis_ambient": "Airis Wanders",
   "sounds.prixilium.airis_hurt": "Airis Hurts",
   "sounds.prixilium.airis_death": "Airis Dies",
@@ -253,11 +253,12 @@
   "tag.item.prixilium.tier_iii_charms": "Tier III Charms",
   "tag.item.prixilium.reparable_charms": "Reparable Charms",
   "tag.item.prixilium.obelisk_of_charms_fuel": "Obelisk Of Charms Fuel",
+  "tag.item.prixilium.obelisk_of_charms_fuel_long": "Obelisk Of Charms Fuel Long",
   "tag.item.prixilium.container_charm_unholdable": "Container Charm Unholdable",
 
 
   "entity.prixilium.bliko": "Bliko",
-  "entity.prixilium.blokito": "Blokito",
+  "entity.prixilium.blockito": "Blockito",
   "entity.prixilium.airis": "Airis",
   "entity.prixilium.prixilium_hook": "Prixilium Hook",
 
@@ -344,7 +345,7 @@
   "advancements.prixilium.kill_bliko.title": "It Duplicates!?",
   "advancements.prixilium.kill_bliko.description": "Kill a Bliko",
   "advancements.prixilium.block_entity.title": "Is This a Block Entity?",
-  "advancements.prixilium.block_entity.description": "Kill a Blokito",
+  "advancements.prixilium.block_entity.description": "Kill a Blockito",
 
 
   "gamerule.prixilium.allow_illness": "§7(§6Prixilium§7)§r Allow Illness",

@@ -26,11 +26,11 @@ public class ModEntities {
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "bliko")))
     );
 
-    public static final EntityType<BlokitoEntity> BLOKITO = Registry.register(Registries.ENTITY_TYPE,
-            Identifier.of(Prixilium.MOD_ID, "blokito"),
-            EntityType.Builder.create(BlokitoEntity::new, SpawnGroup.CREATURE)
+    public static final EntityType<BlockitoEntity> BLOCKITO = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Prixilium.MOD_ID, "blockito"),
+            EntityType.Builder.create(BlockitoEntity::new, SpawnGroup.CREATURE)
                     .dimensions(0.99F, 0.99F)
-                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "blokito")))
+                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "blockito")))
     );
 
     public static final EntityType<AirisEntity> AIRIS = Registry.register(Registries.ENTITY_TYPE,

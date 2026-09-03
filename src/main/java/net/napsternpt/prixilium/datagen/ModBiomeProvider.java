@@ -31,7 +31,7 @@ public class ModBiomeProvider extends FabricDynamicRegistryProvider {
 
         SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
         spawnSettings.spawn(SpawnGroup.CREATURE, 3, new SpawnSettings.SpawnEntry(ModEntities.BLIKO, 1, 2));
-        spawnSettings.spawn(SpawnGroup.MONSTER, 5, new SpawnSettings.SpawnEntry(ModEntities.BLOKITO, 1, 2));
+        spawnSettings.spawn(SpawnGroup.MONSTER, 5, new SpawnSettings.SpawnEntry(ModEntities.BLOCKITO, 1, 2));
         spawnSettings.spawn(SpawnGroup.MONSTER, 2, new SpawnSettings.SpawnEntry(ModEntities.AIRIS, 1, 2));
 
         GenerationSettings.LookupBackedBuilder generationSettings = new GenerationSettings.LookupBackedBuilder(placedFeatures, carvers);

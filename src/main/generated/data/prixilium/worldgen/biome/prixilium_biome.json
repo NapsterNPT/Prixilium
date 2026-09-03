@@ -39,7 +39,7 @@
     "misc": [],
     "monster": [
       {
-        "type": "prixilium:blokito",
+        "type": "prixilium:blockito",
         "maxCount": 2,
         "minCount": 1,
         "weight": 5

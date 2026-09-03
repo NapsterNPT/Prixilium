@@ -2,7 +2,7 @@ package net.napsternpt.prixilium.entity.client.animations;
 
 import net.minecraft.client.render.entity.animation.*;
 
-public class BlokitoAnimations {
+public class BlockitoAnimations {
         public static final AnimationDefinition IDLE = AnimationDefinition.Builder.create(4.0F).looping()
                 .addBoneAnimation("Body", new Transformation(Transformation.Targets.ROTATE,
                         new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 0.0F),Transformation.Interpolations.CUBIC),

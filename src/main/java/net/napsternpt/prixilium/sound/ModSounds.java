@@ -14,9 +14,9 @@ public class ModSounds {
     public static final SoundEvent BLIKO_HURT = registerSoundEvent("bliko_hurt");
     public static final SoundEvent BLIKO_DEATH = registerSoundEvent("bliko_death");
 
-    public static final SoundEvent BLOKITO_HURT = registerSoundEvent("blokito_hurt");
-    public static final SoundEvent BLOKITO_DEATH = registerSoundEvent("blokito_death");
-    public static final SoundEvent BLOKITO_WALK = registerSoundEvent("blokito_walk");
+    public static final SoundEvent BLOCKITO_HURT = registerSoundEvent("blockito_hurt");
+    public static final SoundEvent BLOCKITO_DEATH = registerSoundEvent("blockito_death");
+    public static final SoundEvent BLOCKITO_WALK = registerSoundEvent("blockito_walk");
 
     public static final SoundEvent AIRIS_AMBIENT = registerSoundEvent("airis_ambient");
     public static final SoundEvent AIRIS_HURT = registerSoundEvent("airis_hurt");

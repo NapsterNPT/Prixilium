@@ -74,9 +74,9 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .spawnEgg(ModEntities.BLIKO)
     ));
-    public static final Item BLOKITO_SPAWN_EGG = registerItem(name = "blokito_spawn_egg", new SpawnEggItem(new Item.Settings()
+    public static final Item BLOCKITO_SPAWN_EGG = registerItem(name = "blockito_spawn_egg", new SpawnEggItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .spawnEgg(ModEntities.BLOKITO)
+            .spawnEgg(ModEntities.BLOCKITO)
     ));
     public static final Item AIRIS_SPAWN_EGG = registerItem(name = "airis_spawn_egg", new SpawnEggItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))

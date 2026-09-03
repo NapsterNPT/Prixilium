@@ -188,7 +188,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BLOKITO_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLOCKITO_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.AIRIS_SPAWN_EGG, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CHARM_I, Models.GENERATED);

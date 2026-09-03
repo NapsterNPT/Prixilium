@@ -26,7 +26,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_HOOK);
                         entries.add(ModItems.BLIKO_SPAWN_EGG);
-                        entries.add(ModItems.BLOKITO_SPAWN_EGG);
+                        entries.add(ModItems.BLOCKITO_SPAWN_EGG);
                         entries.add(ModItems.AIRIS_SPAWN_EGG);
 
                         entries.add(ModItems.CHARM_I);

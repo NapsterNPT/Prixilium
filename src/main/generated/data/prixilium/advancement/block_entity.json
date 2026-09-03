@@ -12,7 +12,7 @@
     "hidden": true,
     "icon": {
       "count": 1,
-      "id": "prixilium:blokito_spawn_egg"
+      "id": "prixilium:blockito_spawn_egg"
     },
     "title": {
       "translate": "advancements.prixilium.block_entity.title"

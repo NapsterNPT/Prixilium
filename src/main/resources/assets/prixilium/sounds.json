@@ -29,22 +29,22 @@
     ]
   },
 
-  "blokito_hurt": {
-    "subtitle": "sounds.prixilium.blokito_hurt",
+  "blockito_hurt": {
+    "subtitle": "sounds.prixilium.blockito_hurt",
     "sounds": [
-      "prixilium:blokito_hurt"
+      "prixilium:blockito_hurt"
     ]
   },
-  "blokito_death": {
-    "subtitle": "sounds.prixilium.blokito_death",
+  "blockito_death": {
+    "subtitle": "sounds.prixilium.blockito_death",
     "sounds": [
-      "prixilium:blokito_death"
+      "prixilium:blockito_death"
     ]
   },
-  "blokito_walk": {
-    "subtitle": "sounds.prixilium.blokito_walk",
+  "blockito_walk": {
+    "subtitle": "sounds.prixilium.blockito_walk",
     "sounds": [
-      "prixilium:blokito_walk"
+      "prixilium:blockito_walk"
     ]
   },
 
