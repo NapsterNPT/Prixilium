@@ -16,7 +16,7 @@ public class TimeStopEntityMixin {
         Entity entity = (Entity) (Object) this;
         World world = entity.getEntityWorld();
         if (!world.isClient() && world instanceof ServerWorld serverWorld) {
-            if (TimeStopState.isTimeStopped(serverWorld) && TimeStopState.isActivator(serverWorld, entity.getUuid())) {
+            if (TimeStopState.isTimeStopped(serverWorld) && TimeStopState.shouldFreeze(serverWorld, entity.getUuid())) {
                 ci.cancel();
             }
         }

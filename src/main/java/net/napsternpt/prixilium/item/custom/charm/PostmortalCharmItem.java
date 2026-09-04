@@ -84,9 +84,6 @@ public class PostmortalCharmItem extends CharmItem {
                 64, player.getWidth() / 2.0, player.getHeight() / 2.0, player.getWidth() / 2.0, 0.1);
         serverWorld.playSound(null, player.getX(), player.getY(), player.getZ(),
                 SoundEvents.ITEM_TOTEM_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
-        serverWorld.spawnParticles(ParticleTypes.TOTEM_OF_UNDYING,
-                player.getX(), player.getY() + 1.0, player.getZ(),
-                64, player.getWidth() / 2.0, player.getHeight() / 2.0, player.getWidth() / 2.0, 0.1);
 
         assert serverWorld.getServer() != null;
         AdvancementEntry advancement = serverWorld.getServer().getAdvancementLoader().get(Identifier.of(Prixilium.MOD_ID, "postmortal"));

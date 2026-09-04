@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_charm_i": {
+    "has_charm_ii": {
       "conditions": {
         "items": [
           {
-            "items": "prixilium:charm_i"
+            "items": "prixilium:charm_ii"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:stopwatch_charm_i_default"
+        "recipe": "prixilium:wither_charm_ii_from_soul_sand"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_charm_i"
+      "has_charm_ii"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prixilium:stopwatch_charm_i_default"
+      "prixilium:wither_charm_ii_from_soul_sand"
     ]
   }
 }

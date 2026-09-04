@@ -45,7 +45,7 @@ public class TimeStopState {
         return inst != null ? inst.activatorUuid : null;
     }
 
-    public static boolean isActivator(ServerWorld world, UUID entityUuid) {
+    public static boolean shouldFreeze(ServerWorld world, UUID entityUuid) {
         UUID activator = getActivator(world);
         return activator == null || !activator.equals(entityUuid);
     }

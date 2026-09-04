@@ -145,7 +145,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter, ModItems.STOPWATCH_CHARM_I + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.IMMUNITY_CHARM_I)
                         .input('!', Items.TURTLE_HELMET)
                         .input('#', ModItems.CHARM_I)
@@ -153,7 +153,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter, ModItems.IMMUNITY_CHARM_I + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_I)
                         .input('!', Blocks.SCULK_SHRIEKER)
                         .input('?', Blocks.SCULK_CATALYST)
@@ -163,7 +163,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("@#@")
                         .pattern("?!?")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_I + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_I)
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
@@ -173,7 +173,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern("ììì")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter, ModItems.WITHER_CHARM_I + "_default_soul_sand");
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "wither_charm_i_from_soul_sand")));
                 createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_I)
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
@@ -183,7 +183,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern("ììì")
                         .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter, ModItems.WITHER_CHARM_I + "_default_soul_soil");
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "wither_charm_i_from_soul_soil")));
                 //endregion
 
                 //region [Tier II]
@@ -194,7 +194,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.CONTAINER_CHARM_II + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.STASIS_CHARM_II)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
@@ -204,7 +204,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.STASIS_CHARM_II + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_II)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
@@ -214,12 +214,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.REGENERATION_CHARM_II + "_default");
+                        .offerTo(exporter);
                 createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_II)
                         .input(Items.TOTEM_OF_UNDYING)
                         .input(ModItems.CHARM_II)
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.POSTMORTAL_CHARM_II + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.STOPWATCH_CHARM_II)
                         .input('!', Items.CLOCK)
                         .input('#', ModItems.CHARM_II)
@@ -227,7 +227,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.STOPWATCH_CHARM_II + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.IMMUNITY_CHARM_II)
                         .input('!', Items.TURTLE_HELMET)
                         .input('#', ModItems.CHARM_II)
@@ -235,7 +235,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.IMMUNITY_CHARM_II + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_II)
                         .input('!', Blocks.SCULK_SHRIEKER)
                         .input('?', Blocks.SCULK_CATALYST)
@@ -245,7 +245,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("@#@")
                         .pattern("?!?")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_II + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_II)
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
@@ -255,7 +255,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern("ììì")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.WITHER_CHARM_II + "_default_soul_sand");
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "wither_charm_ii_from_soul_sand")));
                 createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_II)
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
@@ -265,7 +265,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern("ììì")
                         .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
-                        .offerTo(exporter, ModItems.WITHER_CHARM_II + "_default_soul_soil");
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "wither_charm_ii_from_soul_soil")));
                 //endregion
 
                 //region [Tier III]
@@ -276,7 +276,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.CONTAINER_CHARM_III + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.STASIS_CHARM_III)
                         .input('!', Items.ENDER_PEARL)
                         .input('@', Items.CLOCK)
@@ -286,7 +286,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.STASIS_CHARM_III + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.REGENERATION_CHARM_III)
                         .input('!', Items.COOKED_BEEF)
                         .input('@', Items.GHAST_TEAR)
@@ -296,12 +296,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ? ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.REGENERATION_CHARM_III + "_default");
+                        .offerTo(exporter);
                 createShapeless(RecipeCategory.TOOLS, ModItems.POSTMORTAL_CHARM_III)
                         .input(Items.TOTEM_OF_UNDYING)
                         .input(ModItems.CHARM_III)
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.POSTMORTAL_CHARM_III + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.STOPWATCH_CHARM_III)
                         .input('!', Items.CLOCK)
                         .input('#', ModItems.CHARM_III)
@@ -309,15 +309,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern(" ! ")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.STOPWATCH_CHARM_III + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.IMMUNITY_CHARM_III)
                         .input('!', Items.TURTLE_HELMET)
                         .input('#', ModItems.CHARM_III)
                         .pattern(" ! ")
                         .pattern("!#!")
                         .pattern(" ! ")
-                        .criterion(hasItem(ModItems.CHARM_I), conditionsFromItem(ModItems.CHARM_I))
-                        .offerTo(exporter, ModItems.IMMUNITY_CHARM_III + "_default");
+                        .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.SONIC_BOOM_CHARM_III)
                         .input('!', Blocks.SCULK_SHRIEKER)
                         .input('?', Blocks.SCULK_CATALYST)
@@ -327,7 +327,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("@#@")
                         .pattern("?!?")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.SONIC_BOOM_CHARM_III + "_default");
+                        .offerTo(exporter);
                 createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_III)
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
@@ -337,7 +337,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern("ììì")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.WITHER_CHARM_III + "_default_soul_sand");
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "wither_charm_iii_from_soul_sand")));
                 createShaped(RecipeCategory.TOOLS, ModItems.WITHER_CHARM_III)
                         .input('?', Items.WITHER_SKELETON_SKULL)
                         .input('!', Items.WITHER_ROSE)
@@ -347,7 +347,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("!#!")
                         .pattern("ììì")
                         .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
-                        .offerTo(exporter, ModItems.WITHER_CHARM_III + "_default_soul_soil");
+                        .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "wither_charm_iii_from_soul_soil")));
                 //endregion
 
                 charmUpgrade(exporter, ModItems.CHARM_I);
@@ -662,7 +662,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("#!#")
                         .pattern("!%!")
                         .pattern("#!#")
-                        .criterion(hasItem(ModBlocks.PRIXILIUM_LAMP), conditionsFromItem(ModBlocks.PRIXILIUM_LAMP))
+                        .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_glowstone")));
                 createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP)
                         .input('#', ModBlocks.PRIXILIUM)
@@ -670,7 +670,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" # ")
                         .pattern("#!#")
                         .pattern(" # ")
-                        .criterion(hasItem(ModBlocks.PRIXILIUM_LAMP), conditionsFromItem(ModBlocks.PRIXILIUM_LAMP))
+                        .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
+                        .criterion(hasItem(Blocks.REDSTONE_LAMP), conditionsFromItem(Blocks.REDSTONE_LAMP))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_redstone_lamp")));
 
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_EXHAUST)
@@ -751,7 +752,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("###")
                         .pattern("#!#")
                         .pattern("###")
-                        .criterion(hasItem(ModItems.CHARM_II), conditionsFromItem(ModItems.CHARM_II))
                         .criterion(hasItem(inputCharm), conditionsFromItem(inputCharm))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, inputId.getPath() + "_upgraded_to_tear_ii")));
 
@@ -761,7 +761,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" # ")
                         .pattern("#!#")
                         .pattern(" # ")
-                        .criterion(hasItem(ModItems.CHARM_III), conditionsFromItem(ModItems.CHARM_III))
                         .criterion(hasItem(outputII), conditionsFromItem(outputII))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, inputId.getPath() + "i_upgraded_to_tear_iii")));
             }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:postmortal_charm_iii_default"
+        "recipe": "prixilium:sonic_boom_charm_iii"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "prixilium:postmortal_charm_iii_default"
+      "prixilium:sonic_boom_charm_iii"
     ]
   }
 }

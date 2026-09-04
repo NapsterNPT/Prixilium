@@ -14,7 +14,7 @@ public class TimeStopClientEffects {
         return timeStopped;
     }
 
-    public static boolean isActivator(UUID uuid) {
+    public static boolean shouldFreeze(UUID uuid) {
         return uuid == null || !uuid.equals(activatorUuid);
     }
 

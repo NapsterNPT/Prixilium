@@ -15,7 +15,7 @@ public class TimeStopClientLivingEntityMixin {
         LivingEntity entity = (LivingEntity) (Object) this;
         World world = entity.getEntityWorld();
         if (world.isClient()) {
-            if (TimeStopClientEffects.isTimeStopped() && TimeStopClientEffects.isActivator(entity.getUuid())) {
+            if (TimeStopClientEffects.isTimeStopped() && TimeStopClientEffects.shouldFreeze(entity.getUuid())) {
                 ci.cancel();
             }
         }

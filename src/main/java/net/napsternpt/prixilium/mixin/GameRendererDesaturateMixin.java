@@ -49,6 +49,9 @@ public abstract class GameRendererDesaturateMixin {
                 desaturateEffect.render(client.getFramebuffer(), pool);
             }
         } else {
+            if (desaturateEffect != null) {
+                desaturateEffect.close();
+            }
             desaturateEffect = null;
         }
     }

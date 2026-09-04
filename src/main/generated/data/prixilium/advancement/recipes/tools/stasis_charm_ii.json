@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prixilium:wither_charm_ii_default_soul_soil"
+        "recipe": "prixilium:stasis_charm_ii"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "prixilium:wither_charm_ii_default_soul_soil"
+      "prixilium:stasis_charm_ii"
     ]
   }
 }

@@ -18,7 +18,6 @@ public class PostmortalCharmMixin {
         if (entity instanceof ServerPlayerEntity player) {
             if (PostmortalCharmItem.tryUse(player, source)) {
                 cir.setReturnValue(true);
-                cir.cancel();
             }
         }
     }

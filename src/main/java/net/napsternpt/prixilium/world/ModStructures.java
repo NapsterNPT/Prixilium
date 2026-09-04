@@ -43,7 +43,7 @@ public class ModStructures {
     public static void bootstrap(Registerable<Structure> context) {
         RegistryEntry.Reference<StructurePool> spawnPool = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(ModTemplatePools.SPAWN_START_POOL);
         RegistryEntry.Reference<StructurePool> portalPool = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(ModTemplatePools.PORTAL_START_POOL);
-        RegistryEntry.Reference<StructurePool> exhaustTowerPool = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(ModTemplatePools.EXHAUST_TOWER_START__POOL);
+        RegistryEntry.Reference<StructurePool> exhaustTowerPool = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(ModTemplatePools.EXHAUST_TOWER_START_POOL);
 
         RegistryEntryList<Biome> biomes = context.getRegistryLookup(RegistryKeys.BIOME)
                 .getOrThrow(TagKey.of(RegistryKeys.BIOME, Identifier.of(Prixilium.MOD_ID, "has_structure/structures")));

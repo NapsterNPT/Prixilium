@@ -18,10 +18,7 @@ import net.minecraft.util.Unit;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
-import net.napsternpt.prixilium.item.custom.CharmItem;
-import net.napsternpt.prixilium.item.custom.PrixiliumHookItem;
-import net.napsternpt.prixilium.item.custom.ThermometerItem;
-import net.napsternpt.prixilium.item.custom.VirusAliveItem;
+import net.napsternpt.prixilium.item.custom.*;
 import net.napsternpt.prixilium.item.custom.charm.*;
 
 import java.util.function.Consumer;
@@ -56,6 +53,10 @@ public class ModItems {
             .maxDamage(32)
     ));
 
+    public static final Item RIFTS_PAW = registerItem(name = "rifts_paw", new RiftsPawItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+    ));
+
     public static final Item NAPSTERNPT_PLUSHY = registerItem(name = "napsternpt_plushy", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.DEATH_PROTECTION, DeathProtectionComponent.TOTEM_OF_UNDYING)
@@ -83,7 +84,6 @@ public class ModItems {
             .spawnEgg(ModEntities.AIRIS)
     ));
     //endregion
-
 
     //region [Charms]
     //region [Tier I]
@@ -296,7 +296,6 @@ public class ModItems {
     ));
     //endregion
     //endregion
-
 
     //region [Tools]
 
@@ -746,7 +745,6 @@ public class ModItems {
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
-
 
     //endregion
 
