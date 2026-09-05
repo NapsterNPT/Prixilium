@@ -22,15 +22,7 @@ import net.napsternpt.prixilium.world.tree.ModSaplingGenerators;
 public class ModBlocks {
     private static String name;
 
-    public static final Block PRIXILIUM_GRASS = registerBlock(name = "prixilium_grass",
-            new PrixiliumGrassBlock(AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .strength(0.6f)
-                    .sounds(BlockSoundGroup.GRASS)
-                    .mapColor(MapColor.DARK_AQUA)
-                    .allowsSpawning((state, world, pos, type) -> false)
-            ));
-
+    //region [Virus]
     public static final Block PRIXILIUM = registerBlock(name = "prixilium",
             new PrixiliumBlock(ModSaplingGenerators.PRIXILIUM, AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -46,7 +38,29 @@ public class ModBlocks {
             )
     );
 
+    public static final Block PRIXILIUM_GRASS = registerBlock(name = "prixilium_grass",
+            new PrixiliumGrassBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(0.6f)
+                    .sounds(BlockSoundGroup.GRASS)
+                    .mapColor(MapColor.DARK_AQUA)
+                    .allowsSpawning((state, world, pos, type) -> false)
+            ));
+    //endregion
+
     //region [Planks]
+    public static final Block PRIXILIUM_LEAVES = registerBlock(name = "prixilium_leaves",
+            new PrixiliumLeavesBlock(0.1F, ModParticles.PRIXILIUM_LEAVES,AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(0.2F)
+                    .sounds(BlockSoundGroup.GRASS)
+                    .mapColor(MapColor.GOLD)
+                    .ticksRandomly()
+                    .burnable()
+                    .nonOpaque()
+                    .luminance(state -> 7)
+            ));
+
     public static final Block PRIXILIUM_LOG = registerBlock(name = "prixilium_log",
             new PrixiliumLogBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -61,18 +75,6 @@ public class ModBlocks {
                     .strength(2.0F)
                     .sounds(BlockSoundGroup.WOOD)
                     .mapColor(MapColor.TEAL)
-            ));
-
-    public static final Block PRIXILIUM_LEAVES = registerBlock(name = "prixilium_leaves",
-            new PrixiliumLeavesBlock(0.1F, ModParticles.PRIXILIUM_LEAVES,AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .strength(0.2F)
-                    .sounds(BlockSoundGroup.GRASS)
-                    .mapColor(MapColor.GOLD)
-                    .ticksRandomly()
-                    .burnable()
-                    .nonOpaque()
-                    .luminance(state -> 7)
             ));
 
     public static final Block PRIXILIUM_PLANKS = registerBlock(name = "prixilium_planks",
@@ -247,14 +249,6 @@ public class ModBlocks {
                     .nonOpaque()
             ));
 
-    public static final Block PRIXILIUM_BRICKS_WALL = registerBlock(name = "prixilium_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .requiresTool()
-                    .strength(1.5F, 6.0F)
-                    .mapColor(MapColor.CYAN)
-            ));
-
     public static final Block PRIXILIUM_BRICK_STAIRS = registerBlock(name = "prixilium_brick_stairs",
             new StairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -265,6 +259,14 @@ public class ModBlocks {
 
     public static final Block PRIXILIUM_BRICK_SLAB = registerBlock(name = "prixilium_brick_slab",
             new SlabBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+
+    public static final Block PRIXILIUM_BRICKS_WALL = registerBlock(name = "prixilium_bricks_wall",
+            new WallBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .requiresTool()
                     .strength(1.5F, 6.0F)
@@ -308,14 +310,6 @@ public class ModBlocks {
                     .nonOpaque()
             ));
 
-    public static final Block DARK_PRIXILIUM_BRICKS_WALL = registerBlock(name = "dark_prixilium_bricks_wall",
-            new WallBlock(AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .requiresTool()
-                    .strength(1.5F, 6.0F)
-                    .mapColor(MapColor.CYAN)
-            ));
-
     public static final Block DARK_PRIXILIUM_BRICK_STAIRS = registerBlock(name = "dark_prixilium_brick_stairs",
             new StairsBlock(ModBlocks.PRIXILIUM_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -326,6 +320,14 @@ public class ModBlocks {
 
     public static final Block DARK_PRIXILIUM_BRICK_SLAB = registerBlock(name = "dark_prixilium_brick_slab",
             new SlabBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+
+    public static final Block DARK_PRIXILIUM_BRICKS_WALL = registerBlock(name = "dark_prixilium_bricks_wall",
+            new WallBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .requiresTool()
                     .strength(1.5F, 6.0F)
@@ -355,6 +357,14 @@ public class ModBlocks {
                 }
             });
 
+    public static final Block PRIXILIUM_EXHAUST = registerBlock(name = "prixilium_exhaust",
+            new PrixiliumExhaustBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .requiresTool()
+                    .strength(1.5F, 6.0F)
+                    .mapColor(MapColor.CYAN)
+            ));
+
     public static final Block PRIXILIUM_LAMP = registerBlock(name = "prixilium_lamp",
             new PrixiliumLampBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -365,14 +375,6 @@ public class ModBlocks {
                     .luminance(state -> state.get(PrixiliumLampBlock.LIGHT))
             ));
 
-    public static final Block PRIXILIUM_EXHAUST = registerBlock(name = "prixilium_exhaust",
-            new PrixiliumExhaustBlock(AbstractBlock.Settings.create()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .requiresTool()
-                    .strength(1.5F, 6.0F)
-                    .mapColor(MapColor.CYAN)
-            ));
-
     public static final Block STAND = registerBlock(name = "stand",
             new StandBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -381,6 +383,7 @@ public class ModBlocks {
                     .nonOpaque()
                     .pistonBehavior(PistonBehavior.BLOCK)
             ));
+
     public static final Block REACTOR_CORE = registerBlock(name = "reactor_core",
             new ReactorCoreBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -389,6 +392,7 @@ public class ModBlocks {
                     .nonOpaque()
                     .pistonBehavior(PistonBehavior.BLOCK)
             ));
+
     public static final Block VIRUS_REACTOR = registerBlock(name = "virus_reactor",
             new VirusReactorBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -396,6 +400,7 @@ public class ModBlocks {
                     .mapColor(MapColor.LIGHT_GRAY)
                     .nonOpaque()
             ));
+
     public static final Block OBELISK_OF_CHARMS = registerBlock(name = "obelisk_of_charms",
             new ObeliskOfCharmsBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))

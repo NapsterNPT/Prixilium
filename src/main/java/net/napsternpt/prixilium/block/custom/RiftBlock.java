@@ -23,6 +23,7 @@ import java.util.List;
 
 public class RiftBlock extends Block {
     private static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 15.999);
+
     public static final BooleanProperty CAN_SPAWN = BooleanProperty.of("can_spawn");
 
     @Override

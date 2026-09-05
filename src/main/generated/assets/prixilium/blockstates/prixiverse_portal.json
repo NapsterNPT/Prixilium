@@ -1,7 +1,41 @@
 {
-  "variants": {
-    "": {
-      "model": "prixilium:block/prixiverse_portal"
+  "multipart": [
+    {
+      "apply": {
+        "model": "prixilium:block/prixiverse_portal_center"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixiverse_portal_north"
+      },
+      "when": {
+        "north": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixiverse_portal_east"
+      },
+      "when": {
+        "east": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixiverse_portal_south"
+      },
+      "when": {
+        "south": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "prixilium:block/prixiverse_portal_west"
+      },
+      "when": {
+        "west": "false"
+      }
     }
-  }
+  ]
 }

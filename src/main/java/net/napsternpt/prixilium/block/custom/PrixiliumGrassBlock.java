@@ -27,36 +27,16 @@ public class PrixiliumGrassBlock extends Block {
     }
 
     @Override
-    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world,
-                                         BlockPos pos, PlayerEntity player,
-                                         Hand hand, BlockHitResult hit) {
-
+    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (stack.isOf(Items.SHEARS)) {
             if (!world.isClient()) {
                 world.setBlockState(pos, Blocks.GRASS_BLOCK.getDefaultState());
-
-                ItemScatterer.spawn(
-                        world,
-                        pos.getX(),
-                        pos.getY(),
-                        pos.getZ(),
-                        new ItemStack(ModBlocks.PRIXILIUM)
-                );
-
+                ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ModBlocks.PRIXILIUM));
                 stack.damage(1, player, hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-
-                world.playSound(
-                        null,
-                        pos,
-                        SoundEvents.ENTITY_SHEEP_SHEAR,
-                        SoundCategory.BLOCKS,
-                        1.0F,
-                        1.0F
-                );
+                world.playSound(null, pos, SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
             return ActionResult.SUCCESS;
         }
-
         return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
     }
 

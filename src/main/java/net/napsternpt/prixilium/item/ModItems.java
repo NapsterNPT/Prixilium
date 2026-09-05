@@ -44,15 +44,6 @@ public class ModItems {
             .maxCount(1)
     ));
 
-    public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem(name = "prixilium_upgrade_smithing_template", new Item(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-    ));
-
-    public static final Item PRIXILIUM_HOOK = registerItem(name = "prixilium_hook", new PrixiliumHookItem(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .maxDamage(32)
-    ));
-
     public static final Item RIFTS_PAW = registerItem(name = "rifts_paw", new RiftsPawItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -63,19 +54,14 @@ public class ModItems {
             .maxCount(1)
     ));
 
-    public static final Item NAPSTERNPT_PLUSHY = registerItem(name = "napsternpt_plushy", new Item(new Item.Settings()
+    public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem(name = "prixilium_upgrade_smithing_template", new Item(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
-            .component(DataComponentTypes.DEATH_PROTECTION, DeathProtectionComponent.TOTEM_OF_UNDYING)
-            .maxCount(1)
-            .fireproof()
-            .rarity(Rarity.EPIC)
-    ){
-        @Override
-        public void appendTooltip(ItemStack stack, Item.TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
-            textConsumer.accept(Text.translatable("thank_you"));
-            super.appendTooltip(stack, context, displayComponent, textConsumer, type);
-        }
-    });
+    ));
+
+    public static final Item PRIXILIUM_HOOK = registerItem(name = "prixilium_hook", new PrixiliumHookItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxDamage(32)
+    ));
 
     public static final Item BLIKO_SPAWN_EGG = registerItem(name = "bliko_spawn_egg", new SpawnEggItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
@@ -968,6 +954,20 @@ public class ModItems {
     ));
 
     //endregion
+
+    public static final Item NAPSTERNPT_PLUSHY = registerItem(name = "napsternpt_plushy", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .component(DataComponentTypes.DEATH_PROTECTION, DeathProtectionComponent.TOTEM_OF_UNDYING)
+            .maxCount(1)
+            .fireproof()
+            .rarity(Rarity.EPIC)
+    ){
+        @Override
+        public void appendTooltip(ItemStack stack, Item.TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+            textConsumer.accept(Text.translatable("thank_you"));
+            super.appendTooltip(stack, context, displayComponent, textConsumer, type);
+        }
+    });
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Prixilium.MOD_ID, name), item);

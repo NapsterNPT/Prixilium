@@ -8,6 +8,7 @@ import net.minecraft.client.render.item.model.ConditionItemModel;
 import net.minecraft.client.render.item.model.ItemModel;
 import net.minecraft.client.render.item.property.bool.HasComponentProperty;
 import net.minecraft.client.render.item.property.select.DisplayContextProperty;
+import net.minecraft.client.render.model.json.MultipartModelConditionBuilder;
 import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.client.render.model.json.ModelVariant;
 import net.minecraft.client.render.model.json.WeightedVariant;
@@ -18,6 +19,7 @@ import net.minecraft.util.collection.WeightedPool;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.custom.PrixiliumLampBlock;
+import net.napsternpt.prixilium.block.custom.PrixiversePortalBlock;
 import net.napsternpt.prixilium.item.ModArmorMaterials;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.util.ModDataComponentTypes;
@@ -98,41 +100,24 @@ public class ModModelProvider extends FabricModelProvider {
         darkPrixiliumBricksPool.slab(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
         darkPrixiliumBricksPool.wall(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
 
-        Identifier lamp0Identifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector);
-        Identifier lamp1Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_1", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp2Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_2", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp3Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_3", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp4Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_4", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp5Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_5", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp6Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_6", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp7Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_7", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp8Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_8", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp9Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_9", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp10Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_10", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp11Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_11", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp12Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_12", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp13Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_13", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp14Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_14", Models.CUBE_ALL, TextureMap::all);
-        Identifier lamp15Identifier = blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_15", Models.CUBE_ALL, TextureMap::all);
-
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.PRIXILIUM_LAMP)
                 .with(BlockStateVariantMap.models(PrixiliumLampBlock.LIGHT)
-                        .register(0,  BlockStateModelGenerator.createWeightedVariant(lamp0Identifier))
-                        .register(1,  BlockStateModelGenerator.createWeightedVariant(lamp1Identifier))
-                        .register(2,  BlockStateModelGenerator.createWeightedVariant(lamp2Identifier))
-                        .register(3,  BlockStateModelGenerator.createWeightedVariant(lamp3Identifier))
-                        .register(4,  BlockStateModelGenerator.createWeightedVariant(lamp4Identifier))
-                        .register(5,  BlockStateModelGenerator.createWeightedVariant(lamp5Identifier))
-                        .register(6,  BlockStateModelGenerator.createWeightedVariant(lamp6Identifier))
-                        .register(7,  BlockStateModelGenerator.createWeightedVariant(lamp7Identifier))
-                        .register(8,  BlockStateModelGenerator.createWeightedVariant(lamp8Identifier))
-                        .register(9,  BlockStateModelGenerator.createWeightedVariant(lamp9Identifier))
-                        .register(10, BlockStateModelGenerator.createWeightedVariant(lamp10Identifier))
-                        .register(11, BlockStateModelGenerator.createWeightedVariant(lamp11Identifier))
-                        .register(12, BlockStateModelGenerator.createWeightedVariant(lamp12Identifier))
-                        .register(13, BlockStateModelGenerator.createWeightedVariant(lamp13Identifier))
-                        .register(14, BlockStateModelGenerator.createWeightedVariant(lamp14Identifier))
-                        .register(15, BlockStateModelGenerator.createWeightedVariant(lamp15Identifier))
+                        .register(0,  BlockStateModelGenerator.createWeightedVariant(TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector)))
+                        .register(1,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_1", Models.CUBE_ALL, TextureMap::all)))
+                        .register(2,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_2", Models.CUBE_ALL, TextureMap::all)))
+                        .register(3,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_3", Models.CUBE_ALL, TextureMap::all)))
+                        .register(4,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_4", Models.CUBE_ALL, TextureMap::all)))
+                        .register(5,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_5", Models.CUBE_ALL, TextureMap::all)))
+                        .register(6,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_6", Models.CUBE_ALL, TextureMap::all)))
+                        .register(7,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_7", Models.CUBE_ALL, TextureMap::all)))
+                        .register(8,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_8", Models.CUBE_ALL, TextureMap::all)))
+                        .register(9,  BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_9", Models.CUBE_ALL, TextureMap::all)))
+                        .register(10, BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_10", Models.CUBE_ALL, TextureMap::all)))
+                        .register(11, BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_11", Models.CUBE_ALL, TextureMap::all)))
+                        .register(12, BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_12", Models.CUBE_ALL, TextureMap::all)))
+                        .register(13, BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_13", Models.CUBE_ALL, TextureMap::all)))
+                        .register(14, BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_14", Models.CUBE_ALL, TextureMap::all)))
+                        .register(15, BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.PRIXILIUM_LAMP, "_15", Models.CUBE_ALL, TextureMap::all)))
                 )
         );
 
@@ -187,12 +172,30 @@ public class ModModelProvider extends FabricModelProvider {
                 )
         );
 
-        blockStateModelGenerator.blockStateCollector.accept(
-                BlockStateModelGenerator.createSingletonBlockState(
-                        ModBlocks.PRIXIVERSE_PORTAL,
-                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal"))
-                )
-        );
+        Identifier center = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_center");
+        Identifier north = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_north");
+        Identifier east = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_east");
+        Identifier south = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_south");
+        Identifier west = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_west");
+
+        blockStateModelGenerator.modelCollector.accept(center,
+                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal")));
+        blockStateModelGenerator.modelCollector.accept(north,
+                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal_north")));
+        blockStateModelGenerator.modelCollector.accept(east,
+                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal_east")));
+        blockStateModelGenerator.modelCollector.accept(south,
+                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal_south")));
+        blockStateModelGenerator.modelCollector.accept(west,
+                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal_west")));
+
+        MultipartBlockModelDefinitionCreator creator = MultipartBlockModelDefinitionCreator.create(ModBlocks.PRIXIVERSE_PORTAL);
+        creator.with(BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(center)));
+        creator.with(new MultipartModelConditionBuilder().put(PrixiversePortalBlock.NORTH, false), BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(north)));
+        creator.with(new MultipartModelConditionBuilder().put(PrixiversePortalBlock.EAST, false), BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(east)));
+        creator.with(new MultipartModelConditionBuilder().put(PrixiversePortalBlock.SOUTH, false), BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(south)));
+        creator.with(new MultipartModelConditionBuilder().put(PrixiversePortalBlock.WEST, false), BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(west)));
+        blockStateModelGenerator.blockStateCollector.accept(creator);
     }
 
     @Override

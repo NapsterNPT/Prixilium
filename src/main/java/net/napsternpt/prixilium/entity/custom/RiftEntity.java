@@ -68,7 +68,7 @@ public class RiftEntity extends HostileEntity {
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.MAX_HEALTH, 80)
+                .add(EntityAttributes.MAX_HEALTH, 600)
                 .add(EntityAttributes.MOVEMENT_SPEED, 0.3)
                 .add(EntityAttributes.FOLLOW_RANGE, 24)
                 .add(EntityAttributes.ATTACK_DAMAGE, 8)
