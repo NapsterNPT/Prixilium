@@ -162,6 +162,18 @@ public class ModModelProvider extends FabricModelProvider {
         );
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.RIFT,
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/rift"))
+                )
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.RIFT_CORE,
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/rift_core"))
+                )
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
                         ModBlocks.VIRUS_REACTOR,
                         BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/virus_reactor"))
                 )
@@ -186,6 +198,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.VIRUS_ALIVE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VIRUS_DEAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.RIFT_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RIFTS_PAW, Models.HANDHELD);
+        itemModelGenerator.registerArmor(ModItems.RIFTS_SHELL, ModArmorMaterials.RIFT_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLOCKITO_SPAWN_EGG, Models.GENERATED);

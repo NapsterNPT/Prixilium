@@ -55,6 +55,12 @@ public class ModItems {
 
     public static final Item RIFTS_PAW = registerItem(name = "rifts_paw", new RiftsPawItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+    ));
+
+    public static final Item RIFTS_SHELL = registerItem(name = "rifts_shell", new Item(new Item.Settings().armor(ModArmorMaterials.RIFT, EquipmentType.CHESTPLATE)
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
     ));
 
     public static final Item NAPSTERNPT_PLUSHY = registerItem(name = "napsternpt_plushy", new Item(new Item.Settings()
@@ -82,6 +88,10 @@ public class ModItems {
     public static final Item AIRIS_SPAWN_EGG = registerItem(name = "airis_spawn_egg", new SpawnEggItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .spawnEgg(ModEntities.AIRIS)
+    ));
+    public static final Item RIFT_SPAWN_EGG = registerItem(name = "rift_spawn_egg", new SpawnEggItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .spawnEgg(ModEntities.RIFT)
     ));
     //endregion
 

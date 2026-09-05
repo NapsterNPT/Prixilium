@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rift_core": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:rift_core"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rifts_shell": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:rifts_shell"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:rift"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rifts_shell",
+      "has_rift_core"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:rift"
+    ]
+  }
+}

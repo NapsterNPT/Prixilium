@@ -18,6 +18,7 @@
 	"client": [
 		"AbstractClientPlayerEntityMixin",
 		"GameRendererDesaturateMixin",
+		"StunnedRigidBodyMixin",
 
 		"TimeStopClientEntityMixin",
 		"TimeStopClientLivingEntityMixin"

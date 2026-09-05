@@ -10,6 +10,9 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.custom.*;
 import net.napsternpt.prixilium.block.custom.woodSet.*;
@@ -331,14 +334,26 @@ public class ModBlocks {
 
     //endregion
 
-    public static final Block PETRIFIED_RIFT = registerBlock(name = "petrified_rift",
-            new PetrifiedRiftBlock(AbstractBlock.Settings.create()
+    public static final Block RIFT = registerBlock(name = "rift",
+            new RiftBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
-                    .dropsNothing()
                     .strength(0.1F)
                     .sounds(BlockSoundGroup.MOSS_BLOCK)
                     .mapColor(MapColor.LIGHT_GRAY)
             ));
+
+    public static final Block RIFT_CORE = registerBlock(name = "rift_core",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(0.1F)
+                    .sounds(BlockSoundGroup.MOSS_BLOCK)
+                    .mapColor(MapColor.LIGHT_GRAY)
+            ){
+                @Override
+                protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+                    return Block.createCuboidShape(4.0, 4.0, 4.0, 12.0, 12.0, 12.0);
+                }
+            });
 
     public static final Block PRIXILIUM_LAMP = registerBlock(name = "prixilium_lamp",
             new PrixiliumLampBlock(AbstractBlock.Settings.create()

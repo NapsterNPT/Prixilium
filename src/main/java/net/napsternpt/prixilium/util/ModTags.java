@@ -24,6 +24,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> TEMPERATURE_TOOLS = createTag("temperature_tools");
+        public static final TagKey<Item> REPAIRS_RIFT_ARMOR = createTag("repairs_rift_armor");
         public static final TagKey<Item> PRIXILED_FOOD = createTag("prixiled_food");
         public static final TagKey<Item> CHARMS = createTag("charms");
         public static final TagKey<Item> TIER_I_CHARMS = createTag("tier_i_charms");

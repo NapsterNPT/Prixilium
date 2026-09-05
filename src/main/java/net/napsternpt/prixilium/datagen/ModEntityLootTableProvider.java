@@ -49,5 +49,17 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
                                 .conditionally(RandomChanceLootCondition.builder(0.25f))
                         )
         );
+
+        lootTableBiConsumer.accept(
+                ModEntities.RIFT.getLootTableKey().orElseThrow(),
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1))
+                                .with(ItemEntry.builder(ModItems.RIFTS_PAW).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(2))))
+                        ).pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1))
+                                .with(ItemEntry.builder(ModItems.RIFTS_SHELL).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))))
+                        )
+        );
     }
 }

@@ -10,7 +10,6 @@ import net.napsternpt.prixilium.entity.client.renderstates.BlikoRenderState;
 import net.napsternpt.prixilium.entity.custom.BlikoEntity;
 
 public class BlikoRenderer extends MobEntityRenderer<BlikoEntity, BlikoRenderState, BlikoModel> {
-
     private static final Identifier TEXTURE = Identifier.of(Prixilium.MOD_ID, "textures/entity/bliko/bliko.png");
 
     public BlikoRenderer(EntityRendererFactory.Context context) {
@@ -30,7 +29,9 @@ public class BlikoRenderer extends MobEntityRenderer<BlikoEntity, BlikoRenderSta
     }
 
     @Override
-    public Identifier getTexture(BlikoRenderState state) {return TEXTURE;}
+    public Identifier getTexture(BlikoRenderState state) {
+        return TEXTURE;
+    }
 
     @Override
     protected void scale(BlikoRenderState state, MatrixStack matrices) {

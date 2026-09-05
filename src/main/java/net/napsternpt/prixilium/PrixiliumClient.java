@@ -33,6 +33,8 @@ public class PrixiliumClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlock(ModBlocks.REACTOR_CORE, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.VIRUS_REACTOR, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.OBELISK_OF_CHARMS, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.RIFT, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.RIFT_CORE, BlockRenderLayer.CUTOUT);
 
 		BlockEntityRendererFactories.register(ModBlockEntities.VIRUS_REACTOR_BE, VirusReactorBlockEntityRenderer::new);
 		BlockEntityRendererFactories.register(ModBlockEntities.OBELISK_OF_CHARMS_BE, ObeliskOfCharmsBlockEntityRenderer::new);
@@ -43,15 +45,21 @@ public class PrixiliumClient implements ClientModInitializer {
 		EntityRendererFactories.register(ModEntities.BLIKO, BlikoRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(BlockitoModel.BLOCKITO, BlockitoModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.BLOCKITO, BlockitoRenderer::new);
+		EntityRendererFactories.register(ModEntities.BLOKITO, BlockitoRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(AirisModel.AIRIS, AirisModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.AIRIS, AirisRenderer::new);
 		EntityRendererFactories.register(ModEntities.PRIXILIUM_HOOK, PrixiliumHookRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(RiftModel.RIFT, RiftModel::getTexturedModelData);
+		EntityRendererFactories.register(ModEntities.RIFT, RiftRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(RiftCoreModel.RIFT_CORE, RiftCoreModel::getTexturedModelData);
+		EntityRendererFactories.register(ModEntities.RIFT_CORE, RiftCoreRenderer::new);
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_AMBIENT, PrixiliumAmbientParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_LEAVES, PrixiliumLeavesParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_HOOK, PrixiliumHookParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_SMOKE, PrixiliumSmokeParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_EXPAND, PrixiliumExpandParticles.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.RIFT_SHOCKWAVE, RiftShockwaveParticles.Factory::new);
 
 		ModPackets.registerClient();
     }

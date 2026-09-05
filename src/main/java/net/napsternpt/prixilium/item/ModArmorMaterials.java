@@ -10,6 +10,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.util.ModTags;
 
 import java.util.EnumMap;
 
@@ -77,7 +78,7 @@ public class ModArmorMaterials {
         map.put(EquipmentType.CHESTPLATE, 6);
         map.put(EquipmentType.HELMET, 2);
         map.put(EquipmentType.BODY, 5);
-    }), 9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 0, 0, ItemTags.REPAIRS_TURTLE_HELMET, PRIXILIUM_TURTLE_KEY);
+    }), 9, SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 0, 0, ItemTags.REPAIRS_TURTLE_HELMET, PRIXILIUM_TURTLE_KEY);
 
     public static final RegistryKey<EquipmentAsset> PRIXILIUM_NETHERITE_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "prixilium_netherite"));
     public static final ArmorMaterial PRIXILIUM_NETHERITE = new ArmorMaterial(37, Util.make(new EnumMap<>(EquipmentType.class), map -> {
@@ -87,4 +88,8 @@ public class ModArmorMaterials {
                 map.put(EquipmentType.HELMET, 3);
                 map.put(EquipmentType.BODY, 11);
             }), 10, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, ItemTags.REPAIRS_NETHERITE_ARMOR, PRIXILIUM_NETHERITE_KEY);
+
+    public static final RegistryKey<EquipmentAsset> RIFT_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Prixilium.MOD_ID, "rift"));
+    public static final ArmorMaterial RIFT = new ArmorMaterial(37,
+            Util.make(new EnumMap<>(EquipmentType.class), map -> map.put(EquipmentType.CHESTPLATE, 8)), 10, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, 1.0F, ModTags.Items.REPAIRS_RIFT_ARMOR, RIFT_KEY);
 }

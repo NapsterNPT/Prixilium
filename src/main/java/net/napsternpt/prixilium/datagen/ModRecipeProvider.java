@@ -707,6 +707,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.REACTOR_CORE), conditionsFromItem(ModBlocks.REACTOR_CORE))
                         .criterion(hasItem(ModBlocks.STAND), conditionsFromItem(ModBlocks.STAND))
                         .offerTo(exporter);
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RIFT)
+                        .input(ModItems.RIFTS_SHELL)
+                        .input(ModBlocks.RIFT_CORE)
+                        .criterion(hasItem(ModItems.RIFTS_SHELL), conditionsFromItem(ModItems.RIFTS_SHELL))
+                        .criterion(hasItem(ModBlocks.RIFT_CORE), conditionsFromItem(ModBlocks.RIFT_CORE))
+                        .offerTo(exporter);
 
                 //endregion
 

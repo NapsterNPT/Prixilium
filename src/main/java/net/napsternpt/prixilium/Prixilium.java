@@ -18,9 +18,7 @@ import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.datagen.ModWorldGen;
 import net.napsternpt.prixilium.effect.ModEffects;
 import net.napsternpt.prixilium.entity.ModEntities;
-import net.napsternpt.prixilium.entity.custom.AirisEntity;
-import net.napsternpt.prixilium.entity.custom.BlikoEntity;
-import net.napsternpt.prixilium.entity.custom.BlockitoEntity;
+import net.napsternpt.prixilium.entity.custom.*;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.network.ModPackets;
 import net.napsternpt.prixilium.particle.ModParticles;
@@ -69,7 +67,10 @@ public class Prixilium implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.BLIKO, BlikoEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.BLOCKITO, BlockitoEntity.createAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.BLOKITO, BlockitoEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.AIRIS, AirisEntity.createAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.RIFT, RiftEntity.createAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.RIFT_CORE, RiftCoreEntity.createAttributes());
 
 		ModWorldGeneration.generateModWorldGen();
 

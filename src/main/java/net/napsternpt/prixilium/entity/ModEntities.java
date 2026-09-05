@@ -33,11 +33,33 @@ public class ModEntities {
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "blockito")))
     );
 
+
+    // TEMPORARY: legacy alias to remove old blokito entities from world saves, REMOVE AFTER CLEANUP
+    public static final EntityType<BlockitoEntity> BLOKITO = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Prixilium.MOD_ID, "blokito"),
+            EntityType.Builder.create(BlockitoEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.99F, 0.99F)
+                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "blokito")))
+    );
     public static final EntityType<AirisEntity> AIRIS = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "airis"),
             EntityType.Builder.create(AirisEntity::new, SpawnGroup.CREATURE)
                     .dimensions(0.99F, 0.5F)
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "airis")))
+    );
+
+    public static final EntityType<RiftEntity> RIFT = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Prixilium.MOD_ID, "rift"),
+            EntityType.Builder.create(RiftEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(1.99F, 1.99F)
+                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "rift")))
+    );
+
+    public static final EntityType<RiftCoreEntity> RIFT_CORE = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Prixilium.MOD_ID, "rift_core"),
+            EntityType.Builder.create(RiftCoreEntity::new, SpawnGroup.CREATURE)
+                    .dimensions(0.99F, 0.99F)
+                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "rift_core")))
     );
 
     public static void registerEntities() {

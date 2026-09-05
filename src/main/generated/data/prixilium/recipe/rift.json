@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "prixilium:rifts_shell",
+    "prixilium:rift_core"
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:rift"
+  }
+}

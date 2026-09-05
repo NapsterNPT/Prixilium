@@ -22,6 +22,18 @@ public class ModSounds {
     public static final SoundEvent AIRIS_HURT = registerSoundEvent("airis_hurt");
     public static final SoundEvent AIRIS_DEATH = registerSoundEvent("airis_death");
 
+    public static final SoundEvent RIFT_AMBIENT = registerSoundEvent("rift_ambient");
+    public static final SoundEvent RIFT_HURT = registerSoundEvent("rift_hurt");
+    public static final SoundEvent RIFT_DEATH = registerSoundEvent("rift_death");
+    public static final SoundEvent RIFT_SLAM = registerSoundEvent("rift_slam");
+    public static final SoundEvent RIFT_SPIN = registerSoundEvent("rift_spin");
+
+    public static final SoundEvent RIFT_CORE_AMBIENT = registerSoundEvent("rift_core_ambient");
+    public static final SoundEvent RIFT_CORE_HURT = registerSoundEvent("rift_core_hurt");
+    public static final SoundEvent RIFT_CORE_DEATH = registerSoundEvent("rift_core_death");
+    public static final SoundEvent RIFT_CORE_BURROW = registerSoundEvent("rift_core_burrow");
+    public static final SoundEvent RIFT_CORE_EMERGE = registerSoundEvent("rift_core_emerge");
+
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(Prixilium.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));

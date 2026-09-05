@@ -23,11 +23,14 @@ public class ModItemGroups {
                         entries.add(ModItems.VIRUS_ALIVE);
                         entries.add(ModItems.VIRUS_DEAD);
                         entries.add(ModItems.THERMOMETER);
+                        entries.add(ModItems.RIFTS_PAW);
+                        entries.add(ModItems.RIFTS_SHELL);
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_HOOK);
                         entries.add(ModItems.BLIKO_SPAWN_EGG);
                         entries.add(ModItems.BLOCKITO_SPAWN_EGG);
                         entries.add(ModItems.AIRIS_SPAWN_EGG);
+                        entries.add(ModItems.RIFT_SPAWN_EGG);
 
                         entries.add(ModItems.CHARM_I);
                         entries.add(ModItems.CONTAINER_CHARM_I);
@@ -100,6 +103,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS);
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
                         entries.add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
+                        entries.add(ModBlocks.RIFT);
+                        entries.add(ModBlocks.RIFT_CORE);
 
                         entries.add(ModBlocks.PRIXILIUM_EXHAUST);
                         entries.add(ModBlocks.PRIXILIUM_LAMP);
