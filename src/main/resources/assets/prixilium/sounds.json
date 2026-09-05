@@ -68,5 +68,67 @@
     "sounds": [
       "prixilium:airis_death"
     ]
+  },
+
+  "rift_ambient": {
+    "subtitle": "sounds.prixilium.rift_ambient",
+    "sounds": [
+      "prixilium:rift_ambient"
+    ]
+  },
+  "rift_hurt": {
+    "subtitle": "sounds.prixilium.rift_hurt",
+    "sounds": [
+      "prixilium:rift_hurt"
+    ]
+  },
+  "rift_death": {
+    "subtitle": "sounds.prixilium.rift_death",
+    "sounds": [
+      "prixilium:rift_death"
+    ]
+  },
+  "rift_slam": {
+    "subtitle": "sounds.prixilium.rift_slam",
+    "sounds": [
+      "prixilium:rift_slam"
+    ]
+  },
+  "rift_spin": {
+    "subtitle": "sounds.prixilium.rift_spin",
+    "sounds": [
+      "prixilium:rift_spin"
+    ]
+  },
+
+  "rift_core_ambient": {
+    "subtitle": "sounds.prixilium.rift_core_ambient",
+    "sounds": [
+      "prixilium:rift_core_ambient"
+    ]
+  },
+  "rift_core_hurt": {
+    "subtitle": "sounds.prixilium.rift_core_hurt",
+    "sounds": [
+      "prixilium:rift_core_hurt"
+    ]
+  },
+  "rift_core_death": {
+    "subtitle": "sounds.prixilium.rift_core_death",
+    "sounds": [
+      "prixilium:rift_core_death"
+    ]
+  },
+  "rift_core_burrow": {
+    "subtitle": "sounds.prixilium.rift_core_burrow",
+    "sounds": [
+      "prixilium:rift_core_burrow"
+    ]
+  },
+  "rift_core_emerge": {
+    "subtitle": "sounds.prixilium.rift_core_emerge",
+    "sounds": [
+      "prixilium:rift_core_emerge"
+    ]
   }
 }

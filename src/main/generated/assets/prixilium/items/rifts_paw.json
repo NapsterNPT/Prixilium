@@ -1,6 +1,40 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "prixilium:item/rifts_paw"
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "prixilium:item/rifts_paw_3d"
+        },
+        "when": "firstperson_lefthand"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "prixilium:item/rifts_paw_3d"
+        },
+        "when": "firstperson_righthand"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "prixilium:item/rifts_paw_3d"
+        },
+        "when": "thirdperson_lefthand"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "prixilium:item/rifts_paw_3d"
+        },
+        "when": "thirdperson_righthand"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "prixilium:item/rifts_paw_2d"
+    },
+    "property": "minecraft:display_context"
   }
 }

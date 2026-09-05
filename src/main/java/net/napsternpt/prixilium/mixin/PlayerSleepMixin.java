@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PlayerEntity.class)
 public class PlayerSleepMixin {
 
-	@Inject(method = "wakeUp", at = @At("TAIL"))
+	@Inject(method = "wakeUp*", at = @At("TAIL"))
 	private void onWakeUp(CallbackInfo ci) {
 		PlayerEntity player = (PlayerEntity)(Object)this;
 

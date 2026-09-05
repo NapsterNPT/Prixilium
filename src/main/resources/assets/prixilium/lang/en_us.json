@@ -17,6 +17,9 @@
   "item.prixilium.bliko_spawn_egg": "Bliko Spawn Egg",
   "item.prixilium.blockito_spawn_egg": "Blockito Spawn Egg",
   "item.prixilium.airis_spawn_egg": "Airis Spawn Egg",
+  "item.prixilium.rift_spawn_egg": "Rift Spawn Egg",
+  "item.prixilium.rifts_paw": "Rift's Paw",
+  "item.prixilium.rifts_shell": "Rift's Shell",
 
   "item.prixilium.charm_i": "Charm ★",
   "item.prixilium.container_charm_i": "Container Charm ★",
@@ -226,6 +229,8 @@
   "block.prixilium.virus_reactor": "Virus Reactor",
   "block.prixilium.obelisk_of_charms": "Obelisk Of Charms",
   "block.prixilium.prixiverse_portal": "Prixiverse Portal Block",
+  "block.prixilium.rift": "Rift",
+  "block.prixilium.rift_core": "Rift Core",
 
   "sounds.prixilium.prixilium_expand": "Prixilium Expands",
 
@@ -238,8 +243,19 @@
   "sounds.prixilium.airis_ambient": "Airis Wanders",
   "sounds.prixilium.airis_hurt": "Airis Hurts",
   "sounds.prixilium.airis_death": "Airis Dies",
+  "sounds.prixilium.rift_ambient": "Rift Roars",
+  "sounds.prixilium.rift_hurt": "Rift Hurts",
+  "sounds.prixilium.rift_death": "Rift Dies",
+  "sounds.prixilium.rift_slam": "Rift Slams",
+  "sounds.prixilium.rift_spin": "Rift Spins",
+  "sounds.prixilium.rift_core_ambient": "Rift Core Hums",
+  "sounds.prixilium.rift_core_hurt": "Rift Core Hurts",
+  "sounds.prixilium.rift_core_death": "Rift Core Dies",
+  "sounds.prixilium.rift_core_burrow": "Rift Core Burrows",
+  "sounds.prixilium.rift_core_emerge": "Rift Core Emerges",
 
-
+  
+  
   "effect.prixilium.prixilium_slowness": "Prixilium Slowness",
   "effect.prixilium.illness": "Illness",
   "effect.prixilium.prixilium_immunity": "Prixilium Immunity",
@@ -260,6 +276,8 @@
   "entity.prixilium.bliko": "Bliko",
   "entity.prixilium.blockito": "Blockito",
   "entity.prixilium.airis": "Airis",
+  "entity.prixilium.rift": "Rift",
+  "entity.prixilium.rift_core": "Rift Core",
   "entity.prixilium.prixilium_hook": "Prixilium Hook",
 
 

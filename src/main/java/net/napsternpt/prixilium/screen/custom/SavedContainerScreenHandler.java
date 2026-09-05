@@ -53,9 +53,11 @@ public class SavedContainerScreenHandler extends ScreenHandler {
                 return ItemStack.EMPTY;
             }
             itemStack = itemStack2.copy();
-            if (slot < this.rows * 9)
+            if (slot < this.rows * 9) {
                 if (!this.insertItem(itemStack2, this.rows * 9, this.slots.size(), true)) return ItemStack.EMPTY;
-            else if (!this.insertItem(itemStack2, 0, this.rows * 9, false)) return ItemStack.EMPTY;
+            } else {
+                if (!this.insertItem(itemStack2, 0, this.rows * 9, false)) return ItemStack.EMPTY;
+            }
             if (itemStack2.isEmpty()) slot2.setStack(ItemStack.EMPTY, itemStack);
             else slot2.markDirty();
         }

@@ -7,6 +7,8 @@ import net.minecraft.client.item.ItemAsset;
 import net.minecraft.client.render.item.model.ConditionItemModel;
 import net.minecraft.client.render.item.model.ItemModel;
 import net.minecraft.client.render.item.property.bool.HasComponentProperty;
+import net.minecraft.client.render.item.property.select.DisplayContextProperty;
+import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.client.render.model.json.ModelVariant;
 import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.item.Item;
@@ -195,11 +197,23 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        Identifier riftsPawGuiModel = Models.GENERATED.upload(
+                Identifier.of(Prixilium.MOD_ID, "item/rifts_paw_2d"),
+                TextureMap.layer0(Identifier.of(Prixilium.MOD_ID, "item/rift_paw")),
+                itemModelGenerator.modelCollector);
+        ItemModel.Unbaked riftsPaw3dModel = ItemModels.basic(Identifier.of(Prixilium.MOD_ID, "item/rifts_paw_3d"));
+        itemModelGenerator.output.accept(ModItems.RIFTS_PAW,
+                ItemModels.select(new DisplayContextProperty(),
+                        ItemModels.basic(riftsPawGuiModel),
+                        ItemModels.switchCase(ItemDisplayContext.FIRST_PERSON_LEFT_HAND, riftsPaw3dModel),
+                        ItemModels.switchCase(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, riftsPaw3dModel),
+                        ItemModels.switchCase(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, riftsPaw3dModel),
+                        ItemModels.switchCase(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, riftsPaw3dModel)));
+
         itemModelGenerator.register(ModItems.VIRUS_ALIVE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VIRUS_DEAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
         itemModelGenerator.register(ModItems.RIFT_SPAWN_EGG, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RIFTS_PAW, Models.HANDHELD);
         itemModelGenerator.registerArmor(ModItems.RIFTS_SHELL, ModArmorMaterials.RIFT_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, Models.GENERATED);

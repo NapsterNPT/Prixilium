@@ -236,6 +236,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ModTags.Items.TEMPERATURE_TOOLS)
                 .add(ModItems.THERMOMETER);
 
+        valueLookupBuilder(ModTags.Items.REPAIRS_RIFT_ARMOR)
+                .add(ModItems.RIFTS_SHELL);
+
         valueLookupBuilder(ModTags.Items.PRIXILED_FOOD)
                 .add(ModItems.PRIXILIUM_OIL)
                 .add(ModItems.PRIXILED_APPLE)

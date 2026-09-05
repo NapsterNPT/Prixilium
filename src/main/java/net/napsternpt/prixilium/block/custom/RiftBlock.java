@@ -14,8 +14,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.custom.RiftEntity;
+import net.napsternpt.prixilium.item.ModItems;
 
 import java.util.List;
 
@@ -56,6 +58,6 @@ public class RiftBlock extends Block {
         if (state.get(CAN_SPAWN)) {
             return List.of();
         }
-        return super.getDroppedStacks(state, builder);
+        return List.of(new ItemStack(ModItems.RIFTS_SHELL), new ItemStack(ModBlocks.RIFT_CORE.asItem()));
     }
 }
