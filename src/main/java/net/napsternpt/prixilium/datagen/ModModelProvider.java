@@ -100,6 +100,33 @@ public class ModModelProvider extends FabricModelProvider {
         darkPrixiliumBricksPool.slab(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB);
         darkPrixiliumBricksPool.wall(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL);
 
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.RIFT,
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/rift"))
+                )
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.RIFT_CORE,
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/rift_core"))
+                )
+        );
+
+        Identifier prixiliumExhaustModel = Models.CUBE_BOTTOM_TOP.upload(
+                ModBlocks.PRIXILIUM_EXHAUST, "", new TextureMap()
+                        .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_side"))
+                        .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_side"))
+                        .put(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_top")),
+                blockStateModelGenerator.modelCollector
+        );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.PRIXILIUM_EXHAUST,
+                        BlockStateModelGenerator.createWeightedVariant(prixiliumExhaustModel)
+                )
+        );
+
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.PRIXILIUM_LAMP)
                 .with(BlockStateVariantMap.models(PrixiliumLampBlock.LIGHT)
                         .register(0,  BlockStateModelGenerator.createWeightedVariant(TexturedModel.CUBE_ALL.upload(ModBlocks.PRIXILIUM_LAMP, blockStateModelGenerator.modelCollector)))
@@ -121,20 +148,6 @@ public class ModModelProvider extends FabricModelProvider {
                 )
         );
 
-        Identifier prixiliumExhaustModel = Models.CUBE_BOTTOM_TOP.upload(
-                ModBlocks.PRIXILIUM_EXHAUST, "", new TextureMap()
-                        .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_side"))
-                        .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_side"))
-                        .put(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_EXHAUST, "_top")),
-                blockStateModelGenerator.modelCollector
-        );
-        blockStateModelGenerator.blockStateCollector.accept(
-                BlockStateModelGenerator.createSingletonBlockState(
-                        ModBlocks.PRIXILIUM_EXHAUST,
-                        BlockStateModelGenerator.createWeightedVariant(prixiliumExhaustModel)
-                )
-        );
-
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(
                         ModBlocks.STAND,
@@ -145,18 +158,6 @@ public class ModModelProvider extends FabricModelProvider {
                 BlockStateModelGenerator.createSingletonBlockState(
                         ModBlocks.REACTOR_CORE,
                         BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/reactor_core"))
-                )
-        );
-        blockStateModelGenerator.blockStateCollector.accept(
-                BlockStateModelGenerator.createSingletonBlockState(
-                        ModBlocks.RIFT,
-                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/rift"))
-                )
-        );
-        blockStateModelGenerator.blockStateCollector.accept(
-                BlockStateModelGenerator.createSingletonBlockState(
-                        ModBlocks.RIFT_CORE,
-                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/rift_core"))
                 )
         );
         blockStateModelGenerator.blockStateCollector.accept(
@@ -200,6 +201,10 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.VIRUS_ALIVE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VIRUS_DEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
+
         Identifier riftsPawGuiModel = Models.GENERATED.upload(
                 Identifier.of(Prixilium.MOD_ID, "item/rifts_paw_2d"),
                 TextureMap.layer0(Identifier.of(Prixilium.MOD_ID, "item/rift_paw")),
@@ -213,19 +218,22 @@ public class ModModelProvider extends FabricModelProvider {
                         ItemModels.switchCase(ItemDisplayContext.THIRD_PERSON_LEFT_HAND, riftsPaw3dModel),
                         ItemModels.switchCase(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, riftsPaw3dModel)));
 
-        itemModelGenerator.register(ModItems.VIRUS_ALIVE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.VIRUS_DEAD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.RIFT_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.registerArmor(ModItems.RIFTS_SHELL, ModArmorMaterials.RIFT_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+
+        ItemModel.Unbaked unbakedPrixiliumHook = ItemModels.basic(itemModelGenerator.upload(ModItems.PRIXILIUM_HOOK, Models.HANDHELD));
+        ItemModel.Unbaked unbakedExtendedPrixiliumHook = ItemModels.basic(itemModelGenerator.registerSubModel(ModItems.PRIXILIUM_HOOK, "_extended", Models.HANDHELD));
+        itemModelGenerator.output.accept(ModItems.PRIXILIUM_HOOK,
+                new ItemAsset(new ConditionItemModel.Unbaked(new HasComponentProperty(ModDataComponentTypes.HOOK_ACTIVE, false),
+                        unbakedExtendedPrixiliumHook, unbakedPrixiliumHook),
+                        new ItemAsset.Properties(false, false, 1f)).model());
+
         itemModelGenerator.register(ModItems.BLIKO_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.BLOCKITO_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.AIRIS_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RIFT_SPAWN_EGG, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CHARM_I, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHARM_II, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHARM_III, Models.GENERATED);
         registerCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.STASIS_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_I);
@@ -234,6 +242,7 @@ public class ModModelProvider extends FabricModelProvider {
         registerCharm(itemModelGenerator, ModItems.IMMUNITY_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.SONIC_BOOM_CHARM_I);
         registerCharm(itemModelGenerator, ModItems.WITHER_CHARM_I);
+        itemModelGenerator.register(ModItems.CHARM_II, Models.GENERATED);
         registerCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.STASIS_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_II);
@@ -242,6 +251,7 @@ public class ModModelProvider extends FabricModelProvider {
         registerCharm(itemModelGenerator, ModItems.IMMUNITY_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.SONIC_BOOM_CHARM_II);
         registerCharm(itemModelGenerator, ModItems.WITHER_CHARM_II);
+        itemModelGenerator.register(ModItems.CHARM_III, Models.GENERATED);
         registerCharm(itemModelGenerator, ModItems.CONTAINER_CHARM_III);
         registerCharm(itemModelGenerator, ModItems.STASIS_CHARM_III);
         registerCharm(itemModelGenerator, ModItems.REGENERATION_CHARM_III);
@@ -305,16 +315,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         //endregion
 
-        itemModelGenerator.register(ModItems.PRIXILED_MACE, Models.HANDHELD_MACE);
         itemModelGenerator.upload(ModItems.PRIXILED_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.PRIXILED_BOW);
-
-        ItemModel.Unbaked unbakedPrixiliumHook = ItemModels.basic(itemModelGenerator.upload(ModItems.PRIXILIUM_HOOK, Models.HANDHELD));
-        ItemModel.Unbaked unbakedExtendedPrixiliumHook = ItemModels.basic(itemModelGenerator.registerSubModel(ModItems.PRIXILIUM_HOOK, "_extended", Models.HANDHELD));
-        itemModelGenerator.output.accept(ModItems.PRIXILIUM_HOOK,
-                new ItemAsset(new ConditionItemModel.Unbaked(new HasComponentProperty(ModDataComponentTypes.HOOK_ACTIVE, false),
-                        unbakedExtendedPrixiliumHook, unbakedPrixiliumHook),
-                        new ItemAsset.Properties(false, false, 1f)).model());
+        itemModelGenerator.register(ModItems.PRIXILED_MACE, Models.HANDHELD_MACE);
 
         //endregion
 

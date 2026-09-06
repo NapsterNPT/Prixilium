@@ -5,10 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 import net.napsternpt.prixilium.datagen.*;
-import net.napsternpt.prixilium.datagen.tags.ModBlockTagProvider;
-import net.napsternpt.prixilium.datagen.tags.ModDamageTypeTagProvider;
-import net.napsternpt.prixilium.datagen.tags.ModEntityTagProvider;
-import net.napsternpt.prixilium.datagen.tags.ModItemTagProvider;
+import net.napsternpt.prixilium.datagen.tags.*;
 import net.napsternpt.prixilium.world.ModConfiguredFeatures;
 import net.napsternpt.prixilium.world.ModPlacedFeatures;
 import net.napsternpt.prixilium.world.ModStructures;
@@ -20,18 +17,20 @@ public class PrixiliumDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
 		//Other
+		pack.addProvider(ModAdvancementProvider::new);
 		pack.addProvider(ModEntityLootTableProvider::new);
+		pack.addProvider(ModEquipmentAssetProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModRegistryDataGenerator::new);
-		pack.addProvider(ModAdvancementProvider::new);
 
 		//Tags
-		pack.addProvider(ModItemTagProvider::new);
+		pack.addProvider(ModBiomeTagProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
-		pack.addProvider(ModEntityTagProvider::new);
 		pack.addProvider(ModDamageTypeTagProvider::new);
+		pack.addProvider(ModEntityTagProvider::new);
+		pack.addProvider(ModItemTagProvider::new);
 
 		//Dimension
 		pack.addProvider(ModBiomeProvider::new);

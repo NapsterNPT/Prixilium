@@ -32,7 +32,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             @Override
             public void generate() {
                 //region [Items]
-                offerSmithingTemplateCopyingRecipe(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, ModBlocks.PRIXILIUM);
                 createShaped(RecipeCategory.MISC, ModItems.THERMOMETER)
                         .input('!', Items.REDSTONE)
                         .input('#', Blocks.GLASS_PANE)
@@ -42,6 +41,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" @ ")
                         .criterion(hasItem(Items.GLASS_BOTTLE), conditionsFromItem(Items.GLASS_BOTTLE))
                         .offerTo(exporter);
+
+                offerSmithingTemplateCopyingRecipe(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, ModBlocks.PRIXILIUM);
 
                 createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_HOOK)
                         .input('#', ModBlocks.PRIXILIUM)
@@ -503,27 +504,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //region[Blocks]
 
                 //region [Planks]
-                offerShapelessRecipe(ModBlocks.PRIXILIUM_PLANKS, ModBlocks.PRIXILIUM_LOG, "prixilium", 4);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_WOOD, 3)
                         .input('#', ModBlocks.PRIXILIUM_LOG)
                         .pattern("##")
                         .pattern("##")
                         .criterion(hasItem(ModBlocks.PRIXILIUM_LOG), conditionsFromItem(ModBlocks.PRIXILIUM_LOG))
                         .offerTo(exporter);
+                offerShapelessRecipe(ModBlocks.PRIXILIUM_PLANKS, ModBlocks.PRIXILIUM_LOG, "prixilium", 4);
 
                 createStairsRecipe(ModBlocks.PRIXILIUM_STAIRS, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
                         .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
                         .offerTo(exporter);
 
                 createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_SLAB, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
-                        .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
-                        .offerTo(exporter);
-
-                createDoorRecipe(ModBlocks.PRIXILIUM_DOOR, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
-                        .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
-                        .offerTo(exporter);
-
-                createTrapdoorRecipe(ModBlocks.PRIXILIUM_TRAPDOOR, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
                         .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
                         .offerTo(exporter);
 
@@ -535,16 +528,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
                         .offerTo(exporter);
 
+                createDoorRecipe(ModBlocks.PRIXILIUM_DOOR, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                createTrapdoorRecipe(ModBlocks.PRIXILIUM_TRAPDOOR, Ingredient.ofItems(ModBlocks.PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
                 //endregion
 
                 //region [Burned Planks]
-                offerShapelessRecipe(ModBlocks.BURNED_PRIXILIUM_PLANKS, ModBlocks.BURNED_PRIXILIUM_LOG, "burned_prixilium", 4);
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BURNED_PRIXILIUM_WOOD, 3)
                         .input('#', ModBlocks.BURNED_PRIXILIUM_LOG)
                         .pattern("##")
                         .pattern("##")
                         .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_LOG), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_LOG))
                         .offerTo(exporter);
+                offerShapelessRecipe(ModBlocks.BURNED_PRIXILIUM_PLANKS, ModBlocks.BURNED_PRIXILIUM_LOG, "burned_prixilium", 4);
 
                 createStairsRecipe(ModBlocks.BURNED_PRIXILIUM_STAIRS, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
                         .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
@@ -554,19 +555,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
                         .offerTo(exporter);
 
-                createDoorRecipe(ModBlocks.BURNED_PRIXILIUM_DOOR, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
-                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
-                        .offerTo(exporter);
-
-                createTrapdoorRecipe(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
-                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
-                        .offerTo(exporter);
-
                 createFenceRecipe(ModBlocks.BURNED_PRIXILIUM_FENCE, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
                         .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
                         .offerTo(exporter);
 
                 createFenceGateRecipe(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                createDoorRecipe(ModBlocks.BURNED_PRIXILIUM_DOOR, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
+                        .offerTo(exporter);
+
+                createTrapdoorRecipe(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR, Ingredient.ofItems(ModBlocks.BURNED_PRIXILIUM_PLANKS))
                         .criterion(hasItem(ModBlocks.BURNED_PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.BURNED_PRIXILIUM_PLANKS))
                         .offerTo(exporter);
 
@@ -655,6 +656,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .offerTo(exporter);
 
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RIFT)
+                        .input(ModItems.RIFTS_SHELL)
+                        .input(ModBlocks.RIFT_CORE)
+                        .criterion(hasItem(ModItems.RIFTS_SHELL), conditionsFromItem(ModItems.RIFTS_SHELL))
+                        .criterion(hasItem(ModBlocks.RIFT_CORE), conditionsFromItem(ModBlocks.RIFT_CORE))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_EXHAUST)
+                        .input('#', ModBlocks.PRIXILIUM_BRICKS)
+                        .input('!', ModBlocks.PRIXILIUM)
+                        .input('@', Items.GUNPOWDER)
+                        .pattern("#!#")
+                        .pattern("#@#")
+                        .pattern("###")
+                        .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
+                        .offerTo(exporter);
+
                 createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP)
                         .input('#', ModBlocks.PRIXILIUM)
                         .input('!', Items.REDSTONE)
@@ -673,16 +691,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .criterion(hasItem(Blocks.REDSTONE_LAMP), conditionsFromItem(Blocks.REDSTONE_LAMP))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_redstone_lamp")));
-
-                createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_EXHAUST)
-                        .input('#', ModBlocks.PRIXILIUM_BRICKS)
-                        .input('!', ModBlocks.PRIXILIUM)
-                        .input('@', Items.GUNPOWDER)
-                        .pattern("#!#")
-                        .pattern("#@#")
-                        .pattern("###")
-                        .criterion(hasItem(ModBlocks.PRIXILIUM_BRICKS), conditionsFromItem(ModBlocks.PRIXILIUM_BRICKS))
-                        .offerTo(exporter);
 
                 createShaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STAND)
                         .input('!', Blocks.DEEPSLATE_BRICK_WALL)
@@ -706,12 +714,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input(ModBlocks.STAND)
                         .criterion(hasItem(ModBlocks.REACTOR_CORE), conditionsFromItem(ModBlocks.REACTOR_CORE))
                         .criterion(hasItem(ModBlocks.STAND), conditionsFromItem(ModBlocks.STAND))
-                        .offerTo(exporter);
-                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.RIFT)
-                        .input(ModItems.RIFTS_SHELL)
-                        .input(ModBlocks.RIFT_CORE)
-                        .criterion(hasItem(ModItems.RIFTS_SHELL), conditionsFromItem(ModItems.RIFTS_SHELL))
-                        .criterion(hasItem(ModBlocks.RIFT_CORE), conditionsFromItem(ModBlocks.RIFT_CORE))
                         .offerTo(exporter);
 
                 //endregion

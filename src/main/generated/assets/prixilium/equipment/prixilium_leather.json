@@ -2,8 +2,10 @@
   "layers": {
     "horse_body": [
       {
-        "texture": "prixilium:prixiled_leather",
-        "dyeable": { "color_when_undyed": 10511680 }
+        "dyeable": {
+          "color_when_undyed": -6265536
+        },
+        "texture": "prixilium:prixiled_leather"
       },
       {
         "texture": "prixilium:prixiled_leather_overlay"
@@ -11,8 +13,10 @@
     ],
     "humanoid": [
       {
-        "texture": "prixilium:prixiled_leather",
-        "dyeable": { "color_when_undyed": 10511680 }
+        "dyeable": {
+          "color_when_undyed": -6265536
+        },
+        "texture": "prixilium:prixiled_leather"
       },
       {
         "texture": "prixilium:prixiled_leather_overlay"
@@ -20,8 +24,10 @@
     ],
     "humanoid_leggings": [
       {
-        "texture": "prixilium:prixiled_leather",
-        "dyeable": { "color_when_undyed": 10511680 }
+        "dyeable": {
+          "color_when_undyed": -6265536
+        },
+        "texture": "prixilium:prixiled_leather"
       },
       {
         "texture": "prixilium:prixiled_leather_overlay"
