@@ -1,6 +1,7 @@
 package net.napsternpt.prixilium.entity.custom;
 
 import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
@@ -18,7 +19,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.entity.ai.RiftPursuitGoal;
@@ -26,6 +30,8 @@ import net.napsternpt.prixilium.entity.ai.RiftShockwaveGoal;
 import net.napsternpt.prixilium.entity.ai.RiftSpinGoal;
 import net.napsternpt.prixilium.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class RiftEntity extends HostileEntity {
     private static final TrackedData<Boolean> SLAM_ACTIVE = DataTracker.registerData(
@@ -45,6 +51,15 @@ public class RiftEntity extends HostileEntity {
 
     public RiftEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    @Override
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
+        long days = world.getTime() / 24000L;
+        float scaledMaxHealth = MathHelper.clamp(days, 600.0F, 1200.0F);
+        Objects.requireNonNull(this.getAttributeInstance(EntityAttributes.MAX_HEALTH)).setBaseValue(scaledMaxHealth);
+        this.setHealth(this.getMaxHealth());
+        return super.initialize(world, difficulty, spawnReason, entityData);
     }
 
     @Override
@@ -169,7 +184,6 @@ public class RiftEntity extends HostileEntity {
         }
     }
 
-    //Attack animations - called by the AI goals (server sets the synced flag, client plays the animation)
     public void playSlamAnimation() {
         if (!this.getEntityWorld().isClient()) {
             this.dataTracker.set(SLAM_ACTIVE, true);

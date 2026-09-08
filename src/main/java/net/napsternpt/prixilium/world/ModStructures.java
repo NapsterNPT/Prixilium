@@ -26,10 +26,12 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.StructureTerrainAdaptation;
 import net.minecraft.world.gen.YOffset;
+import net.minecraft.world.gen.noise.NoiseConfig;
 import net.minecraft.world.gen.heightprovider.ConstantHeightProvider;
 import net.minecraft.world.gen.structure.JigsawStructure;
 import net.minecraft.world.gen.structure.Structure;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.world.gen.chunk.PrixiliumChunkGenerator;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -63,7 +65,8 @@ public class ModStructures {
 
     public static void placeStructure(MinecraftServer server, ServerWorld world, String structureName, BlockPos centerPos) {
         world.getChunk(centerPos);
-        int surfaceY = world.getTopY(Heightmap.Type.WORLD_SURFACE, centerPos.getX(), centerPos.getZ());
+        NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();
+        int surfaceY = world.getChunkManager().getChunkGenerator().getHeight(centerPos.getX(), centerPos.getZ(), Heightmap.Type.WORLD_SURFACE_WG, world, noiseConfig);
         StructureTemplateManager templateManager = server.getStructureTemplateManager();
         Identifier resourceId = Identifier.of(Prixilium.MOD_ID, "structure/" + structureName + ".nbt");
         Optional<Resource> resourceOpt = server.getResourceManager().getResource(resourceId);
@@ -77,7 +80,7 @@ public class ModStructures {
             return;
         }
 
-        BlockPos structureOrigin = new BlockPos(centerPos.getX() - template.getSize().getX() / 2, surfaceY - 1, centerPos.getZ() - template.getSize().getZ() / 2);
+        BlockPos structureOrigin = new BlockPos(centerPos.getX() - template.getSize().getX() / 2, surfaceY, centerPos.getZ() - template.getSize().getZ() / 2);
 
         StructurePlacementData placementData = new StructurePlacementData()
                 .setMirror(BlockMirror.NONE)
@@ -91,5 +94,9 @@ public class ModStructures {
         Prixilium.LOGGER.info("Registering Prixilium Structures.");
         placeStructure(server, world, "spawn", Prixilium.SPAWN_POS);
         placeStructure(server, world, "portal", BlockPos.ORIGIN);
+        NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();
+        for (ModStructureSpots.Spot spot : ModStructureSpots.computeSpots(noiseConfig, PrixiliumChunkGenerator.getRadiusBlocks(noiseConfig))) {
+            placeStructure(server, world, spot.name(), spot.center());
+        }
     }
 }
