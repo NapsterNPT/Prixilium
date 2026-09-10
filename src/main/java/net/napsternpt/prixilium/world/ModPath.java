@@ -1,7 +1,6 @@
 package net.napsternpt.prixilium.world;
 
 import net.minecraft.util.math.BlockPos;
-import net.napsternpt.prixilium.Prixilium;
 
 import java.util.List;
 
@@ -15,21 +14,18 @@ public final class ModPath {
     private ModPath() {
     }
 
-    public static boolean isOnPath(int x, int z, List<PathTarget> branchTargets, BlockPos from, BlockPos to) {
-        if (withinStructure(x, z, from, STRUCTURE_HALF) || withinStructure(x, z, to, STRUCTURE_HALF)) {
+    public static boolean isOnPath(int x, int z, BlockPos origin, List<PathTarget> targets) {
+        if (withinStructure(x, z, origin, STRUCTURE_HALF)) {
             return false;
         }
         long halfSquared = (long) PATH_HALF_WIDTH * PATH_HALF_WIDTH;
-        if (squaredDistanceToSegment(x, z, from, to) <= halfSquared) {
-            return true;
-        }
-        for (PathTarget target : branchTargets) {
+        for (PathTarget target : targets) {
             if (withinStructure(x, z, target.center(), target.halfExtent())) {
                 return false;
             }
         }
-        for (PathTarget target : branchTargets) {
-            if (squaredDistanceToSegment(x, z, to, target.center()) <= halfSquared) {
+        for (PathTarget target : targets) {
+            if (squaredDistanceToSegment(x, z, origin, target.center()) <= halfSquared) {
                 return true;
             }
         }
@@ -48,7 +44,7 @@ public final class ModPath {
             return (long) (x - a.getX()) * (x - a.getX()) + (long) (z - a.getZ()) * (z - a.getZ());
         }
         double t = ((double) (x - a.getX()) * dX + (double) (z - a.getZ()) * dZ) / lengthSquared;
-        t = Math.max(0.0, Math.min(1.0, t));
+        t = Math.clamp(t, 0.0, 1.0);
         double nearestX = a.getX() + t * dX;
         double nearestZ = a.getZ() + t * dZ;
         double offsetX = x - nearestX;

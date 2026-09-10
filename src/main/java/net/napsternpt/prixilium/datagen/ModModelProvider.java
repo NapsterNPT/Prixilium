@@ -8,9 +8,8 @@ import net.minecraft.client.render.item.model.ConditionItemModel;
 import net.minecraft.client.render.item.model.ItemModel;
 import net.minecraft.client.render.item.property.bool.HasComponentProperty;
 import net.minecraft.client.render.item.property.select.DisplayContextProperty;
-import net.minecraft.client.render.model.json.MultipartModelConditionBuilder;
-import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.client.render.model.json.ModelVariant;
+import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -19,7 +18,6 @@ import net.minecraft.util.collection.WeightedPool;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.custom.PrixiliumLampBlock;
-import net.napsternpt.prixilium.block.custom.PrixiversePortalBlock;
 import net.napsternpt.prixilium.item.ModArmorMaterials;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.util.ModDataComponentTypes;
@@ -173,30 +171,12 @@ public class ModModelProvider extends FabricModelProvider {
                 )
         );
 
-        Identifier center = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_center");
-        Identifier north = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_north");
-        Identifier east = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_east");
-        Identifier south = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_south");
-        Identifier west = ModelIds.getBlockSubModelId(ModBlocks.PRIXIVERSE_PORTAL, "_west");
-
-        blockStateModelGenerator.modelCollector.accept(center,
-                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal")));
-        blockStateModelGenerator.modelCollector.accept(north,
-                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal_north")));
-        blockStateModelGenerator.modelCollector.accept(east,
-                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal_east")));
-        blockStateModelGenerator.modelCollector.accept(south,
-                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal_south")));
-        blockStateModelGenerator.modelCollector.accept(west,
-                new SimpleModelSupplier(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal_west")));
-
-        MultipartBlockModelDefinitionCreator creator = MultipartBlockModelDefinitionCreator.create(ModBlocks.PRIXIVERSE_PORTAL);
-        creator.with(BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(center)));
-        creator.with(new MultipartModelConditionBuilder().put(PrixiversePortalBlock.NORTH, false), BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(north)));
-        creator.with(new MultipartModelConditionBuilder().put(PrixiversePortalBlock.EAST, false), BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(east)));
-        creator.with(new MultipartModelConditionBuilder().put(PrixiversePortalBlock.SOUTH, false), BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(south)));
-        creator.with(new MultipartModelConditionBuilder().put(PrixiversePortalBlock.WEST, false), BlockStateModelGenerator.createWeightedVariant(BlockStateModelGenerator.createModelVariant(west)));
-        blockStateModelGenerator.blockStateCollector.accept(creator);
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.PRIXIVERSE_PORTAL,
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/prixiverse_portal"))
+                )
+        );
     }
 
     @Override

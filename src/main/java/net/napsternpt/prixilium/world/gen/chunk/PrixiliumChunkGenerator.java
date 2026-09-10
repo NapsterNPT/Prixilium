@@ -26,10 +26,10 @@ import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.world.ModPath;
 import net.napsternpt.prixilium.world.ModStructureSpots;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
 
 public class PrixiliumChunkGenerator extends ChunkGenerator {
 	private static final int MIN_RADIUS_CHUNKS = 8;
@@ -78,9 +78,11 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 
 	private List<ModPath.PathTarget> getStructureTargets(NoiseConfig noiseConfig) {
 		if (structureTargets == null) {
-			structureTargets = ModStructureSpots.computeSpots(noiseConfig, getRadiusBlocks(noiseConfig)).stream()
-					.map(spot -> new ModPath.PathTarget(spot.center(), spot.halfExtent()))
-					.collect(Collectors.toList());
+			List<ModPath.PathTarget> targets = new ArrayList<>();
+			targets.add(new ModPath.PathTarget(Prixilium.SPAWN_POS, ModPath.STRUCTURE_HALF));
+			targets.addAll(ModStructureSpots.computeSpots(noiseConfig, getRadiusBlocks(noiseConfig)).stream()
+					.map(spot -> new ModPath.PathTarget(spot.center(), spot.halfExtent())).toList());
+			structureTargets = targets;
 		}
 		return structureTargets;
 	}
@@ -108,8 +110,7 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 			int z = chunkZ + dz;
 			for (int dx = 0; dx < BLOCKS_PER_CHUNK; dx++) {
 				int x = chunkX + dx;
-				if (!ModPath.isOnPath(x, z, targets, BlockPos.ORIGIN, Prixilium.SPAWN_POS)
-						|| Math.floorMod(x * 31 + z * 17, 2) != 0) {
+				if (!ModPath.isOnPath(x, z, BlockPos.ORIGIN, targets) || Math.floorMod(x * 31 + z * 17, 2) != 0) {
 					continue;
 				}
 				RadialProfile profile = RadialProfile.of(x, z, radius);
@@ -169,8 +170,7 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 		for (int i = Math.max(0, bottomIndex); i < Math.min(states.length, topIndex); i++) {
 			states[i] = islandBlock;
 		}
-		if (ModPath.isOnPath(x, z, getStructureTargets(noiseConfig), BlockPos.ORIGIN, Prixilium.SPAWN_POS)
-				&& Math.floorMod(x * 31 + z * 17, 2) == 0) {
+		if (ModPath.isOnPath(x, z, BlockPos.ORIGIN, getStructureTargets(noiseConfig)) && Math.floorMod(x * 31 + z * 17, 2) == 0) {
 			states[topIndex - 1] = DIAMOND_BLOCK;
 		}
 		return new VerticalBlockSample(world.getBottomY(), states);
@@ -212,10 +212,9 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 						chunk.setBlockState(pos, target);
 					}
 				}
-if (ModPath.isOnPath(x, z, targets, BlockPos.ORIGIN, Prixilium.SPAWN_POS)
-					&& Math.floorMod(x * 31 + z * 17, 2) == 0) {
-				chunk.setBlockState(new BlockPos(x, top - 1, z), DIAMOND_BLOCK);
-			}
+				if (ModPath.isOnPath(x, z, BlockPos.ORIGIN, targets) && Math.floorMod(x * 31 + z * 17, 2) == 0) {
+					chunk.setBlockState(new BlockPos(x, top - 1, z), DIAMOND_BLOCK);
+				}
 			}
 		}
 		return chunk;
@@ -235,7 +234,7 @@ if (ModPath.isOnPath(x, z, targets, BlockPos.ORIGIN, Prixilium.SPAWN_POS)
 				return null;
 			}
 			double distance = Math.sqrt(distanceSquared);
-			double edge = Math.max(0.0, Math.min(1.0, (radius - distance) / RIM_SMOOTH));
+			double edge = Math.clamp((radius - distance) / RIM_SMOOTH, 0.0, 1.0);
 			double smooth = smootherStep(edge);
 			if (smooth < MIN_EDGE) {
 				return null;

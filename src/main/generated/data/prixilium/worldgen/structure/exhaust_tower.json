@@ -8,6 +8,7 @@
   "start_height": {
     "absolute": 0
   },
+  "start_jigsaw_name": "prixilium:anchor",
   "start_pool": "prixilium:exhaust_tower/start_pool",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",

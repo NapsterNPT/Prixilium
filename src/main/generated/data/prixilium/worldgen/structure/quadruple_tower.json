@@ -9,7 +9,7 @@
     "absolute": 0
   },
   "start_jigsaw_name": "prixilium:anchor",
-  "start_pool": "prixilium:spawn/start_pool",
+  "start_pool": "prixilium:quadruple_tower/start_pool",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "use_expansion_hack": false

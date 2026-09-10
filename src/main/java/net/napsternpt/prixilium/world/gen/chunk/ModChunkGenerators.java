@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.napsternpt.prixilium.Prixilium;
 
 public class ModChunkGenerators {
@@ -12,7 +13,7 @@ public class ModChunkGenerators {
 			PrixiliumChunkGenerator.CODEC
 	);
 
-	private static <T extends net.minecraft.world.gen.chunk.ChunkGenerator> MapCodec<T> register(String name, MapCodec<T> codec) {
+	private static <T extends ChunkGenerator> MapCodec<T> register(String name, MapCodec<T> codec) {
 		return Registry.register(Registries.CHUNK_GENERATOR, Identifier.of(Prixilium.MOD_ID, name), codec);
 	}
 
