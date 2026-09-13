@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.particle;
+package net.napsternpt.prixilium.particle.custom;
 
 import net.minecraft.client.particle.BillboardParticle;
 import net.minecraft.client.particle.Particle;

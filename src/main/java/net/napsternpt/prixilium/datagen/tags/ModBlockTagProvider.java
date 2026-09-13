@@ -28,12 +28,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_GRATE)
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
+                .add(ModBlocks.PRIXILIUM_BRICKS_WALL)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.DARK_PRIXILIUM_GRATE)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL)
                 .add(ModBlocks.PRIXILIUM_EXHAUST)
                 .add(ModBlocks.STAND)
                 .add(ModBlocks.REACTOR_CORE)
@@ -76,6 +78,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_GRATE)
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
+                .add(ModBlocks.PRIXILIUM_BRICKS_WALL)
 
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS)
@@ -83,6 +86,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DARK_PRIXILIUM_GRATE)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
+                .add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL)
 
                 .add(ModBlocks.PRIXILIUM_EXHAUST);
 

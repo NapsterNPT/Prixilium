@@ -1,5 +1,22 @@
 {
   "attributes": {
+    "minecraft:gameplay/bed_rule": {
+      "can_set_spawn": "never",
+      "can_sleep": "never",
+      "explodes": true
+    },
+    "minecraft:gameplay/bees_stay_in_hive": true,
+    "minecraft:gameplay/can_pillager_patrol_spawn": false,
+    "minecraft:gameplay/can_start_raid": false,
+    "minecraft:gameplay/creaking_active": true,
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "prixilium:prixiverse_ambient"
+        },
+        "probability": 0.025
+      }
+    ],
     "minecraft:visual/fog_color": "#1a0a2e",
     "minecraft:visual/sky_color": "#ffcb00",
     "minecraft:visual/water_fog_color": "#329011"

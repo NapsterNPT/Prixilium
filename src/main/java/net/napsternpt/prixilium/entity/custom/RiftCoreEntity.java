@@ -130,12 +130,6 @@ public class RiftCoreEntity extends HostileEntity {
         return false;
     }
 
-    @Override
-    protected void dropLoot(ServerWorld world, DamageSource damageSource, boolean causedByPlayer) {
-        super.dropLoot(world, damageSource, causedByPlayer);
-        this.dropStack(world, new ItemStack(ModBlocks.RIFT_CORE));
-    }
-
     public void playBurrowAnimation() {
         if (this.getEntityWorld().isClient()) {
             this.burrowAnimationState.start(this.age);

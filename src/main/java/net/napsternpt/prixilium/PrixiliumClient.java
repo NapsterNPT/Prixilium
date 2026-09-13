@@ -17,6 +17,7 @@ import net.napsternpt.prixilium.entity.client.models.*;
 import net.napsternpt.prixilium.entity.client.renderers.*;
 import net.napsternpt.prixilium.network.ModPackets;
 import net.napsternpt.prixilium.particle.*;
+import net.napsternpt.prixilium.particle.custom.*;
 import net.napsternpt.prixilium.screen.ModScreenHandlers;
 import net.napsternpt.prixilium.screen.custom.ObeliskOfCharmsScreen;
 
@@ -55,11 +56,11 @@ public class PrixiliumClient implements ClientModInitializer {
 		EntityRendererFactories.register(ModEntities.RIFT_CORE, RiftCoreRenderer::new);
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_AMBIENT, PrixiliumAmbientParticles.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXIVERSE_AMBIENT, PrixiverseAmbientParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_LEAVES, PrixiliumLeavesParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_HOOK, PrixiliumHookParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_SMOKE, PrixiliumSmokeParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_EXPAND, PrixiliumExpandParticles.Factory::new);
-		ParticleFactoryRegistry.getInstance().register(ModParticles.RIFT_SHOCKWAVE, RiftShockwaveParticles.Factory::new);
 
 		ModPackets.registerClient();
     }

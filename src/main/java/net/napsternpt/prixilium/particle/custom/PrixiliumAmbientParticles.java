@@ -1,4 +1,4 @@
-package net.napsternpt.prixilium.particle;
+package net.napsternpt.prixilium.particle.custom;
 
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
@@ -6,22 +6,17 @@ import net.minecraft.particle.SimpleParticleType;
 import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.Nullable;
 
-public class PrixiliumExpandParticles extends AbstractSlowingParticle {
-    private final SpriteProvider spriteProvider;
-
-    public PrixiliumExpandParticles(ClientWorld clientWorld, double x, double y, double z, SpriteProvider spriteProvider, double xSpeed, double ySpeed, double zSpeed) {
+public class PrixiliumAmbientParticles extends BillboardParticle {
+    public PrixiliumAmbientParticles(ClientWorld clientWorld, double x, double y, double z, SpriteProvider spriteProvider, double xSpeed, double ySpeed, double zSpeed) {
         super(clientWorld, x, y, z, xSpeed, ySpeed, zSpeed, spriteProvider.getFirst());
 
-        this.spriteProvider = spriteProvider;
-        this.scale = 0.25F;
-        this.alpha = 1.0F;
-        this.maxAge = 10;
+        this.maxAge = 100;
     }
 
     @Override
     public void tick() {
         super.tick();
-        this.setSprite(this.spriteProvider.getSprite(this.age, this.maxAge));
+        this.alpha = (float) Math.pow(1.0f - ((float) this.age / (float) this.maxAge), 0.1);
     }
 
     @Override
@@ -38,7 +33,7 @@ public class PrixiliumExpandParticles extends AbstractSlowingParticle {
 
         @Override
         public @Nullable Particle createParticle(SimpleParticleType parameters, ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, Random random) {
-            return new PrixiliumExpandParticles(world, x, y, z, spriteProvider, velocityX, velocityY, velocityZ);
+            return new PrixiliumAmbientParticles(world, x, y, z, spriteProvider, velocityX, velocityY, velocityZ);
         }
     }
 }

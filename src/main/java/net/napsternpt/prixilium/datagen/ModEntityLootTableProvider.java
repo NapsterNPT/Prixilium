@@ -3,6 +3,7 @@ package net.napsternpt.prixilium.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -42,11 +43,20 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
                         .pool(LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1))
                                 .with(ItemEntry.builder(ModBlocks.PRIXILIUM).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))))
-                                .conditionally(RandomChanceLootCondition.builder(1f))
                         ).pool(LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1))
                                 .with(ItemEntry.builder(ModItems.PRIXILIUM_OIL).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))))
                                 .conditionally(RandomChanceLootCondition.builder(0.25f))
+                        )
+        );
+
+        lootTableBiConsumer.accept(
+                ModEntities.AIRIS.getLootTableKey().orElseThrow(),
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1))
+                                .with(ItemEntry.builder(Items.WIND_CHARGE).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(3))))
+                                .conditionally(RandomChanceLootCondition.builder(0.5f))
                         )
         );
 
@@ -59,6 +69,15 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
                         ).pool(LootPool.builder()
                                 .rolls(ConstantLootNumberProvider.create(1))
                                 .with(ItemEntry.builder(ModItems.RIFTS_SHELL).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))))
+                        )
+        );
+
+        lootTableBiConsumer.accept(
+                ModEntities.RIFT_CORE.getLootTableKey().orElseThrow(),
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1))
+                                .with(ItemEntry.builder(ModBlocks.RIFT_CORE).apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1))))
                         )
         );
     }

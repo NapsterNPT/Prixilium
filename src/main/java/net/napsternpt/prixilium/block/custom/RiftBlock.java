@@ -3,6 +3,7 @@ package net.napsternpt.prixilium.block.custom;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -22,9 +23,11 @@ import net.napsternpt.prixilium.item.ModItems;
 import java.util.List;
 
 public class RiftBlock extends Block {
-    private static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 15.999);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0.0, 0.00001, 0.0, 16.0, 16.0, 16);
 
     public static final BooleanProperty CAN_SPAWN = BooleanProperty.of("can_spawn");
+
+    private boolean breakingWithSilkTouch = false;
 
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -43,7 +46,12 @@ public class RiftBlock extends Block {
 
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (!world.isClient() && state.get(CAN_SPAWN) && world instanceof ServerWorld serverWorld) {
+        if (!world.isClient()) {
+            this.breakingWithSilkTouch = player.getMainHandStack().getEnchantments().getEnchantments().stream().anyMatch(
+                    entry -> entry.matchesKey(Enchantments.SILK_TOUCH));
+        }
+
+        if (!world.isClient() && state.get(CAN_SPAWN) && !breakingWithSilkTouch && world instanceof ServerWorld serverWorld) {
             RiftEntity rift = ModEntities.RIFT.create(serverWorld, SpawnReason.EVENT);
             if (rift != null) {
                 rift.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0.0F, 0.0F);
@@ -58,6 +66,9 @@ public class RiftBlock extends Block {
     protected List<ItemStack> getDroppedStacks(BlockState state, LootWorldContext.Builder builder) {
         if (state.get(CAN_SPAWN)) {
             return List.of();
+        } else if (breakingWithSilkTouch) {
+            breakingWithSilkTouch = false;
+            return List.of(new ItemStack(this));
         }
         return List.of(new ItemStack(ModItems.RIFTS_SHELL), new ItemStack(ModBlocks.RIFT_CORE.asItem()));
     }

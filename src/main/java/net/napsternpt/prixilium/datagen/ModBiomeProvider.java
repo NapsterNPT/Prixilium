@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.world.attribute.AmbientParticle;
+import net.minecraft.world.attribute.BedRule;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
@@ -14,6 +16,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.napsternpt.prixilium.entity.ModEntities;
+import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.world.ModPlacedFeatures;
 
 import java.util.concurrent.CompletableFuture;
@@ -45,13 +48,21 @@ public class ModBiomeProvider extends FabricDynamicRegistryProvider {
                 .effects(new BiomeEffects.Builder()
                         .waterColor(0x6BAF00)
                         .build())
-                .setEnvironmentAttribute(EnvironmentAttributes.SKY_COLOR_VISUAL, 0xFFCB00)
+                .setEnvironmentAttribute(EnvironmentAttributes.AMBIENT_PARTICLES_VISUAL, AmbientParticle.of(ModParticles.PRIXIVERSE_AMBIENT, 0.025F))
+                .setEnvironmentAttribute(EnvironmentAttributes.BED_RULE_GAMEPLAY, BedRule.OTHER_DIMENSION)
+                .setEnvironmentAttribute(EnvironmentAttributes.BEES_STAY_IN_HIVE_GAMEPLAY, true)
+                .setEnvironmentAttribute(EnvironmentAttributes.CAN_PILLAGER_PATROL_SPAWN_GAMEPLAY, false)
+                .setEnvironmentAttribute(EnvironmentAttributes.CAN_START_RAID_GAMEPLAY, false)
+                .setEnvironmentAttribute(EnvironmentAttributes.CREAKING_ACTIVE_GAMEPLAY, true)
                 .setEnvironmentAttribute(EnvironmentAttributes.FOG_COLOR_VISUAL, 0x1A0A2E)
+                .setEnvironmentAttribute(EnvironmentAttributes.SKY_COLOR_VISUAL, 0xFFCB00)
                 .setEnvironmentAttribute(EnvironmentAttributes.WATER_FOG_COLOR_VISUAL, 0x329011)
                 .spawnSettings(spawnSettings.build())
                 .generationSettings(generationSettings.build())
                 .build()
         );
+
+
     }
 
     @Override
