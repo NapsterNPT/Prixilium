@@ -6,7 +6,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.entry.RegistryEntryList;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.server.MinecraftServer;
@@ -31,10 +30,14 @@ import net.minecraft.world.gen.noise.NoiseConfig;
 import net.minecraft.world.gen.structure.JigsawStructure;
 import net.minecraft.world.gen.structure.Structure;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.util.ModTags;
 import net.napsternpt.prixilium.world.gen.chunk.PrixiliumChunkGenerator;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public class ModStructures {
     public static final Identifier START_JIGSAW_NAME = Identifier.of(Prixilium.MOD_ID, "anchor");
@@ -63,7 +66,7 @@ public class ModStructures {
         RegistryEntry.Reference<StructurePool> riftTemplePool = context.getRegistryLookup(RegistryKeys.TEMPLATE_POOL).getOrThrow(ModTemplatePools.RIFT_TEMPLE_START_POOL);
 
         RegistryEntryList<Biome> biomes = context.getRegistryLookup(RegistryKeys.BIOME)
-                .getOrThrow(TagKey.of(RegistryKeys.BIOME, Identifier.of(Prixilium.MOD_ID, "has_structure/structures")));
+                .getOrThrow(ModTags.Biomes.STRUCTURE_BIOME_TAG);
 
         Structure.Config config = new Structure.Config(biomes, java.util.Map.of(),
                 GenerationStep.Feature.SURFACE_STRUCTURES, StructureTerrainAdaptation.BEARD_THIN);
@@ -121,7 +124,7 @@ public class ModStructures {
         StructurePiecesCollector collector = position.get().generate();
         List<StructurePiece> pieces = collector.toList().pieces();
 
-        if (!pieces.isEmpty() && pieces.get(0) instanceof PoolStructurePiece startPiece) {
+        if (!pieces.isEmpty() && pieces.getFirst() instanceof PoolStructurePiece startPiece) {
             BlockBox box = startPiece.getBoundingBox();
             int centerX = (box.getMinX() + box.getMaxX()) / 2;
             int centerZ = (box.getMinZ() + box.getMaxZ()) / 2;
@@ -149,11 +152,38 @@ public class ModStructures {
 
     public static void spawnStructures(MinecraftServer server, ServerWorld world) {
         Prixilium.LOGGER.info("Registering Prixilium Structures.");
+
+        Set<String> pathEnabled = readPathEnabled(server);
+        NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();
+        List<ModStructureSpots.Spot> spots = ModStructureSpots.computeSpots(noiseConfig, PrixiliumChunkGenerator.getRadiusBlocks(noiseConfig));
+
+        List<ModPath.PathTarget> targets = new ArrayList<>();
+        if (pathEnabled.contains("spawn")) {
+            targets.add(new ModPath.PathTarget(Prixilium.SPAWN_POS, ModPath.STRUCTURE_HALF));
+        }
+        for (ModStructureSpots.Spot spot : spots) {
+            if (pathEnabled.contains(spot.name())) {
+                targets.add(new ModPath.PathTarget(spot.center(), spot.halfExtent()));
+            }
+        }
+
+        var generator = world.getChunkManager().getChunkGenerator();
+        if (generator instanceof PrixiliumChunkGenerator prixiliumGenerator) {
+            prixiliumGenerator.setPathTargets(targets);
+        }
+
         placeStructure(server, world, "spawn", Prixilium.SPAWN_POS);
         placeStructure(server, world, "fountain", BlockPos.ORIGIN);
-        NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();
-        for (ModStructureSpots.Spot spot : ModStructureSpots.computeSpots(noiseConfig, PrixiliumChunkGenerator.getRadiusBlocks(noiseConfig))) {
+        for (ModStructureSpots.Spot spot : spots) {
             placeStructure(server, world, spot.name(), spot.center());
         }
+    }
+
+    private static Set<String> readPathEnabled(MinecraftServer server) {
+        Set<String> enabled = new HashSet<>();
+        server.getRegistryManager().getOrThrow(RegistryKeys.STRUCTURE)
+                .iterateEntries(ModTags.Structures.GENERATE_PATH)
+                .forEach(entry -> entry.getKey().ifPresent(key -> enabled.add(key.getValue().getPath())));
+        return enabled;
     }
 }

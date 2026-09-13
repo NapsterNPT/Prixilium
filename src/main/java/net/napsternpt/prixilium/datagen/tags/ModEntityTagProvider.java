@@ -20,6 +20,8 @@ public class ModEntityTagProvider extends FabricTagProvider.EntityTypeTagProvide
         valueLookupBuilder(ModTags.Entities.IMMUNE_TO_PRIXILIUM)
                 .add(ModEntities.BLIKO)
                 .add(ModEntities.BLOCKITO)
-                .add(ModEntities.AIRIS);
+                .add(ModEntities.AIRIS)
+                .add(ModEntities.RIFT)
+                .add(ModEntities.RIFT_CORE);
     }
 }

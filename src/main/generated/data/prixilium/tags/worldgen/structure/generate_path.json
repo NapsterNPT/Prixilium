@@ -1,0 +1,10 @@
+{
+  "values": [
+    "prixilium:spawn",
+    "prixilium:portal",
+    "prixilium:rift_temple",
+    "prixilium:single_tower",
+    "prixilium:double_tower",
+    "prixilium:quadruple_tower"
+  ]
+}

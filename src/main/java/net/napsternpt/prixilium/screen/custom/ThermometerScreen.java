@@ -6,13 +6,11 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.RenderTickCounter;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.effect.ModEffects;
+import net.napsternpt.prixilium.util.ModTags;
 
 public class ThermometerScreen {
 
@@ -21,8 +19,6 @@ public class ThermometerScreen {
 
     private static int value = 0;
     private static boolean active = false;
-
-    private static final TagKey<Item> TEMPERATURE_TOOLS = TagKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, "temperature_tools"));
 
     public static void increment() {
         active = true;
@@ -46,7 +42,7 @@ public class ThermometerScreen {
         MinecraftClient client = MinecraftClient.getInstance();
         if (!active || client.player == null) return;
 
-        boolean holdingCorrectItem = client.player.getMainHandStack().isIn(TEMPERATURE_TOOLS) || client.player.getOffHandStack().isIn(TEMPERATURE_TOOLS);
+        boolean holdingCorrectItem = client.player.getMainHandStack().isIn(ModTags.Items.TEMPERATURE_TOOLS) || client.player.getOffHandStack().isIn(ModTags.Items.TEMPERATURE_TOOLS);
         if (!holdingCorrectItem) {
             reset();
             return;

@@ -87,6 +87,10 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 		return structureTargets;
 	}
 
+	public void setPathTargets(List<ModPath.PathTarget> targets) {
+		structureTargets = targets;
+	}
+
 	@Override
 	public CompletableFuture<Chunk> populateNoise(Blender blender, NoiseConfig noiseConfig, StructureAccessor structureAccessor, Chunk chunk) {
 		return delegate.populateNoise(blender, noiseConfig, structureAccessor, chunk)
