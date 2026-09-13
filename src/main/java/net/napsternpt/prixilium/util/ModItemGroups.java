@@ -22,10 +22,12 @@ public class ModItemGroups {
                         //region [Items]
                         entries.add(ModItems.VIRUS_ALIVE);
                         entries.add(ModItems.VIRUS_DEAD);
+                        entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
+                        entries.add(ModItems.PRIXILIUM_SHARD_NUGGET);
+                        entries.add(ModItems.PRIXILIUM_SHARD);
                         entries.add(ModItems.THERMOMETER);
                         entries.add(ModItems.RIFTS_PAW);
                         entries.add(ModItems.RIFTS_SHELL);
-                        entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_HOOK);
                         entries.add(ModItems.BLIKO_SPAWN_EGG);
                         entries.add(ModItems.BLOCKITO_SPAWN_EGG);
@@ -68,6 +70,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PRIXILIUM_GRASS);
 
                         entries.add(ModBlocks.PRIXILIUM_LEAVES);
+                        entries.add(ModBlocks.PRIXILIUM_RESIN);
                         entries.add(ModBlocks.PRIXILIUM_LOG);
                         entries.add(ModBlocks.PRIXILIUM_WOOD);
                         entries.add(ModBlocks.PRIXILIUM_PLANKS);

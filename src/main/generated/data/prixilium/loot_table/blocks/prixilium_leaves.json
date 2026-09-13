@@ -127,6 +127,22 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "chance": 0.25,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "prixilium:prixilium_resin"
+        }
+      ],
+      "rolls": 1.0
     }
   ]
 }

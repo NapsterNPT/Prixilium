@@ -39,6 +39,18 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
 
+    public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem(name = "prixilium_upgrade_smithing_template", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+    ));
+
+    public static final Item PRIXILIUM_SHARD_NUGGET = registerItem(name = "prixilium_shard_nugget", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+    ));
+
+    public static final Item PRIXILIUM_SHARD = registerItem(name = "prixilium_shard", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+    ));
+
     public static final Item THERMOMETER = registerItem(name = "thermometer", new ThermometerItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
@@ -52,10 +64,6 @@ public class ModItems {
     public static final Item RIFTS_SHELL = registerItem(name = "rifts_shell", new Item(new Item.Settings().armor(ModArmorMaterials.RIFT, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
-    ));
-
-    public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem(name = "prixilium_upgrade_smithing_template", new Item(new Item.Settings()
-            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
 
     public static final Item PRIXILIUM_HOOK = registerItem(name = "prixilium_hook", new PrixiliumHookItem(new Item.Settings()

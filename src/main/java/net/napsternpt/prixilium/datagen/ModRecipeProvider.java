@@ -32,6 +32,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             @Override
             public void generate() {
                 //region [Items]
+                offerSmithingTemplateCopyingRecipe(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, ModBlocks.PRIXILIUM);
+
+                offerSmelting(List.of(ModBlocks.PRIXILIUM_RESIN), RecipeCategory.DECORATIONS, ModItems.PRIXILIUM_SHARD_NUGGET, 0.1f, 20, "prixilium_shard_nugget");
+
+                createShapeless(RecipeCategory.DECORATIONS, ModItems.PRIXILIUM_SHARD)
+                        .input(ModItems.PRIXILIUM_SHARD_NUGGET, 9)
+                        .criterion(hasItem(ModItems.PRIXILIUM_SHARD_NUGGET), conditionsFromItem(ModItems.PRIXILIUM_SHARD_NUGGET))
+                        .offerTo(exporter);
+
                 createShaped(RecipeCategory.MISC, ModItems.THERMOMETER)
                         .input('!', Items.REDSTONE)
                         .input('#', Blocks.GLASS_PANE)
@@ -41,8 +50,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern(" @ ")
                         .criterion(hasItem(Items.GLASS_BOTTLE), conditionsFromItem(Items.GLASS_BOTTLE))
                         .offerTo(exporter);
-
-                offerSmithingTemplateCopyingRecipe(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, ModBlocks.PRIXILIUM);
 
                 createShaped(RecipeCategory.TOOLS, ModItems.PRIXILIUM_HOOK)
                         .input('#', ModBlocks.PRIXILIUM)
@@ -574,7 +581,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //endregion
 
                 //region [Bricks]
-                offer2x2CompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS, ModBlocks.PRIXILIUM);
+                offer2x2CompactingRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_BRICKS, ModItems.PRIXILIUM_SHARD);
 
                 offerSmelting(List.of(ModBlocks.PRIXILIUM_BRICKS), RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_PRIXILIUM_BRICKS, 0.1f, 200, "cracked_prixilium_bricks");
 

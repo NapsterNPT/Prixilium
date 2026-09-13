@@ -64,6 +64,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.PRIXILIUM_GRASS, prixiliumGrassModel1);
 
         blockStateModelGenerator.registerSingleton(ModBlocks.PRIXILIUM_LEAVES, TexturedModel.LEAVES);
+        blockStateModelGenerator.registerMultifaceBlock(ModBlocks.PRIXILIUM_RESIN);
         blockStateModelGenerator.createLogTexturePool(ModBlocks.PRIXILIUM_LOG).log(ModBlocks.PRIXILIUM_LOG).wood(ModBlocks.PRIXILIUM_WOOD);
         BlockStateModelGenerator.BlockTexturePool prixiliumPlanksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PRIXILIUM_PLANKS);
         prixiliumPlanksPool.stairs(ModBlocks.PRIXILIUM_STAIRS);
@@ -183,6 +184,9 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.VIRUS_ALIVE, Models.GENERATED);
         itemModelGenerator.register(ModItems.VIRUS_DEAD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_SHARD_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PRIXILIUM_SHARD, Models.GENERATED);
         itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
 
         Identifier riftsPawGuiModel = Models.GENERATED.upload(
@@ -199,7 +203,6 @@ public class ModModelProvider extends FabricModelProvider {
                         ItemModels.switchCase(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, riftsPaw3dModel)));
 
         itemModelGenerator.registerArmor(ModItems.RIFTS_SHELL, ModArmorMaterials.RIFT_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
 
         ItemModel.Unbaked unbakedPrixiliumHook = ItemModels.basic(itemModelGenerator.upload(ModItems.PRIXILIUM_HOOK, Models.HANDHELD));
         ItemModel.Unbaked unbakedExtendedPrixiliumHook = ItemModels.basic(itemModelGenerator.registerSubModel(ModItems.PRIXILIUM_HOOK, "_extended", Models.HANDHELD));

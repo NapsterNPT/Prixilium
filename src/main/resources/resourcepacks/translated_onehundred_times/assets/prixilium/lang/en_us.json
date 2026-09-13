@@ -200,7 +200,7 @@
   "block.prixilium.burned_prixilium_log": "Fuel for Electric Heaters",
   "block.prixilium.burned_prixilium_wood": "Burn Old Oil",
   "block.prixilium.burned_prixilium_planks": "On the Island",
-  "block.prixilium.burned_prixilium_stairs": "Burned Prixilium Stairs",
+  "block.prixilium.burned_prixilium_stairs": "The Price is High",
   "block.prixilium.burned_prixilium_slab": "Burned Prixilium Slab",
   "block.prixilium.burned_prixilium_fence": "Burned Prixilium Fence",
   "block.prixilium.burned_prixilium_fence_gate": "Burned Prixilium Fence Gate",
@@ -357,7 +357,7 @@
   "advancements.prixilium.tree.title": "Is this a tree?",
   "advancements.prixilium.tree.description": "Harvest a Prixilium Log",
   "advancements.prixilium.dark_mode.title": "Dark Mode!",
-  "advancements.prixilium.dark_mode.description": "Burn the wood with a flint and steal",
+  "advancements.prixilium.dark_mode.description": "Burn the wood with a flint and steel",
 
   "advancements.prixilium.tame_bliko.title": "Hello There",
   "advancements.prixilium.tame_bliko.description": "Tame a Bliko",

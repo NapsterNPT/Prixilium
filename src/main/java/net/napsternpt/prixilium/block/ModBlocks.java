@@ -50,12 +50,23 @@ public class ModBlocks {
 
     //region [Planks]
     public static final Block PRIXILIUM_LEAVES = registerBlock(name = "prixilium_leaves",
-            new PrixiliumLeavesBlock(0.1F, ModParticles.PRIXILIUM_LEAVES,AbstractBlock.Settings.create()
+            new PrixiliumLeavesBlock(0.1F, ModParticles.PRIXILIUM_LEAVES, AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(0.2F)
                     .sounds(BlockSoundGroup.GRASS)
                     .mapColor(MapColor.GOLD)
                     .ticksRandomly()
+                    .burnable()
+                    .nonOpaque()
+                    .luminance(state -> 7)
+            ));
+
+    public static final Block PRIXILIUM_RESIN = registerBlock(name = "prixilium_resin",
+            new MultifaceBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(0.2F)
+                    .sounds(BlockSoundGroup.GLASS)
+                    .mapColor(MapColor.GOLD)
                     .burnable()
                     .nonOpaque()
                     .luminance(state -> 7)

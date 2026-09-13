@@ -3,6 +3,9 @@ package net.napsternpt.prixilium.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.registry.RegistryWrapper;
 import net.napsternpt.prixilium.block.ModBlocks;
 
@@ -18,7 +21,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PRIXILIUM, drops(ModBlocks.PRIXILIUM));
         addDrop(ModBlocks.PRIXILIUM_GRASS, drops(ModBlocks.PRIXILIUM_GRASS, Blocks.DIRT));
 
-        addDrop(ModBlocks.PRIXILIUM_LEAVES, leavesDrops(ModBlocks.PRIXILIUM_LEAVES, ModBlocks.PRIXILIUM, 0.0625F));
+        addDrop(ModBlocks.PRIXILIUM_LEAVES, leavesDrops(ModBlocks.PRIXILIUM_LEAVES, ModBlocks.PRIXILIUM, 0.0625F)
+                .pool(LootPool.builder()
+                        .with(ItemEntry.builder(ModBlocks.PRIXILIUM_RESIN))
+                        .conditionally(RandomChanceLootCondition.builder(0.25f))
+                )
+        );
+        addDrop(ModBlocks.PRIXILIUM_RESIN);
         addDrop(ModBlocks.PRIXILIUM_LOG);
         addDrop(ModBlocks.PRIXILIUM_WOOD);
         addDrop(ModBlocks.PRIXILIUM_PLANKS);

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 20,
+  "experience": 0.1,
+  "group": "prixilium_shard_nugget",
+  "ingredient": "prixilium:prixilium_resin",
+  "result": {
+    "id": "prixilium:prixilium_shard_nugget"
+  }
+}
