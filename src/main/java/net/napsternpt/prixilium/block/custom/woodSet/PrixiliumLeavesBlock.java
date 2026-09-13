@@ -20,11 +20,8 @@ public class PrixiliumLeavesBlock extends UntintedParticleLeavesBlock {
     }
 
     @Override
-    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-    }
-
-    @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        super.randomTick(state, world, pos, random);
         new PrixiliumExpandMethod(world, pos);
     }
 }
