@@ -10,6 +10,8 @@
   "item.prixilium.virus_alive": "Virus",
   "item.prixilium.virus_alive.suffix": "Alive",
   "item.prixilium.virus_dead": "Virus §7(§cDead§7)",
+  "item.prixilium.prixilium_shard_nugget": "Prixilium Shard Nugget",
+  "item.prixilium.prixilium_shard": "Prixilium Shard",
   "item.prixilium.thermometer": "Thermometer",
   "item.prixilium.rifts_paw": "Rift's Paw",
   "item.prixilium.rifts_shell": "Rift's Shell",
@@ -187,6 +189,7 @@
   "block.prixilium.prixilium_grass": "Prixilium Grass",
 
   "block.prixilium.prixilium_leaves": "Prixilium Leaves",
+  "block.prixilium.prixilium_resin": "Prixilium Resin",
   "block.prixilium.prixilium_log": "Prixilium Log",
   "block.prixilium.prixilium_wood": "Prixilium Wood",
   "block.prixilium.prixilium_planks": "Prixilium Planks",
@@ -324,7 +327,7 @@
   "advancements.prixilium.smith.title": "Smith of the Void",
   "advancements.prixilium.smith.description": "Get a Prixilium Smithing Template",
   "advancements.prixilium.prixilium_hook.title": "Let's Go Flying!",
-  "advancements.prixilium.prixilium_hook.description": "Use the prixilium hook",
+  "advancements.prixilium.prixilium_hook.description": "Use the Prixilium hook",
   "advancements.prixilium.prixilium_food.title": "COOOOOOKING Boys",
   "advancements.prixilium.prixilium_food.description": "Get any type of prixiled food",
 

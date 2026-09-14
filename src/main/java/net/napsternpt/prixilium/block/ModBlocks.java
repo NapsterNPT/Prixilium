@@ -70,6 +70,9 @@ public class ModBlocks {
                     .burnable()
                     .nonOpaque()
                     .luminance(state -> 7)
+                    .replaceable()
+                    .noCollision()
+                    .pistonBehavior(PistonBehavior.DESTROY)
             ));
 
     public static final Block PRIXILIUM_LOG = registerBlock(name = "prixilium_log",
