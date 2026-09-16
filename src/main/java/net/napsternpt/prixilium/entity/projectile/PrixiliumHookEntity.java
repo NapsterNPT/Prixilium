@@ -7,6 +7,8 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.network.packet.s2c.play.EntityVelocityUpdateS2CPacket;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.storage.ReadView;
@@ -164,13 +166,19 @@ public class PrixiliumHookEntity extends ProjectileEntity {
                     if (newVelocity.length() > maxSpeed) {
                         newVelocity = newVelocity.normalize().multiply(maxSpeed);
                     }
-                    
+
                     owner.setVelocity(newVelocity);
                     owner.velocityDirty = true;
+                    if (owner instanceof ServerPlayerEntity serverPlayer) {
+                        serverPlayer.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(owner));
+                    }
                     owner.fallDistance = 0;
                 } else {
                     owner.setVelocity(owner.getVelocity().multiply(0.5, 0.5, 0.5));
                     owner.velocityDirty = true;
+                    if (owner instanceof ServerPlayerEntity serverPlayer) {
+                        serverPlayer.networkHandler.sendPacket(new EntityVelocityUpdateS2CPacket(owner));
+                    }
                 }
             }
         }
