@@ -3,29 +3,29 @@
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [22.5, 0, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"scale": [0.625, 0.625, 0.625]
 		},
 		"thirdperson_lefthand": {
 			"rotation": [22.5, 0, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"scale": [0.625, 0.625, 0.625]
 		},
 		"firstperson_righthand": {
 			"rotation": [0, 30, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"scale": [0.625, 0.625, 0.625]
 		},
 		"firstperson_lefthand": {
 			"rotation": [0, 30, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"scale": [0.625, 0.625, 0.625]
 		},
 		"ground": {
 			"scale": [0.25, 0.25, 0.25]
 		},
 		"gui": {
 			"rotation": [30, 45, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"scale": [0.625, 0.625, 0.625]
 		},
 		"fixed": {
-			"scale": [0.5, 0.5, 0.5]
+			"scale": [0.625, 0.625, 0.625]
 		}
 	}
 }
