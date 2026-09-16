@@ -37,7 +37,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 offerSmelting(List.of(ModBlocks.PRIXILIUM_RESIN), RecipeCategory.DECORATIONS, ModItems.PRIXILIUM_SHARD_NUGGET, 0.1f, 20, "prixilium_shard_nugget");
 
                 createShapeless(RecipeCategory.DECORATIONS, ModItems.PRIXILIUM_SHARD)
-                        .input(ModItems.PRIXILIUM_SHARD_NUGGET, 9)
+                        .input(ModItems.PRIXILIUM_SHARD_NUGGET, 4)
                         .criterion(hasItem(ModItems.PRIXILIUM_SHARD_NUGGET), conditionsFromItem(ModItems.PRIXILIUM_SHARD_NUGGET))
                         .offerTo(exporter);
 

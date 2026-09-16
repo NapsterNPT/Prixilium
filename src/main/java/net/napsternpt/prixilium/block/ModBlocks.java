@@ -22,7 +22,6 @@ import net.napsternpt.prixilium.world.tree.ModSaplingGenerators;
 public class ModBlocks {
     private static String name;
 
-    //region [Virus]
     public static final Block PRIXILIUM = registerBlock(name = "prixilium",
             new PrixiliumBlock(ModSaplingGenerators.PRIXILIUM, AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
@@ -46,7 +45,6 @@ public class ModBlocks {
                     .mapColor(MapColor.DARK_AQUA)
                     .allowsSpawning((state, world, pos, type) -> false)
             ));
-    //endregion
 
     //region [Planks]
     public static final Block PRIXILIUM_LEAVES = registerBlock(name = "prixilium_leaves",

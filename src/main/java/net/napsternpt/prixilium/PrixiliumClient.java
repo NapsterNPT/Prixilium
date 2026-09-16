@@ -25,6 +25,7 @@ public class PrixiliumClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_RESIN, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_DOOR, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_TRAPDOOR, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.BURNED_PRIXILIUM_DOOR, BlockRenderLayer.CUTOUT);

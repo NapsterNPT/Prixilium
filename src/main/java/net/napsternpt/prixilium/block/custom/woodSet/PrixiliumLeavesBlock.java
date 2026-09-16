@@ -1,11 +1,10 @@
 package net.napsternpt.prixilium.block.custom.woodSet;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.MultifaceBlock;
 import net.minecraft.block.UntintedParticleLeavesBlock;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -28,25 +27,25 @@ public class PrixiliumLeavesBlock extends UntintedParticleLeavesBlock {
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         super.randomTick(state, world, pos, random);
         new PrixiliumExpandMethod(world, pos);
-        if (world.getGameRules().getValue(ModGameRules.PRIXILIUM_EXPANDS)) {
-            Direction[] directions = Direction.values();
-            for (int i = 0; i < directions.length; i++) {
-                Direction direction = directions[random.nextInt(directions.length)];
-                BlockPos resinPos = pos.offset(direction);
-                if (!world.getBlockState(resinPos).isAir()) {
-                    continue;
-                }
-                BooleanProperty face = null;
-                for (Property<?> property : ModBlocks.PRIXILIUM_RESIN.getDefaultState().getProperties()) {
-                    if (property.getName().equals(direction.getOpposite().asString())) {
-                        face = (BooleanProperty) property;
-                        break;
-                    }
-                }
-                if (face != null) {
-                    world.setBlockState(resinPos, ModBlocks.PRIXILIUM_RESIN.getDefaultState().with(face, true));
-                    break;
-                }
+
+        if (!world.getGameRules().getValue(ModGameRules.PRIXILIUM_EXPANDS)) {
+            return;
+        }
+
+        Direction[] directions = Direction.values();
+        for (int i = 0; i < directions.length; i++) {
+            Direction direction = directions[random.nextInt(directions.length)];
+            BlockPos resinPos = pos.offset(direction);
+            BlockState existing = world.getBlockState(resinPos);
+            if (!existing.isAir() && !existing.isOf(ModBlocks.PRIXILIUM_RESIN)) {
+                continue;
+            }
+            BlockState grown = ((MultifaceBlock) ModBlocks.PRIXILIUM_RESIN).withDirection(
+                    existing.isOf(ModBlocks.PRIXILIUM_RESIN) ? existing : ModBlocks.PRIXILIUM_RESIN.getDefaultState(),
+                    world, resinPos, direction.getOpposite());
+            if (grown != null) {
+                world.setBlockState(resinPos, grown);
+                break;
             }
         }
     }

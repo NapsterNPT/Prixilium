@@ -27,7 +27,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                         .conditionally(RandomChanceLootCondition.builder(0.25f))
                 )
         );
-        addDrop(ModBlocks.PRIXILIUM_RESIN);
+        addDrop(ModBlocks.PRIXILIUM_RESIN, multifaceGrowthDrops(ModBlocks.PRIXILIUM_RESIN));
         addDrop(ModBlocks.PRIXILIUM_LOG);
         addDrop(ModBlocks.PRIXILIUM_WOOD);
         addDrop(ModBlocks.PRIXILIUM_PLANKS);
