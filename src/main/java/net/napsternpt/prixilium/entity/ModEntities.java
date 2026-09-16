@@ -33,14 +33,6 @@ public class ModEntities {
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "blockito")))
     );
 
-
-    // TEMPORARY: legacy alias to remove old blokito entities from world saves, REMOVE AFTER CLEANUP
-    public static final EntityType<BlockitoEntity> BLOKITO = Registry.register(Registries.ENTITY_TYPE,
-            Identifier.of(Prixilium.MOD_ID, "blokito"),
-            EntityType.Builder.create(BlockitoEntity::new, SpawnGroup.CREATURE)
-                    .dimensions(0.99F, 0.99F)
-                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "blokito")))
-    );
     public static final EntityType<AirisEntity> AIRIS = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "airis"),
             EntityType.Builder.create(AirisEntity::new, SpawnGroup.CREATURE)
