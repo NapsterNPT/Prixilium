@@ -187,6 +187,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_SHARD_NUGGET, Models.GENERATED);
         itemModelGenerator.register(ModItems.PRIXILIUM_SHARD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SHARPENED_SHARD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SHARD_STAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
 
         Identifier riftsPawGuiModel = Models.GENERATED.upload(

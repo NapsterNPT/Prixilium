@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "prixilium:prixilium_shard"
+  ],
+  "result": {
+    "count": 4,
+    "id": "prixilium:prixilium_shard_nugget"
+  }
+}

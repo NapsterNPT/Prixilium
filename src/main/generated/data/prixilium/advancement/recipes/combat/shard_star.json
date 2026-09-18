@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sharpened_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:sharpened_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:shard_star"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sharpened_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:shard_star"
+    ]
+  }
+}

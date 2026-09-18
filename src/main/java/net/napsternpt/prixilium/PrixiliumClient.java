@@ -50,6 +50,7 @@ public class PrixiliumClient implements ClientModInitializer {
 		EntityModelLayerRegistry.registerModelLayer(AirisModel.AIRIS, AirisModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.AIRIS, AirisRenderer::new);
 		EntityRendererFactories.register(ModEntities.PRIXILIUM_HOOK, PrixiliumHookRenderer::new);
+		EntityRendererFactories.register(ModEntities.SHARD_STAR, ShardStarEntityRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(RiftModel.RIFT, RiftModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.RIFT, RiftRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(RiftCoreModel.RIFT_CORE, RiftCoreModel::getTexturedModelData);

@@ -25,6 +25,8 @@ public class ModItemGroups {
                         entries.add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
                         entries.add(ModItems.PRIXILIUM_SHARD_NUGGET);
                         entries.add(ModItems.PRIXILIUM_SHARD);
+                        entries.add(ModItems.SHARPENED_SHARD);
+                        entries.add(ModItems.SHARD_STAR);
                         entries.add(ModItems.THERMOMETER);
                         entries.add(ModItems.RIFTS_PAW);
                         entries.add(ModItems.RIFTS_SHELL);

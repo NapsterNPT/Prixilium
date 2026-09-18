@@ -40,6 +40,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input(ModItems.PRIXILIUM_SHARD_NUGGET, 4)
                         .criterion(hasItem(ModItems.PRIXILIUM_SHARD_NUGGET), conditionsFromItem(ModItems.PRIXILIUM_SHARD_NUGGET))
                         .offerTo(exporter);
+                createShapeless(RecipeCategory.DECORATIONS, ModItems.PRIXILIUM_SHARD_NUGGET, 4)
+                        .input(ModItems.PRIXILIUM_SHARD)
+                        .criterion(hasItem(ModItems.PRIXILIUM_SHARD), conditionsFromItem(ModItems.PRIXILIUM_SHARD))
+                        .offerTo(exporter);
+
+                offerStonecuttingRecipe(RecipeCategory.MISC, ModItems.SHARPENED_SHARD, ModItems.PRIXILIUM_SHARD, 2);
+                createShaped(RecipeCategory.COMBAT, ModItems.SHARD_STAR)
+                        .input('!', ModItems.SHARPENED_SHARD)
+                        .pattern(" ! ")
+                        .pattern("! !")
+                        .pattern(" ! ")
+                        .criterion(hasItem(ModItems.SHARPENED_SHARD), conditionsFromItem(ModItems.SHARPENED_SHARD))
+                        .offerTo(exporter);
 
                 createShaped(RecipeCategory.MISC, ModItems.THERMOMETER)
                         .input('!', Items.REDSTONE)

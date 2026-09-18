@@ -51,6 +51,14 @@ public class ModItems {
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
 
+    public static final Item SHARPENED_SHARD = registerItem(name = "sharpened_shard", new Item(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+    ));
+
+    public static final Item SHARD_STAR = registerItem(name = "shard_star", new ShardStarItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+    ));
+
     public static final Item THERMOMETER = registerItem(name = "thermometer", new ThermometerItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
