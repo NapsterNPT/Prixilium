@@ -20,6 +20,6 @@ public class ModParticles {
     }
 
     public static void registerParticles() {
-        Prixilium.LOGGER.info("Registering Prixilium Particles.");
+        Prixilium.LOGGER.info("Registering Particles.");
     }
 }

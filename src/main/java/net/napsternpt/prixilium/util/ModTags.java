@@ -67,7 +67,9 @@ public class ModTags {
     }
 
     public static class Biomes {
+        public static final TagKey<Biome> PRIXILIUM_TREE_BIOMES = createTag("has_prixilium_trees");
         public static final TagKey<Biome> STRUCTURE_BIOME_TAG = createTag("has_structure/structures");
+        public static final TagKey<Biome> OPENS_PRIXILIUM_PERL = createTag("opens_prixilium_perl");
 
         private static TagKey<Biome> createTag(String name) {
             return TagKey.of(RegistryKeys.BIOME, Identifier.of(Prixilium.MOD_ID, name));

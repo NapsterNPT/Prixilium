@@ -26,20 +26,7 @@
   "effects": {
     "water_color": "#6baf00"
   },
-  "features": [
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      "prixilium:prixilium_tree"
-    ]
-  ],
+  "features": [],
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {

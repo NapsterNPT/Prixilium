@@ -18,6 +18,6 @@ public class ModChunkGenerators {
 	}
 
 	public static void registerChunkGenerators() {
-		Prixilium.LOGGER.info("Registering Prixilium Chunk Generators.");
+		Prixilium.LOGGER.info("Registering Chunk Generators.");
 	}
 }

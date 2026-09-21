@@ -57,6 +57,7 @@ public class ModItems {
 
     public static final Item SHARD_STAR = registerItem(name = "shard_star", new ShardStarItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(99)
     ));
 
     public static final Item THERMOMETER = registerItem(name = "thermometer", new ThermometerItem(new Item.Settings()
@@ -988,5 +989,5 @@ public class ModItems {
         return Registry.register(Registries.ITEM, Identifier.of(Prixilium.MOD_ID, name), item);
     }
 
-    public static void registerItems() {Prixilium.LOGGER.info("Registering Prixilium Items.");}
+    public static void registerItems() {Prixilium.LOGGER.info("Registering Items.");}
 }

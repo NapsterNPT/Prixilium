@@ -16,6 +16,6 @@ public class ModScreenHandlers {
                     new ExtendedScreenHandlerType<>(ObeliskOfCharmsScreenHandler::new, BlockPos.PACKET_CODEC));
 
     public static void registerScreenHandlers() {
-        Prixilium.LOGGER.info("Registering Prixilium Screen Handlers.");
+        Prixilium.LOGGER.info("Registering Screen Handlers.");
     }
 }

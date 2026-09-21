@@ -25,6 +25,11 @@ public class PrixiliumClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.POTTED_PRIXILIUM, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.OPEN_PRIXILIUM_PERL, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.POTTED_OPEN_PRIXILIUM_PERL, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.CLOSED_PRIXILIUM_PERL, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.POTTED_CLOSED_PRIXILIUM_PERL, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_RESIN, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_DOOR, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.PRIXILIUM_TRAPDOOR, BlockRenderLayer.CUTOUT);

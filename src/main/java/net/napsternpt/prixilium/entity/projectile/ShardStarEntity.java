@@ -36,6 +36,12 @@ public class ShardStarEntity extends PersistentProjectileEntity implements Flyin
         super(entityType, world);
     }
 
+    public ShardStarEntity(World world, double x, double y, double z, ItemStack stack, ItemStack shotFrom) {
+        super(ModEntities.SHARD_STAR, x, y, z, world, stack, shotFrom);
+        this.pickupType = PickupPermission.ALLOWED;
+        this.setDamage(MIN_DAMAGE);
+    }
+
     public ShardStarEntity(World world, PlayerEntity owner, float power) {
         super(ModEntities.SHARD_STAR, owner, world, new ItemStack(ModItems.SHARD_STAR), null);
 
@@ -60,7 +66,7 @@ public class ShardStarEntity extends PersistentProjectileEntity implements Flyin
 
     @Override
     protected boolean canHit(Entity entity) {
-        return entity != this.getOwner() && super.canHit(entity);
+        return super.canHit(entity);
     }
 
     @Override

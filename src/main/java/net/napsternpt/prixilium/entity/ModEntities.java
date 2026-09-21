@@ -12,21 +12,6 @@ import net.napsternpt.prixilium.entity.projectile.PrixiliumHookEntity;
 import net.napsternpt.prixilium.entity.projectile.ShardStarEntity;
 
 public class ModEntities {
-
-    public static final EntityType<PrixiliumHookEntity> PRIXILIUM_HOOK = Registry.register(Registries.ENTITY_TYPE,
-            Identifier.of(Prixilium.MOD_ID, "prixilium_hook"),
-            EntityType.Builder.<PrixiliumHookEntity>create(PrixiliumHookEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.0F, 0.0F)
-                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "prixilium_hook")))
-    );
-
-    public static final EntityType<ShardStarEntity> SHARD_STAR = Registry.register(Registries.ENTITY_TYPE,
-            Identifier.of(Prixilium.MOD_ID, "shard_star"),
-            EntityType.Builder.<ShardStarEntity>create(ShardStarEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.3F, 0.3F)
-                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "shard_star")))
-    );
-
     public static final EntityType<BlikoEntity> BLIKO = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "bliko"),
             EntityType.Builder.create(BlikoEntity::new, SpawnGroup.CREATURE)
@@ -62,7 +47,23 @@ public class ModEntities {
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "rift_core")))
     );
 
+    // Projectiles
+    public static final EntityType<PrixiliumHookEntity> PRIXILIUM_HOOK = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Prixilium.MOD_ID, "prixilium_hook"),
+            EntityType.Builder.<PrixiliumHookEntity>create(PrixiliumHookEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.0F, 0.0F)
+                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "prixilium_hook")))
+    );
+
+    public static final EntityType<ShardStarEntity> SHARD_STAR = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Prixilium.MOD_ID, "shard_star"),
+            EntityType.Builder.<ShardStarEntity>create(ShardStarEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.3F, 0.3F)
+                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "shard_star")))
+    );
+
+
     public static void registerEntities() {
-        Prixilium.LOGGER.info("Registering Prixilium Entities.");
+        Prixilium.LOGGER.info("Registering Entities.");
     }
 }

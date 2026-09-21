@@ -151,7 +151,7 @@ public class ModStructures {
     }
 
     public static void spawnStructures(MinecraftServer server, ServerWorld world) {
-        Prixilium.LOGGER.info("Registering Prixilium Structures.");
+        Prixilium.LOGGER.info("Registering Structures.");
 
         Set<String> pathEnabled = readPathEnabled(server);
         NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();

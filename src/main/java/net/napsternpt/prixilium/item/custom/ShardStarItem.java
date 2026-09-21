@@ -2,17 +2,22 @@ package net.napsternpt.prixilium.item.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.BowItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ProjectileItem;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Position;
 import net.minecraft.world.World;
 import net.napsternpt.prixilium.entity.projectile.ShardStarEntity;
 
-public class ShardStarItem extends BowItem {
-    public ShardStarItem(Settings settings) {
+public class ShardStarItem extends BowItem implements ProjectileItem {
+    public ShardStarItem(Item.Settings settings) {
         super(settings);
     }
 
@@ -39,5 +44,10 @@ public class ShardStarItem extends BowItem {
             stack.decrement(1);
         }
         return true;
+    }
+
+    @Override
+    public ProjectileEntity createEntity(World world, Position position, ItemStack stack, Direction direction) {
+        return new ShardStarEntity(world, position.getX(), position.getY(), position.getZ(), stack.copyWithCount(1), null);
     }
 }
