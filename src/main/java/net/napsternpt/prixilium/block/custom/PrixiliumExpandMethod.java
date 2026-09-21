@@ -35,7 +35,7 @@ public class PrixiliumExpandMethod {
                 // Prixilium
                 if (targetState.isIn(ModTags.Blocks.PRIXILIUM_CONVERTIBLE)) {
                     world.setBlockState(targetPos, ModBlocks.PRIXILIUM.getDefaultState());
-                    world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS);
+                    world.playSound(null, pos, ModSounds.PRIXILIUM_EXPAND, SoundCategory.BLOCKS, 0.25F, 1);
                     world.spawnParticles(ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
                             3, 0.2, 0.2, 0.2, 0);
                     for (ServerPlayerEntity player : world.getPlayers()) {

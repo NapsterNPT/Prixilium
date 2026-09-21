@@ -66,6 +66,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.HOE_MINEABLE)
                 .add(ModBlocks.PRIXILIUM_LEAVES);
 
+        valueLookupBuilder(BlockTags.SWORD_EFFICIENT)
+                .add(ModBlocks.PRIXILIUM_LEAVES);
+
         valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.REACTOR_CORE)
                 .add(ModBlocks.VIRUS_REACTOR)
@@ -93,14 +96,33 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.SAPLINGS)
                 .add(ModBlocks.PRIXILIUM);
 
+        valueLookupBuilder(BlockTags.SMALL_FLOWERS)
+                .add(ModBlocks.OPEN_PRIXILIUM_PERL)
+                .add(ModBlocks.CLOSED_PRIXILIUM_PERL);
+
+        valueLookupBuilder(BlockTags.FLOWER_POTS)
+                .add(ModBlocks.POTTED_PRIXILIUM)
+                .add(ModBlocks.POTTED_OPEN_PRIXILIUM_PERL)
+                .add(ModBlocks.POTTED_CLOSED_PRIXILIUM_PERL);
+
         valueLookupBuilder(BlockTags.DIRT)
                 .add(ModBlocks.PRIXILIUM_GRASS);
 
         valueLookupBuilder(BlockTags.ENDERMAN_HOLDABLE)
                 .add(ModBlocks.PRIXILIUM_GRASS);
 
+        valueLookupBuilder(BlockTags.SNOW_LAYER_CAN_SURVIVE_ON)
+                .add(ModBlocks.PRIXILIUM_GRASS);
+
         valueLookupBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.PRIXILIUM_LEAVES);
+
+        valueLookupBuilder(BlockTags.REPLACEABLE_BY_TREES)
+                .add(ModBlocks.PRIXILIUM_LEAVES)
+                .add(ModBlocks.PRIXILIUM)
+                .add(ModBlocks.PRIXILIUM_RESIN)
+                .add(ModBlocks.OPEN_PRIXILIUM_PERL)
+                .add(ModBlocks.CLOSED_PRIXILIUM_PERL);
 
         valueLookupBuilder(BlockTags.COMPLETES_FIND_TREE_TUTORIAL)
                 .add(ModBlocks.PRIXILIUM_LOG)
@@ -158,6 +180,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE);
 
         valueLookupBuilder(BlockTags.DOORS)
+                .add(ModBlocks.PRIXILIUM_DOOR)
+                .add(ModBlocks.BURNED_PRIXILIUM_DOOR);
+
+        valueLookupBuilder(BlockTags.MOB_INTERACTABLE_DOORS)
                 .add(ModBlocks.PRIXILIUM_DOOR)
                 .add(ModBlocks.BURNED_PRIXILIUM_DOOR);
 

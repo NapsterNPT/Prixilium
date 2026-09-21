@@ -69,6 +69,8 @@ public class ModItemGroups {
                         //region [Blocks]
 
                         entries.add(ModBlocks.PRIXILIUM);
+                        entries.add(ModBlocks.OPEN_PRIXILIUM_PERL);
+                        entries.add(ModBlocks.CLOSED_PRIXILIUM_PERL);
                         entries.add(ModBlocks.PRIXILIUM_GRASS);
 
                         entries.add(ModBlocks.PRIXILIUM_LEAVES);
@@ -314,6 +316,6 @@ public class ModItemGroups {
                     }).build());
 
     public static void registerItemGroups() {
-        Prixilium.LOGGER.info("Registering Prixilium Item Groups.");
+        Prixilium.LOGGER.info("Registering Item Groups.");
     }
 }

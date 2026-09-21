@@ -16,6 +16,6 @@ public class ModGameRules {
             .buildAndRegister(Identifier.of(Prixilium.MOD_ID, "prixilium_expands"));
 
     public static void registerGameRules() {
-        Prixilium.LOGGER.info("Registering Prixilium GameRules.");
+        Prixilium.LOGGER.info("Registering GameRules.");
     }
 }

@@ -20,5 +20,5 @@ public class ModPotions {
         return Registry.registerReference(Registries.POTION, Identifier.of(Prixilium.MOD_ID, potion.getBaseName()), potion);
     }
 
-    public static void registerPotions() {Prixilium.LOGGER.info("Registering Prixilium Potions.");}
+    public static void registerPotions() {Prixilium.LOGGER.info("Registering Potions.");}
 }

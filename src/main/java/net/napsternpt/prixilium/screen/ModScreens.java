@@ -10,6 +10,6 @@ public class ModScreens {
     }
 
     public static void registerScreens() {
-        Prixilium.LOGGER.info("Registering Prixilium Screens.");
+        Prixilium.LOGGER.info("Registering Screens.");
     }
 }

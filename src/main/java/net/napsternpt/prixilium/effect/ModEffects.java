@@ -28,6 +28,6 @@ public class ModEffects {
     }
 
     public static void registerEffects() {
-        Prixilium.LOGGER.info("Registering Prixilium Effects.");
+        Prixilium.LOGGER.info("Registering Effects.");
     }
 }

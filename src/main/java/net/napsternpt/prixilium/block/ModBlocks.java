@@ -34,8 +34,55 @@ public class ModBlocks {
                     .offset(AbstractBlock.OffsetType.XYZ)
                     .pistonBehavior(PistonBehavior.DESTROY)
                     .luminance(state -> 7)
-            )
-    );
+            ));
+
+    public static final Block POTTED_PRIXILIUM = registerBlock(name = "potted_prixilium",
+            new FlowerPotBlock(PRIXILIUM, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .breakInstantly()
+                    .nonOpaque()
+                    .pistonBehavior(PistonBehavior.DESTROY)
+            ), false);
+
+    public static final Block OPEN_PRIXILIUM_PERL = registerBlock(name = "open_prixilium_perl",
+            new PrixiliumPerlBlock(PrixiliumPerlBlock.PrixiliumPerlState.OPEN, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .mapColor(MapColor.GRAY)
+                    .noCollision()
+                    .breakInstantly()
+                    .sounds(BlockSoundGroup.GLASS)
+                    .offset(AbstractBlock.OffsetType.XZ)
+                    .pistonBehavior(PistonBehavior.DESTROY)
+                    .ticksRandomly()
+            ));
+
+    public static final Block POTTED_OPEN_PRIXILIUM_PERL = registerBlock(name = "potted_open_prixilium_perl",
+            new FlowerPotBlock(OPEN_PRIXILIUM_PERL, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .breakInstantly()
+                    .nonOpaque()
+                    .pistonBehavior(PistonBehavior.DESTROY)
+            ), false);
+
+    public static final Block CLOSED_PRIXILIUM_PERL = registerBlock(name = "closed_prixilium_perl",
+            new PrixiliumPerlBlock(PrixiliumPerlBlock.PrixiliumPerlState.CLOSED, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .mapColor(MapColor.GRAY)
+                    .noCollision()
+                    .breakInstantly()
+                    .sounds(BlockSoundGroup.GLASS)
+                    .offset(AbstractBlock.OffsetType.XZ)
+                    .pistonBehavior(PistonBehavior.DESTROY)
+                    .ticksRandomly()
+            ));
+
+    public static final Block POTTED_CLOSED_PRIXILIUM_PERL = registerBlock(name = "potted_closed_prixilium_perl",
+            new FlowerPotBlock(CLOSED_PRIXILIUM_PERL, AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .breakInstantly()
+                    .nonOpaque()
+                    .pistonBehavior(PistonBehavior.DESTROY)
+            ), false);
 
     public static final Block PRIXILIUM_GRASS = registerBlock(name = "prixilium_grass",
             new PrixiliumGrassBlock(AbstractBlock.Settings.create()
@@ -447,6 +494,6 @@ public class ModBlocks {
     }
 
     public static void registerBlocks() {
-        Prixilium.LOGGER.info("Registering Prixilium Blocks.");
+        Prixilium.LOGGER.info("Registering Blocks.");
     }
 }

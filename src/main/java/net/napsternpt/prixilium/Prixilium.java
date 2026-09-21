@@ -27,6 +27,7 @@ import net.napsternpt.prixilium.screen.ModScreenHandlers;
 import net.napsternpt.prixilium.screen.ModScreens;
 import net.napsternpt.prixilium.sound.ModSounds;
 import net.napsternpt.prixilium.util.ModDataComponentTypes;
+import net.napsternpt.prixilium.util.ModDispenserBehaviors;
 import net.napsternpt.prixilium.util.ModGameRules;
 import net.napsternpt.prixilium.util.ModItemGroups;
 import net.napsternpt.prixilium.util.TimeStopState;
@@ -55,6 +56,7 @@ public class Prixilium implements ModInitializer {
 		});
 
 		ModBlocks.registerBlocks();
+		ModDispenserBehaviors.register();
 		ModBlockEntities.registerBlockEntities();
 		ModDataComponentTypes.registerDataComponentTypes();
 		ModSounds.registerSounds();

@@ -20,6 +20,6 @@ public class ModBlockEntities {
                     FabricBlockEntityTypeBuilder.create(ObeliskOfCharmsBlockEntity::new, ModBlocks.OBELISK_OF_CHARMS).build());
 
     public static void registerBlockEntities() {
-        Prixilium.LOGGER.info("Registering Prixilium Block Entities.");
+        Prixilium.LOGGER.info("Registering Block Entities.");
     }
 }

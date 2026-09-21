@@ -83,6 +83,185 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.MACE_ENCHANTABLE)
                 .add(ModItems.PRIXILED_MACE);
 
+        valueLookupBuilder(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(ModItems.PRIXILED_WOODEN_SHOVEL)
+                .add(ModItems.PRIXILED_STONE_SHOVEL)
+                .add(ModItems.PRIXILED_COPPER_SHOVEL)
+                .add(ModItems.PRIXILED_IRON_SHOVEL)
+                .add(ModItems.PRIXILED_GOLDEN_SHOVEL)
+                .add(ModItems.PRIXILED_DIAMOND_SHOVEL)
+                .add(ModItems.PRIXILED_NETHERITE_SHOVEL)
+
+                .add(ModItems.PRIXILED_WOODEN_PICKAXE)
+                .add(ModItems.PRIXILED_STONE_PICKAXE)
+                .add(ModItems.PRIXILED_COPPER_PICKAXE)
+                .add(ModItems.PRIXILED_IRON_PICKAXE)
+                .add(ModItems.PRIXILED_GOLDEN_PICKAXE)
+                .add(ModItems.PRIXILED_DIAMOND_PICKAXE)
+                .add(ModItems.PRIXILED_NETHERITE_PICKAXE)
+
+                .add(ModItems.PRIXILED_WOODEN_AXE)
+                .add(ModItems.PRIXILED_STONE_AXE)
+                .add(ModItems.PRIXILED_COPPER_AXE)
+                .add(ModItems.PRIXILED_IRON_AXE)
+                .add(ModItems.PRIXILED_GOLDEN_AXE)
+                .add(ModItems.PRIXILED_DIAMOND_AXE)
+                .add(ModItems.PRIXILED_NETHERITE_AXE)
+
+                .add(ModItems.PRIXILED_WOODEN_HOE)
+                .add(ModItems.PRIXILED_STONE_HOE)
+                .add(ModItems.PRIXILED_COPPER_HOE)
+                .add(ModItems.PRIXILED_IRON_HOE)
+                .add(ModItems.PRIXILED_GOLDEN_HOE)
+                .add(ModItems.PRIXILED_DIAMOND_HOE)
+                .add(ModItems.PRIXILED_NETHERITE_HOE)
+
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD)
+
+                .add(ModItems.PRIXILED_WOODEN_SPEAR)
+                .add(ModItems.PRIXILED_STONE_SPEAR)
+                .add(ModItems.PRIXILED_COPPER_SPEAR)
+                .add(ModItems.PRIXILED_IRON_SPEAR)
+                .add(ModItems.PRIXILED_GOLDEN_SPEAR)
+                .add(ModItems.PRIXILED_DIAMOND_SPEAR)
+                .add(ModItems.PRIXILED_NETHERITE_SPEAR)
+
+                .add(ModItems.PRIXILED_BOW)
+                .add(ModItems.PRIXILED_MACE);
+
+        valueLookupBuilder(ItemTags.VANISHING_ENCHANTABLE)
+                .add(ModItems.PRIXILED_WOODEN_SHOVEL)
+                .add(ModItems.PRIXILED_STONE_SHOVEL)
+                .add(ModItems.PRIXILED_COPPER_SHOVEL)
+                .add(ModItems.PRIXILED_IRON_SHOVEL)
+                .add(ModItems.PRIXILED_GOLDEN_SHOVEL)
+                .add(ModItems.PRIXILED_DIAMOND_SHOVEL)
+                .add(ModItems.PRIXILED_NETHERITE_SHOVEL)
+
+                .add(ModItems.PRIXILED_WOODEN_PICKAXE)
+                .add(ModItems.PRIXILED_STONE_PICKAXE)
+                .add(ModItems.PRIXILED_COPPER_PICKAXE)
+                .add(ModItems.PRIXILED_IRON_PICKAXE)
+                .add(ModItems.PRIXILED_GOLDEN_PICKAXE)
+                .add(ModItems.PRIXILED_DIAMOND_PICKAXE)
+                .add(ModItems.PRIXILED_NETHERITE_PICKAXE)
+
+                .add(ModItems.PRIXILED_WOODEN_AXE)
+                .add(ModItems.PRIXILED_STONE_AXE)
+                .add(ModItems.PRIXILED_COPPER_AXE)
+                .add(ModItems.PRIXILED_IRON_AXE)
+                .add(ModItems.PRIXILED_GOLDEN_AXE)
+                .add(ModItems.PRIXILED_DIAMOND_AXE)
+                .add(ModItems.PRIXILED_NETHERITE_AXE)
+
+                .add(ModItems.PRIXILED_WOODEN_HOE)
+                .add(ModItems.PRIXILED_STONE_HOE)
+                .add(ModItems.PRIXILED_COPPER_HOE)
+                .add(ModItems.PRIXILED_IRON_HOE)
+                .add(ModItems.PRIXILED_GOLDEN_HOE)
+                .add(ModItems.PRIXILED_DIAMOND_HOE)
+                .add(ModItems.PRIXILED_NETHERITE_HOE)
+
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD)
+
+                .add(ModItems.PRIXILED_WOODEN_SPEAR)
+                .add(ModItems.PRIXILED_STONE_SPEAR)
+                .add(ModItems.PRIXILED_COPPER_SPEAR)
+                .add(ModItems.PRIXILED_IRON_SPEAR)
+                .add(ModItems.PRIXILED_GOLDEN_SPEAR)
+                .add(ModItems.PRIXILED_DIAMOND_SPEAR)
+                .add(ModItems.PRIXILED_NETHERITE_SPEAR)
+
+                .add(ModItems.PRIXILED_BOW)
+                .add(ModItems.PRIXILED_MACE);
+
+        valueLookupBuilder(ItemTags.WEAPON_ENCHANTABLE)
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD)
+
+                .add(ModItems.PRIXILED_WOODEN_SPEAR)
+                .add(ModItems.PRIXILED_STONE_SPEAR)
+                .add(ModItems.PRIXILED_COPPER_SPEAR)
+                .add(ModItems.PRIXILED_IRON_SPEAR)
+                .add(ModItems.PRIXILED_GOLDEN_SPEAR)
+                .add(ModItems.PRIXILED_DIAMOND_SPEAR)
+                .add(ModItems.PRIXILED_NETHERITE_SPEAR)
+
+                .add(ModItems.PRIXILED_MACE);
+
+        valueLookupBuilder(ItemTags.MELEE_WEAPON_ENCHANTABLE)
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD)
+
+                .add(ModItems.PRIXILED_WOODEN_SPEAR)
+                .add(ModItems.PRIXILED_STONE_SPEAR)
+                .add(ModItems.PRIXILED_COPPER_SPEAR)
+                .add(ModItems.PRIXILED_IRON_SPEAR)
+                .add(ModItems.PRIXILED_GOLDEN_SPEAR)
+                .add(ModItems.PRIXILED_DIAMOND_SPEAR)
+                .add(ModItems.PRIXILED_NETHERITE_SPEAR)
+
+                .add(ModItems.PRIXILED_MACE);
+
+        valueLookupBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD)
+
+                .add(ModItems.PRIXILED_WOODEN_SPEAR)
+                .add(ModItems.PRIXILED_STONE_SPEAR)
+                .add(ModItems.PRIXILED_COPPER_SPEAR)
+                .add(ModItems.PRIXILED_IRON_SPEAR)
+                .add(ModItems.PRIXILED_GOLDEN_SPEAR)
+                .add(ModItems.PRIXILED_DIAMOND_SPEAR)
+                .add(ModItems.PRIXILED_NETHERITE_SPEAR)
+
+                .add(ModItems.PRIXILED_MACE);
+
+        valueLookupBuilder(ItemTags.SWEEPING_ENCHANTABLE)
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD);
+
+        valueLookupBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
+                .add(ModItems.PRIXILED_WOODEN_SWORD)
+                .add(ModItems.PRIXILED_STONE_SWORD)
+                .add(ModItems.PRIXILED_COPPER_SWORD)
+                .add(ModItems.PRIXILED_IRON_SWORD)
+                .add(ModItems.PRIXILED_GOLDEN_SWORD)
+                .add(ModItems.PRIXILED_DIAMOND_SWORD)
+                .add(ModItems.PRIXILED_NETHERITE_SWORD);
+
         //endregion
 
         //region [Armor]
@@ -124,6 +303,88 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_LEATHER_LEGGINGS)
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)
                 .add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
+
+        valueLookupBuilder(ItemTags.FOOT_ARMOR)
+                .add(ModItems.PRIXILED_LEATHER_BOOTS)
+                .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
+                .add(ModItems.PRIXILED_COPPER_BOOTS)
+                .add(ModItems.PRIXILED_IRON_BOOTS)
+                .add(ModItems.PRIXILED_GOLDEN_BOOTS)
+                .add(ModItems.PRIXILED_DIAMOND_BOOTS)
+                .add(ModItems.PRIXILED_NETHERITE_BOOTS);
+
+        valueLookupBuilder(ItemTags.LEG_ARMOR)
+                .add(ModItems.PRIXILED_LEATHER_LEGGINGS)
+                .add(ModItems.PRIXILED_CHAINMAIL_LEGGINGS)
+                .add(ModItems.PRIXILED_COPPER_LEGGINGS)
+                .add(ModItems.PRIXILED_IRON_LEGGINGS)
+                .add(ModItems.PRIXILED_GOLDEN_LEGGINGS)
+                .add(ModItems.PRIXILED_DIAMOND_LEGGINGS)
+                .add(ModItems.PRIXILED_NETHERITE_LEGGINGS);
+
+        valueLookupBuilder(ItemTags.CHEST_ARMOR)
+                .add(ModItems.PRIXILED_LEATHER_CHESTPLATE)
+                .add(ModItems.PRIXILED_CHAINMAIL_CHESTPLATE)
+                .add(ModItems.PRIXILED_COPPER_CHESTPLATE)
+                .add(ModItems.PRIXILED_IRON_CHESTPLATE)
+                .add(ModItems.PRIXILED_GOLDEN_CHESTPLATE)
+                .add(ModItems.PRIXILED_DIAMOND_CHESTPLATE)
+                .add(ModItems.PRIXILED_NETHERITE_CHESTPLATE);
+
+        valueLookupBuilder(ItemTags.HEAD_ARMOR)
+                .add(ModItems.PRIXILED_LEATHER_HELMET)
+                .add(ModItems.PRIXILED_CHAINMAIL_HELMET)
+                .add(ModItems.PRIXILED_COPPER_HELMET)
+                .add(ModItems.PRIXILED_IRON_HELMET)
+                .add(ModItems.PRIXILED_GOLDEN_HELMET)
+                .add(ModItems.PRIXILED_DIAMOND_HELMET)
+                .add(ModItems.PRIXILED_NETHERITE_HELMET)
+                .add(ModItems.PRIXILED_TURTLE_HELMET);
+
+        valueLookupBuilder(ItemTags.ARMOR_ENCHANTABLE)
+                .add(ModItems.PRIXILED_LEATHER_HELMET)
+                .add(ModItems.PRIXILED_LEATHER_CHESTPLATE)
+                .add(ModItems.PRIXILED_LEATHER_LEGGINGS)
+                .add(ModItems.PRIXILED_LEATHER_BOOTS)
+                .add(ModItems.PRIXILED_CHAINMAIL_HELMET)
+                .add(ModItems.PRIXILED_CHAINMAIL_CHESTPLATE)
+                .add(ModItems.PRIXILED_CHAINMAIL_LEGGINGS)
+                .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
+                .add(ModItems.PRIXILED_COPPER_HELMET)
+                .add(ModItems.PRIXILED_COPPER_CHESTPLATE)
+                .add(ModItems.PRIXILED_COPPER_LEGGINGS)
+                .add(ModItems.PRIXILED_COPPER_BOOTS)
+                .add(ModItems.PRIXILED_IRON_HELMET)
+                .add(ModItems.PRIXILED_IRON_CHESTPLATE)
+                .add(ModItems.PRIXILED_IRON_LEGGINGS)
+                .add(ModItems.PRIXILED_IRON_BOOTS)
+                .add(ModItems.PRIXILED_GOLDEN_HELMET)
+                .add(ModItems.PRIXILED_GOLDEN_CHESTPLATE)
+                .add(ModItems.PRIXILED_GOLDEN_LEGGINGS)
+                .add(ModItems.PRIXILED_GOLDEN_BOOTS)
+                .add(ModItems.PRIXILED_DIAMOND_HELMET)
+                .add(ModItems.PRIXILED_DIAMOND_CHESTPLATE)
+                .add(ModItems.PRIXILED_DIAMOND_LEGGINGS)
+                .add(ModItems.PRIXILED_DIAMOND_BOOTS)
+                .add(ModItems.PRIXILED_NETHERITE_HELMET)
+                .add(ModItems.PRIXILED_NETHERITE_CHESTPLATE)
+                .add(ModItems.PRIXILED_NETHERITE_LEGGINGS)
+                .add(ModItems.PRIXILED_NETHERITE_BOOTS)
+                .add(ModItems.PRIXILED_TURTLE_HELMET);
+
+        valueLookupBuilder(ItemTags.HARNESSES)
+                .add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR)
+                .add(ModItems.PRIXILED_COPPER_HORSE_ARMOR)
+                .add(ModItems.PRIXILED_IRON_HORSE_ARMOR)
+                .add(ModItems.PRIXILED_GOLDEN_HORSE_ARMOR)
+                .add(ModItems.PRIXILED_DIAMOND_HORSE_ARMOR)
+                .add(ModItems.PRIXILED_NETHERITE_HORSE_ARMOR);
+
+        valueLookupBuilder(ItemTags.PIGLIN_SAFE_ARMOR)
+                .add(ModItems.PRIXILED_GOLDEN_HELMET)
+                .add(ModItems.PRIXILED_GOLDEN_CHESTPLATE)
+                .add(ModItems.PRIXILED_GOLDEN_LEGGINGS)
+                .add(ModItems.PRIXILED_GOLDEN_BOOTS);
 
         //endregion
 
@@ -231,6 +492,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.PRIXILIUM_PLANKS.asItem())
                 .add(ModBlocks.BURNED_PRIXILIUM_PLANKS.asItem());
+
+        valueLookupBuilder(ItemTags.SAPLINGS)
+                .add(ModBlocks.PRIXILIUM.asItem());
+
+        valueLookupBuilder(ItemTags.SMALL_FLOWERS)
+                .add(ModBlocks.OPEN_PRIXILIUM_PERL.asItem())
+                .add(ModBlocks.CLOSED_PRIXILIUM_PERL.asItem());
 
         // Mod Tags
         valueLookupBuilder(ModTags.Items.TEMPERATURE_TOOLS)

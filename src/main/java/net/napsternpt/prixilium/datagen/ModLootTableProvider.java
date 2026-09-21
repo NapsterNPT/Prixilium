@@ -18,7 +18,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.PRIXILIUM, drops(ModBlocks.PRIXILIUM));
+        addDrop(ModBlocks.PRIXILIUM);
+        addPottedPlantDrops(ModBlocks.POTTED_PRIXILIUM);
+        addDrop(ModBlocks.OPEN_PRIXILIUM_PERL);
+        addPottedPlantDrops(ModBlocks.POTTED_OPEN_PRIXILIUM_PERL);
+        addDrop(ModBlocks.CLOSED_PRIXILIUM_PERL);
+        addPottedPlantDrops(ModBlocks.POTTED_CLOSED_PRIXILIUM_PERL);
+
         addDrop(ModBlocks.PRIXILIUM_GRASS, drops(ModBlocks.PRIXILIUM_GRASS, Blocks.DIRT));
 
         addDrop(ModBlocks.PRIXILIUM_LEAVES, leavesDrops(ModBlocks.PRIXILIUM_LEAVES, ModBlocks.PRIXILIUM, 0.0625F)

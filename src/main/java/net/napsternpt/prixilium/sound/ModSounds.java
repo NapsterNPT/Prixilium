@@ -40,6 +40,6 @@ public class ModSounds {
     }
 
     public static void registerSounds() {
-        Prixilium.LOGGER.info("Registering Prixilium Sounds.");
+        Prixilium.LOGGER.info("Registering Sounds.");
     }
 }
