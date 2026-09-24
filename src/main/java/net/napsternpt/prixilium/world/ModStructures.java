@@ -33,14 +33,14 @@ import java.util.Optional;
 import java.util.Set;
 
 public class ModStructures {
-    public static final Identifier START_JIGSAW_NAME = Identifier.of(Prixilium.MOD_ID, "anchor");
+    public static final Identifier START_JIGSAW_NAME = Identifier.of(Prixilium.MOD_ID, "start");
 
     public static void placeStructure(MinecraftServer server, ServerWorld world, String structureName, BlockPos centerPos) {
         world.getChunk(centerPos);
         NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();
         BlockPos pos = new BlockPos(centerPos.getX(), 0, centerPos.getZ());
 
-        RegistryKey<StructurePool> poolKey = RegistryKey.of(RegistryKeys.TEMPLATE_POOL, Identifier.of(Prixilium.MOD_ID, structureName + "/start_pool"));
+        RegistryKey<StructurePool> poolKey = RegistryKey.of(RegistryKeys.TEMPLATE_POOL, Identifier.of(Prixilium.MOD_ID, structureName));
         Registry<StructurePool> poolRegistry = server.getRegistryManager().getOrThrow(RegistryKeys.TEMPLATE_POOL);
         StructurePool poolValue = poolRegistry.get(poolKey);
         if (poolValue == null) return;

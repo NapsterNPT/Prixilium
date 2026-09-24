@@ -2,7 +2,7 @@
     "fallback": "minecraft:empty",
     "elements": [
         {
-            "weight": 1,
+            "weight": 4,
             "element": {
                 "element_type": "single_pool_element",
                 "location": "prixilium:shaft/four_way",
@@ -11,34 +11,7 @@
             }
         },
         {
-            "weight": 1,
-            "element": {
-                "element_type": "single_pool_element",
-                "location": "prixilium:shaft/ladder",
-                "projection": "rigid",
-                "processors": []
-            }
-        },
-        {
-            "weight": 4,
-            "element": {
-                "element_type": "single_pool_element",
-                "location": "prixilium:shaft/one_way",
-                "projection": "rigid",
-                "processors": []
-            }
-        },
-        {
-            "weight": 1,
-            "element": {
-                "element_type": "single_pool_element",
-                "location": "prixilium:shaft/stairs",
-                "projection": "rigid",
-                "processors": []
-            }
-        },
-        {
-            "weight": 2,
+            "weight": 5,
             "element": {
                 "element_type": "single_pool_element",
                 "location": "prixilium:shaft/three_way",
@@ -47,7 +20,16 @@
             }
         },
         {
-            "weight": 3,
+            "weight": 6,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/two_way",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 6,
             "element": {
                 "element_type": "single_pool_element",
                 "location": "prixilium:shaft/two_way_diagonal",
@@ -56,10 +38,181 @@
             }
         },
         {
+            "weight": 5,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/one_way",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 6,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/stairs",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 6,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/stairs_double",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 6,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/ladder",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
             "weight": 3,
             "element": {
                 "element_type": "single_pool_element",
-                "location": "prixilium:shaft/two_way",
+                "location": "prixilium:shaft/three_way_loot",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/two_way/loot_double",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/two_way/loot_single_left",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/two_way/loot_single_right",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/two_way_diagonal/loot_double",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/two_way_diagonal/loot_single_left",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/two_way_diagonal/loot_single_right",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/one_way/loot_single_left",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/one_way/loot_single_middle",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/one_way/loot_single_right",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/one_way/loot_double_left_middle",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/one_way/loot_double_left_right",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/one_way/loot_double_middle_right",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 1,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/one_way/loot_triple",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 2,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/stairs_double_loot",
+                "projection": "rigid",
+                "processors": []
+            }
+        },
+        {
+            "weight": 3,
+            "element": {
+                "element_type": "single_pool_element",
+                "location": "prixilium:shaft/ladder_loot",
                 "projection": "rigid",
                 "processors": []
             }

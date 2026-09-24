@@ -10,6 +10,6 @@
     },
     "start_jigsaw_name": "prixilium:start",
     "start_pool": "prixilium:shaft/start",
-    "step": "surface_structures",
+    "step": "underground_structures",
     "use_expansion_hack": false
 }
