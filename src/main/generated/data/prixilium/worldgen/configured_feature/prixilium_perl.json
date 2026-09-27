@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "prixilium:open_prixilium_perl"
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "prixilium:closed_prixilium_perl"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

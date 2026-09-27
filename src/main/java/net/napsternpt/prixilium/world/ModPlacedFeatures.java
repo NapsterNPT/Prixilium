@@ -19,11 +19,27 @@ import java.util.List;
 public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> PRIXILIUM_TREE = registryKey("prixilium_tree");
+    public static final RegistryKey<PlacedFeature> PRIXILIUM_PERL_PATCH = registryKey("prixilium_perl");
+    public static final RegistryKey<PlacedFeature> PRIXILIUM_SAPLING_PATCH = registryKey("prixilium_sapling");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, PRIXILIUM_TREE, configuredFeatures.getOrThrow(ModConfiguredFeatures.PRIXILIUM_KEY),
+                CountPlacementModifier.of(2),
+                SquarePlacementModifier.of(),
+                HeightmapPlacementModifier.of(Heightmap.Type.MOTION_BLOCKING),
+                BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(ModBlocks.PRIXILIUM.getDefaultState(), BlockPos.ORIGIN))
+        );
+
+        register(context, PRIXILIUM_PERL_PATCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.PRIXILIUM_PERL),
+                CountPlacementModifier.of(8),
+                SquarePlacementModifier.of(),
+                HeightmapPlacementModifier.of(Heightmap.Type.MOTION_BLOCKING),
+                BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(ModBlocks.OPEN_PRIXILIUM_PERL.getDefaultState(), BlockPos.ORIGIN))
+        );
+
+        register(context, PRIXILIUM_SAPLING_PATCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.PRIXILIUM_SAPLING),
                 CountPlacementModifier.of(2),
                 SquarePlacementModifier.of(),
                 HeightmapPlacementModifier.of(Heightmap.Type.MOTION_BLOCKING),

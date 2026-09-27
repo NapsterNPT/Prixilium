@@ -616,6 +616,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .addTag(ModTags.Items.CHARMS)
                 .add(Blocks.SHULKER_BOX.asItem());
 
+        valueLookupBuilder(ModTags.Items.SHAFT_CHEST_LOOT)
+                .addTag(ModTags.Items.PRIXILED_FOOD)
+                .add(ModItems.PRIXILIUM_SHARD_NUGGET)
+                .add(ModItems.PRIXILIUM_SHARD)
+                .add(ModItems.SHARD_STAR)
+                .add(ModItems.PRIXILIUM_UPGRADE_SMITHING_TEMPLATE);
+
         //endregion
     }
 }
