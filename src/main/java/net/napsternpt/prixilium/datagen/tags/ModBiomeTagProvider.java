@@ -20,7 +20,5 @@ public class ModBiomeTagProvider extends FabricTagProvider<Biome> {
     protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
         builder(ModTags.Biomes.OPENS_PRIXILIUM_PERL)
                 .addOptional(ModWorldGen.PRIXILIUM_BIOME);
-        builder(ModTags.Biomes.PRIXILIUM_TREE_BIOMES)
-                .addOptional(ModWorldGen.PRIXILIUM_BIOME);
     }
 }

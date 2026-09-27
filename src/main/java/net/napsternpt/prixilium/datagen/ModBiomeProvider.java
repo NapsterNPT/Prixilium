@@ -12,10 +12,12 @@ import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.attribute.EnvironmentAttributes;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.napsternpt.prixilium.entity.ModEntities;
 import net.napsternpt.prixilium.particle.ModParticles;
+import net.napsternpt.prixilium.world.ModPlacedFeatures;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -36,6 +38,12 @@ public class ModBiomeProvider extends FabricDynamicRegistryProvider {
         spawnSettings.spawn(SpawnGroup.MONSTER, 2, new SpawnSettings.SpawnEntry(ModEntities.AIRIS, 1, 2));
 
         GenerationSettings.LookupBackedBuilder generationSettings = new GenerationSettings.LookupBackedBuilder(placedFeatures, carvers);
+        generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                placedFeatures.getOrThrow(ModPlacedFeatures.PRIXILIUM_TREE));
+        generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                placedFeatures.getOrThrow(ModPlacedFeatures.PRIXILIUM_PERL_PATCH));
+        generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                placedFeatures.getOrThrow(ModPlacedFeatures.PRIXILIUM_SAPLING_PATCH));
 
         entries.add(ModWorldGen.PRIXILIUM_BIOME, new Biome.Builder()
                 .precipitation(false)

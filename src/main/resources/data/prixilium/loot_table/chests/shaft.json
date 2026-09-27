@@ -1,0 +1,25 @@
+{
+  "pools": [
+    {
+      "rolls": 3,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "name": "prixilium:shaft_chest_loot",
+          "expand": true,
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 10.0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

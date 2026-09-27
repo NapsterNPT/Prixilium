@@ -1,5 +1,7 @@
 package net.napsternpt.prixilium.world;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -22,10 +24,13 @@ import net.minecraft.world.Heightmap;
 import net.minecraft.world.gen.noise.NoiseConfig;
 import net.minecraft.world.gen.structure.JigsawStructure;
 import net.minecraft.world.gen.structure.Structure;
+import net.minecraft.resource.Resource;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.util.ModTags;
 import net.napsternpt.prixilium.world.gen.chunk.PrixiliumChunkGenerator;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -33,14 +38,35 @@ import java.util.Optional;
 import java.util.Set;
 
 public class ModStructures {
-    public static final Identifier START_JIGSAW_NAME = Identifier.of(Prixilium.MOD_ID, "start");
 
     public static void placeStructure(MinecraftServer server, ServerWorld world, String structureName, BlockPos centerPos) {
-        world.getChunk(centerPos);
-        NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();
-        BlockPos pos = new BlockPos(centerPos.getX(), 0, centerPos.getZ());
+        placeStructure(server, world, structureName, new BlockPos(centerPos.getX(), 0, centerPos.getZ()), true);
+    }
 
-        RegistryKey<StructurePool> poolKey = RegistryKey.of(RegistryKeys.TEMPLATE_POOL, Identifier.of(Prixilium.MOD_ID, structureName));
+    public static void placeStructure(MinecraftServer server, ServerWorld world, String structureName, BlockPos pos, boolean snapToSurface) {
+        world.getChunk(pos);
+        NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();
+
+        String startPool = Identifier.of(Prixilium.MOD_ID, structureName).toString();
+        Identifier startJigsaw = Identifier.of(Prixilium.MOD_ID, "start");
+        int depth = 1;
+        int maxDistance = 80;
+
+        Optional<Resource> resource = server.getResourceManager().getResource(
+                Identifier.of(Prixilium.MOD_ID, "worldgen/structure/" + structureName + ".json"));
+        if (resource.isPresent()) {
+            try (Reader reader = resource.get().getReader()) {
+                JsonObject json = new Gson().fromJson(reader, JsonObject.class);
+                startPool = json.get("start_pool").getAsString();
+                startJigsaw = Identifier.tryParse(json.get("start_jigsaw_name").getAsString());
+                depth = json.get("size").getAsInt();
+                maxDistance = json.get("max_distance_from_center").getAsInt();
+            } catch (IOException | RuntimeException e) {
+                Prixilium.LOGGER.warn("Could not read structure json {}", structureName, e);
+            }
+        }
+
+        RegistryKey<StructurePool> poolKey = RegistryKey.of(RegistryKeys.TEMPLATE_POOL, Identifier.of(startPool));
         Registry<StructurePool> poolRegistry = server.getRegistryManager().getOrThrow(RegistryKeys.TEMPLATE_POOL);
         StructurePool poolValue = poolRegistry.get(poolKey);
         if (poolValue == null) return;
@@ -57,10 +83,11 @@ public class ModStructures {
                 world,
                 biome -> true);
 
+        assert startJigsaw != null;
         Optional<Structure.StructurePosition> position = StructurePoolBasedGenerator.generate(
-                context, pool, Optional.of(START_JIGSAW_NAME), 1, pos, false,
+                context, pool, Optional.of(startJigsaw), depth, pos, false,
                 Optional.empty(),
-                new JigsawStructure.MaxDistanceFromCenter(80),
+                new JigsawStructure.MaxDistanceFromCenter(maxDistance),
                 StructurePoolAliasLookup.EMPTY,
                 JigsawStructure.DEFAULT_DIMENSION_PADDING,
                 JigsawStructure.DEFAULT_LIQUID_SETTINGS);
@@ -69,7 +96,7 @@ public class ModStructures {
         StructurePiecesCollector collector = position.get().generate();
         List<StructurePiece> pieces = collector.toList().pieces();
 
-        if (!pieces.isEmpty() && pieces.getFirst() instanceof PoolStructurePiece startPiece) {
+        if (snapToSurface && !pieces.isEmpty() && pieces.getFirst() instanceof PoolStructurePiece startPiece) {
             BlockBox box = startPiece.getBoundingBox();
             int centerX = (box.getMinX() + box.getMaxX()) / 2;
             int centerZ = (box.getMinZ() + box.getMaxZ()) / 2;
@@ -122,6 +149,9 @@ public class ModStructures {
         for (ModStructureSpots.Spot spot : spots) {
             placeStructure(server, world, spot.name(), spot.center());
         }
+
+        int surfaceY = generator.getHeight(0, 0, Heightmap.Type.WORLD_SURFACE_WG, world, noiseConfig);
+        placeStructure(server, world, "shaft", new BlockPos(0, surfaceY, 0), false);
     }
 
     private static Set<String> readPathEnabled(MinecraftServer server) {

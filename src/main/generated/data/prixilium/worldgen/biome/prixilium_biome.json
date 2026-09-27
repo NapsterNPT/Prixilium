@@ -26,7 +26,22 @@
   "effects": {
     "water_color": "#6baf00"
   },
-  "features": [],
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "prixilium:prixilium_tree",
+      "prixilium:prixilium_perl",
+      "prixilium:prixilium_sapling"
+    ]
+  ],
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {

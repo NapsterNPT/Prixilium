@@ -32,7 +32,6 @@ import net.napsternpt.prixilium.util.ModGameRules;
 import net.napsternpt.prixilium.util.ModItemGroups;
 import net.napsternpt.prixilium.util.TimeStopState;
 import net.napsternpt.prixilium.world.ModStructures;
-import net.napsternpt.prixilium.world.gen.ModWorldGeneration;
 import net.napsternpt.prixilium.world.gen.chunk.ModChunkGenerators;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -74,7 +73,6 @@ public class Prixilium implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.RIFT, RiftEntity.createAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.RIFT_CORE, RiftCoreEntity.createAttributes());
 
-		ModWorldGeneration.generateModWorldGen();
 		ModChunkGenerators.registerChunkGenerators();
 
 		TimeStopState.setOnExpiryCallback(ModPackets::sendTimeStopEnd);

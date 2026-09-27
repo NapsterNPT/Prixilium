@@ -36,6 +36,7 @@ public class ModTags {
         public static final TagKey<Item> OBELISK_OF_CHARMS_FUEL = createTag("obelisk_of_charms_fuel");
         public static final TagKey<Item> OBELISK_OF_CHARMS_FUEL_LONG = createTag("obelisk_of_charms_fuel_long");
         public static final TagKey<Item> CONTAINER_CHARM_UNHOLDABLE = createTag("container_charm_unholdable");
+        public static final TagKey<Item> SHAFT_CHEST_LOOT = createTag("shaft_chest_loot");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name));
@@ -67,8 +68,6 @@ public class ModTags {
     }
 
     public static class Biomes {
-        public static final TagKey<Biome> PRIXILIUM_TREE_BIOMES = createTag("has_prixilium_trees");
-        public static final TagKey<Biome> STRUCTURE_BIOME_TAG = createTag("has_structure/structures");
         public static final TagKey<Biome> OPENS_PRIXILIUM_PERL = createTag("opens_prixilium_perl");
 
         private static TagKey<Biome> createTag(String name) {
