@@ -8,7 +8,6 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.structure.Structure;
 import net.napsternpt.prixilium.Prixilium;
 
 public class ModTags {
@@ -56,14 +55,6 @@ public class ModTags {
 
         private static TagKey<DamageType> createTag(String name) {
             return TagKey.of(RegistryKeys.DAMAGE_TYPE, Identifier.of(Prixilium.MOD_ID, name));
-        }
-    }
-
-    public static class Structures {
-        public static final TagKey<Structure> GENERATE_PATH = createTag("generate_path");
-
-        private static TagKey<Structure> createTag(String name) {
-            return TagKey.of(RegistryKeys.STRUCTURE, Identifier.of(Prixilium.MOD_ID, name));
         }
     }
 

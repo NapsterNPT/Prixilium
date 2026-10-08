@@ -23,31 +23,12 @@ import net.minecraft.world.gen.chunk.NoiseChunkGenerator;
 import net.minecraft.world.gen.chunk.VerticalBlockSample;
 import net.minecraft.world.gen.noise.NoiseConfig;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.world.ModPath;
-import net.napsternpt.prixilium.world.ModStructureSpots;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class PrixiliumChunkGenerator extends ChunkGenerator {
-	private static final int MIN_RADIUS_CHUNKS = 8;
-	private static final int MAX_RADIUS_CHUNKS = 16;
-	private static final int BLOCKS_PER_CHUNK = 16;
-	private static final int RIM_SMOOTH = 64;
-	private static final int TOP_CENTER = 64;
-	private static final int TOP_EDGE = 54;
-	private static final int THICK_CENTER = 44;
-	private static final int HEIGHT_NOISE_AMP = 6;
-	private static final int NOISE_CELL = 32;
-	private static final double MIN_EDGE = 0.06;
-	private static final double MIN_TOP = 2.0;
-	private static final BlockState AIR = Blocks.AIR.getDefaultState();
-	private static final BlockState DIAMOND_BLOCK = Blocks.DIAMOND_BLOCK.getDefaultState();
-	private static final Identifier RADIUS_DERIVER = Identifier.of(Prixilium.MOD_ID, "island_radius");
-
-	private List<ModPath.PathTarget> structureTargets;
 
 	public static final MapCodec<PrixiliumChunkGenerator> CODEC = RecordCodecBuilder.mapCodec(instance ->
 			instance.group(
@@ -72,23 +53,13 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 	}
 
 	public static int getRadiusBlocks(NoiseConfig noiseConfig) {
-		Random random = noiseConfig.getOrCreateRandomDeriver(RADIUS_DERIVER).split("island_radius");
-		return random.nextBetween(MIN_RADIUS_CHUNKS, MAX_RADIUS_CHUNKS) * BLOCKS_PER_CHUNK;
+		Random random = noiseConfig.getOrCreateRandomDeriver(Identifier.of(Prixilium.MOD_ID, "island_radius")).split("island_radius");
+		return random.nextBetween(8, 16) * 16;
 	}
 
-	private List<ModPath.PathTarget> getStructureTargets(NoiseConfig noiseConfig) {
-		if (structureTargets == null) {
-			List<ModPath.PathTarget> targets = new ArrayList<>();
-			targets.add(new ModPath.PathTarget(Prixilium.SPAWN_POS, ModPath.STRUCTURE_HALF));
-			targets.addAll(ModStructureSpots.computeSpots(noiseConfig, getRadiusBlocks(noiseConfig)).stream()
-					.map(spot -> new ModPath.PathTarget(spot.center(), spot.halfExtent())).toList());
-			structureTargets = targets;
-		}
-		return structureTargets;
-	}
-
-	public void setPathTargets(List<ModPath.PathTarget> targets) {
-		structureTargets = targets;
+	public static int getRingCount(NoiseConfig noiseConfig) {
+		Random random = noiseConfig.getOrCreateRandomDeriver(Identifier.of(Prixilium.MOD_ID, "ring_mode")).split("count");
+		return random.nextBetween(0, 5);
 	}
 
 	@Override
@@ -105,28 +76,6 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 	@Override
 	public void buildSurface(ChunkRegion chunkRegion, StructureAccessor structureAccessor, NoiseConfig noiseConfig, Chunk chunk) {
 		delegate.buildSurface(chunkRegion, structureAccessor, noiseConfig, chunk);
-		int radius = getRadiusBlocks(noiseConfig);
-		List<ModPath.PathTarget> targets = getStructureTargets(noiseConfig);
-		ChunkPos chunkPos = chunk.getPos();
-		int chunkX = chunkPos.x * BLOCKS_PER_CHUNK;
-		int chunkZ = chunkPos.z * BLOCKS_PER_CHUNK;
-		for (int dz = 0; dz < BLOCKS_PER_CHUNK; dz++) {
-			int z = chunkZ + dz;
-			for (int dx = 0; dx < BLOCKS_PER_CHUNK; dx++) {
-				int x = chunkX + dx;
-				if (!ModPath.isOnPath(x, z, BlockPos.ORIGIN, targets) || Math.floorMod(x * 31 + z * 17, 2) != 0) {
-					continue;
-				}
-				RadialProfile profile = RadialProfile.of(x, z, radius);
-				if (profile == null) {
-					continue;
-				}
-				int topY = profile.top;
-				if (topY - 1 >= chunk.getBottomY() && topY <= chunk.getBottomY() + chunk.getHeight()) {
-					chunk.setBlockState(new BlockPos(x, topY - 1, z), DIAMOND_BLOCK);
-				}
-			}
-		}
 	}
 
 	@Override
@@ -151,7 +100,7 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 
 	@Override
 	public int getHeight(int x, int z, Heightmap.Type type, HeightLimitView world, NoiseConfig noiseConfig) {
-		RadialProfile profile = RadialProfile.of(x, z, getRadiusBlocks(noiseConfig));
+		RadialProfile profile = RadialProfile.of(x, z, getRadiusBlocks(noiseConfig), getRingCount(noiseConfig));
 		if (profile == null) {
 			return world.getBottomY();
 		}
@@ -160,22 +109,19 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 
 	@Override
 	public VerticalBlockSample getColumnSample(int x, int z, HeightLimitView world, NoiseConfig noiseConfig) {
-		RadialProfile profile = RadialProfile.of(x, z, getRadiusBlocks(noiseConfig));
+		RadialProfile profile = RadialProfile.of(x, z, getRadiusBlocks(noiseConfig), getRingCount(noiseConfig));
 		if (profile == null) {
 			BlockState[] states = new BlockState[world.getHeight()];
-			Arrays.fill(states, AIR);
+			Arrays.fill(states, Blocks.AIR.getDefaultState());
 			return new VerticalBlockSample(world.getBottomY(), states);
 		}
 		BlockState[] states = new BlockState[world.getHeight()];
-		Arrays.fill(states, AIR);
+		Arrays.fill(states, Blocks.AIR.getDefaultState());
 		int topIndex = profile.top - world.getBottomY();
 		int bottomIndex = profile.bottom - world.getBottomY();
 		BlockState islandBlock = delegate.getSettings().value().defaultBlock();
 		for (int i = Math.max(0, bottomIndex); i < Math.min(states.length, topIndex); i++) {
 			states[i] = islandBlock;
-		}
-		if (ModPath.isOnPath(x, z, BlockPos.ORIGIN, getStructureTargets(noiseConfig)) && Math.floorMod(x * 31 + z * 17, 2) == 0) {
-			states[topIndex - 1] = DIAMOND_BLOCK;
 		}
 		return new VerticalBlockSample(world.getBottomY(), states);
 	}
@@ -187,19 +133,18 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 
 	private Chunk sculptIsland(Chunk chunk, NoiseConfig noiseConfig) {
 		int radius = getRadiusBlocks(noiseConfig);
-		List<ModPath.PathTarget> targets = getStructureTargets(noiseConfig);
 		int minY = chunk.getBottomY();
 		int maxY = minY + chunk.getHeight();
 		BlockState islandBlock = delegate.getSettings().value().defaultBlock();
 		ChunkPos chunkPos = chunk.getPos();
-		int chunkX = chunkPos.x * BLOCKS_PER_CHUNK;
-		int chunkZ = chunkPos.z * BLOCKS_PER_CHUNK;
+		int chunkX = chunkPos.x * 16;
+		int chunkZ = chunkPos.z * 16;
 
-		for (int dz = 0; dz < BLOCKS_PER_CHUNK; dz++) {
+		for (int dz = 0; dz < 16; dz++) {
 			int z = chunkZ + dz;
-			for (int dx = 0; dx < BLOCKS_PER_CHUNK; dx++) {
+			for (int dx = 0; dx < 16; dx++) {
 				int x = chunkX + dx;
-				RadialProfile profile = RadialProfile.of(x, z, radius);
+				RadialProfile profile = RadialProfile.of(x, z, radius, getRingCount(noiseConfig));
 				if (profile == null) {
 					clearColumn(chunk, minY, maxY, x, z);
 					continue;
@@ -210,14 +155,11 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 				int fillEnd = Math.min(maxY, top);
 				for (int y = minY; y < maxY; y++) {
 					boolean solid = y >= fillStart && y < fillEnd;
-					BlockState target = solid ? islandBlock : AIR;
+					BlockState target = solid ? islandBlock : Blocks.AIR.getDefaultState();
 					BlockPos pos = new BlockPos(x, y, z);
 					if (!chunk.getBlockState(pos).equals(target)) {
 						chunk.setBlockState(pos, target);
 					}
-				}
-				if (ModPath.isOnPath(x, z, BlockPos.ORIGIN, targets) && Math.floorMod(x * 31 + z * 17, 2) == 0) {
-					chunk.setBlockState(new BlockPos(x, top - 1, z), DIAMOND_BLOCK);
 				}
 			}
 		}
@@ -226,35 +168,76 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 
 	private static void clearColumn(Chunk chunk, int minY, int maxY, int x, int z) {
 		for (int y = minY; y < maxY; y++) {
-			chunk.setBlockState(new BlockPos(x, y, z), AIR);
+			chunk.setBlockState(new BlockPos(x, y, z), Blocks.AIR.getDefaultState());
 		}
 	}
 
 	private record RadialProfile(int top, int bottom) {
-		static RadialProfile of(int x, int z, int radius) {
+		static RadialProfile of(int x, int z, int radius, int ringCount) {
 			long distanceSquared = (long) x * x + (long) z * z;
 			long radiusSquared = (long) radius * radius;
 			if (distanceSquared > radiusSquared) {
+				return ringProfile(x, z, radius, distanceSquared, ringCount);
+			}
+			double distance = Math.sqrt(distanceSquared);
+			double edge = Math.clamp((radius - distance) / 64, 0.0, 1.0);
+			double smooth = smootherStep(edge);
+			if (smooth < 0.06) {
+				return null;
+			}
+			double base = 54 + 10 * smooth;
+			double noise = surfaceNoise(x, z) * 6 * smooth;
+			double top = Math.max(2.0, Math.round(base + noise));
+			int thickness = (int) Math.round(45 * smooth);
+			return new RadialProfile((int) top, (int) top - thickness);
+		}
+
+		private static RadialProfile ringProfile(int x, int z, int radius, long distanceSquared, int ringCount) {
+			if (ringCount <= 0) {
 				return null;
 			}
 			double distance = Math.sqrt(distanceSquared);
-			double edge = Math.clamp((radius - distance) / RIM_SMOOTH, 0.0, 1.0);
-			double smooth = smootherStep(edge);
-			if (smooth < MIN_EDGE) {
+			double outerLimit = ringCenter(radius, ringCount - 1) + 16;
+			if (distance > outerLimit) {
 				return null;
 			}
-			double base = TOP_EDGE + (TOP_CENTER - TOP_EDGE) * smooth;
-			double noise = surfaceNoise(x, z) * HEIGHT_NOISE_AMP * smooth;
-			double top = Math.max(MIN_TOP, Math.round(base + noise));
-			int thickness = (int) Math.round(THICK_CENTER * smooth);
+			for (int ring = 0; ring < ringCount; ring++) {
+				RadialProfile candidate = singleRingProfile(x, z, radius, distance, ring);
+				if (candidate != null) {
+					return candidate;
+				}
+			}
+			return null;
+		}
+
+		private static double ringCenter(int radius, int ring) {
+			return radius + 20 + (double) ring * 40;
+		}
+
+		private static RadialProfile singleRingProfile(int x, int z, int radius, double distance, int ring) {
+			double center = ringCenter(radius, ring);
+			double inner = center - 10;
+			double outer = center + 10;
+			if (distance < inner - 6 || distance > outer + 6) {
+				return null;
+			}
+			double innerEdge = Math.clamp((distance - inner) / 6, 0.0, 1.0);
+			double outerEdge = Math.clamp((outer - distance) / 6, 0.0, 1.0);
+			double smooth = Math.min(innerEdge, outerEdge);
+			double noise = surfaceNoise(x, z) * 6 * smooth;
+			double top = Math.max(2.0, Math.round(54 + noise));
+			int thickness = (int) Math.round(5 * smooth);
+			if (thickness <= 0) {
+				return null;
+			}
 			return new RadialProfile((int) top, (int) top - thickness);
 		}
 
 		private static double surfaceNoise(int x, int z) {
-			int gx = Math.floorDiv(x, NOISE_CELL);
-			int gz = Math.floorDiv(z, NOISE_CELL);
-			double fx = (double) (x - gx * NOISE_CELL) / NOISE_CELL;
-			double fz = (double) (z - gz * NOISE_CELL) / NOISE_CELL;
+			int gx = Math.floorDiv(x, 32);
+			int gz = Math.floorDiv(z, 32);
+			double fx = (double) (x - gx * 32) / 32;
+			double fz = (double) (z - gz * 32) / 32;
 			double sx = smootherStep(fx);
 			double sz = smootherStep(fz);
 			double h00 = gridValue(gx, gz);

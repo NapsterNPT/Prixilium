@@ -70,16 +70,14 @@ public final class ModStructureSpots {
     private static BlockPos pickSpot(Random random, int islandRadius, List<Placed> placed, int halfExtent) {
         for (int attempt = 0; attempt < 256; attempt++) {
             double angle = random.nextDouble() * Math.PI * 2;
-            int distanceFromCenter = Math.max(ModPath.STRUCTURE_HALF + 1, (int) Math.round(islandRadius * (0.35 + 0.45 * random.nextDouble())));
+            int distanceFromCenter = (int) Math.round(islandRadius * (0.35 + 0.45 * random.nextDouble()));
             if (distanceFromCenter >= islandRadius - 30) {
                 continue;
             }
             int x = (int) Math.round(Math.cos(angle) * distanceFromCenter);
             int z = (int) Math.round(Math.sin(angle) * distanceFromCenter);
             BlockPos test = new BlockPos(x, 0, z);
-            int pathClearance = halfExtent + 4;
-            if (ModPath.squaredDistanceToSegment(x, z, BlockPos.ORIGIN, Prixilium.SPAWN_POS) < (long) pathClearance * pathClearance
-                    || squareDistanceBetween(test, Prixilium.SPAWN_POS) < 30 * 30
+            if (squareDistanceBetween(test, Prixilium.SPAWN_POS) < 30 * 30
                     || squareDistanceBetween(test, BlockPos.ORIGIN) < 30 * 30) {
                 continue;
             }

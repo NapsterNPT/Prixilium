@@ -26,16 +26,12 @@ import net.minecraft.world.gen.structure.JigsawStructure;
 import net.minecraft.world.gen.structure.Structure;
 import net.minecraft.resource.Resource;
 import net.napsternpt.prixilium.Prixilium;
-import net.napsternpt.prixilium.util.ModTags;
 import net.napsternpt.prixilium.world.gen.chunk.PrixiliumChunkGenerator;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 public class ModStructures {
 
@@ -125,24 +121,8 @@ public class ModStructures {
     public static void spawnStructures(MinecraftServer server, ServerWorld world) {
         Prixilium.LOGGER.info("Registering Structures.");
 
-        Set<String> pathEnabled = readPathEnabled(server);
         NoiseConfig noiseConfig = world.getChunkManager().getNoiseConfig();
         List<ModStructureSpots.Spot> spots = ModStructureSpots.computeSpots(noiseConfig, PrixiliumChunkGenerator.getRadiusBlocks(noiseConfig));
-
-        List<ModPath.PathTarget> targets = new ArrayList<>();
-        if (pathEnabled.contains("spawn")) {
-            targets.add(new ModPath.PathTarget(Prixilium.SPAWN_POS, ModPath.STRUCTURE_HALF));
-        }
-        for (ModStructureSpots.Spot spot : spots) {
-            if (pathEnabled.contains(spot.name())) {
-                targets.add(new ModPath.PathTarget(spot.center(), spot.halfExtent()));
-            }
-        }
-
-        var generator = world.getChunkManager().getChunkGenerator();
-        if (generator instanceof PrixiliumChunkGenerator prixiliumGenerator) {
-            prixiliumGenerator.setPathTargets(targets);
-        }
 
         placeStructure(server, world, "spawn", Prixilium.SPAWN_POS);
         placeStructure(server, world, "fountain", BlockPos.ORIGIN);
@@ -150,15 +130,8 @@ public class ModStructures {
             placeStructure(server, world, spot.name(), spot.center());
         }
 
+        var generator = world.getChunkManager().getChunkGenerator();
         int surfaceY = generator.getHeight(0, 0, Heightmap.Type.WORLD_SURFACE_WG, world, noiseConfig);
         placeStructure(server, world, "shaft", new BlockPos(0, surfaceY, 0), false);
-    }
-
-    private static Set<String> readPathEnabled(MinecraftServer server) {
-        Set<String> enabled = new HashSet<>();
-        server.getRegistryManager().getOrThrow(RegistryKeys.STRUCTURE)
-                .iterateEntries(ModTags.Structures.GENERATE_PATH)
-                .forEach(entry -> entry.getKey().ifPresent(key -> enabled.add(key.getValue().getPath())));
-        return enabled;
     }
 }
