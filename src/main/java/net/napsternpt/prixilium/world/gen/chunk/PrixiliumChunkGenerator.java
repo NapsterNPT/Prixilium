@@ -31,8 +31,7 @@ import java.util.concurrent.CompletableFuture;
 public class PrixiliumChunkGenerator extends ChunkGenerator {
 
 	public static final MapCodec<PrixiliumChunkGenerator> CODEC = RecordCodecBuilder.mapCodec(instance ->
-			instance.group(
-					BiomeSource.CODEC.fieldOf("biome_source").forGetter(ChunkGenerator::getBiomeSource),
+			instance.group(BiomeSource.CODEC.fieldOf("biome_source").forGetter(ChunkGenerator::getBiomeSource),
 					ChunkGeneratorSettings.REGISTRY_CODEC.fieldOf("settings").forGetter(PrixiliumChunkGenerator::getSettings)
 			).apply(instance, PrixiliumChunkGenerator::new));
 
@@ -60,6 +59,14 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 	public static int getRingCount(NoiseConfig noiseConfig) {
 		Random random = noiseConfig.getOrCreateRandomDeriver(Identifier.of(Prixilium.MOD_ID, "ring_mode")).split("count");
 		return random.nextBetween(0, 5);
+	}
+
+	public static int ringInnerEdge(int radius, int ring) {
+		return radius + 8 + ring * 41;
+	}
+
+	public static int ringCenter(int radius, int ring) {
+		return radius + 18 + ring * 41;
 	}
 
 	@Override
@@ -211,7 +218,7 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 		}
 
 		private static double ringCenter(int radius, int ring) {
-			return radius + 20 + (double) ring * 40;
+			return radius + 18 + (double) ring * 41;
 		}
 
 		private static RadialProfile singleRingProfile(int x, int z, int radius, double distance, int ring) {

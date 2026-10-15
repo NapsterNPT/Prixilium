@@ -16,11 +16,17 @@ import net.minecraft.structure.PoolStructurePiece;
 import net.minecraft.structure.pool.StructurePool;
 import net.minecraft.structure.pool.StructurePoolBasedGenerator;
 import net.minecraft.structure.pool.alias.StructurePoolAliasLookup;
+import net.minecraft.structure.StructurePlacementData;
+import net.minecraft.structure.StructureTemplate;
+import net.minecraft.structure.StructureTemplateManager;
+import net.minecraft.util.BlockRotation;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.Heightmap;
+import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.noise.NoiseConfig;
 import net.minecraft.world.gen.structure.JigsawStructure;
 import net.minecraft.world.gen.structure.Structure;
@@ -133,5 +139,76 @@ public class ModStructures {
         var generator = world.getChunkManager().getChunkGenerator();
         int surfaceY = generator.getHeight(0, 0, Heightmap.Type.WORLD_SURFACE_WG, world, noiseConfig);
         placeStructure(server, world, "shaft", new BlockPos(0, surfaceY, 0), false);
+
+        placeBridges(world, noiseConfig);
+    }
+
+    private static final int BRIDGE_Y_PROBE_STEP = 4;
+
+    private static void placeBridges(ServerWorld world, NoiseConfig noiseConfig) {
+        ChunkGenerator generator = world.getChunkManager().getChunkGenerator();
+        int radius = PrixiliumChunkGenerator.getRadiusBlocks(noiseConfig);
+        for (PrixiliumWorldgenAnchors.BridgeTarget target : PrixiliumWorldgenAnchors.bridgeTargets(noiseConfig)) {
+            Direction direction = target.direction();
+            int ringCenterDistance = PrixiliumChunkGenerator.ringCenter(radius, target.ring());
+            int surfaceY = bridgeSurfaceY(generator, world, noiseConfig, direction, ringCenterDistance);
+            placeBridge(world, direction, new BlockPos(target.baseAnchor().getX(), surfaceY, target.baseAnchor().getZ()));
+        }
+    }
+
+    private static int bridgeSurfaceY(ChunkGenerator generator, ServerWorld world, NoiseConfig noiseConfig,
+                                      Direction direction, int ringCenterDistance) {
+        int minimumY = generator.getMinimumY();
+        for (int offset = 0; offset <= 12; offset += BRIDGE_Y_PROBE_STEP) {
+            for (int sign : new int[]{1, -1}) {
+                int distance = ringCenterDistance + sign * offset;
+                int x = direction.getOffsetX() * distance;
+                int z = direction.getOffsetZ() * distance;
+                int analyticY = generator.getHeight(x, z, Heightmap.Type.WORLD_SURFACE_WG, world, noiseConfig);
+                if (analyticY > minimumY) {
+                    return analyticY;
+                }
+            }
+        }
+        return minimumY;
+    }
+
+    public static void placeBridge(ServerWorld world, Direction direction, BlockPos anchor) {
+        world.getChunk(anchor);
+        StructureTemplateManager templateManager = world.getStructureTemplateManager();
+        Identifier templateId = Identifier.of(Prixilium.MOD_ID, "bridge");
+        StructureTemplate template = templateManager.getTemplateOrBlank(templateId);
+        StructurePlacementData placementData = new StructurePlacementData()
+                .setRotation(bridgeRotation(direction))
+                .setUpdateNeighbors(false);
+
+        List<StructureTemplate.StructureBlockInfo> jigsaws = template.getInfosForBlock(BlockPos.ORIGIN, placementData, Blocks.JIGSAW);
+        if (jigsaws.isEmpty()) return;
+
+        StructureTemplate.StructureBlockInfo start = jigsaws.stream()
+                .filter(info -> info.nbt() != null && info.nbt().getString("name").orElse("").equals(Identifier.of(Prixilium.MOD_ID, "start").toString()))
+                .findFirst()
+                .orElse(jigsaws.getFirst());
+
+        BlockPos origin = anchor.subtract(start.pos());
+        BlockBox box = template.calculateBoundingBox(placementData, origin);
+        placementData.setBoundingBox(box);
+        template.place(world, origin, BlockPos.ORIGIN, placementData, world.getRandom(), Block.NOTIFY_ALL);
+
+        for (BlockPos blockPos : BlockPos.iterate(box.getMinX(), box.getMinY(), box.getMinZ(),
+                box.getMaxX(), box.getMaxY(), box.getMaxZ())) {
+            if (world.getBlockState(blockPos).isOf(Blocks.JIGSAW) || world.getBlockState(blockPos).isOf(Blocks.STRUCTURE_BLOCK)) {
+                world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
+            }
+        }
+    }
+
+    private static BlockRotation bridgeRotation(Direction direction) {
+        return switch (direction) {
+            case EAST -> BlockRotation.COUNTERCLOCKWISE_90;
+            case WEST -> BlockRotation.CLOCKWISE_90;
+            case SOUTH -> BlockRotation.NONE;
+            default -> BlockRotation.CLOCKWISE_180;
+        };
     }
 }

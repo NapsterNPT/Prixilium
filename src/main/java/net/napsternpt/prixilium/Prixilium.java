@@ -32,6 +32,7 @@ import net.napsternpt.prixilium.util.ModGameRules;
 import net.napsternpt.prixilium.util.ModItemGroups;
 import net.napsternpt.prixilium.util.TimeStopState;
 import net.napsternpt.prixilium.world.ModStructures;
+import net.napsternpt.prixilium.world.PrixiverseStructuresState;
 import net.napsternpt.prixilium.world.gen.chunk.ModChunkGenerators;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -80,7 +81,11 @@ public class Prixilium implements ModInitializer {
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			ServerWorld prixiverse = server.getWorld(ModWorldGen.PRIXILIUM_WORLD);
 			if (prixiverse == null) return;
-			ModStructures.spawnStructures(server, prixiverse);
+			PrixiverseStructuresState state = prixiverse.getPersistentStateManager().getOrCreate(PrixiverseStructuresState.TYPE);
+			if (!state.isGenerated()) {
+				ModStructures.spawnStructures(server, prixiverse);
+				state.setGenerated(true);
+			}
 		});
 
 		ServerEntityWorldChangeEvents.AFTER_PLAYER_CHANGE_WORLD.register((player, origin, destination) -> {
