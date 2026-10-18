@@ -21,6 +21,7 @@ public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> PRIXILIUM_TREE = registryKey("prixilium_tree");
     public static final RegistryKey<PlacedFeature> PRIXILIUM_PERL_PATCH = registryKey("prixilium_perl");
     public static final RegistryKey<PlacedFeature> PRIXILIUM_SAPLING_PATCH = registryKey("prixilium_sapling");
+    public static final RegistryKey<PlacedFeature> PRIXILIUM_PEDALS_PATCH = registryKey("prixilium_pedals");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -44,6 +45,13 @@ public class ModPlacedFeatures {
                 SquarePlacementModifier.of(),
                 HeightmapPlacementModifier.of(Heightmap.Type.MOTION_BLOCKING),
                 BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(ModBlocks.PRIXILIUM.getDefaultState(), BlockPos.ORIGIN))
+        );
+
+        register(context, PRIXILIUM_PEDALS_PATCH, configuredFeatures.getOrThrow(ModConfiguredFeatures.PRIXILIUM_PEDALS),
+                CountPlacementModifier.of(4),
+                SquarePlacementModifier.of(),
+                HeightmapPlacementModifier.of(Heightmap.Type.MOTION_BLOCKING),
+                BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(ModBlocks.PRIXILIUM_PEDALS.getDefaultState(), BlockPos.ORIGIN))
         );
     }
 

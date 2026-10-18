@@ -24,6 +24,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_OPEN_PRIXILIUM_PERL);
         addDrop(ModBlocks.CLOSED_PRIXILIUM_PERL);
         addPottedPlantDrops(ModBlocks.POTTED_CLOSED_PRIXILIUM_PERL);
+        addDrop(ModBlocks.PRIXILIUM_PEDALS, segmentedDrops(ModBlocks.PRIXILIUM_PEDALS));
 
         addDrop(ModBlocks.PRIXILIUM_GRASS, drops(ModBlocks.PRIXILIUM_GRASS, Blocks.DIRT));
 

@@ -53,6 +53,7 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.GLASS)
                     .offset(AbstractBlock.OffsetType.XZ)
                     .pistonBehavior(PistonBehavior.DESTROY)
+                    .luminance(state -> 7)
                     .ticksRandomly()
             ));
 
@@ -62,6 +63,7 @@ public class ModBlocks {
                     .breakInstantly()
                     .nonOpaque()
                     .pistonBehavior(PistonBehavior.DESTROY)
+                    .luminance(state -> 7)
             ), false);
 
     public static final Block CLOSED_PRIXILIUM_PERL = registerBlock(name = "closed_prixilium_perl",
@@ -83,6 +85,16 @@ public class ModBlocks {
                     .nonOpaque()
                     .pistonBehavior(PistonBehavior.DESTROY)
             ), false);
+
+    public static final Block PRIXILIUM_PEDALS = registerBlock(name = "prixilium_pedals",
+            new FlowerbedBlock(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .mapColor(MapColor.GOLD)
+                    .noCollision()
+                    .sounds(BlockSoundGroup.FLOWERBED)
+                    .pistonBehavior(PistonBehavior.DESTROY)
+                    .luminance(state -> 2 * state.get(FlowerbedBlock.FLOWER_AMOUNT))
+            ));
 
     public static final Block PRIXILIUM_GRASS = registerBlock(name = "prixilium_grass",
             new PrixiliumGrassBlock(AbstractBlock.Settings.create()

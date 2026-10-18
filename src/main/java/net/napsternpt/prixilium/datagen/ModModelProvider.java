@@ -32,6 +32,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlantAndItem(ModBlocks.PRIXILIUM, ModBlocks.POTTED_PRIXILIUM, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(ModBlocks.OPEN_PRIXILIUM_PERL, ModBlocks.POTTED_OPEN_PRIXILIUM_PERL, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(ModBlocks.CLOSED_PRIXILIUM_PERL, ModBlocks.POTTED_CLOSED_PRIXILIUM_PERL, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerFlowerbed(ModBlocks.PRIXILIUM_PEDALS);
 
         TextureMap prixiliumGrassBaseModel = new TextureMap()
                 .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_side"))

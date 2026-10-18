@@ -41,9 +41,11 @@ public class ModBiomeProvider extends FabricDynamicRegistryProvider {
         generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 placedFeatures.getOrThrow(ModPlacedFeatures.PRIXILIUM_TREE));
         generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                placedFeatures.getOrThrow(ModPlacedFeatures.PRIXILIUM_SAPLING_PATCH));
+        generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 placedFeatures.getOrThrow(ModPlacedFeatures.PRIXILIUM_PERL_PATCH));
         generationSettings.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                placedFeatures.getOrThrow(ModPlacedFeatures.PRIXILIUM_SAPLING_PATCH));
+                placedFeatures.getOrThrow(ModPlacedFeatures.PRIXILIUM_PEDALS_PATCH));
 
         entries.add(ModWorldGen.PRIXILIUM_BIOME, new Biome.Builder()
                 .precipitation(false)

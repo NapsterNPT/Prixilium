@@ -1,6 +1,7 @@
 package net.napsternpt.prixilium.world;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FlowerbedBlock;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -22,8 +23,9 @@ import net.napsternpt.prixilium.block.ModBlocks;
 
 public class ModConfiguredFeatures {
     public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_KEY = registerKey("prixilium_key");
-    public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_PERL = registerKey("prixilium_perl");
     public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_SAPLING = registerKey("prixilium_sapling");
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_PERL = registerKey("prixilium_perl");
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_PEDALS = registerKey("prixilium_pedals");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, PRIXILIUM_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
@@ -39,18 +41,27 @@ public class ModConfiguredFeatures {
                 .build()
         );
 
+        register(context, PRIXILIUM_SAPLING, Feature.SIMPLE_BLOCK,
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PRIXILIUM))
+        );
+
         register(context, PRIXILIUM_PERL, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
-                new WeightedBlockStateProvider(
-                        WeightedPool.<BlockState>builder()
+                new WeightedBlockStateProvider(WeightedPool.<BlockState>builder()
                                 .add(ModBlocks.OPEN_PRIXILIUM_PERL.getDefaultState(), 1)
                                 .add(ModBlocks.CLOSED_PRIXILIUM_PERL.getDefaultState(), 1)
                                 .build()
                 )
         ));
 
-        register(context, PRIXILIUM_SAPLING, Feature.SIMPLE_BLOCK,
-                new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.PRIXILIUM))
-        );
+        register(context, PRIXILIUM_PEDALS, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+                new WeightedBlockStateProvider(WeightedPool.<BlockState>builder()
+                        .add(ModBlocks.PRIXILIUM_PEDALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
+                        .add(ModBlocks.PRIXILIUM_PEDALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
+                        .add(ModBlocks.PRIXILIUM_PEDALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
+                        .add(ModBlocks.PRIXILIUM_PEDALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
+                        .build()
+                )
+        ));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -38,8 +38,9 @@
     [],
     [
       "prixilium:prixilium_tree",
+      "prixilium:prixilium_sapling",
       "prixilium:prixilium_perl",
-      "prixilium:prixilium_sapling"
+      "prixilium:prixilium_pedals"
     ]
   ],
   "has_precipitation": false,
