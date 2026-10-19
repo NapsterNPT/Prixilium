@@ -7,6 +7,7 @@
 		"HideEffectsMixin",
 		"InGameHudMixin",
 		"MilkBucketMixin",
+		"PlushyPopMixin",
 		"PlayerSleepMixin",
 		"PostmortalCharmMixin",
 
