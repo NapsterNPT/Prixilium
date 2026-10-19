@@ -18,12 +18,14 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class PrixiverseCreditsScreen extends Screen {
-    private record CreditImage(Identifier id, int width, int height) {}
+    private record CreditImage(Identifier id, int width, int height, float rotation) {}
 
     private final Runnable onFinish;
     private final String playerName;
+    private final long randomSeed = new Random().nextLong();
 
     private float scroll = 0;
     private static final int OUTLINE = 2;
@@ -70,7 +72,9 @@ public class PrixiverseCreditsScreen extends Screen {
                     .forEach(id -> {
                         try (InputStream in = found.get(id).getInputStream()) {
                             NativeImage image = NativeImage.read(in);
-                            creditImages.add(new CreditImage(id, image.getWidth(), image.getHeight()));
+                            Random random = new Random(randomSeed + id.toString().hashCode());
+                            float rotation = (float) Math.toRadians(random.nextFloat() * 16f - 8f);
+                            creditImages.add(new CreditImage(id, image.getWidth(), image.getHeight(), rotation));
                             image.close();
                         } catch (Exception e) {
                             Prixilium.LOGGER.error("Couldn't read credits image {}", id, e);
@@ -120,14 +124,23 @@ public class PrixiverseCreditsScreen extends Screen {
             docY = Math.clamp(docY, 0, textHeight - drawH);
 
             int y = yOffset + docY;
-            if (y + drawH < 0 || y > height) continue;
+            if (y + drawH + drawW < 0 || y - drawW > height) continue;
             int x = i % 2 == 0
                     ? width / 3 - 32 - drawW
                     : width * 2 / 3 + 32;
 
-            context.fill(x - 2, y - 2, x + drawW + 2, y + drawH + 2, 0xFFFFFFFF);
-            context.drawTexture(RenderPipelines.GUI_TEXTURED, image.id(), x, y, 0f, 0f,
-                    drawW, drawH, image.width(), image.height(), image.width(), image.height());
+            float centerX = x + drawW / 2.0f;
+            float centerY = y + drawH / 2.0f;
+
+            context.getMatrices().pushMatrix();
+            context.getMatrices().translate(centerX, centerY);
+            context.getMatrices().rotate(image.rotation());
+            context.getMatrices().translate(-centerX, -centerY);
+
+            context.fill(x - OUTLINE, y - OUTLINE, x + drawW + OUTLINE, y + drawH + OUTLINE, 0xFFFFFFFF);
+            context.drawTexture(RenderPipelines.GUI_TEXTURED, image.id(), x, y, 0f, 0f, drawW, drawH, image.width(), image.height(), image.width(), image.height());
+
+            context.getMatrices().popMatrix();
         }
     }
 
