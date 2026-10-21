@@ -9,6 +9,7 @@ import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.storage.ReadView;
@@ -60,7 +61,10 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
         if(world == null) return;
         BlockPos center = pos.down();
         BlockState targetState = world.getBlockState(center);
-        if(targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) world.setBlockState(center, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
+        BlockState aboveState = world.getBlockState(pos.up());
+        if (!targetState.getFluidState().isIn(FluidTags.WATER) && !aboveState.getFluidState().isIn(FluidTags.WATER)) {
+            if(targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) world.setBlockState(center, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
+        }
     }
 
     public void startSpread() {
@@ -115,11 +119,14 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
                 if (distance <= radius - 0.3 && distance > radius - 1.3) {
                     BlockPos targetPos = center.add(x, 0, z);
                     BlockState targetState = world.getBlockState(targetPos);
-                    if (targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) {
-                        world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
-                        if (world instanceof ServerWorld serverWorld) serverWorld.spawnParticles(
-                                ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
+                    BlockState aboveState = world.getBlockState(targetPos.up());
+                    if (!targetState.getFluidState().isIn(FluidTags.WATER) && !aboveState.getFluidState().isIn(FluidTags.WATER)) {
+                        if (targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) {
+                            world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
+                            if (world instanceof ServerWorld serverWorld) serverWorld.spawnParticles(
+                                    ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
                                     3, 0.2, 0.2, 0.2, 0);
+                        }
                     }
                 }
             }

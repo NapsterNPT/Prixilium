@@ -5,7 +5,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
@@ -58,10 +57,6 @@ public class PrixiliumGrassBlock extends Block {
     private boolean canSurvive(WorldView world, BlockPos pos) {
         BlockPos abovePos = pos.up();
         BlockState aboveState = world.getBlockState(abovePos);
-        return !aboveState.isOpaqueFullCube() ||
-                aboveState.isOf(Blocks.WATER) ||
-                aboveState.isOf(Blocks.BUBBLE_COLUMN) ||
-                aboveState.getFluidState().isOf(Fluids.WATER) ||
-                aboveState.isOf(Blocks.LAVA);
+        return !aboveState.isOpaqueFullCube() && aboveState.getFluidState().getLevel() != 8;
     }
 }
