@@ -87,7 +87,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .parent(root)
                 .display(ModItems.VIRUS_DEAD,
                         Text.translatable("advancements.prixilium.virus_dead.title"),
-                        Text.translatable("advancements.prixilium.virus_dead.description"), null, AdvancementFrame.TASK, true, true, false
+                        Text.translatable("advancements.prixilium.virus_dead.description"), null, AdvancementFrame.TASK, true, true, true
                 )
                 .criterion("get_dead_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_DEAD))
                 .build(consumer, Prixilium.MOD_ID + ":virus_dead");
@@ -213,7 +213,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .parent(reactor)
                 .display(ModBlocks.VIRUS_REACTOR,
                         Text.translatable("advancements.prixilium.reactor_squared.title"),
-                        Text.translatable("advancements.prixilium.reactor_squared.description"), null, AdvancementFrame.TASK, true, true, false
+                        Text.translatable("advancements.prixilium.reactor_squared.description"), null, AdvancementFrame.TASK, true, true, true
                 )
                 .criterion("reactor_squared", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":reactor_squared");
