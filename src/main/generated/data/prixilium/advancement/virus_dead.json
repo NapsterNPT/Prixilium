@@ -16,6 +16,7 @@
     "description": {
       "translate": "advancements.prixilium.virus_dead.description"
     },
+    "hidden": true,
     "icon": {
       "count": 1,
       "id": "prixilium:virus_dead"

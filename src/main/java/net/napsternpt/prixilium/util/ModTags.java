@@ -12,11 +12,11 @@ import net.napsternpt.prixilium.Prixilium;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> PRIXILIUM_CONVERTIBLE = createTag("prixilium_convertable");
-        public static final TagKey<Block> PRIXILIUM_GRASS_CONVERTIBLE = createTag("prixilium_grass_convertable");
-        public static final TagKey<Block> PRIXILIUM_LOG_CONVERTIBLE = createTag("prixilium_log_convertable");
-        public static final TagKey<Block> PRIXILIUM_WOOD_CONVERTIBLE = createTag("prixilium_wood_convertable");
-        public static final TagKey<Block> PRIXILIUM_LEAVES_CONVERTIBLE = createTag("prixilium_leaves_convertable");
+        public static final TagKey<Block> PRIXILIUM_CONVERTIBLE = createTag("prixilium_convertible");
+        public static final TagKey<Block> PRIXILIUM_GRASS_CONVERTIBLE = createTag("prixilium_grass_convertible");
+        public static final TagKey<Block> PRIXILIUM_LOG_CONVERTIBLE = createTag("prixilium_log_convertible");
+        public static final TagKey<Block> PRIXILIUM_WOOD_CONVERTIBLE = createTag("prixilium_wood_convertible");
+        public static final TagKey<Block> PRIXILIUM_LEAVES_CONVERTIBLE = createTag("prixilium_leaves_convertible");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name));

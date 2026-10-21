@@ -9,6 +9,7 @@
     "description": {
       "translate": "advancements.prixilium.reactor_squared.description"
     },
+    "hidden": true,
     "icon": {
       "count": 1,
       "id": "prixilium:virus_reactor"
