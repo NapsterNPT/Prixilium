@@ -25,7 +25,7 @@ public class ModConfiguredFeatures {
     public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_KEY = registerKey("prixilium_key");
     public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_SAPLING = registerKey("prixilium_sapling");
     public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_PERL = registerKey("prixilium_perl");
-    public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_PEDALS = registerKey("prixilium_pedals");
+    public static RegistryKey<ConfiguredFeature<?, ?>> PRIXILIUM_PETALS = registerKey("prixilium_petals");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, PRIXILIUM_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
@@ -53,12 +53,12 @@ public class ModConfiguredFeatures {
                 )
         ));
 
-        register(context, PRIXILIUM_PEDALS, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
+        register(context, PRIXILIUM_PETALS, Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(
                 new WeightedBlockStateProvider(WeightedPool.<BlockState>builder()
-                        .add(ModBlocks.PRIXILIUM_PEDALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
-                        .add(ModBlocks.PRIXILIUM_PEDALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
-                        .add(ModBlocks.PRIXILIUM_PEDALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
-                        .add(ModBlocks.PRIXILIUM_PEDALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
+                        .add(ModBlocks.PRIXILIUM_PETALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 1), 1)
+                        .add(ModBlocks.PRIXILIUM_PETALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 2), 1)
+                        .add(ModBlocks.PRIXILIUM_PETALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 3), 1)
+                        .add(ModBlocks.PRIXILIUM_PETALS.getDefaultState().with(FlowerbedBlock.FLOWER_AMOUNT, 4), 1)
                         .build()
                 )
         ));

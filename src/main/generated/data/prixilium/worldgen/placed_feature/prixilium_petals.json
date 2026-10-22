@@ -1,5 +1,5 @@
 {
-  "feature": "prixilium:prixilium_pedals",
+  "feature": "prixilium:prixilium_petals",
   "placement": [
     {
       "type": "minecraft:count",
@@ -17,7 +17,7 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "prixilium:prixilium_pedals",
+          "Name": "prixilium:prixilium_petals",
           "Properties": {
             "facing": "north",
             "flower_amount": "1"

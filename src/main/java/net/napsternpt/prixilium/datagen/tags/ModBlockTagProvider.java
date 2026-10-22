@@ -19,9 +19,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.@NonNull WrapperLookup wrapperLookup) {
         valueLookupBuilder(BlockTags.SHOVEL_MINEABLE)
-                .add(ModBlocks.PRIXILIUM_GRASS);
+                .add(ModBlocks.PRIXIGRASS)
+                .add(ModBlocks.PRIXISOIL);
 
         valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.PRIXTONE)
+
                 .add(ModBlocks.PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
@@ -29,6 +32,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.PRIXILIUM_BRICKS_WALL)
+
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS)
@@ -36,6 +40,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB)
                 .add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL)
+
                 .add(ModBlocks.PRIXILIUM_EXHAUST)
                 .add(ModBlocks.STAND)
                 .add(ModBlocks.REACTOR_CORE)
@@ -75,6 +80,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.OBELISK_OF_CHARMS);
 
         valueLookupBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.PRIXTONE)
+
                 .add(ModBlocks.PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
@@ -106,13 +113,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.POTTED_CLOSED_PRIXILIUM_PERL);
 
         valueLookupBuilder(BlockTags.DIRT)
-                .add(ModBlocks.PRIXILIUM_GRASS);
+                .add(ModBlocks.PRIXIGRASS)
+                .add(ModBlocks.PRIXISOIL);
 
         valueLookupBuilder(BlockTags.ENDERMAN_HOLDABLE)
-                .add(ModBlocks.PRIXILIUM_GRASS);
+                .add(ModBlocks.PRIXIGRASS);
 
         valueLookupBuilder(BlockTags.SNOW_LAYER_CAN_SURVIVE_ON)
-                .add(ModBlocks.PRIXILIUM_GRASS);
+                .add(ModBlocks.PRIXIGRASS);
 
         valueLookupBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.PRIXILIUM_LEAVES);
@@ -239,12 +247,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.LARGE_FERN)
                 .add(Blocks.PITCHER_PLANT);
 
-        valueLookupBuilder(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)
-                .add(Blocks.DIRT)
+        valueLookupBuilder(ModTags.Blocks.PRIXIGRASS_CONVERTIBLE)
                 .add(Blocks.GRASS_BLOCK)
                 .add(Blocks.PODZOL)
-                .add(Blocks.MYCELIUM)
-                .add(Blocks.COARSE_DIRT);
+                .add(Blocks.MYCELIUM);
+
+        valueLookupBuilder(ModTags.Blocks.PRIXISOIL_CONVERTIBLE)
+                .add(Blocks.DIRT)
+                .add(Blocks.COARSE_DIRT)
+                .add(Blocks.ROOTED_DIRT);
 
         valueLookupBuilder(ModTags.Blocks.PRIXILIUM_LOG_CONVERTIBLE)
                 .add(Blocks.OAK_LOG)

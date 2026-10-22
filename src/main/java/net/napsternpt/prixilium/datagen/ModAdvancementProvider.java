@@ -64,7 +64,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         //region [Prixiverse]
         AdvancementEntry dimension = Advancement.Builder.create()
                 .parent(root)
-                .display(ModBlocks.PRIXILIUM_GRASS,
+                .display(ModBlocks.PRIXIGRASS,
                         Text.translatable("advancements.prixilium.enter_prixiverse.title"),
                         Text.translatable("advancements.prixilium.enter_prixiverse.description"), null, AdvancementFrame.TASK, true, true, true
                 )
@@ -230,7 +230,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
 
         Advancement.Builder.create()
                 .parent(root)
-                .display(ModBlocks.PRIXILIUM_GRASS,
+                .display(ModBlocks.PRIXIGRASS,
                         Text.translatable("advancements.prixilium.its_spreading.title"),
                         Text.translatable("advancements.prixilium.its_spreading.description"), null, AdvancementFrame.TASK, true, true, false
                 )

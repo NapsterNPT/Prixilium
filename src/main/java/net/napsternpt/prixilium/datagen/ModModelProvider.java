@@ -32,39 +32,41 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlantAndItem(ModBlocks.PRIXILIUM, ModBlocks.POTTED_PRIXILIUM, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(ModBlocks.OPEN_PRIXILIUM_PERL, ModBlocks.POTTED_OPEN_PRIXILIUM_PERL, BlockStateModelGenerator.CrossType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlantAndItem(ModBlocks.CLOSED_PRIXILIUM_PERL, ModBlocks.POTTED_CLOSED_PRIXILIUM_PERL, BlockStateModelGenerator.CrossType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerbed(ModBlocks.PRIXILIUM_PEDALS);
+        blockStateModelGenerator.registerFlowerbed(ModBlocks.PRIXILIUM_PETALS);
 
-        TextureMap prixiliumGrassBaseModel = new TextureMap()
-                .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_side"))
-                .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_bottom"));
+        TextureMap prixigrassBaseModel = new TextureMap()
+                .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.PRIXIGRASS, "_side"))
+                .put(TextureKey.BOTTOM, TextureMap.getSubId(ModBlocks.PRIXIGRASS, "_bottom"));
 
-        Identifier prixiliumGrassModel1 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXILIUM_GRASS, "_1",
-                prixiliumGrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_top_1")),
+        Identifier prixigrassModel1 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXIGRASS, "_1",
+                prixigrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXIGRASS, "_top_1")),
                 blockStateModelGenerator.modelCollector);
 
-        Identifier prixiliumGrassModel2 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXILIUM_GRASS, "_2",
-                prixiliumGrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_top_2")),
+        Identifier prixigrassModel2 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXIGRASS, "_2",
+                prixigrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXIGRASS, "_top_2")),
                 blockStateModelGenerator.modelCollector);
 
-        Identifier prixiliumGrassModel3 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXILIUM_GRASS, "_3",
-                prixiliumGrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_top_3")),
+        Identifier prixigrassModel3 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXIGRASS, "_3",
+                prixigrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXIGRASS, "_top_3")),
                 blockStateModelGenerator.modelCollector);
 
-        Identifier prixiliumGrassModel4 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXILIUM_GRASS, "_4",
-                prixiliumGrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXILIUM_GRASS, "_top_4")),
+        Identifier prixigrassModel4 = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.PRIXIGRASS, "_4",
+                prixigrassBaseModel.copyAndAdd(TextureKey.TOP, TextureMap.getSubId(ModBlocks.PRIXIGRASS, "_top_4")),
                 blockStateModelGenerator.modelCollector);
 
         blockStateModelGenerator.blockStateCollector.accept(
-                VariantsBlockModelDefinitionCreator.of(ModBlocks.PRIXILIUM_GRASS,
+                VariantsBlockModelDefinitionCreator.of(ModBlocks.PRIXIGRASS,
                         new WeightedVariant(WeightedPool.<ModelVariant>builder()
-                                .add(new ModelVariant(prixiliumGrassModel1))
-                                .add(new ModelVariant(prixiliumGrassModel2))
-                                .add(new ModelVariant(prixiliumGrassModel3))
-                                .add(new ModelVariant(prixiliumGrassModel4))
+                                .add(new ModelVariant(prixigrassModel1))
+                                .add(new ModelVariant(prixigrassModel2))
+                                .add(new ModelVariant(prixigrassModel3))
+                                .add(new ModelVariant(prixigrassModel4))
                                 .build()))
         );
 
-        blockStateModelGenerator.registerParentedItemModel(ModBlocks.PRIXILIUM_GRASS, prixiliumGrassModel1);
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.PRIXIGRASS, prixigrassModel1);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXISOIL);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PRIXTONE);
 
         blockStateModelGenerator.registerSingleton(ModBlocks.PRIXILIUM_LEAVES, TexturedModel.LEAVES);
         blockStateModelGenerator.registerMultifaceBlock(ModBlocks.PRIXILIUM_RESIN);

@@ -20,8 +20,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.napsternpt.prixilium.block.ModBlocks;
 
-public class PrixiliumGrassBlock extends Block {
-    public PrixiliumGrassBlock(Settings settings) {
+public class PrixigrassBlock extends Block {
+    public PrixigrassBlock(Settings settings) {
         super(settings);
     }
 
@@ -47,7 +47,7 @@ public class PrixiliumGrassBlock extends Block {
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (!canSurvive(world, pos)) {
-            world.setBlockState(pos, Blocks.DIRT.getDefaultState());
+            world.setBlockState(pos, ModBlocks.PRIXISOIL.getDefaultState());
             return;
         }
 

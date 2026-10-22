@@ -52,7 +52,7 @@ public class PrixiliumPerlBlock extends FlowerBlock {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (this.state.isOpen() && random.nextInt(700) == 0) {
             BlockState blockState = world.getBlockState(pos.down());
-            if (blockState.isOf(ModBlocks.PRIXILIUM_GRASS)) {
+            if (blockState.isOf(ModBlocks.PRIXIGRASS)) {
                 world.playSoundClient(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_EYEBLOSSOM_IDLE, SoundCategory.AMBIENT, 1.0F, 1.0F, false);
             }
         }

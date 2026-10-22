@@ -13,7 +13,8 @@ import net.napsternpt.prixilium.Prixilium;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> PRIXILIUM_CONVERTIBLE = createTag("prixilium_convertible");
-        public static final TagKey<Block> PRIXILIUM_GRASS_CONVERTIBLE = createTag("prixilium_grass_convertible");
+        public static final TagKey<Block> PRIXIGRASS_CONVERTIBLE = createTag("prixigrass_convertible");
+        public static final TagKey<Block> PRIXISOIL_CONVERTIBLE = createTag("prixisoil_convertible");
         public static final TagKey<Block> PRIXILIUM_LOG_CONVERTIBLE = createTag("prixilium_log_convertible");
         public static final TagKey<Block> PRIXILIUM_WOOD_CONVERTIBLE = createTag("prixilium_wood_convertible");
         public static final TagKey<Block> PRIXILIUM_LEAVES_CONVERTIBLE = createTag("prixilium_leaves_convertible");

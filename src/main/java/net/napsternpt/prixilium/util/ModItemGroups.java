@@ -71,9 +71,11 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PRIXILIUM);
                         entries.add(ModBlocks.OPEN_PRIXILIUM_PERL);
                         entries.add(ModBlocks.CLOSED_PRIXILIUM_PERL);
-                        entries.add(ModBlocks.PRIXILIUM_PEDALS);
+                        entries.add(ModBlocks.PRIXILIUM_PETALS);
 
-                        entries.add(ModBlocks.PRIXILIUM_GRASS);
+                        entries.add(ModBlocks.PRIXIGRASS);
+                        entries.add(ModBlocks.PRIXISOIL);
+                        entries.add(ModBlocks.PRIXTONE);
                         entries.add(ModBlocks.PRIXILIUM_LEAVES);
                         entries.add(ModBlocks.PRIXILIUM_RESIN);
                         entries.add(ModBlocks.PRIXILIUM_LOG);

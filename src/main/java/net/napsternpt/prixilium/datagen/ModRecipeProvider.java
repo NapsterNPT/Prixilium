@@ -670,8 +670,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 //endregion
 
                 //region [Other]
-                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXILIUM_GRASS)
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXIGRASS)
                         .input(Items.GRASS_BLOCK)
+                        .input(ModBlocks.PRIXILIUM)
+                        .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXISOIL)
+                        .input(Items.DIRT)
+                        .input(ModBlocks.PRIXILIUM)
+                        .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PRIXTONE)
+                        .input(Items.STONE)
                         .input(ModBlocks.PRIXILIUM)
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .offerTo(exporter);

@@ -23,6 +23,7 @@ import net.minecraft.world.gen.chunk.NoiseChunkGenerator;
 import net.minecraft.world.gen.chunk.VerticalBlockSample;
 import net.minecraft.world.gen.noise.NoiseConfig;
 import net.napsternpt.prixilium.Prixilium;
+import net.napsternpt.prixilium.block.ModBlocks;
 
 import java.util.Arrays;
 import java.util.List;
@@ -83,6 +84,46 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 	@Override
 	public void buildSurface(ChunkRegion chunkRegion, StructureAccessor structureAccessor, NoiseConfig noiseConfig, Chunk chunk) {
 		delegate.buildSurface(chunkRegion, structureAccessor, noiseConfig, chunk);
+		applyPrixiliumLayers(chunk, noiseConfig);
+	}
+
+	private void applyPrixiliumLayers(Chunk chunk, NoiseConfig noiseConfig) {
+		int radius = getRadiusBlocks(noiseConfig);
+		int ringCount = getRingCount(noiseConfig);
+		int minY = chunk.getBottomY();
+		int maxY = minY + chunk.getHeight();
+		ChunkPos chunkPos = chunk.getPos();
+		int chunkX = chunkPos.x * 16;
+		int chunkZ = chunkPos.z * 16;
+		BlockState grass = ModBlocks.PRIXIGRASS.getDefaultState();
+		BlockState soil = ModBlocks.PRIXISOIL.getDefaultState();
+		BlockState stone = ModBlocks.PRIXTONE.getDefaultState();
+
+		for (int dz = 0; dz < 16; dz++) {
+			int z = chunkZ + dz;
+			for (int dx = 0; dx < 16; dx++) {
+				int x = chunkX + dx;
+				RadialProfile profile = RadialProfile.of(x, z, radius, ringCount);
+				if (profile == null) continue;
+				int top = profile.top;
+				int fillStart = Math.max(minY, profile.bottom);
+				int fillEnd = Math.min(maxY, top);
+				for (int y = fillStart; y < fillEnd; y++) {
+					BlockState target;
+					if (y >= top - 1) {
+						target = grass;
+					} else if (y >= top - 4) {
+						target = soil;
+					} else {
+						target = stone;
+					}
+					BlockPos pos = new BlockPos(x, y, z);
+					if (!chunk.getBlockState(pos).equals(target)) {
+						chunk.setBlockState(pos, target);
+					}
+				}
+			}
+		}
 	}
 
 	@Override
@@ -126,9 +167,18 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 		Arrays.fill(states, Blocks.AIR.getDefaultState());
 		int topIndex = profile.top - world.getBottomY();
 		int bottomIndex = profile.bottom - world.getBottomY();
-		BlockState islandBlock = delegate.getSettings().value().defaultBlock();
+		BlockState grass = ModBlocks.PRIXIGRASS.getDefaultState();
+		BlockState soil = ModBlocks.PRIXISOIL.getDefaultState();
+		BlockState stone = ModBlocks.PRIXTONE.getDefaultState();
 		for (int i = Math.max(0, bottomIndex); i < Math.min(states.length, topIndex); i++) {
-			states[i] = islandBlock;
+			int y = world.getBottomY() + i;
+			if (y >= profile.top - 1) {
+				states[i] = grass;
+			} else if (y >= profile.top - 4) {
+				states[i] = soil;
+			} else {
+				states[i] = stone;
+			}
 		}
 		return new VerticalBlockSample(world.getBottomY(), states);
 	}

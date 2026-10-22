@@ -18,13 +18,12 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.block.custom.PrixiliumExpandMethod;
 import net.napsternpt.prixilium.block.entity.ImplementedInventory;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.item.ModItems;
 import net.napsternpt.prixilium.particle.ModParticles;
 import net.napsternpt.prixilium.sound.ModSounds;
-import net.napsternpt.prixilium.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 public class VirusReactorBlockEntity extends BlockEntity implements ImplementedInventory {
@@ -63,7 +62,9 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
         BlockState targetState = world.getBlockState(center);
         BlockState aboveState = world.getBlockState(pos.up());
         if (!targetState.getFluidState().isIn(FluidTags.WATER) && !aboveState.getFluidState().isIn(FluidTags.WATER)) {
-            if(targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) world.setBlockState(center, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
+            if (PrixiliumExpandMethod.isConvertible(targetState)) {
+                world.setBlockState(center, PrixiliumExpandMethod.getSpreadResult(targetState));
+            }
         }
     }
 
@@ -121,8 +122,12 @@ public class VirusReactorBlockEntity extends BlockEntity implements ImplementedI
                     BlockState targetState = world.getBlockState(targetPos);
                     BlockState aboveState = world.getBlockState(targetPos.up());
                     if (!targetState.getFluidState().isIn(FluidTags.WATER) && !aboveState.getFluidState().isIn(FluidTags.WATER)) {
-                        if (targetState.isIn(ModTags.Blocks.PRIXILIUM_GRASS_CONVERTIBLE)) {
-                            world.setBlockState(targetPos, ModBlocks.PRIXILIUM_GRASS.getDefaultState());
+                        BlockState converted = null;
+                        if (PrixiliumExpandMethod.isConvertible(targetState)) {
+                            converted = PrixiliumExpandMethod.getSpreadResult(targetState);
+                        }
+                        if (converted != null) {
+                            world.setBlockState(targetPos, converted);
                             if (world instanceof ServerWorld serverWorld) serverWorld.spawnParticles(
                                     ModParticles.PRIXILIUM_EXPAND, targetPos.getX() + 0.5, targetPos.getY() + 1, targetPos.getZ() + 0.5,
                                     3, 0.2, 0.2, 0.2, 0);

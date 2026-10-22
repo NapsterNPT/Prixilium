@@ -77,6 +77,7 @@ public class ModItems {
 
     public static final Item PRIXILIUM_HOOK = registerItem(name = "prixilium_hook", new PrixiliumHookItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
     ));
 
     public static final Item BLIKO_SPAWN_EGG = registerItem(name = "bliko_spawn_egg", new SpawnEggItem(new Item.Settings()

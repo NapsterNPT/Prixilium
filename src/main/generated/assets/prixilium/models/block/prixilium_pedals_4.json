@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/flowerbed_4",
-  "textures": {
-    "flowerbed": "prixilium:block/prixilium_pedals",
-    "stem": "prixilium:block/prixilium_pedals_stem"
-  }
-}

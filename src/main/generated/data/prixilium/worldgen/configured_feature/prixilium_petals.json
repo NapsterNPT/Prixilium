@@ -6,7 +6,7 @@
       "entries": [
         {
           "data": {
-            "Name": "prixilium:prixilium_pedals",
+            "Name": "prixilium:prixilium_petals",
             "Properties": {
               "facing": "north",
               "flower_amount": "1"
@@ -16,7 +16,7 @@
         },
         {
           "data": {
-            "Name": "prixilium:prixilium_pedals",
+            "Name": "prixilium:prixilium_petals",
             "Properties": {
               "facing": "north",
               "flower_amount": "2"
@@ -26,7 +26,7 @@
         },
         {
           "data": {
-            "Name": "prixilium:prixilium_pedals",
+            "Name": "prixilium:prixilium_petals",
             "Properties": {
               "facing": "north",
               "flower_amount": "3"
@@ -36,7 +36,7 @@
         },
         {
           "data": {
-            "Name": "prixilium:prixilium_pedals",
+            "Name": "prixilium:prixilium_petals",
             "Properties": {
               "facing": "north",
               "flower_amount": "4"

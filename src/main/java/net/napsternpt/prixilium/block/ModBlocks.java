@@ -86,7 +86,7 @@ public class ModBlocks {
                     .pistonBehavior(PistonBehavior.DESTROY)
             ), false);
 
-    public static final Block PRIXILIUM_PEDALS = registerBlock(name = "prixilium_pedals",
+    public static final Block PRIXILIUM_PETALS = registerBlock(name = "prixilium_petals",
             new FlowerbedBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .mapColor(MapColor.GOLD)
@@ -96,12 +96,31 @@ public class ModBlocks {
                     .luminance(state -> 2 * state.get(FlowerbedBlock.FLOWER_AMOUNT))
             ));
 
-    public static final Block PRIXILIUM_GRASS = registerBlock(name = "prixilium_grass",
-            new PrixiliumGrassBlock(AbstractBlock.Settings.create()
+    public static final Block PRIXIGRASS = registerBlock(name = "prixigrass",
+            new PrixigrassBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
                     .strength(0.6f)
                     .sounds(BlockSoundGroup.GRASS)
                     .mapColor(MapColor.DARK_AQUA)
+                    .allowsSpawning((state, world, pos, type) -> false)
+            ));
+
+    public static final Block PRIXISOIL = registerBlock(name = "prixisoil",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.GRAVEL)
+                    .mapColor(MapColor.DIRT_BROWN)
+                    .allowsSpawning((state, world, pos, type) -> false)
+            ));
+
+    public static final Block PRIXTONE = registerBlock(name = "prixtone",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .strength(1.5f, 6.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.STONE)
+                    .mapColor(MapColor.STONE_GRAY)
                     .allowsSpawning((state, world, pos, type) -> false)
             ));
 

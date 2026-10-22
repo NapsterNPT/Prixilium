@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "prixilium:prixilium_grass"
+              "name": "prixilium:prixigrass"
             },
             {
               "type": "minecraft:item",
@@ -35,7 +35,7 @@
                   "condition": "minecraft:survives_explosion"
                 }
               ],
-              "name": "minecraft:dirt"
+              "name": "prixilium:prixisoil"
             }
           ]
         }
