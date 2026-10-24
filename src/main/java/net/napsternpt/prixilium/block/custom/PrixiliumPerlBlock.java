@@ -111,8 +111,8 @@ public class PrixiliumPerlBlock extends FlowerBlock {
     }
 
     public enum PrixiliumPerlState {
-        OPEN(true, ModEffects.PRIXILIUM_SLOWNESS, 11.0F, SoundEvents.BLOCK_EYEBLOSSOM_OPEN_LONG, SoundEvents.BLOCK_EYEBLOSSOM_OPEN, 0xffcb00),
-        CLOSED(false, ModEffects.PRIXILIUM_IMMUNITY, 7.0F, SoundEvents.BLOCK_EYEBLOSSOM_CLOSE_LONG, SoundEvents.BLOCK_EYEBLOSSOM_CLOSE, 0xf7f1d8);
+        OPEN(true, ModEffects.PRIXILIUM_IMMUNITY, 11.0F, SoundEvents.BLOCK_EYEBLOSSOM_OPEN_LONG, SoundEvents.BLOCK_EYEBLOSSOM_OPEN, 0xffcb00),
+        CLOSED(false, ModEffects.PRIXILIUM_SLOWNESS, 7.0F, SoundEvents.BLOCK_EYEBLOSSOM_CLOSE_LONG, SoundEvents.BLOCK_EYEBLOSSOM_CLOSE, 0xf7f1d8);
 
         final boolean open;
         final RegistryEntry<StatusEffect> stewEffect;
