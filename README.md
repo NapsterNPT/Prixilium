@@ -4,8 +4,6 @@
 ![Release](https://img.shields.io/github/v/release/NapsterNPT/prixilium?style=for-the-badge&color=gold&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZTNlM2UzIj48cGF0aCBkPSJNNDQwLTE4M3YtMjc0TDIwMC01OTZ2Mjc0bDI0MCAxMzlabTgwIDAgMjQwLTEzOXYtMjc0TDUyMC00NTd2Mjc0Wm0tNDAtMzQzIDIzNy0xMzctMjM3LTEzNy0yMzcgMTM3IDIzNyAxMzdaTTE2MC0yNTJxLTE5LTExLTI5LjUtMjlUMTIwLTMyMXYtMzE4cTAtMjIgMTAuNS00MHQyOS41LTI5bDI4MC0xNjFxMTktMTEgNDAtMTF0NDAgMTFsMjgwIDE2MXExOSAxMSAyOS41IDI5dDEwLjUgNDB2MzE4cTAgMjItMTAuNSA0MFQ4MDAtMjUyTDUyMC05MXEtMTkgMTEtNDAgMTF0LTQwLTExTDE2MC0yNTJabTMyMC0yMjhaIi8+PC9zdmc+)
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/NapsterNPT/prixilium?style=for-the-badge&color=gold&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjZTNlM2UzIj48cGF0aCBkPSJNMzUyLjUtMzI1LjVRMjk4LTM3MSAyODQtNDQwSDgwdi04MGgyMDRxMTQtNjkgNjguNS0xMTQuNVQ0ODAtNjgwcTczIDAgMTI3LjUgNDUuNVQ2NzYtNTIwaDIwNHY4MEg2NzZxLTE0IDY5LTY4LjUgMTE0LjVUNDgwLTI4MHEtNzMgMC0xMjcuNS00NS41Wk00ODAtMzYwcTUwIDAgODUtMzV0MzUtODVxMC01MC0zNS04NXQtODUtMzVxLTUwIDAtODUgMzV0LTM1IDg1cTAgNTAgMzUgODV0ODUgMzVaIi8+PC9zdmc+)
 
-## [Wiki](https://github.com/NapsterNPT/Prixilium/wiki), [Excalidraw](https://excalidraw.com/#json=nPAAv3ZfVSt_7R5w9LXBW,Sci-Mce4mcDlISmTbjoTzg).
-
 Everything about the mod, from the virus to the Prixiverse, is on the [wiki](https://github.com/NapsterNPT/Prixilium/wiki), a scheme of the mod is on the [Excalidraw scheme](https://excalidraw.com/#json=nPAAv3ZfVSt_7R5w9LXBW,Sci-Mce4mcDlISmTbjoTzg).
 
 ## Download
@@ -13,3 +11,10 @@ Everything about the mod, from the virus to the Prixiverse, is on the [wiki](htt
 You can download the mod from [Modrinth](https://modrinth.com/mod/prixilium) or the [GitHub Repository](https://github.com/NapsterNPT/prixilium/releases/); any other source will be marked as unofficial.
 
 If you want to see the source code or report an issue [Click Here](https://github.com/NapsterNPT/prixilium/issues).
+
+## Links
+
+- [Source code](https://github.com/NapsterNPT/Prixilium)
+- [Poject](https://github.com/users/NapsterNPT/projects/2)
+- [Report an issue](https://github.com/NapsterNPT/prixilium/issues)
+- [Excalidraw](https://excalidraw.com/#json=nPAAv3ZfVSt_7R5w9LXBW,Sci-Mce4mcDlISmTbjoTzg)
