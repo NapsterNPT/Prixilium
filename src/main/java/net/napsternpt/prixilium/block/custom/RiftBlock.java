@@ -7,6 +7,7 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootWorldContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
@@ -27,8 +28,6 @@ public class RiftBlock extends Block {
 
     public static final BooleanProperty CAN_SPAWN = BooleanProperty.of("can_spawn");
 
-    private boolean breakingWithSilkTouch = false;
-
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
@@ -46,12 +45,7 @@ public class RiftBlock extends Block {
 
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (!world.isClient()) {
-            this.breakingWithSilkTouch = player.getMainHandStack().getEnchantments().getEnchantments().stream().anyMatch(
-                    entry -> entry.matchesKey(Enchantments.SILK_TOUCH));
-        }
-
-        if (!world.isClient() && state.get(CAN_SPAWN) && !breakingWithSilkTouch && world instanceof ServerWorld serverWorld) {
+        if (!world.isClient() && state.get(CAN_SPAWN) && world instanceof ServerWorld serverWorld) {
             RiftEntity rift = ModEntities.RIFT.create(serverWorld, SpawnReason.EVENT);
             if (rift != null) {
                 rift.refreshPositionAndAngles(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5, 0.0F, 0.0F);
@@ -66,8 +60,13 @@ public class RiftBlock extends Block {
     protected List<ItemStack> getDroppedStacks(BlockState state, LootWorldContext.Builder builder) {
         if (state.get(CAN_SPAWN)) {
             return List.of();
-        } else if (breakingWithSilkTouch) {
-            breakingWithSilkTouch = false;
+        }
+
+        ItemStack tool = builder.getOptional(LootContextParameters.TOOL);
+        boolean silkTouch = tool != null && tool.getEnchantments().getEnchantments().stream()
+                .anyMatch(entry -> entry.matchesKey(Enchantments.SILK_TOUCH));
+
+        if (silkTouch) {
             return List.of(new ItemStack(this));
         }
         return List.of(new ItemStack(ModItems.RIFTS_SHELL), new ItemStack(ModBlocks.RIFT_CORE.asItem()));
