@@ -19,6 +19,7 @@
   "item.prixilium.rifts_shell": "Rift's Shell",
   "item.prixilium.prixilium_upgrade_smithing_template": "Prixilium Smithing Template",
   "item.prixilium.prixilium_hook": "Prixilium Hook",
+  "item.prixilium.letter": "Letter",
   "item.prixilium.bliko_spawn_egg": "Bliko Spawn Egg",
   "item.prixilium.blockito_spawn_egg": "Blockito Spawn Egg",
   "item.prixilium.airis_spawn_egg": "Airis Spawn Egg",
@@ -299,6 +300,7 @@
   "tooltip.prixilium.virus_alive.2": "§7manage carefully...",
   "tooltip.prixilium.thermometer.1": "§7Hold right click to",
   "tooltip.prixilium.thermometer.2": "§7measure your temperature.",
+  "tooltip.prixilium.letter": "§7By NapsterNPT",
 
   "tooltip.prixilium.general_charm.specialize": "§7you can only §aspecialize §7it.",
   "tooltip.prixilium.general_charm.upgrade": "§7you can only §bupgrade §7it.",
@@ -321,8 +323,8 @@
   "screen.prixilium.container_charm.title": "Prixilium Container Charm",
 
 
-  "advancements.prixilium.root.title": "Prixilium",
-  "advancements.prixilium.root.description": "Let the infestation begin",
+  "advancements.prixilium.root.title": "A suspicious letter",
+  "advancements.prixilium.root.description": "Let the journey begin",
   "advancements.prixilium.completionist.title": "Completionist",
   "advancements.prixilium.completionist.description": "Complete every Prixilium advancement",
 
@@ -382,6 +384,7 @@
 
   "gamerule.prixilium.allow_illness": "§7(§6Prixilium§7)§r Allow Illness",
   "gamerule.prixilium.prixilium_expands": "§7(§6Prixilium§7)§r Prixilium Expands",
+  "gamerule.prixilium.give_letter": "§7(§6Prixilium§7)§r Give Letter",
 
 
   "resourcepacks.static_charms": "§7(§6Prixilium§7)§r Static Charms",

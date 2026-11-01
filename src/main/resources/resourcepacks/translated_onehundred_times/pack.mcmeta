@@ -1,6 +1,7 @@
 {
   "pack": {
-    "pack_format": 64,
+    "min_format": 75,
+    "max_format": 75,
     "description": "Prixilium, but it's translated 100 times."
   }
 }

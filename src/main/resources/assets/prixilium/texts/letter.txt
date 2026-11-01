@@ -1,0 +1,13 @@
+Hello %player_name%, if everything went according to plan, you should have received this letter as soon as you arrived.
+
+Rumors say a virus is silently spreading among bats. People say it's called §6Prixilium§r.
+
+Others say they've already lived through a similar epidemic.
+
+But I feel like this is much worse.
+
+If left uncontrolled, it might propagate, infecting everything within its reach.
+
+So, be careful when experimenting with it if you ever come into possession of it.
+
+Hope you don't get any nightmares along the way. Have fun.

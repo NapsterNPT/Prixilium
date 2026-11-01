@@ -11,8 +11,10 @@ import net.minecraft.util.Identifier;
 import net.napsternpt.prixilium.Prixilium;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -28,7 +30,6 @@ public class PrixiverseCreditsScreen extends Screen {
     private final long randomSeed = new Random().nextLong();
 
     private float scroll = 0;
-    private static final int OUTLINE = 2;
 
     private final List<OrderedText> wrappedLines = new ArrayList<>();
     private final List<CreditImage> creditImages = new ArrayList<>();
@@ -44,44 +45,38 @@ public class PrixiverseCreditsScreen extends Screen {
         wrappedLines.clear();
         creditImages.clear();
 
-        try {
-            Identifier id = Identifier.of(Prixilium.MOD_ID, "texts/prixiverse.txt");
-            assert client != null;
-            Resource resource = client.getResourceManager().getResource(id).orElseThrow();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8));
+        Identifier id = Identifier.of(Prixilium.MOD_ID, "texts/prixiverse.txt");
+        assert client != null;
+        Resource resource = client.getResourceManager().getResource(id).orElseThrow();
 
-            String line;
-            while ((line = reader.readLine()) != null) {
-                line = line.replace("%Player_Name%", playerName);
-                if (line.isBlank()) wrappedLines.add(OrderedText.EMPTY);
-                else wrappedLines.addAll(textRenderer.wrapLines(Text.literal(line), width / 3));
-            }
-
-            reader.close();
-
-        } catch (Exception e) {
-            Prixilium.LOGGER.error("Couldn't load credits from file.");
+        for (String line : readLines(resource)) {
+            line = line.replace("%player_name%", playerName);
+            if (line.isBlank()) wrappedLines.add(OrderedText.EMPTY);
+            else wrappedLines.addAll(textRenderer.wrapLines(Text.literal(line), width / 3));
         }
 
-        try {
-            assert client != null;
-            Map<Identifier, Resource> found = client.getResourceManager().findResources("textures/credits", id -> id.getPath().endsWith(".png"));
+        Map<Identifier, Resource> found = client.getResourceManager().findResources("textures/credits", id2 -> id2.getPath().endsWith(".png"));
 
-            found.keySet().stream()
-                    .sorted(Comparator.comparing(Identifier::getPath))
-                    .forEach(id -> {
-                        try (InputStream in = found.get(id).getInputStream()) {
-                            NativeImage image = NativeImage.read(in);
-                            Random random = new Random(randomSeed + id.toString().hashCode());
-                            float rotation = (float) Math.toRadians(random.nextFloat() * 16f - 8f);
-                            creditImages.add(new CreditImage(id, image.getWidth(), image.getHeight(), rotation));
-                            image.close();
-                        } catch (Exception e) {
-                            Prixilium.LOGGER.error("Couldn't read credits image {}", id, e);
-                        }
-                    });
-        } catch (Exception e) {
-            Prixilium.LOGGER.error("Couldn't load credits images.");
+        found.keySet().stream()
+                .sorted(Comparator.comparing(Identifier::getPath))
+                .forEach(id2 -> creditImages.add(readCreditImage(id2, found.get(id2))));
+    }
+
+    private static List<String> readLines(Resource resource) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8))) {
+            return reader.lines().toList();
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
+    private CreditImage readCreditImage(Identifier id, Resource resource) {
+        try (InputStream in = resource.getInputStream(); NativeImage image = NativeImage.read(in)) {
+            Random random = new Random(randomSeed + id.toString().hashCode());
+            float rotation = (float) Math.toRadians(random.nextFloat() * 16f - 8f);
+            return new CreditImage(id, image.getWidth(), image.getHeight(), rotation);
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
         }
     }
 
@@ -137,7 +132,7 @@ public class PrixiverseCreditsScreen extends Screen {
             context.getMatrices().rotate(image.rotation());
             context.getMatrices().translate(-centerX, -centerY);
 
-            context.fill(x - OUTLINE, y - OUTLINE, x + drawW + OUTLINE, y + drawH + OUTLINE, 0xFFFFFFFF);
+            context.fill(x - 2, y - 2, x + drawW + 2, y + drawH + 2, 0xFFFFFFFF);
             context.drawTexture(RenderPipelines.GUI_TEXTURED, image.id(), x, y, 0f, 0f, drawW, drawH, image.width(), image.height(), image.width(), image.height());
 
             context.getMatrices().popMatrix();

@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "prixilium:letter_open",
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "prixilium:item/letter_open"
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "prixilium:item/letter"
+    }
+  }
+}

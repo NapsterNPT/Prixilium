@@ -10,6 +10,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.entity.EntityRendererFactories;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
+import net.napsternpt.prixilium.client.LetterOpenProperty;
 import net.napsternpt.prixilium.block.entity.renderers.ObeliskOfCharmsBlockEntityRenderer;
 import net.napsternpt.prixilium.block.entity.renderers.VirusReactorBlockEntityRenderer;
 import net.napsternpt.prixilium.entity.ModEntities;
@@ -70,5 +71,7 @@ public class PrixiliumClient implements ClientModInitializer {
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_EXPAND, PrixiliumExpandParticles.Factory::new);
 
 		ModPackets.registerClient();
+
+        LetterOpenProperty.register();
     }
 }

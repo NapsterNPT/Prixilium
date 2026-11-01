@@ -17,4 +17,4 @@ If you want to see the source code or report an issue [Click Here](https://githu
 - [Source code](https://github.com/NapsterNPT/Prixilium)
 - [Issue tracker](https://github.com/NapsterNPT/prixilium/issues)
 - [Project](https://github.com/users/NapsterNPT/projects/2)
-- [Excalidraw](https://excalidraw.com/#json=nPAAv3ZfVSt_7R5w9LXBW,Sci-Mce4mcDlISmTbjoTzg)
+- [Wiki](https://github.com/NapsterNPT/Prixilium/wiki)

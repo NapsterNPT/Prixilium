@@ -43,20 +43,20 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
 
         // Root
         AdvancementEntry root = Advancement.Builder.create()
-                .display(ModBlocks.PRIXILIUM,
+                .display(ModItems.LETTER,
                         Text.translatable("advancements.prixilium.root.title"),
                         Text.translatable("advancements.prixilium.root.description"),
                         Identifier.of(Prixilium.MOD_ID, "gui/advancements/backgrounds/prixilium"),
-                        AdvancementFrame.TASK, false, false, false
+                        AdvancementFrame.TASK, true, false, false
                 )
-                .criterion("get_virus", InventoryChangedCriterion.Conditions.items(ModItems.VIRUS_ALIVE))
+                .criterion("root", InventoryChangedCriterion.Conditions.items(ModItems.LETTER))
                 .build(consumer, Prixilium.MOD_ID + ":root");
 
         Advancement.Builder.create()
                 .parent(root)
                 .display(ModItems.NAPSTERNPT_PLUSHY,
                         Text.translatable("advancements.prixilium.completionist.title"),
-                        Text.translatable("advancements.prixilium.completionist.description").append(". 764251675739346c544a67"), null, AdvancementFrame.CHALLENGE, true, true, true
+                        Text.translatable("advancements.prixilium.completionist.description"), null, AdvancementFrame.CHALLENGE, true, true, true
                 )
                 .criterion("completionist", impossibleCriterion)
                 .build(consumer, Prixilium.MOD_ID + ":completionist");

@@ -15,6 +15,10 @@ public class ModGameRules {
             .category(GameRuleCategory.UPDATES)
             .buildAndRegister(Identifier.of(Prixilium.MOD_ID, "prixilium_expands"));
 
+    public static final GameRule<Boolean> GIVE_LETTER = GameRuleBuilder.forBoolean(true)
+            .category(GameRuleCategory.PLAYER)
+            .buildAndRegister(Identifier.of(Prixilium.MOD_ID, "give_letter"));
+
     public static void registerGameRules() {
         Prixilium.LOGGER.info("Registering GameRules.");
     }

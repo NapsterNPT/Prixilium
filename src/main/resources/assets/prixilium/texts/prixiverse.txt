@@ -14,7 +14,7 @@
 
 §2Ay yo, It's not that serious, man. And like, who are you?
 
-§3I'm §k%Player_Name%§3, and you are the player that escaped...
+§3I'm §k%player_name%§3, and you are the player that escaped...
 
 §2I still don't understand... I have so many questions... Like §kWhat am I going to do after all of this§2?
 

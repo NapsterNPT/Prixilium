@@ -80,6 +80,17 @@ public class ModItems {
             .maxCount(1)
     ));
 
+    public static final Item LETTER = registerItem(name = "letter", new LetterItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(1)
+    ){
+        @Override
+        public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+            textConsumer.accept(Text.translatable("tooltip.prixilium.letter"));
+            super.appendTooltip(stack, context, displayComponent, textConsumer, type);
+        }
+    });
+
     public static final Item BLIKO_SPAWN_EGG = registerItem(name = "bliko_spawn_egg", new SpawnEggItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .spawnEgg(ModEntities.BLIKO)

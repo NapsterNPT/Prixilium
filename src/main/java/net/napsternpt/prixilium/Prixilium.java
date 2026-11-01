@@ -3,12 +3,16 @@ package net.napsternpt.prixilium;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerEntityWorldChangeEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potions;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -32,6 +36,7 @@ import net.napsternpt.prixilium.util.ModGameRules;
 import net.napsternpt.prixilium.util.ModItemGroups;
 import net.napsternpt.prixilium.util.TimeStopState;
 import net.napsternpt.prixilium.world.ModStructures;
+import net.napsternpt.prixilium.world.LetterRecipientsState;
 import net.napsternpt.prixilium.world.PrixiverseStructuresState;
 import net.napsternpt.prixilium.world.gen.chunk.ModChunkGenerators;
 import org.slf4j.Logger;
@@ -48,6 +53,10 @@ public class Prixilium implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
+            LOGGER.info("Development environment detected. Enabling Debug options.");
+        }
+
 		ModItemGroups.registerItemGroups();
 		ModItems.registerItems();
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
@@ -92,6 +101,8 @@ public class Prixilium implements ModInitializer {
 			if (destination.getRegistryKey().equals(ModWorldGen.PRIXILIUM_WORLD)) {player.teleport(destination, SPAWN_POS.getX() + 0.5, SPAWN_POS.getY(), SPAWN_POS.getZ() + 0.5, Set.of(), 90, 0, true);}
 		});
 
+		ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> giveFirstJoinLetter(handler.player, server));
+
 		ModPackets.registerServer();
 		ModPackets.registerReturnHandler();
 
@@ -102,13 +113,27 @@ public class Prixilium implements ModInitializer {
 				PackActivationType.NORMAL
 		);
 
-		if (LocalDate.now().getMonth() == Month.APRIL && LocalDate.now().getDayOfMonth() == 1) {
-			ResourceLoader.registerBuiltinPack(
-					Identifier.of(MOD_ID, "translated_onehundred_times"),
-					FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(),
-					Text.translatable("resourcepacks.translated_onehundred_times"),
-					PackActivationType.ALWAYS_ENABLED
-			);
+        boolean aprilFools = LocalDate.now().getMonth() == Month.APRIL && LocalDate.now().getDayOfMonth() == 1;
+        if (aprilFools || FabricLoader.getInstance().isDevelopmentEnvironment()) {
+            ResourceLoader.registerBuiltinPack(
+                    Identifier.of(MOD_ID, "translated_onehundred_times"),
+                    FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(),
+                    Text.translatable("resourcepacks.translated_onehundred_times"),
+                    aprilFools ? PackActivationType.ALWAYS_ENABLED : PackActivationType.NORMAL
+            );
 		}
 	}
+
+	private static void giveFirstJoinLetter(ServerPlayerEntity player, MinecraftServer server) {
+		if (server.getOverworld().getGameRules().getValue(ModGameRules.GIVE_LETTER)) {
+            LetterRecipientsState state = server.getOverworld().getPersistentStateManager().getOrCreate(LetterRecipientsState.TYPE);
+            if (state.hasReceived(player.getUuid())) return;
+
+            if (!player.getInventory().contains(stack -> stack.isOf(ModItems.LETTER))) {
+                player.getInventory().offerOrDrop(new ItemStack(ModItems.LETTER));
+            }
+
+            state.markReceived(player.getUuid());
+        }
+    }
 }
