@@ -62,6 +62,7 @@ public class PrixiliumClient implements ClientModInitializer {
 		EntityRendererFactories.register(ModEntities.RIFT, RiftRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(RiftCoreModel.RIFT_CORE, RiftCoreModel::getTexturedModelData);
 		EntityRendererFactories.register(ModEntities.RIFT_CORE, RiftCoreRenderer::new);
+		EntityRendererFactories.register(ModEntities.CHARM_FRAME, CharmFrameEntityRenderer::new);
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXILIUM_AMBIENT, PrixiliumAmbientParticles.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.PRIXIVERSE_AMBIENT, PrixiverseAmbientParticles.Factory::new);

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_charm_frame": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:charm_frame"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "prixilium:stand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prixilium:obelisk_of_charms"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stand",
+      "has_charm_frame"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prixilium:obelisk_of_charms"
+    ]
+  }
+}

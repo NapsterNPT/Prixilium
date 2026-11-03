@@ -4,11 +4,11 @@
   "key": {
     "!": "minecraft:redstone",
     "#": "prixilium:prixilium",
-    "%": "minecraft:glowstone"
+    "@": "minecraft:glowstone"
   },
   "pattern": [
     "#!#",
-    "!%!",
+    "!@!",
     "#!#"
   ],
   "result": {

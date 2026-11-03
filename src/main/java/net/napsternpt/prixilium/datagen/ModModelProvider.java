@@ -176,6 +176,12 @@ public class ModModelProvider extends FabricModelProvider {
                         BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/obelisk_of_charms"))
                 )
         );
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSingletonBlockState(
+                        ModBlocks.CHARM_FRAME_DISPLAY,
+                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/charm_frame_display"))
+                )
+        );
 
         blockStateModelGenerator.blockStateCollector.accept(
                 BlockStateModelGenerator.createSingletonBlockState(
@@ -195,6 +201,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SHARPENED_SHARD, Models.GENERATED);
         itemModelGenerator.register(ModItems.SHARD_STAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.THERMOMETER, Models.HANDHELD);
+        itemModelGenerator.output.accept(ModItems.CHARM_FRAME, ItemModels.basic(Identifier.of(Prixilium.MOD_ID, "item/charm_frame")));
 
         Identifier riftsPawGuiModel = Models.GENERATED.upload(
                 Identifier.of(Prixilium.MOD_ID, "item/rifts_paw_2d"),

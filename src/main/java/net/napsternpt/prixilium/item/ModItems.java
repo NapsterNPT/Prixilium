@@ -80,6 +80,11 @@ public class ModItems {
             .maxCount(1)
     ));
 
+    public static final Item CHARM_FRAME = registerItem(name = "charm_frame", new CharmFrameItem(new Item.Settings()
+            .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .maxCount(16)
+    ));
+
     public static final Item LETTER = registerItem(name = "letter", new LetterItem(new Item.Settings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)

@@ -47,6 +47,16 @@ public class ModEntities {
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "rift_core")))
     );
 
+    public static final EntityType<CharmFrameEntity> CHARM_FRAME = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Prixilium.MOD_ID, "charm_frame"),
+            EntityType.Builder.<CharmFrameEntity>create(CharmFrameEntity::new, SpawnGroup.MISC)
+                    .dropsNothing()
+                    .eyeHeight(0.0F)
+                    .maxTrackingRange(10)
+                    .trackingTickInterval(Integer.MAX_VALUE)
+                    .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "charm_frame")))
+    );
+
     // Projectiles
     public static final EntityType<PrixiliumHookEntity> PRIXILIUM_HOOK = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "prixilium_hook"),

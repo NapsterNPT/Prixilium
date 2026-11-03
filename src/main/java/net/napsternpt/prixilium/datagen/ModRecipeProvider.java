@@ -72,6 +72,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .offerTo(exporter);
 
+                createShaped(RecipeCategory.MISC, ModItems.CHARM_FRAME)
+                        .input('#', Blocks.IRON_BARS)
+                        .input('!', Blocks.DEEPSLATE_BRICK_SLAB)
+                        .pattern(" # ")
+                        .pattern("#!#")
+                        .pattern(" # ")
+                        .criterion(hasItem(ModBlocks.PRIXILIUM_PLANKS), conditionsFromItem(ModBlocks.PRIXILIUM_PLANKS))
+                        .criterion(hasItem(ModItems.PRIXILIUM_SHARD), conditionsFromItem(ModItems.PRIXILIUM_SHARD))
+                        .offerTo(exporter);
+
                 offerSmelting(List.of(ModBlocks.PRIXILIUM), RecipeCategory.FOOD, ModItems.PRIXILIUM_OIL, 0.1f, 200, "prixilium_oil");
 
                 prixiledFoodUpgrade(exporter, Items.APPLE);
@@ -708,9 +718,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.REDSTONE, ModBlocks.PRIXILIUM_LAMP)
                         .input('#', ModBlocks.PRIXILIUM)
                         .input('!', Items.REDSTONE)
-                        .input('%', Blocks.GLOWSTONE)
+                        .input('@', Blocks.GLOWSTONE)
                         .pattern("#!#")
-                        .pattern("!%!")
+                        .pattern("!@!")
                         .pattern("#!#")
                         .criterion(hasItem(ModBlocks.PRIXILIUM), conditionsFromItem(ModBlocks.PRIXILIUM))
                         .offerTo(exporter, String.valueOf(Identifier.of(Prixilium.MOD_ID, "prixilium_lamp_from_glowstone")));
@@ -746,6 +756,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input(ModBlocks.STAND)
                         .criterion(hasItem(ModBlocks.REACTOR_CORE), conditionsFromItem(ModBlocks.REACTOR_CORE))
                         .criterion(hasItem(ModBlocks.STAND), conditionsFromItem(ModBlocks.STAND))
+                        .offerTo(exporter);
+                createShaped(RecipeCategory.MISC, ModBlocks.OBELISK_OF_CHARMS)
+                        .input('#', ModItems.CHARM_FRAME)
+                        .input('!', Blocks.CAULDRON)
+                        .input('@', Blocks.GLASS_PANE)
+                        .input('%', ModBlocks.STAND)
+                        .pattern(" # ")
+                        .pattern("@!@")
+                        .pattern(" % ")
+                        .criterion(hasItem(ModBlocks.STAND), conditionsFromItem(ModBlocks.STAND))
+                        .criterion(hasItem(ModItems.CHARM_FRAME), conditionsFromItem(ModItems.CHARM_FRAME))
                         .offerTo(exporter);
 
                 //endregion

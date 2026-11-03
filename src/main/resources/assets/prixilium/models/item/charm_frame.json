@@ -1,0 +1,53 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made by NapsterNPT",
+	"parent": "prixilium:block/charm_frame_display",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "prixilium:block/charm_frame",
+		"particle": "prixilium:block/charm_frame"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [180, 0, 0],
+			"translation": [0, 0, 3],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [180, 0, 0],
+			"translation": [0, 0, 3],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [90, 0, -30],
+			"translation": [0, 5, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [90, 0, -30],
+			"translation": [0, 5, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"rotation": [90, 0, 0],
+			"translation": [0, 0.5, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [115, 0, -45],
+			"translation": [0, 3, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"head": {
+			"translation": [0, 0, -13]
+		},
+		"fixed": {
+			"translation": [0, 0, -5],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"on_shelf": {
+			"rotation": [180, 0, 0],
+			"translation": [0, 0, 4]
+		}
+	}
+}

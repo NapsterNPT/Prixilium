@@ -31,6 +31,7 @@ public class ModItemGroups {
                         entries.add(ModItems.RIFTS_PAW);
                         entries.add(ModItems.RIFTS_SHELL);
                         entries.add(ModItems.PRIXILIUM_HOOK);
+                        entries.add(ModItems.CHARM_FRAME);
                         entries.add(ModItems.BLIKO_SPAWN_EGG);
                         entries.add(ModItems.BLOCKITO_SPAWN_EGG);
                         entries.add(ModItems.AIRIS_SPAWN_EGG);

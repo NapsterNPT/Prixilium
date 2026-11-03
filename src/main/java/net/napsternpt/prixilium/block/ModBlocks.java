@@ -499,6 +499,15 @@ public class ModBlocks {
                     .nonOpaque()
             ));
 
+    public static final Block CHARM_FRAME_DISPLAY = registerBlock(name = "charm_frame_display",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))
+                    .noCollision()
+                    .nonOpaque()
+                    .dropsNothing()
+                    .pistonBehavior(PistonBehavior.BLOCK)
+            ), false);
+
     public static final Block PRIXIVERSE_PORTAL = registerBlock(name = "prixiverse_portal",
             new PrixiversePortalBlock(AbstractBlock.Settings.create()
                     .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Prixilium.MOD_ID, name)))

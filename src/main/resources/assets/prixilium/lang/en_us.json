@@ -24,6 +24,7 @@
   "item.prixilium.blockito_spawn_egg": "Blockito Spawn Egg",
   "item.prixilium.airis_spawn_egg": "Airis Spawn Egg",
   "item.prixilium.rift_spawn_egg": "Rift Spawn Egg",
+  "item.prixilium.charm_frame": "Charm Frame",
 
   "item.prixilium.charm_i": "Charm ★",
   "item.prixilium.container_charm_i": "Container Charm ★",
@@ -243,6 +244,7 @@
   "block.prixilium.reactor_core": "Reactor Core",
   "block.prixilium.virus_reactor": "Virus Reactor",
   "block.prixilium.obelisk_of_charms": "Obelisk Of Charms",
+  "block.prixilium.charm_frame_display": "Charm Frame",
   "block.prixilium.prixiverse_portal": "Prixiverse Portal Block",
 
   "sounds.prixilium.prixilium_expand": "Prixilium Expands",
@@ -294,6 +296,7 @@
   "entity.prixilium.rift": "Rift",
   "entity.prixilium.rift_core": "Rift Core",
   "entity.prixilium.prixilium_hook": "Prixilium Hook",
+  "entity.prixilium.charm_frame": "Charm Frame",
 
 
   "tooltip.prixilium.virus_alive.1": "§7This Virus has",

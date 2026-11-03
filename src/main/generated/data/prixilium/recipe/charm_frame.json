@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": "minecraft:deepslate_brick_slab",
+    "#": "minecraft:iron_bars"
+  },
+  "pattern": [
+    " # ",
+    "#!#",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:charm_frame"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": "minecraft:cauldron",
+    "#": "prixilium:charm_frame",
+    "%": "prixilium:stand",
+    "@": "minecraft:glass_pane"
+  },
+  "pattern": [
+    " # ",
+    "@!@",
+    " % "
+  ],
+  "result": {
+    "count": 1,
+    "id": "prixilium:obelisk_of_charms"
+  }
+}
