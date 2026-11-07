@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "active=false": {
       "model": "prixilium:block/obelisk_of_charms"
+    },
+    "active=true": {
+      "model": "prixilium:block/obelisk_of_charms_on"
     }
   }
 }

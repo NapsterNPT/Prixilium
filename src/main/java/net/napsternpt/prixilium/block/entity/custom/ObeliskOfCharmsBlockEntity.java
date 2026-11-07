@@ -1,6 +1,7 @@
 package net.napsternpt.prixilium.block.entity.custom;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,6 +24,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.napsternpt.prixilium.block.custom.ObeliskOfCharmsBlock;
 import net.napsternpt.prixilium.block.entity.ImplementedInventory;
 import net.napsternpt.prixilium.block.entity.ModBlockEntities;
 import net.napsternpt.prixilium.screen.custom.ObeliskOfCharmsScreenHandler;
@@ -122,6 +124,8 @@ public class ObeliskOfCharmsBlockEntity extends BlockEntity implements ExtendedS
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, ObeliskOfCharmsBlockEntity entity) {
+        boolean wasRepairing = entity.isRepairing();
+
         if (entity.fuelBurnTime > 0) {
             entity.fuelBurnTime--;
         } else if (entity.hasRecipe() && entity.canConsumeFuel()) {
@@ -139,6 +143,12 @@ public class ObeliskOfCharmsBlockEntity extends BlockEntity implements ExtendedS
         } else if (!entity.hasRecipe()) {
             entity.resetProgress();
         }
+
+        boolean repairing = entity.isRepairing();
+        if (wasRepairing != repairing) {
+            world.setBlockState(pos, state.with(ObeliskOfCharmsBlock.ACTIVE, repairing), Block.NOTIFY_ALL);
+        }
+
         markDirty(world, pos, state);
     }
 
@@ -215,6 +225,10 @@ public class ObeliskOfCharmsBlockEntity extends BlockEntity implements ExtendedS
 
     public boolean isBurning() {
         return fuelBurnTime > 0;
+    }
+
+    public boolean isRepairing() {
+        return hasRecipe() && fuelBurnTime > 0;
     }
 
     @Override

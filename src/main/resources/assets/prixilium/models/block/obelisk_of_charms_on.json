@@ -1,0 +1,10 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made by NapsterNPT",
+	"parent": "prixilium:block/obelisk_of_charms_model",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "prixilium:block/obelisk_of_charms_on",
+		"particle": "prixilium:block/obelisk_of_charms_on"
+	}
+}

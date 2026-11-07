@@ -8,10 +8,13 @@ import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
@@ -23,8 +26,26 @@ public class ObeliskOfCharmsBlock extends BlockWithEntity implements BlockEntity
     public static final MapCodec<ObeliskOfCharmsBlock> CODEC = ObeliskOfCharmsBlock.createCodec(ObeliskOfCharmsBlock::new);
     private static final VoxelShape SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 13.0, 15.0);
 
+    public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
+
     public ObeliskOfCharmsBlock(Settings settings) {
         super(settings);
+        setDefaultState(getDefaultState().with(ACTIVE, false));
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(ACTIVE);
+    }
+
+    @Override
+    protected boolean hasComparatorOutput(BlockState state) {
+        return true;
+    }
+
+    @Override
+    protected int getComparatorOutput(BlockState state, World world, BlockPos pos, Direction direction) {
+        return state.get(ACTIVE) ? 15 : 0;
     }
 
     @Override

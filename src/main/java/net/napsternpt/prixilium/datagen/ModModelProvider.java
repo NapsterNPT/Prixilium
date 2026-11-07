@@ -17,6 +17,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.WeightedPool;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
+import net.napsternpt.prixilium.block.custom.ObeliskOfCharmsBlock;
 import net.napsternpt.prixilium.block.custom.PrixiliumLampBlock;
 import net.napsternpt.prixilium.item.ModArmorMaterials;
 import net.napsternpt.prixilium.item.ModItems;
@@ -170,10 +171,10 @@ public class ModModelProvider extends FabricModelProvider {
                         BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/virus_reactor"))
                 )
         );
-        blockStateModelGenerator.blockStateCollector.accept(
-                BlockStateModelGenerator.createSingletonBlockState(
-                        ModBlocks.OBELISK_OF_CHARMS,
-                        BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/obelisk_of_charms"))
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.OBELISK_OF_CHARMS)
+                .with(BlockStateVariantMap.models(ObeliskOfCharmsBlock.ACTIVE)
+                        .register(false, BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/obelisk_of_charms")))
+                        .register(true, BlockStateModelGenerator.createWeightedVariant(Identifier.of(Prixilium.MOD_ID, "block/obelisk_of_charms_on")))
                 )
         );
         blockStateModelGenerator.blockStateCollector.accept(
