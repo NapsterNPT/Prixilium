@@ -20,7 +20,9 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.block.ModBlocks;
 import net.napsternpt.prixilium.entity.ModEntities;
@@ -110,6 +112,13 @@ public class BlikoEntity extends TameableEntity {
                 }
             }
         }
+    }
+
+    @Override
+    public float getPathfindingFavor(BlockPos pos, WorldView world) {
+        return world.getBlockState(pos.down()).isOf(ModBlocks.PRIXIGRASS)
+                ? 10.0F
+                : super.getPathfindingFavor(pos, world);
     }
 
     @Override

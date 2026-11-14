@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.attribute.EnvironmentAttributeMap;
 import net.minecraft.world.dimension.DimensionType;
 import org.jspecify.annotations.NonNull;
@@ -21,9 +21,9 @@ public class ModDimensionTypeProvider extends FabricDynamicRegistryProvider {
     @Override
     protected void configure(RegistryWrapper.@NonNull WrapperLookup lookup, Entries entries) {
         entries.add(ModWorldGen.PRIXILIUM_DIMENSION_TYPE, new DimensionType(
-                true, false, true, 1.0, 0, 256, 256,
+                true, false, false, 1.0, 0, 256, 256,
                 BlockTags.INFINIBURN_END, 0.1f,
-                new DimensionType.MonsterSettings(UniformIntProvider.create(0, 7), 0),
+                new DimensionType.MonsterSettings(ConstantIntProvider.create(15), 15),
                 DimensionType.Skybox.NONE,
                 DimensionType.CardinalLightType.DEFAULT,
                 EnvironmentAttributeMap.builder().build(),

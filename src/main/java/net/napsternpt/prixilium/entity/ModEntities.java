@@ -1,11 +1,15 @@
 package net.napsternpt.prixilium.entity;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.SpawnLocationTypes;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.Heightmap;
 import net.napsternpt.prixilium.Prixilium;
 import net.napsternpt.prixilium.entity.custom.*;
 import net.napsternpt.prixilium.entity.projectile.PrixiliumHookEntity;
@@ -14,21 +18,24 @@ import net.napsternpt.prixilium.entity.projectile.ShardStarEntity;
 public class ModEntities {
     public static final EntityType<BlikoEntity> BLIKO = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "bliko"),
-            EntityType.Builder.create(BlikoEntity::new, SpawnGroup.CREATURE)
+            FabricEntityType.Builder.createMob(BlikoEntity::new, SpawnGroup.CREATURE, builder -> builder
+                            .spawnRestriction(SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, (type, world, reason, pos, random) -> true))
                     .dimensions(0.65F, 0.7F)
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "bliko")))
     );
 
     public static final EntityType<BlockitoEntity> BLOCKITO = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "blockito"),
-            EntityType.Builder.create(BlockitoEntity::new, SpawnGroup.CREATURE)
+            FabricEntityType.Builder.createMob(BlockitoEntity::new, SpawnGroup.MONSTER, builder -> builder
+                            .spawnRestriction(SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnIgnoreLightLevel))
                     .dimensions(0.99F, 0.99F)
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "blockito")))
     );
 
     public static final EntityType<AirisEntity> AIRIS = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Prixilium.MOD_ID, "airis"),
-            EntityType.Builder.create(AirisEntity::new, SpawnGroup.CREATURE)
+            FabricEntityType.Builder.createMob(AirisEntity::new, SpawnGroup.MONSTER, builder -> builder
+                            .spawnRestriction(SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnIgnoreLightLevel))
                     .dimensions(0.99F, 0.5F)
                     .build(RegistryKey.of(Registries.ENTITY_TYPE.getKey(), Identifier.of(Prixilium.MOD_ID, "airis")))
     );

@@ -83,7 +83,6 @@ public class PrixiliumChunkGenerator extends ChunkGenerator {
 
 	@Override
 	public void buildSurface(ChunkRegion chunkRegion, StructureAccessor structureAccessor, NoiseConfig noiseConfig, Chunk chunk) {
-		delegate.buildSurface(chunkRegion, structureAccessor, noiseConfig, chunk);
 		applyPrixiliumLayers(chunk, noiseConfig);
 	}
 

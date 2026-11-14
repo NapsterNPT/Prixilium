@@ -102,7 +102,6 @@ public class ModBlocks {
                     .strength(0.6f)
                     .sounds(BlockSoundGroup.GRASS)
                     .mapColor(MapColor.DARK_AQUA)
-                    .allowsSpawning((state, world, pos, type) -> false)
             ));
 
     public static final Block PRIXISOIL = registerBlock(name = "prixisoil",
@@ -111,7 +110,6 @@ public class ModBlocks {
                     .strength(0.5f)
                     .sounds(BlockSoundGroup.GRAVEL)
                     .mapColor(MapColor.DIRT_BROWN)
-                    .allowsSpawning((state, world, pos, type) -> false)
             ));
 
     public static final Block PRIXTONE = registerBlock(name = "prixtone",
@@ -121,7 +119,6 @@ public class ModBlocks {
                     .requiresTool()
                     .sounds(BlockSoundGroup.STONE)
                     .mapColor(MapColor.STONE_GRAY)
-                    .allowsSpawning((state, world, pos, type) -> false)
             ));
 
     //region [Planks]

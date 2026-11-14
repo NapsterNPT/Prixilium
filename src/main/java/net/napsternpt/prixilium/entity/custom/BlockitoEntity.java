@@ -7,7 +7,6 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -41,13 +40,8 @@ public class BlockitoEntity extends ZombieEntity {
         this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
     }
 
-    @Override
-    protected void initAttributes() {
-        // No
-    }
-
     public static DefaultAttributeContainer.Builder createAttributes() {
-        return HostileEntity.createMobAttributes()
+        return ZombieEntity.createZombieAttributes()
                 .add(EntityAttributes.MAX_HEALTH, 10)
                 .add(EntityAttributes.MOVEMENT_SPEED, 0.25)
                 .add(EntityAttributes.ATTACK_DAMAGE, 3.0)

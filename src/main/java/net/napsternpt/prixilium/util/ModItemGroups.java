@@ -31,7 +31,6 @@ public class ModItemGroups {
                         entries.add(ModItems.RIFTS_PAW);
                         entries.add(ModItems.RIFTS_SHELL);
                         entries.add(ModItems.PRIXILIUM_HOOK);
-                        entries.add(ModItems.CHARM_FRAME);
                         entries.add(ModItems.BLIKO_SPAWN_EGG);
                         entries.add(ModItems.BLOCKITO_SPAWN_EGG);
                         entries.add(ModItems.AIRIS_SPAWN_EGG);
@@ -121,6 +120,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PRIXILIUM_LAMP);
                         entries.add(ModBlocks.STAND);
                         entries.add(ModBlocks.REACTOR_CORE);
+                        entries.add(ModItems.CHARM_FRAME);
                         entries.add(ModBlocks.VIRUS_REACTOR);
                         entries.add(ModBlocks.OBELISK_OF_CHARMS);
                         //endregion
