@@ -304,6 +304,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)
                 .add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
 
+        valueLookupBuilder(ItemTags.FREEZE_IMMUNE_WEARABLES)
+                .add(ModItems.PRIXILED_LEATHER_HELMET)
+                .add(ModItems.PRIXILED_LEATHER_CHESTPLATE)
+                .add(ModItems.PRIXILED_LEATHER_LEGGINGS)
+                .add(ModItems.PRIXILED_LEATHER_BOOTS)
+                .add(ModItems.PRIXILED_LEATHER_HORSE_ARMOR);
+
         valueLookupBuilder(ItemTags.FOOT_ARMOR)
                 .add(ModItems.PRIXILED_LEATHER_BOOTS)
                 .add(ModItems.PRIXILED_CHAINMAIL_BOOTS)
@@ -493,12 +500,79 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.PRIXILIUM_PLANKS.asItem())
                 .add(ModBlocks.BURNED_PRIXILIUM_PLANKS.asItem());
 
+        valueLookupBuilder(ItemTags.WOODEN_STAIRS)
+                .add(ModBlocks.PRIXILIUM_STAIRS.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_STAIRS.asItem());
+
+        valueLookupBuilder(ItemTags.STAIRS)
+                .add(ModBlocks.PRIXILIUM_STAIRS.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_STAIRS.asItem())
+                .add(ModBlocks.PRIXILIUM_BRICK_STAIRS.asItem())
+                .add(ModBlocks.DARK_PRIXILIUM_BRICK_STAIRS.asItem());
+
+        valueLookupBuilder(ItemTags.WOODEN_SLABS)
+                .add(ModBlocks.PRIXILIUM_SLAB.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_SLAB.asItem());
+
+        valueLookupBuilder(ItemTags.SLABS)
+                .add(ModBlocks.PRIXILIUM_SLAB.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_SLAB.asItem())
+                .add(ModBlocks.PRIXILIUM_BRICK_SLAB.asItem())
+                .add(ModBlocks.DARK_PRIXILIUM_BRICK_SLAB.asItem());
+
+        valueLookupBuilder(ItemTags.WOODEN_FENCES)
+                .add(ModBlocks.PRIXILIUM_FENCE.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_FENCE.asItem());
+
+        valueLookupBuilder(ItemTags.FENCES)
+                .add(ModBlocks.PRIXILIUM_FENCE.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_FENCE.asItem());
+
+        valueLookupBuilder(ItemTags.FENCE_GATES)
+                .add(ModBlocks.PRIXILIUM_FENCE_GATE.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_FENCE_GATE.asItem());
+
+        valueLookupBuilder(ItemTags.WOODEN_DOORS)
+                .add(ModBlocks.PRIXILIUM_DOOR.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_DOOR.asItem());
+
+        valueLookupBuilder(ItemTags.DOORS)
+                .add(ModBlocks.PRIXILIUM_DOOR.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_DOOR.asItem());
+
+        valueLookupBuilder(ItemTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.PRIXILIUM_TRAPDOOR.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR.asItem());
+
+        valueLookupBuilder(ItemTags.TRAPDOORS)
+                .add(ModBlocks.PRIXILIUM_TRAPDOOR.asItem())
+                .add(ModBlocks.BURNED_PRIXILIUM_TRAPDOOR.asItem());
+
+        valueLookupBuilder(ItemTags.WALLS)
+                .add(ModBlocks.PRIXILIUM_BRICKS_WALL.asItem())
+                .add(ModBlocks.DARK_PRIXILIUM_BRICKS_WALL.asItem());
+
+        valueLookupBuilder(ItemTags.STONE_BRICKS)
+                .add(ModBlocks.PRIXILIUM_BRICKS.asItem())
+                .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS.asItem())
+                .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS.asItem())
+                .add(ModBlocks.DARK_PRIXILIUM_BRICKS.asItem())
+                .add(ModBlocks.CRACKED_DARK_PRIXILIUM_BRICKS.asItem())
+                .add(ModBlocks.CHISELED_DARK_PRIXILIUM_BRICKS.asItem());
+
+        valueLookupBuilder(ItemTags.DIRT)
+                .add(ModBlocks.PRIXIGRASS.asItem())
+                .add(ModBlocks.PRIXISOIL.asItem());
+
         valueLookupBuilder(ItemTags.SAPLINGS)
                 .add(ModBlocks.PRIXILIUM.asItem());
 
         valueLookupBuilder(ItemTags.SMALL_FLOWERS)
                 .add(ModBlocks.OPEN_PRIXILIUM_PERL.asItem())
                 .add(ModBlocks.CLOSED_PRIXILIUM_PERL.asItem());
+
+        valueLookupBuilder(ItemTags.FLOWERS)
+                .add(ModBlocks.PRIXILIUM_PETALS.asItem());
 
         // Mod Tags
         valueLookupBuilder(ModTags.Items.TEMPERATURE_TOOLS)
