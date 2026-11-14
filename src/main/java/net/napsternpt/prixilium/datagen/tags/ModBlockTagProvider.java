@@ -80,8 +80,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.OBELISK_OF_CHARMS);
 
         valueLookupBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.PRIXTONE)
-
                 .add(ModBlocks.PRIXILIUM_BRICKS)
                 .add(ModBlocks.CRACKED_PRIXILIUM_BRICKS)
                 .add(ModBlocks.CHISELED_PRIXILIUM_BRICKS)
@@ -112,6 +110,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.POTTED_OPEN_PRIXILIUM_PERL)
                 .add(ModBlocks.POTTED_CLOSED_PRIXILIUM_PERL);
 
+        valueLookupBuilder(BlockTags.FLOWERS)
+                .add(ModBlocks.PRIXILIUM_PETALS);
+
+        valueLookupBuilder(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
+                .add(ModBlocks.PRIXILIUM_PETALS);
+
         valueLookupBuilder(BlockTags.DIRT)
                 .add(ModBlocks.PRIXIGRASS)
                 .add(ModBlocks.PRIXISOIL);
@@ -124,6 +128,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         valueLookupBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.PRIXILIUM_LEAVES);
+
+        valueLookupBuilder(BlockTags.REPLACEABLE)
+                .add(ModBlocks.PRIXILIUM_RESIN);
 
         valueLookupBuilder(BlockTags.REPLACEABLE_BY_TREES)
                 .add(ModBlocks.PRIXILIUM_LEAVES)
