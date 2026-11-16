@@ -28,66 +28,67 @@ public class ModItems {
     private static String name;
 
     //region [Other]
-    public static final Item VIRUS_ALIVE = registerItem(name = "virus_alive", new VirusAliveItem(new Item.Settings()
+    public static final Item VIRUS_ALIVE = registerItem(name = "virus_alive", new VirusAliveItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .maxDamage(100)
             .rarity(Rarity.RARE)
             .component(DataComponentTypes.TOOLTIP_DISPLAY, TooltipDisplayComponent.DEFAULT.with(DataComponentTypes.DAMAGE, true))
     ));
-    public static final Item VIRUS_DEAD = registerItem(name = "virus_dead", new Item(new Item.Settings()
+    public static final Item VIRUS_DEAD = registerItem(name = "virus_dead", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
 
-    public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem(name = "prixilium_upgrade_smithing_template", new Item(new Item.Settings()
+    public static final Item PRIXILIUM_UPGRADE_SMITHING_TEMPLATE = registerItem(name = "prixilium_upgrade_smithing_template", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
 
-    public static final Item PRIXILIUM_SHARD_NUGGET = registerItem(name = "prixilium_shard_nugget", new Item(new Item.Settings()
+    public static final Item PRIXILIUM_SHARD_NUGGET = registerItem(name = "prixilium_shard_nugget", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
 
-    public static final Item PRIXILIUM_SHARD = registerItem(name = "prixilium_shard", new Item(new Item.Settings()
+    public static final Item PRIXILIUM_SHARD = registerItem(name = "prixilium_shard", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
 
-    public static final Item SHARPENED_SHARD = registerItem(name = "sharpened_shard", new Item(new Item.Settings()
+    public static final Item SHARPENED_SHARD = registerItem(name = "sharpened_shard", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
     ));
 
-    public static final Item SHARD_STAR = registerItem(name = "shard_star", new ShardStarItem(new Item.Settings()
+    public static final Item SHARD_STAR = registerItem(name = "shard_star", new ShardStarItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(99)
     ));
 
-    public static final Item THERMOMETER = registerItem(name = "thermometer", new ThermometerItem(new Item.Settings()
+    public static final Item THERMOMETER = registerItem(name = "thermometer", new ThermometerItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
     ));
 
-    public static final Item RIFTS_PAW = registerItem(name = "rifts_paw", new RiftsPawItem(new Item.Settings()
+    public static final Item RIFTS_PAW = registerItem(name = "rifts_paw", new RiftsPawItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
     ));
 
-    public static final Item RIFTS_SHELL = registerItem(name = "rifts_shell", new Item(new Item.Settings().armor(ModArmorMaterials.RIFT, EquipmentType.CHESTPLATE)
+    public static final Item RIFTS_SHELL = registerItem(name = "rifts_shell", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.RIFT, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
     ));
 
-    public static final Item PRIXILIUM_HOOK = registerItem(name = "prixilium_hook", new PrixiliumHookItem(new Item.Settings()
+    public static final Item PRIXILIUM_HOOK = registerItem(name = "prixilium_hook", new PrixiliumHookItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
     ));
 
-    public static final Item CHARM_FRAME = registerItem(name = "charm_frame", new CharmFrameItem(new Item.Settings()
+    public static final Item CHARM_FRAME = registerItem(name = "charm_frame", new CharmFrameItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(16)
     ));
 
-    public static final Item LETTER = registerItem(name = "letter", new LetterItem(new Item.Settings()
+    public static final Item LETTER = registerItem(name = "letter", new LetterItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
+            .rarity(Rarity.EPIC)
     ){
         @Override
         public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
@@ -96,19 +97,19 @@ public class ModItems {
         }
     });
 
-    public static final Item BLIKO_SPAWN_EGG = registerItem(name = "bliko_spawn_egg", new SpawnEggItem(new Item.Settings()
+    public static final Item BLIKO_SPAWN_EGG = registerItem(name = "bliko_spawn_egg", new SpawnEggItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .spawnEgg(ModEntities.BLIKO)
     ));
-    public static final Item BLOCKITO_SPAWN_EGG = registerItem(name = "blockito_spawn_egg", new SpawnEggItem(new Item.Settings()
+    public static final Item BLOCKITO_SPAWN_EGG = registerItem(name = "blockito_spawn_egg", new SpawnEggItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .spawnEgg(ModEntities.BLOCKITO)
     ));
-    public static final Item AIRIS_SPAWN_EGG = registerItem(name = "airis_spawn_egg", new SpawnEggItem(new Item.Settings()
+    public static final Item AIRIS_SPAWN_EGG = registerItem(name = "airis_spawn_egg", new SpawnEggItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .spawnEgg(ModEntities.AIRIS)
     ));
-    public static final Item RIFT_SPAWN_EGG = registerItem(name = "rift_spawn_egg", new SpawnEggItem(new Item.Settings()
+    public static final Item RIFT_SPAWN_EGG = registerItem(name = "rift_spawn_egg", new SpawnEggItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .spawnEgg(ModEntities.RIFT)
     ));
@@ -329,208 +330,251 @@ public class ModItems {
     //region [Tools]
 
     //region [wood]
-    public static final Item PRIXILED_WOODEN_SHOVEL = registerItem(name = "prixiled_wooden_shovel", new ShovelItem(ToolMaterial.WOOD, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_WOODEN_SHOVEL = registerItem(name = "prixiled_wooden_shovel", new ShovelItem(ToolMaterial.WOOD, 1.5F, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_WOODEN_PICKAXE = registerItem(name = "prixiled_wooden_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.WOOD, 1, -2.8F)
+    public static final Item PRIXILED_WOODEN_PICKAXE = registerItem(name = "prixiled_wooden_pickaxe", new Item(new PrixiliumItemSettings().pickaxe(ToolMaterial.WOOD, 1, -2.8F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_WOODEN_AXE = registerItem(name = "prixiled_wooden_axe", new AxeItem(ToolMaterial.WOOD, 6, -3.2F, new Item.Settings()
+    public static final Item PRIXILED_WOODEN_AXE = registerItem(name = "prixiled_wooden_axe", new AxeItem(ToolMaterial.WOOD, 6, -3.2F, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_WOODEN_HOE = registerItem(name = "prixiled_wooden_hoe", new HoeItem(ToolMaterial.WOOD, 0, -3, new Item.Settings()
+    public static final Item PRIXILED_WOODEN_HOE = registerItem(name = "prixiled_wooden_hoe", new HoeItem(ToolMaterial.WOOD, 0, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_WOODEN_SWORD = registerItem(name = "prixiled_wooden_sword", new Item(new Item.Settings().sword(ToolMaterial.WOOD, 3, -2.4F)
+    public static final Item PRIXILED_WOODEN_SWORD = registerItem(name = "prixiled_wooden_sword", new Item(new PrixiliumItemSettings().sword(ToolMaterial.WOOD, 3, -2.4F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_WOODEN_SPEAR = registerItem(name = "prixiled_wooden_spear", new Item(new Item.Settings().spear(ToolMaterial.WOOD, 0.65F, 0.7F, 0.75F, 5.0F, 14.0F, 10.0F, 5.1F, 15.0F, 4.6F)
+    public static final Item PRIXILED_WOODEN_SPEAR = registerItem(name = "prixiled_wooden_spear", new Item(new PrixiliumItemSettings().spear(ToolMaterial.WOOD, 0.65F, 0.7F, 0.75F, 5.0F, 14.0F, 10.0F, 5.1F, 15.0F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [stone]
-    public static final Item PRIXILED_STONE_SHOVEL = registerItem(name = "prixiled_stone_shovel", new ShovelItem(ToolMaterial.STONE, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_STONE_SHOVEL = registerItem(name = "prixiled_stone_shovel", new ShovelItem(ToolMaterial.STONE, 1.5F, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_STONE_PICKAXE = registerItem(name = "prixiled_stone_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.STONE, 1, -2.8F)
+    public static final Item PRIXILED_STONE_PICKAXE = registerItem(name = "prixiled_stone_pickaxe", new Item(new PrixiliumItemSettings().pickaxe(ToolMaterial.STONE, 1, -2.8F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_STONE_AXE = registerItem(name = "prixiled_stone_axe", new AxeItem(ToolMaterial.STONE, 7, -3.2F, new Item.Settings()
+    public static final Item PRIXILED_STONE_AXE = registerItem(name = "prixiled_stone_axe", new AxeItem(ToolMaterial.STONE, 7, -3.2F, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_STONE_HOE = registerItem(name = "prixiled_stone_hoe", new HoeItem(ToolMaterial.STONE, -1, -2, new Item.Settings()
+    public static final Item PRIXILED_STONE_HOE = registerItem(name = "prixiled_stone_hoe", new HoeItem(ToolMaterial.STONE, -1, -2, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_STONE_SWORD = registerItem(name = "prixiled_stone_sword", new Item(new Item.Settings().sword(ToolMaterial.STONE, 3, -2.4F)
+    public static final Item PRIXILED_STONE_SWORD = registerItem(name = "prixiled_stone_sword", new Item(new PrixiliumItemSettings().sword(ToolMaterial.STONE, 3, -2.4F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_STONE_SPEAR = registerItem(name = "prixiled_stone_spear", new Item(new Item.Settings().spear(ToolMaterial.STONE, 0.75F, 0.82F, 0.7F, 4.5F, 10.0F, 9.0F, 5.1F, 13.75F, 4.6F)
+    public static final Item PRIXILED_STONE_SPEAR = registerItem(name = "prixiled_stone_spear", new Item(new PrixiliumItemSettings().spear(ToolMaterial.STONE, 0.75F, 0.82F, 0.7F, 4.5F, 10.0F, 9.0F, 5.1F, 13.75F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [copper]
-    public static final Item PRIXILED_COPPER_SHOVEL = registerItem(name = "prixiled_copper_shovel", new ShovelItem(ToolMaterial.COPPER , 1.5F, -3.0F, new Item.Settings()
+    public static final Item PRIXILED_COPPER_SHOVEL = registerItem(name = "prixiled_copper_shovel", new ShovelItem(ToolMaterial.COPPER , 1.5F, -3.0F, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_PICKAXE = registerItem(name = "prixiled_copper_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.COPPER, 1.0F, -2.8F)
+    public static final Item PRIXILED_COPPER_PICKAXE = registerItem(name = "prixiled_copper_pickaxe", new Item(new PrixiliumItemSettings().pickaxe(ToolMaterial.COPPER, 1.0F, -2.8F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_AXE = registerItem(name = "prixiled_copper_axe", new AxeItem(ToolMaterial.COPPER, 7.0F, -3.2F, new Item.Settings()
+    public static final Item PRIXILED_COPPER_AXE = registerItem(name = "prixiled_copper_axe", new AxeItem(ToolMaterial.COPPER, 7.0F, -3.2F, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_HOE = registerItem(name = "prixiled_copper_hoe", new HoeItem(ToolMaterial.COPPER, -1.0F, -2.0F, new Item.Settings()
+    public static final Item PRIXILED_COPPER_HOE = registerItem(name = "prixiled_copper_hoe", new HoeItem(ToolMaterial.COPPER, -1.0F, -2.0F, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_SWORD = registerItem(name = "prixiled_copper_sword", new Item(new Item.Settings().sword(ToolMaterial.COPPER, 3.0F, -2.4F)
+    public static final Item PRIXILED_COPPER_SWORD = registerItem(name = "prixiled_copper_sword", new Item(new PrixiliumItemSettings().sword(ToolMaterial.COPPER, 3.0F, -2.4F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_COPPER_SPEAR = registerItem(name = "prixiled_copper_spear", new Item(new Item.Settings().spear(ToolMaterial.COPPER, 0.85F, 0.82F, 0.65F, 4.0F, 9.0F, 8.25F, 5.1F, 12.5F, 4.6F)
+    public static final Item PRIXILED_COPPER_SPEAR = registerItem(name = "prixiled_copper_spear", new Item(new PrixiliumItemSettings().spear(ToolMaterial.COPPER, 0.85F, 0.82F, 0.65F, 4.0F, 9.0F, 8.25F, 5.1F, 12.5F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [iron]
-    public static final Item PRIXILED_IRON_SHOVEL = registerItem(name = "prixiled_iron_shovel", new ShovelItem(ToolMaterial.IRON, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_IRON_SHOVEL = registerItem(name = "prixiled_iron_shovel", new ShovelItem(ToolMaterial.IRON, 1.5F, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_IRON_PICKAXE = registerItem(name = "prixiled_iron_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.IRON, 1, -2.8F)
+    public static final Item PRIXILED_IRON_PICKAXE = registerItem(name = "prixiled_iron_pickaxe", new Item(new PrixiliumItemSettings().pickaxe(ToolMaterial.IRON, 1, -2.8F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_IRON_AXE = registerItem(name = "prixiled_iron_axe", new AxeItem(ToolMaterial.IRON, 6, -3.1F, new Item.Settings()
+    public static final Item PRIXILED_IRON_AXE = registerItem(name = "prixiled_iron_axe", new AxeItem(ToolMaterial.IRON, 6, -3.1F, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_IRON_HOE = registerItem(name = "prixiled_iron_hoe", new HoeItem(ToolMaterial.IRON, -2, -1, new Item.Settings()
+    public static final Item PRIXILED_IRON_HOE = registerItem(name = "prixiled_iron_hoe", new HoeItem(ToolMaterial.IRON, -2, -1, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_IRON_SWORD = registerItem(name = "prixiled_iron_sword", new Item(new Item.Settings().sword(ToolMaterial.IRON, 3, -2.4F)
+    public static final Item PRIXILED_IRON_SWORD = registerItem(name = "prixiled_iron_sword", new Item(new PrixiliumItemSettings().sword(ToolMaterial.IRON, 3, -2.4F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_IRON_SPEAR = registerItem(name = "prixiled_iron_spear", new Item(new Item.Settings().spear(ToolMaterial.IRON, 0.95F, 0.95F, 0.6F, 2.5F, 8.0F, 6.75F, 5.1F, 11.25F, 4.6F)
+    public static final Item PRIXILED_IRON_SPEAR = registerItem(name = "prixiled_iron_spear", new Item(new PrixiliumItemSettings().spear(ToolMaterial.IRON, 0.95F, 0.95F, 0.6F, 2.5F, 8.0F, 6.75F, 5.1F, 11.25F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [gold]
-    public static final Item PRIXILED_GOLDEN_SHOVEL = registerItem(name = "prixiled_golden_shovel", new ShovelItem(ToolMaterial.GOLD, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_SHOVEL = registerItem(name = "prixiled_golden_shovel", new ShovelItem(ToolMaterial.GOLD, 1.5F, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_GOLDEN_PICKAXE = registerItem(name = "prixiled_golden_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.GOLD, 1, -2.8F)
+    public static final Item PRIXILED_GOLDEN_PICKAXE = registerItem(name = "prixiled_golden_pickaxe", new Item(new PrixiliumItemSettings().pickaxe(ToolMaterial.GOLD, 1, -2.8F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_GOLDEN_AXE = registerItem(name = "prixiled_golden_axe", new AxeItem(ToolMaterial.GOLD, 6, -3, new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_AXE = registerItem(name = "prixiled_golden_axe", new AxeItem(ToolMaterial.GOLD, 6, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_GOLDEN_HOE = registerItem(name = "prixiled_golden_hoe", new HoeItem(ToolMaterial.GOLD, 0, -3, new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_HOE = registerItem(name = "prixiled_golden_hoe", new HoeItem(ToolMaterial.GOLD, 0, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_GOLDEN_SWORD = registerItem(name = "prixiled_golden_sword", new Item(new Item.Settings().sword(ToolMaterial.GOLD, 3, -2.4F)
+    public static final Item PRIXILED_GOLDEN_SWORD = registerItem(name = "prixiled_golden_sword", new Item(new PrixiliumItemSettings().sword(ToolMaterial.GOLD, 3, -2.4F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_GOLDEN_SPEAR = registerItem(name = "prixiled_golden_spear", new Item(new Item.Settings().spear(ToolMaterial.GOLD, 0.95F, 0.7F, 0.7F, 3.5F, 10.0F, 8.5F, 5.1F, 13.75F, 4.6F)
+    public static final Item PRIXILED_GOLDEN_SPEAR = registerItem(name = "prixiled_golden_spear", new Item(new PrixiliumItemSettings().spear(ToolMaterial.GOLD, 0.95F, 0.7F, 0.7F, 3.5F, 10.0F, 8.5F, 5.1F, 13.75F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [diamond]
-    public static final Item PRIXILED_DIAMOND_SHOVEL = registerItem(name = "prixiled_diamond_shovel", new ShovelItem(ToolMaterial.DIAMOND, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_DIAMOND_SHOVEL = registerItem(name = "prixiled_diamond_shovel", new ShovelItem(ToolMaterial.DIAMOND, 1.5F, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_DIAMOND_PICKAXE = registerItem(name = "prixiled_diamond_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.DIAMOND, 1, -2.8F)
+    public static final Item PRIXILED_DIAMOND_PICKAXE = registerItem(name = "prixiled_diamond_pickaxe", new Item(new PrixiliumItemSettings().pickaxe(ToolMaterial.DIAMOND, 1, -2.8F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_DIAMOND_AXE = registerItem(name = "prixiled_diamond_axe", new AxeItem(ToolMaterial.DIAMOND, 5, -3, new Item.Settings()
+    public static final Item PRIXILED_DIAMOND_AXE = registerItem(name = "prixiled_diamond_axe", new AxeItem(ToolMaterial.DIAMOND, 5, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_DIAMOND_HOE = registerItem(name = "prixiled_diamond_hoe", new HoeItem(ToolMaterial.DIAMOND, -3, 0, new Item.Settings()
+    public static final Item PRIXILED_DIAMOND_HOE = registerItem(name = "prixiled_diamond_hoe", new HoeItem(ToolMaterial.DIAMOND, -3, 0, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_DIAMOND_SWORD = registerItem(name = "prixiled_diamond_sword", new Item(new Item.Settings().sword(ToolMaterial.DIAMOND, 3, -2.4F)
+    public static final Item PRIXILED_DIAMOND_SWORD = registerItem(name = "prixiled_diamond_sword", new Item(new PrixiliumItemSettings().sword(ToolMaterial.DIAMOND, 3, -2.4F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_DIAMOND_SPEAR = registerItem(name = "prixiled_diamond_spear", new Item(new Item.Settings().spear(ToolMaterial.DIAMOND, 1.05F, 1.075F, 0.5F, 3.0F, 7.5F, 6.5F, 5.1F, 10.0F, 4.6F)
+    public static final Item PRIXILED_DIAMOND_SPEAR = registerItem(name = "prixiled_diamond_spear", new Item(new PrixiliumItemSettings().spear(ToolMaterial.DIAMOND, 1.05F, 1.075F, 0.5F, 3.0F, 7.5F, 6.5F, 5.1F, 10.0F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [netherite]
-    public static final Item PRIXILED_NETHERITE_SHOVEL = registerItem(name = "prixiled_netherite_shovel", new ShovelItem(ToolMaterial.NETHERITE, 1.5F, -3, new Item.Settings()
+    public static final Item PRIXILED_NETHERITE_SHOVEL = registerItem(name = "prixiled_netherite_shovel", new ShovelItem(ToolMaterial.NETHERITE, 1.5F, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_PICKAXE = registerItem(name = "prixiled_netherite_pickaxe", new Item(new Item.Settings().pickaxe(ToolMaterial.NETHERITE, 1, -2.8F)
+    public static final Item PRIXILED_NETHERITE_PICKAXE = registerItem(name = "prixiled_netherite_pickaxe", new Item(new PrixiliumItemSettings().pickaxe(ToolMaterial.NETHERITE, 1, -2.8F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_AXE = registerItem(name = "prixiled_netherite_axe", new AxeItem(ToolMaterial.NETHERITE, 5, -3, new Item.Settings()
+    public static final Item PRIXILED_NETHERITE_AXE = registerItem(name = "prixiled_netherite_axe", new AxeItem(ToolMaterial.NETHERITE, 5, -3, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_HOE = registerItem(name = "prixiled_netherite_hoe", new HoeItem(ToolMaterial.NETHERITE, -4, 0, new Item.Settings()
+    public static final Item PRIXILED_NETHERITE_HOE = registerItem(name = "prixiled_netherite_hoe", new HoeItem(ToolMaterial.NETHERITE, -4, 0, new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_SWORD = registerItem(name = "prixiled_netherite_sword", new Item(new Item.Settings().sword(ToolMaterial.NETHERITE, 3, -2.4F)
+    public static final Item PRIXILED_NETHERITE_SWORD = registerItem(name = "prixiled_netherite_sword", new Item(new PrixiliumItemSettings().sword(ToolMaterial.NETHERITE, 3, -2.4F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
-    public static final Item PRIXILED_NETHERITE_SPEAR = registerItem(name = "prixiled_netherite_spear", new Item(new Item.Settings().spear(ToolMaterial.NETHERITE, 1.15F, 1.2F, 0.4F, 2.5F, 7.0F, 5.5F, 5.1F, 8.75F, 4.6F)
+    public static final Item PRIXILED_NETHERITE_SPEAR = registerItem(name = "prixiled_netherite_spear", new Item(new PrixiliumItemSettings().spear(ToolMaterial.NETHERITE, 1.15F, 1.2F, 0.4F, 2.5F, 7.0F, 5.5F, 5.1F, 8.75F, 4.6F)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
     //endregion
 
-    public static final Item PRIXILED_BOW = registerItem(name = "prixiled_bow", new BowItem(new Item.Settings()
+    public static final Item PRIXILED_BOW = registerItem(name = "prixiled_bow", new BowItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .maxDamage(384)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_MACE = registerItem(name = "prixiled_mace", new MaceItem(new Item.Settings()
+    public static final Item PRIXILED_MACE = registerItem(name = "prixiled_mace", new MaceItem(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .maxCount(1)
             .rarity(Rarity.EPIC)
@@ -544,29 +588,33 @@ public class ModItems {
     //region [Armors]
 
     //region [leather]
-    public static final Item PRIXILED_LEATHER_HELMET = registerItem(name = "prixiled_leather_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_LEATHER, EquipmentType.HELMET)
+    public static final Item PRIXILED_LEATHER_HELMET = registerItem(name = "prixiled_leather_helmet", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_LEATHER, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540))
     ));
 
-    public static final Item PRIXILED_LEATHER_CHESTPLATE = registerItem(name = "prixiled_leather_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_LEATHER, EquipmentType.CHESTPLATE)
+    public static final Item PRIXILED_LEATHER_CHESTPLATE = registerItem(name = "prixiled_leather_chestplate", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_LEATHER, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540))
     ));
 
-    public static final Item PRIXILED_LEATHER_LEGGINGS = registerItem(name = "prixiled_leather_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_LEATHER, EquipmentType.LEGGINGS)
+    public static final Item PRIXILED_LEATHER_LEGGINGS = registerItem(name = "prixiled_leather_leggings", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_LEATHER, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540))
     ));
 
-    public static final Item PRIXILED_LEATHER_BOOTS = registerItem(name = "prixiled_leather_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_LEATHER, EquipmentType.BOOTS)
+    public static final Item PRIXILED_LEATHER_BOOTS = registerItem(name = "prixiled_leather_boots", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_LEATHER, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540))
@@ -574,159 +622,183 @@ public class ModItems {
     //endregion
 
     //region [chainmail]
-    public static final Item PRIXILED_CHAINMAIL_HELMET = registerItem(name = "prixiled_chainmail_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_CHAIN, EquipmentType.HELMET)
+    public static final Item PRIXILED_CHAINMAIL_HELMET = registerItem(name = "prixiled_chainmail_helmet", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_CHAIN, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.RARE)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_CHAINMAIL_CHESTPLATE = registerItem(name = "prixiled_chainmail_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_CHAIN, EquipmentType.CHESTPLATE)
+    public static final Item PRIXILED_CHAINMAIL_CHESTPLATE = registerItem(name = "prixiled_chainmail_chestplate", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_CHAIN, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.RARE)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_CHAINMAIL_LEGGINGS = registerItem(name = "prixiled_chainmail_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_CHAIN, EquipmentType.LEGGINGS)
+    public static final Item PRIXILED_CHAINMAIL_LEGGINGS = registerItem(name = "prixiled_chainmail_leggings", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_CHAIN, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.RARE)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_CHAINMAIL_BOOTS = registerItem(name = "prixiled_chainmail_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_CHAIN, EquipmentType.BOOTS)
+    public static final Item PRIXILED_CHAINMAIL_BOOTS = registerItem(name = "prixiled_chainmail_boots", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_CHAIN, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.RARE)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [copper]
-    public static final Item PRIXILED_COPPER_HELMET = registerItem(name = "prixiled_copper_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.HELMET)
+    public static final Item PRIXILED_COPPER_HELMET = registerItem(name = "prixiled_copper_helmet", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_COPPER_CHESTPLATE = registerItem(name = "prixiled_copper_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.CHESTPLATE)
+    public static final Item PRIXILED_COPPER_CHESTPLATE = registerItem(name = "prixiled_copper_chestplate", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_COPPER_LEGGINGS = registerItem(name = "prixiled_copper_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.LEGGINGS)
+    public static final Item PRIXILED_COPPER_LEGGINGS = registerItem(name = "prixiled_copper_leggings", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_COPPER_BOOTS = registerItem(name = "prixiled_copper_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.BOOTS)
+    public static final Item PRIXILED_COPPER_BOOTS = registerItem(name = "prixiled_copper_boots", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_COPPER, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [iron]
-    public static final Item PRIXILED_IRON_HELMET = registerItem(name = "prixiled_iron_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.HELMET)
+    public static final Item PRIXILED_IRON_HELMET = registerItem(name = "prixiled_iron_helmet", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_IRON_CHESTPLATE = registerItem(name = "prixiled_iron_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.CHESTPLATE)
+    public static final Item PRIXILED_IRON_CHESTPLATE = registerItem(name = "prixiled_iron_chestplate", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_IRON_LEGGINGS = registerItem(name = "prixiled_iron_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.LEGGINGS)
+    public static final Item PRIXILED_IRON_LEGGINGS = registerItem(name = "prixiled_iron_leggings", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_IRON_BOOTS = registerItem(name = "prixiled_iron_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.BOOTS)
+    public static final Item PRIXILED_IRON_BOOTS = registerItem(name = "prixiled_iron_boots", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_IRON, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [gold]
-    public static final Item PRIXILED_GOLDEN_HELMET = registerItem(name = "prixiled_golden_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.HELMET)
+    public static final Item PRIXILED_GOLDEN_HELMET = registerItem(name = "prixiled_golden_helmet", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_GOLDEN_CHESTPLATE = registerItem(name = "prixiled_golden_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.CHESTPLATE)
+    public static final Item PRIXILED_GOLDEN_CHESTPLATE = registerItem(name = "prixiled_golden_chestplate", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_GOLDEN_LEGGINGS = registerItem(name = "prixiled_golden_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.LEGGINGS)
+    public static final Item PRIXILED_GOLDEN_LEGGINGS = registerItem(name = "prixiled_golden_leggings", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_GOLDEN_BOOTS = registerItem(name = "prixiled_golden_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.BOOTS)
+    public static final Item PRIXILED_GOLDEN_BOOTS = registerItem(name = "prixiled_golden_boots", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_GOLD, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [diamond]
-    public static final Item PRIXILED_DIAMOND_HELMET = registerItem(name = "prixiled_diamond_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.HELMET)
+    public static final Item PRIXILED_DIAMOND_HELMET = registerItem(name = "prixiled_diamond_helmet", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_DIAMOND_CHESTPLATE = registerItem(name = "prixiled_diamond_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.CHESTPLATE)
+    public static final Item PRIXILED_DIAMOND_CHESTPLATE = registerItem(name = "prixiled_diamond_chestplate", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_DIAMOND_LEGGINGS = registerItem(name = "prixiled_diamond_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.LEGGINGS)
+    public static final Item PRIXILED_DIAMOND_LEGGINGS = registerItem(name = "prixiled_diamond_leggings", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
 
-    public static final Item PRIXILED_DIAMOND_BOOTS = registerItem(name = "prixiled_diamond_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.BOOTS)
+    public static final Item PRIXILED_DIAMOND_BOOTS = registerItem(name = "prixiled_diamond_boots", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_DIAMOND, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [netherite]
-    public static final Item PRIXILED_NETHERITE_HELMET = registerItem(name = "prixiled_netherite_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_NETHERITE, EquipmentType.HELMET)
+    public static final Item PRIXILED_NETHERITE_HELMET = registerItem(name = "prixiled_netherite_helmet", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_NETHERITE, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
 
-    public static final Item PRIXILED_NETHERITE_CHESTPLATE = registerItem(name = "prixiled_netherite_chestplate", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_NETHERITE, EquipmentType.CHESTPLATE)
+    public static final Item PRIXILED_NETHERITE_CHESTPLATE = registerItem(name = "prixiled_netherite_chestplate", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_NETHERITE, EquipmentType.CHESTPLATE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
 
-    public static final Item PRIXILED_NETHERITE_LEGGINGS = registerItem(name = "prixiled_netherite_leggings", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_NETHERITE, EquipmentType.LEGGINGS)
+    public static final Item PRIXILED_NETHERITE_LEGGINGS = registerItem(name = "prixiled_netherite_leggings", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_NETHERITE, EquipmentType.LEGGINGS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
     ));
 
-    public static final Item PRIXILED_NETHERITE_BOOTS = registerItem(name = "prixiled_netherite_boots", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_NETHERITE, EquipmentType.BOOTS)
+    public static final Item PRIXILED_NETHERITE_BOOTS = registerItem(name = "prixiled_netherite_boots", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_NETHERITE, EquipmentType.BOOTS)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .fireproof()
@@ -734,42 +806,49 @@ public class ModItems {
     //endregion
 
     //region [turtle]
-    public static final Item PRIXILED_TURTLE_HELMET = registerItem(name = "prixiled_turtle_helmet", new Item(new Item.Settings().armor(ModArmorMaterials.PRIXILIUM_TURTLE, EquipmentType.HELMET)
+    public static final Item PRIXILED_TURTLE_HELMET = registerItem(name = "prixiled_turtle_helmet", new Item(new PrixiliumItemSettings().armor(ModArmorMaterials.PRIXILIUM_TURTLE, EquipmentType.HELMET)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
     //endregion
 
     //region [horse]
-    public static final Item PRIXILED_LEATHER_HORSE_ARMOR = registerItem(name = "prixiled_leather_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_LEATHER)
+    public static final Item PRIXILED_LEATHER_HORSE_ARMOR = registerItem(name = "prixiled_leather_horse_armor", new Item(new PrixiliumItemSettings().horseArmor(ModArmorMaterials.PRIXILIUM_LEATHER)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             .component(DataComponentTypes.DYED_COLOR, new DyedColorComponent(0xA06540))
     ));
-    public static final Item PRIXILED_COPPER_HORSE_ARMOR = registerItem(name = "prixiled_copper_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_COPPER)
+    public static final Item PRIXILED_COPPER_HORSE_ARMOR = registerItem(name = "prixiled_copper_horse_armor", new Item(new PrixiliumItemSettings().horseArmor(ModArmorMaterials.PRIXILIUM_COPPER)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
             ));
-    public static final Item PRIXILED_IRON_HORSE_ARMOR = registerItem(name = "prixiled_iron_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_IRON)
+    public static final Item PRIXILED_IRON_HORSE_ARMOR = registerItem(name = "prixiled_iron_horse_armor", new Item(new PrixiliumItemSettings().horseArmor(ModArmorMaterials.PRIXILIUM_IRON)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_GOLDEN_HORSE_ARMOR = registerItem(name = "prixiled_golden_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_GOLD)
+    public static final Item PRIXILED_GOLDEN_HORSE_ARMOR = registerItem(name = "prixiled_golden_horse_armor", new Item(new PrixiliumItemSettings().horseArmor(ModArmorMaterials.PRIXILIUM_GOLD)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_DIAMOND_HORSE_ARMOR = registerItem(name = "prixiled_diamond_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_DIAMOND)
+    public static final Item PRIXILED_DIAMOND_HORSE_ARMOR = registerItem(name = "prixiled_diamond_horse_armor", new Item(new PrixiliumItemSettings().horseArmor(ModArmorMaterials.PRIXILIUM_DIAMOND)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
-    public static final Item PRIXILED_NETHERITE_HORSE_ARMOR = registerItem(name = "prixiled_netherite_horse_armor", new Item(new Item.Settings().horseArmor(ModArmorMaterials.PRIXILIUM_NETHERITE)
+    public static final Item PRIXILED_NETHERITE_HORSE_ARMOR = registerItem(name = "prixiled_netherite_horse_armor", new Item(new PrixiliumItemSettings().horseArmor(ModArmorMaterials.PRIXILIUM_NETHERITE)
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .maxCount(1)
             .component(DataComponentTypes.UNBREAKABLE, Unit.INSTANCE)
     ));
@@ -786,209 +865,248 @@ public class ModItems {
         );
     }
 
-    public static final Item PRIXILIUM_OIL = registerItem(name = "prixilium_oil", new Item(new Item.Settings()
+    public static final Item PRIXILIUM_OIL = registerItem(name = "prixilium_oil", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .food(FoodComponents.SPIDER_EYE, addPrixiliumImmunity(ConsumableComponents.SPIDER_EYE))
     ));
 
-    public static final Item PRIXILED_APPLE = registerItem(name = "prixiled_apple", new Item(new Item.Settings()
+    public static final Item PRIXILED_APPLE = registerItem(name = "prixiled_apple", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.APPLE, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_GOLDEN_APPLE = registerItem(name = "prixiled_golden_apple", new Item(new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_APPLE = registerItem(name = "prixiled_golden_apple", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.GOLDEN_APPLE, addPrixiliumImmunity(ConsumableComponents.GOLDEN_APPLE))
     ));
 
-    public static final Item PRIXILED_ENCHANTED_GOLDEN_APPLE = registerItem(name = "prixiled_enchanted_golden_apple", new Item(new Item.Settings()
+    public static final Item PRIXILED_ENCHANTED_GOLDEN_APPLE = registerItem(name = "prixiled_enchanted_golden_apple", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.EPIC)
             .food(FoodComponents.ENCHANTED_GOLDEN_APPLE, addPrixiliumImmunity(ConsumableComponents.ENCHANTED_GOLDEN_APPLE))
     ));
 
-    public static final Item PRIXILED_MELON_SLICE = registerItem(name = "prixiled_melon_slice", new Item(new Item.Settings()
+    public static final Item PRIXILED_MELON_SLICE = registerItem(name = "prixiled_melon_slice", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.MELON_SLICE, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_SWEET_BERRIES = registerItem(name = "prixiled_sweet_berries", new Item(new Item.Settings()
+    public static final Item PRIXILED_SWEET_BERRIES = registerItem(name = "prixiled_sweet_berries", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.SWEET_BERRIES, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_GLOW_BERRIES = registerItem(name = "prixiled_glow_berries", new Item(new Item.Settings()
+    public static final Item PRIXILED_GLOW_BERRIES = registerItem(name = "prixiled_glow_berries", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.GLOW_BERRIES, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_CHORUS_FRUIT = registerItem(name = "prixiled_chorus_fruit", new Item(new Item.Settings()
+    public static final Item PRIXILED_CHORUS_FRUIT = registerItem(name = "prixiled_chorus_fruit", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.CHORUS_FRUIT, addPrixiliumImmunity(ConsumableComponents.CHORUS_FRUIT))
     ));
 
-    public static final Item PRIXILED_CARROT = registerItem(name = "prixiled_carrot", new Item(new Item.Settings()
+    public static final Item PRIXILED_CARROT = registerItem(name = "prixiled_carrot", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.CARROT, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_GOLDEN_CARROT = registerItem(name = "prixiled_golden_carrot", new Item(new Item.Settings()
+    public static final Item PRIXILED_GOLDEN_CARROT = registerItem(name = "prixiled_golden_carrot", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.GOLDEN_CARROT, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_POTATO = registerItem(name = "prixiled_potato", new Item(new Item.Settings()
+    public static final Item PRIXILED_POTATO = registerItem(name = "prixiled_potato", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.POTATO, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_BAKED_POTATO = registerItem(name = "prixiled_baked_potato", new Item(new Item.Settings()
+    public static final Item PRIXILED_BAKED_POTATO = registerItem(name = "prixiled_baked_potato", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.BAKED_POTATO, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_POISONOUS_POTATO = registerItem(name = "prixiled_poisonous_potato", new Item(new Item.Settings()
+    public static final Item PRIXILED_POISONOUS_POTATO = registerItem(name = "prixiled_poisonous_potato", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.POISONOUS_POTATO, addPrixiliumImmunity(ConsumableComponents.POISONOUS_POTATO))
     ));
 
-    public static final Item PRIXILED_BEETROOT = registerItem(name = "prixiled_beetroot", new Item(new Item.Settings()
+    public static final Item PRIXILED_BEETROOT = registerItem(name = "prixiled_beetroot", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.BEETROOT, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_DRIED_KELP = registerItem(name = "prixiled_dried_kelp", new Item(new Item.Settings()
+    public static final Item PRIXILED_DRIED_KELP = registerItem(name = "prixiled_dried_kelp", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.DRIED_KELP, addPrixiliumImmunity(ConsumableComponents.DRIED_KELP))
     ));
 
-    public static final Item PRIXILED_BEEF = registerItem(name = "prixiled_beef", new Item(new Item.Settings()
+    public static final Item PRIXILED_BEEF = registerItem(name = "prixiled_beef", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.BEEF, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_COOKED_BEEF = registerItem(name = "prixiled_cooked_beef", new Item(new Item.Settings()
+    public static final Item PRIXILED_COOKED_BEEF = registerItem(name = "prixiled_cooked_beef", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COOKED_BEEF, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_PORKCHOP = registerItem(name = "prixiled_porkchop", new Item(new Item.Settings()
+    public static final Item PRIXILED_PORKCHOP = registerItem(name = "prixiled_porkchop", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.PORKCHOP, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_COOKED_PORKCHOP = registerItem(name = "prixiled_cooked_porkchop", new Item(new Item.Settings()
+    public static final Item PRIXILED_COOKED_PORKCHOP = registerItem(name = "prixiled_cooked_porkchop", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COOKED_PORKCHOP, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_MUTTON = registerItem(name = "prixiled_mutton", new Item(new Item.Settings()
+    public static final Item PRIXILED_MUTTON = registerItem(name = "prixiled_mutton", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.MUTTON, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_COOKED_MUTTON = registerItem(name = "prixiled_cooked_mutton", new Item(new Item.Settings()
+    public static final Item PRIXILED_COOKED_MUTTON = registerItem(name = "prixiled_cooked_mutton", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COOKED_MUTTON, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_CHICKEN = registerItem(name = "prixiled_chicken", new Item(new Item.Settings()
+    public static final Item PRIXILED_CHICKEN = registerItem(name = "prixiled_chicken", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.CHICKEN, addPrixiliumImmunity(ConsumableComponents.RAW_CHICKEN))
     ));
 
-    public static final Item PRIXILED_COOKED_CHICKEN = registerItem(name = "prixiled_cooked_chicken", new Item(new Item.Settings()
+    public static final Item PRIXILED_COOKED_CHICKEN = registerItem(name = "prixiled_cooked_chicken", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COOKED_CHICKEN, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_RABBIT = registerItem(name = "prixiled_rabbit", new Item(new Item.Settings()
+    public static final Item PRIXILED_RABBIT = registerItem(name = "prixiled_rabbit", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.RABBIT, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_COOKED_RABBIT = registerItem(name = "prixiled_cooked_rabbit", new Item(new Item.Settings()
+    public static final Item PRIXILED_COOKED_RABBIT = registerItem(name = "prixiled_cooked_rabbit", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COOKED_RABBIT, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_COD = registerItem(name = "prixiled_cod", new Item(new Item.Settings()
+    public static final Item PRIXILED_COD = registerItem(name = "prixiled_cod", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COD, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_COOKED_COD = registerItem(name = "prixiled_cooked_cod", new Item(new Item.Settings()
+    public static final Item PRIXILED_COOKED_COD = registerItem(name = "prixiled_cooked_cod", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COOKED_COD, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_SALMON = registerItem(name = "prixiled_salmon", new Item(new Item.Settings()
+    public static final Item PRIXILED_SALMON = registerItem(name = "prixiled_salmon", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.SALMON, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_COOKED_SALMON = registerItem(name = "prixiled_cooked_salmon", new Item(new Item.Settings()
+    public static final Item PRIXILED_COOKED_SALMON = registerItem(name = "prixiled_cooked_salmon", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COOKED_SALMON, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_TROPICAL_FISH = registerItem(name = "prixiled_tropical_fish", new Item(new Item.Settings()
+    public static final Item PRIXILED_TROPICAL_FISH = registerItem(name = "prixiled_tropical_fish", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.TROPICAL_FISH, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_PUFFERFISH = registerItem(name = "prixiled_pufferfish", new Item(new Item.Settings()
+    public static final Item PRIXILED_PUFFERFISH = registerItem(name = "prixiled_pufferfish", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.PUFFERFISH, addPrixiliumImmunity(ConsumableComponents.PUFFERFISH))
     ));
 
-    public static final Item PRIXILED_BREAD = registerItem(name = "prixiled_bread", new Item(new Item.Settings()
+    public static final Item PRIXILED_BREAD = registerItem(name = "prixiled_bread", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.BREAD, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_COOKIE = registerItem(name = "prixiled_cookie", new Item(new Item.Settings()
+    public static final Item PRIXILED_COOKIE = registerItem(name = "prixiled_cookie", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.COOKIE, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_PUMPKIN_PIE = registerItem(name = "prixiled_pumpkin_pie", new Item(new Item.Settings()
+    public static final Item PRIXILED_PUMPKIN_PIE = registerItem(name = "prixiled_pumpkin_pie", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.PUMPKIN_PIE, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_ROTTEN_FLESH = registerItem(name = "prixiled_rotten_flesh", new Item(new Item.Settings()
+    public static final Item PRIXILED_ROTTEN_FLESH = registerItem(name = "prixiled_rotten_flesh", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.ROTTEN_FLESH, addPrixiliumImmunity(ConsumableComponents.ROTTEN_FLESH))
     ));
 
-    public static final Item PRIXILED_SPIDER_EYE = registerItem(name = "prixiled_spider_eye", new Item(new Item.Settings()
+    public static final Item PRIXILED_SPIDER_EYE = registerItem(name = "prixiled_spider_eye", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.SPIDER_EYE, addPrixiliumImmunity(ConsumableComponents.SPIDER_EYE))
     ));
 
-    public static final Item PRIXILED_MUSHROOM_STEW = registerItem(name = "prixiled_mushroom_stew", new Item(new Item.Settings()
+    public static final Item PRIXILED_MUSHROOM_STEW = registerItem(name = "prixiled_mushroom_stew", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.MUSHROOM_STEW, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_BEETROOT_SOUP = registerItem(name = "prixiled_beetroot_soup", new Item(new Item.Settings()
+    public static final Item PRIXILED_BEETROOT_SOUP = registerItem(name = "prixiled_beetroot_soup", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.BEETROOT_SOUP, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_RABBIT_STEW = registerItem(name = "prixiled_rabbit_stew", new Item(new Item.Settings()
+    public static final Item PRIXILED_RABBIT_STEW = registerItem(name = "prixiled_rabbit_stew", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.RABBIT_STEW, addPrixiliumImmunity(ConsumableComponents.FOOD))
     ));
 
-    public static final Item PRIXILED_HONEY_BOTTLE = registerItem(name = "prixiled_honey_bottle", new Item(new Item.Settings()
+    public static final Item PRIXILED_HONEY_BOTTLE = registerItem(name = "prixiled_honey_bottle", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
+            .rarity(Rarity.UNCOMMON)
             .food(FoodComponents.HONEY_BOTTLE, addPrixiliumImmunity(ConsumableComponents.HONEY_BOTTLE))
     ));
 
     //endregion
 
-    public static final Item NAPSTERNPT_PLUSHY = registerItem(name = "napsternpt_plushy", new Item(new Item.Settings()
+    public static final Item NAPSTERNPT_PLUSHY = registerItem(name = "napsternpt_plushy", new Item(new PrixiliumItemSettings()
             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Prixilium.MOD_ID, name)))
             .component(DataComponentTypes.DEATH_PROTECTION, DeathProtectionComponent.TOTEM_OF_UNDYING)
             .maxCount(1)

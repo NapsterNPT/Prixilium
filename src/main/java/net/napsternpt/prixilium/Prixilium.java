@@ -109,6 +109,13 @@ public class Prixilium implements ModInitializer {
 				PackActivationType.NORMAL
 		);
 
+		ResourceLoader.registerBuiltinPack(
+				Identifier.of(MOD_ID, "better_item_tooltip"),
+				FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow(),
+				Text.translatable("resourcepacks.better_item_tooltip"),
+				PackActivationType.DEFAULT_ENABLED
+		);
+
         boolean aprilFools = LocalDate.now().getMonth() == Month.APRIL && LocalDate.now().getDayOfMonth() == 1;
         if (aprilFools || FabricLoader.getInstance().isDevelopmentEnvironment()) {
             ResourceLoader.registerBuiltinPack(

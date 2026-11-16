@@ -1,8 +1,8 @@
 package net.napsternpt.prixilium.item.custom.charm;
 
-import net.minecraft.item.Item;
+import net.napsternpt.prixilium.item.PrixiliumItemSettings;
 
-public class CharmSettings extends Item.Settings {
+public class CharmSettings extends PrixiliumItemSettings {
     private boolean upgradable = false;
     private boolean specializable = false;
 
