@@ -2,7 +2,7 @@ Hello %player_name%, if everything went according to plan, we meet aging on the 
 
 You have done it, there is nothing left to uncover...
 
-Oh, there actually is something left: 764251675739346c544a67
+Oh, there actually is something left: %code%
 
 I didn't have time to examine it, but it might lead you somewhere, I think you can do it. Good Luck.
 
